@@ -1,0 +1,151 @@
+---
+layout: "layout.html"
+pagination:
+  data: proofs
+  size: 1
+  alias: proof
+permalink: "proofs/{{ (proof.slug or proof.case_id) | slug }}/index.html"
+---
+<style>
+.conclusion-step::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-image: url('{{ "/images/three-dots-white.svg" | url }}');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 0;
+  background-color: transparent;
+}
+</style>
+
+<div class="align-container" id="proof-page">
+  <article class="doc">
+    <header class="doc-header">
+      <div class="doc-row">
+        <div class="doc-mark">
+          <span>PROOF {{ proof.case_id }}</span>
+        </div>
+        <div class="doc-meta">
+          <span>{{ proof.category }}</span>
+        </div>
+      </div>
+      <h1 class="doc-title">{{ proof.title }}</h1>
+
+      <div class="proof-summary">
+        <div class="proof-summary-grid">
+          <div class="proof-summary-item">
+            <span class="proof-summary-label">Violation:</span>
+            <span class="proof-summary-text">{{ proof.violation | truncate(150) | safe }}</span>
+          </div>
+          <div class="proof-summary-item">
+            <span class="proof-summary-label">Stakes:</span>
+            <span class="proof-summary-text">{{ proof.stakes | truncate(150) | safe }}</span>
+          </div>
+          {% if proof.potential_remedies %}
+          <div class="proof-summary-item">
+            <span class="proof-summary-label">Remedy:</span>
+            <span class="proof-summary-text">{{ proof.potential_remedies[0] | truncate(150) | safe }}</span>
+          </div>
+          {% endif %}
+        </div>
+        
+        <div class="proof-strength">
+          <span class="proof-strength-label">Evidence Strength:</span>
+          <div class="proof-strength-bars">
+            {% set evidenceCount = proof.case_facts | length %}
+            {% set axiomCount = proof.axioms | length %}
+            {% set strength = ((evidenceCount + axiomCount) / 2) | round %}
+            {% for i in range(1, 6) %}
+              <div class="proof-strength-bar {% if i <= strength %}active{% endif %}"></div>
+            {% endfor %}
+          </div>
+          <span style="font-size: 12px; color: var(--muted);">
+            {{ evidenceCount }} facts, {{ axiomCount }} axioms
+          </span>
+        </div>
+      </div>
+    </header>
+    
+    <div class="doc-body">
+      <div class="violation">
+        <strong>Conclusion</strong>
+        <div class="violation-text">{{ proof.violation | safe }}</div>
+      </div>
+
+      <section class="axioms axioms-section">
+        <h2 class="section-title" data-number="1">The Axioms (The Rules)</h2>
+        <div class="axiom-list">
+          {% for a in proof.axioms %}
+          <div class="axiom-item">
+            <div class="axiom-number">{{ loop.index }}</div>
+            <div class="axiom-content">
+              <p class="axiom-text">
+                {{ a.text | safe }}
+                <span class="evidence-quality primary">Primary Source</span>
+              </p>
+              <p class="axiom-cite">
+                <a href="{{ a.url | url }}" target="_blank" rel="noopener">{{ a.citation }}</a>
+              </p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="offenses offenses-section">
+        <h2 class="section-title" data-number="2">The Offenses (What Happened)</h2>
+        {% for fact in proof.case_facts %}
+        <div class="offense-card">
+          <p class="offense-text">{{ fact.text | safe }}</p>
+          <p class="citation">
+            Evidence: {{ fact.citation }}
+            {% if 'Email' in fact.citation or 'email' in fact.citation %}
+              <span class="evidence-quality secondary">Documentary</span>
+            {% elif 'Witness' in fact.citation %}
+              <span class="evidence-quality">Testimonial</span>
+            {% else %}
+              <span class="evidence-quality primary">Official Record</span>
+            {% endif %}
+          </p>
+        </div>
+        {% endfor %}
+      </section>
+
+      <section class="logic-chain conclusion-section">
+        <h2 class="section-title" data-number="3">The Logical Reasoning</h2>
+        <ol>
+          {% for step in proof.logic_chain %}
+            {% if '[DJ-MARK]' in step %}
+            <li class="logic-step conclusion-step">
+              {{ step | replace('[DJ-MARK]', '') | safe }}
+            </li>
+            {% else %}
+            <li class="logic-step">{{ step }}</li>
+            {% endif %}
+          {% endfor %}
+        </ol>
+      </section>
+
+      <section class="conclusion conclusion-section">
+        <h2 class="section-title" data-number="4">The Conclusion</h2>
+        {% if proof.potential_remedies %}
+        <div class="remedy">
+          <strong>Potential Remedies</strong>
+          <ul>
+            {% for remedy in proof.potential_remedies %}
+            <li>{{ remedy | safe }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% if proof.action_tool %}
+        <p class="action-tool">
+          <a href="{{ proof.action_tool.url | url }}">{{ proof.action_tool.label }} →</a>
+        </p>
+        {% endif %}
+      </section>
+    </div>
+  </article>
+</div>

@@ -1,0 +1,261 @@
+[
+  {
+    "case_id": "001",
+    "slug": "wvdp-failed-to-implement-dnc-diversity-mou",
+    "title": "PROOF: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
+    "date": "2025-09-08",
+    "category": "DNC MOU Violation",
+    "stakes": "This failure denied newly-formed minority caucuses their contractually-mandated role in selecting committee leadership. Instead, control over the process was ceded to a single, unelected DNC appointee, rendering the voices of those caucuses irrelevant from the start.",
+    "thesis": "The WVDP, under the direction of a non-elected DNC appointee, failed to meet the core requirements of the 2020 MOU on diversity and inclusion by installing committee leadership before the constituent caucuses were formed.",
+    "axioms": [
+      {
+        "text": "The 2020 MOU's stated purpose was 'to create a process to establish new, and assist currently existing, diversity caucuses'.",
+        "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
+        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+      },
+      {
+        "text": "The MOU appointed a non-elected official, Selina Vickers, to 'oversee and direct compliance' with the agreement.",
+        "citation": "2020 MOU between WVDP and DNC RBC, p. 2",
+        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+      },
+      {
+        "text": "The Affirmative Action Committee (AAC) was required to be composed of co-chairs from 'each of the recognized diversity caucuses of the WVDP'.",
+        "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
+        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+      }
+    ],
+    "case_facts": [
+      {
+        "text": "Leadership was installed for the Affirmative Action Committee (AAC) on June 5, 2021.",
+        "citation": "Felix, K. - Witness Statement, p. 2"
+      },
+      {
+        "text": "At the time, the majority of racial diversity caucuses did not exist.",
+        "citation": "Felix, K. - Witness Statement, p. 2"
+      },
+      {
+        "text": "The AAC's formation meeting was conducted using a pre-written script circulated by the DNC-appointed compliance official, which dictated the proceedings.",
+        "citation": "Draft Script Email June 2; Selina Script"
+      }
+    ],
+    "logic_chain": [
+      "The DNC mandated the WVDP establish and include diversity caucuses in its AAC.",
+      "The evidence shows the AAC's leadership was installed before the majority of the racial diversity caucuses even existed.",
+      "This pre-emptive formation effectively excluded the yet-to-be-formed caucuses from having a voice in the AAC's foundational structure.",
+      "[DJ-MARK] The WVDP and its designated compliance official failed to implement the core diversity and inclusion requirements of the 2020 DNC MOU."
+    ],
+    "violation": "The WVDP failed to adhere to the 2020 DNC MOU by forming the Affirmative Action Committee and selecting its leadership before the required constituent diversity caucuses were established, thereby disenfranchising those groups from the process.",
+    "action_tool": {
+      "label": "Learn How to Take Action",
+      "url": "/action/"
+    }
+  },
+  {
+    "case_id": "002",
+    "slug": "dnc-official-advised-wvdp-appointee-on-aac-procedure",
+    "title": "PROOF: DNC Official Advised Appointee on Strategy to 'Outvote' Dissenting Committee Members",
+    "date": "2025-09-09",
+    "category": "Party Bylaw & Charter Violation",
+    "stakes": "This coordination between a national DNC official and a state-level appointee rendered the votes of elected minority members meaningless, replacing the committee's democratic process with a top-down directive to achieve a predetermined outcome.",
+    "thesis": "A DNC Rules Committee member advised a non-elected WVDP official on a strategy to 'outvote' elected minority members of the Affirmative Action Committee (AAC), according to an email from the committee's Black Caucus Co-Chair.",
+    "axioms": [
+      {
+        "text": "A non-elected WVDP official, Selina Vickers, was granted extraordinary oversight over the party's DNC compliance process by the DNC Rules & Bylaws Committee, on which Harold Ickes served.",
+        "citation": "DJ Proof #001: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
+        "url": "/proofs/wvdp-failed-to-implement-dnc-diversity-mou/"
+      },
+      {
+        "text": "The Democratic Party must conduct its affairs with the 'fullest and fairest' participation of all its members.",
+        "citation": "DNC Charter, Preamble"
+      }
+    ],
+    "case_facts": [
+      {
+        "text": "In a Sept. 23, 2021 email, the AAC Black Caucus Co-Chair stated it was 'disturbing to hear Harold [Ickes] admit he advised Selina [Vickers] to 'outvote Seth, Mari, and others'.'",
+        "citation": "Email from Mary Ann Claytor, Sept. 23, 2021"
+      },
+      {
+        "text": "An AAC member later admitted in a signed public statement that he 'colluded with members of the AAC' in a 'smear campaign' against a dissenting member.",
+        "citation": "S. Assadzandi, Public Statement, July 2, 2022"
+      },
+      {
+        "text": "Subsequently, an out-of-state associate presided over an AAC meeting where prior votes of the committee were overturned, an action later ruled a bylaw violation.",
+        "citation": "DJ Proof #003: Committee Violated DNC Mandate by Nullifying Vote to Block Caucus Chairs"
+      }
+    ],
+    "logic_chain": [
+      "A DNC official advised a non-voting WVDP appointee on a strategy to ensure a specific voting outcome on the AAC.",
+      "As the DNC-appointed compliance official, this appointee had significant procedural influence over the committee.",
+      "The advice was followed by a documented pattern of procedural maneuvering against dissenting members.",
+      "[DJ-MARK] A DNC official provided the strategy, and the state-level appointee had the procedural influence to help execute it, bypassing the committee's established deliberative process."
+    ],
+    "violation": "A DNC official and a WVDP appointee coordinated a strategy that violated the DNC Charter's principle of 'fullest and fairest' participation by working to ensure a specific voting outcome, thereby neutralizing the votes of elected minority members.",
+    "action_tool": {
+      "label": "Learn How to Take Action",
+      "url": "/action/"
+    }
+  },
+  {
+    "case_id": "003",
+    "slug": "unreported-pac-scholarship-program",
+    "title": "Unreported Financial Activity: The Scholarship Program",
+    "date": "2025-09-11",
+    "category": "Campaign Finance Violation",
+    "stakes": "This unreported activity creates a gap in the PAC's public financial record, making it impossible for the public to know who funded the scholarships or who benefited from them. The committee's sworn financial statement is, therefore, an incomplete and inaccurate account of its operations.",
+    "thesis": "This proof shows a PAC operated a formal scholarship program for which no financial activity—either expenditures or in-kind contributions—was disclosed on its sworn financial reports.",
+    "axioms": [
+      {
+        "text": "All expenditures made by a political committee must be publicly reported.",
+        "citation": "WV SOS Campaign-Finance Guide",
+        "url": "/files/sos-campaign-finance-guide.pdf"
+      },
+      {
+        "text": "Any 'thing of value' received by a political committee must be publicly reported as an in-kind contribution.",
+        "citation": "WV SOS Campaign-Finance Guide",
+        "url": "/files/sos-campaign-finance-guide.pdf"
+      }
+    ],
+    "case_facts": [
+      {
+        "text": "On August 22, 2023, 'A New Day PAC' solicited applications for a formal scholarship program for a third-party training.",
+        "citation": "Email Record, Aug 22, 2023"
+      },
+      {
+        "text": "The PAC's Q3 2023 report shows no expenditures to the trainer to pay for scholarships.",
+        "citation": "A New Day PAC Q3 2023 Filing"
+      },
+      {
+        "text": "The same report shows no in-kind contribution from the trainer for the value of donated training slots.",
+        "citation": "A New Day PAC Q3 2023 Filing"
+      },
+      {
+        "text": "A prior financial relationship exists, as the PAC paid the trainer for 'Consultant Fees' in Q4 2022.",
+        "citation": "A New Day PAC Q4 2022 Filing"
+      }
+    ],
+    "logic_chain": [
+      "The PAC publicly offered to fund training for selected individuals.",
+      "A transaction of this nature must be reported as either an expenditure or an in-kind contribution.",
+      "A review of the PAC's sworn financial report shows neither was disclosed.",
+      "[DJ-MARK] The PAC's required financial disclosure reports do not account for the activity of its scholarship program."
+    ],
+    "violation": "A New Day PAC failed to report either the expenditures for, or the in-kind contributions to, its scholarship program, in violation of state campaign finance law.",
+    "potential_remedies": [
+      "File a corrected Q3 2023 report that accurately discloses all financial activity related to the scholarship program.",
+      "Provide a public accounting of how the scholarship program was funded and who the recipients were.",
+      "Cease all financial activities until the committee's reporting can be brought into compliance."
+    ],
+    "action_tool": {
+      "label": "File a Campaign Finance Complaint",
+      "url": "/tools/sos-complaint-form/"
+    }
+  },
+  {
+    "case_id": "004",
+    "slug": "wvdp-aac-violates-dnc-mou-disenfranchises-caucuses",
+    "title": "PROOF: Committee Violated DNC Mandate by Nullifying Vote to Deny Subcommittee Seats to Caucus Chairs",
+    "date": "2025-09-12",
+    "category": "DNC MOU Violation",
+    "stakes": "By nullifying a valid vote, committee leadership removed the authority of the full committee and denied the elected chairs of the Indigenous and Black caucuses their right to participate in subcommittees. This action centralized the committee's power within a small group, directly violating the DNC's mandate for inclusion.",
+    "thesis": "AAC leadership nullified a committee vote to deny subcommittee seats to minority caucus chairs, continuing a pattern of disenfranchisement that violates the 2020 DNC MOU.",
+    "axioms": [
+      {
+        "text": "The WVDP failed to establish the majority of its racial diversity caucuses before the Affirmative Action Committee's leadership was elected, effectively disenfranchising those groups from the committee's formation.",
+        "citation": "DJ Proof: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
+        "url": "/proofs/wvdp-failed-to-implement-dnc-diversity-mou/"
+      },
+      {
+        "text": "The 2020 DNC MOU's purpose was to 'encourage full participation by all Democrats, with particular concern for minority groups'.",
+        "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
+        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+      },
+      {
+        "text": "'No person shall take part in a meeting or be an officer... unless they are a qualified registered member of the Democratic electorate of the political subdivision in which they participate'.",
+        "citation": "WVDP Board of Appeals Resolution, Nov. 29, 2021",
+        "url": "/files/Exhibit-G-Board-of-Appeals-Resolution-2.pdf"
+      }
+    ],
+    "case_facts": [
+      {
+        "text": "The full committee voted to allow any member to join subcommittees by volunteering.",
+        "citation": "Grievance, Claytor, Sturm, and Sturm v. Thorp and Vickers, Para. 59"
+      },
+      {
+        "text": "Following the vote, leadership denied seats to the chairs of the Indigenous and Black caucuses.",
+        "citation": "Email from Seth Sturm, Aug. 31, 2021"
+      },
+      {
+        "text": "A small subcommittee rewrote the rules, replacing the full committee's volunteer system.",
+        "citation": "Bylaw Subcommittee Report, Sept. 9, 2021"
+      },
+      {
+        "text": "An out-of-state parliamentarian presided over the meeting that passed the new rules.",
+        "citation": "Email from Mary Thorp, Sept. 15, 2021"
+      },
+      {
+        "text": "The party's Appeals Board later ruled this action violated bylaws.",
+        "citation": "Resolution of the Board of Appeals, Nov. 29, 2021"
+      }
+    ],
+    "logic_chain": [
+      "The DNC mandated the AAC encourage full participation from minority caucuses.",
+      "The full committee passed an inclusive rule for volunteer subcommittee membership.",
+      "Leadership did not adhere to this rule and denied seats to the chairs of the Indigenous and Black caucuses.",
+      "The new, restrictive rules were passed in a meeting that violated party bylaws.",
+      "[DJ-MARK] This pattern of disenfranchisement—first by delaying caucus formation and then by denying subcommittee access—violated the core mandate of the DNC MOU."
+    ],
+    "violation": "By nullifying a committee vote and using a meeting later ruled improper to pass new rules, AAC leadership prevented minority caucuses from achieving full participation in subcommittees, in violation of the 2020 DNC MOU.",
+    "action_tool": {
+      "label": "Learn How to Take Action",
+      "url": "/action/"
+    }
+  },
+  {
+    "case_id": "005",
+    "slug": "wvdp-resource-misuse-by-a-new-day-pac",
+    "title": "PROOF: Private PAC Used Official Party Resources Without Disclosure",
+    "date": "2025-09-12",
+    "category": "Campaign Finance Violation",
+    "stakes": "This action provided one private PAC with free, exclusive access to a valuable party fundraising tool not available to other Democrats. By not reporting this benefit, the PAC concealed a subsidy from the state party, obscuring the true nature of its financial support from the public.",
+    "thesis": "A party officer's PAC received and failed to report an in-kind contribution of value by using an official, restricted party email list to solicit funds.",
+    "axioms": [
+      {
+        "text": "Any 'thing of value' provided to a political committee must be reported as an in-kind contribution.",
+        "citation": "WV SOS Campaign-Finance Guide",
+        "url": "/files/sos-campaign-finance-guide.pdf"
+      },
+      {
+        "text": "The 'countychairs@wvdemocrats.com' email list is a valuable, restricted party asset and its use constitutes a 'thing of value'.",
+        "citation": "WVSDEC Bylaws, Article IV, Sec. 1",
+        "url": "/files/WVSDEC-Bylaws-06.15.2024.pdf"
+      }
+    ],
+    "case_facts": [
+      {
+        "text": "On August 22, 2023, a promotional email for the private 'A New Day' PAC was sent using the official WVDP County Chairs email list.",
+        "citation": "A New Day Training Email, Aug 22, 2023"
+      },
+      {
+        "text": "The PAC's sworn financial report covering this period shows $0.00 in in-kind contributions received from the party.",
+        "citation": "A New Day PAC Q3 2023 Filing, p. 1"
+      }
+    ],
+    "logic_chain": [
+      "An official party email list is a valuable resource.",
+      "The 'A New Day PAC' used this resource to solicit funds and participation.",
+      "State law requires this benefit to be reported as an in-kind contribution.",
+      "The PAC's sworn financial disclosure reported no such contribution.",
+      "[DJ-MARK] The PAC failed to report an in-kind contribution as required by law."
+    ],
+    "violation": "A New Day PAC failed to report an in-kind contribution for using an official WVDP email list, violating state campaign finance law.",
+    "potential_remedies": [
+      "File a corrected report disclosing the source and value of the in-kind contribution.",
+      "Reimburse the WVDP for the fair market value of its email list.",
+      "Establish a clear party policy on the use of party resources by external PACs."
+    ],
+    "action_tool": {
+      "label": "File a Campaign Finance Complaint",
+      "url": "/tools/sos-complaint-form/"
+    }
+  }
+]

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description | default: '' }}">
+
+  <meta name="theme-color" content="#0F2742">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Root-relative assets (safe from any page depth and pathPrefix-aware) -->
+  <link rel="icon" href="{{ '/images/three-dots-blue.svg' | url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/style.css' | url }}">
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="align-container">
+      <div class="nav-inner">
+        <div class="logo-wrap">
+          <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
+            <img class="wordmark"
+                 src="{{ '/images/wordmark-blue-on-white.svg' | url }}"
+                 alt="Democratic Justice">
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="{{ '/#archive' | url }}">Proof</a></li>
+          <li><a href="{{ '/#method' | url }}">Method</a></li>
+          <li><a href="{{ '/action' | url }}">Action</a></li>
+          <li><a href="{{ '/about' | url }}">About</a></li>
+          <li><a href="{{ '/#cta' | url }}" class="btn-nav-submit">Submit</a></li>
+          <li>
+            <img class="mark xl"
+                 src="{{ '/images/three-dots-blue.svg' | url }}"
+                 alt="" aria-hidden="true">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="footer">
+    <div class="align-container">
+      <div class="footer-top">
+        <img src="{{ '/images/wordmark-white-on-blue.svg' | url }}"
+             alt="Democratic Justice"
+             class="footer-logo">
+      </div>
+      <p><strong>Proof. Not Spin.</strong></p>
+      <p>A 100% volunteer-run project. We do not solicit or accept financial contributions. We do not endorse candidates.</p>
+      <p><a href="mailto:setho@democraticjustice.org">Submit Proof Confidentially</a></p>
+
+      <img class="mark xl"
+           src="{{ '/images/three-dots-gold.svg' | url }}"
+           alt="" aria-hidden="true"
+           style="position:absolute; bottom: var(--gap); right: 20px; opacity: 0.5;">
+    </div>
+  </footer>
+
+  <!-- Defer so it doesn’t block rendering -->
+  <script defer src="{{ '/script.js' | url }}"></script>
+
+</body>
+</html>

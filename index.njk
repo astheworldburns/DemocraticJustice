@@ -1,0 +1,143 @@
+---
+layout: layout.html
+title: Democratic Justice — Proof. Not Spin.
+description: Proof. Not spin. Examine proof, submit proof, and turn proof into action.
+---
+
+{# This line gets the newest proof from our sorted collection and saves it in a variable #}
+{% set latestProof = collections.sortedProofs[0] %}
+
+<header class="hero" role="banner">
+  <div class="align-container">
+    <div class="hero-grid">
+      <div>
+        <h1>Proof.<strong>Not Spin.</strong></h1>
+        <div class="btn-group">
+          <a href="/archive" class="btn btn-accent">
+            See the Proof
+          </a>
+          <a href="/action" class="btn btn-outline-white">
+            Take Action
+          </a>
+        </div>
+      </div>
+
+      <aside class="proof-box" aria-label="Featured Proof">
+        <div class="proof-box__header">
+          <div class="proof-box__title">
+            <img class="mark md" src="/images/three-dots-white.svg" alt="Therefore symbol" aria-hidden="true">
+            LATEST PROOF
+          </div>
+        </div>
+        <div class="proof-box__content">
+          {# These lines now use the data from 'latestProof' to build the HTML directly #}
+         <p class="proof-box__finding">{{ latestProof.thesis }}</p>
+          <p class="proof-box__meta">CASE FILE: {{ latestProof.case_id }}</p>
+          <a href="/proofs/{{ latestProof.slug }}/" class="proof-box__cta">
+            <img class="mark md" src="/images/three-dots-blue.svg" alt="Therefore symbol" aria-hidden="true"> 
+            Examine Full Proof →
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<section class="cases" id="archive" aria-labelledby="cases-heading">
+  <div class="align-container">
+    <p class="section-label">The Proof Record</p>
+    <h2 id="cases-heading">Proof Archive</h2>
+
+   <div class="search-filter-controls">
+  <input type="search" id="search-input" placeholder="Search proofs by keyword, case ID, or topic...">
+  <div class="filter-group">
+    <select id="category-filter">
+    </select>
+    <button id="reset-filters" class="btn-reset">Reset</button>
+  </div>
+</div>
+    <p id="results-count" style="margin-top:12px;font-size:14px;color:var(--muted);"></p>
+
+    <div class="case-grid" id="case-grid" aria-live="polite">
+        <!-- The script.js will fill this area -->
+    </div>
+
+    <div style="margin-top:40px">
+      <a href="/archive" class="btn btn-outline-blue">View Full Proof Archive</a>
+    </div>
+
+    <noscript><p>Enable JavaScript to load proof items.</p></noscript>
+  </div>
+</section>
+
+<section class="method" id="method" aria-labelledby="method-heading">
+  <div class="align-container">
+    <p class="section-label">How We Prove It</p>
+    <h2 id="method-heading">Four Steps. Clear Proof.</h2>
+    <div class="method-single-box">
+      <div class="method-single-box__header">
+        <h3>FOUR-STEP PROOF</h3>
+      </div>
+      <div class="method-single-box__item">
+        <p class="method-step-number">1. AXIOM</p>
+        <p class="method-step-description">Quote the rule or premise.</p>
+      </div>
+      <div class="method-single-box__item">
+        <p class="method-step-number">2. EVIDENCE</p>
+        <p class="method-step-description">Show the record. Cite the document.</p>
+      </div>
+      <div class="method-single-box__item">
+        <p class="method-step-number">3. REASONING &mdash; THE PROOF</p>
+        <p class="method-step-description">Derive the claim from 1 & 2.</p>
+      </div>
+      <div class="method-single-box__item">
+        <p class="method-step-number">4. CONCLUSION (Q.E.D.)</p>
+        <p class="method-step-description">State the claim proven and the remedy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="action" id="action" aria-labelledby="action-heading">
+  <div class="align-container">
+    <h2 id="action-heading">
+      Proof <img class="mark md" src="/images/three-dots-gold.svg" alt="Therefore symbol" style="transform: translateY(0.1em);"> Action
+    </h2>
+    <div class="action-card">
+      <p>Turn proofs into formal challenges. We provide templates and checklists that meet board requirements.</p>
+      <ul class="action-list">
+        <li>Filing checklist (notice, timing, standing)</li>
+        <li>Template grievance & exhibits index</li>
+        <li>Submission and appeal timelines</li>
+      </ul>
+      <div class="btn-group">
+        <a href="/action" class="btn btn-outline-blue">See the Kit</a>
+        <a href="/action/file" class="btn btn-accent">File a Challenge</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="cta" aria-labelledby="cta-heading">
+  <div class="align-container">
+    <h2 id="cta-heading">Submit Proof</h2>
+    <p>Have documents or testimony? Share it securely and confidentially.</p>
+
+    <form id="secure-contact" name="secure-contact" method="POST" netlify netlify-honeypot="bot-field" class="cta-form">
+      <input type="hidden" name="form-name" value="secure-contact">
+      <p class="visually-hidden"><label>Leave this empty <input name="bot-field"></label></p>
+
+      <label for="email" class="visually-hidden">Your email for secure contact</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+      <label for="message" class="visually-hidden">Your message</label>
+      <textarea id="message" name="message" placeholder="Briefly describe the proof you have..." rows="4" required></textarea>
+
+      <button type="submit">Contact Me</button>
+    </form>
+
+    <p id="cta-error">Sorry—something went wrong. Email <a href="mailto:setho@democraticjustice.org">setho@democraticjustice.org</a>.</p>
+
+    <p style="font-size:13px;margin-top:16px;opacity:.9"><strong>Note:</strong> Don't send documents via this form. We'll arrange a secure transfer.</p>
+  </div>
+</section>
