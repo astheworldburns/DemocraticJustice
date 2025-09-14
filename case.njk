@@ -131,9 +131,8 @@ eleventyComputed:
         </ol>
       </section>
 
-      <section class="conclusion conclusion-section">
-        <h2 class="section-title" data-number="4">The Conclusion</h2>
-        {% if proof.potential_remedies %}
+      {% if proof.potential_remedies %}
+      <section class="remedy-section">
         <div class="remedy">
           <strong>Potential Remedies</strong>
           <ul>
@@ -142,16 +141,25 @@ eleventyComputed:
             {% endfor %}
           </ul>
         </div>
-        {% endif %}
         {% if proof.action_tool %}
         <p class="action-tool">
           <a href="{{ proof.action_tool.url | url }}">{{ proof.action_tool.label }} →</a>
         </p>
         {% endif %}
       </section>
+      {% endif %}
+
+      <div class="share-cta">
+        <button id="share-btn-native"
+                class="share-button"
+                data-share-title="{{ proof.title }}"
+                data-share-text="{{ proof.thesis }}"
+                data-share-url="https://democraticjustice.org{{ page.url }}">
+          Share This Proof
+        </button>
+      </div>
 
       <section class="share-section">
-        <h2 class="section-title">Share This Proof</h2>
         <div class="share-icons">
           <a href="https://www.facebook.com/sharer/sharer.php?u=https://democraticjustice.org{{ page.url }}" target="_blank" rel="noopener" aria-label="Share on Facebook">
             <img src="{{ '/images/icon-facebook.svg' | url }}" alt="Facebook">
@@ -162,7 +170,7 @@ eleventyComputed:
           <a href="{{ instagramImage }}" download aria-label="Download Instagram image">
             <img src="{{ '/images/icon-instagram.svg' | url }}" alt="Instagram">
           </a>
-          <button type="button" onclick="window.print()" aria-label="Print">
+          <button id="print-btn" type="button" aria-label="Print">
             <img src="{{ '/images/icon-print.svg' | url }}" alt="Print">
           </button>
         </div>
