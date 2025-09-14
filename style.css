@@ -1525,7 +1525,7 @@ html { scroll-behavior: smooth; }
 }
 
 #proof-page .doc-header {
-  padding: 32px 32px 24px; /* Sets space below title */
+  padding: 32px 32px 32px; /* Sets space below title */
   margin: 0;
   position: relative;
 }
@@ -1552,7 +1552,7 @@ html { scroll-behavior: smooth; }
   font-weight: 900;
   line-height: 1.1;
   color: #1e293b;
-  margin: 1.5rem 0 0; /* Space above title, none below */
+  margin: 2rem 0 0; /* Space above title, none below */
 }
 
 /* --- Section Styling --- */
@@ -1856,7 +1856,7 @@ html { scroll-behavior: smooth; }
   border: 2px solid var(--brand);
   border-radius: 16px;
   padding: 24px;
-  margin: 24px 0 32px;
+  margin: 40px 0 32px;
   position: relative;
   overflow: hidden;
 }
