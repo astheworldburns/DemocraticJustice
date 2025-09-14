@@ -1,12 +1,32 @@
 export const initTheme = () => {
-  const stored = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  let stored;
+  try {
+    stored = localStorage.getItem('theme');
+  } catch (err) {
+    stored = null;
+  }
+
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
   const theme = stored || (prefersDark ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', theme);
-  
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    if (!localStorage.getItem('theme')) {
-      document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-    }
-  });
+
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', e => {
+      let hasStored;
+      try {
+        hasStored = localStorage.getItem('theme');
+      } catch (err) {
+        hasStored = null;
+      }
+
+      if (!hasStored) {
+        document.documentElement.setAttribute(
+          'data-theme',
+          e.matches ? 'dark' : 'light'
+        );
+      }
+    });
 };
