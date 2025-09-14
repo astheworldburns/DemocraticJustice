@@ -2399,3 +2399,34 @@ html { scroll-behavior: smooth; }
   width: 20px;
   height: 20px;
 }
+
+/* Mobile layout adjustments */
+@media (max-width: 640px) {
+  .proof-summary {
+    padding: 16px;
+    margin: 24px 0;
+  }
+
+  .proof-summary-item {
+    flex-direction: column;
+  }
+
+  .proof-summary-label {
+    min-width: 0;
+  }
+
+  #proof-page .doc {
+    margin: 20px auto;
+  }
+
+  .axiom-item {
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .offense-card {
+    padding: 16px 16px 16px 40px;
+    margin-bottom: 1rem;
+  }
+}
