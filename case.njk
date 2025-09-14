@@ -74,27 +74,13 @@ eleventyComputed:
       </div>
 
       <div class="share-buttons">
-        <button class="share-btn" id="share-btn-native">Share</button>
+        <button class="share-btn" id="share-btn-native"
+                data-share-title="{{ proof.title | escape }}"
+                data-share-text="{{ proof.violation | truncate(100) | escape }}"
+                data-share-url="https://democraticjustice.org{{ page.url }}">Share</button>
         <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https://democraticjustice.org{{ page.url }}" target="_blank" rel="noopener">Facebook</a>
         <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://democraticjustice.org{{ page.url }}&text={{ proof.title | urlencode }}" target="_blank" rel="noopener">Twitter</a>
         <a class="share-btn" href="{{ instagramImage }}" download>Instagram</a>
-        <script>
-          document.getElementById('share-btn-native').addEventListener('click', async function(e) {
-            e.preventDefault();
-            const shareData = {
-              title: '{{ proof.title | escape }}',
-              text: '{{ proof.violation | truncate(100) | escape }}',
-              url: 'https://democraticjustice.org{{ page.url }}'
-            };
-            if (navigator.share) {
-              try { await navigator.share(shareData); } catch (err) {}
-            } else {
-              const url = encodeURIComponent(shareData.url);
-              const text = encodeURIComponent(shareData.title);
-              window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
-            }
-          });
-        </script>
       </div>
     </header>
 

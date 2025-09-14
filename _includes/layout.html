@@ -16,6 +16,8 @@
 
   <meta name="theme-color" content="#0F2742">
 
+  <link rel="manifest" href="/manifest.webmanifest">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
@@ -45,6 +47,7 @@
           <li><a href="{{ '/archive' | url }}">Proof</a></li>
           <li><a href="{{ '/method' | url }}">Method</a></li>
           <li><a href="{{ '/action' | url }}">Action</a></li>
+          <li><button id="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
           <li><a href="{{ '/about' | url }}">About</a></li>
           <li><a href="{{ '/submit' | url }}" class="btn-nav-submit">Submit</a></li>
           <li>
@@ -120,7 +123,7 @@
   </script>
 
   <!-- Defer so it doesn't block rendering -->
-  <script defer src="{{ '/script.js' | url }}"></script>
+  <script defer src="{{ '/bundle.js' | url }}"></script>
 
 </body>
 </html>

@@ -1,0 +1,15 @@
+{
+  "name": "Democratic Justice",
+  "short_name": "DemocraticJustice",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0F2742",
+  "icons": [
+    {
+      "src": "/images/three-dots-blue.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

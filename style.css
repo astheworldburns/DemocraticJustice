@@ -23,6 +23,38 @@
   --cap:56px; --section-gap:80px; --gap:40px;
 }
 
+[data-theme="dark"]{
+  --brand:#3B82F6;
+  --navy:#F9FAFB;
+  --paper:#0F172A;
+  --white:#1F2937;
+  --text:#F1F5F9;
+  --muted:#94A3B8;
+  --gold:#FACC15;
+  --silver:#374151;
+}
+
+[data-theme="dark"] body{
+  background:var(--paper);
+  color:var(--text);
+}
+
+[data-theme="dark"] .nav,
+[data-theme="dark"] .doc,
+[data-theme="dark"] .axiom-card,
+[data-theme="dark"] .chain-step,
+[data-theme="dark"] .split__pane,
+[data-theme="dark"] .falsifiability,
+[data-theme="dark"] .proof-sharing,
+[data-theme="dark"] .citation-output,
+[data-theme="dark"] .citation-btn,
+[data-theme="dark"] .share-btn{
+  background:var(--white);
+  color:var(--text);
+  border-color:var(--silver);
+}
+
+
 /* Reset */
 *{box-sizing:border-box;margin:0;padding:0}
 body{
@@ -58,7 +90,7 @@ p{max-width:65ch;margin-bottom:16px}
 .nav{
   position:sticky;
   top:0;
-  background:#fff;
+  background:var(--white);
   border-bottom:1px solid color-mix(in srgb, var(--silver) 30%, transparent);
   z-index:100;
   box-shadow:0 2px 8px rgba(15,39,66,.08);
@@ -100,6 +132,20 @@ p{max-width:65ch;margin-bottom:16px}
 .nav-links a.btn-nav-submit:hover{
   background:var(--navy);
   color:var(--white);
+}
+
+/* Theme toggle button */
+#theme-toggle{
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-size:18px;
+  line-height:1;
+  padding:4px;
+  color:var(--navy);
+}
+
+#theme-toggle:focus{outline:2px solid var(--accent);outline-offset:2px;
 }
 
 /* Hero: solid background, no gradients */
