@@ -86,7 +86,7 @@ permalink: "proofs/{{ (proof.slug or proof.case_id) | slug }}/index.html"
                 <span class="evidence-quality primary">Primary Source</span>
               </p>
               <p class="axiom-cite">
-                <a href="{{ a.url | url }}" target="_blank" rel="noopener">{{ a.citation }}</a>
+                <a href="{{ a.url | url }}" {% if a.url and a.url.startsWith('/files/') %}download{% else %}target="_blank" rel="noopener"{% endif %}>{{ a.citation }}</a>
               </p>
             </div>
           </div>
