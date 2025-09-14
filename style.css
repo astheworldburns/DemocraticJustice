@@ -28,7 +28,8 @@
   --brand:#3B82F6;
   --paper-light:#F9FAFB;
   --paper:#0F172A;
-  --white:#1F2937;
+  --white:#F1F5F9;
+  --gray-dark:#1F2937;
   --text:#F1F5F9;
   --muted:#94A3B8;
   --gold:#FACC15;
@@ -55,7 +56,7 @@
 }
 
 [data-theme="dark"] .nav{
-  background:var(--white);
+  background:var(--gray-dark);
   color:var(--brand);
   border-bottom:1px solid color-mix(in srgb, var(--silver) 30%, transparent);
 }
