@@ -37,7 +37,7 @@ module.exports = function(eleventyConfig) {
 
   // ## PASSTHROUGH COPIES ##
   eleventyConfig.addPassthroughCopy("style.css");
-  eleventyConfig.addPassthroughCopy("script.js");
+  eleventyConfig.addPassthroughCopy("bundle.js");
   eleventyConfig.addPassthroughCopy("ga-consent.js");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy({ "_data/proofs.json": "data/proofs.json" });
@@ -46,7 +46,7 @@ module.exports = function(eleventyConfig) {
 
   // ## WATCH TARGETS ##
   eleventyConfig.addWatchTarget("./style.css");
-  eleventyConfig.addWatchTarget("./script.js");
+  eleventyConfig.addWatchTarget("./bundle.js");
   eleventyConfig.addWatchTarget("./ga-consent.js");
 
   // ## SERVER OPTIONS ##
