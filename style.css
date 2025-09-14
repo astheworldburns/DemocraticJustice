@@ -1555,32 +1555,6 @@ html { scroll-behavior: smooth; }
   margin: 1.5rem 0 0; /* Space above title, none below */
 }
 
-#proof-page .violation {
-  background: #fef2f2;
-  border-left: 6px solid #dc2626;
-  padding: 24px 28px;
-  border-radius: 8px;
-  margin: 0 0 32px 0;
-}
-
-#proof-page .violation strong {
-  color: #b91c1c;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 1.5px;
-  display: block;
-  margin-bottom: 8px;
-}
-
-#proof-page .violation-text {
-    font-weight: normal;
-    color: var(--text);
-    font-size: 1rem;
-    line-height: 1.5;
-    text-transform: none;
-}
-
 /* --- Section Styling --- */
 
 #proof-page .section-title {
