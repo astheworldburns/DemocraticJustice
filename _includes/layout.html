@@ -20,9 +20,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@600;700&display=swap">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHvxk.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVew8.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9ogUE.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@600;700&display=swap">
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Root-relative assets (safe from any page depth and pathPrefix-aware) -->
   <link rel="icon" href="{{ '/images/three-dots-blue.svg' | url }}" type="image/svg+xml">
@@ -39,7 +44,7 @@
         <div class="logo-wrap">
           <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
             <img class="wordmark"
-                 src="{{ '/images/wordmark-blue-on-white.svg' | url }}"
+                 src="{{ '/images/wordmark-white-on-blue.svg' | url }}"
                  alt="Democratic Justice">
           </a>
         </div>
@@ -47,12 +52,11 @@
           <li><a href="{{ '/archive' | url }}">Proof</a></li>
           <li><a href="{{ '/method' | url }}">Method</a></li>
           <li><a href="{{ '/action' | url }}">Action</a></li>
-          <li><button id="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
           <li><a href="{{ '/about' | url }}">About</a></li>
           <li><a href="{{ '/submit' | url }}" class="btn-nav-submit">Submit</a></li>
           <li>
             <img class="mark xl"
-                 src="{{ '/images/three-dots-blue.svg' | url }}"
+                 src="{{ '/images/three-dots-white.svg' | url }}"
                  alt="" aria-hidden="true">
           </li>
         </ul>
@@ -74,6 +78,7 @@
       <p><strong>Proof. Not Spin.</strong></p>
       <p>A 100% volunteer-run project. We do not solicit or accept financial contributions. We do not endorse candidates.</p>
       <p><a href="mailto:setho@democraticjustice.org">Submit Proof Confidentially</a></p>
+      <p><a href="{{ '/privacy' | url }}">Privacy Policy</a></p>
 
       <img class="mark xl"
            src="{{ '/images/three-dots-gold.svg' | url }}"
@@ -82,46 +87,7 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const GA_ID = 'G-3TV2GBS34Y';
-
-      function loadGA() {
-        if (window.dataLayer) return;
-        const gtagScript = document.createElement('script');
-        gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-        gtagScript.async = true;
-        document.head.appendChild(gtagScript);
-
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        window.gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', GA_ID, { anonymize_ip: true });
-      }
-
-      const consent = localStorage.getItem('analytics-consent');
-      if (consent === 'granted') {
-        loadGA();
-      } else if (consent !== 'denied') {
-        const banner = document.createElement('div');
-        banner.id = 'consent-banner';
-        banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#eee;padding:1em;text-align:center;z-index:1000;';
-        banner.innerHTML = '<span>We use cookies for analytics.</span> <button id="consent-accept">Accept</button> <button id="consent-reject">Reject</button>';
-        document.body.appendChild(banner);
-        document.getElementById('consent-accept').addEventListener('click', function(){
-          localStorage.setItem('analytics-consent','granted');
-          banner.remove();
-          loadGA();
-        });
-        document.getElementById('consent-reject').addEventListener('click', function(){
-          localStorage.setItem('analytics-consent','denied');
-          banner.remove();
-        });
-      }
-    })();
-  </script>
-
+  <script defer src="/ga-consent.js"></script>
   <!-- Defer so it doesn't block rendering -->
   <script defer src="{{ '/bundle.js' | url }}"></script>
 

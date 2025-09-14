@@ -225,7 +225,7 @@ p{max-width:65ch;margin-bottom:16px}
 /* Proof Box */
 .proof-box{
   background:#fff;
-  color:var(--text);
+  color:var(--navy);
   border-radius:12px;
   overflow:hidden;
   box-shadow:0 0 0 3px rgba(255,255,255,0.1), 0 14px 32px rgba(0,0,0,.25);
@@ -259,7 +259,7 @@ p{max-width:65ch;margin-bottom:16px}
   margin-bottom:12px;
 }
 .proof-box__meta{
-  color:var(--muted);
+  color:var(--navy);
   font-size:14px;
   margin-bottom:16px;
 }
@@ -1525,7 +1525,7 @@ html { scroll-behavior: smooth; }
 }
 
 #proof-page .doc-header {
-  padding: 32px 32px 24px; /* Sets space below title */
+  padding: 32px 32px 32px; /* Sets space below title */
   margin: 0;
   position: relative;
 }
@@ -1552,33 +1552,7 @@ html { scroll-behavior: smooth; }
   font-weight: 900;
   line-height: 1.1;
   color: #1e293b;
-  margin: 1.5rem 0 0; /* Space above title, none below */
-}
-
-#proof-page .violation {
-  background: #fef2f2;
-  border-left: 6px solid #dc2626;
-  padding: 24px 28px;
-  border-radius: 8px;
-  margin: 0 0 32px 0;
-}
-
-#proof-page .violation strong {
-  color: #b91c1c;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 1.5px;
-  display: block;
-  margin-bottom: 8px;
-}
-
-#proof-page .violation-text {
-    font-weight: normal;
-    color: var(--text);
-    font-size: 1rem;
-    line-height: 1.5;
-    text-transform: none;
+  margin: 2rem 0 0; /* Space above title, none below */
 }
 
 /* --- Section Styling --- */
@@ -1882,7 +1856,7 @@ html { scroll-behavior: smooth; }
   border: 2px solid var(--brand);
   border-radius: 16px;
   padding: 24px;
-  margin: 24px 0 32px;
+  margin: 40px 0 32px;
   position: relative;
   overflow: hidden;
 }
@@ -2352,4 +2326,68 @@ html { scroll-behavior: smooth; }
   background: var(--brand);
   color: white;
   border-color: var(--brand);
+}
+
+/* Modern share icons */
+.share-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--silver);
+}
+
+.share-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.share-button {
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  max-width: 320px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.share-button:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+.share-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.share-icons a,
+.share-icons button {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid var(--silver);
+  color: var(--brand);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.share-icons a:hover,
+.share-icons button:hover {
+  background: var(--brand);
+  color: white;
+  border-color: var(--brand);
+  transform: translateY(-2px);
+}
+
+.share-icons img {
+  width: 20px;
+  height: 20px;
 }

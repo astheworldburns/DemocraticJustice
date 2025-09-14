@@ -31,19 +31,23 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("truncate", (str, length = 150) => {
     if (!str) return "";
     if (str.length <= length) return str;
-    return str.substr(0, length) + "...";
+    const idx = str.lastIndexOf(" ", length);
+    return str.slice(0, idx > 0 ? idx : length) + "…";
   });
 
   // ## PASSTHROUGH COPIES ##
   eleventyConfig.addPassthroughCopy("style.css");
-  eleventyConfig.addPassthroughCopy("script.js");
+  eleventyConfig.addPassthroughCopy("bundle.js");
+  eleventyConfig.addPassthroughCopy("ga-consent.js");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy({ "_data/proofs.json": "data/proofs.json" });
   eleventyConfig.addPassthroughCopy("files");
+  eleventyConfig.addPassthroughCopy("_redirects");
 
   // ## WATCH TARGETS ##
   eleventyConfig.addWatchTarget("./style.css");
-  eleventyConfig.addWatchTarget("./script.js");
+  eleventyConfig.addWatchTarget("./bundle.js");
+  eleventyConfig.addWatchTarget("./ga-consent.js");
 
   // ## SERVER OPTIONS ##
   eleventyConfig.setServerOptions({
