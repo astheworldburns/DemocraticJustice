@@ -26,14 +26,39 @@ export function initNavigation() {
     const resetButton = document.getElementById('reset-filters');
     const countEl = document.getElementById('results-count');
     const loadMoreBtn = document.createElement('button');
+    const nav = document.querySelector('.nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('primary-nav');
     
     // Setup Load More button
     loadMoreBtn.className = 'btn btn-outline-blue';
     loadMoreBtn.textContent = 'Load More';
     loadMoreBtn.style.display = 'none';
     loadMoreBtn.style.margin = '32px auto';
+
+    if (nav && navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('nav--open', !expanded);
+            if (!expanded) {
+                navLinks.querySelector('a')?.focus();
+            } else {
+                navToggle.focus();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('nav--open')) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                nav.classList.remove('nav--open');
+                navToggle.focus();
+            }
+        });
+    }
+
     /* ---------- Utility Functions ---------- */
-   
+
 
     // Determine proof type based on category
     const getProofType = (proof) => {
