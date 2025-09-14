@@ -40,7 +40,6 @@
   color:var(--text);
 }
 
-[data-theme="dark"] .nav,
 [data-theme="dark"] .doc,
 [data-theme="dark"] .axiom-card,
 [data-theme="dark"] .chain-step,
@@ -53,6 +52,12 @@
   background:var(--paper-light);
   color:var(--text);
   border-color:var(--silver);
+}
+
+[data-theme="dark"] .nav{
+  background:var(--navy);
+  color:var(--white);
+  border-bottom:1px solid var(--silver);
 }
 
 
@@ -91,7 +96,8 @@ p{max-width:65ch;margin-bottom:16px}
 .nav{
   position:sticky;
   top:0;
-  background:var(--white);
+  background:var(--navy);
+  color:var(--white);
   border-bottom:1px solid color-mix(in srgb, var(--silver) 30%, transparent);
   z-index:100;
   box-shadow:0 2px 8px rgba(15,39,66,.08);
@@ -110,7 +116,7 @@ p{max-width:65ch;margin-bottom:16px}
   list-style:none;
 }
 .nav-links a{
-  color:var(--navy);
+  color:var(--white);
   font-weight:700;
   text-transform:uppercase;
   font-size:14px;
@@ -121,11 +127,11 @@ p{max-width:65ch;margin-bottom:16px}
 }
 .nav-links a:hover{
   color:var(--brand);
-  border-bottom-color:var(--brand);
+  border-bottom-color:var(--white);
 }
 .nav-links a.btn-nav-submit{
   background:var(--brand);
-  color:#fff;
+  color:var(--white);
   padding:8px 16px;
   border-radius:8px;
   border-bottom-color:transparent;
@@ -143,7 +149,7 @@ p{max-width:65ch;margin-bottom:16px}
   font-size:18px;
   line-height:1;
   padding:4px;
-  color:var(--navy);
+  color:var(--white);
 }
 
 #theme-toggle:focus{outline:2px solid var(--accent);outline-offset:2px;
