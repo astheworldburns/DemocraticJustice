@@ -48,7 +48,8 @@
 [data-theme="dark"] .proof-sharing,
 [data-theme="dark"] .citation-output,
 [data-theme="dark"] .citation-btn,
-[data-theme="dark"] .share-btn{
+[data-theme="dark"] .share-btn,
+[data-theme="dark"] .case-card{
   background:var(--paper-light);
   color:var(--text);
   border-color:var(--silver);
@@ -59,6 +60,10 @@
   color:var(--white);
   border-bottom:1px solid var(--silver);
 }
+
+[data-theme="dark"] .case-card{color:var(--navy);}
+[data-theme="dark"] .case-card h3 a{color:var(--navy);}
+[data-theme="dark"] .case-card h3 a:hover{color:var(--brand);}
 
 
 /* Reset */
@@ -310,7 +315,7 @@ p{max-width:65ch;margin-bottom:16px}
   margin-top:var(--gap);
 }
 .case-card{
-  background:#fff;
+  background:var(--white);
   border:1px solid color-mix(in srgb, var(--silver) 30%, transparent);
   border-left:4px solid var(--navy);
   border-radius:10px;
