@@ -4,12 +4,22 @@ const { DateTime } = require("luxon");
 module.exports = function(eleventyConfig) {
   // ## COLLECTIONS ##
   eleventyConfig.addCollection("sortedProofs", function(collectionApi) {
-    const proofs = collectionApi.getAll()[0].data.proofs;
-    if (!proofs || !Array.isArray(proofs)) {
+    let proofs;
+    try {
+      // Load proofs data directly for reliability
+      proofs = require("./_data/proofs.json");
+    } catch (error) {
+      console.warn("Warning: `proofs.json` could not be loaded.", error);
+      proofs = [];
+    }
+
+    if (!Array.isArray(proofs)) {
       console.warn("Warning: `proofs.json` data not found or is not an array.");
       return [];
     }
-    return proofs.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    // Sort by date in descending order
+    return [...proofs].sort((a, b) => new Date(b.date) - new Date(a.date));
   });
 
   // ## FILTERS ##
