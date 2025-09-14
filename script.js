@@ -26,25 +26,12 @@ export function initNavigation() {
     const resetButton = document.getElementById('reset-filters');
     const countEl = document.getElementById('results-count');
     const loadMoreBtn = document.createElement('button');
-    const themeToggle = document.getElementById('theme-toggle');
     
     // Setup Load More button
     loadMoreBtn.className = 'btn btn-outline-blue';
     loadMoreBtn.textContent = 'Load More';
     loadMoreBtn.style.display = 'none';
     loadMoreBtn.style.margin = '32px auto';
-
-     // Theme toggle behavior
-    if (themeToggle) {
-        const current = document.documentElement.getAttribute('data-theme');
-        themeToggle.textContent = current === 'dark' ? '☀️' : '🌙';
-        themeToggle.addEventListener('click', () => {
-            const now = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', now);
-            localStorage.setItem('theme', now);
-            themeToggle.textContent = now === 'dark' ? '☀️' : '🌙';
-        });
-    }
     /* ---------- Utility Functions ---------- */
    
 
