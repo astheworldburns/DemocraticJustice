@@ -32,9 +32,7 @@ export function initNavigation() {
     loadMoreBtn.textContent = 'Load More';
     loadMoreBtn.style.display = 'none';
     loadMoreBtn.style.margin = '32px auto';
-
-
-    }
+    
     /* ---------- Utility Functions ---------- */
    
 
@@ -651,3 +649,4 @@ export function initNavigation() {
     };
 
     initialize();
+}

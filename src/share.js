@@ -21,11 +21,11 @@ export function initShare() {
       window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
     }
   });
-}
- const printBtn = document.getElementById('print-btn');
+const printBtn = document.getElementById('print-btn');
   if (printBtn) {
     printBtn.addEventListener('click', e => {
       e.preventDefault();
       window.print();
     });
   }
+}
