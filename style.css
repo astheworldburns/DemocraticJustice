@@ -2327,3 +2327,43 @@ html { scroll-behavior: smooth; }
   color: white;
   border-color: var(--brand);
 }
+
+/* Modern share icons */
+.share-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--silver);
+}
+
+.share-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.share-icons a,
+.share-icons button {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid var(--silver);
+  color: var(--brand);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.share-icons a:hover,
+.share-icons button:hover {
+  background: var(--brand);
+  color: white;
+  border-color: var(--brand);
+  transform: translateY(-2px);
+}
+
+.share-icons img {
+  width: 20px;
+  height: 20px;
+}

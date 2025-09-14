@@ -73,15 +73,6 @@ eleventyComputed:
         </div>
       </div>
 
-      <div class="share-buttons">
-        <button class="share-btn" id="share-btn-native"
-                data-share-title="{{ proof.title | escape }}"
-                data-share-text="{{ proof.violation | truncate(100) | escape }}"
-                data-share-url="https://democraticjustice.org{{ page.url }}">Share</button>
-        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https://democraticjustice.org{{ page.url }}" target="_blank" rel="noopener">Facebook</a>
-        <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://democraticjustice.org{{ page.url }}&text={{ proof.title | urlencode }}" target="_blank" rel="noopener">Twitter</a>
-        <a class="share-btn" href="{{ instagramImage }}" download>Instagram</a>
-      </div>
     </header>
 
     <div class="doc-body">
@@ -157,6 +148,24 @@ eleventyComputed:
           <a href="{{ proof.action_tool.url | url }}">{{ proof.action_tool.label }} →</a>
         </p>
         {% endif %}
+      </section>
+
+      <section class="share-section">
+        <h2 class="section-title">Share This Proof</h2>
+        <div class="share-icons">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://democraticjustice.org{{ page.url }}" target="_blank" rel="noopener" aria-label="Share on Facebook">
+            <img src="{{ '/images/icon-facebook.svg' | url }}" alt="Facebook">
+          </a>
+          <a href="https://twitter.com/intent/tweet?url=https://democraticjustice.org{{ page.url }}&text={{ proof.title | urlencode }}" target="_blank" rel="noopener" aria-label="Share on Twitter">
+            <img src="{{ '/images/icon-twitter.svg' | url }}" alt="Twitter">
+          </a>
+          <a href="{{ instagramImage }}" download aria-label="Download Instagram image">
+            <img src="{{ '/images/icon-instagram.svg' | url }}" alt="Instagram">
+          </a>
+          <button type="button" onclick="window.print()" aria-label="Print">
+            <img src="{{ '/images/icon-print.svg' | url }}" alt="Print">
+          </button>
+        </div>
       </section>
     </div>
   </article>
