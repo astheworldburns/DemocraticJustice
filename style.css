@@ -2335,6 +2335,30 @@ html { scroll-behavior: smooth; }
   border-top: 1px solid var(--silver);
 }
 
+.share-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.share-button {
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  max-width: 320px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.share-button:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
 .share-icons {
   display: flex;
   gap: 12px;
