@@ -6,6 +6,7 @@
   --brand:#3B82F6;          /* your blue */
   --navy:#0A2540;
   --paper:#e7e6e6;
+  --paper-light:#FFFFFF;
   --white:#FFFFFF;
   --text:#1B263B;
   --muted:#778899;
@@ -25,7 +26,7 @@
 
 [data-theme="dark"]{
   --brand:#3B82F6;
-  --navy:#F9FAFB;
+  --paper-light:#F9FAFB;
   --paper:#0F172A;
   --white:#1F2937;
   --text:#F1F5F9;
@@ -49,7 +50,7 @@
 [data-theme="dark"] .citation-output,
 [data-theme="dark"] .citation-btn,
 [data-theme="dark"] .share-btn{
-  background:var(--white);
+  background:var(--paper-light);
   color:var(--text);
   border-color:var(--silver);
 }
