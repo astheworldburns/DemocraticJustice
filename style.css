@@ -225,7 +225,7 @@ p{max-width:65ch;margin-bottom:16px}
 /* Proof Box */
 .proof-box{
   background:#fff;
-  color:var(--text);
+  color:var(--navy);
   border-radius:12px;
   overflow:hidden;
   box-shadow:0 0 0 3px rgba(255,255,255,0.1), 0 14px 32px rgba(0,0,0,.25);
@@ -259,7 +259,7 @@ p{max-width:65ch;margin-bottom:16px}
   margin-bottom:12px;
 }
 .proof-box__meta{
-  color:var(--muted);
+  color:var(--navy);
   font-size:14px;
   margin-bottom:16px;
 }
