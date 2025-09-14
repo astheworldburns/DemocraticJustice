@@ -31,7 +31,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("truncate", (str, length = 150) => {
     if (!str) return "";
     if (str.length <= length) return str;
-    return str.substr(0, length) + "...";
+    const idx = str.lastIndexOf(" ", length);
+    return str.slice(0, idx > 0 ? idx : length) + "…";
   });
 
   // ## PASSTHROUGH COPIES ##
