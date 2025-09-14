@@ -5,6 +5,12 @@ pagination:
   size: 1
   alias: proof
 permalink: "proofs/{{ (proof.slug or proof.case_id) | slug }}/index.html"
+eleventyComputed:
+  title: "{{ proof.title }}"
+  description: "{{ proof.thesis }}"
+  ogImage: "https://democraticjustice.org/share/{{ (proof.slug or proof.case_id) | slug }}-facebook.svg"
+  twitterImage: "https://democraticjustice.org/share/{{ (proof.slug or proof.case_id) | slug }}-twitter.svg"
+  instagramImage: "https://democraticjustice.org/share/{{ (proof.slug or proof.case_id) | slug }}-instagram.svg"
 ---
 <style>
 .conclusion-step::before {
@@ -50,7 +56,7 @@ permalink: "proofs/{{ (proof.slug or proof.case_id) | slug }}/index.html"
           </div>
           {% endif %}
         </div>
-        
+
         <div class="proof-strength">
           <span class="proof-strength-label">Evidence Strength:</span>
           <div class="proof-strength-bars">
@@ -66,8 +72,14 @@ permalink: "proofs/{{ (proof.slug or proof.case_id) | slug }}/index.html"
           </span>
         </div>
       </div>
+
+      <div class="share-buttons">
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https://democraticjustice.org{{ page.url }}" target="_blank" rel="noopener">Facebook</a>
+        <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://democraticjustice.org{{ page.url }}&text={{ proof.title | urlencode }}" target="_blank" rel="noopener">Twitter</a>
+        <a class="share-btn" href="{{ instagramImage }}" download>Instagram</a>
+      </div>
     </header>
-    
+
     <div class="doc-body">
       <div class="violation">
         <strong>Conclusion</strong>
