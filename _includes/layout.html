@@ -48,17 +48,17 @@
                  alt="Democratic Justice">
           </a>
         </div>
-        <ul class="nav-links">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu" aria-controls="primary-nav">
+          <img class="mark xl"
+               src="{{ '/images/three-dots-white.svg' | url }}"
+               alt="" aria-hidden="true">
+        </button>
+        <ul class="nav-links" id="primary-nav">
           <li><a href="{{ '/archive' | url }}">Proof</a></li>
           <li><a href="{{ '/method' | url }}">Method</a></li>
           <li><a href="{{ '/action' | url }}">Action</a></li>
           <li><a href="{{ '/about' | url }}">About</a></li>
           <li><a href="{{ '/submit' | url }}" class="btn-nav-submit">Submit</a></li>
-          <li>
-            <img class="mark xl"
-                 src="{{ '/images/three-dots-white.svg' | url }}"
-                 alt="" aria-hidden="true">
-          </li>
         </ul>
       </div>
     </div>
