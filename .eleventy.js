@@ -40,6 +40,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy({ "_data/proofs.json": "data/proofs.json" });
   eleventyConfig.addPassthroughCopy("files");
+  eleventyConfig.addPassthroughCopy("_redirects");
 
   // ## WATCH TARGETS ##
   eleventyConfig.addWatchTarget("./style.css");
