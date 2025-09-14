@@ -1216,55 +1216,6 @@ html { scroll-behavior: smooth; }
 .steps-grid{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; }
 @media (max-width:1024px){ .steps-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:640px){ .steps-grid{ grid-template-columns:1fr; } }
-/* ===== Proof hero refinements ===== */
-#proof-page .align-container{ max-width:1100px; margin:0 auto; padding:0 24px; }
-
-.proof-hero{
-  background: var(--navy);
-  color:#fff;
-  border-radius: 18px;
-  padding: 28px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.35);
-  margin: 0 0 24px;
-}
-
-.proof-kicker{
-  display:inline-flex; align-items:center; gap:8px;
-  background: rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius: 10px;
-  padding: 6px 10px;
-  margin-bottom: 12px;
-  font-weight:700; font-size:.85rem; letter-spacing:.02em;
-}
-.proof-kicker img{ width:14px; height:14px; filter:brightness(0) invert(1); }
-
-.proof-meta-chips{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 12px; }
-.proof-meta-chips .chip{
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.15);
-  color:#fff;
-  border-radius: 999px;
-  padding: 4px 10px;
-  font-size:.85rem; line-height:1;
-}
-
-.proof-title{
-  margin: 6px 0 8px;
-  font-size: clamp(28px, 3.6vw, 44px);
-  line-height: 1.1;
-  max-width: 28ch;          /* keeps the big headline readable */
-}
-
-.proof-lede{
-  margin: 0 0 16px;
-  font-size: clamp(16px, 1.6vw, 20px);
-  color: rgba(255,255,255,.95);
-  max-width: 60ch;
-}
-
-.proof-cta{ margin-top: 8px; }
-
 /* Buttons */
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
@@ -1886,109 +1837,7 @@ html { scroll-behavior: smooth; }
     margin-left: 0;
     margin-right: 0;
   }
-/* ===== PROOF SUMMARY CARD ===== */
-.proof-summary {
-  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-  border: 2px solid var(--brand);
-  border-radius: 16px;
-  padding: 24px;
-  margin: 40px 0 32px;
-  position: relative;
-  overflow: hidden;
-}
-.proof-summary::before {
-  content: "QUICK SUMMARY";
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: var(--brand);
-  color: white;
-  padding: 4px 16px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  border-radius: 0 14px 0 8px;
-}
-.proof-summary-grid {
-  display: grid;
-  gap: 16px;
-  margin-top: 8px;
-}
-.proof-summary-item {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-.proof-summary-label {
-  flex-shrink: 0;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  color: var(--navy);
-  min-width: 80px;
-}
-.proof-summary-text {
-  flex: 1;
-  line-height: 1.5;
-  color: var(--text);
-}
 
-/* Proof Strength Indicator */
-.proof-strength {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(0,0,0,0.1);
-}
-.proof-strength-label {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--navy);
-}
-.proof-strength-bars {
-  display: flex;
-  gap: 4px;
-}
-.proof-strength-bar {
-  width: 20px;
-  height: 8px;
-  background: #e5e7eb;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-.proof-strength-bar.active {
-  background: var(--brand);
-  transform: scaleY(1.5);
-}
-
-
-}
-
-/* Visual indicators for evidence quality */
-.evidence-quality {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-left: 8px;
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 12px;
-  background: rgba(59, 130, 246, 0.1);
-  color: var(--brand);
-  font-weight: 600;
-}
-.evidence-quality.primary {
-  background: rgba(16, 185, 129, 0.1);
-  color: #10b981;
-}
-.evidence-quality.secondary {
-  background: rgba(245, 158, 11, 0.1);
-  color: #dc2626;
 }
 
 .filter-badges {
@@ -2144,6 +1993,8 @@ html { scroll-behavior: smooth; }
    NEW: PROOF SUMMARY & SHARING TOOLSax4
    ========================================= */
 
+/* NOTE: Proof summary, strength, and evidence quality styles are centralized below.
+   Edit only in this section to avoid duplicates. */
 /* ===== PROOF SUMMARY CARD ===== */
 .proof-summary {
   background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
