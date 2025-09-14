@@ -44,11 +44,7 @@
       "This pre-emptive formation effectively excluded the yet-to-be-formed caucuses from having a voice in the AAC's foundational structure.",
       "[DJ-MARK] The WVDP and its designated compliance official failed to implement the core diversity and inclusion requirements of the 2020 DNC MOU."
     ],
-    "violation": "The WVDP failed to adhere to the 2020 DNC MOU by forming the Affirmative Action Committee and selecting its leadership before the required constituent diversity caucuses were established, thereby disenfranchising those groups from the process.",
-    "action_tool": {
-      "label": "Learn How to Take Action",
-      "url": "/action/"
-    }
+    "violation": "The WVDP failed to adhere to the 2020 DNC MOU by forming the Affirmative Action Committee and selecting its leadership before the required constituent diversity caucuses were established, thereby disenfranchising those groups from the process."
   },
   {
     "case_id": "002",
@@ -89,11 +85,7 @@
       "The advice was followed by a documented pattern of procedural maneuvering against dissenting members.",
       "[DJ-MARK] A DNC official provided the strategy, and the state-level appointee had the procedural influence to help execute it, bypassing the committee's established deliberative process."
     ],
-    "violation": "A DNC official and a WVDP appointee coordinated a strategy that violated the DNC Charter's principle of 'fullest and fairest' participation by working to ensure a specific voting outcome, thereby neutralizing the votes of elected minority members.",
-    "action_tool": {
-      "label": "Learn How to Take Action",
-      "url": "/action/"
-    }
+    "violation": "A DNC official and a WVDP appointee coordinated a strategy that violated the DNC Charter's principle of 'fullest and fairest' participation by working to ensure a specific voting outcome, thereby neutralizing the votes of elected minority members."
   },
   {
     "case_id": "003",
@@ -144,11 +136,7 @@
       "File a corrected Q3 2023 report that accurately discloses all financial activity related to the scholarship program.",
       "Provide a public accounting of how the scholarship program was funded and who the recipients were.",
       "Cease all financial activities until the committee's reporting can be brought into compliance."
-    ],
-    "action_tool": {
-      "label": "File a Campaign Finance Complaint",
-      "url": "/tools/sos-complaint-form/"
-    }
+    ]
   },
   {
     "case_id": "004",
@@ -204,11 +192,7 @@
       "The new, restrictive rules were passed in a meeting that violated party bylaws.",
       "[DJ-MARK] This pattern of disenfranchisement—first by delaying caucus formation and then by denying subcommittee access—violated the core mandate of the DNC MOU."
     ],
-    "violation": "By nullifying a committee vote and using a meeting later ruled improper to pass new rules, AAC leadership prevented minority caucuses from achieving full participation in subcommittees, in violation of the 2020 DNC MOU.",
-    "action_tool": {
-      "label": "Learn How to Take Action",
-      "url": "/action/"
-    }
+    "violation": "By nullifying a committee vote and using a meeting later ruled improper to pass new rules, AAC leadership prevented minority caucuses from achieving full participation in subcommittees, in violation of the 2020 DNC MOU."
   },
   {
     "case_id": "005",
@@ -252,10 +236,6 @@
       "File a corrected report disclosing the source and value of the in-kind contribution.",
       "Reimburse the WVDP for the fair market value of its email list.",
       "Establish a clear party policy on the use of party resources by external PACs."
-    ],
-    "action_tool": {
-      "label": "File a Campaign Finance Complaint",
-      "url": "/tools/sos-complaint-form/"
-    }
+    ]
   }
 ]
