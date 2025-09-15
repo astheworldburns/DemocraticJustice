@@ -237,7 +237,6 @@ p{max-width:65ch;margin-bottom:16px}
 }
 @media (max-width:768px){
   .bottom-nav{display:flex;}
-  .nav{display:none;}
 }
 
 /* Theme toggle button */
