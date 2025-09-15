@@ -70,6 +70,10 @@
     {{ content }}
   </main>
 
+  {% if site.mobileNavBreakpoint %}
+    {% include "bottom-nav.html" %}
+  {% endif %}
+
   <footer class="footer">
     <div class="align-container">
       <div class="footer-top">
