@@ -162,16 +162,16 @@ eleventyComputed:
       <section class="share-section">
         <div class="share-icons">
           <a href="https://www.facebook.com/sharer/sharer.php?u=https://democraticjustice.org{{ page.url }}" target="_blank" rel="noopener" aria-label="Share on Facebook">
-            <img src="{{ '/images/icon-facebook.svg' | url }}" alt="Facebook">
+            <img src="{{ '/images/icon-facebook.svg' | url }}" alt="Facebook" loading="lazy" decoding="async">
           </a>
           <a href="https://twitter.com/intent/tweet?url=https://democraticjustice.org{{ page.url }}&text={{ proof.title | urlencode }}" target="_blank" rel="noopener" aria-label="Share on Twitter">
-            <img src="{{ '/images/icon-twitter.svg' | url }}" alt="Twitter">
+            <img src="{{ '/images/icon-twitter.svg' | url }}" alt="Twitter" loading="lazy" decoding="async">
           </a>
           <a href="{{ instagramImage }}" download aria-label="Download Instagram image">
-            <img src="{{ '/images/icon-instagram.svg' | url }}" alt="Instagram">
+            <img src="{{ '/images/icon-instagram.svg' | url }}" alt="Instagram" loading="lazy" decoding="async">
           </a>
           <button id="print-btn" type="button" aria-label="Print">
-            <img src="{{ '/images/icon-print.svg' | url }}" alt="Print">
+            <img src="{{ '/images/icon-print.svg' | url }}" alt="Print" loading="lazy" decoding="async">
           </button>
         </div>
   </section>
