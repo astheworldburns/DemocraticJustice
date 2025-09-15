@@ -99,11 +99,18 @@ p{max-width:65ch;margin-bottom:16px}
 .nav{
   position:sticky;
   top:0;
+  --nav-toggle-color: var(--navy);
   background:var(--white);
   color:var(--brand);
   border-bottom:1px solid color-mix(in srgb, var(--silver) 30%, transparent);
   z-index:100;
   box-shadow:0 2px 8px rgba(15,39,66,.08);
+}
+
+.nav--navy{
+  background:var(--navy);
+  color:var(--white);
+  --nav-toggle-color: var(--white);
 }
 .nav-inner{
   display:flex;
@@ -174,7 +181,7 @@ p{max-width:65ch;margin-bottom:16px}
   cursor:pointer;
   min-width:44px;
   min-height:44px;
-  color:var(--navy);
+  color:var(--nav-toggle-color);
   align-items:center;
   justify-content:center;
 }
