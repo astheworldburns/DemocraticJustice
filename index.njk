@@ -25,7 +25,7 @@ description: Proof. Not spin. Examine proof, submit proof, and turn proof into a
       <aside class="proof-box" aria-label="Featured Proof">
         <div class="proof-box__header">
           <div class="proof-box__title">
-            <img class="mark md" src="{{ '/images/three-dots-white.svg' | url }}" alt="Therefore symbol" aria-hidden="true">
+            <img class="mark md" src="{{ '/images/three-dots-white.svg' | url }}" alt="Therefore symbol" aria-hidden="true" loading="lazy" decoding="async">
             LATEST PROOF
           </div>
         </div>
@@ -34,7 +34,7 @@ description: Proof. Not spin. Examine proof, submit proof, and turn proof into a
          <p class="proof-box__finding">{{ latestProof.thesis }}</p>
           <p class="proof-box__meta">CASE FILE: {{ latestProof.case_id }}</p>
           <a href="{{ '/proofs/' | url }}{{ latestProof.slug }}/" class="proof-box__cta">
-            <img class="mark md" src="{{ '/images/three-dots-blue.svg' | url }}" alt="Therefore symbol" aria-hidden="true">
+            <img class="mark md" src="{{ '/images/three-dots-blue.svg' | url }}" alt="Therefore symbol" aria-hidden="true" loading="lazy" decoding="async">
             Examine Full Proof →
           </a>
         </div>
@@ -101,7 +101,7 @@ description: Proof. Not spin. Examine proof, submit proof, and turn proof into a
 <section class="action" id="action" aria-labelledby="action-heading">
   <div class="align-container">
     <h2 id="action-heading">
-      Proof <img class="mark md" src="{{ '/images/three-dots-gold.svg' | url }}" alt="Therefore symbol" style="transform: translateY(0.1em);"> Action
+      Proof <img class="mark md" src="{{ '/images/three-dots-gold.svg' | url }}" alt="Therefore symbol" style="transform: translateY(0.1em);" loading="lazy" decoding="async"> Action
     </h2>
     <div class="action-card">
       <p>Turn proofs into formal challenges. We provide templates and checklists that meet board requirements.</p>
