@@ -43,9 +43,12 @@
       <div class="nav-inner">
         <div class="logo-wrap">
           <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
-            <img class="wordmark"
-                 src="{{ '/images/wordmark-blue-on-white.svg' | url }}"
-                 alt="Democratic Justice">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="{{ '/images/wordmark-white-on-blue.svg' | url }}">
+              <img class="wordmark"
+                   src="{{ '/images/wordmark-blue-on-white.svg' | url }}"
+                   alt="Democratic Justice">
+            </picture>
           </a>
         </div>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu" aria-controls="primary-nav">
