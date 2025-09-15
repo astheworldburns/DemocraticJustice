@@ -73,7 +73,7 @@ body{
 }
 img{max-width:100%;display:block}
 a{text-decoration:none}
-.align-container{max-width:1000px;margin:0 auto;padding:0 20px}
+.align-container{max-width:1000px;margin:0 auto;padding:0 16px}
 
 /* Skip Link */
 .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
@@ -1215,7 +1215,7 @@ html { scroll-behavior: smooth; }
 }
 
 /* Clean width + spacing so edges line up */
-#proof-page .align-container{ max-width:1100px; margin:0 auto; padding:0 24px; }
+#proof-page .align-container{ max-width:1100px; margin:0 auto; padding:0 32px; }
 
 /* Steps layout (4→2→1 responsive) */
 .steps-grid{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; }
@@ -1239,7 +1239,7 @@ html { scroll-behavior: smooth; }
 @media (max-width:1024px){ .steps-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:640px){ .steps-grid{ grid-template-columns:1fr; } }
 /* ===== One-Page Proof Architecture ===== */
-#proof-page .align-container{ max-width:1100px; margin:0 auto; padding:0 24px; }
+#proof-page .align-container{ max-width:1100px; margin:0 auto; padding:0 32px; }
 
 /* Header */
 .proof-hero{
@@ -1357,7 +1357,7 @@ html { scroll-behavior: smooth; }
 }
 
 /* ===== Official Document Look ===== */
-#proof-page .align-container{ max-width:1100px; margin:0 auto; padding:0 24px; }
+#proof-page .align-container{ max-width:1100px; margin:0 auto; padding:0 32px; }
 
 .doc{
   background:#fff;
