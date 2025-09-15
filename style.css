@@ -61,6 +61,8 @@
   border-bottom:1px solid color-mix(in srgb, var(--silver) 30%, transparent);
 }
 
+[data-theme="dark"] .wordmark{content:url('/images/wordmark-white-on-blue.svg')}
+
 
 /* Reset */
 *{box-sizing:border-box;margin:0;padding:0}
