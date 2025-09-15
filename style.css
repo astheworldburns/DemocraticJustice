@@ -147,6 +147,11 @@ p{max-width:65ch;margin-bottom:16px}
   background:none;
   border:none;
   cursor:pointer;
+  min-width:44px;
+  min-height:44px;
+  color:var(--navy);
+  align-items:center;
+  justify-content:center;
 }
 
 @media (max-width:768px){
@@ -166,7 +171,7 @@ p{max-width:65ch;margin-bottom:16px}
     display:flex;
   }
   .nav-toggle{
-    display:block;
+    display:flex;
   }
 }
 
