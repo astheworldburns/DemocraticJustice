@@ -2047,6 +2047,47 @@ html { scroll-behavior: smooth; }
   line-height: 1.5;
   color: var(--text);
 }
+.proof-summary-text.clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.proof-summary-text.expanded {
+  -webkit-line-clamp: unset;
+}
+.read-more {
+  margin-top: 4px;
+  background: none;
+  border: none;
+  color: var(--brand);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+}
+
+@media (max-width:600px){
+  .case-grid{
+    grid-template-columns:1fr;
+  }
+  .case-card{
+    padding:16px;
+  }
+  .proof-summary-grid{
+    gap:8px;
+  }
+  .proof-summary-item{
+    flex-direction:column;
+    gap:4px;
+  }
+  .proof-summary-label{
+    font-size:16px;
+    min-width:auto;
+  }
+  .proof-summary-text{
+    font-size:16px;
+  }
+}
 
 /* ===== Proof Strength Indicator ===== */
 .proof-strength {

@@ -43,16 +43,16 @@ eleventyComputed:
         <div class="proof-summary-grid">
           <div class="proof-summary-item">
             <span class="proof-summary-label">Violation:</span>
-            <span class="proof-summary-text">{{ proof.violation | truncate(150) | safe }}</span>
+            <span class="proof-summary-text">{{ proof.violation | safe }}</span>
           </div>
           <div class="proof-summary-item">
             <span class="proof-summary-label">Stakes:</span>
-            <span class="proof-summary-text">{{ proof.stakes | truncate(150) | safe }}</span>
+            <span class="proof-summary-text">{{ proof.stakes | safe }}</span>
           </div>
           {% if proof.potential_remedies %}
           <div class="proof-summary-item">
             <span class="proof-summary-label">Remedy:</span>
-            <span class="proof-summary-text">{{ proof.potential_remedies[0] | truncate(150) | safe }}</span>
+            <span class="proof-summary-text">{{ proof.potential_remedies[0] | safe }}</span>
           </div>
           {% endif %}
         </div>
@@ -174,7 +174,33 @@ eleventyComputed:
             <img src="{{ '/images/icon-print.svg' | url }}" alt="Print">
           </button>
         </div>
-      </section>
+  </section>
     </div>
   </article>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.proof-summary-text').forEach(function (text) {
+    var lineHeight = parseFloat(getComputedStyle(text).lineHeight);
+    var maxLines = 3;
+    if (text.scrollHeight > lineHeight * maxLines) {
+      text.classList.add('clamp');
+      var btn = document.createElement('button');
+      btn.className = 'read-more';
+      btn.textContent = 'Read more';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', function () {
+        var expanded = text.classList.toggle('expanded');
+        btn.textContent = expanded ? 'Read less' : 'Read more';
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        if (expanded) {
+          text.classList.remove('clamp');
+        } else {
+          text.classList.add('clamp');
+        }
+      });
+      text.after(btn);
+    }
+  });
+});
+</script>
