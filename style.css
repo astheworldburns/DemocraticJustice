@@ -416,6 +416,11 @@ p{max-width:65ch;margin-bottom:16px}
   transform:translateY(-2px);
   box-shadow:0 4px 12px rgba(15,39,66,.15);
 }
+[data-theme="dark"] .case-card{
+  background:var(--gray-dark);
+  color:var(--text);
+  border-color:var(--silver);
+}
 .case-card h3 a{
   color:var(--text);
 }
@@ -428,6 +433,9 @@ p{max-width:65ch;margin-bottom:16px}
   text-transform:uppercase;
   letter-spacing:.5px;
 }
+[data-theme="dark"] .case-meta{
+  color:var(--muted);
+}
 .case-link{
   color:var(--brand);
   font-weight:700;
@@ -437,6 +445,10 @@ p{max-width:65ch;margin-bottom:16px}
   display:inline-flex;
   align-items:center;
   gap:6px;
+}
+[data-theme="dark"] .case-card h3 a,
+[data-theme="dark"] .case-link{
+  color:var(--text);
 }
 .case-link::before{
   content:"";
