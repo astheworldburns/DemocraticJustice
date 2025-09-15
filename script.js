@@ -506,6 +506,7 @@ export function initNavigation() {
                     p.thesis,
                     p.stakes,
                     p.violation,
+                    p.rule_summary,
                     p.case_id,
                     p.category
                 ].join(' ').toLowerCase();

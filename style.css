@@ -1734,6 +1734,17 @@ html { scroll-behavior: smooth; }
   border-bottom-color: #3b82f6;
 }
 
+.rule-summary-section {
+  margin: 2rem 0;
+}
+
+.rule-summary-text {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0;
+}
+
 .offense-card {
   background: #ffffff;
   border: 3px solid #e5e7eb;
@@ -2178,6 +2189,7 @@ html { scroll-behavior: smooth; }
   .proof-summary-item{ flex-direction:row; gap:12px; }
   .proof-summary-label{ font-size:12px; min-width:80px; }
   .proof-summary-text{ font-size:inherit; }
+  .rule-summary-text{ font-size:inherit; }
 }
 
 /* ===== Proof Strength Indicator ===== */
