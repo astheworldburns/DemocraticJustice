@@ -97,8 +97,15 @@ eleventyComputed:
         </div>
       </section>
 
+      {% if proof.rule_summary %}
+      <section class="rule-summary-section">
+        <h2 class="section-title" data-number="2">Rule Summary</h2>
+        <p class="rule-summary-text">{{ proof.rule_summary | safe }}</p>
+      </section>
+      {% endif %}
+
       <section class="offenses offenses-section">
-        <h2 class="section-title" data-number="2">The Offenses (What Happened)</h2>
+        <h2 class="section-title" data-number="3">The Offenses (What Happened)</h2>
         {% for fact in proof.case_facts %}
         <div class="offense-card">
           <p class="offense-text">{{ fact.text | safe }}</p>
@@ -117,7 +124,7 @@ eleventyComputed:
       </section>
 
       <section class="logic-chain conclusion-section">
-        <h2 class="section-title" data-number="3">The Logical Reasoning</h2>
+        <h2 class="section-title" data-number="4">The Logical Reasoning</h2>
         <ol>
           {% for step in proof.logic_chain %}
             {% if '[DJ-MARK]' in step %}
