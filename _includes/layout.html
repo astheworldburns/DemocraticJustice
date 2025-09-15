@@ -8,11 +8,14 @@
   <meta name="description" content="{{ description | default: '' }}">
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description | default: '' }}">
-  {% if ogImage %}<meta property="og:image" content="{{ ogImage }}">{% endif %}
+  {% assign fallbackImage = site.url | append: site.defaultImage %}
+  {% assign resolvedOgImage = ogImage | default: fallbackImage %}
+  {% assign resolvedTwitterImage = twitterImage | default: fallbackImage %}
+  <meta property="og:image" content="{{ resolvedOgImage }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description | default: '' }}">
-  {% if twitterImage %}<meta name="twitter:image" content="{{ twitterImage }}">{% endif %}
+  <meta name="twitter:image" content="{{ resolvedTwitterImage }}">
 
   <meta name="theme-color" content="#0F2742">
 
