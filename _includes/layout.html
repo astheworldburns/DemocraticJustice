@@ -103,5 +103,10 @@
   <!-- Defer so it doesn't block rendering -->
   <script defer src="{{ '/bundle.js' | url }}"></script>
 
+  {%- if env.CLOUDFLARE_ANALYTICS_TOKEN -%}
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ env.CLOUDFLARE_ANALYTICS_TOKEN }}"}'></script>
+  {%- endif -%}
+
 </body>
 </html>

@@ -49,6 +49,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./bundle.js");
   eleventyConfig.addWatchTarget("./ga-consent.js");
 
+  // ## GLOBALS ##
+  // Expose environment variables to templates so deployment-specific
+  // credentials (e.g. analytics tokens) can be referenced safely.
+  eleventyConfig.addNunjucksGlobal("env", process.env);
+
   // ## SERVER OPTIONS ##
   eleventyConfig.setServerOptions({
     showAllFiles: true
