@@ -1,4 +1,5 @@
 {
   "url": "https://democraticjustice.org",
-  "mobileNavBreakpoint": 768
+  "mobileNavBreakpoint": 768,
+  "defaultImage": "/images/wordmark-white-on-blue.svg"
 }
