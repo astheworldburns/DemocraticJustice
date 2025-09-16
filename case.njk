@@ -4,7 +4,7 @@ pagination:
   data: proofs
   size: 1
   alias: proof
-permalink: "proofs/{{ (proof.slug or proof.case_id) | slug }}/index.html"
+permalink: "proofs/{{ (proof.category | slug) }}s/{{ (proof.slug or proof.case_id) | slug }}/index.html"
 eleventyComputed:
   title: "{{ proof.title }}"
   description: "{{ proof.thesis }}"
