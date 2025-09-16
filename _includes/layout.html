@@ -3,16 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url | url }}" />
 
   <title>{{ title }}</title>
   <meta name="description" content="{{ description | default: '' }}">
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description | default: '' }}">
-  {% if ogImage %}<meta property="og:image" content="{{ ogImage }}">{% endif %}
+  {% assign fallbackImage = site.url | append: site.defaultImage %}
+  {% assign resolvedOgImage = ogImage | default: fallbackImage %}
+  {% assign resolvedTwitterImage = twitterImage | default: fallbackImage %}
+  <meta property="og:image" content="{{ resolvedOgImage }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description | default: '' }}">
-  {% if twitterImage %}<meta name="twitter:image" content="{{ twitterImage }}">{% endif %}
+  <meta name="twitter:image" content="{{ resolvedTwitterImage }}">
 
   <meta name="theme-color" content="#0F2742">
 
@@ -33,6 +37,30 @@
   <link rel="icon" href="{{ '/images/three-dots-blue.svg' | url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/style.css' | url }}">
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Democratic Justice",
+          "url": "https://democraticjustice.org",
+          "logo": "https://democraticjustice.org/images/wordmark-blue-on-white.svg"
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://democraticjustice.org",
+          "name": "Democratic Justice",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://democraticjustice.org/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+  </script>
+
 </head>
 <body>
 
@@ -43,22 +71,25 @@
       <div class="nav-inner">
         <div class="logo-wrap">
           <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
-            <img class="wordmark"
-                 src="{{ '/images/wordmark-white-on-blue.svg' | url }}"
-                 alt="Democratic Justice">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="{{ '/images/wordmark-white-on-blue.svg' | url }}">
+              <img class="wordmark"
+                   src="{{ '/images/wordmark-blue-on-white.svg' | url }}"
+                   alt="Democratic Justice">
+            </picture>
           </a>
         </div>
-        <ul class="nav-links">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu" aria-controls="primary-nav">
+          <svg class="nav-toggle-icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <ul class="nav-links" id="primary-nav">
           <li><a href="{{ '/archive' | url }}">Proof</a></li>
           <li><a href="{{ '/method' | url }}">Method</a></li>
           <li><a href="{{ '/action' | url }}">Action</a></li>
           <li><a href="{{ '/about' | url }}">About</a></li>
           <li><a href="{{ '/submit' | url }}" class="btn-nav-submit">Submit</a></li>
-          <li>
-            <img class="mark xl"
-                 src="{{ '/images/three-dots-white.svg' | url }}"
-                 alt="" aria-hidden="true">
-          </li>
         </ul>
       </div>
     </div>
@@ -68,28 +99,42 @@
     {{ content }}
   </main>
 
+  {% if site.mobileNavBreakpoint %}
+    {% include "bottom-nav.html" %}
+  {% endif %}
+
   <footer class="footer">
     <div class="align-container">
       <div class="footer-top">
         <img src="{{ '/images/wordmark-white-on-blue.svg' | url }}"
              alt="Democratic Justice"
-             class="footer-logo">
+             class="footer-logo"
+             loading="lazy" decoding="async">
       </div>
       <p><strong>Proof. Not Spin.</strong></p>
       <p>A 100% volunteer-run project. We do not solicit or accept financial contributions. We do not endorse candidates.</p>
       <p><a href="mailto:setho@democraticjustice.org">Submit Proof Confidentially</a></p>
+      <p><a href="{{ '/integrity' | url }}">Proof of Integrity</a></p>
       <p><a href="{{ '/privacy' | url }}">Privacy Policy</a></p>
 
-      <img class="mark xl"
-           src="{{ '/images/three-dots-gold.svg' | url }}"
-           alt="" aria-hidden="true"
-           style="position:absolute; bottom: var(--gap); right: 20px; opacity: 0.5;">
+      <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
+        <img class="mark xl"
+             src="{{ '/images/three-dots-white.svg' | url }}"
+             alt="" aria-hidden="true"
+             loading="lazy" decoding="async"
+             style="position:absolute; bottom: var(--gap); right: 20px; opacity: 0.5;">
+      </a>
     </div>
   </footer>
 
   <script defer src="/ga-consent.js"></script>
   <!-- Defer so it doesn't block rendering -->
   <script defer src="{{ '/bundle.js' | url }}"></script>
+
+  {%- if env.CLOUDFLARE_ANALYTICS_TOKEN -%}
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ env.CLOUDFLARE_ANALYTICS_TOKEN }}"}'></script>
+  {%- endif -%}
 
 </body>
 </html>

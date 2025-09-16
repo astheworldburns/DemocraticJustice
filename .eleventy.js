@@ -1,5 +1,37 @@
 // .eleventy.js
 const { DateTime } = require("luxon");
+const Image = require("@11ty/eleventy-img");
+const fs = require("node:fs/promises");
+const path = require("node:path");
+
+async function generateSharePNGs() {
+  const shareOutputDir = path.join("_site", "share");
+
+  let entries;
+  try {
+    entries = await fs.readdir(shareOutputDir, { withFileTypes: true });
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return;
+    }
+    throw error;
+  }
+
+  const svgFiles = entries.filter((entry) => entry.isFile() && entry.name.endsWith(".svg"));
+
+  for (const svgFile of svgFiles) {
+    const sourcePath = path.join(shareOutputDir, svgFile.name);
+    await Image(sourcePath, {
+      formats: ["png"],
+      widths: [null],
+      outputDir: shareOutputDir,
+      filenameFormat: function (id, src, width, format) {
+        const basename = path.basename(src, path.extname(src));
+        return `${basename}.${format}`;
+      }
+    });
+  }
+}
 
 module.exports = function(eleventyConfig) {
   // ## COLLECTIONS ##
@@ -49,9 +81,18 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./bundle.js");
   eleventyConfig.addWatchTarget("./ga-consent.js");
 
+  // ## GLOBALS ##
+  // Expose environment variables to templates so deployment-specific
+  // credentials (e.g. analytics tokens) can be referenced safely.
+  eleventyConfig.addNunjucksGlobal("env", process.env);
+
   // ## SERVER OPTIONS ##
   eleventyConfig.setServerOptions({
     showAllFiles: true
+  });
+
+  eleventyConfig.on("afterBuild", async () => {
+    await generateSharePNGs();
   });
 
   // ## DIRECTORY CONFIG ##

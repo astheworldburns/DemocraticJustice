@@ -26,14 +26,39 @@ export function initNavigation() {
     const resetButton = document.getElementById('reset-filters');
     const countEl = document.getElementById('results-count');
     const loadMoreBtn = document.createElement('button');
+    const nav = document.querySelector('.nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('primary-nav');
     
     // Setup Load More button
     loadMoreBtn.className = 'btn btn-outline-blue';
     loadMoreBtn.textContent = 'Load More';
     loadMoreBtn.style.display = 'none';
     loadMoreBtn.style.margin = '32px auto';
+
+    if (nav && navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('nav--open', !expanded);
+            if (!expanded) {
+                navLinks.querySelector('a')?.focus();
+            } else {
+                navToggle.focus();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('nav--open')) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                nav.classList.remove('nav--open');
+                navToggle.focus();
+            }
+        });
+    }
+
     /* ---------- Utility Functions ---------- */
-   
+
 
     // Determine proof type based on category
     const getProofType = (proof) => {
@@ -46,11 +71,17 @@ export function initNavigation() {
         }
         return 'Other';
     };
+
+    const slugify = str =>
+        str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+    const categorySlug = cat => cat ? slugify(cat) + 's' : '';
     
     /* ---------- Comparison Tool Functions ---------- */
     function getProofIdFromCard(card) {
+        const path = card.querySelector('a')?.href?.split('/proofs/')[1] || '';
         return card?.dataset?.proofId
-            || card.querySelector('a')?.href?.split('/proofs/')[1]?.replace(/\/.*/, '')
+            || path.split('/')[1]
             || '';
     }
 
@@ -292,7 +323,7 @@ export function initNavigation() {
 
     // Render a single proof card with optional lazy loading
     const renderProofCard = (proof, lazy = false) => {
-        const url = `/proofs/${proof.slug}/`;
+        const url = `/proofs/${categorySlug(proof.category)}/${proof.slug}/`;
         const proofType = getProofType(proof);
         
         if (lazy) {
@@ -327,7 +358,7 @@ export function initNavigation() {
 
     // Render full card content (called by lazy loader)
     const renderFullCard = (cardElement, proofData) => {
-        const url = `/proofs/${proofData.slug}/`;
+        const url = `/proofs/${categorySlug(proofData.category)}/${proofData.slug}/`;
         const proofType = getProofType(proofData);
 
         cardElement.dataset.proofId = proofData.case_id || proofData.slug;
@@ -382,7 +413,7 @@ export function initNavigation() {
                                 <div class="timeline-date">${new Date(proof.date).getDate()}</div>
                                 <div class="timeline-content">
                                     <span class="timeline-category">${proof.category}</span>
-                                    <h4><a href="/proofs/${proof.slug}/">${proof.title}</a></h4>
+                                    <h4><a href="/proofs/${categorySlug(proof.category)}/${proof.slug}/">${proof.title}</a></h4>
                                     <p>${proof.thesis}</p>
                                 </div>
                             </div>
@@ -481,6 +512,7 @@ export function initNavigation() {
                     p.thesis,
                     p.stakes,
                     p.violation,
+                    p.rule_summary,
                     p.case_id,
                     p.category
                 ].join(' ').toLowerCase();

@@ -4,12 +4,12 @@ pagination:
   data: proofs
   size: 1
   alias: proof
-permalink: "proofs/{{ (proof.slug or proof.case_id) | slug }}/index.html"
+permalink: "proofs/{{ (proof.category | slug) }}s/{{ (proof.slug or proof.case_id) | slug }}/index.html"
 eleventyComputed:
   title: "{{ proof.title }}"
   description: "{{ proof.thesis }}"
-  ogImage: "https://democraticjustice.org/share/{{ (proof.slug or proof.case_id) | slug }}-facebook.svg"
-  twitterImage: "https://democraticjustice.org/share/{{ (proof.slug or proof.case_id) | slug }}-twitter.svg"
+  ogImage: "https://democraticjustice.org/share/{{ (proof.slug or proof.case_id) | slug }}-facebook.png"
+  twitterImage: "https://democraticjustice.org/share/{{ (proof.slug or proof.case_id) | slug }}-twitter.png"
   instagramImage: "https://democraticjustice.org/share/{{ (proof.slug or proof.case_id) | slug }}-instagram.svg"
 ---
 <style>
@@ -28,6 +28,39 @@ eleventyComputed:
 
 <div class="align-container" id="proof-page">
   <article class="doc">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol>
+        <li><a href="{{ '/' | url }}">Home</a></li>
+        <li><a href="{{ '/archive' | url }}">Proof</a></li>
+        <li aria-current="page">{{ proof.title }}</li>
+      </ol>
+    </nav>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ site.url }}"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Proof",
+            "item": "{{ site.url }}{{ '/archive/' | url }}"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ proof.title }}",
+            "item": "{{ site.url }}{{ page.url | url }}"
+          }
+        ]
+      }
+    </script>
     <header class="doc-header">
       <div class="doc-row">
         <div class="doc-mark">
@@ -43,16 +76,16 @@ eleventyComputed:
         <div class="proof-summary-grid">
           <div class="proof-summary-item">
             <span class="proof-summary-label">Violation:</span>
-            <span class="proof-summary-text">{{ proof.violation | truncate(150) | safe }}</span>
+            <span class="proof-summary-text">{{ proof.violation | safe }}</span>
           </div>
           <div class="proof-summary-item">
             <span class="proof-summary-label">Stakes:</span>
-            <span class="proof-summary-text">{{ proof.stakes | truncate(150) | safe }}</span>
+            <span class="proof-summary-text">{{ proof.stakes | safe }}</span>
           </div>
           {% if proof.potential_remedies %}
           <div class="proof-summary-item">
             <span class="proof-summary-label">Remedy:</span>
-            <span class="proof-summary-text">{{ proof.potential_remedies[0] | truncate(150) | safe }}</span>
+            <span class="proof-summary-text">{{ proof.potential_remedies[0] | safe }}</span>
           </div>
           {% endif %}
         </div>
@@ -97,8 +130,15 @@ eleventyComputed:
         </div>
       </section>
 
+      {% if proof.rule_summary %}
+      <section class="rule-summary-section">
+        <h2 class="section-title" data-number="2">Rule Summary</h2>
+        <p class="rule-summary-text">{{ proof.rule_summary | safe }}</p>
+      </section>
+      {% endif %}
+
       <section class="offenses offenses-section">
-        <h2 class="section-title" data-number="2">The Offenses (What Happened)</h2>
+        <h2 class="section-title" data-number="3">The Offenses (What Happened)</h2>
         {% for fact in proof.case_facts %}
         <div class="offense-card">
           <p class="offense-text">{{ fact.text | safe }}</p>
@@ -117,7 +157,7 @@ eleventyComputed:
       </section>
 
       <section class="logic-chain conclusion-section">
-        <h2 class="section-title" data-number="3">The Logical Reasoning</h2>
+        <h2 class="section-title" data-number="4">The Logical Reasoning</h2>
         <ol>
           {% for step in proof.logic_chain %}
             {% if '[DJ-MARK]' in step %}
@@ -162,19 +202,45 @@ eleventyComputed:
       <section class="share-section">
         <div class="share-icons">
           <a href="https://www.facebook.com/sharer/sharer.php?u=https://democraticjustice.org{{ page.url }}" target="_blank" rel="noopener" aria-label="Share on Facebook">
-            <img src="{{ '/images/icon-facebook.svg' | url }}" alt="Facebook">
+            <img src="{{ '/images/icon-facebook.svg' | url }}" alt="Facebook" loading="lazy" decoding="async">
           </a>
           <a href="https://twitter.com/intent/tweet?url=https://democraticjustice.org{{ page.url }}&text={{ proof.title | urlencode }}" target="_blank" rel="noopener" aria-label="Share on Twitter">
-            <img src="{{ '/images/icon-twitter.svg' | url }}" alt="Twitter">
+            <img src="{{ '/images/icon-twitter.svg' | url }}" alt="Twitter" loading="lazy" decoding="async">
           </a>
           <a href="{{ instagramImage }}" download aria-label="Download Instagram image">
-            <img src="{{ '/images/icon-instagram.svg' | url }}" alt="Instagram">
+            <img src="{{ '/images/icon-instagram.svg' | url }}" alt="Instagram" loading="lazy" decoding="async">
           </a>
           <button id="print-btn" type="button" aria-label="Print">
-            <img src="{{ '/images/icon-print.svg' | url }}" alt="Print">
+            <img src="{{ '/images/icon-print.svg' | url }}" alt="Print" loading="lazy" decoding="async">
           </button>
         </div>
-      </section>
+  </section>
     </div>
   </article>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.proof-summary-text').forEach(function (text) {
+    var lineHeight = parseFloat(getComputedStyle(text).lineHeight);
+    var maxLines = 3;
+    if (text.scrollHeight > lineHeight * maxLines) {
+      text.classList.add('clamp');
+      var btn = document.createElement('button');
+      btn.className = 'read-more';
+      btn.textContent = 'Read more';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', function () {
+        var expanded = text.classList.toggle('expanded');
+        btn.textContent = expanded ? 'Read less' : 'Read more';
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        if (expanded) {
+          text.classList.remove('clamp');
+        } else {
+          text.classList.add('clamp');
+        }
+      });
+      text.after(btn);
+    }
+  });
+});
+</script>

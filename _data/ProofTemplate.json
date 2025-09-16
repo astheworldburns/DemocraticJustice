@@ -11,6 +11,8 @@
     { "text": "Payments from Account GF-Comm are restricted funds.", "citation": "Treasurer memo, 2024-12-12, ¶3", "url": "/files/treasurer-memo.pdf" },
     { "text": "The mailer language constitutes express advocacy.", "citation": "Bylaws §7-201(A), p. 12", "url": "/files/bylaws-7-201a.pdf" }
   ],
+  "rule_summary": "<concise synthesis of the axioms>",
+  "_comment_rule_summary": "Summarizes the rule established by the axioms",
   "evidence_chain": [
     { "title": "Establish the Standard", "text": "Policy §2-103(C) forbids restricted-fund spending on advocacy.", "timestamp": "Apr 15, 2025", "thumb": "/files/thumbs/policy-standard.png", "caption": "Policy excerpt, §2-103(C)" },
     { "title": "Document What Occurred", "text": "Invoice #1148 billed 'Primary GOTV mailer' to GF-Comm.", "timestamp": "May 02, 2025", "thumb": "/files/thumbs/invoice-1148.png", "caption": "Invoice shows restricted account code" },
