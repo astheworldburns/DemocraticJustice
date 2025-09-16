@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url | url }}" />
 
   <title>{{ title }}</title>
   <meta name="description" content="{{ description | default: '' }}">
@@ -35,6 +36,30 @@
   <!-- Root-relative assets (safe from any page depth and pathPrefix-aware) -->
   <link rel="icon" href="{{ '/images/three-dots-blue.svg' | url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/style.css' | url }}">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Democratic Justice",
+          "url": "https://democraticjustice.org",
+          "logo": "https://democraticjustice.org/images/wordmark-blue-on-white.svg"
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://democraticjustice.org",
+          "name": "Democratic Justice",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://democraticjustice.org/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+  </script>
 
 </head>
 <body>
@@ -89,6 +114,7 @@
       <p><strong>Proof. Not Spin.</strong></p>
       <p>A 100% volunteer-run project. We do not solicit or accept financial contributions. We do not endorse candidates.</p>
       <p><a href="mailto:setho@democraticjustice.org">Submit Proof Confidentially</a></p>
+      <p><a href="{{ '/integrity' | url }}">Proof of Integrity</a></p>
       <p><a href="{{ '/privacy' | url }}">Privacy Policy</a></p>
 
       <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
