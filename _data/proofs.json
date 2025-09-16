@@ -284,7 +284,7 @@
       {
         "text": "A non-elected WVDP official, Selina Vickers, was granted extraordinary oversight over the party's DNC compliance process by the DNC Rules & Bylaws Committee, on which Harold Ickes served.",
         "citation": "DJ Proof #001: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
-        "url": "/proofs/wv-democratic-party-dnc-violations/wvdp-failed-to-implement-dnc-diversity-mou/"
+        "url": "/proofs/wvdp-failed-to-implement-dnc-diversity-mou/"
       },
       {
         "text": "The Democratic Party must conduct its affairs with the 'fullest and fairest' participation of all its members.",
@@ -328,7 +328,7 @@
       {
         "text": "The WVDP failed to establish the majority of its racial diversity caucuses before the Affirmative Action Committee's leadership was elected, effectively disenfranchising those groups from the committee's formation.",
         "citation": "DJ Proof: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
-        "url": "/proofs/wv-democratic-party-dnc-violations/wvdp-failed-to-implement-dnc-diversity-mou/"
+        "url": "/proofs/wvdp-failed-to-implement-dnc-diversity-mou/"
       },
       {
         "text": "The 2020 DNC MOU's purpose was to 'encourage full participation by all Democrats, with particular concern for minority groups'.",
@@ -380,7 +380,7 @@
     "title": "PROOF: Private PAC Used Official Party Resources Without Disclosure",
     "date": "2025-09-12",
     "category": "Campaign Finance Violation",
-    "umbrella_category": "WV Campaign Finance Violations",
+    "umbrella_category": "A New Day PAC Campaign Finance Violations",
     "stakes": "One PAC gained exclusive access to party resources while hiding this subsidy from public disclosure.",
     "thesis": "A party officer's PAC used an official email list without reporting the required in-kind contribution.",
     "axioms": [
@@ -426,7 +426,7 @@
     "title": "PROOF: Unreported Financial Activity - The Scholarship Program",
     "date": "2025-09-11",
     "category": "Campaign Finance Violation",
-    "umbrella_category": "WV Campaign Finance Violations",
+    "umbrella_category": "A New Day PAC Campaign Finance Violations",
     "stakes": "A PAC concealed its scholarship program from required disclosures, hiding who funded it and who benefited.",
     "thesis": "A New Day PAC failed to report any financial activity for its formal scholarship program.",
     "axioms": [
