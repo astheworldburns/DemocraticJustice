@@ -28,6 +28,39 @@ eleventyComputed:
 
 <div class="align-container" id="proof-page">
   <article class="doc">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol>
+        <li><a href="{{ '/' | url }}">Home</a></li>
+        <li><a href="{{ '/archive' | url }}">Proof</a></li>
+        <li aria-current="page">{{ proof.title }}</li>
+      </ol>
+    </nav>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ site.url }}"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Proof",
+            "item": "{{ site.url }}{{ '/archive/' | url }}"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ proof.title }}",
+            "item": "{{ site.url }}{{ page.url | url }}"
+          }
+        ]
+      }
+    </script>
     <header class="doc-header">
       <div class="doc-row">
         <div class="doc-mark">
