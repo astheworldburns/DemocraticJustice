@@ -5,6 +5,7 @@
     "title": "PROOF: The Affirmative Action Committee's Formation Was a Foundational Breach of the 2020 DNC MOU, Rendering It Illegitimate at Inception",
     "date": "2025-09-15",
     "category": "DNC MOU Violation",
+    "umbrella_category": "WV Democratic Party & DNC Violations",
     "stakes": "The promise of representation for West Virginia's minority communities was broken at the moment of its supposed creation, disenfranchising the very groups the MOU was meant to empower and guaranteeing the failure of the entire diversity initiative.",
     "thesis": "The WVDP, under the failed supervision of the DNC's RBC, committed a foundational and irredeemable violation of the 2020 MOU by using a non-public script to install a pre-selected leadership slate before its constituent caucuses were formed, thereby creating an illegitimate committee structured to fail.",
     "axioms": [
@@ -59,6 +60,7 @@
     "title": "PROOF: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
     "date": "2025-09-08",
     "category": "DNC MOU Violation",
+    "umbrella_category": "WV Democratic Party & DNC Violations",
     "stakes": "Minority caucuses were denied their right to select committee leadership. Control went instead to a single unelected DNC appointee.",
     "thesis": "The WVDP violated the 2020 DNC MOU by installing AAC leadership before establishing the required diversity caucuses.",
     "axioms": [
@@ -108,6 +110,7 @@
     "title": "PROOF: Script's Detail Proves Deliberate Exclusion of Mandated Caucuses",
     "date": "2025-09-15",
     "category": "DNC MOU Violation",
+    "umbrella_category": "WV Democratic Party & DNC Violations",
     "stakes": "This action rendered the Affirmative Action Committee improperly constituted at its formation. By proceeding without 75% of its required racial diversity caucuses, the committee's foundational decisions, including the election of its leadership, lacked the mandated representation of Latino, AAPI, and Native American Democrats.",
     "thesis": "The script's exhaustive detail proves the organizers possessed the capacity for complex planning but deliberately failed to form the Latino, AAPI, and Native American caucuses, proving their exclusion was a strategic choice in violation of the DNC MOU.",
     "axioms": [
@@ -150,6 +153,7 @@
     "title": "PROOF: AAC Leadership Selection Was Procedurally Invalid",
     "date": "2025-09-15",
     "category": "DNC Charter & Bylaw Violation",
+    "umbrella_category": "WV Democratic Party & DNC Violations",
     "stakes": "The committee's leadership was not selected through a fair and open process as required by party rules. This procedural invalidity calls into question the legitimacy of all subsequent actions taken by that leadership.",
     "thesis": "The AAC leadership election was conducted according to a non-public, pre-written script that dictated a pre-arranged slate of candidates, violating WVDP Bylaw and DNC Charter requirements for open and public procedures.",
     "axioms": [
@@ -193,6 +197,7 @@
     "title": "PROOF: Script Author Orchestrated Her Own Appointment to a Key Role",
     "date": "2025-09-15",
     "category": "DNC Charter & Bylaw Violation",
+    "umbrella_category": "WV Democratic Party & DNC Violations",
     "stakes": "A conflict of interest corrupted the committee's formation, as the lead Challenger for the MOU used her position as the script's author to install herself in a role with procedural authority over the committee's business, controlling meeting procedures, rules interpretations, and the official record.",
     "thesis": "The lead Challenger from the 2020 MOU, Selina Vickers, authored the meeting script and included her own nomination and a pre-written endorsement for herself to be installed in the role of Parliamentarian/Secretary.",
     "axioms": [
@@ -232,6 +237,7 @@
     "title": "PROOF: Script Reveals Pre-Planned Strategy to Control Meeting and Dissent",
     "date": "2025-09-15",
     "category": "DNC Charter & Bylaw Violation",
+    "umbrella_category": "WV Democratic Party & DNC Violations",
     "stakes": "The committee was not designed to be a forum for open deliberation as required by party rules. Its procedures were structured to execute a pre-determined agenda and manage any opposition, not to foster inclusive participation.",
     "thesis": "The meeting script contained pre-planned tactics to challenge unauthorized attendees and manage anticipated criticism, proving the meeting was designed to execute a controlled plan, not to facilitate open participation.",
     "axioms": [
@@ -271,13 +277,14 @@
     "title": "PROOF: DNC Official Advised Appointee on Strategy to 'Outvote' Dissenting Committee Members",
     "date": "2025-09-09",
     "category": "Party Bylaw & Charter Violation",
+    "umbrella_category": "WV Democratic Party & DNC Violations",
     "stakes": "Elected minority members' votes were rendered meaningless when a DNC official coordinated with an appointee to predetermine outcomes.",
     "thesis": "A DNC Rules Committee member advised a non-elected official to 'outvote' elected minority AAC members.",
     "axioms": [
       {
         "text": "A non-elected WVDP official, Selina Vickers, was granted extraordinary oversight over the party's DNC compliance process by the DNC Rules & Bylaws Committee, on which Harold Ickes served.",
         "citation": "DJ Proof #001: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
-          "url": "/proofs/dnc-mou-violations/wvdp-failed-to-implement-dnc-diversity-mou/"
+        "url": "/proofs/wvdp-failed-to-implement-dnc-diversity-mou/"
       },
       {
         "text": "The Democratic Party must conduct its affairs with the 'fullest and fairest' participation of all its members.",
@@ -314,13 +321,14 @@
     "title": "PROOF: AAC Nullified Valid Vote to Exclude Minority Caucus Chairs",
     "date": "2025-09-12",
     "category": "DNC MOU Violation",
+    "umbrella_category": "WV Democratic Party & DNC Violations",
     "stakes": "Indigenous and Black caucus chairs were denied subcommittee seats when leadership nullified a valid democratic vote.",
     "thesis": "AAC leadership violated the DNC MOU by nullifying a vote and excluding minority caucus chairs through an invalid meeting.",
     "axioms": [
       {
         "text": "The WVDP failed to establish the majority of its racial diversity caucuses before the Affirmative Action Committee's leadership was elected, effectively disenfranchising those groups from the committee's formation.",
         "citation": "DJ Proof: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
-          "url": "/proofs/dnc-mou-violations/wvdp-failed-to-implement-dnc-diversity-mou/"
+        "url": "/proofs/wvdp-failed-to-implement-dnc-diversity-mou/"
       },
       {
         "text": "The 2020 DNC MOU's purpose was to 'encourage full participation by all Democrats, with particular concern for minority groups'.",
@@ -372,6 +380,7 @@
     "title": "PROOF: Private PAC Used Official Party Resources Without Disclosure",
     "date": "2025-09-12",
     "category": "Campaign Finance Violation",
+    "umbrella_category": "A New Day PAC Campaign Finance Violations",
     "stakes": "One PAC gained exclusive access to party resources while hiding this subsidy from public disclosure.",
     "thesis": "A party officer's PAC used an official email list without reporting the required in-kind contribution.",
     "axioms": [
@@ -417,6 +426,7 @@
     "title": "PROOF: Unreported Financial Activity - The Scholarship Program",
     "date": "2025-09-11",
     "category": "Campaign Finance Violation",
+    "umbrella_category": "A New Day PAC Campaign Finance Violations",
     "stakes": "A PAC concealed its scholarship program from required disclosures, hiding who funded it and who benefited.",
     "thesis": "A New Day PAC failed to report any financial activity for its formal scholarship program.",
     "axioms": [
