@@ -316,6 +316,12 @@ p{max-width:65ch;margin-bottom:16px}
   justify-content:center;
 }
 
+.nav-toggle-icon{
+  width:24px;
+  height:24px;
+  stroke:var(--nav-toggle-color);
+}
+
 @media (min-width:769px){
   .nav-links{
     display:flex;
