@@ -1,12 +1,66 @@
 [
   {
-    "case_id": "001",
-    "slug": "wvdp-failed-to-implement-dnc-diversity-mou",
+    "case_id": "1.1",
+    "slug": "foundational-breach-dnc-diversity-plan",
+    "title": "PROOF: The Affirmative Action Committee's Formation Was a Foundational Breach of the 2020 DNC MOU, Rendering It Illegitimate at Inception",
+    "date": "2025-09-15",
+    "category": "DNC MOU Violation",
+    "stakes": "The promise of representation for West Virginia's minority communities was broken at the moment of its supposed creation, disenfranchising the very groups the MOU was meant to empower and guaranteeing the failure of the entire diversity initiative.",
+    "thesis": "The WVDP, under the failed supervision of the DNC's RBC, committed a foundational and irredeemable violation of the 2020 MOU by using a non-public script to install a pre-selected leadership slate before its constituent caucuses were formed, thereby creating an illegitimate committee structured to fail.",
+    "axioms": [
+      {
+        "text": "The Caucus-First Mandate: The MOU required that the Affirmative Action Committee be formed with members 'selected by their particular caucus.'",
+        "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
+        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+      },
+      {
+        "text": "The State Party's Duty to Implement: The MOU mandated that the State Party 'fully implement... the creation of any new... caucuses.'",
+        "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
+        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+      },
+      {
+        "text": "The RBC's Duty to Supervise: The MOU explicitly required that the entire implementation process be conducted 'under the supervision... of representatives of the RBC.'",
+        "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 2",
+        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+      }
+    ],
+    "rule_summary": "These rules established a mandatory, non-negotiable sequence—a blueprint for legitimacy. The MOU required that caucuses be formed first to select their own representatives, who would then constitute the committee. Any other process was a direct breach of the agreement's core terms, and the RBC was the designated supervisor responsible for enforcing that blueprint.",
+    "case_facts": [
+      {
+        "text": "The committee's formation was orchestrated in secret using a non-public script, circulated with the explicit instruction 'do not share,' proving the process was designed to be non-transparent.",
+        "citation": "selina-script-email.pdf, p. 1"
+      },
+      {
+        "text": "The script's authors proceeded with full knowledge that their plan excluded the majority of required diversity groups, as the document itself admits the committee was 'missing representation from... Latino's, Asian Americans and Pacific Islanders, and Native Americans.'",
+        "citation": "selina-script.pdf, p. 2"
+      },
+      {
+        "text": "To ensure control, the script pre-emptively installed a hand-picked leadership slate, nullifying the right of the yet-to-be-formed caucuses to participate in selecting their own leadership.",
+        "citation": "selina-script.pdf, p. 1"
+      },
+      {
+        "text": "The script's author, Selina Vickers, cemented procedural control by orchestrating her own self-appointment to the role of Parliamentarian, complete with a pre-written endorsement calling her uniquely qualified.",
+        "citation": "selina-script.pdf, p. 3"
+      }
+    ],
+    "logic_chain": [
+      "The MOU promised a legitimate, caucus-driven process for forming the AAC under the watchful eye of the DNC's RBC.",
+      "Instead, the State Party, guided by a secret script, deliberately subverted this promise.",
+      "This subversion was intentional, as the script's own text proves the organizers knew they were excluding 75% of the required racial diversity caucuses.",
+      "By pre-emptively installing leadership, they disenfranchised these minority groups at the committee's inception.",
+      "This foundational breach occurred under the mandated supervision of the DNC's RBC, which failed its duty to intervene and enforce the MOU's terms.",
+      "[DJ-MARK] The result was not an authentic committee, but an illegitimate body born from a rigged process, directly violating the 2020 MOU."
+    ],
+    "violation": "The WVDP's implementation and the RBC's supervisory failure were not mere procedural errors; they constituted a foundational breach of contract and trust. They violated the MOU's core 'caucus-first mandate' by knowingly creating an unaccountable committee through a secretive, pre-arranged process. This initial, deliberate act of disenfranchisement rendered the Affirmative Action Committee illegitimate at the moment of its creation and doomed the entire diversity initiative to fail. The remedy required: void all actions taken by this illegitimate committee and reconstitute it properly with all required caucuses participating."
+  },
+  {
+    "case_id": "1.2",
+    "slug": "failure-to-implement-diversity-plan",
     "title": "PROOF: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
     "date": "2025-09-08",
     "category": "DNC MOU Violation",
-    "stakes": "This failure denied newly-formed minority caucuses their contractually-mandated role in selecting committee leadership. Instead, control over the process was ceded to a single, unelected DNC appointee, rendering the voices of those caucuses irrelevant from the start.",
-    "thesis": "The WVDP, under the direction of a non-elected DNC appointee, failed to meet the core requirements of the 2020 MOU on diversity and inclusion by installing committee leadership before the constituent caucuses were formed.",
+    "stakes": "Minority caucuses were denied their right to select committee leadership. Control went instead to a single unelected DNC appointee.",
+    "thesis": "The WVDP violated the 2020 DNC MOU by installing AAC leadership before establishing the required diversity caucuses.",
     "axioms": [
       {
         "text": "The 2020 MOU's stated purpose was 'to create a process to establish new, and assist currently existing, diversity caucuses'.",
@@ -24,36 +78,201 @@
         "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
       }
     ],
+    "rule_summary": "Together, these provisions establish that diversity caucuses must exist and select their own representatives before the AAC can be properly constituted. Any AAC formed without caucus participation violates the MOU's core mandate of ensuring minority groups have a voice in party governance.",
     "case_facts": [
       {
-        "text": "Leadership was installed for the Affirmative Action Committee (AAC) on June 5, 2021.",
+        "text": "The WVDP installed leadership for the Affirmative Action Committee (AAC) on June 5, 2021.",
         "citation": "Felix, K. - Witness Statement, p. 2"
       },
       {
-        "text": "At the time, the majority of racial diversity caucuses did not exist.",
+        "text": "At the time of leadership installation, the majority of racial diversity caucuses did not exist.",
         "citation": "Felix, K. - Witness Statement, p. 2"
       },
       {
-        "text": "The AAC's formation meeting was conducted using a pre-written script circulated by the DNC-appointed compliance official, which dictated the proceedings.",
+        "text": "The DNC-appointed compliance official circulated a pre-written script on June 2 that dictated the AAC's formation meeting proceedings.",
         "citation": "Draft Script Email June 2; Selina Script"
       }
     ],
     "logic_chain": [
-      "The DNC mandated the WVDP establish and include diversity caucuses in its AAC.",
-      "The evidence shows the AAC's leadership was installed before the majority of the racial diversity caucuses even existed.",
-      "This pre-emptive formation effectively excluded the yet-to-be-formed caucuses from having a voice in the AAC's foundational structure.",
-      "[DJ-MARK] The WVDP and its designated compliance official failed to implement the core diversity and inclusion requirements of the 2020 DNC MOU."
+      "The DNC mandated that the WVDP establish diversity caucuses and include them in forming the AAC.",
+      "The WVDP installed the AAC's leadership on June 5, 2021, when the majority of racial diversity caucuses did not yet exist.",
+      "This pre-emptive formation excluded the yet-to-be-formed caucuses from having any voice in selecting the AAC's leadership structure.",
+      "The DNC-appointed official orchestrated this improper formation through a pre-written script.",
+      "[DJ-MARK] The WVDP and its designated compliance official violated the core diversity and inclusion requirements of the 2020 DNC MOU."
     ],
-    "violation": "The WVDP failed to adhere to the 2020 DNC MOU by forming the Affirmative Action Committee and selecting its leadership before the required constituent diversity caucuses were established, thereby disenfranchising those groups from the process."
+    "violation": "The WVDP violated the 2020 DNC MOU by forming the Affirmative Action Committee and selecting its leadership before establishing the required constituent diversity caucuses, thereby disenfranchising minority groups from the foundational process. This violation undermines the MOU's purpose of ensuring full participation by minority communities in party governance."
   },
   {
-    "case_id": "002",
-    "slug": "dnc-official-advised-wvdp-appointee-on-aac-procedure",
+    "case_id": "1.3",
+    "slug": "secret-script-proves-caucus-exclusion",
+    "title": "PROOF: Script's Detail Proves Deliberate Exclusion of Mandated Caucuses",
+    "date": "2025-09-15",
+    "category": "DNC MOU Violation",
+    "stakes": "This action rendered the Affirmative Action Committee improperly constituted at its formation. By proceeding without 75% of its required racial diversity caucuses, the committee's foundational decisions, including the election of its leadership, lacked the mandated representation of Latino, AAPI, and Native American Democrats.",
+    "thesis": "The script's exhaustive detail proves the organizers possessed the capacity for complex planning but deliberately failed to form the Latino, AAPI, and Native American caucuses, proving their exclusion was a strategic choice in violation of the DNC MOU.",
+    "axioms": [
+      {
+        "text": "The DNC MOU required the creation of an Affirmative Action Committee with members 'selected by their particular caucus.'",
+        "citation": "2020 MOU between WVDP and DNC RBC, p. 2-3"
+      },
+      {
+        "text": "The WVDP Bylaws mandate the AA Committee 'shall consist of the two (2) Co-Chairs... from each of the... diversity caucuses: AAPI, Black, Latine... as well as a Native American caucus'.",
+        "citation": "WVSDEC-Bylaws-06.15.2024, p. 32"
+      }
+    ],
+    "rule_summary": "The governing rules establish a mandatory sequence: 1) The party must facilitate the formation of diversity caucuses. 2) Those caucuses must select their own representatives. 3) Those representatives must then constitute the AA Committee. The committee's legitimacy is wholly dependent on the prior existence and participation of these groups.",
+    "case_facts": [
+      {
+        "text": "The script for the June 2, 2021 meeting demonstrates micro-level control, dictating specific nominators (e.g., 'Mary Ann nominates Hollis Lewis'), providing verbatim speeches, and planning for procedural disruptions.",
+        "citation": "selina-script.pdf, p. 1-5"
+      },
+      {
+        "text": "The script proves the organizers knew 75% of the racial caucuses (Latino, AAPI, Native American) did not exist, as it includes a future resolution to 'do outreach to Latinos, Asian Americans/Pacific Islanders and Native Americans to facilitate those groups in forming their own diversity caucuses'.",
+        "citation": "selina-script.pdf, p. 5"
+      },
+      {
+        "text": "The script designates a specific individual, Kim Felix, to be nominated for an at-large diversity seat 'representing Latino Americans', proving the organizers had identified potential leadership for a caucus they had not yet formed.",
+        "citation": "selina-script.pdf, p. 3"
+      }
+    ],
+    "logic_chain": [
+      "The organizers demonstrated a high capacity for detailed organizational planning, as evidenced by the script.",
+      "The organizers possessed documented knowledge that the Latino, AAPI, and Native American caucuses had not been formed as required by the MOU.",
+      "The capacity to plan in minute detail, combined with the documented failure to execute the prerequisite task of forming caucuses, indicates the exclusion was intentional, not accidental.",
+      "Therefore, the decision to proceed with the AAC's formation was a deliberate choice to exclude 75% of the required racial diversity caucuses from participating in the selection of leadership.",
+      "[DJ-MARK] The organizers deliberately violated the MOU by choosing exclusion over inclusion."
+    ],
+    "violation": "The organizers deliberately violated the 2020 DNC MOU and WVDP Bylaws by proceeding with the formation of the AAC while knowingly excluding 75% of the required racial diversity caucuses. The script's own detail proves this was a calculated act of disenfranchisement, not an administrative failure."
+  },
+  {
+    "case_id": "1.4",
+    "slug": "invalid-leadership-selection-procedure",
+    "title": "PROOF: AAC Leadership Selection Was Procedurally Invalid",
+    "date": "2025-09-15",
+    "category": "DNC Charter & Bylaw Violation",
+    "stakes": "The committee's leadership was not selected through a fair and open process as required by party rules. This procedural invalidity calls into question the legitimacy of all subsequent actions taken by that leadership.",
+    "thesis": "The AAC leadership election was conducted according to a non-public, pre-written script that dictated a pre-arranged slate of candidates, violating WVDP Bylaw and DNC Charter requirements for open and public procedures.",
+    "axioms": [
+      {
+        "text": "The party must 'publicize fully... a full description of the legal and practical procedures for selection of Democratic Party officers'.",
+        "citation": "WVSDEC-Bylaws-06.15.2024, p. 6"
+      },
+      {
+        "text": "The DNC Charter requires 'full, timely and equal opportunities to participate in decisions concerning the selection of candidates... and the conduct of other Party affairs'.",
+        "citation": "DNC-Charter-Bylaws-09.10.1022, p. 1"
+      }
+    ],
+    "rule_summary": "Party rules require that the procedures for officer selection be public and provide an equal opportunity for participation. A non-public script that pre-arranges the slate of candidates does not meet this standard. A legitimate, open process would have no reason for secrecy.",
+    "case_facts": [
+      {
+        "text": "A script for the AAC meeting was created by Selina Vickers and circulated via email with the subject line 'DRAFT SCRIPT - do not share'.",
+        "citation": "selina-script-email.pdf, p. 1"
+      },
+      {
+        "text": "The script dictated the nomination sequence for the co-chairs: 'Mary Ann nominates Hollis Lewis' and 'Hollis nominated Mary Thorp'.",
+        "citation": "selina-script.pdf, p. 1"
+      },
+      {
+        "text": "The explicit 'do not share' instruction proves the organizers knew this violated open meeting requirements.",
+        "citation": "selina-script-email.pdf, p. 1"
+      }
+    ],
+    "logic_chain": [
+      "The 'practical procedure' used for the election was a script.",
+      "This script was explicitly designated as non-public ('do not share').",
+      "The script pre-determined the slate of candidates, which does not provide an 'equal opportunity' for other potential candidates or for members to make open nominations.",
+      "A legitimate, open process would have no reason for secrecy.",
+      "Therefore, the procedure used for the election violated the rules for open and fair processes.",
+      "[DJ-MARK] The secret script proves consciousness of wrongdoing."
+    ],
+    "violation": "The use of a non-public script to dictate a pre-arranged slate of candidates for AAC leadership was a direct violation of WVDP Bylaws and the DNC Charter. The procedure was neither 'fully publicized' nor did it provide an 'equal opportunity to participate'. The secrecy instruction proves the organizers knew they were violating open meeting requirements."
+  },
+  {
+    "case_id": "1.5",
+    "slug": "script-author-self-appointment",
+    "title": "PROOF: Script Author Orchestrated Her Own Appointment to a Key Role",
+    "date": "2025-09-15",
+    "category": "DNC Charter & Bylaw Violation",
+    "stakes": "A conflict of interest corrupted the committee's formation, as the lead Challenger for the MOU used her position as the script's author to install herself in a role with procedural authority over the committee's business, controlling meeting procedures, rules interpretations, and the official record.",
+    "thesis": "The lead Challenger from the 2020 MOU, Selina Vickers, authored the meeting script and included her own nomination and a pre-written endorsement for herself to be installed in the role of Parliamentarian/Secretary.",
+    "axioms": [
+      {
+        "text": "The Democratic Party shall 'Encourage and support codes of political ethics... to assure that public officials shall at all times conduct themselves in a manner that reflects creditably upon the office they serve'.",
+        "citation": "DNC-Charter-Bylaws-09.10.1022, p. 1"
+      }
+    ],
+    "rule_summary": "Ethical conduct requires that an official organizing a process not use their influence to gain a position of power within that process.",
+    "case_facts": [
+      {
+        "text": "The script, authored by Selina Vickers, directs the newly elected co-chair Hollis Lewis to state: 'I nominate Selina Vickers for Parliamentarian/Secretary.'",
+        "citation": "selina-script.pdf, p. 3; selina-script-email.pdf, p. 1"
+      },
+      {
+        "text": "The script provides a verbatim, laudatory endorsement for Hollis Lewis to read, which states Ms. Vickers was instrumental in the committee's formation and concludes, 'I can think of no one else remotely qualified to do this particular work.'",
+        "citation": "selina-script.pdf, p. 3"
+      },
+      {
+        "text": "The role of Parliamentarian/Secretary controls meeting procedures, rules interpretations, and the official record of committee business.",
+        "citation": "Standard parliamentary authority"
+      }
+    ],
+    "logic_chain": [
+      "The author of the meeting's script was Selina Vickers, the lead Challenger from the MOU.",
+      "The script she authored contained a pre-written nomination for herself to a key procedural role.",
+      "The script she authored also contained an effusive endorsement of her own unique qualifications to be read by another person.",
+      "This role gave her control over meeting procedures and the official record.",
+      "This constitutes an act of self-appointment, using her position as the meeting's architect to secure a position of procedural power.",
+      "[DJ-MARK] She wrote herself into power."
+    ],
+    "violation": "The script documents a significant conflict of interest in which the lead Challenger from the MOU used her authority as the meeting's organizer to orchestrate her own installation into a key committee role with procedural control, violating fundamental ethical standards of fair and open processes."
+  },
+  {
+    "case_id": "1.6",
+    "slug": "script-reveals-plan-to-control-dissent",
+    "title": "PROOF: Script Reveals Pre-Planned Strategy to Control Meeting and Dissent",
+    "date": "2025-09-15",
+    "category": "DNC Charter & Bylaw Violation",
+    "stakes": "The committee was not designed to be a forum for open deliberation as required by party rules. Its procedures were structured to execute a pre-determined agenda and manage any opposition, not to foster inclusive participation.",
+    "thesis": "The meeting script contained pre-planned tactics to challenge unauthorized attendees and manage anticipated criticism, proving the meeting was designed to execute a controlled plan, not to facilitate open participation.",
+    "axioms": [
+      {
+        "text": "WVDP Bylaws state 'All public meetings at all levels of the West Virginia Democratic Party should be open to all members of the Democratic Party'.",
+        "citation": "WVSDEC-Bylaws-06.15.2024, p. 6"
+      }
+    ],
+    "rule_summary": "Party rules for open meetings require a process that allows for spontaneous, good-faith participation and challenges, not a pre-planned system to control who can attend and to manage anticipated opposition.",
+    "case_facts": [
+      {
+        "text": "The script anticipates that the meeting may be closed to the public and provides a challenge to be used against observers: 'Ask: 'I notice there are people other than caucus co-chairs present. I thought this meeting was solely for co-chairs.''",
+        "citation": "selina-script.pdf, p. 1"
+      },
+      {
+        "text": "The script anticipates criticism from Party Chair Belinda Biafore, pre-characterizing it as 'scolding': 'She may scold you for the caucus meetings last night'.",
+        "citation": "selina-script.pdf, p. 1"
+      },
+      {
+        "text": "The script provides response strategies for managing this anticipated opposition rather than addressing its substance.",
+        "citation": "selina-script.pdf, p. 1"
+      }
+    ],
+    "logic_chain": [
+      "The script contains a pre-planned tactic to challenge the presence of observers at what should be an open meeting.",
+      "The script anticipates opposition from the Party Chair.",
+      "It pre-characterizes this opposition as 'scolding' - trivializing legitimate concerns.",
+      "The script provides response strategies for managing this opposition.",
+      "This proves the meeting was designed to execute a pre-determined outcome despite anticipated objections.",
+      "[DJ-MARK] The organizers built opposition management into their plan, violating principles of open deliberation."
+    ],
+    "violation": "The script's prepared tactics for managing participation and its pre-emptive characterization of criticism as 'scolding' violate the 'open meetings' and 'full participation' principles of the WVDP Bylaws and the DNC Charter. This proves the meeting was designed to control outcomes, not facilitate democratic participation."
+  },
+  {
+    "case_id": "1.7",
+    "slug": "dnc-official-advises-outvoting-dissent",
     "title": "PROOF: DNC Official Advised Appointee on Strategy to 'Outvote' Dissenting Committee Members",
     "date": "2025-09-09",
     "category": "Party Bylaw & Charter Violation",
-    "stakes": "This coordination between a national DNC official and a state-level appointee rendered the votes of elected minority members meaningless, replacing the committee's democratic process with a top-down directive to achieve a predetermined outcome.",
-    "thesis": "A DNC Rules Committee member advised a non-elected WVDP official on a strategy to 'outvote' elected minority members of the Affirmative Action Committee (AAC), according to an email from the committee's Black Caucus Co-Chair.",
+    "stakes": "Elected minority members' votes were rendered meaningless when a DNC official coordinated with an appointee to predetermine outcomes.",
+    "thesis": "A DNC Rules Committee member advised a non-elected official to 'outvote' elected minority AAC members.",
     "axioms": [
       {
         "text": "A non-elected WVDP official, Selina Vickers, was granted extraordinary oversight over the party's DNC compliance process by the DNC Rules & Bylaws Committee, on which Harold Ickes served.",
@@ -65,87 +284,38 @@
         "citation": "DNC Charter, Preamble"
       }
     ],
+    "rule_summary": "The DNC Charter requires that all party affairs allow for full and fair participation by members. Any coordination to predetermine voting outcomes through procedural manipulation violates this fundamental democratic principle.",
     "case_facts": [
       {
-        "text": "In a Sept. 23, 2021 email, the AAC Black Caucus Co-Chair stated it was 'disturbing to hear Harold [Ickes] admit he advised Selina [Vickers] to 'outvote Seth, Mari, and others'.'",
+        "text": "First, on September 23, 2021, the AAC Black Caucus Co-Chair wrote that it was 'disturbing to hear Harold [Ickes] admit he advised Selina [Vickers] to 'outvote' Seth, Mari, and others'.'",
         "citation": "Email from Mary Ann Claytor, Sept. 23, 2021"
       },
       {
-        "text": "An AAC member later admitted in a signed public statement that he 'colluded with members of the AAC' in a 'smear campaign' against a dissenting member.",
+        "text": "Following this strategy, an AAC member admitted in a signed public statement that he 'colluded with members of the AAC' in a 'smear campaign' against a dissenting member.",
         "citation": "S. Assadzandi, Public Statement, July 2, 2022"
       },
       {
-        "text": "Subsequently, an out-of-state associate presided over an AAC meeting where prior votes of the committee were overturned, an action later ruled a bylaw violation.",
+        "text": "Subsequently, an out-of-state associate presided over an AAC meeting where prior committee votes were overturned—an action later ruled a bylaw violation.",
         "citation": "DJ Proof #003: Committee Violated DNC Mandate by Nullifying Vote to Block Caucus Chairs"
       }
     ],
     "logic_chain": [
-      "A DNC official advised a non-voting WVDP appointee on a strategy to ensure a specific voting outcome on the AAC.",
-      "As the DNC-appointed compliance official, this appointee had significant procedural influence over the committee.",
-      "The advice was followed by a documented pattern of procedural maneuvering against dissenting members.",
-      "[DJ-MARK] A DNC official provided the strategy, and the state-level appointee had the procedural influence to help execute it, bypassing the committee's established deliberative process."
+      "A DNC official advised a non-voting WVDP appointee to 'outvote' specific elected minority members.",
+      "The appointee, as DNC-designated compliance official, possessed significant procedural influence over the committee.",
+      "This advice preceded a documented pattern of procedural manipulation against the named dissenting members.",
+      "The manipulation included admitted collusion and meetings that violated party bylaws.",
+      "[DJ-MARK] The DNC official provided the strategy, and the state-level appointee executed it, bypassing the committee's democratic process."
     ],
-    "violation": "A DNC official and a WVDP appointee coordinated a strategy that violated the DNC Charter's principle of 'fullest and fairest' participation by working to ensure a specific voting outcome, thereby neutralizing the votes of elected minority members."
+    "violation": "A DNC official and WVDP appointee violated the DNC Charter's requirement of 'fullest and fairest' participation by coordinating a strategy to neutralize the votes of elected minority members through procedural manipulation. This violation corrupts the democratic foundation of party governance and disenfranchises the very communities the diversity initiative was meant to empower."
   },
   {
-    "case_id": "003",
-    "slug": "unreported-pac-scholarship-program",
-    "title": "Unreported Financial Activity: The Scholarship Program",
-    "date": "2025-09-11",
-    "category": "Campaign Finance Violation",
-    "stakes": "This unreported activity creates a gap in the PAC's public financial record, making it impossible for the public to know who funded the scholarships or who benefited from them. The committee's sworn financial statement is, therefore, an incomplete and inaccurate account of its operations.",
-    "thesis": "This proof shows a PAC operated a formal scholarship program for which no financial activity—either expenditures or in-kind contributions—was disclosed on its sworn financial reports.",
-    "axioms": [
-      {
-        "text": "All expenditures made by a political committee must be publicly reported.",
-        "citation": "WV SOS Campaign-Finance Guide",
-        "url": "/files/sos-campaign-finance-guide.pdf"
-      },
-      {
-        "text": "Any 'thing of value' received by a political committee must be publicly reported as an in-kind contribution.",
-        "citation": "WV SOS Campaign-Finance Guide",
-        "url": "/files/sos-campaign-finance-guide.pdf"
-      }
-    ],
-    "case_facts": [
-      {
-        "text": "On August 22, 2023, 'A New Day PAC' solicited applications for a formal scholarship program for a third-party training.",
-        "citation": "Email Record, Aug 22, 2023"
-      },
-      {
-        "text": "The PAC's Q3 2023 report shows no expenditures to the trainer to pay for scholarships.",
-        "citation": "A New Day PAC Q3 2023 Filing"
-      },
-      {
-        "text": "The same report shows no in-kind contribution from the trainer for the value of donated training slots.",
-        "citation": "A New Day PAC Q3 2023 Filing"
-      },
-      {
-        "text": "A prior financial relationship exists, as the PAC paid the trainer for 'Consultant Fees' in Q4 2022.",
-        "citation": "A New Day PAC Q4 2022 Filing"
-      }
-    ],
-    "logic_chain": [
-      "The PAC publicly offered to fund training for selected individuals.",
-      "A transaction of this nature must be reported as either an expenditure or an in-kind contribution.",
-      "A review of the PAC's sworn financial report shows neither was disclosed.",
-      "[DJ-MARK] The PAC's required financial disclosure reports do not account for the activity of its scholarship program."
-    ],
-    "violation": "A New Day PAC failed to report either the expenditures for, or the in-kind contributions to, its scholarship program, in violation of state campaign finance law.",
-    "potential_remedies": [
-      "File a corrected Q3 2023 report that accurately discloses all financial activity related to the scholarship program.",
-      "Provide a public accounting of how the scholarship program was funded and who the recipients were.",
-      "Cease all financial activities until the committee's reporting can be brought into compliance."
-    ]
-  },
-  {
-    "case_id": "004",
-    "slug": "wvdp-aac-violates-dnc-mou-disenfranchises-caucuses",
-    "title": "PROOF: Committee Violated DNC Mandate by Nullifying Vote to Deny Subcommittee Seats to Caucus Chairs",
+    "case_id": "1.8",
+    "slug": "leadership-nullifies-vote-to-exclude-caucuses",
+    "title": "PROOF: AAC Nullified Valid Vote to Exclude Minority Caucus Chairs",
     "date": "2025-09-12",
     "category": "DNC MOU Violation",
-    "stakes": "By nullifying a valid vote, committee leadership removed the authority of the full committee and denied the elected chairs of the Indigenous and Black caucuses their right to participate in subcommittees. This action centralized the committee's power within a small group, directly violating the DNC's mandate for inclusion.",
-    "thesis": "AAC leadership nullified a committee vote to deny subcommittee seats to minority caucus chairs, continuing a pattern of disenfranchisement that violates the 2020 DNC MOU.",
+    "stakes": "Indigenous and Black caucus chairs were denied subcommittee seats when leadership nullified a valid democratic vote.",
+    "thesis": "AAC leadership violated the DNC MOU by nullifying a vote and excluding minority caucus chairs through an invalid meeting.",
     "axioms": [
       {
         "text": "The WVDP failed to establish the majority of its racial diversity caucuses before the Affirmative Action Committee's leadership was elected, effectively disenfranchising those groups from the committee's formation.",
@@ -163,45 +333,47 @@
         "url": "/files/Exhibit-G-Board-of-Appeals-Resolution-2.pdf"
       }
     ],
+    "rule_summary": "The DNC MOU requires encouraging full participation by minority groups in all committee activities. When combined with party bylaws requiring proper meeting procedures, any action that excludes minority representatives through invalid proceedings violates both the letter and spirit of the diversity mandate.",
     "case_facts": [
       {
-        "text": "The full committee voted to allow any member to join subcommittees by volunteering.",
+        "text": "First, the full committee democratically voted to allow any member to join subcommittees by volunteering.",
         "citation": "Grievance, Claytor, Sturm, and Sturm v. Thorp and Vickers, Para. 59"
       },
       {
-        "text": "Following the vote, leadership denied seats to the chairs of the Indigenous and Black caucuses.",
+        "text": "Following this vote, leadership refused to honor it and denied subcommittee seats to the chairs of the Indigenous and Black caucuses.",
         "citation": "Email from Seth Sturm, Aug. 31, 2021"
       },
       {
-        "text": "A small subcommittee rewrote the rules, replacing the full committee's volunteer system.",
+        "text": "A small subcommittee then rewrote the rules to replace the full committee's volunteer system with restrictive requirements.",
         "citation": "Bylaw Subcommittee Report, Sept. 9, 2021"
       },
       {
-        "text": "An out-of-state parliamentarian presided over the meeting that passed the new rules.",
+        "text": "An out-of-state parliamentarian presided over the meeting that passed these restrictive rules.",
         "citation": "Email from Mary Thorp, Sept. 15, 2021"
       },
       {
-        "text": "The party's Appeals Board later ruled this action violated bylaws.",
+        "text": "The party's Appeals Board subsequently ruled this meeting violated bylaws due to the out-of-state parliamentarian.",
         "citation": "Resolution of the Board of Appeals, Nov. 29, 2021"
       }
     ],
     "logic_chain": [
-      "The DNC mandated the AAC encourage full participation from minority caucuses.",
-      "The full committee passed an inclusive rule for volunteer subcommittee membership.",
-      "Leadership did not adhere to this rule and denied seats to the chairs of the Indigenous and Black caucuses.",
-      "The new, restrictive rules were passed in a meeting that violated party bylaws.",
-      "[DJ-MARK] This pattern of disenfranchisement—first by delaying caucus formation and then by denying subcommittee access—violated the core mandate of the DNC MOU."
+      "The DNC mandated that the AAC encourage full participation from minority caucuses.",
+      "The full committee voted democratically for an inclusive volunteer system for subcommittees.",
+      "Leadership refused to implement this vote and specifically excluded the Indigenous and Black caucus chairs.",
+      "Leadership then used a procedurally invalid meeting to impose restrictive rules that formalized this exclusion.",
+      "The party's own Appeals Board confirmed the meeting violated bylaws.",
+      "[DJ-MARK] This pattern—first delaying caucus formation, then denying subcommittee access through invalid procedures—systematically violated the DNC MOU's inclusion mandate."
     ],
-    "violation": "By nullifying a committee vote and using a meeting later ruled improper to pass new rules, AAC leadership prevented minority caucuses from achieving full participation in subcommittees, in violation of the 2020 DNC MOU."
+    "violation": "AAC leadership violated the 2020 DNC MOU by nullifying a democratic vote and using a procedurally invalid meeting to exclude minority caucus chairs from subcommittees. This violation represents a systematic pattern of disenfranchisement that defeats the MOU's core purpose of ensuring minority participation in party governance."
   },
   {
-    "case_id": "005",
-    "slug": "wvdp-resource-misuse-by-a-new-day-pac",
+    "case_id": "2.1",
+    "slug": "pac-uses-party-resources-no-disclosure",
     "title": "PROOF: Private PAC Used Official Party Resources Without Disclosure",
     "date": "2025-09-12",
     "category": "Campaign Finance Violation",
-    "stakes": "This action provided one private PAC with free, exclusive access to a valuable party fundraising tool not available to other Democrats. By not reporting this benefit, the PAC concealed a subsidy from the state party, obscuring the true nature of its financial support from the public.",
-    "thesis": "A party officer's PAC received and failed to report an in-kind contribution of value by using an official, restricted party email list to solicit funds.",
+    "stakes": "One PAC gained exclusive access to party resources while hiding this subsidy from public disclosure.",
+    "thesis": "A party officer's PAC used an official email list without reporting the required in-kind contribution.",
     "axioms": [
       {
         "text": "Any 'thing of value' provided to a political committee must be reported as an in-kind contribution.",
@@ -214,28 +386,82 @@
         "url": "/files/WVSDEC-Bylaws-06.15.2024.pdf"
       }
     ],
+    "rule_summary": "Campaign finance law requires political committees to report any 'thing of value' they receive as an in-kind contribution. Access to a restricted party email list for fundraising purposes clearly constitutes such value and must be disclosed.",
     "case_facts": [
       {
-        "text": "On August 22, 2023, a promotional email for the private 'A New Day' PAC was sent using the official WVDP County Chairs email list.",
+        "text": "A promotional email for the private 'A New Day' PAC was sent using the official WVDP County Chairs email list on August 22, 2023.",
         "citation": "A New Day Training Email, Aug 22, 2023"
       },
       {
-        "text": "The PAC's sworn financial report covering this period shows $0.00 in in-kind contributions received from the party.",
+        "text": "The PAC's sworn Q3 2023 financial report covering this period reported $0.00 in in-kind contributions received from any source, including the party.",
         "citation": "A New Day PAC Q3 2023 Filing, p. 1"
       }
     ],
     "logic_chain": [
-      "An official party email list is a valuable resource.",
-      "The 'A New Day PAC' used this resource to solicit funds and participation.",
-      "State law requires this benefit to be reported as an in-kind contribution.",
-      "The PAC's sworn financial disclosure reported no such contribution.",
-      "[DJ-MARK] The PAC failed to report an in-kind contribution as required by law."
+      "The official WVDP County Chairs email list is a valuable, restricted resource.",
+      "A New Day PAC used this resource on August 22, 2023, to solicit funds and participation.",
+      "State law requires reporting any 'thing of value' received as an in-kind contribution.",
+      "The PAC's sworn Q3 2023 financial disclosure reported zero in-kind contributions.",
+      "[DJ-MARK] The PAC concealed its use of party resources by failing to report the required in-kind contribution."
     ],
-    "violation": "A New Day PAC failed to report an in-kind contribution for using an official WVDP email list, violating state campaign finance law.",
+    "violation": "A New Day PAC violated state campaign finance law by failing to report the WVDP email list usage as an in-kind contribution in its Q3 2023 filing. This violation conceals improper subsidization of a private PAC with party resources and denies the public transparency about the true sources of political influence.",
     "potential_remedies": [
-      "File a corrected report disclosing the source and value of the in-kind contribution.",
-      "Reimburse the WVDP for the fair market value of its email list.",
-      "Establish a clear party policy on the use of party resources by external PACs."
+      "File a corrected report disclosing the source and fair market value of the in-kind contribution.",
+      "Reimburse the WVDP for the fair market value of its email list usage.",
+      "Establish a clear party policy prohibiting use of party resources by external PACs."
+    ]
+  },
+  {
+    "case_id": "2.2",
+    "slug": "unreported-pac-scholarship-program",
+    "title": "PROOF: Unreported Financial Activity - The Scholarship Program",
+    "date": "2025-09-11",
+    "category": "Campaign Finance Violation",
+    "stakes": "A PAC concealed its scholarship program from required disclosures, hiding who funded it and who benefited.",
+    "thesis": "A New Day PAC failed to report any financial activity for its formal scholarship program.",
+    "axioms": [
+      {
+        "text": "All expenditures made by a political committee must be publicly reported.",
+        "citation": "WV SOS Campaign-Finance Guide",
+        "url": "/files/sos-campaign-finance-guide.pdf"
+      },
+      {
+        "text": "Any 'thing of value' received by a political committee must be publicly reported as an in-kind contribution.",
+        "citation": "WV SOS Campaign-Finance Guide",
+        "url": "/files/sos-campaign-finance-guide.pdf"
+      }
+    ],
+    "rule_summary": "State law requires political committees to report all financial transactions—whether expenditures or in-kind contributions. A scholarship program necessarily involves one or both types of reportable transactions. Failure to report either violates campaign finance law.",
+    "case_facts": [
+      {
+        "text": "A New Day PAC solicited applications for a formal scholarship program for third-party training on August 22, 2023.",
+        "citation": "Email Record, Aug 22, 2023"
+      },
+      {
+        "text": "The PAC's Q3 2023 sworn financial report shows zero expenditures to the trainer for scholarship payments.",
+        "citation": "A New Day PAC Q3 2023 Filing"
+      },
+      {
+        "text": "The same sworn report shows zero in-kind contributions from the trainer for donated training slots.",
+        "citation": "A New Day PAC Q3 2023 Filing"
+      },
+      {
+        "text": "The PAC had previously paid this same trainer for 'Consultant Fees' in Q4 2022, establishing a documented financial relationship.",
+        "citation": "A New Day PAC Q4 2022 Filing"
+      }
+    ],
+    "logic_chain": [
+      "The PAC publicly offered scholarships for training on August 22, 2023.",
+      "Any scholarship transaction constitutes either an 'expenditure' or a 'thing of value' that must be publicly reported under state law.",
+      "The PAC's sworn Q3 2023 financial report contains neither expenditures for scholarships nor in-kind contributions of training slots.",
+      "The absence of any reported transaction means the PAC concealed this program from required public disclosure.",
+      "[DJ-MARK] The PAC's sworn financial disclosure reports omit all activity related to its scholarship program."
+    ],
+    "violation": "A New Day PAC violated state campaign finance law by failing to report the financial activity of its scholarship program in its Q3 2023 filing. This violation denies the public its statutory right to transparency in political financing and renders the PAC's sworn statement materially incomplete.",
+    "potential_remedies": [
+      "File a corrected Q3 2023 report that accurately discloses all financial activity related to the scholarship program.",
+      "Provide a public accounting of how the scholarship program was funded and who the recipients were.",
+      "Cease all financial activities until the committee's reporting can be brought into compliance."
     ]
   }
 ]
