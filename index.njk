@@ -33,7 +33,7 @@ description: Proof. Not spin. Examine proof, submit proof, and turn proof into a
           {# These lines now use the data from 'latestProof' to build the HTML directly #}
          <p class="proof-box__finding">{{ latestProof.thesis }}</p>
           <p class="proof-box__meta">CASE FILE: {{ latestProof.case_id }}</p>
-          <a href="{{ '/proofs/' | url }}{{ latestProof.slug }}/" class="proof-box__cta">
+          <a href="{{ '/proofs/' | url }}{{ latestProof.category | slug }}s/{{ latestProof.slug }}/" class="proof-box__cta">
             <img class="mark md" src="{{ '/images/three-dots-blue.svg' | url }}" alt="Therefore symbol" aria-hidden="true" loading="lazy" decoding="async">
             Examine Full Proof →
           </a>
