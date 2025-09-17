@@ -1,7 +1,7 @@
 ---
 layout: "layout.html"
 pagination:
-  data: proofs
+  data: collections.sortedProofs
   size: 1
   alias: proof
 permalink: "proofs/{{ (proof.umbrella_category | slug) }}/{{ (proof.slug or proof.case_id) | slug }}/index.html"
