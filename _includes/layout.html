@@ -80,8 +80,8 @@
           </a>
         </div>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu" aria-controls="primary-nav">
-          <svg class="nav-toggle-icon" aria-hidden="true" viewBox="0 0 24 24">
-            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <svg class="nav-toggle-icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
         <ul class="nav-links" id="primary-nav">
@@ -89,6 +89,7 @@
           <li><a href="{{ '/method' | url }}">Method</a></li>
           <li><a href="{{ '/action' | url }}">Action</a></li>
           <li><a href="{{ '/about' | url }}">About</a></li>
+          <li><a href="{{ '/contact' | url }}">Contact</a></li>
           <li><a href="{{ '/submit' | url }}" class="btn-nav-submit">Submit</a></li>
         </ul>
       </div>
@@ -116,6 +117,7 @@
       <p><a href="mailto:setho@democraticjustice.org">Submit Proof Confidentially</a></p>
       <p><a href="{{ '/integrity' | url }}">Proof of Integrity</a></p>
       <p><a href="{{ '/privacy' | url }}">Privacy Policy</a></p>
+      <p>&copy; {{ now | date: "%Y" }} Democratic Justice. All rights reserved.</p>
 
       <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
         <img class="mark xl"
