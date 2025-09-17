@@ -76,6 +76,45 @@ export function initNavigation() {
         str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
     const categorySlug = cat => cat ? slugify(cat) : '';
+
+    const parseCaseIdSegments = (caseId) => {
+        if (!caseId) return [];
+        return String(caseId)
+            .split(/[^0-9]+/)
+            .filter(Boolean)
+            .map((segment) => Number.parseInt(segment, 10));
+    };
+
+    const compareCaseIds = (a, b) => {
+        const segmentsA = parseCaseIdSegments(a);
+        const segmentsB = parseCaseIdSegments(b);
+        const length = Math.max(segmentsA.length, segmentsB.length);
+
+        for (let index = 0; index < length; index += 1) {
+            const diff = (segmentsA[index] ?? 0) - (segmentsB[index] ?? 0);
+            if (diff !== 0) {
+                return diff;
+            }
+        }
+
+        return String(a ?? '').localeCompare(String(b ?? ''));
+    };
+
+    const compareProofsByCaseId = (a = {}, b = {}) => {
+        const caseDiff = compareCaseIds(a?.case_id, b?.case_id);
+        if (caseDiff !== 0) {
+            return caseDiff;
+        }
+
+        const dateA = a?.date ? new Date(a.date).getTime() : 0;
+        const dateB = b?.date ? new Date(b.date).getTime() : 0;
+
+        if (dateA !== dateB) {
+            return dateA - dateB;
+        }
+
+        return String(a?.title ?? '').localeCompare(String(b?.title ?? ''));
+    };
     
     /* ---------- Comparison Tool Functions ---------- */
     function getProofIdFromCard(card) {
@@ -666,7 +705,7 @@ export function initNavigation() {
 
             allProofs = proofsData
                 .filter(p => p && p.title)
-                .sort((a, b) => new Date(b.date) - new Date(a.date) || a.case_id.localeCompare(b.case_id));
+                .sort(compareProofsByCaseId);
 
             filteredProofs = [...allProofs];
             
