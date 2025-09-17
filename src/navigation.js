@@ -628,9 +628,21 @@ export function initNavigation() {
             if (!response.ok) throw new Error('Failed to load proofs.json');
             
             const data = await response.json();
-            if (!Array.isArray(data)) return;
+            const proofsData = Array.isArray(data)
+                ? data
+                : Array.isArray(data?.proofs)
+                    ? data.proofs
+                    : Array.isArray(data?.items)
+                        ? data.items
+                        : [];
 
-            allProofs = data
+            if (!Array.isArray(proofsData) || proofsData.length === 0) {
+                if (!Array.isArray(data) && !Array.isArray(data?.proofs) && !Array.isArray(data?.items)) {
+                    throw new Error('Unrecognized proofs data format.');
+                }
+            }
+
+            allProofs = proofsData
                 .filter(p => p && p.title)
                 .sort((a, b) => new Date(b.date) - new Date(a.date) || a.case_id.localeCompare(b.case_id));
 
