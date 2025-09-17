@@ -5,7 +5,7 @@ description: Proof. Not spin. Democratic Justice equips West Virginia Democrats 
 ---
 
 {# This line gets the newest proof from our sorted collection and saves it in a variable #}
-{% set latestProof = collections.sortedProofs[0] %}
+{% set latestProof = collections.sortedProofs | last %}
 
 <header class="hero" role="banner">
   <div class="align-container">

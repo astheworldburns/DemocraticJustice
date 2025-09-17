@@ -53,6 +53,48 @@ function normalizeProofsData(raw) {
   return [];
 }
 
+function parseCaseIdSegments(caseId) {
+  if (!caseId) {
+    return [];
+  }
+
+  return String(caseId)
+    .split(/[^0-9]+/)
+    .filter(Boolean)
+    .map((segment) => Number.parseInt(segment, 10));
+}
+
+function compareCaseIds(a, b) {
+  const segmentsA = parseCaseIdSegments(a);
+  const segmentsB = parseCaseIdSegments(b);
+  const length = Math.max(segmentsA.length, segmentsB.length);
+
+  for (let index = 0; index < length; index += 1) {
+    const diff = (segmentsA[index] ?? 0) - (segmentsB[index] ?? 0);
+    if (diff !== 0) {
+      return diff;
+    }
+  }
+
+  return String(a ?? "").localeCompare(String(b ?? ""));
+}
+
+function compareProofsByCaseId(a = {}, b = {}) {
+  const caseDiff = compareCaseIds(a.case_id, b.case_id);
+  if (caseDiff !== 0) {
+    return caseDiff;
+  }
+
+  const dateA = a.date ? new Date(a.date).getTime() : 0;
+  const dateB = b.date ? new Date(b.date).getTime() : 0;
+
+  if (dateA !== dateB) {
+    return dateA - dateB;
+  }
+
+  return String(a.title ?? "").localeCompare(String(b.title ?? ""));
+}
+
 async function generateSharePNGs() {
   const shareOutputDir = path.join("_site", "share");
 
@@ -103,8 +145,7 @@ module.exports = function(eleventyConfig) {
       return [];
     }
 
-    // Sort by date in descending order
-    return [...normalizedProofs].sort((a, b) => new Date(b.date) - new Date(a.date));
+    return [...normalizedProofs].sort(compareProofsByCaseId);
   });
 
   // ## FILTERS ##

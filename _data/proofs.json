@@ -1,6 +1,6 @@
 [
   {
-    "case_id": "1.1",
+    "case_id": "1.01",
     "slug": "foundational-breach-dnc-diversity-plan",
     "title": "PROOF: The Affirmative Action Committee's Formation Was a Foundational Breach of the 2020 DNC MOU, Rendering It Illegitimate at Inception",
     "date": "2025-09-15",
@@ -59,7 +59,7 @@
     "violation": "The WVDP's implementation and the RBC's supervisory failure were not mere procedural errors; they constituted a foundational breach of contract and trust. They violated the MOU's core 'caucus-first mandate' by knowingly creating an unaccountable committee through a secretive, pre-arranged process. This initial, deliberate act of disenfranchisement rendered the Affirmative Action Committee illegitimate at the moment of its creation and doomed the entire diversity initiative to fail. The remedy required: void all actions taken by this illegitimate committee and reconstitute it properly with all required caucuses participating."
   },
   {
-    "case_id": "1.2",
+    "case_id": "1.02",
     "slug": "failure-to-implement-diversity-plan",
     "title": "PROOF: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
     "date": "2025-09-08",
@@ -112,7 +112,7 @@
     "violation": "The WVDP violated the 2020 DNC MOU by forming the Affirmative Action Committee and selecting its leadership before establishing the required constituent diversity caucuses, thereby disenfranchising minority groups from the foundational process. This violation undermines the MOU's purpose of ensuring full participation by minority communities in party governance."
   },
   {
-    "case_id": "1.3",
+    "case_id": "1.03",
     "slug": "secret-script-proves-caucus-exclusion",
     "title": "PROOF: Script's Detail Proves Deliberate Exclusion of Mandated Caucuses",
     "date": "2025-09-15",
@@ -155,7 +155,7 @@
     "violation": "The organizers deliberately violated the 2020 DNC MOU by proceeding with the formation of the AAC while knowingly excluding 75% of the required racial diversity caucuses. The script's own detail proves this was a calculated act of disenfranchisement, not an administrative failure, that breached the core terms of the reform agreement."
   },
   {
-    "case_id": "1.4",
+    "case_id": "1.04",
     "slug": "invalid-leadership-selection-procedure",
     "title": "PROOF: AAC Leadership Selection Was Procedurally Invalid",
     "date": "2025-09-15",
@@ -199,7 +199,7 @@
     "violation": "The use of a non-public script to dictate a pre-arranged slate of candidates for AAC leadership was a direct violation of the DNC Charter. The procedure did not afford members 'full, timely and equal opportunities to participate'. The secrecy instruction proves the organizers knew they were violating the party's foundational principles."
   },
   {
-    "case_id": "1.5",
+    "case_id": "1.05",
     "slug": "script-author-self-appointment",
     "title": "PROOF: Script Author Orchestrated Her Own Appointment to a Key Role",
     "date": "2025-09-15",
@@ -242,7 +242,7 @@
     "violation": "The script documents a significant conflict of interest in which the lead Challenger from the MOU used her authority as the meeting's organizer to orchestrate her own installation into a key committee role with procedural control, violating fundamental ethical standards of fair and open processes."
   },
   {
-    "case_id": "1.6",
+    "case_id": "1.06",
     "slug": "script-reveals-plan-to-control-dissent",
     "title": "PROOF: Script Reveals Pre-Planned Strategy to Control Meeting and Dissent",
     "date": "2025-09-15",
@@ -282,54 +282,54 @@
     "violation": "The script's prepared tactics for managing participation and its pre-emptive characterization of criticism as 'scolding' violate the 'open meetings' principle of the DNC Charter. This proves the meeting was designed to control outcomes, not facilitate democratic participation."
   },
   {
-  "case_id": "1.7",
-  "slug": "dnc-official-violates-mou-by-advising-dissent-suppression",
-  "title": "PROOF: DNC Official Violated 2020 MOU by Advising Appointee on Strategy to Undermine Dissenting Committee Members",
-  "date": "2025-09-09",
-  "category": "Party Bylaw & Charter Violation",
-  "umbrella_category": "WV Democratic Party & DNC Violations",
-  "stakes": "The democratic process of a state-level diversity committee was corrupted by a national party official in direct violation of a binding Memorandum of Understanding.",
-  "thesis": "A DNC Rules Committee member, Harold Ickes, was documented advising a non-voting Parliamentarian to 'outvote' elected minority members, an action that directly violates both the DNC Charter and the explicit terms of the 2020 MOU he was tasked with overseeing.",
-  "axioms": [
-    {
-      "text": "The 2020 MOU's stated purpose was to ensure an 'open and transparent process' and provide members a 'full, timely, and equal opportunity to engage' in party affairs.",
-      "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
-      "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
-    },
-    {
-      "text": "The MOU defined the DNC Rules & Bylaws Committee's (RBC) role as providing 'supervision and technical assistance' to ensure compliance.",
-      "citation": "2020 MOU between WVDP and DNC RBC, p. 1-2",
-      "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
-    },
-    {
-      "text": "Harold Ickes, a corporate lobbyist, was an appointed member of the DNC's RBC during the period this MOU was in effect.",
-      "citation": "Sludge Article, Feb 28, 2020",
-      "url": "/files/Corporate-Lobbyists-Control-the-Rules-at-the-DNC.pdf"
-    },
-    {
-      "text": "The MOU process resulted in Selina Vickers' appointment as Parliamentarian, a non-voting position.",
-      "citation": "User provided fact.",
-      "url": ""
-    }
-  ],
-  "rule_summary": "Advising a non-voting appointee on how to neutralize elected members is a direct violation of the 2020 MOU's mandate for an 'open and transparent process' and exceeds the RBC's defined role of providing 'supervision and technical assistance.'",
-  "case_facts": [
-    {
-      "text": "On September 23, 2021, the AAC Black Caucus Co-Chair, Mary Ann Claytor, wrote in an email that it was 'disturbing to hear Harold [Ickes] admit he advised Selina [Vickers] to 'outvote' Seth, Mari, and others'.",
-      "citation": "Email from Mary Ann Claytor, Sept. 23, 2021",
-      "url": "/files/Email_Mary_Ann_Claytor_2021-09-23.pdf"
-    }
-  ],
-  "logic_chain": [
-    "DNC official Harold Ickes served on the RBC, the committee tasked with overseeing the WVDP reforms under the 2020 MOU.",
-    "The MOU explicitly required an 'open process' and 'full participation.'",
-    "Ickes gave strategic advice to a non-voting appointee to 'outvote' elected members from diversity caucuses.",
-    "This advice is the antithesis of an 'open process' and actively undermines 'full participation,' constituting a direct violation of the MOU's spirit and terms, and an overreach of the RBC's defined role."
-  ],
-  "violation": "A DNC official from the oversight committee violated the 2020 MOU and the DNC Charter by advising a non-voting appointee on a strategy to neutralize elected members. This action exceeds the RBC's defined role of 'supervision,' corrupts the MOU's stated goal of 'full participation,' and represents an improper overreach of authority."
-},
+    "case_id": "1.07",
+    "slug": "dnc-official-violates-mou-by-advising-dissent-suppression",
+    "title": "PROOF: DNC Official Violated 2020 MOU by Advising Appointee on Strategy to Undermine Dissenting Committee Members",
+    "date": "2025-09-09",
+    "category": "Party Bylaw & Charter Violation",
+    "umbrella_category": "WV Democratic Party & DNC Violations",
+    "stakes": "The democratic process of a state-level diversity committee was corrupted by a national party official in direct violation of a binding Memorandum of Understanding.",
+    "thesis": "A DNC Rules Committee member, Harold Ickes, was documented advising a non-voting Parliamentarian to 'outvote' elected minority members, an action that directly violates both the DNC Charter and the explicit terms of the 2020 MOU he was tasked with overseeing.",
+    "axioms": [
+      {
+        "text": "The 2020 MOU's stated purpose was to ensure an 'open and transparent process' and provide members a 'full, timely, and equal opportunity to engage' in party affairs.",
+        "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
+        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+      },
+      {
+        "text": "The MOU defined the DNC Rules & Bylaws Committee's (RBC) role as providing 'supervision and technical assistance' to ensure compliance.",
+        "citation": "2020 MOU between WVDP and DNC RBC, p. 1-2",
+        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+      },
+      {
+        "text": "Harold Ickes, a corporate lobbyist, was an appointed member of the DNC's RBC during the period this MOU was in effect.",
+        "citation": "Sludge Article, Feb 28, 2020",
+        "url": "/files/Corporate-Lobbyists-Control-the-Rules-at-the-DNC.pdf"
+      },
+      {
+        "text": "The MOU process resulted in Selina Vickers' appointment as Parliamentarian, a non-voting position.",
+        "citation": "User provided fact.",
+        "url": ""
+      }
+    ],
+    "rule_summary": "Advising a non-voting appointee on how to neutralize elected members is a direct violation of the 2020 MOU's mandate for an 'open and transparent process' and exceeds the RBC's defined role of providing 'supervision and technical assistance.'",
+    "case_facts": [
+      {
+        "text": "On September 23, 2021, the AAC Black Caucus Co-Chair, Mary Ann Claytor, wrote in an email that it was 'disturbing to hear Harold [Ickes] admit he advised Selina [Vickers] to 'outvote' Seth, Mari, and others'.",
+        "citation": "Email from Mary Ann Claytor, Sept. 23, 2021",
+        "url": "/files/Email_Mary_Ann_Claytor_2021-09-23.pdf"
+      }
+    ],
+    "logic_chain": [
+      "DNC official Harold Ickes served on the RBC, the committee tasked with overseeing the WVDP reforms under the 2020 MOU.",
+      "The MOU explicitly required an 'open process' and 'full participation.'",
+      "Ickes gave strategic advice to a non-voting appointee to 'outvote' elected members from diversity caucuses.",
+      "This advice is the antithesis of an 'open process' and actively undermines 'full participation,' constituting a direct violation of the MOU's spirit and terms, and an overreach of the RBC's defined role."
+    ],
+    "violation": "A DNC official from the oversight committee violated the 2020 MOU and the DNC Charter by advising a non-voting appointee on a strategy to neutralize elected members. This action exceeds the RBC's defined role of 'supervision,' corrupts the MOU's stated goal of 'full participation,' and represents an improper overreach of authority."
+  },
   {
-    "case_id": "1.8",
+    "case_id": "1.08",
     "slug": "coordinated-smear-campaign-against-dissenters",
     "title": "PROOF: A Coordinated Smear Campaign Was Used to Discredit and Isolate Dissenting AAC Members",
     "date": "2025-09-10",
@@ -376,8 +376,8 @@
     ],
     "violation": "A coordinated campaign of covertly scripted attacks, public smears, and procedural manipulation was used to violate the DNC Charter's requirements of ethical conduct and 'fullest and fairest' participation. This campaign created a hostile environment designed to neutralize the votes and voices of specific elected minority members."
   },
-    {
-    "case_id": "1.9",
+  {
+    "case_id": "1.09",
     "slug": "leadership-nullifies-vote-to-exclude-caucuses",
     "title": "PROOF: AAC Nullified Valid Vote to Exclude Minority Caucus Chairs",
     "date": "2025-09-12",
@@ -388,7 +388,7 @@
     "axioms": [
       {
         "text": "The WVDP failed to establish the majority of its racial diversity caucuses before the Affirmative Action Committee's leadership was elected, effectively disenfranchising those groups from the committee's formation.",
-        "citation": "DJ Proof 1.2: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
+        "citation": "DJ Proof 1.02: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
         "url": "/proofs/failure-to-implement-diversity-plan/"
       },
       {
@@ -404,7 +404,7 @@
     ],
     "rule_summary": "The DNC MOU requires encouraging full participation by minority groups in all committee activities. When combined with party bylaws requiring proper meeting procedures, any action that excludes minority representatives through invalid proceedings violates both the letter and spirit of the diversity mandate.",
     "case_facts": [
-       {
+      {
         "text": "First, the full committee democratically voted to allow any member to join subcommittees by volunteering.",
         "citation": "Grievance, Claytor, Sturm, and Sturm v. Thorp and Vickers, Para. 59",
         "url": "/files/Grievance_Claytor_Sturm_vs_Thorp_Vickers.pdf"
@@ -490,7 +490,7 @@
     "violation": "The documented pattern of ghostwriting and concealing authorship constitutes a severe and repeated violation of the DNC Charter's principles of fair, open, and ethical participation. It demonstrates a calculated strategy to subvert the democratic process by manufacturing the illusion of organic consensus, thereby exerting undue and illegitimate influence over the committee's actions and outcomes. This pattern proves the committee was never a genuine forum for minority voices, but a controlled entity designed to execute a pre-determined agenda from its very inception."
   },
   {
-    "case_id": "2.1",
+    "case_id": "2.01",
     "slug": "pac-uses-party-resources-no-disclosure",
     "title": "PROOF: Private PAC Used Official Party Resources Without Disclosure",
     "date": "2025-09-12",
@@ -538,7 +538,7 @@
     ]
   },
   {
-    "case_id": "2.2",
+    "case_id": "2.02",
     "slug": "unreported-pac-scholarship-program",
     "title": "PROOF: Unreported Financial Activity - The Scholarship Program",
     "date": "2025-09-11",
