@@ -186,13 +186,25 @@ export function initNavigation() {
 
                 const card = entry.target;
                 if (card.dataset.proofData) {
-                    const proofData = JSON.parse(card.dataset.proofData);
-                    renderFullCard(card, proofData);
-                    card.dataset.proofData = ''; // Clear after loading
+                    let proofData = null;
 
-                    // If compare UI exists, (re)attach a checkbox to THIS card
-                    if (document.getElementById('compare-btn')) {
-                        attachComparisonToCard(card);
+                    try {
+                        proofData = JSON.parse(card.dataset.proofData);
+                    } catch (error) {
+                        console.error('Failed to parse proof data for lazy-loaded card:', error, {
+                            proofId: card.dataset.proofId
+                        });
+                    }
+
+                    card.dataset.proofData = ''; // Clear after loading or failure
+
+                    if (proofData) {
+                        renderFullCard(card, proofData);
+
+                        // If compare UI exists, (re)attach a checkbox to THIS card
+                        if (document.getElementById('compare-btn')) {
+                            attachComparisonToCard(card);
+                        }
                     }
                 }
 
@@ -329,8 +341,7 @@ export function initNavigation() {
         if (lazy) {
             return `
                 <article class="case-card case-card-lazy"
-                         data-proof-id="${proof.case_id || proof.slug}"
-                         data-proof-data='${JSON.stringify(proof)}'>
+                         data-proof-id="${proof.case_id || proof.slug}">
                     <div class="card-skeleton">
                         <div class="skeleton-line skeleton-title"></div>
                         <div class="skeleton-line skeleton-meta"></div>
@@ -449,6 +460,17 @@ export function initNavigation() {
             const isLazy = index > 6; // Lazy load after first 6
             const cardHTML = renderProofCard(proof, isLazy);
             const cardElement = el(cardHTML);
+
+            if (isLazy && cardElement) {
+                try {
+                    cardElement.dataset.proofData = JSON.stringify(proof);
+                } catch (error) {
+                    console.error('Failed to serialize proof for lazy loading:', error, {
+                        proofId: proof.case_id || proof.slug
+                    });
+                }
+            }
+
             grid.appendChild(cardElement);
             
             if (isLazy && observer) {
