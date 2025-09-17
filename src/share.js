@@ -51,12 +51,33 @@ export function initShare() {
         if (resp.ok) {
           vibrate([20, 50, 20]);
           errorEl?.style?.setProperty('display', 'none');
-          form.innerHTML = '<p>Thanks—we\'ll be in touch soon.</p>';
+          form.dispatchEvent(new CustomEvent('enhanced:success', { detail: { response: resp } }));
+
+          const successSelector = form.dataset.successTarget;
+          const successMessage = form.dataset.successMessage;
+
+          if (successSelector) {
+            const successEl = document.querySelector(successSelector);
+            if (successEl) {
+              form.setAttribute('hidden', 'true');
+              successEl.hidden = false;
+              successEl.focus?.();
+              return;
+            }
+          }
+
+          if (successMessage) {
+            form.innerHTML = `<p>${successMessage}</p>`;
+          } else {
+            form.innerHTML = '<p>Thanks—we\'ll be in touch soon.</p>';
+          }
         } else {
           errorEl?.style?.setProperty('display', 'block');
+          form.dispatchEvent(new CustomEvent('enhanced:error', { detail: { response: resp } }));
         }
-      } catch {
+      } catch (err) {
         errorEl?.style?.setProperty('display', 'block');
+        form.dispatchEvent(new CustomEvent('enhanced:error', { detail: { error: err } }));
       }
     });
   });
