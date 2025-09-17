@@ -4,6 +4,55 @@ const Image = require("@11ty/eleventy-img");
 const fs = require("node:fs/promises");
 const path = require("node:path");
 
+function normalizeProofsData(raw) {
+  if (!raw) {
+    return [];
+  }
+
+  if (Array.isArray(raw)) {
+    return raw;
+  }
+
+  if (typeof raw === "object") {
+    const preferredKeys = [
+      "proofs",
+      "items",
+      "data",
+      "results",
+      "entries",
+      "records",
+      "default"
+    ];
+
+    for (const key of preferredKeys) {
+      const value = raw[key];
+      if (Array.isArray(value)) {
+        return value;
+      }
+      if (value && typeof value === "object") {
+        const nested = normalizeProofsData(value);
+        if (nested.length) {
+          return nested;
+        }
+      }
+    }
+
+    for (const value of Object.values(raw)) {
+      if (Array.isArray(value)) {
+        return value;
+      }
+      if (value && typeof value === "object") {
+        const nested = normalizeProofsData(value);
+        if (nested.length) {
+          return nested;
+        }
+      }
+    }
+  }
+
+  return [];
+}
+
 async function generateSharePNGs() {
   const shareOutputDir = path.join("_site", "share");
 
@@ -39,19 +88,23 @@ module.exports = function(eleventyConfig) {
     let proofs;
     try {
       // Load proofs data directly for reliability
-      proofs = require("./_data/proofs.json");
+      const proofsPath = require.resolve("./_data/proofs.json");
+      delete require.cache[proofsPath];
+      proofs = require(proofsPath);
     } catch (error) {
       console.warn("Warning: `proofs.json` could not be loaded.", error);
       proofs = [];
     }
 
-    if (!Array.isArray(proofs)) {
+    const normalizedProofs = normalizeProofsData(proofs);
+
+    if (!normalizedProofs.length) {
       console.warn("Warning: `proofs.json` data not found or is not an array.");
       return [];
     }
 
     // Sort by date in descending order
-    return [...proofs].sort((a, b) => new Date(b.date) - new Date(a.date));
+    return [...normalizedProofs].sort((a, b) => new Date(b.date) - new Date(a.date));
   });
 
   // ## FILTERS ##
