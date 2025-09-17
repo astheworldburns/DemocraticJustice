@@ -56,78 +56,182 @@ permalink: /action/file/
     <h2 id="review-form">Challenge Review Intake Form</h2>
     <p>We respond within two business days. If a filing deadline is under five days away, mention it so we can prioritize your review.</p>
 
-    <form id="secure-contact" name="challenge-review" method="POST" netlify netlify-honeypot="bot-field" class="cta-form" aria-labelledby="review-form">
+    <form
+      id="secure-contact"
+      name="challenge-review"
+      method="POST"
+      netlify
+      netlify-honeypot="bot-field"
+      class="cta-form multi-step-form"
+      aria-labelledby="review-form"
+      data-form-id="challenge-review"
+      data-success-target="#challenge-review-success"
+    >
       <input type="hidden" name="form-name" value="challenge-review">
       <p class="visually-hidden"><label>Leave this empty <input name="bot-field"></label></p>
 
-      <div class="form-group">
-        <label for="full-name">Full name</label>
-        <input type="text" id="full-name" name="full-name" placeholder="Jane Doe" required>
-      </div>
+      <ol class="form-progress" aria-hidden="true">
+        <li class="is-active" data-progress-step>Contact</li>
+        <li data-progress-step>Deadline</li>
+        <li data-progress-step>Details</li>
+        <li data-progress-step>Relief</li>
+      </ol>
+      <p class="form-progress__status" data-progress-status aria-live="polite">Step 1 of 4</p>
 
-      <div class="form-group">
-        <label for="email">Email address</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required>
-      </div>
+      <fieldset data-form-step>
+        <legend>Step 1 of 4: Your information</legend>
 
-      <div class="form-group">
-        <label for="phone">Phone (optional)</label>
-        <input type="tel" id="phone" name="phone" placeholder="304-555-0123">
-      </div>
+        <div class="form-group">
+          <label for="full-name">Full name</label>
+          <p class="form-help" id="full-name-help">We will address the written review to this name.</p>
+          <input type="text" id="full-name" name="full-name" placeholder="Jane Doe" aria-describedby="full-name-help" required>
+        </div>
 
-      <div class="form-group">
-        <label for="county">County or local organization</label>
-        <input type="text" id="county" name="county" placeholder="County, committee, or group involved">
-      </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <p class="form-help" id="email-help">We'll send confirmation and follow up questions to this inbox.</p>
+          <input type="email" id="email" name="email" placeholder="your@email.com" aria-describedby="email-help" required>
+        </div>
 
-      <div class="form-group">
-        <label for="challenge-type">Which process are you pursuing?</label>
-        <select id="challenge-type" name="challenge-type" required>
-          <option value="" disabled selected>Select an option</option>
-          <option value="Appeal a decision">Appeal a decision</option>
-          <option value="Contest a delegation">Contest a delegation</option>
-          <option value="Remove a member for cause">Remove a member for cause</option>
-          <option value="Remove an officer">Remove an officer</option>
-          <option value="DNC Credentials Challenge">DNC Credentials Challenge</option>
-          <option value="DNC Rules Complaint">DNC Rules Complaint</option>
-          <option value="Not sure yet">Not sure yet</option>
-        </select>
-      </div>
+        <div class="form-group">
+          <label for="phone">Phone (optional)</label>
+          <p class="form-help" id="phone-help">Share a mobile number if you'd like a text update when we respond.</p>
+          <input type="tel" id="phone" name="phone" placeholder="304-555-0123" aria-describedby="phone-help">
+        </div>
 
-      <div class="form-group">
-        <label for="decision-maker">Who issued the decision or rule?</label>
-        <input type="text" id="decision-maker" name="decision-maker" placeholder="Committee, officer, or body" required>
-      </div>
+        <div class="form-group">
+          <label for="county">County or local organization</label>
+          <p class="form-help" id="county-help">List the county committee or local group connected to your challenge.</p>
+          <input type="text" id="county" name="county" placeholder="County, committee, or group involved" aria-describedby="county-help">
+        </div>
 
-      <div class="form-group">
-        <label for="decision-date">Decision date or next deadline</label>
-        <input type="date" id="decision-date" name="decision-date">
-      </div>
+        <div class="form-group">
+          <span class="form-label" id="registration-label">Are you registered to vote as a Democrat in West Virginia?</span>
+          <p class="form-help" id="registration-help">The WVSDEC can only accept filings from registered West Virginia Democrats or qualified representatives.</p>
+          <div class="form-options" role="group" aria-labelledby="registration-label" aria-describedby="registration-help">
+            <label class="form-option">
+              <input type="radio" name="wv-registered" value="yes" required>
+              <span>Yes — I'm a registered West Virginia Democrat</span>
+            </label>
+            <label class="form-option">
+              <input type="radio" name="wv-registered" value="no">
+              <span>No — I'm assisting someone else or contesting as another entity</span>
+            </label>
+          </div>
+        </div>
 
-      <div class="form-group">
-        <label for="state-steps">What steps have you already taken within the WV Democratic Party?</label>
-        <textarea id="state-steps" name="state-steps" rows="3" placeholder="Tell us who you contacted, hearings held, or responses received." required></textarea>
-      </div>
+        <div class="form-group" id="registration-explanation" data-registration-explanation hidden>
+          <label for="registration-notes">Explain your connection to the party</label>
+          <p class="form-help" id="registration-notes-help">If you're filing on behalf of someone else or a committee, tell us how the case meets the standing requirement.</p>
+          <textarea id="registration-notes" name="registration-notes" rows="3" placeholder="Share how you or the person you represent meets the WVSDEC eligibility rules." aria-describedby="registration-notes-help"></textarea>
+        </div>
+      </fieldset>
 
-      <div class="form-group">
-        <label for="proof-links">Related Democratic Justice proofs or documents</label>
-        <textarea id="proof-links" name="proof-links" rows="3" placeholder="Paste case IDs, proof links, or document names."></textarea>
-      </div>
+      <fieldset data-form-step hidden>
+        <legend>Step 2 of 4: Confirm the deadline</legend>
 
-      <div class="form-group">
-        <label for="summary">What happened?</label>
-        <textarea id="summary" name="summary" rows="4" placeholder="Describe the violation, when it happened, and who was affected." required></textarea>
-      </div>
+        <div class="form-group">
+          <label for="decision-date">When did the decision or event happen?</label>
+          <p class="form-help" id="decision-date-help">Use the meeting, vote, or decision date so we can verify the 30-day filing window.</p>
+          <input type="date" id="decision-date" name="decision-date" aria-describedby="decision-date-help" required>
+        </div>
 
-      <div class="form-group">
-        <label for="remedy">What remedy or support are you seeking?</label>
-        <textarea id="remedy" name="remedy" rows="3" placeholder="Tell us the outcome you're requesting or where you need help."></textarea>
-      </div>
+        <p class="form-alert" data-date-warning role="status" aria-live="polite" hidden></p>
 
-      <button type="submit">Submit Review Request</button>
+        <div class="form-group" id="deadline-notes-group" data-deadline-notes hidden>
+          <label for="deadline-notes">Explain any timing concerns</label>
+          <p class="form-help" id="deadline-notes-help">If it has been more than 30 days, tell us about tolling arguments, new evidence, or ongoing violations.</p>
+          <textarea id="deadline-notes" name="deadline-notes" rows="3" placeholder="Describe why the case should still be heard or note any continuing violations." aria-describedby="deadline-notes-help"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="decision-maker">Which committee, officer, or body was involved?</label>
+          <p class="form-help" id="decision-maker-help">List the exact committee, officer, or body whose action you're challenging.</p>
+          <input type="text" id="decision-maker" name="decision-maker" placeholder="e.g., Kanawha County Democratic Executive Committee" aria-describedby="decision-maker-help" required>
+        </div>
+      </fieldset>
+
+      <fieldset data-form-step hidden>
+        <legend>Step 3 of 4: Describe what happened</legend>
+
+        <div class="form-group">
+          <label for="challenge-type">Which process are you pursuing?</label>
+          <p class="form-help" id="challenge-type-help">We'll match your facts to the correct section of the bylaws.</p>
+          <select id="challenge-type" name="challenge-type" aria-describedby="challenge-type-help" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Appeal a decision">Appeal a decision</option>
+            <option value="Contest a delegation">Contest a delegation</option>
+            <option value="Remove a member for cause">Remove a member for cause</option>
+            <option value="Remove an officer">Remove an officer</option>
+            <option value="DNC Credentials Challenge">DNC Credentials Challenge</option>
+            <option value="DNC Rules Complaint">DNC Rules Complaint</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="summary">Provide a brief description of your claim</label>
+          <p class="form-help" id="summary-help">Summarize the rule violation, timeline, and who was affected.</p>
+          <textarea id="summary" name="summary" rows="4" placeholder="Provide a brief description of your claim, including key facts and dates." aria-describedby="summary-help" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="proof-links">Supporting links or documents (optional)</label>
+          <p class="form-help" id="proof-links-help">Share Democratic Justice proof links, recordings, or describe documents we should review.</p>
+          <textarea id="proof-links" name="proof-links" rows="3" placeholder="Paste proof links, cite recordings, or note documents you can share." aria-describedby="proof-links-help"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset data-form-step hidden>
+        <legend>Step 4 of 4: Prior remedies and relief</legend>
+
+        <div class="form-group">
+          <span class="form-label" id="prior-remedy-label">Have you already asked the WV Democratic Party for relief?</span>
+          <p class="form-help" id="prior-remedy-help">Tell us about grievances, appeals, or informal outreach you've attempted.</p>
+          <div class="form-options" role="group" aria-labelledby="prior-remedy-label" aria-describedby="prior-remedy-help">
+            <label class="form-option">
+              <input type="radio" name="prior-remedy" value="yes" required>
+              <span>Yes — I've already requested relief</span>
+            </label>
+            <label class="form-option">
+              <input type="radio" name="prior-remedy" value="no">
+              <span>No — this is my first request</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group" data-prior-remedy="yes" hidden>
+          <label for="state-steps">Describe the steps you've taken so far</label>
+          <p class="form-help" id="state-steps-help">Include who you contacted, meeting dates, and any responses received.</p>
+          <textarea id="state-steps" name="state-steps" rows="3" placeholder="Share who you contacted, when you met, and how they responded." aria-describedby="state-steps-help"></textarea>
+        </div>
+
+        <div class="form-group" data-prior-remedy="no" hidden>
+          <label for="prior-barriers">Tell us what has stopped you from seeking relief</label>
+          <p class="form-help" id="prior-barriers-help">Knowing obstacles helps us recommend the next procedural step.</p>
+          <textarea id="prior-barriers" name="prior-barriers" rows="3" placeholder="Explain any barriers to filing or why you're seeking our help first." aria-describedby="prior-barriers-help"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="remedy">What remedy or support are you seeking?</label>
+          <p class="form-help" id="remedy-help">Describe the outcome you want—such as a rehearing, new vote, or policy change.</p>
+          <textarea id="remedy" name="remedy" rows="3" placeholder="Tell us the remedy you're requesting and how we can support you." aria-describedby="remedy-help" required></textarea>
+        </div>
+      </fieldset>
+
+      <div class="form-navigation" data-form-navigation>
+        <button type="button" class="btn-secondary" data-form-prev disabled>Back</button>
+        <button type="button" data-form-next>Next Step</button>
+        <button type="submit" data-form-submit hidden>Submit Review Request</button>
+      </div>
     </form>
 
-    <p id="cta-error">Sorry—something went wrong. Email <a href="mailto:setho@democraticjustice.org">setho@democraticjustice.org</a>.</p>
+    <div id="challenge-review-success" class="form-success" role="status" aria-live="polite" tabindex="-1" hidden>
+      <h3>Thanks—your review request is in our queue.</h3>
+      <p>We received your challenge review intake and will reply within two business days. If you flagged an urgent deadline, we'll prioritize your case and follow up as quickly as possible.</p>
+    </div>
+
+    <p id="cta-error" role="alert">Sorry—something went wrong. Email <a href="mailto:setho@democraticjustice.org">setho@democraticjustice.org</a>.</p>
 
     <p style="font-size:13px;margin-top:16px;opacity:.9">We keep every intake confidential. If the form gives you trouble, email <a href="mailto:setho@democraticjustice.org">setho@democraticjustice.org</a> with "Challenge Review" in the subject.</p>
   </div>
