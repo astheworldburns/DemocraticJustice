@@ -1302,6 +1302,16 @@ html { scroll-behavior: smooth; }
   color: var(--brand);
 }
 
+[data-theme="dark"] .pre-check-box {
+  background: var(--surface-soft);
+  border-color: var(--surface-soft);
+  border-left-color: var(--brand);
+}
+[data-theme="dark"] .pre-check-box p,
+[data-theme="dark"] .pre-check-box li {
+  color: var(--text);
+}
+
 /* Step-by-Step Section Styling */
 .action-step {
   text-align: center;
