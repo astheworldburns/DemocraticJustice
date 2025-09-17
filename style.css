@@ -715,12 +715,23 @@ p{max-width:65ch;margin-bottom:16px}
   max-width:480px;
 }
 .cta-form input,
-.cta-form textarea{
+.cta-form textarea,
+.cta-form select{
   padding:12px 16px;
   border:1px solid var(--muted);
   border-radius:8px;
   font-size:16px;
   font-family:inherit;
+}
+.cta-form .form-group{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.cta-form .form-group label{
+  font-weight:600;
+  font-size:0.9rem;
+  color:var(--muted);
 }
 .cta-form button{
   display:inline-flex;

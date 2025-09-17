@@ -1,0 +1,134 @@
+---
+layout: layout.html
+title: "Challenge Review Intake — Democratic Justice"
+description: "Request a Democratic Justice challenge review to confirm standing, deadlines, and filing steps before you submit."
+permalink: /action/file/
+---
+
+<section class="content-page" id="challenge-review-page">
+  <div class="align-container">
+    <p class="section-label">Challenge Review</p>
+    <h1>Request a Challenge Review</h1>
+    <p>Turning a proof into a formal challenge requires verifying deadlines, standing, and documentation. Complete the intake below so we can confirm your case and outline the next steps.</p>
+
+    <div class="action-step">
+      <h2 class="step-title"><span class="step-number">1</span>What you can expect</h2>
+      <p class="step-description">You will receive a written review that confirms jurisdiction, cites the controlling bylaws, and outlines a recommended filing path.</p>
+    </div>
+
+    <ul class="action-list">
+      <li>Standing and jurisdiction analysis grounded in WV Democratic Party and DNC rules</li>
+      <li>Deadline timeline with citations to the applicable bylaws or charter</li>
+      <li>Evidence and documentation checklist tailored to your challenge</li>
+      <li>Optional support plan if you qualify for end-to-end filing assistance</li>
+    </ul>
+
+    <div class="action-step">
+      <h2 class="step-title"><span class="step-number">2</span>Gather essential details</h2>
+      <p class="step-description">Share what happened, when it occurred, and the proof you have so we can confirm the 30-day clock and the proper venue.</p>
+    </div>
+
+    <div class="pre-check-box">
+      <h2>Details to include</h2>
+      <p>Having this information ready keeps the review fast and focused:</p>
+      <ul>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" /></svg>
+          <span>The committee, officer, or body you're contesting and the date of the decision or meeting.</span>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" /></svg>
+          <span>What steps you've already taken with the West Virginia Democratic Party to seek a remedy.</span>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" /></svg>
+          <span>Links to Democratic Justice proofs, documents, or recordings that back up your claim.</span>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" /></svg>
+          <span>The remedy you want ordered—rehearing, new vote, rule change, or another fix.</span>
+        </li>
+      </ul>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 id="review-form">Challenge Review Intake Form</h2>
+    <p>We respond within two business days. If a filing deadline is under five days away, mention it so we can prioritize your review.</p>
+
+    <form id="secure-contact" name="challenge-review" method="POST" netlify netlify-honeypot="bot-field" class="cta-form" aria-labelledby="review-form">
+      <input type="hidden" name="form-name" value="challenge-review">
+      <p class="visually-hidden"><label>Leave this empty <input name="bot-field"></label></p>
+
+      <div class="form-group">
+        <label for="full-name">Full name</label>
+        <input type="text" id="full-name" name="full-name" placeholder="Jane Doe" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone (optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="304-555-0123">
+      </div>
+
+      <div class="form-group">
+        <label for="county">County or local organization</label>
+        <input type="text" id="county" name="county" placeholder="County, committee, or group involved">
+      </div>
+
+      <div class="form-group">
+        <label for="challenge-type">Which process are you pursuing?</label>
+        <select id="challenge-type" name="challenge-type" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="Appeal a decision">Appeal a decision</option>
+          <option value="Contest a delegation">Contest a delegation</option>
+          <option value="Remove a member for cause">Remove a member for cause</option>
+          <option value="Remove an officer">Remove an officer</option>
+          <option value="DNC Credentials Challenge">DNC Credentials Challenge</option>
+          <option value="DNC Rules Complaint">DNC Rules Complaint</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="decision-maker">Who issued the decision or rule?</label>
+        <input type="text" id="decision-maker" name="decision-maker" placeholder="Committee, officer, or body" required>
+      </div>
+
+      <div class="form-group">
+        <label for="decision-date">Decision date or next deadline</label>
+        <input type="date" id="decision-date" name="decision-date">
+      </div>
+
+      <div class="form-group">
+        <label for="state-steps">What steps have you already taken within the WV Democratic Party?</label>
+        <textarea id="state-steps" name="state-steps" rows="3" placeholder="Tell us who you contacted, hearings held, or responses received." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="proof-links">Related Democratic Justice proofs or documents</label>
+        <textarea id="proof-links" name="proof-links" rows="3" placeholder="Paste case IDs, proof links, or document names."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="summary">What happened?</label>
+        <textarea id="summary" name="summary" rows="4" placeholder="Describe the violation, when it happened, and who was affected." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="remedy">What remedy or support are you seeking?</label>
+        <textarea id="remedy" name="remedy" rows="3" placeholder="Tell us the outcome you're requesting or where you need help."></textarea>
+      </div>
+
+      <button type="submit">Submit Review Request</button>
+    </form>
+
+    <p id="cta-error">Sorry—something went wrong. Email <a href="mailto:setho@democraticjustice.org">setho@democraticjustice.org</a>.</p>
+
+    <p style="font-size:13px;margin-top:16px;opacity:.9">We keep every intake confidential. If the form gives you trouble, email <a href="mailto:setho@democraticjustice.org">setho@democraticjustice.org</a> with "Challenge Review" in the subject.</p>
+  </div>
+</section>
