@@ -404,10 +404,33 @@ p{max-width:65ch;margin-bottom:16px}
   position: relative;
 }
 
+.hero-headline{
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.hero-headline::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -56%);
+  width: min(65vw, 520px);
+  aspect-ratio: 1 / 1;
+  background: url('images/three-dots-white.svg') no-repeat center/contain;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
+}
+
 @media (max-width:768px){
   .hero{
     background-color: var(--paper-light);
     color: var(--text);
+  }
+  .hero-headline::after{
+    content: none;
   }
 }
 
