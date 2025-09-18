@@ -25,7 +25,7 @@
     "@playwright/test": "^1.44.1",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.1.1",
-    "esbuild": "^0.21.0",
+    "esbuild": "^0.25.10",
     "luxon": "^3.7.2",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1"
