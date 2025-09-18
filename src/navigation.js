@@ -15,7 +15,6 @@ export function initNavigation() {
     let proofsPerLoad = 12; // For lazy loading
     let currentlyLoaded = 0;
     let observer; // For Intersection Observer
-    let selectedProofs = []; // For comparison tool
     
     /* ---------- UI Elements ---------- */
     const grid = document.getElementById('case-grid');
@@ -118,107 +117,6 @@ export function initNavigation() {
         return String(a?.title ?? '').localeCompare(String(b?.title ?? ''));
     };
     
-    /* ---------- Comparison Tool Functions ---------- */
-    function getProofIdFromCard(card) {
-        const path = card.querySelector('a')?.href?.split('/proofs/')[1] || '';
-        return card?.dataset?.proofId
-            || path.split('/')[1]
-            || '';
-    }
-
-    function attachComparisonToCard(card) {
-        const compareBtn = document.getElementById('compare-btn');
-        if (!compareBtn || !card) return;
-
-        // Remove any leftover checkbox (re-renders/lazy loads)
-        const old = card.querySelector('.compare-checkbox');
-        if (old) old.remove();
-
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.className = 'compare-checkbox';
-        checkbox.title = 'Select for comparison (max 3)';
-        checkbox.addEventListener('change', (e) => {
-            const pid = getProofIdFromCard(card);
-            if (!pid) return;
-
-            if (e.target.checked) {
-                if (selectedProofs.length < 3) {
-                    selectedProofs.push(pid);
-                } else {
-                    e.target.checked = false;
-                    alert('Maximum 3 proofs can be compared.');
-                }
-            } else {
-                selectedProofs = selectedProofs.filter(id => id !== pid);
-            }
-
-            compareBtn.textContent = `Compare Selected (${selectedProofs.length})`;
-            compareBtn.disabled = selectedProofs.length < 2;
-        });
-
-        // Put the checkbox at the start of the card
-        card.prepend(checkbox);
-    }
-
-    function initComparison() {
-        const compareBtn = document.getElementById('compare-btn');
-        const cards = document.querySelectorAll('.case-card');
-        if (!compareBtn || !cards.length) return;
-
-        // Reset button state each time we (re)run
-        selectedProofs = [];
-        compareBtn.textContent = `Compare Selected (0)`;
-        compareBtn.disabled = true;
-
-        cards.forEach(card => attachComparisonToCard(card));
-
-        compareBtn.onclick = () => {
-            if (selectedProofs.length >= 2) showComparison(selectedProofs);
-        };
-    }
-
-    function showComparison(proofIds) {
-        const comparisonView = document.getElementById('comparison-view');
-        if (!comparisonView) return;
-        const grid = comparisonView.querySelector('.comparison-grid');
-        if (!grid) return;
-
-        grid.innerHTML = `
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Aspect</th>
-                        ${proofIds.map(id => `<th>Proof ${id.replace('wvdp-','').slice(0,10)}…</th>`).join('')}
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Category</td>${proofIds.map(() => `<td>Loading…</td>`).join('')}</tr>
-                    <tr><td>Date</td>${proofIds.map(() => `<td>Loading…</td>`).join('')}</tr>
-                    <tr><td>Key Violation</td>${proofIds.map(() => `<td>Loading…</td>`).join('')}</tr>
-                </tbody>
-            </table>
-        `;
-        comparisonView.style.display = 'block';
-
-        // Fill cells from already-loaded data in memory
-        const byId = (id) => allProofs.find(p =>
-            p.case_id === id || p.slug === id || (p.slug && id.startsWith(p.slug)));
-
-        const rows = grid.querySelectorAll('tbody tr');
-        const cats = rows[0].querySelectorAll('td:not(:first-child)');
-        const dates = rows[1].querySelectorAll('td:not(:first-child)');
-        const viols = rows[2].querySelectorAll('td:not(:first-child)');
-
-        proofIds.forEach((id, i) => {
-            const p = byId(id);
-            if (!p) return;
-            cats[i].textContent = p.category || '';
-            dates[i].textContent = (new Date(p.date)).toLocaleDateString();
-            viols[i].textContent = p.violation || p.thesis || '';
-        });
-    }
-
     /* ---------- Lazy Loading Setup ---------- */
     const lazyLoadProofs = () => {
         const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -241,11 +139,6 @@ export function initNavigation() {
 
                     if (proofData) {
                         renderFullCard(card, proofData);
-
-                        // If compare UI exists, (re)attach a checkbox to THIS card
-                        if (document.getElementById('compare-btn')) {
-                            attachComparisonToCard(card);
-                        }
                     }
                 }
 
@@ -539,8 +432,6 @@ export function initNavigation() {
         } else {
             renderGrid(proofs, append);
         }
-        // Re-initialize comparison after any render
-        setTimeout(() => initComparison(), 100);
     };
 
     const updateResultsCount = () => {
