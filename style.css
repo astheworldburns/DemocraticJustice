@@ -2744,3 +2744,33 @@ html { scroll-behavior: smooth; }
   width: 20px;
   height: 20px;
 }
+.breadcrumb {
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb li[aria-current="page"] {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  color: var(--text-muted);
+  margin-right: 0.5rem;
+}
