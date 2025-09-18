@@ -4,7 +4,7 @@ pagination:
   data: collections.sortedProofs
   size: 1
   alias: proof
-permalink: "proofs/{{ (proof.umbrella_category | slug) }}/{{ (proof.slug or proof.case_id) | slug }}/index.html"
+permalink: "proofs/{{ proof.overproof.slug }}/{{ (proof.slug or proof.case_id) | slug }}/index.html"
 eleventyComputed:
   title: "{{ proof.title }}"
   description: "{{ proof.thesis }}"
@@ -28,10 +28,18 @@ eleventyComputed:
 
 <div class="align-container" id="proof-page">
   <article class="doc">
+    {% set overproof = proof.overproof %}
+    {% if overproof %}
+      {% set overproofUrl = ('/proofs/' + overproof.slug + '/') | url %}
+      {% set overproofLabel = overproof.short_title or overproof.title %}
+    {% endif %}
     <nav aria-label="Breadcrumb" class="breadcrumb">
       <ol>
         <li><a href="{{ '/' | url }}">Home</a></li>
         <li><a href="{{ '/archive' | url }}">Proof</a></li>
+        {% if overproof %}
+        <li><a href="{{ overproofUrl }}">{{ overproofLabel }}</a></li>
+        {% endif %}
         <li aria-current="page">{{ proof.title }}</li>
       </ol>
     </nav>
@@ -51,13 +59,30 @@ eleventyComputed:
             "position": 2,
             "name": "Proof",
             "item": "{{ site.url }}{{ '/archive/' | url }}"
+          }
+          {% if overproof %}
+          ,
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ overproof.title }}",
+            "item": "{{ site.url }}{{ overproofUrl }}"
           },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "{{ proof.title }}",
+            "item": "{{ site.url }}{{ page.url | url }}"
+          }
+          {% else %}
+          ,
           {
             "@type": "ListItem",
             "position": 3,
             "name": "{{ proof.title }}",
             "item": "{{ site.url }}{{ page.url | url }}"
           }
+          {% endif %}
         ]
       }
     </script>
