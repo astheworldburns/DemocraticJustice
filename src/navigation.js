@@ -100,56 +100,6 @@ export function initNavigation() {
         return `/proofs/${overproofSlug}/${proofSlug}/`;
     };
 
-    const extractArrayData = (data) => {
-        if (Array.isArray(data)) return data;
-        const keys = ['proofs', 'items', 'data', 'results', 'entries', 'records', 'default'];
-        for (const key of keys) {
-            if (Array.isArray(data?.[key])) {
-                return data[key];
-            }
-        }
-        return [];
-    };
-
-    const parseCaseIdSegments = (caseId) => {
-        if (!caseId) return [];
-        return String(caseId)
-            .split(/[^0-9]+/)
-            .filter(Boolean)
-            .map((segment) => Number.parseInt(segment, 10));
-    };
-
-    const compareCaseIds = (a, b) => {
-        const segmentsA = parseCaseIdSegments(a);
-        const segmentsB = parseCaseIdSegments(b);
-        const length = Math.max(segmentsA.length, segmentsB.length);
-
-        for (let index = 0; index < length; index += 1) {
-            const diff = (segmentsA[index] ?? 0) - (segmentsB[index] ?? 0);
-            if (diff !== 0) {
-                return diff;
-            }
-        }
-
-        return String(a ?? '').localeCompare(String(b ?? ''));
-    };
-
-    const compareProofsByCaseId = (a = {}, b = {}) => {
-        const caseDiff = compareCaseIds(a?.case_id, b?.case_id);
-        if (caseDiff !== 0) {
-            return caseDiff;
-        }
-
-        const dateA = a?.date ? new Date(a.date).getTime() : 0;
-        const dateB = b?.date ? new Date(b.date).getTime() : 0;
-
-        if (dateA !== dateB) {
-            return dateA - dateB;
-        }
-
-        return String(a?.title ?? '').localeCompare(String(b?.title ?? ''));
-    };
-    
     /* ---------- Lazy Loading Setup ---------- */
     const lazyLoadProofs = () => {
         const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -613,109 +563,51 @@ export function initNavigation() {
     };
 
     /* ---------- Initialize ---------- */
-    const initialize = async () => {
+    const initialize = () => {
         try {
-            // Setup lazy loading observer
             observer = lazyLoadProofs();
 
-            const [proofsResponse, overproofsResponse] = await Promise.all([
-                fetch('/data/proofs.json', { cache: 'no-store' }),
-                fetch('/data/overproofs.json', { cache: 'no-store' })
-            ]);
-
-            if (!proofsResponse.ok) throw new Error('Failed to load proofs.json');
-            if (!overproofsResponse.ok) throw new Error('Failed to load overproofs.json');
-
-            const [proofsRaw, overproofsRaw] = await Promise.all([
-                proofsResponse.json(),
-                overproofsResponse.json()
-            ]);
-
-            const proofsData = extractArrayData(proofsRaw);
-            if (!Array.isArray(proofsData) || proofsData.length === 0) {
-                if (!Array.isArray(proofsRaw) && !Array.isArray(proofsRaw?.proofs) && !Array.isArray(proofsRaw?.items)) {
-                    throw new Error('Unrecognized proofs data format.');
-                }
+            const proofDataElement = document.getElementById('proof-data');
+            if (!proofDataElement) {
+                throw new Error('Proof data element not found.');
             }
 
-            const overproofsData = extractArrayData(overproofsRaw);
-            const overproofById = new Map();
-            const overproofByUmbrella = new Map();
+            const rawJson = (proofDataElement.textContent || '').trim();
+            if (!rawJson) {
+                throw new Error('Proof data element is empty.');
+            }
 
-            overproofsData.filter(Boolean).forEach((overproof) => {
-                const normalized = { ...overproof };
-                if (!normalized.slug && normalized.umbrella_category) {
-                    normalized.slug = slugify(normalized.umbrella_category);
-                }
-                if (normalized.slug) {
-                    normalized.url = normalized.url || `/proofs/${normalized.slug}/`;
-                }
-                if (normalized.id) {
-                    overproofById.set(normalized.id, normalized);
-                }
-                if (normalized.umbrella_category) {
-                    overproofByUmbrella.set(normalized.umbrella_category, normalized);
-                }
-            });
+            let parsedPayload;
+            try {
+                parsedPayload = JSON.parse(rawJson);
+            } catch (parseError) {
+                throw new Error('Proof data JSON is invalid.');
+            }
 
-            allProofs = proofsData
-                .filter(p => p && p.title)
-                .map((proof) => {
-                    const overproofMeta =
-                        (proof.overproof_id && overproofById.get(proof.overproof_id)) ||
-                        (proof.umbrella_category && overproofByUmbrella.get(proof.umbrella_category)) ||
-                        null;
+            let proofsData;
+            if (Array.isArray(parsedPayload?.proofs)) {
+                proofsData = parsedPayload.proofs;
+            } else if (Array.isArray(parsedPayload)) {
+                proofsData = parsedPayload;
+            } else {
+                throw new Error('Unrecognized proof data format.');
+            }
 
-                    if (!overproofMeta && proof.umbrella_category) {
-                        console.warn('Missing overproof metadata for proof', {
-                            caseId: proof.case_id,
-                            umbrella: proof.umbrella_category
-                        });
-                    }
-
-                    return {
-                        ...proof,
-                        overproof_id: overproofMeta?.id ?? proof.overproof_id ?? null,
-                        overproof: overproofMeta ? { ...overproofMeta } : null
-                    };
-                })
-                .sort(compareProofsByCaseId);
-
-            const proofCounts = new Map();
-            allProofs.forEach((proof) => {
-                const id = proof.overproof?.id;
-                if (id) {
-                    proofCounts.set(id, (proofCounts.get(id) ?? 0) + 1);
-                }
-            });
-
-            allProofs = allProofs.map((proof) => {
-                if (!proof.overproof?.id) {
-                    return proof;
-                }
-                return {
-                    ...proof,
-                    overproof: {
-                        ...proof.overproof,
-                        proofCount: proofCounts.get(proof.overproof.id) ?? 0
-                    }
-                };
-            });
-
+            allProofs = proofsData.filter((proof) => proof && proof.title);
             filteredProofs = [...allProofs];
 
             populateFilters();
             renderProofs(filteredProofs);
             updateResultsCount();
+            renderFilterBadges();
 
-            // Event listeners
             if (searchInput) {
                 searchInput.addEventListener('input', handleSearch);
             }
-            
+
             if (categoryFilter) categoryFilter.addEventListener('change', filterAndRender);
             if (typeFilter) typeFilter.addEventListener('change', filterAndRender);
-            
+
             if (viewToggle) {
                 viewToggle.addEventListener('click', () => {
                     currentView = currentView === 'grid' ? 'timeline' : 'grid';
@@ -738,12 +630,12 @@ export function initNavigation() {
                 });
             }
 
-            // Initialize modals
             initModals();
-
         } catch (error) {
-            console.error("Error initializing archive:", error);
-            if (grid) grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px; color:red;">Could not load proofs. Please try again later.</p>';
+            console.error('Error initializing archive:', error);
+            if (grid) {
+                grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px; color:red;">Could not load proofs. Please try again later.</p>';
+            }
         }
     };
 
