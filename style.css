@@ -1959,7 +1959,7 @@ html { scroll-behavior: smooth; }
   font-weight: 900;
   line-height: 1.1;
   color: var(--ink-strong);
-  margin: 2rem 0 0; /* Space above title, none below */
+  margin: 2rem 0 2.5rem; /* Space above title with generous bottom gap */
 }
 
 /* --- Section Styling --- */
@@ -2437,6 +2437,7 @@ html { scroll-behavior: smooth; }
   border: 2px solid var(--brand);
   border-radius: 16px;
   padding: 24px;
+  margin-top: 16px;
   margin-bottom: 32px;
   position: relative;
   overflow: hidden;
