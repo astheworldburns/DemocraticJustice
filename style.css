@@ -488,6 +488,15 @@ p{max-width:65ch;margin-bottom:16px}
   background:var(--navy);
   color:var(--white);
 }
+[data-theme="dark"] .btn-outline-blue{
+  color:var(--text);
+  border-color:var(--border-contrast);
+}
+[data-theme="dark"] .btn-outline-blue:hover{
+  background:var(--text);
+  color:var(--navy);
+  border-color:var(--text);
+}
 .btn-group{
   display:flex;
   gap:16px;
