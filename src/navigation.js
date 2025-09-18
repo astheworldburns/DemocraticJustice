@@ -190,29 +190,36 @@ export function initNavigation() {
             this.firstFocusable = null;
             this.lastFocusable = null;
             this.active = false;
+            this.boundKeyHandler = null;
         }
-        
+
         activate() {
             if (this.active) return;
-            
+
             this.focusableElements = this.element.querySelectorAll(
                 'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select, [tabindex]:not([tabindex="-1"])'
             );
-            
+
             this.firstFocusable = this.focusableElements[0];
             this.lastFocusable = this.focusableElements[this.focusableElements.length - 1];
-            
-            this.element.addEventListener('keydown', this.handleKeyDown.bind(this));
+
+            if (!this.boundKeyHandler) {
+                this.boundKeyHandler = this.handleKeyDown.bind(this);
+            }
+
+            this.element.addEventListener('keydown', this.boundKeyHandler);
             this.firstFocusable?.focus();
             this.active = true;
-            
+
             // Store last focused element
             this.lastFocus = document.activeElement;
         }
-        
+
         deactivate() {
             if (!this.active) return;
-            this.element.removeEventListener('keydown', this.handleKeyDown.bind(this));
+            if (this.boundKeyHandler) {
+                this.element.removeEventListener('keydown', this.boundKeyHandler);
+            }
             this.lastFocus?.focus();
             this.active = false;
         }
