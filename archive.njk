@@ -36,6 +36,10 @@ permalink: "/archive/index.html"
       </article>
       {%- endfor -%}
     </div>
-    
+
+    <script type="application/json" id="proof-data">
+      {{ collections.sortedProofs | dump | replace('</', '<\\/') | safe }}
+    </script>
+
   </div>
 </div>
