@@ -3,6 +3,8 @@ const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
 const fs = require("node:fs/promises");
 const path = require("node:path");
+const slugifyImport = require("@sindresorhus/slugify");
+const slugifyFn = typeof slugifyImport === "function" ? slugifyImport : slugifyImport?.default;
 
 function normalizeProofsData(raw) {
   if (!raw) {
@@ -95,6 +97,232 @@ function compareProofsByCaseId(a = {}, b = {}) {
   return String(a.title ?? "").localeCompare(String(b.title ?? ""));
 }
 
+function slugifyValue(value) {
+  if (value === undefined || value === null) {
+    return "";
+  }
+  const input = String(value);
+  if (typeof slugifyFn === "function") {
+    return slugifyFn(input, { decamelize: false });
+  }
+  return input
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function normalizeOverproofEntry(entry = {}, index = 0) {
+  const umbrella = entry.umbrella_category ?? entry.title ?? entry.slug ?? entry.id ?? `Overproof ${index + 1}`;
+
+  const slugCandidates = [entry.slug, umbrella, entry.id, `overproof-${index + 1}`];
+  let slug = "";
+  for (const candidate of slugCandidates) {
+    if (!candidate) {
+      continue;
+    }
+    slug = slugifyValue(candidate);
+    if (slug) {
+      break;
+    }
+  }
+  if (!slug) {
+    slug = `overproof-${index + 1}`;
+  }
+
+  const id = entry.id ?? `overproof-${slug}`;
+  const title = entry.title ?? umbrella ?? slug;
+  const shortTitle = entry.short_title ?? title;
+  const summary = entry.summary ?? entry.description ?? "";
+  const narrative = entry.narrative ?? entry.body ?? "";
+  const keyPoints = Array.isArray(entry.key_points) ? entry.key_points : [];
+  const metadata = entry.metadata && typeof entry.metadata === "object" ? entry.metadata : {};
+  const order = Number.isFinite(entry.order) ? entry.order : index + 1;
+
+  return {
+    ...entry,
+    id,
+    slug,
+    title,
+    short_title: shortTitle,
+    umbrella_category: umbrella,
+    summary,
+    narrative,
+    key_points: keyPoints,
+    metadata,
+    order,
+    url: `/proofs/${slug}/`
+  };
+}
+
+function assembleProofCollections() {
+  let proofsData;
+  try {
+    const proofsPath = require.resolve("./_data/proofs.json");
+    delete require.cache[proofsPath];
+    proofsData = require(proofsPath);
+  } catch (error) {
+    console.warn("Warning: `proofs.json` could not be loaded.", error);
+    proofsData = [];
+  }
+
+  const normalizedProofs = normalizeProofsData(proofsData);
+
+  if (!normalizedProofs.length) {
+    console.warn("Warning: `proofs.json` data not found or is not an array.");
+    return {
+      proofs: [],
+      overproofGroups: [],
+      overproofList: []
+    };
+  }
+
+  let overproofsData;
+  try {
+    const overproofsPath = require.resolve("./_data/overproofs.json");
+    delete require.cache[overproofsPath];
+    overproofsData = require(overproofsPath);
+  } catch (error) {
+    console.warn("Warning: `overproofs.json` could not be loaded.", error);
+    overproofsData = [];
+  }
+
+  const normalizedOverproofs = normalizeProofsData(overproofsData);
+  const processedOverproofs = normalizedOverproofs.map((entry, index) => normalizeOverproofEntry(entry, index));
+
+  const overproofById = new Map();
+  const overproofByUmbrella = new Map();
+
+  for (const overproof of processedOverproofs) {
+    if (overproof.id) {
+      overproofById.set(overproof.id, overproof);
+    }
+    if (overproof.umbrella_category) {
+      overproofByUmbrella.set(overproof.umbrella_category, overproof);
+    }
+  }
+
+  const sortedProofs = [...normalizedProofs].sort(compareProofsByCaseId);
+
+  const enrichedProofs = sortedProofs.map((proof, index) => {
+    const umbrella = proof.umbrella_category ?? "";
+    let overproofMeta = null;
+
+    if (proof.overproof_id && overproofById.has(proof.overproof_id)) {
+      overproofMeta = overproofById.get(proof.overproof_id);
+    } else if (umbrella && overproofByUmbrella.has(umbrella)) {
+      overproofMeta = overproofByUmbrella.get(umbrella);
+    } else if (umbrella) {
+      const fallbackSlug = slugifyValue(umbrella) || `overproof-${index + 1}`;
+      const fallbackId = `overproof-${fallbackSlug}`;
+      overproofMeta = {
+        id: fallbackId,
+        slug: fallbackSlug,
+        title: umbrella,
+        short_title: umbrella,
+        umbrella_category: umbrella,
+        summary: "",
+        narrative: "",
+        key_points: [],
+        metadata: {},
+        order: processedOverproofs.length + index + 1,
+        url: `/proofs/${fallbackSlug}/`
+      };
+      processedOverproofs.push(overproofMeta);
+      overproofById.set(overproofMeta.id, overproofMeta);
+      overproofByUmbrella.set(umbrella, overproofMeta);
+      console.warn(`Warning: Created fallback overproof metadata for umbrella category "${umbrella}".`);
+    } else {
+      console.warn(`Warning: Proof ${proof.case_id ?? proof.slug ?? index} is missing umbrella category information for overproof lookup.`);
+    }
+
+    return {
+      ...proof,
+      overproof_id: overproofMeta?.id ?? proof.overproof_id ?? null,
+      overproof: overproofMeta ? { ...overproofMeta } : null
+    };
+  });
+
+  const proofCounts = new Map();
+  for (const proof of enrichedProofs) {
+    const overproofId = proof.overproof?.id;
+    if (overproofId) {
+      proofCounts.set(overproofId, (proofCounts.get(overproofId) ?? 0) + 1);
+    }
+  }
+
+  const finalProofs = enrichedProofs.map((proof) => {
+    if (!proof.overproof) {
+      return proof;
+    }
+    const proofCount = proofCounts.get(proof.overproof.id) ?? 0;
+    return {
+      ...proof,
+      overproof: {
+        ...proof.overproof,
+        proofCount
+      }
+    };
+  });
+
+  const groupsMap = new Map();
+  for (const proof of finalProofs) {
+    const overproof = proof.overproof;
+    if (!overproof?.id) {
+      continue;
+    }
+    let group = groupsMap.get(overproof.id);
+    if (!group) {
+      group = {
+        overproof: { ...overproof },
+        proofs: []
+      };
+      groupsMap.set(overproof.id, group);
+    }
+    group.proofs.push(proof);
+  }
+
+  const overproofGroups = Array.from(groupsMap.values())
+    .map((group) => {
+      const proofsForGroup = [...group.proofs].sort(compareProofsByCaseId);
+      const overproof = {
+        ...group.overproof,
+        proofCount: proofsForGroup.length
+      };
+      return {
+        overproof,
+        proofs: proofsForGroup
+      };
+    })
+    .sort((a, b) => {
+      const orderDiff = (a.overproof.order ?? 0) - (b.overproof.order ?? 0);
+      if (orderDiff !== 0) {
+        return orderDiff;
+      }
+      return a.overproof.title.localeCompare(b.overproof.title);
+    });
+
+  const overproofList = processedOverproofs
+    .map((overproof) => ({
+      ...overproof,
+      proofCount: proofCounts.get(overproof.id) ?? 0
+    }))
+    .sort((a, b) => {
+      const orderDiff = (a.order ?? 0) - (b.order ?? 0);
+      if (orderDiff !== 0) {
+        return orderDiff;
+      }
+      return a.title.localeCompare(b.title);
+    });
+
+  return {
+    proofs: finalProofs,
+    overproofGroups,
+    overproofList
+  };
+}
+
 async function generateSharePNGs() {
   const shareOutputDir = path.join("_site", "share");
 
@@ -124,31 +352,25 @@ async function generateSharePNGs() {
   }
 }
 
+let cachedProofCollections;
+function getProofCollections() {
+  if (!cachedProofCollections) {
+    cachedProofCollections = assembleProofCollections();
+  }
+  return cachedProofCollections;
+}
+
 module.exports = function(eleventyConfig) {
-  // ## COLLECTIONS ##
-  eleventyConfig.addCollection("sortedProofs", function(collectionApi) {
-    let proofs;
-    try {
-      // Load proofs data directly for reliability
-      const proofsPath = require.resolve("./_data/proofs.json");
-      delete require.cache[proofsPath];
-      proofs = require(proofsPath);
-    } catch (error) {
-      console.warn("Warning: `proofs.json` could not be loaded.", error);
-      proofs = [];
-    }
-
-    const normalizedProofs = normalizeProofsData(proofs);
-
-    if (!normalizedProofs.length) {
-      console.warn("Warning: `proofs.json` data not found or is not an array.");
-      return [];
-    }
-
-    return [...normalizedProofs].sort(compareProofsByCaseId);
+  eleventyConfig.addCollection("sortedProofs", function() {
+    const { proofs } = getProofCollections();
+    return proofs;
   });
 
-  // ## FILTERS ##
+  eleventyConfig.addCollection("overproofs", function() {
+    const { overproofGroups } = getProofCollections();
+    return overproofGroups;
+  });
+
   eleventyConfig.addFilter("date", (dateObj, format = "LLLL d, yyyy") => {
     if (!dateObj) return "";
     return DateTime.fromJSDate(new Date(dateObj), { zone: 'utc' }).toFormat(format);
@@ -161,35 +383,37 @@ module.exports = function(eleventyConfig) {
     return str.slice(0, idx > 0 ? idx : length) + "…";
   });
 
-  // ## PASSTHROUGH COPIES ##
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("bundle.js");
   eleventyConfig.addPassthroughCopy("ga-consent.js");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy({ "_data/proofs.json": "data/proofs.json" });
+  eleventyConfig.addPassthroughCopy({ "_data/overproofs.json": "data/overproofs.json" });
   eleventyConfig.addPassthroughCopy("files");
   eleventyConfig.addPassthroughCopy("_redirects");
 
-  // ## WATCH TARGETS ##
   eleventyConfig.addWatchTarget("./style.css");
   eleventyConfig.addWatchTarget("./bundle.js");
   eleventyConfig.addWatchTarget("./ga-consent.js");
 
-  // ## GLOBALS ##
-  // Expose environment variables to templates so deployment-specific
-  // credentials (e.g. analytics tokens) can be referenced safely.
   eleventyConfig.addNunjucksGlobal("env", process.env);
 
-  // ## SERVER OPTIONS ##
   eleventyConfig.setServerOptions({
     showAllFiles: true
+  });
+
+  eleventyConfig.on("beforeWatch", () => {
+    cachedProofCollections = null;
+  });
+
+  eleventyConfig.on("beforeBuild", () => {
+    cachedProofCollections = null;
   });
 
   eleventyConfig.on("afterBuild", async () => {
     await generateSharePNGs();
   });
 
-  // ## DIRECTORY CONFIG ##
   return {
     dir: {
       input: ".",

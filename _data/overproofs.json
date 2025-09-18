@@ -1,0 +1,42 @@
+[
+  {
+    "id": "overproof-wv-democratic-party-dnc-violations",
+    "slug": "wv-democratic-party-dnc-violations",
+    "title": "WV Democratic Party & DNC Violations",
+    "short_title": "WV Democratic Party & DNC",
+    "umbrella_category": "WV Democratic Party & DNC Violations",
+    "summary": "How the West Virginia Democratic Party and the DNC's Rules and Bylaws Committee dismantled the MOU-mandated diversity process.",
+    "narrative": "This overproof documents the systemic failure of the 2020 diversity reform agreement. It traces how party leaders used secret scripts, coordinated talking points, and retaliatory discipline to keep control of the Affirmative Action Committee while sidelining the very caucuses the MOU promised to empower. Together these proofs show deliberate noncompliance, cover stories crafted to mask it, and the DNC's supervisory negligence that allowed the breach to persist.",
+    "key_points": [
+      "The 2020 DNC MOU required caucus-first formation of the Affirmative Action Committee and direct RBC supervision.",
+      "Party insiders pre-selected leadership with a hidden script and blocked mandated Latino, AAPI, and Native caucuses from organizing.",
+      "Internal emails, ghostwritten statements, and smear campaigns targeted dissenting members to keep the process under insider control."
+    ],
+    "metadata": {
+      "Timeframe": "2020–2022 reform process",
+      "Focus": "Affirmative Action Committee implementation and RBC oversight",
+      "Primary Documents": "2020 DNC MOU, internal scripts, witness statements, disciplinary records"
+    },
+    "order": 1
+  },
+  {
+    "id": "overproof-a-new-day-pac-campaign-finance-violations",
+    "slug": "a-new-day-pac-campaign-finance-violations",
+    "title": "A New Day PAC Campaign Finance Violations",
+    "short_title": "A New Day PAC",
+    "umbrella_category": "A New Day PAC Campaign Finance Violations",
+    "summary": "A coordinated network of PAC operatives quietly leveraged Democratic Party infrastructure without the required public disclosures.",
+    "narrative": "These proofs show how the A New Day PAC and its principals ran party-branded programs with private money, leaving the public record devoid of mandatory filings. Party resources, staff, and donor data were blended into a shadow fundraising and scholarship apparatus that obscured who paid, who benefited, and what rules were broken in the process.",
+    "key_points": [
+      "Private PAC initiatives were marketed as official party programs without disclosing the true funding source.",
+      "Scholarship and voter-contact projects operated off the books, denying regulators a full account of receipts and expenditures.",
+      "Shared staff, digital assets, and donor lists blurred the legal line between the party committee and the independent PAC."
+    ],
+    "metadata": {
+      "Timeframe": "2021–2024 election cycles",
+      "Focus": "Coordination between A New Day PAC and WV Democratic Party resources",
+      "Primary Documents": "Internal memos, fundraising decks, bank ledgers, scholarship records"
+    },
+    "order": 2
+  }
+]

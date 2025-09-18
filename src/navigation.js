@@ -76,7 +76,40 @@ export function initNavigation() {
         decamelize: false,
     });
 
-    const categorySlug = cat => cat ? slugify(cat) : '';
+    const buildProofSlug = (proof = {}) => {
+        if (proof.slug) {
+            return proof.slug;
+        }
+        if (proof.case_id) {
+            return slugify(proof.case_id);
+        }
+        return '';
+    };
+
+    const buildProofUrl = (proof = {}) => {
+        const overproofSlug = proof?.overproof?.slug;
+        const proofSlug = buildProofSlug(proof);
+        if (!overproofSlug || !proofSlug) {
+            console.warn('Missing slug data for proof URL', {
+                caseId: proof?.case_id,
+                proofSlug,
+                overproofSlug
+            });
+            return '#';
+        }
+        return `/proofs/${overproofSlug}/${proofSlug}/`;
+    };
+
+    const extractArrayData = (data) => {
+        if (Array.isArray(data)) return data;
+        const keys = ['proofs', 'items', 'data', 'results', 'entries', 'records', 'default'];
+        for (const key of keys) {
+            if (Array.isArray(data?.[key])) {
+                return data[key];
+            }
+        }
+        return [];
+    };
 
     const parseCaseIdSegments = (caseId) => {
         if (!caseId) return [];
@@ -269,7 +302,7 @@ export function initNavigation() {
 
     // Render a single proof card with optional lazy loading
     const renderProofCard = (proof, lazy = false) => {
-        const url = `/proofs/${categorySlug(proof.umbrella_category)}/${proof.slug}/`;
+        const url = buildProofUrl(proof);
         const proofType = getProofType(proof);
         
         if (lazy) {
@@ -303,7 +336,7 @@ export function initNavigation() {
 
     // Render full card content (called by lazy loader)
     const renderFullCard = (cardElement, proofData) => {
-        const url = `/proofs/${categorySlug(proofData.umbrella_category)}/${proofData.slug}/`;
+        const url = buildProofUrl(proofData);
         const proofType = getProofType(proofData);
 
         cardElement.dataset.proofId = proofData.case_id || proofData.slug;
@@ -358,7 +391,7 @@ export function initNavigation() {
                                 <div class="timeline-date">${new Date(proof.date).getDate()}</div>
                                 <div class="timeline-content">
                                     <span class="timeline-category">${proof.category}</span>
-                                    <h4><a href="/proofs/${categorySlug(proof.umbrella_category)}/${proof.slug}/">${proof.title}</a></h4>
+                                    <h4><a href="${buildProofUrl(proof)}">${proof.title}</a></h4>
                                     <p>${proof.thesis}</p>
                                 </div>
                             </div>
@@ -577,31 +610,93 @@ export function initNavigation() {
         try {
             // Setup lazy loading observer
             observer = lazyLoadProofs();
-            
-            const response = await fetch('/data/proofs.json', { cache: 'no-store' });
-            if (!response.ok) throw new Error('Failed to load proofs.json');
-            
-            const data = await response.json();
-            const proofsData = Array.isArray(data)
-                ? data
-                : Array.isArray(data?.proofs)
-                    ? data.proofs
-                    : Array.isArray(data?.items)
-                        ? data.items
-                        : [];
 
+            const [proofsResponse, overproofsResponse] = await Promise.all([
+                fetch('/data/proofs.json', { cache: 'no-store' }),
+                fetch('/data/overproofs.json', { cache: 'no-store' })
+            ]);
+
+            if (!proofsResponse.ok) throw new Error('Failed to load proofs.json');
+            if (!overproofsResponse.ok) throw new Error('Failed to load overproofs.json');
+
+            const [proofsRaw, overproofsRaw] = await Promise.all([
+                proofsResponse.json(),
+                overproofsResponse.json()
+            ]);
+
+            const proofsData = extractArrayData(proofsRaw);
             if (!Array.isArray(proofsData) || proofsData.length === 0) {
-                if (!Array.isArray(data) && !Array.isArray(data?.proofs) && !Array.isArray(data?.items)) {
+                if (!Array.isArray(proofsRaw) && !Array.isArray(proofsRaw?.proofs) && !Array.isArray(proofsRaw?.items)) {
                     throw new Error('Unrecognized proofs data format.');
                 }
             }
 
+            const overproofsData = extractArrayData(overproofsRaw);
+            const overproofById = new Map();
+            const overproofByUmbrella = new Map();
+
+            overproofsData.filter(Boolean).forEach((overproof) => {
+                const normalized = { ...overproof };
+                if (!normalized.slug && normalized.umbrella_category) {
+                    normalized.slug = slugify(normalized.umbrella_category);
+                }
+                if (normalized.slug) {
+                    normalized.url = normalized.url || `/proofs/${normalized.slug}/`;
+                }
+                if (normalized.id) {
+                    overproofById.set(normalized.id, normalized);
+                }
+                if (normalized.umbrella_category) {
+                    overproofByUmbrella.set(normalized.umbrella_category, normalized);
+                }
+            });
+
             allProofs = proofsData
                 .filter(p => p && p.title)
+                .map((proof) => {
+                    const overproofMeta =
+                        (proof.overproof_id && overproofById.get(proof.overproof_id)) ||
+                        (proof.umbrella_category && overproofByUmbrella.get(proof.umbrella_category)) ||
+                        null;
+
+                    if (!overproofMeta && proof.umbrella_category) {
+                        console.warn('Missing overproof metadata for proof', {
+                            caseId: proof.case_id,
+                            umbrella: proof.umbrella_category
+                        });
+                    }
+
+                    return {
+                        ...proof,
+                        overproof_id: overproofMeta?.id ?? proof.overproof_id ?? null,
+                        overproof: overproofMeta ? { ...overproofMeta } : null
+                    };
+                })
                 .sort(compareProofsByCaseId);
 
+            const proofCounts = new Map();
+            allProofs.forEach((proof) => {
+                const id = proof.overproof?.id;
+                if (id) {
+                    proofCounts.set(id, (proofCounts.get(id) ?? 0) + 1);
+                }
+            });
+
+            allProofs = allProofs.map((proof) => {
+                if (!proof.overproof?.id) {
+                    return proof;
+                }
+                return {
+                    ...proof,
+                    overproof: {
+                        ...proof.overproof,
+                        proofCount: proofCounts.get(proof.overproof.id) ?? 0
+                    }
+                };
+            });
+
             filteredProofs = [...allProofs];
-            
+
             populateFilters();
             renderProofs(filteredProofs);
             updateResultsCount();
