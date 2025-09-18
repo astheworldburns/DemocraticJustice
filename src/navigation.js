@@ -1,4 +1,5 @@
 import { el, fmtDate, debounce } from './domUtils.js';
+import slugifyLib from '@sindresorhus/slugify';
 
 // Complete navigation module with all features
 export function initNavigation() {
@@ -72,8 +73,9 @@ export function initNavigation() {
         return 'Other';
     };
 
-    const slugify = str =>
-        str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    const slugify = (str) => slugifyLib(String(str ?? ''), {
+        decamelize: false,
+    });
 
     const categorySlug = cat => cat ? slugify(cat) : '';
 
