@@ -1,0 +1,70 @@
+---
+layout: "layout.html"
+pagination:
+  data: briefs
+  size: 1
+  alias: brief
+permalink: "/proofs/{{ brief.slug }}/"
+eleventyComputed:
+  title: "{{ brief.headline }}"
+  description: "{{ brief.lede }}"
+---
+<section class="content-page" id="brief-page">
+  <div class="align-container">
+    <header class="brief-hero">
+      <h1>{{ brief.headline }}</h1>
+      {% if brief.lede %}
+      <p class="lede">{{ brief.lede }}</p>
+      {% endif %}
+    </header>
+
+    {% if brief.violations and brief.violations | length %}
+    <div class="brief-violations">
+      {% for violation in brief.violations %}
+      <section class="brief-violation">
+        <h2>{{ violation.title }}</h2>
+        {% if violation.keyEvidence %}
+        <blockquote>
+          <p>{{ violation.keyEvidence }}</p>
+        </blockquote>
+        {% endif %}
+        {% if violation.summary %}
+        <p>{{ violation.summary }}</p>
+        {% endif %}
+        {% if violation.evidencePoints and violation.evidencePoints | length %}
+        <ul>
+          {% for point in violation.evidencePoints %}
+          <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% if violation.proofs and violation.proofs | length %}
+        <div class="brief-proof-links">
+          <ul>
+            {% for proof in violation.proofs %}
+            <li>
+              <a href="{{ '/proofs/' | url }}{{ brief.slug }}/{{ proof.slug }}/" target="_blank" rel="noopener">{{ proof.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      </section>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if brief.conclusion %}
+    <section class="brief-conclusion">
+      <h2>{{ brief.conclusion.headline }}</h2>
+      <p>{{ brief.conclusion.summary }}</p>
+    </section>
+    {% endif %}
+
+    {% if brief.nextBrief %}
+    <div class="brief-next">
+      <a href="{{ '/proofs/' | url }}{{ brief.nextBrief.slug }}/" class="btn btn-outline-blue">{{ brief.nextBrief.text }}</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
