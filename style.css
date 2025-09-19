@@ -488,6 +488,15 @@ p{max-width:65ch;margin-bottom:16px}
   background:var(--navy);
   color:var(--white);
 }
+[data-theme="dark"] .btn-outline-blue{
+  color:var(--text);
+  border-color:var(--border-contrast);
+}
+[data-theme="dark"] .btn-outline-blue:hover{
+  background:var(--text);
+  color:var(--navy);
+  border-color:var(--text);
+}
 .btn-group{
   display:flex;
   gap:16px;
@@ -1302,6 +1311,16 @@ html { scroll-behavior: smooth; }
   color: var(--brand);
 }
 
+[data-theme="dark"] .pre-check-box {
+  background: var(--surface-soft);
+  border-color: var(--surface-soft);
+  border-left-color: var(--brand);
+}
+[data-theme="dark"] .pre-check-box p,
+[data-theme="dark"] .pre-check-box li {
+  color: var(--text);
+}
+
 /* Step-by-Step Section Styling */
 .action-step {
   text-align: center;
@@ -1940,7 +1959,7 @@ html { scroll-behavior: smooth; }
   font-weight: 900;
   line-height: 1.1;
   color: var(--ink-strong);
-  margin: 2rem 0 0; /* Space above title, none below */
+  margin: 2rem 0 2.5rem; /* Space above title with generous bottom gap */
 }
 
 /* --- Section Styling --- */
@@ -2418,6 +2437,7 @@ html { scroll-behavior: smooth; }
   border: 2px solid var(--brand);
   border-radius: 16px;
   padding: 24px;
+  margin-top: 16px;
   margin-bottom: 32px;
   position: relative;
   overflow: hidden;
@@ -2724,4 +2744,34 @@ html { scroll-behavior: smooth; }
 .share-icons img {
   width: 20px;
   height: 20px;
+}
+.breadcrumb {
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb li[aria-current="page"] {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  color: var(--text-muted);
+  margin-right: 0.5rem;
 }

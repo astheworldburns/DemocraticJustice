@@ -1,4 +1,5 @@
 import { el, fmtDate, debounce } from './domUtils.js';
+import slugifyLib from '@sindresorhus/slugify';
 
 // Complete navigation module with all features
 export function initNavigation() {
@@ -14,7 +15,6 @@ export function initNavigation() {
     let proofsPerLoad = 12; // For lazy loading
     let currentlyLoaded = 0;
     let observer; // For Intersection Observer
-    let selectedProofs = []; // For comparison tool
     
     /* ---------- UI Elements ---------- */
     const grid = document.getElementById('case-grid');
@@ -72,111 +72,33 @@ export function initNavigation() {
         return 'Other';
     };
 
-    const slugify = str =>
-        str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    const slugify = (str) => slugifyLib(String(str ?? ''), {
+        decamelize: false,
+    });
 
-    const categorySlug = cat => cat ? slugify(cat) : '';
-    
-    /* ---------- Comparison Tool Functions ---------- */
-    function getProofIdFromCard(card) {
-        const path = card.querySelector('a')?.href?.split('/proofs/')[1] || '';
-        return card?.dataset?.proofId
-            || path.split('/')[1]
-            || '';
-    }
+    const buildProofSlug = (proof = {}) => {
+        if (proof.slug) {
+            return proof.slug;
+        }
+        if (proof.case_id) {
+            return slugify(proof.case_id);
+        }
+        return '';
+    };
 
-    function attachComparisonToCard(card) {
-        const compareBtn = document.getElementById('compare-btn');
-        if (!compareBtn || !card) return;
-
-        // Remove any leftover checkbox (re-renders/lazy loads)
-        const old = card.querySelector('.compare-checkbox');
-        if (old) old.remove();
-
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.className = 'compare-checkbox';
-        checkbox.title = 'Select for comparison (max 3)';
-        checkbox.addEventListener('change', (e) => {
-            const pid = getProofIdFromCard(card);
-            if (!pid) return;
-
-            if (e.target.checked) {
-                if (selectedProofs.length < 3) {
-                    selectedProofs.push(pid);
-                } else {
-                    e.target.checked = false;
-                    alert('Maximum 3 proofs can be compared.');
-                }
-            } else {
-                selectedProofs = selectedProofs.filter(id => id !== pid);
-            }
-
-            compareBtn.textContent = `Compare Selected (${selectedProofs.length})`;
-            compareBtn.disabled = selectedProofs.length < 2;
-        });
-
-        // Put the checkbox at the start of the card
-        card.prepend(checkbox);
-    }
-
-    function initComparison() {
-        const compareBtn = document.getElementById('compare-btn');
-        const cards = document.querySelectorAll('.case-card');
-        if (!compareBtn || !cards.length) return;
-
-        // Reset button state each time we (re)run
-        selectedProofs = [];
-        compareBtn.textContent = `Compare Selected (0)`;
-        compareBtn.disabled = true;
-
-        cards.forEach(card => attachComparisonToCard(card));
-
-        compareBtn.onclick = () => {
-            if (selectedProofs.length >= 2) showComparison(selectedProofs);
-        };
-    }
-
-    function showComparison(proofIds) {
-        const comparisonView = document.getElementById('comparison-view');
-        if (!comparisonView) return;
-        const grid = comparisonView.querySelector('.comparison-grid');
-        if (!grid) return;
-
-        grid.innerHTML = `
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Aspect</th>
-                        ${proofIds.map(id => `<th>Proof ${id.replace('wvdp-','').slice(0,10)}…</th>`).join('')}
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Category</td>${proofIds.map(() => `<td>Loading…</td>`).join('')}</tr>
-                    <tr><td>Date</td>${proofIds.map(() => `<td>Loading…</td>`).join('')}</tr>
-                    <tr><td>Key Violation</td>${proofIds.map(() => `<td>Loading…</td>`).join('')}</tr>
-                </tbody>
-            </table>
-        `;
-        comparisonView.style.display = 'block';
-
-        // Fill cells from already-loaded data in memory
-        const byId = (id) => allProofs.find(p =>
-            p.case_id === id || p.slug === id || (p.slug && id.startsWith(p.slug)));
-
-        const rows = grid.querySelectorAll('tbody tr');
-        const cats = rows[0].querySelectorAll('td:not(:first-child)');
-        const dates = rows[1].querySelectorAll('td:not(:first-child)');
-        const viols = rows[2].querySelectorAll('td:not(:first-child)');
-
-        proofIds.forEach((id, i) => {
-            const p = byId(id);
-            if (!p) return;
-            cats[i].textContent = p.category || '';
-            dates[i].textContent = (new Date(p.date)).toLocaleDateString();
-            viols[i].textContent = p.violation || p.thesis || '';
-        });
-    }
+    const buildProofUrl = (proof = {}) => {
+        const overproofSlug = proof?.overproof?.slug;
+        const proofSlug = buildProofSlug(proof);
+        if (!overproofSlug || !proofSlug) {
+            console.warn('Missing slug data for proof URL', {
+                caseId: proof?.case_id,
+                proofSlug,
+                overproofSlug
+            });
+            return '#';
+        }
+        return `/proofs/${overproofSlug}/${proofSlug}/`;
+    };
 
     /* ---------- Lazy Loading Setup ---------- */
     const lazyLoadProofs = () => {
@@ -200,11 +122,6 @@ export function initNavigation() {
 
                     if (proofData) {
                         renderFullCard(card, proofData);
-
-                        // If compare UI exists, (re)attach a checkbox to THIS card
-                        if (document.getElementById('compare-btn')) {
-                            attachComparisonToCard(card);
-                        }
                     }
                 }
 
@@ -223,29 +140,36 @@ export function initNavigation() {
             this.firstFocusable = null;
             this.lastFocusable = null;
             this.active = false;
+            this.boundKeyHandler = null;
         }
-        
+
         activate() {
             if (this.active) return;
-            
+
             this.focusableElements = this.element.querySelectorAll(
                 'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select, [tabindex]:not([tabindex="-1"])'
             );
-            
+
             this.firstFocusable = this.focusableElements[0];
             this.lastFocusable = this.focusableElements[this.focusableElements.length - 1];
-            
-            this.element.addEventListener('keydown', this.handleKeyDown.bind(this));
+
+            if (!this.boundKeyHandler) {
+                this.boundKeyHandler = this.handleKeyDown.bind(this);
+            }
+
+            this.element.addEventListener('keydown', this.boundKeyHandler);
             this.firstFocusable?.focus();
             this.active = true;
-            
+
             // Store last focused element
             this.lastFocus = document.activeElement;
         }
-        
+
         deactivate() {
             if (!this.active) return;
-            this.element.removeEventListener('keydown', this.handleKeyDown.bind(this));
+            if (this.boundKeyHandler) {
+                this.element.removeEventListener('keydown', this.boundKeyHandler);
+            }
             this.lastFocus?.focus();
             this.active = false;
         }
@@ -335,7 +259,7 @@ export function initNavigation() {
 
     // Render a single proof card with optional lazy loading
     const renderProofCard = (proof, lazy = false) => {
-        const url = `/proofs/${categorySlug(proof.umbrella_category)}/${proof.slug}/`;
+        const url = buildProofUrl(proof);
         const proofType = getProofType(proof);
         
         if (lazy) {
@@ -369,7 +293,7 @@ export function initNavigation() {
 
     // Render full card content (called by lazy loader)
     const renderFullCard = (cardElement, proofData) => {
-        const url = `/proofs/${categorySlug(proofData.umbrella_category)}/${proofData.slug}/`;
+        const url = buildProofUrl(proofData);
         const proofType = getProofType(proofData);
 
         cardElement.dataset.proofId = proofData.case_id || proofData.slug;
@@ -424,7 +348,7 @@ export function initNavigation() {
                                 <div class="timeline-date">${new Date(proof.date).getDate()}</div>
                                 <div class="timeline-content">
                                     <span class="timeline-category">${proof.category}</span>
-                                    <h4><a href="/proofs/${categorySlug(proof.umbrella_category)}/${proof.slug}/">${proof.title}</a></h4>
+                                    <h4><a href="${buildProofUrl(proof)}">${proof.title}</a></h4>
                                     <p>${proof.thesis}</p>
                                 </div>
                             </div>
@@ -498,8 +422,6 @@ export function initNavigation() {
         } else {
             renderGrid(proofs, append);
         }
-        // Re-initialize comparison after any render
-        setTimeout(() => initComparison(), 100);
     };
 
     const updateResultsCount = () => {
@@ -641,47 +563,51 @@ export function initNavigation() {
     };
 
     /* ---------- Initialize ---------- */
-    const initialize = async () => {
+    const initialize = () => {
         try {
-            // Setup lazy loading observer
             observer = lazyLoadProofs();
-            
-            const response = await fetch('/data/proofs.json', { cache: 'no-store' });
-            if (!response.ok) throw new Error('Failed to load proofs.json');
-            
-            const data = await response.json();
-            const proofsData = Array.isArray(data)
-                ? data
-                : Array.isArray(data?.proofs)
-                    ? data.proofs
-                    : Array.isArray(data?.items)
-                        ? data.items
-                        : [];
 
-            if (!Array.isArray(proofsData) || proofsData.length === 0) {
-                if (!Array.isArray(data) && !Array.isArray(data?.proofs) && !Array.isArray(data?.items)) {
-                    throw new Error('Unrecognized proofs data format.');
-                }
+            const proofDataElement = document.getElementById('proof-data');
+            if (!proofDataElement) {
+                throw new Error('Proof data element not found.');
             }
 
-            allProofs = proofsData
-                .filter(p => p && p.title)
-                .sort((a, b) => new Date(b.date) - new Date(a.date) || a.case_id.localeCompare(b.case_id));
+            const rawJson = (proofDataElement.textContent || '').trim();
+            if (!rawJson) {
+                throw new Error('Proof data element is empty.');
+            }
 
+            let parsedPayload;
+            try {
+                parsedPayload = JSON.parse(rawJson);
+            } catch (parseError) {
+                throw new Error('Proof data JSON is invalid.');
+            }
+
+            let proofsData;
+            if (Array.isArray(parsedPayload?.proofs)) {
+                proofsData = parsedPayload.proofs;
+            } else if (Array.isArray(parsedPayload)) {
+                proofsData = parsedPayload;
+            } else {
+                throw new Error('Unrecognized proof data format.');
+            }
+
+            allProofs = proofsData.filter((proof) => proof && proof.title);
             filteredProofs = [...allProofs];
-            
+
             populateFilters();
             renderProofs(filteredProofs);
             updateResultsCount();
+            renderFilterBadges();
 
-            // Event listeners
             if (searchInput) {
                 searchInput.addEventListener('input', handleSearch);
             }
-            
+
             if (categoryFilter) categoryFilter.addEventListener('change', filterAndRender);
             if (typeFilter) typeFilter.addEventListener('change', filterAndRender);
-            
+
             if (viewToggle) {
                 viewToggle.addEventListener('click', () => {
                     currentView = currentView === 'grid' ? 'timeline' : 'grid';
@@ -704,12 +630,12 @@ export function initNavigation() {
                 });
             }
 
-            // Initialize modals
             initModals();
-
         } catch (error) {
-            console.error("Error initializing archive:", error);
-            if (grid) grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px; color:red;">Could not load proofs. Please try again later.</p>';
+            console.error('Error initializing archive:', error);
+            if (grid) {
+                grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px; color:red;">Could not load proofs. Please try again later.</p>';
+            }
         }
     };
 
