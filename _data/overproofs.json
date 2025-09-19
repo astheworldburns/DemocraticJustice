@@ -1,5 +1,45 @@
 [
   {
+    "id": "overproof-the-aac-formation-conspiracy",
+    "slug": "the-aac-formation-conspiracy",
+    "title": "The AAC Formation Conspiracy",
+    "short_title": "AAC Formation",
+    "umbrella_category": "The AAC Formation Conspiracy",
+    "summary": "How party insiders scripted the Affirmative Action Committee into existence while the mandated diversity caucuses and DNC supervision were sidelined.",
+    "narrative": "These proofs reconstruct the secret plan used to form the Affirmative Action Committee. The 2020 MOU promised a caucus-driven process under DNC oversight, yet organizers circulated a \"do not share\" script that pre-selected officers, wrote its author into a position of power, and invited conflicted outsiders to keep dissent in check. The record shows an intentional scheme: ignore missing caucuses, install loyal leadership anyway, and manage the fallout before the community could respond.",
+    "key_points": [
+      "The 2020 DNC MOU mandated that fully constituted diversity caucuses select AAC leadership under RBC supervision, but organizers advanced without those caucuses in place.",
+      "Selina Vickers' secret script choreographed nominations, rebuttals, and even her own installation as parliamentarian, proving premeditated control of the meeting.",
+      "Inviting conflicted allies like Larry Taylor and planning tactics to neutralize criticism show knowledge of wrongdoing and a coordinated attempt to protect the scheme."
+    ],
+    "metadata": {
+      "Timeframe": "June–September 2021",
+      "Focus": "Formation of the West Virginia Affirmative Action Committee",
+      "Primary Documents": "2020 DNC MOU, Selina Vickers formation script, witness statements"
+    },
+    "order": 1
+  },
+  {
+    "id": "overproof-systematic-suppression-of-dissent",
+    "slug": "systematic-suppression-of-dissent",
+    "title": "Systematic Suppression of Dissent",
+    "short_title": "Suppression of Dissent",
+    "umbrella_category": "Systematic Suppression of Dissent",
+    "summary": "DNC partners and AAC leadership executed a multi-front strategy to silence elected caucus voices and overturn democratic decisions.",
+    "narrative": "Once the AAC was installed, dissenting members were met with a coordinated suppression effort. Proofs in this record document Harold Ickes coaching appointees to outvote elected members, leadership nullifying valid decisions to bar Indigenous and Black chairs, and procedural maneuvers that disguised bylaw changes as temporary rules. Public smear campaigns and weaponized discipline rounded out the playbook, ensuring reformers were isolated while insiders consolidated control.",
+    "key_points": [
+      "Senior DNC figures advised allies on how to overwhelm elected minority members despite the MOU's promise of equal participation.",
+      "Leadership invalidated votes, rewrote rules, and mislabeled binding bylaws to exclude caucus chairs from critical committees.",
+      "Coordinated talking points, smear efforts, and disciplinary threats kept dissenting members marginalized and chilled further resistance."
+    ],
+    "metadata": {
+      "Timeframe": "2021–2022 AAC operations",
+      "Focus": "Retaliation against minority caucus leadership and reform advocates",
+      "Primary Documents": "Harold Ickes correspondence, AAC meeting records, disciplinary filings"
+    },
+    "order": 2
+  },
+  {
     "id": "overproof-wv-democratic-party-dnc-violations",
     "slug": "wv-democratic-party-dnc-violations",
     "title": "WV Democratic Party & DNC Violations",
@@ -17,7 +57,7 @@
       "Focus": "Affirmative Action Committee implementation and RBC oversight",
       "Primary Documents": "2020 DNC MOU, internal scripts, witness statements, disciplinary records"
     },
-    "order": 1
+    "order": 3
   },
   {
     "id": "overproof-a-new-day-pac-campaign-finance-violations",
@@ -37,6 +77,6 @@
       "Focus": "Coordination between A New Day PAC and WV Democratic Party resources",
       "Primary Documents": "Internal memos, fundraising decks, bank ledgers, scholarship records"
     },
-    "order": 2
+    "order": 4
   }
 ]
