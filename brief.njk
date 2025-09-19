@@ -31,6 +31,9 @@ eleventyComputed:
         {% if violation.summary %}
         <p>{{ violation.summary }}</p>
         {% endif %}
+        {% if violation.consequence %}
+        <p class="violation-consequence"><strong>Consequence:</strong> {{ violation.consequence }}</p>
+        {% endif %}
         {% if violation.evidencePoints and violation.evidencePoints | length %}
         <ul>
           {% for point in violation.evidencePoints %}
