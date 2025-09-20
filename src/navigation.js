@@ -58,8 +58,44 @@ export function initNavigation() {
         });
     }
 
+    if (searchInput) {
+        const focusSearchInput = () => {
+            requestAnimationFrame(() => {
+                if (!searchInput) {
+                    return;
+                }
+                try {
+                    searchInput.focus({ preventScroll: true });
+                } catch (error) {
+                    searchInput.focus();
+                }
+            });
+        };
+
+        const shouldFocusSearch = () => {
+            if (window.location.hash === '#search-input') {
+                return true;
+            }
+            try {
+                return new URLSearchParams(window.location.search).get('focus') === 'search';
+            } catch (error) {
+                return false;
+            }
+        };
+
+        if (shouldFocusSearch()) {
+            focusSearchInput();
+        }
+
+        window.addEventListener('hashchange', () => {
+            if (window.location.hash === '#search-input') {
+                focusSearchInput();
+            }
+        });
+    }
+
     /* ---------- Utility Functions ---------- */
-   
+
 
     // Determine proof type based on category
     const getProofType = (proof) => {
