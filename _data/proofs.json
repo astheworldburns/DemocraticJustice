@@ -66,7 +66,11 @@
       "The RBC failed to intervene despite its supervisory duty.",
       "[DJ-MARK] An illegitimate committee was born from a rigged process."
     ],
-    "violation": "The WVDP and RBC violated the MOU's 'caucus-first mandate' by creating a committee through a secret process that excluded required groups. This foundational breach rendered the AAC illegitimate from inception."
+    "violation": "The WVDP and RBC violated the MOU's 'caucus-first mandate' by creating a committee through a secret process that excluded required groups. This foundational breach rendered the AAC illegitimate from inception.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
+    }
   },
   {
     "case_id": "1.2",
@@ -124,7 +128,11 @@
       "Non-existent caucuses couldn't select representatives.",
       "[DJ-MARK] The WVDP violated the MOU's core requirement."
     ],
-    "violation": "The WVDP violated the 2020 MOU by forming the AAC before required caucuses existed, disenfranchising minority groups from selecting their own leadership."
+    "violation": "The WVDP violated the 2020 MOU by forming the AAC before required caucuses existed, disenfranchising minority groups from selecting their own leadership.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
+    }
   },
   {
     "case_id": "1.3",
@@ -182,7 +190,11 @@
       "They proceeded anyway, choosing exclusion.",
       "[DJ-MARK] The organizers deliberately violated the MOU."
     ],
-    "violation": "The organizers deliberately violated the MOU by forming the AAC while knowingly excluding 75% of required racial caucuses—a calculated act of disenfranchisement."
+    "violation": "The organizers deliberately violated the MOU by forming the AAC while knowingly excluding 75% of required racial caucuses—a calculated act of disenfranchisement.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
+    }
   },
   {
     "case_id": "1.4",
@@ -240,7 +252,11 @@
       "Secret processes violate open meeting requirements.",
       "[DJ-MARK] The secrecy proves consciousness of guilt."
     ],
-    "violation": "Using a secret script to dictate pre-arranged leadership violated the DNC Charter's requirements for open processes. The secrecy instruction proves they knew it was wrong."
+    "violation": "Using a secret script to dictate pre-arranged leadership violated the DNC Charter's requirements for open processes. The secrecy instruction proves they knew it was wrong.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
+    }
   },
   {
     "case_id": "1.5",
@@ -293,7 +309,11 @@
       "The role gave her procedural control.",
       "[DJ-MARK] She wrote herself into power."
     ],
-    "violation": "The lead Challenger used her authority to orchestrate her own installation into a key role with procedural control, violating ethical standards."
+    "violation": "The lead Challenger used her authority to orchestrate her own installation into a key role with procedural control, violating ethical standards.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
+    }
   },
   {
     "case_id": "1.6",
@@ -346,7 +366,11 @@
       "This proves predetermined outcomes.",
       "[DJ-MARK] Opposition management violates open deliberation."
     ],
-    "violation": "Prepared tactics for managing participation and pre-characterizing criticism violate the DNC Charter's 'open meetings' principle."
+    "violation": "Prepared tactics for managing participation and pre-characterizing criticism violate the DNC Charter's 'open meetings' principle.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
+    }
   },
   {
     "case_id": "1.7",
@@ -414,7 +438,11 @@
       "Conflict concealed but recognized by dissenters.",
       "[DJ-MARK] They brought a ringer to force rejected agenda."
     ],
-    "violation": "Using an external actor with severe undisclosed conflict to officiate violated ethical standards, subverted democracy, and invalidated proceedings."
+    "violation": "Using an external actor with severe undisclosed conflict to officiate violated ethical standards, subverted democracy, and invalidated proceedings.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
+    }
   },
   {
     "case_id": "2.1",
@@ -467,7 +495,11 @@
       "This undermines participation and exceeds 'supervision.'",
       "[DJ-MARK] A DNC official corrupted the process he supervised."
     ],
-    "violation": "DNC official Ickes violated the MOU and Charter by advising strategy to neutralize elected members, exceeding his supervisory role and corrupting the process."
+    "violation": "DNC official Ickes violated the MOU and Charter by advising strategy to neutralize elected members, exceeding his supervisory role and corrupting the process.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
+    }
   },
   {
     "case_id": "2.2",
@@ -520,7 +552,11 @@
       "Procedural: invalid meetings to overturn votes.",
       "[DJ-MARK] Coordinated campaign silenced elected members."
     ],
-    "violation": "A coordinated campaign of covert scripts, public smears, and procedural manipulation violated the Charter's ethical conduct requirements and fair participation mandate."
+    "violation": "A coordinated campaign of covert scripts, public smears, and procedural manipulation violated the Charter's ethical conduct requirements and fair participation mandate.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
+    }
   },
   {
     "case_id": "2.3",
@@ -566,213 +602,229 @@
         "url": "/files/Gmail - Fwd: Planning & Bylaws Committees.pdf"
       },
       {
-       "text": "Leadership passed 'Resolution Affirming Support' for themselves.",
-      "citation": "08.17.2021 Resolution Affirming Support.pdf, p. 1",
-      "url": "/files/08.17.2021 Resolution Affirming Support.pdf"
-    },
-    {
-      "text": "Appeals Board ruled the meeting violated bylaws.",
-      "citation": "Resolution of the Board of Appeals, Nov. 29, 2021",
-      "url": "/files/Resolution-Board-of-Appeals-2021-11-29.pdf"
+        "text": "Leadership passed 'Resolution Affirming Support' for themselves.",
+        "citation": "08.17.2021 Resolution Affirming Support.pdf, p. 1",
+        "url": "/files/08.17.2021 Resolution Affirming Support.pdf"
+      },
+      {
+        "text": "Appeals Board ruled the meeting violated bylaws.",
+        "citation": "Resolution of the Board of Appeals, Nov. 29, 2021",
+        "url": "/files/Resolution-Board-of-Appeals-2021-11-29.pdf"
+      }
+    ],
+    "logic_chain": [
+      "Committee voted for inclusive system.",
+      "Leadership declared appointment-only.",
+      "They excluded Indigenous and Black chairs.",
+      "Used invalid meeting to formalize exclusion.",
+      "[DJ-MARK] Pattern systematically violated inclusion mandate."
+    ],
+    "violation": "AAC leadership violated the MOU by nullifying democratic decisions and using invalid proceedings to exclude minority caucus chairs, defeating the MOU's core purpose.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
     }
-  ],
-  "logic_chain": [
-    "Committee voted for inclusive system.",
-    "Leadership declared appointment-only.",
-    "They excluded Indigenous and Black chairs.",
-    "Used invalid meeting to formalize exclusion.",
-    "[DJ-MARK] Pattern systematically violated inclusion mandate."
-  ],
-  "violation": "AAC leadership violated the MOU by nullifying democratic decisions and using invalid proceedings to exclude minority caucus chairs, defeating the MOU's core purpose."
-},
-{
-  "case_id": "2.4",
-  "slug": "pdpr-playbook-bylaws-mislabeling-scheme",
-  "title": "PROOF: DNC Official Deliberately Mislabeled Bylaws to Circumvent Notice Requirements",
-  "date": "2025-09-17",
-  "category": "DNC Charter & Bylaw Violation",
-  "umbrella_category": "Systematic Suppression of Dissent",
-  "stakes": "Members were denied their statutory 30-day notice for bylaw amendments.",
-  "thesis": "Selina Vickers mislabeled bylaws as 'procedural rules' to circumvent mandatory notice requirements.",
-  "axioms": [
-    {
-      "text": "Vickers taught 'How to use rules, procedures and bylaws to beat the establishment.'",
-      "citation": "PDPR YouTube video screenshot",
-      "url": "/files/PDPR-Training-Screenshot.jpg"
-    },
-    {
-      "text": "WVDP Bylaws require 30 days written notice for amendments.",
-      "citation": "WVDP Bylaws, Article XI, Section A",
-      "url": "/files/WVSDEC-Bylaws-06.15.2024.pdf"
-    },
-    {
-      "text": "Rules governing organizational authority are bylaws, not procedural rules.",
-      "citation": "Robert's Rules of Order, 12th ed.",
-      "url": ""
-    },
-    {
-      "text": "Larry Taylor founded PDPR where Vickers was WV Chair.",
-      "citation": "PDPR image with Selina vickers.jpg",
-      "url": "/files/PDPR image with Selina vickers.jpg"
+  },
+  {
+    "case_id": "2.4",
+    "slug": "pdpr-playbook-bylaws-mislabeling-scheme",
+    "title": "PROOF: DNC Official Deliberately Mislabeled Bylaws to Circumvent Notice Requirements",
+    "date": "2025-09-17",
+    "category": "DNC Charter & Bylaw Violation",
+    "umbrella_category": "Systematic Suppression of Dissent",
+    "stakes": "Members were denied their statutory 30-day notice for bylaw amendments.",
+    "thesis": "Selina Vickers mislabeled bylaws as 'procedural rules' to circumvent mandatory notice requirements.",
+    "axioms": [
+      {
+        "text": "Vickers taught 'How to use rules, procedures and bylaws to beat the establishment.'",
+        "citation": "PDPR YouTube video screenshot",
+        "url": "/files/PDPR-Training-Screenshot.jpg"
+      },
+      {
+        "text": "WVDP Bylaws require 30 days written notice for amendments.",
+        "citation": "WVDP Bylaws, Article XI, Section A",
+        "url": "/files/WVSDEC-Bylaws-06.15.2024.pdf"
+      },
+      {
+        "text": "Rules governing organizational authority are bylaws, not procedural rules.",
+        "citation": "Robert's Rules of Order, 12th ed.",
+        "url": ""
+      },
+      {
+        "text": "Larry Taylor founded PDPR where Vickers was WV Chair.",
+        "citation": "PDPR image with Selina vickers.jpg",
+        "url": "/files/PDPR image with Selina vickers.jpg"
+      }
+    ],
+    "rule_summary": "Vickers' documented expertise in procedural manipulation reveals deliberate circumvention.",
+    "case_facts": [
+      {
+        "text": "Rule 13: 'Co-Chairs... shall have all authority... between meetings.'",
+        "citation": "Draft Procedural Rules, Rule 13",
+        "url": "/files/Draft-Procedural-Rules-Original.pdf"
+      },
+      {
+        "text": "Rule 14 granted power to appoint/remove subcommittee members.",
+        "citation": "Draft Procedural Rules, Rule 14",
+        "url": "/files/Draft-Procedural-Rules-Original.pdf"
+      },
+      {
+        "text": "Document titled 'temporary procedural rules' sent <24 hours before meeting.",
+        "citation": "Draft Procedural Rules",
+        "url": "/files/Draft-Procedural-Rules-Original.pdf"
+      },
+      {
+        "text": "Member identified: 'it's not a procedural rule for handling this meeting.'",
+        "citation": "AAC-Transcript-Analysis.pdf",
+        "url": "/files/AAC-Transcript-Analysis.pdf"
+      },
+      {
+        "text": "After rejection, subcommittee 'unanimously adopted' the content.",
+        "citation": "Bylaws Subcommittee Report, Sept 9, 2021",
+        "url": "/files/Update-from-Bylaw-Subcommittee.pdf"
+      },
+      {
+        "text": "PDPR colleague Taylor presided over September 16 meeting adopting mislabeled bylaws.",
+        "citation": "Email chain Sept 17, 2021",
+        "url": "/files/Email-Seth-Sturm-2021-09-17.pdf"
+      }
+    ],
+    "logic_chain": [
+      "Vickers knew from PDPR training how to manipulate rules.",
+      "Rules 13-14 were bylaws requiring 30-day notice.",
+      "She labeled them 'temporary procedural rules' with <24 hours notice.",
+      "Members recognized and called out the deception.",
+      "Her PDPR colleague ensured adoption anyway.",
+      "[DJ-MARK] Deliberate mislabeling circumvented notice requirements."
+    ],
+    "violation": "Vickers violated WVDP Bylaws by deliberately mislabeling bylaws as 'procedural rules' to circumvent 30-day notice. Her PDPR training proves intent. Rules adopted through this deception are void.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
     }
-  ],
-  "rule_summary": "Vickers' documented expertise in procedural manipulation reveals deliberate circumvention.",
-  "case_facts": [
-    {
-      "text": "Rule 13: 'Co-Chairs... shall have all authority... between meetings.'",
-      "citation": "Draft Procedural Rules, Rule 13",
-      "url": "/files/Draft-Procedural-Rules-Original.pdf"
-    },
-    {
-      "text": "Rule 14 granted power to appoint/remove subcommittee members.",
-      "citation": "Draft Procedural Rules, Rule 14",
-      "url": "/files/Draft-Procedural-Rules-Original.pdf"
-    },
-    {
-      "text": "Document titled 'temporary procedural rules' sent <24 hours before meeting.",
-      "citation": "Draft Procedural Rules",
-      "url": "/files/Draft-Procedural-Rules-Original.pdf"
-    },
-    {
-      "text": "Member identified: 'it's not a procedural rule for handling this meeting.'",
-      "citation": "AAC-Transcript-Analysis.pdf",
-      "url": "/files/AAC-Transcript-Analysis.pdf"
-    },
-    {
-      "text": "After rejection, subcommittee 'unanimously adopted' the content.",
-      "citation": "Bylaws Subcommittee Report, Sept 9, 2021",
-      "url": "/files/Update-from-Bylaw-Subcommittee.pdf"
-    },
-    {
-      "text": "PDPR colleague Taylor presided over September 16 meeting adopting mislabeled bylaws.",
-      "citation": "Email chain Sept 17, 2021",
-      "url": "/files/Email-Seth-Sturm-2021-09-17.pdf"
+  },
+  {
+    "case_id": "3.1",
+    "slug": "pac-treasurer-signature-forgery",
+    "title": "PROOF: PAC Treasurer's Signature Was Forged on Financial Reports",
+    "date": "2025-09-10",
+    "category": "Campaign Finance Violation",
+    "umbrella_category": "A New Day PAC Campaign Finance Violations",
+    "stakes": "Multiple sworn financial reports were filed with forged signatures.",
+    "thesis": "A New Day PAC filed reports with the treasurer's forged signature after she resigned.",
+    "axioms": [
+      {
+        "text": "Campaign finance reports must be signed by the treasurer.",
+        "citation": "WV Code §3-8-5",
+        "url": "/files/wv-code-3-8-5.pdf"
+      },
+      {
+        "text": "Filing false reports is a criminal offense.",
+        "citation": "WV Code §3-8-5",
+        "url": "/files/wv-code-3-8-5.pdf"
+      },
+      {
+        "text": "Kim Felix served as PAC treasurer until her resignation.",
+        "citation": "A New Day PAC registration records",
+        "url": "/files/A-New-Day-PAC-Registration.pdf"
+      }
+    ],
+    "rule_summary": "Only the actual treasurer can sign financial reports—forgery voids the filing.",
+    "case_facts": [
+      {
+        "text": "Felix resigned as treasurer citing ethical concerns.",
+        "citation": "Felix, K. - Resignation Letter",
+        "url": "/files/Felix-Resignation-Letter.pdf"
+      },
+      {
+        "text": "Reports filed after resignation contain her signature.",
+        "citation": "A New Day PAC Q2 2023 Filing",
+        "url": "/files/A_New_Day_PAC_Filing_2023_Q2.pdf"
+      },
+      {
+        "text": "Felix confirmed she did not sign these reports.",
+        "citation": "Felix, K. - Witness Statement, p. 3",
+        "url": "/files/Felix, K. - Witness Statement.pdf"
+      }
+    ],
+    "logic_chain": [
+      "Felix resigned as treasurer.",
+      "Reports filed after resignation bear her signature.",
+      "She confirms she didn't sign them.",
+      "Someone else signed her name.",
+      "[DJ-MARK] The PAC filed reports with forged signatures."
+    ],
+    "violation": "A New Day PAC violated campaign finance law by filing reports with forged treasurer signatures, constituting false swearing and undermining the integrity of public disclosure.",
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
     }
-  ],
-  "logic_chain": [
-    "Vickers knew from PDPR training how to manipulate rules.",
-    "Rules 13-14 were bylaws requiring 30-day notice.",
-    "She labeled them 'temporary procedural rules' with <24 hours notice.",
-    "Members recognized and called out the deception.",
-    "Her PDPR colleague ensured adoption anyway.",
-    "[DJ-MARK] Deliberate mislabeling circumvented notice requirements."
-  ],
-  "violation": "Vickers violated WVDP Bylaws by deliberately mislabeling bylaws as 'procedural rules' to circumvent 30-day notice. Her PDPR training proves intent. Rules adopted through this deception are void."
-},
-{
-  "case_id": "3.1",
-  "slug": "pac-treasurer-signature-forgery",
-  "title": "PROOF: PAC Treasurer's Signature Was Forged on Financial Reports",
-  "date": "2025-09-10",
-  "category": "Campaign Finance Violation",
-  "umbrella_category": "A New Day PAC Campaign Finance Violations",
-  "stakes": "Multiple sworn financial reports were filed with forged signatures.",
-  "thesis": "A New Day PAC filed reports with the treasurer's forged signature after she resigned.",
-  "axioms": [
-    {
-      "text": "Campaign finance reports must be signed by the treasurer.",
-      "citation": "WV Code §3-8-5",
-      "url": "/files/wv-code-3-8-5.pdf"
-    },
-    {
-      "text": "Filing false reports is a criminal offense.",
-      "citation": "WV Code §3-8-5",
-      "url": "/files/wv-code-3-8-5.pdf"
-    },
-    {
-      "text": "Kim Felix served as PAC treasurer until her resignation.",
-      "citation": "A New Day PAC registration records",
-      "url": "/files/A-New-Day-PAC-Registration.pdf"
+  },
+  {
+    "case_id": "3.2",
+    "slug": "unreported-pac-scholarship-program",
+    "title": "PROOF: Unreported Financial Activity - The Scholarship Program",
+    "date": "2025-09-11",
+    "category": "Campaign Finance Violation",
+    "umbrella_category": "A New Day PAC Campaign Finance Violations",
+    "stakes": "A PAC concealed its scholarship program from required disclosures.",
+    "thesis": "A New Day PAC failed to report any financial activity for its formal scholarship program.",
+    "axioms": [
+      {
+        "text": "All political committee expenditures must be publicly reported.",
+        "citation": "WV SOS Campaign-Finance Guide",
+        "url": "/files/sos-campaign-finance-guide.pdf"
+      },
+      {
+        "text": "Any 'thing of value' received must be reported as in-kind contribution.",
+        "citation": "WV SOS Campaign-Finance Guide",
+        "url": "/files/sos-campaign-finance-guide.pdf"
+      },
+      {
+        "text": "A New Day PAC was registered as a West Virginia political committee.",
+        "citation": "WV SOS records",
+        "url": "/files/A-New-Day-PAC-Registration.pdf"
+      },
+      {
+        "text": "The PAC previously paid Progressive Democrats for Party Reform for consulting.",
+        "citation": "A New Day PAC Q4 2022 Filing",
+        "url": "/files/A_New_Day_PAC_Filing_2022_Q4.pdf"
+      }
+    ],
+    "rule_summary": "All financial transactions must be reported—scholarships involve reportable transactions.",
+    "case_facts": [
+      {
+        "text": "PAC solicited scholarship applications on August 22, 2023.",
+        "citation": "Email Record, Aug 22, 2023",
+        "url": "/files/A_New_Day_PAC_Training_Email_2023-08-22.pdf"
+      },
+      {
+        "text": "Q3 2023 report shows zero expenditures to trainer.",
+        "citation": "A New Day PAC Q3 2023 Filing",
+        "url": "/files/A_New_Day_PAC_Filing_2023_Q3.pdf"
+      },
+      {
+        "text": "Q3 2023 report shows zero in-kind contributions.",
+        "citation": "A New Day PAC Q3 2023 Filing",
+        "url": "/files/A_New_Day_PAC_Filing_2023_Q3.pdf"
+      }
+    ],
+    "logic_chain": [
+      "PAC offered scholarships August 22, 2023.",
+      "Scholarships require reportable transactions.",
+      "Q3 2023 report contains neither expenditures nor in-kind contributions.",
+      "Absence means concealment from disclosure.",
+      "[DJ-MARK] PAC's sworn disclosure omits scholarship program."
+    ],
+    "violation": "A New Day PAC violated campaign finance law by failing to report scholarship program financial activity, denying public transparency and rendering sworn statements incomplete.",
+    "potential_remedies": [
+      "File corrected report disclosing all scholarship activity.",
+      "Provide public accounting of funding and recipients.",
+      "Cease activities until compliant."
+    ],
+    "author": {
+      "name": "Democratic Justice",
+      "type": "Organization"
     }
-  ],
-  "rule_summary": "Only the actual treasurer can sign financial reports—forgery voids the filing.",
-  "case_facts": [
-    {
-      "text": "Felix resigned as treasurer citing ethical concerns.",
-      "citation": "Felix, K. - Resignation Letter",
-      "url": "/files/Felix-Resignation-Letter.pdf"
-    },
-    {
-      "text": "Reports filed after resignation contain her signature.",
-      "citation": "A New Day PAC Q2 2023 Filing",
-      "url": "/files/A_New_Day_PAC_Filing_2023_Q2.pdf"
-    },
-    {
-      "text": "Felix confirmed she did not sign these reports.",
-      "citation": "Felix, K. - Witness Statement, p. 3",
-      "url": "/files/Felix, K. - Witness Statement.pdf"
-    }
-  ],
-  "logic_chain": [
-    "Felix resigned as treasurer.",
-    "Reports filed after resignation bear her signature.",
-    "She confirms she didn't sign them.",
-    "Someone else signed her name.",
-    "[DJ-MARK] The PAC filed reports with forged signatures."
-  ],
-  "violation": "A New Day PAC violated campaign finance law by filing reports with forged treasurer signatures, constituting false swearing and undermining the integrity of public disclosure."
-},
-{
-  "case_id": "3.2",
-  "slug": "unreported-pac-scholarship-program",
-  "title": "PROOF: Unreported Financial Activity - The Scholarship Program",
-  "date": "2025-09-11",
-  "category": "Campaign Finance Violation",
-  "umbrella_category": "A New Day PAC Campaign Finance Violations",
-  "stakes": "A PAC concealed its scholarship program from required disclosures.",
-  "thesis": "A New Day PAC failed to report any financial activity for its formal scholarship program.",
-  "axioms": [
-    {
-      "text": "All political committee expenditures must be publicly reported.",
-      "citation": "WV SOS Campaign-Finance Guide",
-      "url": "/files/sos-campaign-finance-guide.pdf"
-    },
-    {
-      "text": "Any 'thing of value' received must be reported as in-kind contribution.",
-      "citation": "WV SOS Campaign-Finance Guide",
-      "url": "/files/sos-campaign-finance-guide.pdf"
-    },
-    {
-      "text": "A New Day PAC was registered as a West Virginia political committee.",
-      "citation": "WV SOS records",
-      "url": "/files/A-New-Day-PAC-Registration.pdf"
-    },
-    {
-      "text": "The PAC previously paid Progressive Democrats for Party Reform for consulting.",
-      "citation": "A New Day PAC Q4 2022 Filing",
-      "url": "/files/A_New_Day_PAC_Filing_2022_Q4.pdf"
-    }
-  ],
-  "rule_summary": "All financial transactions must be reported—scholarships involve reportable transactions.",
-  "case_facts": [
-    {
-      "text": "PAC solicited scholarship applications on August 22, 2023.",
-      "citation": "Email Record, Aug 22, 2023",
-      "url": "/files/A_New_Day_PAC_Training_Email_2023-08-22.pdf"
-    },
-    {
-      "text": "Q3 2023 report shows zero expenditures to trainer.",
-      "citation": "A New Day PAC Q3 2023 Filing",
-      "url": "/files/A_New_Day_PAC_Filing_2023_Q3.pdf"
-    },
-    {
-      "text": "Q3 2023 report shows zero in-kind contributions.",
-      "citation": "A New Day PAC Q3 2023 Filing",
-      "url": "/files/A_New_Day_PAC_Filing_2023_Q3.pdf"
-    }
-  ],
-  "logic_chain": [
-    "PAC offered scholarships August 22, 2023.",
-    "Scholarships require reportable transactions.",
-    "Q3 2023 report contains neither expenditures nor in-kind contributions.",
-    "Absence means concealment from disclosure.",
-    "[DJ-MARK] PAC's sworn disclosure omits scholarship program."
-  ],
-  "violation": "A New Day PAC violated campaign finance law by failing to report scholarship program financial activity, denying public transparency and rendering sworn statements incomplete.",
-  "potential_remedies": [
-    "File corrected report disclosing all scholarship activity.",
-    "Provide public accounting of funding and recipients.",
-    "Cease activities until compliant."
-  ]
-}
+  }
 ]
