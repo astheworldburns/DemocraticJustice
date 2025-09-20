@@ -1,5 +1,5 @@
 ---
-layout: layout.html
+layout: layout.njk
 title: "About — Democratic Justice"
 description: "Learn how Democratic Justice organizes West Virginia Democrats with documented proof to hold party leaders accountable."
 permalink: /about/
@@ -26,11 +26,23 @@ permalink: /about/
     <aside class="founder-afterword" aria-labelledby="afterword-title">
       <h2 id="afterword-title" class="sr-only">Founder afterword</h2>
       <div class="founder-inline">
-        <img src="{{ '/images/seth-sturm.jpg' | url }}" alt="Seth Sturm, founder of Democratic Justice." class="founder-chip" width="72" height="72" loading="lazy" decoding="async">
+        {% image "/images/seth-sturm.jpg", "Seth Sturm, founder of Democratic Justice.", {
+          class: "founder-chip",
+          widths: [72, 144],
+          sizes: "72px",
+          width: 72,
+          height: 72,
+          formats: ["avif", "webp", "jpeg"]
+        } %}
         <div class="founder-text">
           <p class="founder-quote">“Accountability should be attainable. Standing together on verifiable proof is how we make that real.”</p>
           <div class="sig-wrap">
-            <img src="{{ '/images/signature-seth.svg' | url }}" alt="Signed: Seth Sturm" class="signature" height="36" loading="lazy" decoding="async">
+            {% image "/images/signature-seth.svg", "Signed: Seth Sturm", {
+              class: "signature",
+              widths: [144, 288],
+              sizes: "144px",
+              height: 36
+            } %}
             <div class="sig-meta">
               <span class="sig-name">Seth Sturm</span>
               <span class="sig-role">Founder</span>
