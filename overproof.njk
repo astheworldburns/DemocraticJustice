@@ -46,6 +46,17 @@ eleventyComputed:
       }
     </script>
 
+    {% for proofEntry in overproofGroup.proofs %}
+      {% set proofSlug = (proofEntry.slug or proofEntry.case_id) | slug %}
+      {% set proofCanonicalPath = '/proofs/' + overproofGroup.overproof.slug + '/' + proofSlug + '/' %}
+      {% set proofCanonicalUrl = site.url ~ (proofCanonicalPath | url) %}
+      {% set shareImage = site.url ~ '/share/' ~ proofSlug ~ '-facebook.png' %}
+      {% set proof = proofEntry %}
+      {% set canonicalUrl = proofCanonicalUrl %}
+      {% set imageUrlOverride = shareImage %}
+      {% include "structured-data-proof.njk" %}
+    {% endfor %}
+
     {% set overproof = overproofGroup.overproof %}
     {% set brief = overproof.brief %}
 
