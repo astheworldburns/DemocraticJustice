@@ -62,6 +62,10 @@ description: Proof. Not spin. Democratic Justice equips West Virginia Democrats 
         <!-- JavaScript will fill this area -->
     </div>
 
+    <script type="application/json" id="proof-data">
+      {{ collections.sortedProofs | dump | replace('</', '<\\/') | safe }}
+    </script>
+
     <div style="margin-top:40px">
       <a href="{{ '/archive' | url }}" class="btn btn-outline-blue">View Full Proof Archive</a>
     </div>
