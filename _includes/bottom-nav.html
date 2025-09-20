@@ -1,10 +1,10 @@
 <nav class="bottom-nav" aria-label="Primary">
   <ul class="bottom-nav-links">
-    <li><a href="{{ '/' | url }}" aria-label="Home">Home</a></li>
-    <li><a href="{{ '/archive' | url }}">Proof</a></li>
-    <li><a href="{{ '/method' | url }}">Method</a></li>
-    <li><a href="{{ '/action' | url }}">Action</a></li>
-    <li><a href="{{ '/contact' | url }}">Contact</a></li>
-    <li><a href="{{ '/submit' | url }}">Submit</a></li>
+    <li><a href="{{ '/' | url }}" aria-label="Home"{% if homeActive %} aria-current="page" class="is-active"{% endif %}>Home</a></li>
+    <li><a href="{{ '/archive/' | url }}"{% if proofActive %} aria-current="page" class="is-active"{% endif %}>Proof</a></li>
+    <li><a href="{{ '/method/' | url }}"{% if methodActive %} aria-current="page" class="is-active"{% endif %}>Method</a></li>
+    <li><a href="{{ '/action/' | url }}"{% if actionActive %} aria-current="page" class="is-active"{% endif %}>Action</a></li>
+    <li><a href="{{ '/contact/' | url }}"{% if contactActive %} aria-current="page" class="is-active"{% endif %}>Contact</a></li>
+    <li><a href="{{ '/submit/' | url }}"{% if submitActive %} aria-current="page" class="is-active"{% endif %}>Submit</a></li>
   </ul>
 </nav>

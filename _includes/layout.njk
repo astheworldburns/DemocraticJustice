@@ -64,6 +64,15 @@
 </head>
 <body>
 
+  {% set currentUrl = page.url or '/' %}
+  {% set proofActive = currentUrl == '/archive/' or currentUrl == '/archive/index.html' or currentUrl.startsWith('/proofs/') %}
+  {% set methodActive = currentUrl == '/method/' or currentUrl == '/method/index.html' %}
+  {% set actionActive = currentUrl == '/action/' or currentUrl == '/action/index.html' or currentUrl.startsWith('/action/') %}
+  {% set aboutActive = currentUrl == '/about/' or currentUrl == '/about/index.html' %}
+  {% set contactActive = currentUrl == '/contact/' or currentUrl == '/contact/index.html' %}
+  {% set submitActive = currentUrl == '/submit/' or currentUrl == '/submit/index.html' %}
+  {% set homeActive = currentUrl == '/' or currentUrl == '/index.html' %}
+
   <a class="skip" href="#main">Skip to content</a>
 
   <nav class="nav" aria-label="Primary">
@@ -85,12 +94,12 @@
           </svg>
         </button>
         <ul class="nav-links" id="primary-nav">
-          <li><a href="{{ '/archive' | url }}">Proof</a></li>
-          <li><a href="{{ '/method' | url }}">Method</a></li>
-          <li><a href="{{ '/action' | url }}">Action</a></li>
-          <li><a href="{{ '/about' | url }}">About</a></li>
-          <li><a href="{{ '/contact' | url }}">Contact</a></li>
-          <li><a href="{{ '/submit' | url }}" class="btn-nav-submit">Submit</a></li>
+          <li><a href="{{ '/archive/' | url }}"{% if proofActive %} class="is-active" aria-current="page"{% endif %}>Proof</a></li>
+          <li><a href="{{ '/method/' | url }}"{% if methodActive %} class="is-active" aria-current="page"{% endif %}>Method</a></li>
+          <li><a href="{{ '/action/' | url }}"{% if actionActive %} class="is-active" aria-current="page"{% endif %}>Action</a></li>
+          <li><a href="{{ '/about/' | url }}"{% if aboutActive %} class="is-active" aria-current="page"{% endif %}>About</a></li>
+          <li><a href="{{ '/contact/' | url }}"{% if contactActive %} class="is-active" aria-current="page"{% endif %}>Contact</a></li>
+          <li><a href="{{ '/submit/' | url }}" class="btn-nav-submit{% if submitActive %} is-active{% endif %}"{% if submitActive %} aria-current="page"{% endif %}>Submit</a></li>
         </ul>
       </div>
     </div>

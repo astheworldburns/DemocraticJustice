@@ -42,7 +42,8 @@ export function initNavigation() {
             navToggle.setAttribute('aria-expanded', String(!expanded));
             nav.classList.toggle('nav--open', !expanded);
             if (!expanded) {
-                navLinks.querySelector('a')?.focus();
+                const activeLink = navLinks.querySelector('[aria-current="page"], .is-active') || navLinks.querySelector('a');
+                activeLink?.focus();
             } else {
                 navToggle.focus();
             }
