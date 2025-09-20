@@ -463,6 +463,9 @@ p{
   box-shadow:var(--shadow-md);
   list-style:none;
 }
+.nav-links > li{
+  list-style:none;
+}
 .nav.nav--open .nav-links{
   display:flex;
 }
@@ -480,6 +483,18 @@ p{
   min-height:44px;
   border-bottom:2px solid transparent;
   transition:all .2s;
+}
+.nav-links a[data-search-link]{
+  border-radius:999px;
+  padding-inline:clamp(var(--space-4), 1.6vw, var(--space-5));
+  white-space:nowrap;
+}
+.nav-links a[data-search-link]:hover,
+.nav-links a[data-search-link]:focus-visible,
+.nav-links a[data-search-link]:active{
+  background:var(--nav-active-bg);
+  border-bottom-color:transparent;
+  color:var(--nav-active-text);
 }
 .nav-links a:hover,
 .nav-links a:focus-visible,
@@ -553,8 +568,14 @@ p{
     background:transparent;
     padding: 0;
     gap: var(--space-5);
+    row-gap: var(--space-3);
     box-shadow:none;
     align-items:center;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+  }
+  .nav-links > li{
+    width:auto;
   }
   .nav-toggle{
     display:none;
@@ -571,7 +592,7 @@ p{
   color:var(--white);
   z-index:100;
   box-shadow:var(--shadow-sm);
-  padding-bottom: env(safe-area-inset-bottom);
+  padding: var(--space-2) var(--space-3) calc(var(--space-2) + env(safe-area-inset-bottom));
   --bottom-nav-active-bg: rgba(255,255,255,0.18);
 }
 .bottom-nav-links{
@@ -580,6 +601,9 @@ p{
   list-style:none;
   margin: 0;
   padding: 0;
+}
+.bottom-nav-links li{
+  flex:1 1 0;
 }
 .bottom-nav-links a{
   flex:1;
@@ -594,6 +618,15 @@ p{
   text-decoration:none;
   min-width:44px;
   min-height:44px;
+}
+.bottom-nav-links a[data-search-link]{
+  border-radius:999px;
+  padding-inline:var(--space-3);
+}
+.bottom-nav-links a[data-search-link]:hover,
+.bottom-nav-links a[data-search-link]:focus-visible,
+.bottom-nav-links a[data-search-link]:active{
+  background:var(--bottom-nav-active-bg);
 }
 .bottom-nav-links a[aria-current="page"],
 .bottom-nav-links a.is-active{
@@ -611,6 +644,21 @@ p{
 }
 @media (max-width:768px){
   .bottom-nav{display:flex;}
+}
+
+@media (max-width:520px){
+  .bottom-nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    row-gap: var(--space-2);
+  }
+  .bottom-nav-links li{
+    flex:1 0 25%;
+    max-width:180px;
+  }
+  .bottom-nav-links a{
+    width:100%;
+  }
 }
 
 /* Theme toggle button */

@@ -2,6 +2,7 @@
   <ul class="bottom-nav-links">
     <li><a href="{{ '/' | url }}" aria-label="Home"{% if homeActive %} aria-current="page" class="is-active"{% endif %}>Home</a></li>
     <li><a href="{{ '/archive/' | url }}"{% if proofActive %} aria-current="page" class="is-active"{% endif %}>Proof</a></li>
+    <li><a href="{{ '/archive/#search-input' | url }}" data-search-link aria-label="Search proofs">Search</a></li>
     <li><a href="{{ '/method/' | url }}"{% if methodActive %} aria-current="page" class="is-active"{% endif %}>Method</a></li>
     <li><a href="{{ '/action/' | url }}"{% if actionActive %} aria-current="page" class="is-active"{% endif %}>Action</a></li>
     <li><a href="{{ '/contact/' | url }}"{% if contactActive %} aria-current="page" class="is-active"{% endif %}>Contact</a></li>
