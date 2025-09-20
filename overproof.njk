@@ -65,24 +65,24 @@ eleventyComputed:
 
     {% set heroSummary = (brief and brief.lede) or overproof.summary %}
     {% if heroSummary %}
-    <p class="lead" style="max-width: 60ch;">{{ heroSummary }}</p>
+    <p class="lead">{{ heroSummary }}</p>
     {% endif %}
 
     {% if overproof.narrative %}
-    <div class="overproof-narrative" style="margin-bottom: 2rem; max-width: 70ch;">
+    <div class="overproof-narrative rich-text">
       <p>{{ overproof.narrative | safe }}</p>
     </div>
     {% endif %}
 
-    <div class="overproof-details" style="display: grid; gap: 1.5rem; margin-bottom: 2rem;">
+    <div class="overproof-details">
       {% if overproof.metadata %}
       <div>
-        <h2 class="h4" style="margin-bottom: 0.75rem;">Record Metadata</h2>
-        <dl class="overproof-metadata" style="display: grid; gap: 0.75rem;">
+        <h2 class="h4">Record Metadata</h2>
+        <dl class="overproof-metadata">
           {% for key, value in overproof.metadata %}
-          <div class="overproof-metadata__item" style="display: grid; gap: 0.25rem;">
-            <dt style="font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.08em; color: var(--muted);">{{ key }}</dt>
-            <dd style="margin: 0; font-size: 0.95rem;">{{ value }}</dd>
+          <div class="overproof-metadata__item">
+            <dt class="overproof-metadata__term">{{ key }}</dt>
+            <dd class="overproof-metadata__definition">{{ value }}</dd>
           </div>
           {% endfor %}
         </dl>
@@ -90,15 +90,15 @@ eleventyComputed:
       {% endif %}
 
       <div>
-        <h2 class="h4" style="margin-bottom: 0.75rem;">Proof Count</h2>
-        <p style="font-size: 1.125rem; font-weight: 700;">{{ overproof.proofCount or (overproofGroup.proofs | length) }} proofs documented</p>
+        <h2 class="h4">Proof Count</h2>
+        <p class="overproof-proof-count">{{ overproof.proofCount or (overproofGroup.proofs | length) }} proofs documented</p>
       </div>
     </div>
 
     {% if overproof.key_points and overproof.key_points | length %}
-    <section class="overproof-key-points" aria-labelledby="overproof-key-points-heading" style="margin-bottom: 2.5rem;">
+    <section class="overproof-key-points" aria-labelledby="overproof-key-points-heading">
       <h2 id="overproof-key-points-heading" class="h4">Key Findings</h2>
-      <ul style="margin: 0; padding-left: 1.25rem; display: grid; gap: 0.75rem;">
+      <ul>
         {% for point in overproof.key_points %}
         <li>{{ point }}</li>
         {% endfor %}
@@ -107,7 +107,7 @@ eleventyComputed:
     {% endif %}
 
     {% if brief and brief.violations and brief.violations | length %}
-    <section class="brief-violations" aria-labelledby="brief-violations-heading" style="margin-bottom: 2.5rem;">
+    <section class="brief-violations" aria-labelledby="brief-violations-heading">
       <h2 id="brief-violations-heading">Documented Violations</h2>
       {% for violation in brief.violations %}
       <article class="brief-violation" style="border-top: 1px solid var(--muted-border, rgba(0,0,0,0.1)); padding-top: 1.5rem; margin-top: 1.5rem;">
@@ -148,7 +148,7 @@ eleventyComputed:
     {% endif %}
 
     {% if brief and brief.conclusion %}
-    <section class="brief-conclusion" style="margin-bottom: 2.5rem;">
+    <section class="brief-conclusion">
       <h2>{{ brief.conclusion.headline }}</h2>
       <p>{{ brief.conclusion.summary }}</p>
     </section>
