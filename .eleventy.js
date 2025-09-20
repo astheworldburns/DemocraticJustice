@@ -156,6 +156,62 @@ function normalizeOverproofEntry(entry = {}, index = 0) {
   };
 }
 
+function normalizeBriefEntry(entry = {}, index = 0) {
+  const headline = entry.headline ?? entry.title ?? entry.name ?? `Brief ${index + 1}`;
+
+  const slugCandidates = [entry.slug, entry.id, headline, `brief-${index + 1}`];
+  let slug = "";
+  for (const candidate of slugCandidates) {
+    if (!candidate) {
+      continue;
+    }
+    slug = slugifyValue(candidate);
+    if (slug) {
+      break;
+    }
+  }
+  if (!slug) {
+    slug = `brief-${index + 1}`;
+  }
+
+  const id = entry.id ?? `brief-${slug}`;
+  const lede = entry.lede ?? entry.summary ?? entry.description ?? "";
+  const violations = Array.isArray(entry.violations)
+    ? entry.violations.map((violation) => {
+        if (!violation || typeof violation !== "object") {
+          return { title: String(violation ?? "") };
+        }
+        const proofLinks = Array.isArray(violation.proofs)
+          ? violation.proofs.map((proof) => (proof && typeof proof === "object" ? { ...proof } : { title: String(proof ?? "") }))
+          : [];
+        const evidencePoints = Array.isArray(violation.evidencePoints) ? [...violation.evidencePoints] : [];
+        return {
+          ...violation,
+          proofs: proofLinks,
+          evidencePoints
+        };
+      })
+    : [];
+  const conclusion = entry.conclusion && typeof entry.conclusion === "object" ? { ...entry.conclusion } : null;
+  const nextBrief = entry.nextBrief && typeof entry.nextBrief === "object"
+    ? {
+        ...entry.nextBrief,
+        slug: entry.nextBrief.slug ? slugifyValue(entry.nextBrief.slug) : entry.nextBrief.slug ?? ""
+      }
+    : null;
+
+  return {
+    ...entry,
+    id,
+    slug,
+    headline,
+    lede,
+    violations,
+    conclusion,
+    nextBrief
+  };
+}
+
 function assembleProofCollections() {
   let proofsData;
   try {
@@ -189,7 +245,46 @@ function assembleProofCollections() {
   }
 
   const normalizedOverproofs = normalizeProofsData(overproofsData);
-  const processedOverproofs = normalizedOverproofs.map((entry, index) => normalizeOverproofEntry(entry, index));
+  let briefsData;
+  try {
+    const briefsPath = require.resolve("./_data/brief.json");
+    delete require.cache[briefsPath];
+    briefsData = require(briefsPath);
+  } catch (error) {
+    console.warn("Warning: `brief.json` could not be loaded.", error);
+    briefsData = [];
+  }
+
+  const normalizedBriefs = normalizeProofsData(briefsData);
+  const processedBriefs = normalizedBriefs.map((entry, index) => normalizeBriefEntry(entry, index));
+  const briefBySlug = new Map();
+  for (const brief of processedBriefs) {
+    if (brief.slug) {
+      briefBySlug.set(brief.slug, brief);
+    }
+  }
+
+  const processedOverproofs = normalizedOverproofs.map((entry, index) => {
+    const overproof = normalizeOverproofEntry(entry, index);
+
+    const slugCandidates = [entry.brief_slug, entry.slug, overproof.slug, entry.umbrella_category];
+    let matchedBrief = null;
+    for (const candidate of slugCandidates) {
+      if (!candidate) {
+        continue;
+      }
+      const candidateSlug = slugifyValue(candidate);
+      if (candidateSlug && briefBySlug.has(candidateSlug)) {
+        matchedBrief = briefBySlug.get(candidateSlug);
+        break;
+      }
+    }
+
+    return {
+      ...overproof,
+      brief: matchedBrief ? { ...matchedBrief } : null
+    };
+  });
 
   const overproofById = new Map();
   const overproofByUmbrella = new Map();
