@@ -141,10 +141,18 @@ export function initNavigation() {
             this.lastFocusable = null;
             this.active = false;
             this.boundKeyHandler = null;
+            this.previouslyFocusedElement = null;
         }
 
         activate() {
             if (this.active) return;
+
+            const activeElement = document.activeElement;
+            if (activeElement && typeof activeElement.focus === 'function') {
+                this.previouslyFocusedElement = activeElement;
+            } else {
+                this.previouslyFocusedElement = null;
+            }
 
             this.focusableElements = this.element.querySelectorAll(
                 'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select, [tabindex]:not([tabindex="-1"])'
@@ -160,9 +168,6 @@ export function initNavigation() {
             this.element.addEventListener('keydown', this.boundKeyHandler);
             this.firstFocusable?.focus();
             this.active = true;
-
-            // Store last focused element
-            this.lastFocus = document.activeElement;
         }
 
         deactivate() {
@@ -170,7 +175,14 @@ export function initNavigation() {
             if (this.boundKeyHandler) {
                 this.element.removeEventListener('keydown', this.boundKeyHandler);
             }
-            this.lastFocus?.focus();
+            const opener = this.previouslyFocusedElement;
+            if (opener && typeof opener.focus === 'function') {
+                const isConnected = typeof opener.isConnected === 'boolean' ? opener.isConnected : document.body.contains(opener);
+                if (isConnected) {
+                    opener.focus();
+                }
+            }
+            this.previouslyFocusedElement = null;
             this.active = false;
         }
         
