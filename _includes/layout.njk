@@ -6,16 +6,16 @@
   <link rel="canonical" href="{{ site.url }}{{ page.url | url }}" />
 
   <title>{{ title }}</title>
-  <meta name="description" content="{{ description | default: '' }}">
+  <meta name="description" content="{{ description or '' }}">
   <meta property="og:title" content="{{ title }}">
-  <meta property="og:description" content="{{ description | default: '' }}">
-  {% assign fallbackImage = site.url | append: site.defaultImage %}
-  {% assign resolvedOgImage = ogImage | default: fallbackImage %}
-  {% assign resolvedTwitterImage = twitterImage | default: fallbackImage %}
+  <meta property="og:description" content="{{ description or '' }}">
+  {% set fallbackImage = site.url ~ site.defaultImage %}
+  {% set resolvedOgImage = ogImage or fallbackImage %}
+  {% set resolvedTwitterImage = twitterImage or fallbackImage %}
   <meta property="og:image" content="{{ resolvedOgImage }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }}">
-  <meta name="twitter:description" content="{{ description | default: '' }}">
+  <meta name="twitter:description" content="{{ description or '' }}">
   <meta name="twitter:image" content="{{ resolvedTwitterImage }}">
 
   <meta name="theme-color" content="#0F2742">
@@ -107,24 +107,27 @@
   <footer class="footer">
     <div class="align-container">
       <div class="footer-top">
-        <img src="{{ '/images/wordmark-white-on-blue.svg' | url }}"
-             alt="Democratic Justice"
-             class="footer-logo"
-             loading="lazy" decoding="async">
+        {% image "/images/wordmark-white-on-blue.svg", "Democratic Justice", {
+          class: "footer-logo",
+          widths: [200, 400],
+          sizes: "200px"
+        } %}
       </div>
       <p><strong>Proof. Not Spin.</strong></p>
       <p>A 100% volunteer-run project. We do not solicit or accept financial contributions. We do not endorse candidates.</p>
       <p><a href="mailto:setho@democraticjustice.org">Submit Proof Confidentially</a></p>
       <p><a href="{{ '/integrity' | url }}">Proof of Integrity</a></p>
       <p><a href="{{ '/privacy' | url }}">Privacy Policy</a></p>
-      <p>&copy; {{ now | date: "%Y" }} Democratic Justice. All rights reserved.</p>
+      <p>&copy; {{ now | date('%Y') }} Democratic Justice. All rights reserved.</p>
 
       <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
-        <img class="mark xl"
-             src="{{ '/images/three-dots-white.svg' | url }}"
-             alt="" aria-hidden="true"
-             loading="lazy" decoding="async"
-             style="position:absolute; bottom: var(--gap); right: 20px; opacity: 0.5;">
+        {% image "/images/three-dots-white.svg", "", {
+          class: "mark xl",
+          widths: [32, 64],
+          sizes: "32px",
+          ariaHidden: true,
+          style: "position:absolute; bottom: var(--gap); right: 20px; opacity: 0.5;"
+        } %}
       </a>
     </div>
   </footer>

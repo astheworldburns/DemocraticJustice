@@ -1,5 +1,5 @@
 ---
-layout: layout.html
+layout: layout.njk
 title: Democratic Justice — Proof. Not Spin.
 description: Proof. Not spin. Democratic Justice equips West Virginia Democrats with verified election integrity proofs, secure submission guidance, and action resources.
 ---
@@ -25,7 +25,12 @@ description: Proof. Not spin. Democratic Justice equips West Virginia Democrats 
       <aside class="proof-box" aria-label="Featured Proof">
         <div class="proof-box__header">
           <div class="proof-box__title">
-            <img class="mark md" src="{{ '/images/three-dots-white.svg' | url }}" alt="Therefore symbol" aria-hidden="true" loading="lazy" decoding="async">
+            {% image "/images/three-dots-white.svg", "Therefore symbol", {
+              class: "mark md",
+              widths: [24, 48],
+              sizes: "24px",
+              ariaHidden: true
+            } %}
             LATEST PROOF
           </div>
         </div>
@@ -34,7 +39,12 @@ description: Proof. Not spin. Democratic Justice equips West Virginia Democrats 
          <p class="proof-box__finding">{{ latestProof.thesis }}</p>
           <p class="proof-box__meta">CASE FILE: {{ latestProof.case_id }}</p>
           <a href="{{ '/proofs/' | url }}{{ latestProof.overproof.slug }}/{{ latestProof.slug }}/" class="proof-box__cta">
-            <img class="mark md" src="{{ '/images/three-dots-blue.svg' | url }}" alt="Therefore symbol" aria-hidden="true" loading="lazy" decoding="async">
+            {% image "/images/three-dots-blue.svg", "Therefore symbol", {
+              class: "mark md",
+              widths: [24, 48],
+              sizes: "24px",
+              ariaHidden: true
+            } %}
             Examine Full Proof →
           </a>
         </div>
@@ -105,7 +115,13 @@ description: Proof. Not spin. Democratic Justice equips West Virginia Democrats 
 <section class="action" id="action" aria-labelledby="action-heading">
   <div class="align-container">
     <h2 id="action-heading">
-      Proof <img class="mark md" src="{{ '/images/three-dots-gold.svg' | url }}" alt="Therefore symbol" style="transform: translateY(0.1em);" loading="lazy" decoding="async"> Action
+      Proof {% image "/images/three-dots-gold.svg", "Therefore symbol", {
+        class: "mark md",
+        widths: [24, 48],
+        sizes: "24px",
+        style: "transform: translateY(0.1em);",
+        ariaHidden: true
+      } %} Action
     </h2>
     <div class="action-card">
       <p>Turn proofs into formal challenges. Start with a challenge review—if your case qualifies, we can stay with you through filing.</p>

@@ -478,6 +478,103 @@ module.exports = function(eleventyConfig) {
     return str.slice(0, idx > 0 ? idx : length) + "…";
   });
 
+  const imageOutputDir = path.join("_site", "img");
+  const imageCacheDir = path.join(".cache", "eleventy-img");
+  const defaultImageWidths = [320, 640, 960, 1280, 1600];
+  const defaultImageFormats = ["avif", "webp", "png"];
+
+  async function imageShortcode(src, alt, options = {}) {
+    if (!src) {
+      throw new Error("`image` shortcode requires a `src` value");
+    }
+
+    if (alt === undefined) {
+      throw new Error(`Missing \'alt\' text for image shortcode \"${src}\".`);
+    }
+
+    const {
+      widths,
+      formats,
+      sizes,
+      class: className,
+      loading,
+      decoding,
+      fetchpriority,
+      style,
+      id,
+      width,
+      height,
+      ariaHidden,
+      attributes: customAttributes = {},
+      background,
+      filenameFormat,
+      cacheOptions,
+      sharpOptions,
+      sharpWebpOptions,
+      sharpAvifOptions,
+      sharpPngOptions,
+      sharpGifOptions
+    } = options;
+
+    let resolvedWidths = defaultImageWidths;
+    if (Array.isArray(widths) && widths.length) {
+      resolvedWidths = widths;
+    } else if (widths === "auto" || widths === null) {
+      resolvedWidths = ["auto"];
+    }
+
+    const resolvedFormats = Array.isArray(formats) && formats.length ? formats : defaultImageFormats;
+
+    const imageOptions = {
+      widths: resolvedWidths,
+      formats: resolvedFormats,
+      outputDir: imageOutputDir,
+      urlPath: "/img/",
+      cacheOptions: cacheOptions ?? {
+        directory: imageCacheDir,
+        duration: "1d"
+      }
+    };
+
+    if (background) imageOptions.background = background;
+    if (filenameFormat) imageOptions.filenameFormat = filenameFormat;
+    if (sharpOptions) imageOptions.sharpOptions = sharpOptions;
+    if (sharpWebpOptions) imageOptions.sharpWebpOptions = sharpWebpOptions;
+    if (sharpAvifOptions) imageOptions.sharpAvifOptions = sharpAvifOptions;
+    if (sharpPngOptions) imageOptions.sharpPngOptions = sharpPngOptions;
+    if (sharpGifOptions) imageOptions.sharpGifOptions = sharpGifOptions;
+
+    const source = typeof src === "string" && !src.startsWith("http://") && !src.startsWith("https://") && !src.startsWith("data:")
+      ? path.join(process.cwd(), src.replace(/^\/+/u, ""))
+      : src;
+
+    const metadata = await Image(source, imageOptions);
+
+    const imageAttributes = {
+      alt,
+      sizes: sizes ?? "100vw",
+      loading: loading ?? "lazy",
+      decoding: decoding ?? "async",
+      ...customAttributes
+    };
+
+    if (className) imageAttributes.class = className;
+    if (style) imageAttributes.style = style;
+    if (id) imageAttributes.id = id;
+    if (width !== undefined) imageAttributes.width = width;
+    if (height !== undefined) imageAttributes.height = height;
+    if (fetchpriority) imageAttributes.fetchpriority = fetchpriority;
+    if (ariaHidden !== undefined) imageAttributes["aria-hidden"] = String(ariaHidden);
+
+    return Image.generateHTML(metadata, imageAttributes, {
+      whitespaceMode: "inline"
+    });
+  }
+
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", (...args) => imageShortcode(...args));
+
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("bundle.js");
   eleventyConfig.addPassthroughCopy("ga-consent.js");
