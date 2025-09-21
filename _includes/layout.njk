@@ -36,6 +36,9 @@
   <!-- Root-relative assets (safe from any page depth and pathPrefix-aware) -->
   <link rel="icon" href="{{ '/images/three-dots-blue.svg' | url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/style.css' | url }}">
+  {% if pagefind %}
+  <link rel="stylesheet" href="{{ '/pagefind/pagefind-ui.css' | url }}">
+  {% endif %}
 
   <script type="application/ld+json">
     {
@@ -143,6 +146,10 @@
   </footer>
 
   <script defer src="/ga-consent.js"></script>
+  {% if pagefind %}
+  <script defer src="{{ '/pagefind/pagefind.js' | url }}"></script>
+  <script defer src="{{ '/pagefind/pagefind-ui.js' | url }}"></script>
+  {% endif %}
   <!-- Defer so it doesn't block rendering -->
   <script defer src="{{ '/bundle.js' | url }}"></script>
 

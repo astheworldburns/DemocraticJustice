@@ -15,6 +15,10 @@ export function initNavigation() {
     let proofsPerLoad = 12; // For lazy loading
     let currentlyLoaded = 0;
     let observer; // For Intersection Observer
+    let pagefindReadyPromise = null;
+    let lastLoggedSearch = { query: '', results: null };
+    let lastLoggedSearchAt = 0;
+    let filterRequestId = 0;
     
     /* ---------- UI Elements ---------- */
     const grid = document.getElementById('case-grid');
@@ -135,6 +139,94 @@ export function initNavigation() {
             return '#';
         }
         return `/proofs/${overproofSlug}/${proofSlug}/`;
+    };
+
+    const normalizeUrl = (url = '') => {
+        if (!url) {
+            return '';
+        }
+
+        try {
+            const base = typeof window !== 'undefined' && window.location
+                ? window.location.origin
+                : 'https://democraticjustice.org';
+            const parsed = new URL(url, base);
+            let pathname = parsed.pathname || '';
+            pathname = pathname.replace(/index\.html$/i, '');
+
+            if (!pathname.endsWith('/')) {
+                pathname = `${pathname}/`;
+            }
+
+            return pathname.replace(/\/+$/, '/');
+        } catch (error) {
+            console.warn('Failed to normalize URL for search matching', {
+                url,
+                error
+            });
+            return url;
+        }
+    };
+
+    const getProofUrlKey = (proof = {}) => normalizeUrl(buildProofUrl(proof));
+
+    const ensurePagefind = () => {
+        if (pagefindReadyPromise) {
+            return pagefindReadyPromise;
+        }
+
+        if (typeof window.pagefindInit !== 'function') {
+            pagefindReadyPromise = Promise.resolve(null);
+            return pagefindReadyPromise;
+        }
+
+        pagefindReadyPromise = window.pagefindInit({ baseUrl: '/pagefind/' })
+            .catch(error => {
+                console.error('Failed to initialize Pagefind search index:', error);
+                return null;
+            });
+
+        return pagefindReadyPromise;
+    };
+
+    const runPagefindSearch = async (query) => {
+        if (!query) {
+            return null;
+        }
+
+        const instance = await ensurePagefind();
+        if (!instance || typeof instance.search !== 'function') {
+            return null;
+        }
+
+        try {
+            const response = await instance.search(query);
+            const results = Array.isArray(response?.results) ? response.results : [];
+            const urls = new Set();
+
+            if (results.length) {
+                const hydrated = await Promise.allSettled(results.map(result => {
+                    if (typeof result?.data === 'function') {
+                        return result.data();
+                    }
+                    return Promise.resolve(null);
+                }));
+
+                hydrated.forEach(entry => {
+                    if (entry.status === 'fulfilled' && entry.value && entry.value.url) {
+                        urls.add(normalizeUrl(entry.value.url));
+                    }
+                });
+            }
+
+            return {
+                urls,
+                count: results.length
+            };
+        } catch (error) {
+            console.error('Pagefind search failed:', error);
+            return null;
+        }
     };
 
     /* ---------- Lazy Loading Setup ---------- */
@@ -480,11 +572,75 @@ export function initNavigation() {
         countEl.textContent = (count === total) ? `Showing all ${total} proofs` : `Showing ${count} of ${total} proofs`;
     };
 
+    const dispatchSearchLog = debounce((payload) => {
+        if (!payload || !payload.query) {
+            return;
+        }
+
+        if (typeof fetch !== 'function') {
+            return;
+        }
+
+        fetch('/.netlify/functions/log-search', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        }).catch(error => {
+            console.error('Failed to send search analytics payload', error);
+        });
+    }, 500);
+
+    const queueSearchLog = (query, resultsCount, extras = {}) => {
+        if (!query) {
+            return;
+        }
+
+        const sanitizedQuery = String(query).trim();
+        const numericCount = Number.isFinite(Number(resultsCount)) ? Number(resultsCount) : 0;
+
+        const now = Date.now();
+        if (
+            lastLoggedSearch.query === sanitizedQuery &&
+            lastLoggedSearch.results === numericCount &&
+            now - lastLoggedSearchAt < 60000
+        ) {
+            return;
+        }
+
+        lastLoggedSearch = {
+            query: sanitizedQuery,
+            results: numericCount
+        };
+        lastLoggedSearchAt = now;
+
+        dispatchSearchLog({
+            query: sanitizedQuery,
+            results: numericCount,
+            ...extras
+        });
+    };
+
     // Enhanced filter function
-    const filterAndRender = () => {
+    const filterAndRender = async (fromSearchInput = false) => {
+        const requestId = ++filterRequestId;
         activeFilters.search = searchInput ? searchInput.value : '';
         activeFilters.category = categoryFilter ? categoryFilter.value : 'All Categories';
         activeFilters.type = typeFilter ? typeFilter.value : 'All Types';
+
+        const searchTerm = activeFilters.search ? activeFilters.search.trim() : '';
+        let pagefindResult = null;
+
+        if (searchTerm) {
+            pagefindResult = await runPagefindSearch(searchTerm);
+        }
+
+        if (requestId !== filterRequestId) {
+            return;
+        }
+
+        const searchTermLower = searchTerm.toLowerCase();
 
         filteredProofs = allProofs.filter(p => {
             // Category filter
@@ -498,20 +654,26 @@ export function initNavigation() {
             }
 
             // Search filter
-            if (activeFilters.search) {
-                const searchTerm = activeFilters.search.toLowerCase();
-                const searchableText = [
-                    p.title,
-                    p.thesis,
-                    p.stakes,
-                    p.violation,
-                    p.rule_summary,
-                    p.case_id,
-                    p.category
-                ].join(' ').toLowerCase();
+            if (searchTerm) {
+                if (pagefindResult) {
+                    const proofUrlKey = getProofUrlKey(p);
+                    if (!proofUrlKey || !pagefindResult.urls?.has(proofUrlKey)) {
+                        return false;
+                    }
+                } else {
+                    const searchableText = [
+                        p.title,
+                        p.thesis,
+                        p.stakes,
+                        p.violation,
+                        p.rule_summary,
+                        p.case_id,
+                        p.category
+                    ].join(' ').toLowerCase();
 
-                if (!searchableText.includes(searchTerm)) {
-                    return false;
+                    if (!searchableText.includes(searchTermLower)) {
+                        return false;
+                    }
                 }
             }
             return true;
@@ -520,11 +682,23 @@ export function initNavigation() {
         renderProofs(filteredProofs);
         updateResultsCount();
         renderFilterBadges();
+
+        if (fromSearchInput && searchTerm) {
+            queueSearchLog(searchTerm, filteredProofs.length, {
+                filters: {
+                    category: activeFilters.category,
+                    type: activeFilters.type
+                },
+                pagefindResults: pagefindResult?.count ?? null,
+                strategy: pagefindResult ? 'pagefind' : 'local',
+                triggeredAt: new Date().toISOString()
+            });
+        }
     };
 
     // Debounced search handler
     const handleSearch = debounce(() => {
-        filterAndRender();
+        filterAndRender(true);
     }, 300);
 
     // Populate filters
@@ -649,6 +823,7 @@ export function initNavigation() {
             renderProofs(filteredProofs);
             updateResultsCount();
             renderFilterBadges();
+            ensurePagefind();
 
             if (searchInput) {
                 searchInput.addEventListener('input', handleSearch);
