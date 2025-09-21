@@ -158,5 +158,67 @@
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ env.CLOUDFLARE_ANALYTICS_TOKEN }}"}'></script>
   {%- endif -%}
 
+  {%- if env.MICROSOFT_CLARITY_PROJECT_ID -%}
+  <script type="text/javascript">
+    window.democraticJustice = window.democraticJustice || {};
+
+    window.democraticJustice.loadClarity = window.democraticJustice.loadClarity || function loadClarity() {
+      if (window.democraticJustice.clarityLoaded) {
+        return;
+      }
+
+      window.democraticJustice.clarityLoaded = true;
+
+      var defaultSettings = {
+        mask: true,
+        maskText: true,
+        maskImages: true
+      };
+      var customSettings = window.democraticJustice.claritySettings;
+      if (!customSettings || typeof customSettings !== "object") {
+        customSettings = {};
+      }
+      var combinedSettings = {};
+
+      for (var key in defaultSettings) {
+        if (Object.prototype.hasOwnProperty.call(defaultSettings, key)) {
+          combinedSettings[key] = defaultSettings[key];
+        }
+      }
+
+      for (var customKey in customSettings) {
+        if (Object.prototype.hasOwnProperty.call(customSettings, customKey)) {
+          combinedSettings[customKey] = customSettings[customKey];
+        }
+      }
+
+      window.claritySettings = combinedSettings;
+
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+        t = l.createElement(r);
+        t.async = 1;
+        t.type = "text/javascript";
+        t.src = "https://www.clarity.ms/tag/" + i;
+
+        var scriptAttributes = window.democraticJustice.clarityScriptAttrs;
+        if (!scriptAttributes || typeof scriptAttributes !== "object") {
+          scriptAttributes = {};
+        }
+        for (var attr in scriptAttributes) {
+          if (Object.prototype.hasOwnProperty.call(scriptAttributes, attr)) {
+            t.setAttribute(attr, scriptAttributes[attr]);
+          }
+        }
+
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "{{ env.MICROSOFT_CLARITY_PROJECT_ID }}");
+    };
+  </script>
+  {%- endif -%}
+
 </body>
 </html>

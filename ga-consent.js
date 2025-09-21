@@ -15,9 +15,22 @@
     gtag('config', GA_ID, { anonymize_ip: true });
   }
 
+  function loadClarity() {
+    const namespace = window.democraticJustice || window.DemocraticJustice;
+    if (!namespace) {
+      return;
+    }
+
+    const clarityLoader = typeof namespace.loadClarity === 'function' ? namespace.loadClarity : null;
+    if (clarityLoader) {
+      clarityLoader();
+    }
+  }
+
   const consent = localStorage.getItem('analytics-consent');
   if (consent === 'granted') {
     loadGA();
+    loadClarity();
   } else if (consent !== 'denied') {
     const banner = document.createElement('div');
     banner.id = 'consent-banner';
@@ -28,6 +41,7 @@
       localStorage.setItem('analytics-consent','granted');
       banner.remove();
       loadGA();
+      loadClarity();
     });
     document.getElementById('consent-reject').addEventListener('click', function(){
       localStorage.setItem('analytics-consent','denied');
