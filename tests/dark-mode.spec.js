@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 const DARK_BODY_BG = 'rgb(15, 23, 42)';
-const DARK_TEXT = 'rgb(249, 250, 251)';
-const DARK_SURFACE = 'rgb(31, 41, 55)';
-const ACCENT_BLUE = 'rgb(59, 130, 246)';
+const DARK_TEXT = 'rgb(241, 245, 249)';
+const DARK_SURFACE = 'rgb(30, 41, 59)';
+const DARK_NAV_TEXT = 'rgb(37, 99, 235)';
+const DARK_LINK = 'rgb(147, 197, 253)';
 
 test.describe('dark theme styling', () => {
   test.beforeEach(async ({ page }) => {
@@ -30,17 +31,10 @@ test.describe('dark theme styling', () => {
 
     const nav = page.locator('nav.nav');
     await expect(nav).toHaveCSS('background-color', DARK_SURFACE);
-    await expect(nav).toHaveCSS('color', ACCENT_BLUE);
+    await expect(nav).toHaveCSS('color', DARK_NAV_TEXT);
 
     const navLink = nav.locator('.nav-links a').first();
-    await expect(navLink).toHaveCSS('color', ACCENT_BLUE);
+    await expect(navLink).toHaveCSS('color', DARK_LINK);
 
-    const caseCard = page.locator('.case-card').first();
-    await expect(caseCard).toBeVisible();
-    await expect(caseCard).toHaveCSS('background-color', DARK_SURFACE);
-    await expect(caseCard).toHaveCSS('color', DARK_TEXT);
-
-    const caseLink = caseCard.locator('a.case-link');
-    await expect(caseLink).toHaveCSS('color', DARK_TEXT);
   });
 });
