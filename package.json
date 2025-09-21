@@ -10,6 +10,11 @@
     "build:css": "postcss _site/style.css -o _site/style.css",
     "build:critical": "node scripts/generate-critical.js",
     "build": "npm run build:js && eleventy && npm run build:critical && eleventy && npm run build:css && npx pagefind --source _site",
+    "lint": "npm run lint:js && npm run lint:css && npm run format:check",
+    "lint:js": "eslint \"src/**/*.js\"",
+    "lint:css": "stylelint \"style.css\"",
+    "format": "prettier --write \"src/**/*.js\" \"style.css\"",
+    "format:check": "prettier --check \"src/**/*.js\" \"style.css\"",
     "test": "playwright test",
     "test:dark": "playwright test tests/dark-mode.spec.js",
     "test:browsers": "playwright install --with-deps"
@@ -23,15 +28,23 @@
     "@sindresorhus/slugify": "^3.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.36.0",
     "@playwright/test": "^1.44.1",
     "autoprefixer": "^10.4.21",
     "critical": "^7.2.1",
     "cssnano": "^7.1.1",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
     "esbuild": "^0.21.0",
     "html-minifier-terser": "^7.2.0",
     "luxon": "^3.7.2",
     "pagefind": "^1.4.0",
+    "prettier": "^3.3.3",
     "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1"
+    "postcss-cli": "^11.0.1",
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard": "^36.0.1",
+    "globals": "^16.4.0"
   }
 }

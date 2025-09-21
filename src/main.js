@@ -8,15 +8,15 @@ import { initFeedback } from './feedback.js';
 initTheme();
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNavigation();
-  initReviewForm();
-  initShare();
-  initFeedback();
+    initNavigation();
+    initReviewForm();
+    initShare();
+    initFeedback();
 });
 
 // Service worker registration
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js').catch(err => {
-    console.error('Service worker registration failed:', err);
-  });
+    navigator.serviceWorker.register('/service-worker.js').catch((err) => {
+        console.error('Service worker registration failed:', err);
+    });
 }
