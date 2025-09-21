@@ -3,21 +3,58 @@
   "slug": "improper-use-of-restricted-funds",
   "title": "Restricted funds used for partisan campaign mail",
   "date": "2025-09-10",
+  "reviewDate": "2024-12-01",
   "category": "Campaign Finance",
   "thesis": "This proof shows restricted public funds paid for partisan campaign messaging.",
   "stakes": "Misuse of public funds corrupts the electoral field and violates party and state rules.",
   "axioms": [
-    { "text": "Restricted funds cannot be used for campaign advocacy.", "citation": "Finance Policy §2-103(C), p. 4", "url": "/files/policy-2-103c.pdf" },
-    { "text": "Payments from Account GF-Comm are restricted funds.", "citation": "Treasurer memo, 2024-12-12, ¶3", "url": "/files/treasurer-memo.pdf" },
-    { "text": "The mailer language constitutes express advocacy.", "citation": "Bylaws §7-201(A), p. 12", "url": "/files/bylaws-7-201a.pdf" }
+    {
+      "text": "Restricted funds cannot be used for campaign advocacy.",
+      "citation": "Finance Policy §2-103(C), p. 4",
+      "url": "/files/policy-2-103c.pdf"
+    },
+    {
+      "text": "Payments from Account GF-Comm are restricted funds.",
+      "citation": "Treasurer memo, 2024-12-12, ¶3",
+      "url": "/files/treasurer-memo.pdf"
+    },
+    {
+      "text": "The mailer language constitutes express advocacy.",
+      "citation": "Bylaws §7-201(A), p. 12",
+      "url": "/files/bylaws-7-201a.pdf"
+    }
   ],
   "rule_summary": "<concise synthesis of the axioms>",
   "_comment_rule_summary": "Summarizes the rule established by the axioms",
   "evidence_chain": [
-    { "title": "Establish the Standard", "text": "Policy §2-103(C) forbids restricted-fund spending on advocacy.", "timestamp": "Apr 15, 2025", "thumb": "/files/thumbs/policy-standard.png", "caption": "Policy excerpt, §2-103(C)" },
-    { "title": "Document What Occurred", "text": "Invoice #1148 billed 'Primary GOTV mailer' to GF-Comm.", "timestamp": "May 02, 2025", "thumb": "/files/thumbs/invoice-1148.png", "caption": "Invoice shows restricted account code" },
-    { "title": "Highlight the Violation", "text": "Mailer text is targeted advocacy without committee authorization.", "timestamp": "May 08, 2025", "thumb": "/files/thumbs/mailer-excerpt.png", "caption": "Advocacy language highlighted" },
-    { "title": "Prove the Conclusion", "text": "Ledger + bank confirm payment from restricted account.", "timestamp": "Jun 01, 2025", "thumb": "/files/thumbs/ledger-line.png", "caption": "Ledger entry for check #4421" }
+    {
+      "title": "Establish the Standard",
+      "text": "Policy §2-103(C) forbids restricted-fund spending on advocacy.",
+      "timestamp": "Apr 15, 2025",
+      "thumb": "/files/thumbs/policy-standard.png",
+      "caption": "Policy excerpt, §2-103(C)"
+    },
+    {
+      "title": "Document What Occurred",
+      "text": "Invoice #1148 billed 'Primary GOTV mailer' to GF-Comm.",
+      "timestamp": "May 02, 2025",
+      "thumb": "/files/thumbs/invoice-1148.png",
+      "caption": "Invoice shows restricted account code"
+    },
+    {
+      "title": "Highlight the Violation",
+      "text": "Mailer text is targeted advocacy without committee authorization.",
+      "timestamp": "May 08, 2025",
+      "thumb": "/files/thumbs/mailer-excerpt.png",
+      "caption": "Advocacy language highlighted"
+    },
+    {
+      "title": "Prove the Conclusion",
+      "text": "Ledger + bank confirm payment from restricted account.",
+      "timestamp": "Jun 01, 2025",
+      "thumb": "/files/thumbs/ledger-line.png",
+      "caption": "Ledger entry for check #4421"
+    }
   ],
   "reveal": {
     "required_text": "Rule: Restricted funds must not pay for advocacy.",
@@ -27,5 +64,8 @@
   },
   "violation": "Restricted funds were used to pay for partisan campaign messaging.",
   "remedy": "Reimburse the restricted account from a lawful campaign account; file corrective disclosure; sanction per §9-402.",
-  "action_tool": { "label": "Action Tool #3", "url": "/tools/grievance-3/" }
+  "action_tool": {
+    "label": "Action Tool #3",
+    "url": "/tools/grievance-3/"
+  }
 }
