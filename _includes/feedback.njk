@@ -1,0 +1,32 @@
+<section class="page-feedback" aria-labelledby="page-feedback-title">
+  <div class="align-container page-feedback__content">
+    <form class="page-feedback__form" name="page-feedback" method="POST" netlify netlify-honeypot="bot-field" data-feedback-form>
+      <input type="hidden" name="form-name" value="page-feedback">
+      <input type="hidden" name="feedback_rating" value="" data-feedback-value>
+      <input type="hidden" name="page_title" value="{{ title or '' }}">
+      <input type="hidden" name="page_url" value="{{ site.url }}{{ page.url | url }}">
+      <input type="hidden" name="page_path" value="{{ page.url | url }}">
+      <input type="hidden" name="page_template" value="{{ page.inputPath }}">
+      <input type="hidden" name="page_id" value="{{ page.fileSlug }}">
+      <p class="visually-hidden"><label>Leave this empty <input name="bot-field"></label></p>
+
+      <div class="page-feedback__prompt">
+        <h2 id="page-feedback-title">Was this page helpful?</h2>
+        <p class="page-feedback__description">Your feedback helps us keep every proof and method page useful.</p>
+      </div>
+
+      <div class="page-feedback__actions" role="group" aria-labelledby="page-feedback-title">
+        <button type="button" class="btn btn-outline-blue page-feedback__choice" data-feedback-answer="yes" aria-pressed="false">Yes</button>
+        <button type="button" class="btn btn-outline-blue page-feedback__choice" data-feedback-answer="no" aria-pressed="false">No</button>
+      </div>
+
+      <div class="page-feedback__followup" data-feedback-followup hidden>
+        <label class="page-feedback__label" for="page-feedback-comments">What could be clearer or more helpful on this page?</label>
+        <textarea id="page-feedback-comments" name="feedback_details" rows="4" placeholder="Let us know what was missing or confusing." data-feedback-textarea></textarea>
+        <button type="submit" class="btn btn-accent page-feedback__submit" data-feedback-submit>Send feedback</button>
+      </div>
+
+      <p class="page-feedback__status" data-feedback-status aria-live="polite"></p>
+    </form>
+  </div>
+</section>
