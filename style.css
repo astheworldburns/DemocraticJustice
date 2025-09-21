@@ -1606,7 +1606,7 @@ html { scroll-behavior: smooth; }
   margin: var(--space-4) 0;
 }
 
-#about-page .context-note h3 {
+#about-page .context-note h2 {
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -1628,7 +1628,7 @@ html { scroll-behavior: smooth; }
     border-color: var(--border-strong);
     border-left-color: var(--brand);
   }
-  #about-page .context-note h3 { color: var(--text); }
+  #about-page .context-note h2 { color: var(--text); }
   #about-page .context-note p { color: var(--text-soft); }
 }
 
