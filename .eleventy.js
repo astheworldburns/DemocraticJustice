@@ -97,6 +97,77 @@ function compareProofsByCaseId(a = {}, b = {}) {
   return String(a.title ?? "").localeCompare(String(b.title ?? ""));
 }
 
+function normalizeIntentList(value) {
+  if (!value) {
+    return [];
+  }
+
+  if (Array.isArray(value)) {
+    return value
+      .map((entry) => (entry === undefined || entry === null ? "" : String(entry)))
+      .map((entry) => entry.trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  return [String(value).trim().toLowerCase()].filter(Boolean);
+}
+
+function matchesIntent(data = {}, intent) {
+  if (!intent) {
+    return false;
+  }
+
+  const normalizedIntent = normalizeIntentList(data.intent ?? data.type);
+  if (normalizedIntent.includes(intent)) {
+    return true;
+  }
+
+  const normalizedTasks = normalizeIntentList(data.tasks);
+  return normalizedTasks.includes(intent);
+}
+
+function sortByIntentMetadata(a = {}, b = {}) {
+  const dataA = a.data ?? {};
+  const dataB = b.data ?? {};
+
+  const orderA = Number.isFinite(dataA.intentOrder) ? dataA.intentOrder : Number.POSITIVE_INFINITY;
+  const orderB = Number.isFinite(dataB.intentOrder) ? dataB.intentOrder : Number.POSITIVE_INFINITY;
+
+  if (orderA !== orderB) {
+    return orderA - orderB;
+  }
+
+  const titleA = String(dataA.title ?? a.fileSlug ?? "").toLowerCase();
+  const titleB = String(dataB.title ?? b.fileSlug ?? "").toLowerCase();
+
+  if (titleA && titleB) {
+    return titleA.localeCompare(titleB);
+  }
+
+  if (titleA) {
+    return -1;
+  }
+
+  if (titleB) {
+    return 1;
+  }
+
+  return 0;
+}
+
+function createIntentCollection(collectionApi, intent) {
+  const normalizedIntent = typeof intent === "string" ? intent.trim().toLowerCase() : "";
+
+  if (!normalizedIntent) {
+    return [];
+  }
+
+  return collectionApi
+    .getAll()
+    .filter((item) => matchesIntent(item?.data, normalizedIntent))
+    .sort(sortByIntentMetadata);
+}
+
 function slugifyValue(value) {
   if (value === undefined || value === null) {
     return "";
@@ -464,6 +535,18 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("overproofs", function() {
     const { overproofGroups } = getProofCollections();
     return overproofGroups;
+  });
+
+  eleventyConfig.addCollection("guides", function(collectionApi) {
+    return createIntentCollection(collectionApi, "guide");
+  });
+
+  eleventyConfig.addCollection("troubleshooting", function(collectionApi) {
+    return createIntentCollection(collectionApi, "troubleshooting");
+  });
+
+  eleventyConfig.addCollection("caseStudies", function(collectionApi) {
+    return createIntentCollection(collectionApi, "case-study");
   });
 
   eleventyConfig.addFilter("date", (dateObj, format = "LLLL d, yyyy") => {

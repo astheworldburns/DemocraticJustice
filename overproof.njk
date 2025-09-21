@@ -5,6 +5,10 @@ pagination:
   size: 1
   alias: overproofGroup
 permalink: "proofs/{{ overproofGroup.overproof.slug }}/index.html"
+intent: case-study
+tasks:
+  - proof-record
+  - precedent
 eleventyComputed:
   title: "{{ (overproofGroup.overproof.brief and overproofGroup.overproof.brief.headline) or overproofGroup.overproof.title }} — Proof Record"
   description: "{{ (overproofGroup.overproof.brief and overproofGroup.overproof.brief.lede) or overproofGroup.overproof.summary }}"

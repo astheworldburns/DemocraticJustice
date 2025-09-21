@@ -1,3 +1,15 @@
+---
+layout: layout.njk
+title: "Dark Mode Regression Testing"
+description: "Verify the dark theme with DOM-level Playwright assertions instead of screenshots."
+intent: guide
+tasks:
+  - testing
+  - qa
+permalink: /docs/dark-mode-testing/
+intentOrder: 4
+---
+
 # Dark Mode Regression Testing
 
 The dark theme is now verified with DOM-level assertions instead of screenshot comparisons. The Playwright spec at `tests/dark-mode.spec.js` loads the homepage with the dark theme enabled and inspects computed styles for critical UI regions.
