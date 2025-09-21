@@ -33,6 +33,9 @@
   <!-- Root-relative assets (safe from any page depth and pathPrefix-aware) -->
   <link rel="icon" href="{{ '/images/three-dots-blue.svg' | url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/style.css' | url }}">
+  {% if pagefind %}
+  <link rel="stylesheet" href="{{ '/pagefind/pagefind-ui.css' | url }}">
+  {% endif %}
 
   <script type="application/ld+json">
     {
@@ -65,6 +68,9 @@
   {% set proofActive = currentUrl == '/archive/' or currentUrl == '/archive/index.html' or currentUrl.startsWith('/proofs/') %}
   {% set methodActive = currentUrl == '/method/' or currentUrl == '/method/index.html' %}
   {% set actionActive = currentUrl == '/action/' or currentUrl == '/action/index.html' or currentUrl.startsWith('/action/') %}
+  {% set guidesActive = currentUrl == '/guides/' or currentUrl == '/guides/index.html' %}
+  {% set troubleshootingActive = currentUrl == '/troubleshooting/' or currentUrl == '/troubleshooting/index.html' %}
+  {% set caseStudiesActive = currentUrl == '/case-studies/' or currentUrl == '/case-studies/index.html' %}
   {% set aboutActive = currentUrl == '/about/' or currentUrl == '/about/index.html' %}
   {% set contactActive = currentUrl == '/contact/' or currentUrl == '/contact/index.html' %}
   {% set submitActive = currentUrl == '/submit/' or currentUrl == '/submit/index.html' %}
@@ -93,6 +99,9 @@
         <ul class="nav-links" id="primary-nav">
           <li><a href="{{ '/archive/' | url }}"{% if proofActive %} class="is-active" aria-current="page"{% endif %}>Proof</a></li>
           <li class="nav-item-search"><a href="{{ '/archive/#search-input' | url }}" data-search-link aria-label="Search proofs">Search</a></li>
+          <li><a href="{{ '/case-studies/' | url }}"{% if caseStudiesActive %} class="is-active" aria-current="page"{% endif %}>Case Studies</a></li>
+          <li><a href="{{ '/guides/' | url }}"{% if guidesActive %} class="is-active" aria-current="page"{% endif %}>Guides</a></li>
+          <li><a href="{{ '/troubleshooting/' | url }}"{% if troubleshootingActive %} class="is-active" aria-current="page"{% endif %}>Troubleshooting</a></li>
           <li><a href="{{ '/method/' | url }}"{% if methodActive %} class="is-active" aria-current="page"{% endif %}>Method</a></li>
           <li><a href="{{ '/action/' | url }}"{% if actionActive %} class="is-active" aria-current="page"{% endif %}>Action</a></li>
           <li><a href="{{ '/about/' | url }}"{% if aboutActive %} class="is-active" aria-current="page"{% endif %}>About</a></li>
@@ -139,6 +148,11 @@
     </div>
   </footer>
 
+  {% if pagefind %}
+  <script defer src="{{ '/pagefind/pagefind.js' | url }}"></script>
+  <script defer src="{{ '/pagefind/pagefind-ui.js' | url }}"></script>
+  {% endif %}
+
   {%- if env.GOATCOUNTER_DOMAIN -%}
   <script
     data-goatcounter="https://{{ env.GOATCOUNTER_DOMAIN }}/count"
@@ -151,6 +165,70 @@
   {%- if env.CLOUDFLARE_ANALYTICS_TOKEN -%}
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ env.CLOUDFLARE_ANALYTICS_TOKEN }}"}'></script>
+  {%- endif -%}
+
+  {%- if env.MICROSOFT_CLARITY_PROJECT_ID -%}
+  <script type="text/javascript">
+    window.democraticJustice = window.democraticJustice || {};
+
+    window.democraticJustice.loadClarity = window.democraticJustice.loadClarity || function loadClarity() {
+      if (window.democraticJustice.clarityLoaded) {
+        return;
+      }
+
+      window.democraticJustice.clarityLoaded = true;
+
+      var defaultSettings = {
+        mask: true,
+        maskText: true,
+        maskImages: true
+      };
+      var customSettings = window.democraticJustice.claritySettings;
+      if (!customSettings || typeof customSettings !== "object") {
+        customSettings = {};
+      }
+      var combinedSettings = {};
+
+      for (var key in defaultSettings) {
+        if (Object.prototype.hasOwnProperty.call(defaultSettings, key)) {
+          combinedSettings[key] = defaultSettings[key];
+        }
+      }
+
+      for (var customKey in customSettings) {
+        if (Object.prototype.hasOwnProperty.call(customSettings, customKey)) {
+          combinedSettings[customKey] = customSettings[customKey];
+        }
+      }
+
+      window.claritySettings = combinedSettings;
+
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+        t = l.createElement(r);
+        t.async = 1;
+        t.type = "text/javascript";
+        t.src = "https://www.clarity.ms/tag/" + i;
+
+        var scriptAttributes = window.democraticJustice.clarityScriptAttrs;
+        if (!scriptAttributes || typeof scriptAttributes !== "object") {
+          scriptAttributes = {};
+        }
+        for (var attr in scriptAttributes) {
+          if (Object.prototype.hasOwnProperty.call(scriptAttributes, attr)) {
+            t.setAttribute(attr, scriptAttributes[attr]);
+          }
+        }
+
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "{{ env.MICROSOFT_CLARITY_PROJECT_ID }}");
+    };
+
+    window.democraticJustice.loadClarity();
+  </script>
   {%- endif -%}
 
 </body>

@@ -1,0 +1,38 @@
+---
+layout: layout.njk
+title: "Troubleshooting - Democratic Justice"
+description: "Operational runbooks and analytics triage notes for Democratic Justice maintainers."
+permalink: /troubleshooting/
+reviewDate: 2024-12-01
+---
+
+<section class="content-page" id="troubleshooting-page">
+  <div class="align-container">
+    <p class="section-label">Troubleshooting</p>
+    <h1>Troubleshooting and Operations Playbooks</h1>
+    <p class="lead">Resolve analytics configuration, monitoring gaps, and deployment issues with focused instructions.</p>
+
+    {% set issues = collections.troubleshooting %}
+    {% if issues and issues | length %}
+    <div class="resource-list" role="list">
+      {% for issue in issues %}
+      <article class="resource-card" role="listitem">
+        <h2><a href="{{ issue.url | url }}">{{ issue.data.title }}</a></h2>
+        {% if issue.data.description %}
+        <p>{{ issue.data.description }}</p>
+        {% endif %}
+        {% if issue.data.tasks and issue.data.tasks | length %}
+        <ul class="resource-card__tasks">
+          {% for task in issue.data.tasks %}
+          <li>{{ task | replace('-', ' ') | capitalize }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p>No troubleshooting guides are available yet. Check back soon.</p>
+    {% endif %}
+  </div>
+</section>
