@@ -97,6 +97,55 @@ function compareProofsByCaseId(a = {}, b = {}) {
   return String(a.title ?? "").localeCompare(String(b.title ?? ""));
 }
 
+function parseReviewDate(value) {
+  if (value === undefined || value === null) {
+    return null;
+  }
+
+  if (typeof DateTime.isDateTime === "function" && DateTime.isDateTime(value)) {
+    return value.isValid ? value.setZone("utc") : null;
+  }
+
+  if (value instanceof Date) {
+    const dateTime = DateTime.fromJSDate(value, { zone: "utc" });
+    return dateTime.isValid ? dateTime : null;
+  }
+
+  if (typeof value === "number" && Number.isFinite(value)) {
+    const dateTime = DateTime.fromMillis(value, { zone: "utc" });
+    return dateTime.isValid ? dateTime : null;
+  }
+
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    if (!trimmed) {
+      return null;
+    }
+
+    let dateTime = DateTime.fromISO(trimmed, { zone: "utc" });
+    if (dateTime.isValid) {
+      return dateTime;
+    }
+
+    if (typeof DateTime.fromRFC2822 === "function") {
+      dateTime = DateTime.fromRFC2822(trimmed, { zone: "utc" });
+      if (dateTime.isValid) {
+        return dateTime;
+      }
+    }
+
+    const parsed = Date.parse(trimmed);
+    if (!Number.isNaN(parsed)) {
+      dateTime = DateTime.fromMillis(parsed, { zone: "utc" });
+      if (dateTime.isValid) {
+        return dateTime;
+      }
+    }
+  }
+
+  return null;
+}
+
 function normalizeIntentList(value) {
   if (!value) {
     return [];
@@ -485,7 +534,8 @@ function assembleProofCollections() {
   return {
     proofs: finalProofs,
     overproofGroups,
-    overproofList
+    overproofList,
+    briefs: processedBriefs
   };
 }
 
@@ -535,6 +585,116 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("overproofs", function() {
     const { overproofGroups } = getProofCollections();
     return overproofGroups;
+  });
+
+  eleventyConfig.addCollection("needsReview", function(collectionApi) {
+    const now = DateTime.utc().startOf("day");
+    const reviewItems = [];
+    const seen = new Set();
+
+    function addReviewItem(entry) {
+      if (!entry || !entry.id || seen.has(entry.id)) {
+        return;
+      }
+      seen.add(entry.id);
+      reviewItems.push(entry);
+    }
+
+    for (const item of collectionApi.getAll()) {
+      const reviewDateTime = parseReviewDate(item?.data?.reviewDate);
+      if (!reviewDateTime || reviewDateTime > now) {
+        continue;
+      }
+
+      const reviewDateIso = reviewDateTime.toISODate();
+      const title = item?.data?.title ?? item?.data?.page?.title ?? item?.fileSlug ?? item?.inputPath;
+
+      addReviewItem({
+        id: `content:${item.inputPath}`,
+        type: "content",
+        title,
+        url: item.url ?? null,
+        source: item.inputPath,
+        reviewDate: reviewDateIso,
+        reviewDateValue: reviewDateTime.toMillis()
+      });
+    }
+
+    const { proofs = [], overproofList = [], briefs = [] } = getProofCollections();
+
+    for (const proof of proofs) {
+      const reviewDateTime = parseReviewDate(proof.reviewDate);
+      if (!reviewDateTime || reviewDateTime > now) {
+        continue;
+      }
+
+      const overproofSlug = proof.overproof?.slug ? slugifyValue(proof.overproof.slug) : "";
+      const proofSlug = slugifyValue(proof.slug ?? proof.case_id ?? "");
+      let url = null;
+      if (overproofSlug && proofSlug) {
+        url = `/proofs/${overproofSlug}/${proofSlug}/`;
+      } else if (overproofSlug) {
+        url = `/proofs/${overproofSlug}/`;
+      }
+
+      const reviewDateIso = reviewDateTime.toISODate();
+      addReviewItem({
+        id: `proof:${proof.case_id ?? proof.slug ?? proof.title ?? reviewDateIso}`,
+        type: "proof",
+        title: proof.title ?? (proof.case_id ? `Proof ${proof.case_id}` : "Proof"),
+        url,
+        source: "_data/proofs.json",
+        caseId: proof.case_id ?? null,
+        overproofTitle: proof.overproof?.title ?? null,
+        reviewDate: reviewDateIso,
+        reviewDateValue: reviewDateTime.toMillis()
+      });
+    }
+
+    for (const overproof of overproofList) {
+      const reviewDateTime = parseReviewDate(overproof.reviewDate);
+      if (!reviewDateTime || reviewDateTime > now) {
+        continue;
+      }
+
+      const overproofSlug = overproof.slug ? slugifyValue(overproof.slug) : "";
+      const url = overproofSlug ? `/proofs/${overproofSlug}/` : null;
+      addReviewItem({
+        id: `overproof:${overproof.id ?? overproofSlug ?? overproof.title}`,
+        type: "overproof",
+        title: overproof.title ?? overproof.short_title ?? "Overproof",
+        url,
+        source: "_data/overproofs.json",
+        reviewDate: reviewDateTime.toISODate(),
+        reviewDateValue: reviewDateTime.toMillis()
+      });
+    }
+
+    for (const brief of briefs) {
+      const reviewDateTime = parseReviewDate(brief.reviewDate);
+      if (!reviewDateTime || reviewDateTime > now) {
+        continue;
+      }
+
+      const briefSlug = brief.slug ? slugifyValue(brief.slug) : "";
+      addReviewItem({
+        id: `brief:${brief.id ?? briefSlug ?? brief.headline}`,
+        type: "brief",
+        title: brief.headline ?? brief.title ?? "Brief",
+        source: "_data/brief.json",
+        reviewDate: reviewDateTime.toISODate(),
+        reviewDateValue: reviewDateTime.toMillis()
+      });
+    }
+
+    return reviewItems
+      .sort((a, b) => {
+        const diff = (a.reviewDateValue ?? 0) - (b.reviewDateValue ?? 0);
+        if (diff !== 0) {
+          return diff;
+        }
+        return String(a.title ?? "").localeCompare(String(b.title ?? ""));
+      });
   });
 
   eleventyConfig.addCollection("guides", function(collectionApi) {

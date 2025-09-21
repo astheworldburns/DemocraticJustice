@@ -5,6 +5,7 @@ pagination:
   size: 1
   alias: proof
 permalink: "proofs/{{ proof.overproof.slug }}/{{ (proof.slug or proof.case_id) | slug }}/index.html"
+reviewDate: 2024-12-01
 eleventyComputed:
   title: "{{ proof.title }}"
   description: "{{ proof.thesis }}"
