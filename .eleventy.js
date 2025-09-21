@@ -3,6 +3,7 @@ const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
 const fs = require("node:fs/promises");
 const path = require("node:path");
+const htmlMinifier = require("html-minifier-terser");
 const slugifyImport = require("@sindresorhus/slugify");
 const slugifyFn = typeof slugifyImport === "function" ? slugifyImport : slugifyImport?.default;
 
@@ -843,6 +844,26 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.on("beforeBuild", () => {
     cachedProofCollections = null;
+  });
+
+  eleventyConfig.addTransform("htmlmin", async (content, outputPath) => {
+    if (typeof outputPath === "string" && outputPath.endsWith(".html")) {
+      try {
+        return await htmlMinifier.minify(content, {
+          collapseWhitespace: true,
+          removeComments: true,
+          useShortDoctype: true,
+          removeRedundantAttributes: true,
+          removeEmptyAttributes: true,
+          minifyJS: true,
+          minifyCSS: true
+        });
+      } catch (error) {
+        console.warn("HTML minification failed for", outputPath, error);
+      }
+    }
+
+    return content;
   });
 
   eleventyConfig.on("afterBuild", async () => {
