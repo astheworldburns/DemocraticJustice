@@ -19,7 +19,7 @@ export function initNavigation() {
     let lastLoggedSearch = { query: '', results: null };
     let lastLoggedSearchAt = 0;
     let filterRequestId = 0;
-    
+
     /* ---------- UI Elements ---------- */
     const grid = document.getElementById('case-grid');
     const searchInput = document.getElementById('search-input');
@@ -46,7 +46,9 @@ export function initNavigation() {
             navToggle.setAttribute('aria-expanded', String(!expanded));
             nav.classList.toggle('nav--open', !expanded);
             if (!expanded) {
-                const activeLink = navLinks.querySelector('[aria-current="page"], .is-active') || navLinks.querySelector('a');
+                const activeLink =
+                    navLinks.querySelector('[aria-current="page"], .is-active') ||
+                    navLinks.querySelector('a');
                 activeLink?.focus();
             } else {
                 navToggle.focus();
@@ -100,7 +102,6 @@ export function initNavigation() {
 
     /* ---------- Utility Functions ---------- */
 
-
     // Determine proof type based on category
     const getProofType = (proof) => {
         if (proof.category?.includes('Finance') || proof.category?.includes('Campaign')) {
@@ -113,9 +114,10 @@ export function initNavigation() {
         return 'Other';
     };
 
-    const slugify = (str) => slugifyLib(String(str ?? ''), {
-        decamelize: false,
-    });
+    const slugify = (str) =>
+        slugifyLib(String(str ?? ''), {
+            decamelize: false
+        });
 
     const buildProofSlug = (proof = {}) => {
         if (proof.slug) {
@@ -147,9 +149,10 @@ export function initNavigation() {
         }
 
         try {
-            const base = typeof window !== 'undefined' && window.location
-                ? window.location.origin
-                : 'https://democraticjustice.org';
+            const base =
+                typeof window !== 'undefined' && window.location
+                    ? window.location.origin
+                    : 'https://democraticjustice.org';
             const parsed = new URL(url, base);
             let pathname = parsed.pathname || '';
             pathname = pathname.replace(/index\.html$/i, '');
@@ -180,11 +183,10 @@ export function initNavigation() {
             return pagefindReadyPromise;
         }
 
-        pagefindReadyPromise = window.pagefindInit({ baseUrl: '/pagefind/' })
-            .catch(error => {
-                console.error('Failed to initialize Pagefind search index:', error);
-                return null;
-            });
+        pagefindReadyPromise = window.pagefindInit({ baseUrl: '/pagefind/' }).catch((error) => {
+            console.error('Failed to initialize Pagefind search index:', error);
+            return null;
+        });
 
         return pagefindReadyPromise;
     };
@@ -205,14 +207,16 @@ export function initNavigation() {
             const urls = new Set();
 
             if (results.length) {
-                const hydrated = await Promise.allSettled(results.map(result => {
-                    if (typeof result?.data === 'function') {
-                        return result.data();
-                    }
-                    return Promise.resolve(null);
-                }));
+                const hydrated = await Promise.allSettled(
+                    results.map((result) => {
+                        if (typeof result?.data === 'function') {
+                            return result.data();
+                        }
+                        return Promise.resolve(null);
+                    })
+                );
 
-                hydrated.forEach(entry => {
+                hydrated.forEach((entry) => {
                     if (entry.status === 'fulfilled' && entry.value && entry.value.url) {
                         urls.add(normalizeUrl(entry.value.url));
                     }
@@ -231,32 +235,39 @@ export function initNavigation() {
 
     /* ---------- Lazy Loading Setup ---------- */
     const lazyLoadProofs = () => {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
+        const imageObserver = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
 
-                const card = entry.target;
-                if (card.dataset.proofData) {
-                    let proofData = null;
+                    const card = entry.target;
+                    if (card.dataset.proofData) {
+                        let proofData = null;
 
-                    try {
-                        proofData = JSON.parse(card.dataset.proofData);
-                    } catch (error) {
-                        console.error('Failed to parse proof data for lazy-loaded card:', error, {
-                            proofId: card.dataset.proofId
-                        });
+                        try {
+                            proofData = JSON.parse(card.dataset.proofData);
+                        } catch (error) {
+                            console.error(
+                                'Failed to parse proof data for lazy-loaded card:',
+                                error,
+                                {
+                                    proofId: card.dataset.proofId
+                                }
+                            );
+                        }
+
+                        card.dataset.proofData = ''; // Clear after loading or failure
+
+                        if (proofData) {
+                            renderFullCard(card, proofData);
+                        }
                     }
 
-                    card.dataset.proofData = ''; // Clear after loading or failure
-
-                    if (proofData) {
-                        renderFullCard(card, proofData);
-                    }
-                }
-
-                observer.unobserve(card);
-            });
-        }, { rootMargin: '50px' });
+                    observer.unobserve(card);
+                });
+            },
+            { rootMargin: '50px' }
+        );
 
         return imageObserver;
     };
@@ -306,7 +317,10 @@ export function initNavigation() {
             }
             const opener = this.previouslyFocusedElement;
             if (opener && typeof opener.focus === 'function') {
-                const isConnected = typeof opener.isConnected === 'boolean' ? opener.isConnected : document.body.contains(opener);
+                const isConnected =
+                    typeof opener.isConnected === 'boolean'
+                        ? opener.isConnected
+                        : document.body.contains(opener);
                 if (isConnected) {
                     opener.focus();
                 }
@@ -314,7 +328,7 @@ export function initNavigation() {
             this.previouslyFocusedElement = null;
             this.active = false;
         }
-        
+
         handleKeyDown(e) {
             if (e.key === 'Tab') {
                 if (e.shiftKey) {
@@ -329,7 +343,7 @@ export function initNavigation() {
                     }
                 }
             }
-            
+
             if (e.key === 'Escape') {
                 this.deactivate();
                 const modal = this.element.closest('.modal');
@@ -343,13 +357,13 @@ export function initNavigation() {
     }
 
     /* ---------- Rendering Functions ---------- */
-    
+
     // Render filter badges
     const renderFilterBadges = () => {
         if (!filterBadges) return;
-        
+
         const badges = [];
-        
+
         if (activeFilters.search) {
             badges.push(`
                 <span class="filter-badge" data-filter="search">
@@ -358,7 +372,7 @@ export function initNavigation() {
                 </span>
             `);
         }
-        
+
         if (activeFilters.category !== 'All Categories') {
             badges.push(`
                 <span class="filter-badge" data-filter="category">
@@ -367,7 +381,7 @@ export function initNavigation() {
                 </span>
             `);
         }
-        
+
         if (activeFilters.type !== 'All Types') {
             badges.push(`
                 <span class="filter-badge" data-filter="type">
@@ -376,11 +390,11 @@ export function initNavigation() {
                 </span>
             `);
         }
-        
+
         filterBadges.innerHTML = badges.join('');
-        
+
         // Add click handlers to remove badges
-        filterBadges.querySelectorAll('.badge-remove').forEach(btn => {
+        filterBadges.querySelectorAll('.badge-remove').forEach((btn) => {
             btn.addEventListener('click', (e) => {
                 const filterType = e.target.parentElement.dataset.filter;
                 if (filterType === 'search') {
@@ -402,7 +416,7 @@ export function initNavigation() {
     const renderProofCard = (proof, lazy = false) => {
         const url = buildProofUrl(proof);
         const proofType = getProofType(proof);
-        
+
         if (lazy) {
             return `
                 <article class="case-card case-card-lazy"
@@ -415,17 +429,23 @@ export function initNavigation() {
                     </div>
                 </article>`;
         }
-        
+
         return `
             <article class="case-card" data-type="${proofType}"
                      data-proof-id="${proof.case_id || proof.slug}">
                 <div class="case-card-header">
-                    <span class="proof-type-badge ${proofType.toLowerCase().replace(/\s+/g, '-')}">${proofType}</span>
+                    <span class="proof-type-badge ${proofType
+                        .toLowerCase()
+                        .replace(/\s+/g, '-')}">${proofType}</span>
                 </div>
                 <h3><a href="${url}">${proof.title}</a></h3>
                 <p class="case-meta">
                     ${proof.case_id} • ${fmtDate(proof.date)}
-                    ${proof.category ? ` • <span style="font-weight: 700;">${proof.category}</span>` : ''}
+                    ${
+                        proof.category
+                            ? ` • <span style="font-weight: 700;">${proof.category}</span>`
+                            : ''
+                    }
                 </p>
                 <p>${proof.thesis}</p>
                 <a href="${url}" class="case-link">Examine Proof →</a>
@@ -438,15 +458,21 @@ export function initNavigation() {
         const proofType = getProofType(proofData);
 
         cardElement.dataset.proofId = proofData.case_id || proofData.slug;
-        
+
         cardElement.innerHTML = `
             <div class="case-card-header">
-                <span class="proof-type-badge ${proofType.toLowerCase().replace(/\s+/g, '-')}">${proofType}</span>
+                <span class="proof-type-badge ${proofType
+                    .toLowerCase()
+                    .replace(/\s+/g, '-')}">${proofType}</span>
             </div>
             <h3><a href="${url}">${proofData.title}</a></h3>
             <p class="case-meta">
                 ${proofData.case_id} • ${fmtDate(proofData.date)}
-                ${proofData.category ? ` • <span style="font-weight: 700;">${proofData.category}</span>` : ''}
+                ${
+                    proofData.category
+                        ? ` • <span style="font-weight: 700;">${proofData.category}</span>`
+                        : ''
+                }
             </p>
             <p>${proofData.thesis}</p>
             <a href="${url}" class="case-link">Examine Proof →</a>`;
@@ -460,13 +486,14 @@ export function initNavigation() {
         grid.innerHTML = '';
 
         if (!proofs || proofs.length === 0) {
-            grid.innerHTML = '<p style="text-align:center;padding:40px;color:var(--muted);">No matching proofs found.</p>';
+            grid.innerHTML =
+                '<p style="text-align:center;padding:40px;color:var(--muted);">No matching proofs found.</p>';
             return;
         }
 
         // Group proofs by month/year
         const grouped = {};
-        proofs.forEach(proof => {
+        proofs.forEach((proof) => {
             const date = new Date(proof.date);
             const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
             if (!grouped[key]) grouped[key] = [];
@@ -476,15 +503,20 @@ export function initNavigation() {
         // Sort months in reverse chronological order
         const sortedMonths = Object.keys(grouped).sort().reverse();
 
-        sortedMonths.forEach(month => {
+        sortedMonths.forEach((month) => {
             const [year, monthNum] = month.split('-');
-            const monthName = new Date(year, monthNum - 1).toLocaleDateString('en', { month: 'long', year: 'numeric' });
-            
+            const monthName = new Date(year, monthNum - 1).toLocaleDateString('en', {
+                month: 'long',
+                year: 'numeric'
+            });
+
             const monthSection = `
                 <div class="timeline-month">
                     <h3 class="timeline-month-header">${monthName}</h3>
                     <div class="timeline-entries">
-                        ${grouped[month].map(proof => `
+                        ${grouped[month]
+                            .map(
+                                (proof) => `
                             <div class="timeline-entry">
                                 <div class="timeline-date">${new Date(proof.date).getDate()}</div>
                                 <div class="timeline-content">
@@ -493,7 +525,9 @@ export function initNavigation() {
                                     <p>${proof.thesis}</p>
                                 </div>
                             </div>
-                        `).join('')}
+                        `
+                            )
+                            .join('')}
                     </div>
                 </div>
             `;
@@ -504,7 +538,7 @@ export function initNavigation() {
     // Grid view renderer with lazy loading support
     const renderGrid = (proofs, append = false) => {
         if (!grid) return;
-        
+
         if (!append) {
             grid.className = 'case-grid';
             grid.innerHTML = '';
@@ -512,7 +546,8 @@ export function initNavigation() {
         }
 
         if (!proofs || proofs.length === 0) {
-            grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);">No matching proofs found.</p>';
+            grid.innerHTML =
+                '<p style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);">No matching proofs found.</p>';
             loadMoreBtn.style.display = 'none';
             return;
         }
@@ -520,7 +555,7 @@ export function initNavigation() {
         const start = currentlyLoaded;
         const end = Math.min(start + proofsPerLoad, proofs.length);
         const proofsToRender = proofs.slice(start, end);
-        
+
         proofsToRender.forEach((proof, index) => {
             const isLazy = index > 6; // Lazy load after first 6
             const cardHTML = renderProofCard(proof, isLazy);
@@ -537,14 +572,14 @@ export function initNavigation() {
             }
 
             grid.appendChild(cardElement);
-            
+
             if (isLazy && observer) {
                 observer.observe(cardElement);
             }
         });
-        
+
         currentlyLoaded = end;
-        
+
         // Show/hide Load More button
         if (currentlyLoaded < proofs.length) {
             loadMoreBtn.style.display = 'block';
@@ -569,7 +604,8 @@ export function initNavigation() {
         if (!countEl) return;
         const total = allProofs.length;
         const count = filteredProofs.length;
-        countEl.textContent = (count === total) ? `Showing all ${total} proofs` : `Showing ${count} of ${total} proofs`;
+        countEl.textContent =
+            count === total ? `Showing all ${total} proofs` : `Showing ${count} of ${total} proofs`;
     };
 
     const dispatchSearchLog = debounce((payload) => {
@@ -587,7 +623,7 @@ export function initNavigation() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(payload)
-        }).catch(error => {
+        }).catch((error) => {
             console.error('Failed to send search analytics payload', error);
         });
     }, 500);
@@ -642,9 +678,12 @@ export function initNavigation() {
 
         const searchTermLower = searchTerm.toLowerCase();
 
-        filteredProofs = allProofs.filter(p => {
+        filteredProofs = allProofs.filter((p) => {
             // Category filter
-            if (activeFilters.category !== 'All Categories' && p.category !== activeFilters.category) {
+            if (
+                activeFilters.category !== 'All Categories' &&
+                p.category !== activeFilters.category
+            ) {
                 return false;
             }
 
@@ -669,7 +708,9 @@ export function initNavigation() {
                         p.rule_summary,
                         p.case_id,
                         p.category
-                    ].join(' ').toLowerCase();
+                    ]
+                        .join(' ')
+                        .toLowerCase();
 
                     if (!searchableText.includes(searchTermLower)) {
                         return false;
@@ -704,9 +745,12 @@ export function initNavigation() {
     // Populate filters
     const populateFilters = () => {
         if (categoryFilter) {
-            const categories = ["All Categories", ...new Set(allProofs.map(p => p.category).filter(Boolean))];
+            const categories = [
+                'All Categories',
+                ...new Set(allProofs.map((p) => p.category).filter(Boolean))
+            ];
             categoryFilter.innerHTML = '';
-            categories.forEach(cat => {
+            categories.forEach((cat) => {
                 const option = document.createElement('option');
                 option.value = cat;
                 option.textContent = cat;
@@ -715,9 +759,9 @@ export function initNavigation() {
         }
 
         if (typeFilter) {
-            const types = ["All Types", ...new Set(allProofs.map(p => getProofType(p)))];
+            const types = ['All Types', ...new Set(allProofs.map((p) => getProofType(p)))];
             typeFilter.innerHTML = '';
-            types.forEach(type => {
+            types.forEach((type) => {
                 const option = document.createElement('option');
                 option.value = type;
                 option.textContent = type;
@@ -730,8 +774,8 @@ export function initNavigation() {
     const initModals = () => {
         const modals = document.querySelectorAll('.modal');
         const modalTriggers = document.querySelectorAll('[data-modal-target]');
-        
-        modalTriggers.forEach(trigger => {
+
+        modalTriggers.forEach((trigger) => {
             trigger.addEventListener('click', () => {
                 const modalId = trigger.dataset.modalTarget;
                 const modal = document.getElementById(modalId);
@@ -740,46 +784,46 @@ export function initNavigation() {
                 }
             });
         });
-        
-        modals.forEach(modal => {
+
+        modals.forEach((modal) => {
             const closeBtn = modal.querySelector('.modal-close');
             const focusTrap = new FocusTrap(modal);
-            
+
             closeBtn?.addEventListener('click', () => {
                 closeModal(modal, focusTrap);
             });
-            
+
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     closeModal(modal, focusTrap);
                 }
             });
-            
+
             // Store focus trap on modal element
             modal._focusTrap = focusTrap;
         });
     };
-    
+
     const openModal = (modal) => {
         modal.removeAttribute('hidden');
         modal.classList.add('active');
         document.body.classList.add('body--modal-open');
-        
+
         // Activate focus trap
         if (modal._focusTrap) {
             modal._focusTrap.activate();
         }
-        
+
         // Announce to screen readers
         modal.setAttribute('aria-modal', 'true');
         modal.setAttribute('role', 'dialog');
     };
-    
+
     const closeModal = (modal, focusTrap) => {
         modal.classList.remove('active');
         modal.setAttribute('hidden', '');
         document.body.classList.remove('body--modal-open');
-        
+
         if (focusTrap) {
             focusTrap.deactivate();
         }
@@ -858,7 +902,8 @@ export function initNavigation() {
         } catch (error) {
             console.error('Error initializing archive:', error);
             if (grid) {
-                grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px; color:red;">Could not load proofs. Please try again later.</p>';
+                grid.innerHTML =
+                    '<p style="grid-column:1/-1; text-align:center; padding:40px; color:red;">Could not load proofs. Please try again later.</p>';
             }
         }
     };

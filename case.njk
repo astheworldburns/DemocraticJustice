@@ -14,17 +14,17 @@ eleventyComputed:
   instagramImage: "https://democraticjustice.org/share/{{ (proof.slug or proof.case_id) | slug }}-instagram.svg"
 ---
 <style>
-.conclusion-step::before {
-  content: "";
-  width: 40px;
-  height: 40px;
-  background-image: url('{{ "/images/three-dots-white.svg" | url }}');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  border-radius: 0;
-  background-color: transparent;
-}
+  .conclusion-step::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-image: url('{{ "/images/three-dots-white.svg" | url }}');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 0;
+    background-color: transparent;
+  }
 </style>
 
 <div class="align-container" id="proof-page">
@@ -39,7 +39,9 @@ eleventyComputed:
         <li><a href="{{ '/' | url }}">Home</a></li>
         <li><a href="{{ '/archive' | url }}">Proof</a></li>
         {% if overproof %}
-        <li><a href="{{ overproofUrl }}">{{ overproofLabel }}</a></li>
+          <li>
+            <a href="{{ overproofUrl }}">{{ overproofLabel }}</a>
+          </li>
         {% endif %}
         <li aria-current="page">{{ proof.title }}</li>
       </ol>
@@ -87,7 +89,7 @@ eleventyComputed:
         ]
       }
     </script>
-    {% include "structured-data-proof.njk" %}
+    {% include 'structured-data-proof.njk' %}
     <header class="doc-header">
       <div class="doc-row">
         <div class="doc-mark">
@@ -110,10 +112,10 @@ eleventyComputed:
             <span class="proof-summary-text">{{ proof.stakes | safe }}</span>
           </div>
           {% if proof.potential_remedies %}
-          <div class="proof-summary-item">
-            <span class="proof-summary-label">Remedy:</span>
-            <span class="proof-summary-text">{{ proof.potential_remedies[0] | safe }}</span>
-          </div>
+            <div class="proof-summary-item">
+              <span class="proof-summary-label">Remedy:</span>
+              <span class="proof-summary-text">{{ proof.potential_remedies[0] | safe }}</span>
+            </div>
           {% endif %}
         </div>
 
@@ -124,7 +126,11 @@ eleventyComputed:
             {% set axiomCount = proof.axioms | length %}
             {% set strength = ((evidenceCount + axiomCount) / 2) | round %}
             {% for i in range(1, 6) %}
-              <div class="proof-strength-bar {% if i <= strength %}active{% endif %}"></div>
+              {% if i <= strength %}
+                <div class="proof-strength-bar active"></div>
+              {% else %}
+                <div class="proof-strength-bar"></div>
+              {% endif %}
             {% endfor %}
           </div>
           <span style="font-size: 12px; color: var(--muted);">
@@ -132,54 +138,56 @@ eleventyComputed:
           </span>
         </div>
       </div>
-
     </header>
 
     <div class="doc-body">
-
       <section class="axioms axioms-section">
         <h2 class="section-title" data-number="1">The Axioms (The Rules)</h2>
         <div class="axiom-list">
           {% for a in proof.axioms %}
-          <div class="axiom-item">
-            <div class="axiom-number">{{ loop.index }}</div>
-            <div class="axiom-content">
-              <p class="axiom-text">
-                {{ a.text | safe }}
-                <span class="evidence-quality primary">Primary Source</span>
-              </p>
-              <p class="axiom-cite">
-                <a href="{{ a.url | url }}" {% if a.url and a.url.startsWith('/files/') %}download{% else %}target="_blank" rel="noopener"{% endif %}>{{ a.citation }}</a>
-              </p>
+            <div class="axiom-item">
+              <div class="axiom-number">{{ loop.index }}</div>
+              <div class="axiom-content">
+                <p class="axiom-text">
+                  {{ a.text | safe }}
+                  <span class="evidence-quality primary">Primary Source</span>
+                </p>
+                {% set citationAttrs = ' target="_blank" rel="noopener"' %}
+                {% if a.url and a.url.startsWith('/files/') %}
+                  {% set citationAttrs = ' download' %}
+                {% endif %}
+                <p class="axiom-cite">
+                  <a href="{{ a.url | url }}" {{- citationAttrs | safe }}>{{ a.citation }}</a>
+                </p>
+              </div>
             </div>
-          </div>
           {% endfor %}
         </div>
       </section>
 
       {% if proof.rule_summary %}
-      <section class="rule-summary-section">
-        <h2 class="section-title" data-number="2">Rule Summary</h2>
-        <p class="rule-summary-text">{{ proof.rule_summary | safe }}</p>
-      </section>
+        <section class="rule-summary-section">
+          <h2 class="section-title" data-number="2">Rule Summary</h2>
+          <p class="rule-summary-text">{{ proof.rule_summary | safe }}</p>
+        </section>
       {% endif %}
 
       <section class="offenses offenses-section">
         <h2 class="section-title" data-number="3">The Offenses (What Happened)</h2>
         {% for fact in proof.case_facts %}
-        <div class="offense-card">
-          <p class="offense-text">{{ fact.text | safe }}</p>
-          <p class="citation">
-            Evidence: {{ fact.citation }}
-            {% if 'Email' in fact.citation or 'email' in fact.citation %}
-              <span class="evidence-quality secondary">Documentary</span>
-            {% elif 'Witness' in fact.citation %}
-              <span class="evidence-quality">Testimonial</span>
-            {% else %}
-              <span class="evidence-quality primary">Official Record</span>
-            {% endif %}
-          </p>
-        </div>
+          <div class="offense-card">
+            <p class="offense-text">{{ fact.text | safe }}</p>
+            <p class="citation">
+              Evidence: {{ fact.citation }}
+              {% if 'Email' in fact.citation or 'email' in fact.citation %}
+                <span class="evidence-quality secondary">Documentary</span>
+                {% elif 'Witness' in fact.citation %}
+                <span class="evidence-quality">Testimonial</span>
+              {% else %}
+                <span class="evidence-quality primary">Official Record</span>
+              {% endif %}
+            </p>
+          </div>
         {% endfor %}
       </section>
 
@@ -188,99 +196,119 @@ eleventyComputed:
         <ol>
           {% for step in proof.logic_chain %}
             {% if '[DJ-MARK]' in step %}
-            <li class="logic-step conclusion-step">
-              {{ step | replace('[DJ-MARK]', '') | safe }}
-            </li>
+              <li class="logic-step conclusion-step">
+                {{ step | replace('[DJ-MARK]', '') | safe }}
+              </li>
             {% else %}
-            <li class="logic-step">{{ step }}</li>
+              <li class="logic-step">{{ step }}</li>
             {% endif %}
           {% endfor %}
         </ol>
       </section>
 
       {% if proof.potential_remedies %}
-      <section class="remedy-section">
-        <div class="remedy">
-          <strong>Potential Remedies</strong>
-          <ul>
-            {% for remedy in proof.potential_remedies %}
-            <li>{{ remedy | safe }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% if proof.action_tool %}
-        <p class="action-tool">
-          <a href="{{ proof.action_tool.url | url }}">{{ proof.action_tool.label }} →</a>
-        </p>
-        {% endif %}
-      </section>
+        <section class="remedy-section">
+          <div class="remedy">
+            <strong>Potential Remedies</strong>
+            <ul>
+              {% for remedy in proof.potential_remedies %}
+                <li>{{ remedy | safe }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% if proof.action_tool %}
+            <p class="action-tool">
+              <a href="{{ proof.action_tool.url | url }}">{{ proof.action_tool.label }} →</a>
+            </p>
+          {% endif %}
+        </section>
       {% endif %}
 
       <div class="share-cta">
-        <button id="share-btn-native"
-                class="share-button"
-                data-share-title="{{ proof.title }}"
-                data-share-text="{{ proof.thesis }}"
-                data-share-url="https://democraticjustice.org{{ page.url }}">
+        <button
+          id="share-btn-native"
+          class="share-button"
+          data-share-title="{{ proof.title }}"
+          data-share-text="{{ proof.thesis }}"
+          data-share-url="https://democraticjustice.org{{ page.url }}"
+        >
           Share This Proof
         </button>
       </div>
 
       <section class="share-section">
         <div class="share-icons">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://democraticjustice.org{{ page.url }}" target="_blank" rel="noopener" aria-label="Share on Facebook">
-            {% image "/images/icon-facebook.svg", "Facebook", {
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u=https://democraticjustice.org{{ page.url }}"
+            target="_blank"
+            rel="noopener"
+            aria-label="Share on Facebook"
+          >
+            {%
+              image "/images/icon-facebook.svg", "Facebook", {
               widths: [20, 40],
               sizes: "20px"
-            } %}
+              }
+            %}
           </a>
-          <a href="https://twitter.com/intent/tweet?url=https://democraticjustice.org{{ page.url }}&text={{ proof.title | urlencode }}" target="_blank" rel="noopener" aria-label="Share on Twitter">
-            {% image "/images/icon-twitter.svg", "Twitter", {
+          <a
+            href="https://twitter.com/intent/tweet?url=https://democraticjustice.org{{ page.url }}&text={{ proof.title | urlencode }}"
+            target="_blank"
+            rel="noopener"
+            aria-label="Share on Twitter"
+          >
+            {%
+              image "/images/icon-twitter.svg", "Twitter", {
               widths: [20, 40],
               sizes: "20px"
-            } %}
+              }
+            %}
           </a>
           <a href="{{ instagramImage }}" download aria-label="Download Instagram image">
-            {% image "/images/icon-instagram.svg", "Instagram", {
+            {%
+              image "/images/icon-instagram.svg", "Instagram", {
               widths: [20, 40],
               sizes: "20px"
-            } %}
+              }
+            %}
           </a>
           <button id="print-btn" type="button" aria-label="Print">
-            {% image "/images/icon-print.svg", "Print", {
+            {%
+              image "/images/icon-print.svg", "Print", {
               widths: [20, 40],
               sizes: "20px"
-            } %}
+              }
+            %}
           </button>
         </div>
-  </section>
+      </section>
     </div>
   </article>
 </div>
-{% include "feedback.njk" %}
+{% include 'feedback.njk' %}
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.proof-summary-text').forEach(function (text) {
-    var lineHeight = parseFloat(getComputedStyle(text).lineHeight);
-    var maxLines = 3;
-    if (text.scrollHeight > lineHeight * maxLines) {
-      text.classList.add('clamp');
-      var btn = document.createElement('button');
-      btn.className = 'read-more';
-      btn.textContent = 'Read more';
-      btn.setAttribute('aria-expanded', 'false');
-      btn.addEventListener('click', function () {
-        var expanded = text.classList.toggle('expanded');
-        btn.textContent = expanded ? 'Read less' : 'Read more';
-        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        if (expanded) {
-          text.classList.remove('clamp');
-        } else {
-          text.classList.add('clamp');
-        }
-      });
-      text.after(btn);
-    }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.proof-summary-text').forEach(function (text) {
+      var lineHeight = parseFloat(getComputedStyle(text).lineHeight);
+      var maxLines = 3;
+      if (text.scrollHeight > lineHeight * maxLines) {
+        text.classList.add('clamp');
+        var btn = document.createElement('button');
+        btn.className = 'read-more';
+        btn.textContent = 'Read more';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.addEventListener('click', function () {
+          var expanded = text.classList.toggle('expanded');
+          btn.textContent = expanded ? 'Read less' : 'Read more';
+          btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+          if (expanded) {
+            text.classList.remove('clamp');
+          } else {
+            text.classList.add('clamp');
+          }
+        });
+        text.after(btn);
+      }
+    });
   });
-});
 </script>

@@ -11,37 +11,50 @@ reviewDate: 2024-12-01
     <p class="section-label">The Proof Record</p>
     <h1>Proof Archive</h1>
     <p>A complete, chronological record of all documented proofs, sorted from newest to oldest.</p>
-    
+
     <div class="search-filter-controls">
-      <input type="search" id="search-input" placeholder="Search proofs by keyword, case ID, or topic...">
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search proofs by keyword, case ID, or topic..."
+      >
       <div class="filter-group">
         <select id="category-filter"></select>
         <select id="type-filter"></select>
         <button id="reset-filters" class="btn-reset">Reset</button>
       </div>
     </div>
-    
+
     <div id="filter-badges"></div>
     <button id="view-toggle" class="view-toggle-btn">Timeline View</button>
     <p id="results-count" style="margin-top:12px;font-size:14px;color:var(--muted);"></p>
-    
+
     <div class="case-grid" id="case-grid" aria-live="polite">
       {%- for proof in collections.sortedProofs -%}
-      <article class="case-card" data-proof-id="{{ proof.case_id }}">
-        <h3><a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/">{{ proof.title }}</a></h3>
-        <p class="case-meta">
-          {{ proof.case_id }} • {{ proof.date | date }}
-          {%- if proof.category %} • <span style="font-weight: 700;">{{ proof.category }}</span>{% endif -%}
-        </p>
-        <p>{{ proof.thesis }}</p>
-        <a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/" class="case-link">Examine Proof →</a>
-      </article>
+        <article class="case-card" data-proof-id="{{ proof.case_id }}">
+          <h3>
+            <a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/">
+              {{- proof.title -}}
+            </a>
+          </h3>
+          <p class="case-meta">
+            {{ proof.case_id }} • {{ proof.date | date }}
+            {%- if proof.category %}
+              • <span style="font-weight: 700;">{{ proof.category }}</span>
+            {%- endif -%}
+          </p>
+          <p>{{ proof.thesis }}</p>
+          <a
+            href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/"
+            class="case-link"
+            >Examine Proof →</a
+          >
+        </article>
       {%- endfor -%}
     </div>
 
     <script type="application/json" id="proof-data">
       {{ collections.sortedProofs | dump | replace('</', '<\\/') | safe }}
     </script>
-
   </div>
 </div>

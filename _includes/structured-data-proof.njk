@@ -14,7 +14,7 @@
   {% if authorEntry and authorEntry.name %}
     {% set authorName = authorEntry.name %}
     {% set authorType = authorEntry.type or authorEntry['@type'] or "Person" %}
-  {% elif authorEntry %}
+    {% elif authorEntry %}
     {% set authorName = authorEntry %}
     {% set authorType = "Person" %}
   {% else %}
@@ -22,40 +22,22 @@
     {% set authorType = "Organization" %}
   {% endif %}
   {% set jsonLd %}
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": {{ proof.title | dump }},
+  { "@context": "https://schema.org", "@type": "BlogPosting", "headline": {{ proof.title | dump }},
   "description": {{ proof.thesis | dump }},
   {% if proof.category %}
-  "articleSection": {{ proof.category | dump }},
+    "articleSection": {{ proof.category | dump }},
   {% endif %}
   {% if publishedDate %}
-  "datePublished": {{ publishedDate | dump }},
+    "datePublished": {{ publishedDate | dump }},
   {% endif %}
   {% if modifiedDate %}
-  "dateModified": {{ modifiedDate | dump }},
+    "dateModified": {{ modifiedDate | dump }},
   {% endif %}
-  "author": {
-    "@type": {{ authorType | dump }},
-    "name": {{ authorName | dump }}
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Democratic Justice",
-    "logo": {
-      "@type": "ImageObject",
-      "url": {{ (site.url ~ '/images/wordmark-blue-on-white.svg') | dump }}
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": {{ canonical | dump }}
-  },
-  "url": {{ canonical | dump }},
-  "image": {{ selectedImage | dump }},
-  "inLanguage": "en-US"
-}
+  "author": { "@type": {{ authorType | dump }}, "name": {{ authorName | dump }} }, "publisher": {
+  "@type": "Organization", "name": "Democratic Justice", "logo": { "@type": "ImageObject", "url":
+  {{ (site.url ~ '/images/wordmark-blue-on-white.svg') | dump }} } }, "mainEntityOfPage": { "@type":
+  "WebPage", "@id": {{ canonical | dump }} }, "url": {{ canonical | dump }}, "image":
+  {{ selectedImage | dump }}, "inLanguage": "en-US" }
   {% endset %}
   <script type="application/ld+json">
     {{ jsonLd | replace('</', '<\\/') | trim | safe }}

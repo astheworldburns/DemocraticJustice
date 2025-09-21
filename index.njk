@@ -4,7 +4,6 @@ title: Democratic Justice — Proof. Not Spin.
 description: Proof. Not spin. Democratic Justice equips West Virginia Democrats with verified election integrity proofs, secure submission guidance, and action resources.
 reviewDate: 2024-12-01
 ---
-
 {# This line gets the newest proof from our sorted collection and saves it in a variable #}
 {% set latestProof = collections.sortedProofs | last %}
 
@@ -14,38 +13,41 @@ reviewDate: 2024-12-01
       <div>
         <h1 class="hero-headline">Proof.<strong>Not Spin.</strong></h1>
         <div class="btn-group">
-          <a href="{{ '/archive' | url }}" class="btn btn-accent">
-            See the Proof
-          </a>
-          <a href="{{ '/action' | url }}" class="btn btn-outline-white">
-            Take Action
-          </a>
+          <a href="{{ '/archive' | url }}" class="btn btn-accent"> See the Proof </a>
+          <a href="{{ '/action' | url }}" class="btn btn-outline-white"> Take Action </a>
         </div>
       </div>
 
       <aside class="proof-box" aria-label="Featured Proof">
         <div class="proof-box__header">
           <div class="proof-box__title">
-            {% image "/images/three-dots-white.svg", "Therefore symbol", {
+            {%
+              image "/images/three-dots-white.svg", "Therefore symbol", {
               class: "mark md",
               widths: [24, 48],
               sizes: "24px",
               ariaHidden: true
-            } %}
+              }
+            %}
             LATEST PROOF
           </div>
         </div>
         <div class="proof-box__content">
           {# These lines now use the data from 'latestProof' to build the HTML directly #}
-         <p class="proof-box__finding">{{ latestProof.thesis }}</p>
+          <p class="proof-box__finding">{{ latestProof.thesis }}</p>
           <p class="proof-box__meta">CASE FILE: {{ latestProof.case_id }}</p>
-          <a href="{{ '/proofs/' | url }}{{ latestProof.overproof.slug }}/{{ latestProof.slug }}/" class="proof-box__cta">
-            {% image "/images/three-dots-blue.svg", "Therefore symbol", {
+          <a
+            href="{{ '/proofs/' | url }}{{ latestProof.overproof.slug }}/{{ latestProof.slug }}/"
+            class="proof-box__cta"
+          >
+            {%
+              image "/images/three-dots-blue.svg", "Therefore symbol", {
               class: "mark md",
               widths: [24, 48],
               sizes: "24px",
               ariaHidden: true
-            } %}
+              }
+            %}
             Examine Full Proof →
           </a>
         </div>
@@ -59,18 +61,21 @@ reviewDate: 2024-12-01
     <p class="section-label">The Proof Record</p>
     <h2 id="cases-heading">Proof Archive</h2>
 
-   <div class="search-filter-controls">
-  <input type="search" id="search-input" placeholder="Search proofs by keyword, case ID, or topic...">
-  <div class="filter-group">
-    <select id="category-filter">
-    </select>
-    <button id="reset-filters" class="btn-reset">Reset</button>
-  </div>
-</div>
+    <div class="search-filter-controls">
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search proofs by keyword, case ID, or topic..."
+      >
+      <div class="filter-group">
+        <select id="category-filter"></select>
+        <button id="reset-filters" class="btn-reset">Reset</button>
+      </div>
+    </div>
     <p id="results-count" style="margin-top:12px;font-size:14px;color:var(--muted);"></p>
 
     <div class="case-grid" id="case-grid" aria-live="polite">
-        <!-- JavaScript will fill this area -->
+      <!-- JavaScript will fill this area -->
     </div>
 
     <script type="application/json" id="proof-data">
@@ -116,16 +121,23 @@ reviewDate: 2024-12-01
 <section class="action" id="action" aria-labelledby="action-heading">
   <div class="align-container">
     <h2 id="action-heading">
-      Proof {% image "/images/three-dots-gold.svg", "Therefore symbol", {
+      Proof
+      {%
+        image "/images/three-dots-gold.svg", "Therefore symbol", {
         class: "mark md",
         widths: [24, 48],
         sizes: "24px",
         style: "transform: translateY(0.1em);",
         ariaHidden: true
-      } %} Action
+        }
+      %}
+      Action
     </h2>
     <div class="action-card">
-      <p>Turn proofs into formal challenges. Start with a challenge review—if your case qualifies, we can stay with you through filing.</p>
+      <p>
+        Turn proofs into formal challenges. Start with a challenge review—if your case qualifies, we
+        can stay with you through filing.
+      </p>
       <ul class="action-list">
         <li>Challenge review confirming standing, deadlines, and required evidence</li>
         <li>Written recommendations with board citations and filing steps</li>
@@ -144,21 +156,41 @@ reviewDate: 2024-12-01
     <h2 id="cta-heading">Submit Proof</h2>
     <p>Have documents or testimony? Share it securely and confidentially.</p>
 
-    <form id="secure-contact" name="secure-contact" method="POST" netlify netlify-honeypot="bot-field" class="cta-form">
+    <form
+      id="secure-contact"
+      name="secure-contact"
+      method="POST"
+      netlify
+      netlify-honeypot="bot-field"
+      class="cta-form"
+    >
       <input type="hidden" name="form-name" value="secure-contact">
-      <p class="visually-hidden"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="visually-hidden">
+        <label>Leave this empty <input name="bot-field"></label>
+      </p>
 
       <label for="email" class="visually-hidden">Your email for secure contact</label>
       <input type="email" id="email" name="email" placeholder="your@email.com" required>
 
       <label for="message" class="visually-hidden">Your message</label>
-      <textarea id="message" name="message" placeholder="Briefly describe the proof you have..." rows="4" required></textarea>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Briefly describe the proof you have..."
+        rows="4"
+        required
+      ></textarea>
 
       <button type="submit">Contact Me</button>
     </form>
 
-    <p id="cta-error">Sorry—something went wrong. Email <a href="mailto:setho@democraticjustice.org">setho@democraticjustice.org</a>.</p>
+    <p id="cta-error">
+      Sorry—something went wrong. Email
+      <a href="mailto:setho@democraticjustice.org">setho@democraticjustice.org</a>.
+    </p>
 
-    <p style="font-size:13px;margin-top:16px;opacity:.9"><strong>Note:</strong> Don't send documents via this form. We'll arrange a secure transfer.</p>
+    <p style="font-size:13px;margin-top:16px;opacity:.9">
+      <strong>Note:</strong> Don't send documents via this form. We'll arrange a secure transfer.
+    </p>
   </div>
 </section>

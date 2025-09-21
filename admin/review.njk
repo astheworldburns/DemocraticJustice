@@ -6,36 +6,106 @@ permalink: /admin/review/index.html
 eleventyExcludeFromCollections: true
 reviewDate: 2024-12-01
 ---
-
 <section class="content-page" id="review-dashboard">
   <div class="align-container">
     <p class="section-label">Maintenance</p>
     <h1>Scheduled Review Dashboard</h1>
-    <p class="lead">Use this dashboard during monthly maintenance sessions. Items appear below once their <code>reviewDate</code> has passed.</p>
+    <p class="lead">
+      Use this dashboard during monthly maintenance sessions. Items appear below once their
+      <code>reviewDate</code> has passed.
+    </p>
 
     <style>
-      #review-dashboard .review-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+      #review-dashboard .review-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 24px;
+      }
       #review-dashboard .review-table thead th,
       #review-dashboard .review-table tbody td,
-      #review-dashboard .review-table tbody th { padding: 12px; border-bottom: 1px solid var(--border-subtle); text-align: left; vertical-align: top; }
-      #review-dashboard .review-table thead th { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-      #review-dashboard .review-table tbody th { font-size: 1rem; text-transform: none; letter-spacing: normal; color: var(--text); }
-      #review-dashboard .review-meta { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
-      #review-dashboard .review-source code { display: inline-block; padding: 2px 6px; border-radius: 4px; background: var(--surface-muted); }
-      #review-dashboard .auth-card { border: 1px solid var(--border-subtle); border-radius: 12px; padding: 20px; margin-top: 24px; background: var(--surface-muted); }
-      #review-dashboard .auth-card h2 { margin: 0 0 8px; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; }
-      #review-dashboard .export-note { margin-top: 32px; border-left: 4px solid var(--border-accent); padding: 16px; background: var(--surface-muted); }
+      #review-dashboard .review-table tbody th {
+        padding: 12px;
+        border-bottom: 1px solid var(--border-subtle);
+        text-align: left;
+        vertical-align: top;
+      }
+      #review-dashboard .review-table thead th {
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      #review-dashboard .review-table tbody th {
+        font-size: 1rem;
+        text-transform: none;
+        letter-spacing: normal;
+        color: var(--text);
+      }
+      #review-dashboard .review-meta {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+      #review-dashboard .review-source code {
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 4px;
+        background: var(--surface-muted);
+      }
+      #review-dashboard .auth-card {
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 24px;
+        background: var(--surface-muted);
+      }
+      #review-dashboard .auth-card h2 {
+        margin: 0 0 8px;
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      #review-dashboard .export-note {
+        margin-top: 32px;
+        border-left: 4px solid var(--border-accent);
+        padding: 16px;
+        background: var(--surface-muted);
+      }
       @media (max-width: 720px) {
-        #review-dashboard .review-table thead { display: none; }
+        #review-dashboard .review-table thead {
+          display: none;
+        }
         #review-dashboard .review-table,
         #review-dashboard .review-table tbody,
         #review-dashboard .review-table tr,
         #review-dashboard .review-table td,
-        #review-dashboard .review-table th { display: block; width: 100%; }
-        #review-dashboard .review-table tr { border: 1px solid var(--border-subtle); border-radius: 12px; margin-bottom: 16px; padding: 12px; }
-        #review-dashboard .review-table tbody th { border: none; padding: 0 0 8px; }
-        #review-dashboard .review-table td { border: none; padding: 6px 0; }
-        #review-dashboard .review-table td::before { content: attr(data-label) "\00a0"; display: block; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; color: var(--muted); }
+        #review-dashboard .review-table th {
+          display: block;
+          width: 100%;
+        }
+        #review-dashboard .review-table tr {
+          border: 1px solid var(--border-subtle);
+          border-radius: 12px;
+          margin-bottom: 16px;
+          padding: 12px;
+        }
+        #review-dashboard .review-table tbody th {
+          border: none;
+          padding: 0 0 8px;
+        }
+        #review-dashboard .review-table td {
+          border: none;
+          padding: 6px 0;
+        }
+        #review-dashboard .review-table td::before {
+          content: attr(data-label) '\00a0';
+          display: block;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          font-size: 0.7rem;
+          color: var(--muted);
+        }
       }
     </style>
 
@@ -47,62 +117,66 @@ reviewDate: 2024-12-01
 
     <div id="review-content" hidden>
       {% if collections.needsReview and collections.needsReview | length %}
-      <div class="table-wrapper">
-        <table class="review-table">
-          <thead>
-            <tr>
-              <th scope="col">Item</th>
-              <th scope="col">Type</th>
-              <th scope="col">Review Date</th>
-              <th scope="col">Source</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for item in collections.needsReview %}
-            {% set typeLabel = (item.type or 'content') | replace('-', ' ') %}
-            <tr>
-              <th scope="row">
-                {% if item.url %}
-                <a href="{{ item.url | url }}">{{ item.title }}</a>
-                {% else %}
-                {{ item.title }}
-                {% endif %}
-                {% if item.caseId %}
-                <div class="review-meta">Case {{ item.caseId }}</div>
-                {% endif %}
-                {% if item.overproofTitle %}
-                <div class="review-meta">Overproof: {{ item.overproofTitle }}</div>
-                {% endif %}
-              </th>
-              <td data-label="Type">{{ typeLabel | capitalize }}</td>
-              <td data-label="Review Date">{{ item.reviewDate | date("yyyy-LL-dd") }}</td>
-              <td data-label="Source" class="review-source">
-                {% if item.source %}
-                <code>{{ item.source }}</code>
-                {% else %}
-                <span aria-hidden="true">—</span><span class="sr-only">No file path recorded</span>
-                {% endif %}
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
+        <div class="table-wrapper">
+          <table class="review-table">
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Type</th>
+                <th scope="col">Review Date</th>
+                <th scope="col">Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in collections.needsReview %}
+                {% set typeLabel = (item.type or 'content') | replace('-', ' ') %}
+                <tr>
+                  <th scope="row">
+                    {% if item.url %}
+                      <a href="{{ item.url | url }}">{{ item.title }}</a>
+                    {% else %}
+                      {{ item.title }}
+                    {% endif %}
+                    {% if item.caseId %}
+                      <div class="review-meta">Case {{ item.caseId }}</div>
+                    {% endif %}
+                    {% if item.overproofTitle %}
+                      <div class="review-meta">Overproof: {{ item.overproofTitle }}</div>
+                    {% endif %}
+                  </th>
+                  <td data-label="Type">{{ typeLabel | capitalize }}</td>
+                  <td data-label="Review Date">{{ item.reviewDate | date("yyyy-LL-dd") }}</td>
+                  <td data-label="Source" class="review-source">
+                    {% if item.source %}
+                      <code>{{ item.source }}</code>
+                    {% else %}
+                      <span aria-hidden="true">—</span
+                      ><span class="sr-only">No file path recorded</span>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       {% else %}
-      <p>All long-lived content is up to date. No review action is currently required.</p>
+        <p>All long-lived content is up to date. No review action is currently required.</p>
       {% endif %}
     </div>
 
     <div class="export-note">
       <h2 style="margin-top:0;font-size:1rem;">Monthly export tip</h2>
-      <p>Select the table above and paste it into your meeting notes or spreadsheet to build the monthly review agenda.</p>
+      <p>
+        Select the table above and paste it into your meeting notes or spreadsheet to build the
+        monthly review agenda.
+      </p>
     </div>
   </div>
 </section>
 
 <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
-  (function() {
+  (function () {
     const authCard = document.getElementById('review-auth');
     const content = document.getElementById('review-content');
 
@@ -137,7 +211,8 @@ reviewDate: 2024-12-01
         }
         const description = authCard.querySelector('p');
         if (description) {
-          description.textContent = 'Netlify Identity is not configured. Restrict /admin/ routes with Basic Auth or enable Identity to protect this dashboard.';
+          description.textContent =
+            'Netlify Identity is not configured. Restrict /admin/ routes with Basic Auth or enable Identity to protect this dashboard.';
         }
         const button = authCard.querySelector('button');
         if (button) {
@@ -150,7 +225,7 @@ reviewDate: 2024-12-01
       return;
     }
 
-    window.netlifyIdentity.on('init', function(user) {
+    window.netlifyIdentity.on('init', function (user) {
       if (user) {
         showContent();
       } else {
@@ -158,12 +233,12 @@ reviewDate: 2024-12-01
       }
     });
 
-    window.netlifyIdentity.on('login', function() {
+    window.netlifyIdentity.on('login', function () {
       showContent();
       window.netlifyIdentity.close();
     });
 
-    window.netlifyIdentity.on('logout', function() {
+    window.netlifyIdentity.on('logout', function () {
       requireAuth();
     });
   })();
