@@ -8,7 +8,8 @@
     "dev": "eleventy --serve",
     "build:js": "esbuild src/main.js --bundle --minify --outfile=bundle.js",
     "build:css": "postcss _site/style.css -o _site/style.css",
-    "build": "npm run build:js && eleventy && npm run build:css && npx pagefind --source _site",
+    "build:critical": "node scripts/generate-critical.js",
+    "build": "npm run build:js && eleventy && npm run build:critical && eleventy && npm run build:css && npx pagefind --source _site",
     "test": "playwright test",
     "test:dark": "playwright test tests/dark-mode.spec.js",
     "test:browsers": "playwright install --with-deps"
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@playwright/test": "^1.44.1",
     "autoprefixer": "^10.4.21",
+    "critical": "^7.2.1",
     "cssnano": "^7.1.1",
     "esbuild": "^0.21.0",
     "html-minifier-terser": "^7.2.0",
