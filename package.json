@@ -33,7 +33,7 @@
     "autoprefixer": "^10.4.21",
     "critical": "^7.2.1",
     "cssnano": "^7.1.1",
-    "eslint": "^9.13.0",
+    "eslint": "^9.36.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
     "esbuild": "^0.21.0",
