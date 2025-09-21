@@ -1438,6 +1438,61 @@ p{
 /* Section wrapper padding (all breakpoints) */
 .content-page { padding: calc(var(--space-8) + var(--space-6)) 0; }
 
+.resource-list {
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+@media (min-width:768px) {
+  .resource-list {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+.resource-card {
+  background: var(--paper-light);
+  border-radius: 12px;
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.resource-card h2 {
+  margin: 0;
+}
+
+.resource-card p {
+  margin: 0;
+}
+
+.resource-card__meta {
+  font-size: var(--font-size-sm);
+  color: var(--muted);
+}
+
+.resource-card__tasks {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+}
+
+.resource-card__tasks li {
+  background: var(--color-interactive-neutral);
+  color: var(--color-text-base);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 /* Overproof record */
 .overproof-narrative{
   margin-bottom:var(--space-6);

@@ -1,3 +1,15 @@
+---
+layout: layout.njk
+title: "Monitoring and Backups"
+description: "Configure analytics, alerts, and scheduled backups so site operations stay resilient."
+intent: troubleshooting
+tasks:
+  - operations
+  - observability
+permalink: /docs/monitoring/
+intentOrder: 1
+---
+
 # Monitoring and Backups
 
 ## Cloudflare Web Analytics
