@@ -2,6 +2,7 @@
   "extends": ["stylelint-config-standard"],
   "ignoreFiles": ["_site/**/*.css", "node_modules/**/*.css"],
   "rules": {
+    "function-no-unknown": [true, { "ignoreFunctions": ["color-mix"] }],
     "color-function-notation": null,
     "alpha-value-notation": null,
     "selector-class-pattern": null,

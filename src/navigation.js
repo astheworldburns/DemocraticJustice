@@ -434,12 +434,18 @@ export function initNavigation() {
             <article class="case-card" data-type="${proofType}"
                      data-proof-id="${proof.case_id || proof.slug}">
                 <div class="case-card-header">
-                    <span class="proof-type-badge ${proofType.toLowerCase().replace(/\s+/g, '-')}">${proofType}</span>
+                    <span class="proof-type-badge ${proofType
+                        .toLowerCase()
+                        .replace(/\s+/g, '-')}">${proofType}</span>
                 </div>
                 <h3><a href="${url}">${proof.title}</a></h3>
                 <p class="case-meta">
                     ${proof.case_id} • ${fmtDate(proof.date)}
-                    ${proof.category ? ` • <span style="font-weight: 700;">${proof.category}</span>` : ''}
+                    ${
+                        proof.category
+                            ? ` • <span style="font-weight: 700;">${proof.category}</span>`
+                            : ''
+                    }
                 </p>
                 <p>${proof.thesis}</p>
                 <a href="${url}" class="case-link">Examine Proof →</a>
@@ -455,12 +461,18 @@ export function initNavigation() {
 
         cardElement.innerHTML = `
             <div class="case-card-header">
-                <span class="proof-type-badge ${proofType.toLowerCase().replace(/\s+/g, '-')}">${proofType}</span>
+                <span class="proof-type-badge ${proofType
+                    .toLowerCase()
+                    .replace(/\s+/g, '-')}">${proofType}</span>
             </div>
             <h3><a href="${url}">${proofData.title}</a></h3>
             <p class="case-meta">
                 ${proofData.case_id} • ${fmtDate(proofData.date)}
-                ${proofData.category ? ` • <span style="font-weight: 700;">${proofData.category}</span>` : ''}
+                ${
+                    proofData.category
+                        ? ` • <span style="font-weight: 700;">${proofData.category}</span>`
+                        : ''
+                }
             </p>
             <p>${proofData.thesis}</p>
             <a href="${url}" class="case-link">Examine Proof →</a>`;

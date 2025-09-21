@@ -5,24 +5,43 @@ description: "Securely submit proof to Democratic Justice so West Virginia Democ
 permalink: /submit/
 reviewDate: 2024-12-01
 ---
-
 <section class="content-page" id="submit-page">
   <div class="align-container">
     <h1>Submit Proof</h1>
     <p>Have documents or testimony? Share it securely and confidentially.</p>
 
-    <form id="secure-contact" name="secure-contact" method="POST" netlify netlify-honeypot="bot-field" class="cta-form">
+    <form
+      id="secure-contact"
+      name="secure-contact"
+      method="POST"
+      netlify
+      netlify-honeypot="bot-field"
+      class="cta-form"
+    >
       <input type="hidden" name="form-name" value="secure-contact">
-      <p class="visually-hidden"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="visually-hidden">
+        <label>Leave this empty <input name="bot-field"></label>
+      </p>
       <label for="email" class="visually-hidden">Your email for secure contact</label>
       <input type="email" id="email" name="email" placeholder="your@email.com" required>
       <label for="message" class="visually-hidden">Your message</label>
-      <textarea id="message" name="message" placeholder="Briefly describe the proof you have..." rows="4" required></textarea>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Briefly describe the proof you have..."
+        rows="4"
+        required
+      ></textarea>
       <button type="submit">Contact Me</button>
     </form>
 
-    <p id="cta-error">Sorry—something went wrong. Email <a href="mailto:setho@democraticjustice.org">setho@democraticjustice.org</a>.</p>
+    <p id="cta-error">
+      Sorry—something went wrong. Email
+      <a href="mailto:setho@democraticjustice.org">setho@democraticjustice.org</a>.
+    </p>
 
-    <p style="font-size:13px;margin-top:16px;opacity:.9"><strong>Note:</strong> Don't send documents via this form. We'll arrange a secure transfer.</p>
+    <p style="font-size:13px;margin-top:16px;opacity:.9">
+      <strong>Note:</strong> Don't send documents via this form. We'll arrange a secure transfer.
+    </p>
   </div>
 </section>

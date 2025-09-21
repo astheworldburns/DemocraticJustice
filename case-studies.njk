@@ -5,42 +5,48 @@ description: "Explore Democratic Justice case studies that group proofs by umbre
 permalink: /case-studies/
 reviewDate: 2024-12-01
 ---
-
 <section class="content-page" id="case-studies-page">
   <div class="align-container">
     <p class="section-label">Case Studies</p>
     <h1>Case Studies from the Proof Archive</h1>
-    <p class="lead">Dive into umbrella findings that assemble individual proofs, highlight violations, and document the supporting evidence.</p>
+    <p class="lead">
+      Dive into umbrella findings that assemble individual proofs, highlight violations, and
+      document the supporting evidence.
+    </p>
 
     {% set studies = collections.caseStudies %}
     {% if studies and studies | length %}
-    <div class="resource-list" role="list">
-      {% for study in studies %}
-      {% set overproofGroup = study.data.overproofGroup %}
-      {% set overproof = overproofGroup.overproof %}
-      {% set studyTitle = (overproof.brief and overproof.brief.headline) or overproof.short_title or overproof.title %}
-      {% set studySummary = study.data.description or (overproof.brief and overproof.brief.lede) or overproof.summary %}
-      {% set proofCount = overproof.proofCount or (overproofGroup.proofs | length) %}
-      <article class="resource-card" role="listitem">
-        <h2><a href="{{ study.url | url }}">{{ studyTitle }}</a></h2>
-        {% if studySummary %}
-        <p>{{ studySummary }}</p>
-        {% endif %}
-        {% if proofCount %}
-        <p class="resource-card__meta">{{ proofCount }} proof{% if proofCount != 1 %}s{% endif %} documented</p>
-        {% endif %}
-        {% if study.data.tasks and study.data.tasks | length %}
-        <ul class="resource-card__tasks">
-          {% for task in study.data.tasks %}
-          <li>{{ task | replace('-', ' ') | capitalize }}</li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-      </article>
-      {% endfor %}
-    </div>
+      <div class="resource-list" role="list">
+        {% for study in studies %}
+          {% set overproofGroup = study.data.overproofGroup %}
+          {% set overproof = overproofGroup.overproof %}
+          {% set studyTitle = (overproof.brief and overproof.brief.headline) or overproof.short_title or overproof.title %}
+          {% set studySummary = study.data.description or (overproof.brief and overproof.brief.lede) or overproof.summary %}
+          {% set proofCount = overproof.proofCount or (overproofGroup.proofs | length) %}
+          <article class="resource-card" role="listitem">
+            <h2>
+              <a href="{{ study.url | url }}">{{ studyTitle }}</a>
+            </h2>
+            {% if studySummary %}
+              <p>{{ studySummary }}</p>
+            {% endif %}
+            {% if proofCount %}
+              <p class="resource-card__meta">
+                {{ proofCount }} proof{% if proofCount != 1 %}s{% endif %} documented
+              </p>
+            {% endif %}
+            {% if study.data.tasks and study.data.tasks | length %}
+              <ul class="resource-card__tasks">
+                {% for task in study.data.tasks %}
+                  <li>{{ task | replace('-', ' ') | capitalize }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
     {% else %}
-    <p>No case studies are published yet. Check back soon.</p>
+      <p>No case studies are published yet. Check back soon.</p>
     {% endif %}
   </div>
 </section>

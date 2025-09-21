@@ -159,7 +159,9 @@ export function initReviewForm() {
             requireNotes = true;
         } else if (diffDays < 0) {
             const daysAhead = Math.abs(diffDays);
-            message = `This date is ${daysAhead} day${daysAhead === 1 ? '' : 's'} in the future. Share upcoming deadlines or hearing dates so we can plan accordingly.`;
+            message = `This date is ${daysAhead} day${
+                daysAhead === 1 ? '' : 's'
+            } in the future. Share upcoming deadlines or hearing dates so we can plan accordingly.`;
             showNotes = true;
         }
 

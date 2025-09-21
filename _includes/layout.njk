@@ -1,232 +1,350 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="canonical" href="{{ site.url }}{{ page.url | url }}" />
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | url }}">
 
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description or '' }}">
-  <meta property="og:title" content="{{ title }}">
-  <meta property="og:description" content="{{ description or '' }}">
-  {% set fallbackImage = site.url ~ site.defaultImage %}
-  {% set resolvedOgImage = ogImage or fallbackImage %}
-  {% set resolvedTwitterImage = twitterImage or fallbackImage %}
-  <meta property="og:image" content="{{ resolvedOgImage }}">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ title }}">
-  <meta name="twitter:description" content="{{ description or '' }}">
-  <meta name="twitter:image" content="{{ resolvedTwitterImage }}">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description or '' }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description or '' }}">
+    {% set fallbackImage = site.url ~ site.defaultImage %}
+    {% set resolvedOgImage = ogImage or fallbackImage %}
+    {% set resolvedTwitterImage = twitterImage or fallbackImage %}
+    <meta property="og:image" content="{{ resolvedOgImage }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ description or '' }}">
+    <meta name="twitter:image" content="{{ resolvedTwitterImage }}">
 
-  <meta name="theme-color" content="#0F2742">
+    <meta name="theme-color" content="#0F2742">
 
-  <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="manifest" href="/manifest.webmanifest">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@600;700&display=swap">
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHvxk.ttf" type="font/ttf" crossorigin>
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVew8.ttf" type="font/ttf" crossorigin>
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9ogUE.ttf" type="font/ttf" crossorigin>
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@600;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@600;700&display=swap"
+    >
+    <link
+      rel="preload"
+      as="font"
+      href="https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHvxk.ttf"
+      type="font/ttf"
+      crossorigin
+    >
+    <link
+      rel="preload"
+      as="font"
+      href="https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVew8.ttf"
+      type="font/ttf"
+      crossorigin
+    >
+    <link
+      rel="preload"
+      as="font"
+      href="https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9ogUE.ttf"
+      type="font/ttf"
+      crossorigin
+    >
+    <link
+      rel="preload"
+      as="font"
+      href="https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf"
+      type="font/ttf"
+      crossorigin
+    >
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@600;700&display=swap"
+    >
 
-  <style id="critical-hero-styles">
-    {% include "critical.css" %}
-  </style>
+    <style id="critical-hero-styles">
+      {% include "critical.css" %}
+    </style>
 
-  <!-- Root-relative assets (safe from any page depth and pathPrefix-aware) -->
-  <link rel="icon" href="{{ '/images/three-dots-blue.svg' | url }}" type="image/svg+xml">
-  <link rel="stylesheet" href="{{ '/style.css' | url }}">
-  {% if pagefind %}
-  <link rel="stylesheet" href="{{ '/pagefind/pagefind-ui.css' | url }}">
-  {% endif %}
+    <!-- Root-relative assets (safe from any page depth and pathPrefix-aware) -->
+    <link rel="icon" href="{{ '/images/three-dots-blue.svg' | url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/style.css' | url }}">
+    {% if pagefind %}
+      <link rel="stylesheet" href="{{ '/pagefind/pagefind-ui.css' | url }}">
+    {% endif %}
 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "name": "Democratic Justice",
-          "url": "https://democraticjustice.org",
-          "logo": "https://democraticjustice.org/images/wordmark-blue-on-white.svg"
-        },
-        {
-          "@type": "WebSite",
-          "url": "https://democraticjustice.org",
-          "name": "Democratic Justice",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://democraticjustice.org/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "Democratic Justice",
+            "url": "https://democraticjustice.org",
+            "logo": "https://democraticjustice.org/images/wordmark-blue-on-white.svg"
+          },
+          {
+            "@type": "WebSite",
+            "url": "https://democraticjustice.org",
+            "name": "Democratic Justice",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://democraticjustice.org/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
           }
-        }
-      ]
-    }
-  </script>
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    {% set currentUrl = page.url or '/' %}
+    {% set proofActive = currentUrl == '/archive/' or currentUrl == '/archive/index.html' or currentUrl.startsWith('/proofs/') %}
+    {% set methodActive = currentUrl == '/method/' or currentUrl == '/method/index.html' %}
+    {% set actionActive = currentUrl == '/action/' or currentUrl == '/action/index.html' or currentUrl.startsWith('/action/') %}
+    {% set guidesActive = currentUrl == '/guides/' or currentUrl == '/guides/index.html' %}
+    {% set troubleshootingActive = currentUrl == '/troubleshooting/' or currentUrl == '/troubleshooting/index.html' %}
+    {% set caseStudiesActive = currentUrl == '/case-studies/' or currentUrl == '/case-studies/index.html' %}
+    {% set aboutActive = currentUrl == '/about/' or currentUrl == '/about/index.html' %}
+    {% set contactActive = currentUrl == '/contact/' or currentUrl == '/contact/index.html' %}
+    {% set submitActive = currentUrl == '/submit/' or currentUrl == '/submit/index.html' %}
+    {% set homeActive = currentUrl == '/' or currentUrl == '/index.html' %}
 
-</head>
-<body>
+    <a class="skip" href="#main">Skip to content</a>
 
-  {% set currentUrl = page.url or '/' %}
-  {% set proofActive = currentUrl == '/archive/' or currentUrl == '/archive/index.html' or currentUrl.startsWith('/proofs/') %}
-  {% set methodActive = currentUrl == '/method/' or currentUrl == '/method/index.html' %}
-  {% set actionActive = currentUrl == '/action/' or currentUrl == '/action/index.html' or currentUrl.startsWith('/action/') %}
-  {% set guidesActive = currentUrl == '/guides/' or currentUrl == '/guides/index.html' %}
-  {% set troubleshootingActive = currentUrl == '/troubleshooting/' or currentUrl == '/troubleshooting/index.html' %}
-  {% set caseStudiesActive = currentUrl == '/case-studies/' or currentUrl == '/case-studies/index.html' %}
-  {% set aboutActive = currentUrl == '/about/' or currentUrl == '/about/index.html' %}
-  {% set contactActive = currentUrl == '/contact/' or currentUrl == '/contact/index.html' %}
-  {% set submitActive = currentUrl == '/submit/' or currentUrl == '/submit/index.html' %}
-  {% set homeActive = currentUrl == '/' or currentUrl == '/index.html' %}
-
-  <a class="skip" href="#main">Skip to content</a>
-
-  <nav class="nav" aria-label="Primary">
-    <div class="align-container">
-      <div class="nav-inner">
-        <div class="logo-wrap">
-          <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
-            <picture>
-              <source media="(prefers-color-scheme: dark)" srcset="{{ '/images/wordmark-white-on-blue.svg' | url }}">
-              <img class="wordmark"
-                   src="{{ '/images/wordmark-blue-on-white.svg' | url }}"
-                   alt="Democratic Justice">
-            </picture>
-          </a>
+    <nav class="nav" aria-label="Primary">
+      <div class="align-container">
+        <div class="nav-inner">
+          <div class="logo-wrap">
+            <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
+              <picture>
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="{{ '/images/wordmark-white-on-blue.svg' | url }}"
+                >
+                <img
+                  class="wordmark"
+                  src="{{ '/images/wordmark-blue-on-white.svg' | url }}"
+                  alt="Democratic Justice"
+                >
+              </picture>
+            </a>
+          </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-label="Menu"
+            aria-controls="primary-nav"
+          >
+            <svg
+              class="nav-toggle-icon"
+              aria-hidden="true"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <ul class="nav-links" id="primary-nav">
+            {% set proofAttrs = '' %}
+            {% if proofActive %}
+              {% set proofAttrs = ' class="is-active" aria-current="page"' %}
+            {% endif %}
+            <li><a href="{{ '/archive/' | url }}" {{- proofAttrs | safe }}>Proof</a></li>
+            <li class="nav-item-search">
+              <a
+                href="{{ '/archive/#search-input' | url }}"
+                data-search-link
+                aria-label="Search proofs"
+                >Search</a
+              >
+            </li>
+            {% set caseAttrs = '' %}
+            {% if caseStudiesActive %}
+              {% set caseAttrs = ' class="is-active" aria-current="page"' %}
+            {% endif %}
+            <li><a href="{{ '/case-studies/' | url }}" {{- caseAttrs | safe }}>Case Studies</a></li>
+            {% set guidesAttrs = '' %}
+            {% if guidesActive %}
+              {% set guidesAttrs = ' class="is-active" aria-current="page"' %}
+            {% endif %}
+            <li><a href="{{ '/guides/' | url }}" {{- guidesAttrs | safe }}>Guides</a></li>
+            {% set troubleshootingAttrs = '' %}
+            {% if troubleshootingActive %}
+              {% set troubleshootingAttrs = ' class="is-active" aria-current="page"' %}
+            {% endif %}
+            <li>
+              <a href="{{ '/troubleshooting/' | url }}" {{- troubleshootingAttrs | safe }}
+                >Troubleshooting</a
+              >
+            </li>
+            {% set methodAttrs = '' %}
+            {% if methodActive %}
+              {% set methodAttrs = ' class="is-active" aria-current="page"' %}
+            {% endif %}
+            <li><a href="{{ '/method/' | url }}" {{- methodAttrs | safe }}>Method</a></li>
+            {% set actionAttrs = '' %}
+            {% if actionActive %}
+              {% set actionAttrs = ' class="is-active" aria-current="page"' %}
+            {% endif %}
+            <li><a href="{{ '/action/' | url }}" {{- actionAttrs | safe }}>Action</a></li>
+            {% set aboutAttrs = '' %}
+            {% if aboutActive %}
+              {% set aboutAttrs = ' class="is-active" aria-current="page"' %}
+            {% endif %}
+            <li><a href="{{ '/about/' | url }}" {{- aboutAttrs | safe }}>About</a></li>
+            {% set contactAttrs = '' %}
+            {% if contactActive %}
+              {% set contactAttrs = ' class="is-active" aria-current="page"' %}
+            {% endif %}
+            <li><a href="{{ '/contact/' | url }}" {{- contactAttrs | safe }}>Contact</a></li>
+            {% set submitClass = 'btn-nav-submit' %}
+            {% if submitActive %}
+              {% set submitClass = submitClass + ' is-active' %}
+            {% endif %}
+            {% set submitAria = '' %}
+            {% if submitActive %}
+              {% set submitAria = ' aria-current="page"' %}
+            {% endif %}
+            <li>
+              <a href="{{ '/submit/' | url }}" class="{{ submitClass }}" {{- submitAria | safe }}
+                >Submit</a
+              >
+            </li>
+          </ul>
         </div>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu" aria-controls="primary-nav">
-          <svg class="nav-toggle-icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-        <ul class="nav-links" id="primary-nav">
-          <li><a href="{{ '/archive/' | url }}"{% if proofActive %} class="is-active" aria-current="page"{% endif %}>Proof</a></li>
-          <li class="nav-item-search"><a href="{{ '/archive/#search-input' | url }}" data-search-link aria-label="Search proofs">Search</a></li>
-          <li><a href="{{ '/case-studies/' | url }}"{% if caseStudiesActive %} class="is-active" aria-current="page"{% endif %}>Case Studies</a></li>
-          <li><a href="{{ '/guides/' | url }}"{% if guidesActive %} class="is-active" aria-current="page"{% endif %}>Guides</a></li>
-          <li><a href="{{ '/troubleshooting/' | url }}"{% if troubleshootingActive %} class="is-active" aria-current="page"{% endif %}>Troubleshooting</a></li>
-          <li><a href="{{ '/method/' | url }}"{% if methodActive %} class="is-active" aria-current="page"{% endif %}>Method</a></li>
-          <li><a href="{{ '/action/' | url }}"{% if actionActive %} class="is-active" aria-current="page"{% endif %}>Action</a></li>
-          <li><a href="{{ '/about/' | url }}"{% if aboutActive %} class="is-active" aria-current="page"{% endif %}>About</a></li>
-          <li><a href="{{ '/contact/' | url }}"{% if contactActive %} class="is-active" aria-current="page"{% endif %}>Contact</a></li>
-          <li><a href="{{ '/submit/' | url }}" class="btn-nav-submit{% if submitActive %} is-active{% endif %}"{% if submitActive %} aria-current="page"{% endif %}>Submit</a></li>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <main id="main">
-    {{ content }}
-  </main>
+    <main id="main">
+      {{ content }}
+    </main>
 
-  {% if site.mobileNavBreakpoint %}
-    {% include "bottom-nav.html" %}
-  {% endif %}
+    {% if site.mobileNavBreakpoint %}
+      {% include 'bottom-nav.html' %}
+    {% endif %}
 
-  <footer class="footer">
-    <div class="align-container">
-      <div class="footer-top">
-        {% image "/images/wordmark-white-on-blue.svg", "Democratic Justice", {
-          class: "footer-logo",
-          widths: [200, 400],
-          sizes: "200px"
-        } %}
+    <footer class="footer">
+      <div class="align-container">
+        <div class="footer-top">
+          {%
+            image "/images/wordmark-white-on-blue.svg", "Democratic Justice", {
+            class: "footer-logo",
+            widths: [200, 400],
+            sizes: "200px"
+            }
+          %}
+        </div>
+        <p><strong>Proof. Not Spin.</strong></p>
+        <p>
+          A 100% volunteer-run project. We do not solicit or accept financial contributions. We do
+          not endorse candidates.
+        </p>
+        <p><a href="mailto:setho@democraticjustice.org">Submit Proof Confidentially</a></p>
+        <p><a href="{{ '/integrity' | url }}">Proof of Integrity</a></p>
+        <p><a href="{{ '/privacy' | url }}">Privacy Policy</a></p>
+        <p>&copy; {{ now | date('%Y') }} Democratic Justice. All rights reserved.</p>
+
+        <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
+          {%
+            image "/images/three-dots-white.svg", "", {
+            class: "mark xl",
+            widths: [32, 64],
+            sizes: "32px",
+            ariaHidden: true,
+            style: "position:absolute; bottom: var(--gap); right: 20px; opacity: 0.5;"
+            }
+          %}
+        </a>
       </div>
-      <p><strong>Proof. Not Spin.</strong></p>
-      <p>A 100% volunteer-run project. We do not solicit or accept financial contributions. We do not endorse candidates.</p>
-      <p><a href="mailto:setho@democraticjustice.org">Submit Proof Confidentially</a></p>
-      <p><a href="{{ '/integrity' | url }}">Proof of Integrity</a></p>
-      <p><a href="{{ '/privacy' | url }}">Privacy Policy</a></p>
-      <p>&copy; {{ now | date('%Y') }} Democratic Justice. All rights reserved.</p>
+    </footer>
 
-      <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
-        {% image "/images/three-dots-white.svg", "", {
-          class: "mark xl",
-          widths: [32, 64],
-          sizes: "32px",
-          ariaHidden: true,
-          style: "position:absolute; bottom: var(--gap); right: 20px; opacity: 0.5;"
-        } %}
-      </a>
-    </div>
-  </footer>
+    <script defer src="/ga-consent.js"></script>
+    {% if pagefind %}
+      <script defer src="{{ '/pagefind/pagefind.js' | url }}"></script>
+      <script defer src="{{ '/pagefind/pagefind-ui.js' | url }}"></script>
+    {% endif %}
+    <!-- Defer so it doesn't block rendering -->
+    <script defer src="{{ '/bundle.js' | url }}"></script>
 
-  <script defer src="/ga-consent.js"></script>
-  {% if pagefind %}
-  <script defer src="{{ '/pagefind/pagefind.js' | url }}"></script>
-  <script defer src="{{ '/pagefind/pagefind-ui.js' | url }}"></script>
-  {% endif %}
-  <!-- Defer so it doesn't block rendering -->
-  <script defer src="{{ '/bundle.js' | url }}"></script>
+    {%- if env.CLOUDFLARE_ANALYTICS_TOKEN -%}
+      {% set cfBeaconConfig = { token: env.CLOUDFLARE_ANALYTICS_TOKEN } %}
+      <!-- Cloudflare Web Analytics -->
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon="{{ cfBeaconConfig | dump | escape }}"
+      ></script>
+    {%- endif -%}
 
-  {%- if env.CLOUDFLARE_ANALYTICS_TOKEN -%}
-  <!-- Cloudflare Web Analytics -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ env.CLOUDFLARE_ANALYTICS_TOKEN }}"}'></script>
-  {%- endif -%}
+    {%- if env.MICROSOFT_CLARITY_PROJECT_ID -%}
+      <script type="text/javascript">
+        window.democraticJustice = window.democraticJustice || {};
 
-  {%- if env.MICROSOFT_CLARITY_PROJECT_ID -%}
-  <script type="text/javascript">
-    window.democraticJustice = window.democraticJustice || {};
+        window.democraticJustice.loadClarity =
+          window.democraticJustice.loadClarity ||
+          function loadClarity() {
+            if (window.democraticJustice.clarityLoaded) {
+              return;
+            }
 
-    window.democraticJustice.loadClarity = window.democraticJustice.loadClarity || function loadClarity() {
-      if (window.democraticJustice.clarityLoaded) {
-        return;
-      }
+            window.democraticJustice.clarityLoaded = true;
 
-      window.democraticJustice.clarityLoaded = true;
+            var defaultSettings = {
+              mask: true,
+              maskText: true,
+              maskImages: true
+            };
+            var customSettings = window.democraticJustice.claritySettings;
+            if (!customSettings || typeof customSettings !== 'object') {
+              customSettings = {};
+            }
+            var combinedSettings = {};
 
-      var defaultSettings = {
-        mask: true,
-        maskText: true,
-        maskImages: true
-      };
-      var customSettings = window.democraticJustice.claritySettings;
-      if (!customSettings || typeof customSettings !== "object") {
-        customSettings = {};
-      }
-      var combinedSettings = {};
+            for (var key in defaultSettings) {
+              if (Object.prototype.hasOwnProperty.call(defaultSettings, key)) {
+                combinedSettings[key] = defaultSettings[key];
+              }
+            }
 
-      for (var key in defaultSettings) {
-        if (Object.prototype.hasOwnProperty.call(defaultSettings, key)) {
-          combinedSettings[key] = defaultSettings[key];
-        }
-      }
+            for (var customKey in customSettings) {
+              if (Object.prototype.hasOwnProperty.call(customSettings, customKey)) {
+                combinedSettings[customKey] = customSettings[customKey];
+              }
+            }
 
-      for (var customKey in customSettings) {
-        if (Object.prototype.hasOwnProperty.call(customSettings, customKey)) {
-          combinedSettings[customKey] = customSettings[customKey];
-        }
-      }
+            window.claritySettings = combinedSettings;
 
-      window.claritySettings = combinedSettings;
+            (function (c, l, a, r, i, t, y) {
+              c[a] =
+                c[a] ||
+                function () {
+                  (c[a].q = c[a].q || []).push(arguments);
+                };
+              t = l.createElement(r);
+              t.async = 1;
+              t.type = 'text/javascript';
+              t.src = 'https://www.clarity.ms/tag/' + i;
 
-      (function (c, l, a, r, i, t, y) {
-        c[a] = c[a] || function () {
-          (c[a].q = c[a].q || []).push(arguments);
-        };
-        t = l.createElement(r);
-        t.async = 1;
-        t.type = "text/javascript";
-        t.src = "https://www.clarity.ms/tag/" + i;
+              var scriptAttributes = window.democraticJustice.clarityScriptAttrs;
+              if (!scriptAttributes || typeof scriptAttributes !== 'object') {
+                scriptAttributes = {};
+              }
+              for (var attr in scriptAttributes) {
+                if (Object.prototype.hasOwnProperty.call(scriptAttributes, attr)) {
+                  t.setAttribute(attr, scriptAttributes[attr]);
+                }
+              }
 
-        var scriptAttributes = window.democraticJustice.clarityScriptAttrs;
-        if (!scriptAttributes || typeof scriptAttributes !== "object") {
-          scriptAttributes = {};
-        }
-        for (var attr in scriptAttributes) {
-          if (Object.prototype.hasOwnProperty.call(scriptAttributes, attr)) {
-            t.setAttribute(attr, scriptAttributes[attr]);
-          }
-        }
-
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", "{{ env.MICROSOFT_CLARITY_PROJECT_ID }}");
-    };
-  </script>
-  {%- endif -%}
-
-</body>
+              y = l.getElementsByTagName(r)[0];
+              y.parentNode.insertBefore(t, y);
+            })(window, document, 'clarity', 'script', '{{ env.MICROSOFT_CLARITY_PROJECT_ID }}');
+          };
+      </script>
+    {%- endif -%}
+  </body>
 </html>

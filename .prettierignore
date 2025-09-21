@@ -3,3 +3,4 @@ _site/
 dist/
 bundle.js
 package-lock.json
+sitemap.njk

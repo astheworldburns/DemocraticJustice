@@ -5,34 +5,38 @@ description: "Step-by-step guidance for filing grievances and using the Democrat
 permalink: /guides/
 reviewDate: 2024-12-01
 ---
-
 <section class="content-page" id="guides-page">
   <div class="align-container">
     <p class="section-label">Guides</p>
     <h1>Guides for Organizers and Filers</h1>
-    <p class="lead">Structured walkthroughs covering formal grievance filings, contributor workflows, and the project tooling.</p>
+    <p class="lead">
+      Structured walkthroughs covering formal grievance filings, contributor workflows, and the
+      project tooling.
+    </p>
 
     {% set guides = collections.guides %}
     {% if guides and guides | length %}
-    <div class="resource-list" role="list">
-      {% for guide in guides %}
-      <article class="resource-card" role="listitem">
-        <h2><a href="{{ guide.url | url }}">{{ guide.data.title }}</a></h2>
-        {% if guide.data.description %}
-        <p>{{ guide.data.description }}</p>
-        {% endif %}
-        {% if guide.data.tasks and guide.data.tasks | length %}
-        <ul class="resource-card__tasks">
-          {% for task in guide.data.tasks %}
-          <li>{{ task | replace('-', ' ') | capitalize }}</li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-      </article>
-      {% endfor %}
-    </div>
+      <div class="resource-list" role="list">
+        {% for guide in guides %}
+          <article class="resource-card" role="listitem">
+            <h2>
+              <a href="{{ guide.url | url }}">{{ guide.data.title }}</a>
+            </h2>
+            {% if guide.data.description %}
+              <p>{{ guide.data.description }}</p>
+            {% endif %}
+            {% if guide.data.tasks and guide.data.tasks | length %}
+              <ul class="resource-card__tasks">
+                {% for task in guide.data.tasks %}
+                  <li>{{ task | replace('-', ' ') | capitalize }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
     {% else %}
-    <p>No guides are published yet. Check back soon.</p>
+      <p>No guides are published yet. Check back soon.</p>
     {% endif %}
   </div>
 </section>
