@@ -1,212 +1,180 @@
 [
   {
-    "slug": "the-aac-formation-conspiracy",
-    "headline": "The Secret Script That Stole Democracy",
-    "lede": "At the direction of WVDP leadership, seventy-five percent of West Virginia's minority communities were locked out before the meeting even started. A secret script, authored by the party's own compliance officer, dictated every vote and guaranteed a pre-determined outcome. What was supposed to be an open process to empower minority voices became a choreographed takeover that excluded the very people it claimed to serve.",
-    "reviewDate": "2024-12-01",
+    "slug": "the-illegitimate-formation",
+    "headline": "An Illegitimate Committee Forged in Secret",
+    "lede": "The 2020 DNC Memorandum of Understanding (MOU) mandated an open, caucus-driven process to form West Virginia’s Affirmative Action Committee. The evidence proves this mandate was violated in two fundamental ways: first, organizers deliberately excluded 75% of the required minority caucuses, violating the MOU's 'caucus-first' principle. Second, they used a secret script, marked 'do not share,' to install a pre-selected slate of leaders, turning the election into a sham.",
     "violations": [
       {
-        "title": "The Exclusion: 75% of Minority Groups Were Denied Representation",
-        "keyEvidence": "The formation script admitted the committee was 'missing... Latino's, Asian Americans and Pacific Islanders, and Native Americans' yet proceeded with the illegal formation anyway.",
-        "summary": "The 2020 DNC agreement mandated a simple sequence: form caucuses, then let them choose representatives. Selina Vickers and the WVDP flipped it. They formed the committee first, appointed the leaders, then promised to maybe create caucuses later. This meant Latino, Asian American, Pacific Islander, and Native American Democrats had zero voice in their own representation.",
+        "title": "Violation: Deliberate Exclusion of Mandated Minority Groups",
+        "keyEvidence": "The formation script documented organizers' knowledge that the committee was 'missing representation from... Latino's, Asian Americans and Pacific Islanders, and Native Americans,' yet they proceeded with the formation.",
+        "summary": "The 2020 DNC agreement required a specific sequence: first, establish minority caucuses, and second, allow those caucuses to select their representatives for the committee. Organizers inverted this process. They formed the committee and installed its leadership before the Latino, AAPI, and Native American caucuses existed, denying those communities any role in the selection of their own representatives.",
         "evidencePoints": [
-          "Only one of the four required racial caucuses had been formed before the committee was created.",
-          "Three of four required minority communities were excluded from the process.",
-          "The formation script itself admitted the process was 'missing... representation' from three key communities.",
-          "Leadership proceeded with the formation despite the acknowledged lack of representation."
+          "Only one of the four required racial diversity caucuses existed at the time of the committee's formation.",
+          "Organizers proceeded despite the script's own admission that key communities were not represented.",
+          "The script even designated a representative for the Latino caucus, a group that had not yet been formed.",
+          "This inverted process violated the MOU's core 'caucus-first' mandate."
         ],
         "proofs": [
           {
-            "title": "The Foundational Breach of the DNC MOU",
+            "title": "PROOF: The Foundational Breach of the 2020 DNC MOU",
             "slug": "foundational-breach-dnc-diversity-plan"
           },
           {
-            "title": "The Failure to Implement the Diversity Plan",
+            "title": "PROOF: WVDP Failed to Properly Implement DNC-Mandated Diversity Plan",
             "slug": "failure-to-implement-diversity-plan"
+          },
+          {
+            "title": "PROOF: Script's Detail Proves Deliberate Exclusion of Mandated Caucuses",
+            "slug": "secret-script-proves-caucus-exclusion"
           }
         ],
-        "consequence": "Three entire racial communities were denied any say in who would represent them. Their 'representation' was assigned to them by the very people who excluded them from the process."
+        "consequence": "Three racial communities were denied their right under the MOU to select their own representatives. The committee's legitimacy was compromised at the moment of its creation."
       },
       {
-        "title": "The Script: The Compliance Officer Wrote Herself Into Power",
-        "keyEvidence": "A formation script marked 'DRAFT SCRIPT - do not share' dictated every nomination, including Vickers nominating herself as Parliamentarian.",
-        "summary": "Selina Vickers wasn't just the MOU compliance officer—she was the puppet master. She wrote a detailed script that controlled every aspect of the meeting: who would speak, what they'd say, who they'd nominate. Most audaciously, she scripted her own appointment to Parliamentarian, complete with pre-written praise calling her 'uniquely qualified.'",
+        "title": "Violation: A Pre-Scripted and Invalid Election",
+        "keyEvidence": "A formation script marked 'DRAFT SCRIPT - do not share' dictated all key outcomes, including the author's own appointment to a position of procedural control.",
+        "summary": "The official tasked with ensuring compliance, Selina Vickers, authored a detailed script that dictated the formation meeting's key events. The script orchestrated her own appointment as Parliamentarian, complete with a pre-written endorsement calling her uniquely qualified. The instruction to keep the script secret demonstrates a consciousness that the process violated the DNC's rules for open and fair elections.",
         "evidencePoints": [
-          "A script marked 'DRAFT SCRIPT - do not share' proves consciousness of wrongdoing.",
-          "The script dictated that 'Mary Ann nominates Hollis Lewis.'",
-          "The script instructed Vickers to nominate herself for Parliamentarian.",
-          "It included a pre-written endorsement calling her 'no one else remotely qualified.'",
-          "As Parliamentarian, Vickers controlled procedures, interpretations, and the official records."
+          "A script marked 'DRAFT SCRIPT - do not share' proves the process was pre-arranged and concealed.",
+          "The script dictated specific nominations and provided verbatim speeches for participants to read.",
+          "The script directed the author, Selina Vickers, to be nominated for Parliamentarian/Secretary.",
+          "It included a pre-written endorsement stating 'no one else remotely qualified.'",
+          "It contained pre-planned tactics to challenge observers and manage dissent from the Party Chair."
         ],
         "proofs": [
           {
-            "title": "Invalid Leadership Selection Procedure",
+            "title": "PROOF: AAC Leadership Selection Was Procedurally Invalid",
             "slug": "invalid-leadership-selection-procedure"
           },
           {
-            "title": "Script Author's Self-Appointment",
+            "title": "PROOF: Script Author Orchestrated Her Own Appointment to a Key Role",
             "slug": "script-author-self-appointment"
-          }
-        ],
-        "consequence": "The person charged with ensuring a fair process instead rigged it for her own power. Every 'vote' was theater. Democracy was replaced with a script."
-      },
-      {
-        "title": "The Ringer: An Undisclosed Conflict of Interest Corrupted the Process",
-        "keyEvidence": "When democracy blocked their agenda, they brought in PDPR founder Larry Taylor—without disclosing he was Vickers' political partner who trains activists to 'beat the establishment.'",
-        "summary": "People for Democratic Party Reform (PDPR) teaches how to 'use rules, procedures and bylaws to beat the establishment at their own game.' Their WV Chair? Selina Vickers. Their founder? Larry Taylor. When the committee democratically rejected restrictive rules, Vickers brought in Taylor to 'preside' over forcing them through—without telling members about their PDPR connection.",
-        "evidencePoints": [
-          "In August, the committee democratically rejected restrictive rules proposed by leadership.",
-          "In September, Larry Taylor was brought in to preside over the next meeting as an 'impartial' expert.",
-          "Leadership failed to disclose Taylor's role as the founder of PDPR.",
-          "Leadership failed to disclose Vickers' role as PDPR's West Virginia Chair.",
-          "Leadership failed to disclose their partnership in training activists on procedural manipulation.",
-          "Under Taylor's direction, the previously rejected rules were forced through."
-        ],
-        "proofs": [
+          },
           {
-            "title": "Undisclosed Conflict of Interest Corrupted Committee Process",
-            "slug": "undisclosed-conflict-of-interest-larry-taylor"
+            "title": "PROOF: Script Reveals Pre-Planned Strategy to Control Meeting and Dissent",
+            "slug": "script-reveals-plan-to-control-dissent"
           }
         ],
-        "consequence": "Democracy was overruled by deception. Members thought they were getting a neutral referee. They got Vickers' business partner executing their shared playbook."
+        "consequence": "The official tasked with ensuring a fair process instead engineered a controlled one that guaranteed her own appointment to a position of power. The election was a formality executing a pre-determined script."
       }
     ],
     "conclusion": {
-      "headline": "They Knew. They Planned. They Executed.",
-      "summary": "This wasn't incompetence—it was a conspiracy that demonstrated a clear consciousness of guilt. The script proves premeditation. The PDPR connection proves methodology. Selina Vickers orchestrated a hostile takeover of West Virginia's diversity initiative, turning minority empowerment into minority exclusion. The committee born from this fraudulent process lacks any legitimate authority."
+      "headline": "A Foundationally Corrupt Process",
+      "summary": "The evidence does not suggest procedural error; it documents a deliberate circumvention of established rules. The intentional exclusion of mandated caucuses and the use of a secret script to control the outcome prove a pattern of conduct that rendered the committee's formation illegitimate under the terms of the governing DNC MOU."
     },
     "nextBrief": {
-      "text": "Next: How they crushed anyone who dared to object.",
-      "slug": "systematic-suppression-of-dissent"
+      "text": "Next: The Campaign to Silence Dissent",
+      "slug": "the-campaign-to-silence-dissent"
     }
   },
   {
-    "slug": "systematic-suppression-of-dissent",
-    "headline": "A Systematic Campaign to Crush Minority Dissent",
-    "lede": "When elected Indigenous and Black caucus leaders realized they'd been played, they spoke up. What followed was a systematic campaign of destruction: A DNC official advised leadership on how to neutralize them. Vickers orchestrated smear campaigns. Their votes were nullified. They were branded 'dangerous.' This is how the Democratic Party systematically dismantled its own minority leaders who dared dissent.",
-    "reviewDate": "2024-12-01",
+    "slug": "the-campaign-to-silence-dissent",
+    "headline": "A Coordinated Campaign to Suppress Dissent",
+    "lede": "Once installed via a flawed process, the Affirmative Action Committee leadership waged a systematic campaign to silence opposition, a strategy advised by a DNC official. The evidence shows this campaign involved three tactics: first, executing a coordinated smear campaign to discredit dissenting minority leaders; second, unilaterally nullifying a democratic vote to exclude those same leaders from subcommittees; and third, using procedural manipulation to circumvent party rules and consolidate control.",
     "violations": [
       {
-        "title": "The DNC's Betrayal: A Supervisor Advised Suppression",
-        "keyEvidence": "While his duty was to ensure fairness, DNC Rules Committee member Harold Ickes instead advised party leadership on how to 'outvote' and neutralize the very minority leaders he was supposed to be supervising.",
-        "summary": "Harold Ickes wasn't just any DNC official—he sat on the Rules & Bylaws Committee supervising this process. His job was ensuring fairness. Instead, he coached Selina Vickers, a non-voting parliamentarian, on how to 'outvote' the elected Indigenous and Black caucus chairs. The supervisor became the saboteur.",
+        "title": "Violation: A DNC-Advised Smear Campaign",
+        "keyEvidence": "In an email, a committee co-chair recounted DNC official Harold Ickes' admission that he 'advised Selina [Vickers] to 'outvote' Seth, Mari, and others.'",
+        "summary": "A DNC Rules & Bylaws Committee member, whose role was to ensure fair supervision, instead provided strategic advice to the unelected Parliamentarian on how to neutralize the votes of elected minority caucus leaders. This strategy was then executed through a multi-pronged smear campaign involving covertly scripted personal attacks and overt public accusations.",
         "evidencePoints": [
-          "Harold Ickes was the DNC Rules & Bylaws Committee member assigned to this process.",
-          "His official role was to provide 'supervision and technical assistance.'",
-          "His actual advice to leadership was to 'outvote' the elected minority leaders.",
-          "The targets of this advice were the duly-elected chairs of the Indigenous and Black caucuses.",
-          "The DNC's designated supervisor actively corrupted the process he was assigned to protect."
+          "A DNC official advised a non-voting appointee on how to politically sideline elected committee members.",
+          "The Parliamentarian scripted a point-by-point rebuttal for another member to use against a dissenter, with instructions to conceal her authorship.",
+          "A dissenting co-chair was targeted with a 'vicious rumor' that he was a 'dangerous person capable of violence.'",
+          "Another member launched a public social media campaign, labeling a dissenter a 'toxic bully and AA committee saboteur.'"
         ],
         "proofs": [
           {
-            "title": "DNC Official Violated MOU by Advising Dissent Suppression",
+            "title": "PROOF: DNC Official Violated 2020 MOU by Advising Appointee on Strategy to Undermine Dissenting Committee Members",
             "slug": "dnc-official-violates-mou-by-advising-dissent-suppression"
-          }
-        ],
-        "consequence": "The DNC didn't just fail to protect minority voices—it actively conspired to silence them. Trust in the national party's commitment to diversity was shattered."
-      },
-      {
-        "title": "The Smear Campaign: Dissenters Were Branded 'Dangerous'",
-        "keyEvidence": "A secret script and a vicious rumor: Vickers orchestrated attacks, instructing allies 'DO NOT FORWARD THIS EMAIL' while spreading rumors that a dissenter was 'dangerous.'",
-        "summary": "When procedural tricks weren't enough, they got personal. Vickers secretly wrote attack scripts for others to use, hiding her authorship. She spread what the Indigenous Caucus chair called 'a vicious rumor that I am dangerous.' A coordinated social media campaign branded dissenters as 'toxic bullies and saboteurs.' This wasn't politics—it was character assassination.",
-        "evidencePoints": [
-          "Vickers secretly authored attack scripts, instructing allies 'DO NOT FORWARD THIS EMAIL.'",
-          "She concealed her authorship while orchestrating the attacks against dissenters.",
-          "She spread a vicious rumor that a dissenting minority leader was 'dangerous.'",
-          "A coordinated social media campaign branded dissenters as 'toxic bullies and saboteurs.'",
-          "Elected minority caucus leaders were targeted with multi-day public harassment."
-        ],
-        "proofs": [
+          },
           {
-            "title": "Coordinated Smear Campaign Against Dissenters",
+            "title": "PROOF: A Coordinated Smear Campaign Was Used to Discredit and Isolate Dissenting AAC Members",
             "slug": "coordinated-smear-campaign-against-dissenters"
           }
         ],
-        "consequence": "Elected minority leaders were personally destroyed for defending their communities' rights. The message to others was clear: speak up and we'll ruin you."
+        "consequence": "A hostile environment was created to intimidate, isolate, and neutralize the voices of specific elected minority members, fulfilling the DNC official's strategic advice."
       },
       {
-        "title": "The Procedural Weapon: Democratic Votes Were Nullified",
-        "keyEvidence": "After the committee voted for inclusive subcommittees, leadership declared 'by appointment only' and excluded Indigenous and Black chairs.",
-        "summary": "The PDPR playbook's ultimate weapon: when you lose a vote, declare it void. The committee democratically chose volunteer-based subcommittees. Leadership simply announced it would be 'by appointment' instead. They then denied seats to the Indigenous and Black caucus chairs. When caught mislabeling bylaws to avoid notice requirements, they brought in their PDPR colleague to ram them through anyway.",
+        "title": "Violation: Procedural Manipulation to Overturn Democratic Outcomes",
+        "keyEvidence": "After the full committee voted for an inclusive subcommittee system, leadership unilaterally declared that 'subcommittee membership will be by appointment' and excluded the chairs of the Indigenous and Black caucuses.",
+        "summary": "Leadership repeatedly used procedural tactics to subvert the committee's democratic will. This included nullifying a valid vote, mislabeling bylaws as 'procedural rules' to evade the 30-day notice requirement, and installing an external presider with an undisclosed conflict of interest to force through previously rejected measures. These actions were not administrative errors, but a calculated pattern of manipulation.",
         "evidencePoints": [
-          "The committee voted democratically for volunteer-based subcommittees.",
-          "Leadership unilaterally overrode the vote, declaring subcommittees would be 'by appointment only.'",
-          "They subsequently denied appointments to the Indigenous and Black Caucus chairs.",
-          "Bylaws were intentionally mislabeled as 'procedural rules' to evade the 30-day notice requirement.",
-          "When a member exposed the scheme, PDPR founder Larry Taylor was brought in to force the adoption.",
-          "The WVDP's own Appeals Board later ruled the entire meeting and its outcomes were invalid."
+          "Leadership ignored a democratic vote for a volunteer-based system, imposed an appointment-only system, and excluded minority chairs.",
+          "An expert in procedural tactics deliberately mislabeled bylaws to circumvent the party's 30-day notice rule, denying members time for review.",
+          "Leadership installed an external presider without disclosing his business partnership with the committee's Parliamentarian.",
+          "Under this conflicted presider, the committee passed restrictive rules it had previously rejected in open debate."
         ],
         "proofs": [
           {
-            "title": "Leadership Nullifies Vote to Exclude Caucuses",
+            "title": "PROOF: AAC Nullified Valid Vote to Exclude Minority Caucus Chairs",
             "slug": "leadership-nullifies-vote-to-exclude-caucuses"
           },
           {
-            "title": "The PDPR Playbook and the Bylaw Mislabeling Scheme",
+            "title": "PROOF: DNC-Appointed Official Deliberately Mislabeled Bylaws as 'Procedural Rules'",
             "slug": "pdpr-playbook-bylaws-mislabeling-scheme"
+          },
+          {
+            "title": "PROOF: Undisclosed Conflict of Interest with External Actor Corrupted Committee Process",
+            "slug": "undisclosed-conflict-of-interest-larry-taylor"
           }
         ],
-        "consequence": "Democracy became meaningless. Votes only counted if leadership won. The two minority leaders who fought back were systematically stripped of any power to effect change."
+        "consequence": "Democratic outcomes were systematically overturned. Members were disenfranchised through a pattern of unethical procedural tactics designed to consolidate leadership's control."
       }
     ],
     "conclusion": {
-      "headline": "A Masterclass in Minority Suppression",
-      "summary": "This wasn't random retaliation—it was systematic suppression following the PDPR playbook. Corrupt their process. Destroy their character. Strip their power. The Indigenous and Black leaders who stood up for their communities were crushed as examples to others. Harold Ickes provided the strategy. Selina Vickers executed it. The Democratic Party enabled it. The minority communities of West Virginia were left with no authentic representation, only appointed puppets."
+      "headline": "A Pattern of Unethical Power Consolidation",
+      "summary": "The evidence documents a methodical campaign to entrench power and silence dissent. The combination of high-level strategic advice, personal attacks, and repeated procedural manipulation demonstrates that these actions were not legitimate governance but a coordinated effort to undermine the committee's democratic function."
     },
     "nextBrief": {
-      "text": "Next: The financial crimes they thought they could hide.",
-      "slug": "a-new-day-pac-campaign-finance-violations"
+      "text": "Next: Financial & Campaign Misconduct",
+      "slug": "financial-campaign-misconduct"
     }
   },
   {
-    "slug": "a-new-day-pac-campaign-finance-violations",
-    "headline": "Forged Signatures & Hidden Money",
-    "lede": "When the treasurer of A New Day PAC resigned over 'ethical concerns,' someone kept filing reports with her signature anyway. When the PAC ran a scholarship program, they reported zero dollars spent. These aren't accounting errors—they're crimes. And the trail leads back to the same network that corrupted the AAC.",
-    "reviewDate": "2024-12-01",
+    "slug": "financial-campaign-misconduct",
+    "headline": "Unlawful Political Financing and Misuse of Resources",
+    "lede": "A private PAC linked to a party officer engaged in unlawful campaign finance practices. The evidence proves two distinct violations of state law: first, the PAC used official, restricted party email lists for fundraising without reporting the required in-kind contribution; and second, the PAC operated a public scholarship program while reporting none of its financial activity on its sworn disclosure forms.",
     "violations": [
       {
-        "title": "The Forgery: PAC Reports Were Filed with a Forged Signature",
-        "keyEvidence": "Kim Felix resigned as treasurer. Reports filed after her resignation bore her signature. Felix confirmed in a sworn statement: 'I did not sign these.'",
-        "summary": "Kim Felix saw something that made her resign as PAC treasurer, citing 'ethical concerns.' But her resignation created a problem—PACs need a treasurer's signature to file reports. Their solution? Forge it. Multiple sworn financial documents filed with the state bore Felix's signature after she'd walked away. She confirmed in a witness statement: she never signed them. Someone committed forgery on official state documents.",
+        "title": "Violation: Unreported In-Kind Contribution for Use of Party Resources",
+        "keyEvidence": "On August 22, 2023, the 'A New Day PAC' used the official WVDP County Chairs email list for promotion. The PAC’s corresponding sworn financial report for Q3 2023 lists $0.00 in in-kind contributions received.",
+        "summary": "State campaign finance law requires any 'thing of value' provided to a political committee, such as a restricted email list, to be reported as an in-kind contribution. A New Day PAC used a valuable party asset for its own promotion but failed to disclose this subsidy on its sworn financial reports, a violation of state law.",
         "evidencePoints": [
-          "Treasurer Kim Felix resigned from the PAC, citing 'ethical concerns.'",
-          "Financial reports filed *after* her resignation continued to bear her signature.",
-          "Felix provided a sworn statement confirming: 'I did not sign these reports.'",
-          "Under state law, only the treasurer can legally sign and submit these sworn financial documents.",
-          "Filing a false sworn statement is a criminal offense under WV Code §3-8-5."
+          "The PAC used a restricted, official party email list to solicit participation and funds.",
+          "Use of this list constitutes a 'thing of value' under campaign finance law.",
+          "The PAC was legally required to report the source and fair market value of this contribution.",
+          "The PAC's sworn financial statement for the period shows it received no in-kind contributions."
         ],
         "proofs": [
           {
-            "title": "PAC Treasurer's Signature Was Forged",
-            "slug": "pac-treasurer-signature-forgery"
+            "title": "PROOF: Private PAC Used Official Party Resources Without Disclosure",
+            "slug": "pac-uses-party-resources-no-disclosure"
           }
         ],
-        "consequence": "Someone committed criminal forgery to hide what made the treasurer flee. The public was deceived. The state was defrauded. And whoever signed Felix's name committed a felony."
+        "consequence": "The PAC received an illegal, undisclosed subsidy from the state party and filed a materially incomplete financial report that concealed this fact from the public."
       },
       {
-        "title": "The Black Hole: An Unreported Scholarship Program Concealed Transactions",
-        "keyEvidence": "August 22, 2023: PAC advertises scholarships. Q3 2023 report: Zero dollars reported.",
-        "summary": "Political money has one sacred rule: every dollar must be tracked. A New Day PAC brazenly violated it. They publicly solicited scholarship applications for training programs. But when their Q3 2023 financial report came due, they reported exactly zero dollars in expenditures and zero in-kind contributions. The scholarships existed—the money vanished. This is how dark money works.",
+        "title": "Violation: Concealment of a Scholarship Program from Financial Disclosures",
+        "keyEvidence": "The PAC publicly solicited applications for a scholarship program on August 22, 2023, yet its financial report for that period shows no expenditures for scholarships nor any in-kind contributions of training.",
+        "summary": "A scholarship program must have financial activity; either the PAC paid for the training (an expenditure) or the training was donated (an in-kind contribution). State law requires all such transactions to be reported. By reporting neither, A New Day PAC effectively erased its entire scholarship program from its legally required financial disclosures.",
         "evidencePoints": [
-          "On August 22, 2023, the PAC publicly solicited applications for a scholarship program.",
-          "Fact: The scholarship provided political training from PDPR, a paid consultant.",
-          "Fact: The PAC's official Q3 2023 financial report lists $0.00 in expenditures.",
-          "Fact: The report also lists $0.00 in in-kind contributions for the same period.",
-          "Conclusion: The PAC illegally concealed the source and destination of funds for its scholarship program, leaving the public in the dark."
+          "The PAC publicly solicited applications for a scholarship program.",
+          "A scholarship transaction must be either an expenditure or an in-kind contribution.",
+          "The PAC's sworn financial report for the period shows zero expenditures for training scholarships.",
+          "The same report shows zero in-kind contributions from the training provider."
         ],
         "proofs": [
           {
-            "title": "Unreported PAC Scholarship Program",
+            "title": "PROOF: Unreported Financial Activity - The Scholarship Program",
             "slug": "unreported-pac-scholarship-program"
           }
         ],
-        "consequence": "Campaign finance laws exist to prevent corruption by requiring transparency. This PAC operated a black box—money in, money out, no trace. The public cannot track who funded this political training or who received it. Democracy requires daylight. This PAC chose darkness."
+        "consequence": "The PAC's sworn financial statements are materially incomplete, hiding an entire program's financial activity from public scrutiny and denying transparency into who funded it and who benefited."
       }
     ],
     "conclusion": {
-      "headline": "The Money Always Tells The Truth",
-      "summary": "Follow the money and you find the truth. A treasurer flees over 'ethics.' Her signature gets forged. A scholarship program operates in shadow. Zero dollars reported. This isn't sloppy bookkeeping—it's deliberate concealment. The same network that stole democracy from West Virginia's minorities (PDPR) was being paid by a PAC that forged documents and hid transactions. The corruption wasn't just procedural. It was financial. It was criminal. And they thought they'd never get caught."
-    },
-    "nextBrief": null
+      "headline": "A Pattern of Financial Obfuscation",
+      "summary": "The PAC's reporting failures are not clerical errors but significant violations of state campaign finance law. By concealing the use of party resources and omitting an entire program from its sworn disclosures, the PAC has obscured the true nature of its funding and activities, undermining the public's right to transparent political financing."
+    }
   }
 ]

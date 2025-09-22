@@ -1,64 +1,64 @@
 [
   {
-    "id": "overproof-the-aac-formation-conspiracy",
-    "slug": "the-aac-formation-conspiracy",
-    "title": "The AAC Formation Conspiracy",
-    "reviewDate": "2024-12-01",
-    "short_title": "AAC Formation",
-    "umbrella_category": "The AAC Formation Conspiracy",
-    "summary": "This record proves how party insiders executed a scripted plan to form the Affirmative Action Committee while deliberately sidelining the mandated diversity caucuses and DNC supervision.",
-    "narrative": "These proofs reconstruct the premeditated plan used to illegally form the Affirmative Action Committee. While the 2020 DNC MOU legally required a caucus-driven process under DNC oversight, organizers instead executed their plan using a secret 'do not share' script that pre-selected officers, installed its author into a position of power, and neutralized dissent. The documentary evidence reveals a clear pattern of intentional non-compliance: knowing the caucuses were missing, installing loyal leadership in violation of the rules, and managing the fallout. This was not a procedural error; it was a foundational breach of the agreement.",
+    "id": "overproof-the-illegitimate-formation",
+    "slug": "the-illegitimate-formation",
+    "title": "Case 1: An Illegitimate Committee Forged in Secret",
+    "reviewDate": "2025-09-22",
+    "short_title": "Illegitimate Formation",
+    "umbrella_category": "The Illegitimate Formation",
+    "summary": "This case proves that organizers used a secret script to deliberately exclude mandated minority caucuses and install a pre-selected leadership, violating the 2020 DNC MOU from the outset.",
+    "narrative": "The 2020 DNC Memorandum of Understanding (MOU) legally required an open, transparent, and caucus-driven process to form the West Virginia Affirmative Action Committee. These proofs reconstruct how organizers executed a premeditated plan to circumvent that mandate. Using a secret 'do not share' script, they inverted the required process, installed leaders before 75% of the required caucuses existed, and orchestrated the appointment of the script's own author to a position of procedural power. The documentary evidence reveals a clear pattern of intentional non-compliance. This was not a procedural error; it was a foundational breach of the agreement.",
     "key_points": [
-      "The 2020 DNC MOU created a legal duty for organizers to ensure fully constituted diversity caucuses selected AAC leadership under DNC supervision; organizers deliberately proceeded with the formation despite knowing these conditions were not met.",
-      "A secret script, authored and distributed by the MOU compliance officer Selina Vickers, proves premeditated control of the meeting by choreographing nominations, planning rebuttals, and orchestrating her own installation as parliamentarian.",
-      "The use of conflicted allies like Larry Taylor and the inclusion of tactics to neutralize criticism demonstrate a clear consciousness of wrongdoing and a coordinated effort to protect the illegitimate formation process."
+      "The DNC MOU created a legal duty to ensure fully-formed diversity caucuses selected the committee's leadership; organizers deliberately proceeded with the formation despite knowing this condition was not met.",
+      "A secret script, authored and distributed by the MOU compliance officer, proves premeditated control by choreographing nominations and orchestrating her own installation as Parliamentarian.",
+      "The process was designed to exclude, not include, disenfranchising the Latino, AAPI, and Native American communities at the moment of the committee's creation."
     ],
     "metadata": {
-      "Timeframe": "June–September 2021",
-      "Focus": "Formation of the West Virginia Affirmative Action Committee",
-      "Primary Documents": "2020 DNC MOU, Selina Vickers formation script, witness statements"
+      "Timeframe": "June 2021",
+      "Focus": "WVDP Affirmative Action Committee Formation",
+      "Primary Documents": "2020 DNC MOU, Formation Script & Emails"
     },
     "order": 1
   },
   {
-    "id": "overproof-systematic-suppression-of-dissent",
-    "slug": "systematic-suppression-of-dissent",
-    "title": "Systematic Suppression of Dissent",
-    "reviewDate": "2024-12-01",
-    "short_title": "Suppression of Dissent",
-    "umbrella_category": "Systematic Suppression of Dissent",
-    "summary": "This record documents how DNC partners and AAC leadership unleashed a multi-front strategy to silence elected caucus voices, overturn democratic decisions, and consolidate control.",
-    "narrative": "Once the illegitimate AAC was installed, any member who dissented was met with a coordinated suppression campaign. The proofs in this record document a DNC official advising appointees on how to 'outvote' elected members, leadership unilaterally nullifying valid votes to exclude Indigenous and Black chairs, and procedural maneuvers that deliberately disguised bylaw amendments as 'temporary rules' to evade notice requirements. Public smear campaigns and the weaponization of disciplinary procedures completed the playbook, ensuring reformers were isolated while insiders cemented their control.",
+    "id": "overproof-the-campaign-to-silence-dissent",
+    "slug": "the-campaign-to-silence-dissent",
+    "title": "Case 2: The Campaign to Silence Dissent",
+    "reviewDate": "2025-09-22",
+    "short_title": "Silencing Dissent",
+    "umbrella_category": "The Campaign to Silence Dissent",
+    "summary": "After seizing control, the illegitimate leadership executed a coordinated campaign of smear tactics and procedural manipulation to neutralize and disenfranchise elected minority representatives.",
+    "narrative": "Lacking the legitimacy of a fair and open formation, the newly installed Affirmative Action Committee leadership resorted to a systematic campaign to entrench its power and silence opposition. With strategic advice from a DNC official to 'outvote' dissenters, the leadership executed a multi-pronged attack. This involved coordinated smear campaigns to discredit minority caucus leaders, the unilateral nullification of democratic votes, and the repeated use of deceptive procedural tactics—such as mislabeling bylaws and installing a biased presider—to overturn outcomes they disagreed with. This was not governance; it was a coordinated effort to undermine the committee's democratic function.",
     "key_points": [
-      "A senior DNC official breached his duty of neutrality by advising allies on specific tactics to overwhelm and neutralize elected minority members, directly violating the MOU's promise of equal participation.",
-      "Leadership systematically invalidated democratic votes, rewrote rules, and deliberately mislabeled binding bylaws as 'procedural rules' to illegally strip caucus chairs of their authority and exclude them from critical committees.",
-      "Coordinated smear campaigns, false rumors, and the threat of disciplinary action were deployed to publicly discredit dissenting members and chill any further resistance to leadership's agenda."
+      "A DNC official advised a non-voting appointee on a strategy to 'outvote' and neutralize elected, dissenting members from minority caucuses.",
+      "Leadership executed a coordinated smear campaign, scripting personal attacks for others to deliver and spreading damaging rumors to isolate dissenters.",
+      "Democratic outcomes were systematically subverted through procedural manipulation, including nullifying votes and using an external actor with an undisclosed conflict of interest."
     ],
     "metadata": {
-      "Timeframe": "2021–2022 AAC operations",
-      "Focus": "Retaliation against minority caucus leadership and reform advocates",
-      "Primary Documents": "Harold Ickes correspondence, AAC meeting records, disciplinary filings"
+      "Timeframe": "August–September 2021",
+      "Focus": "AAC Governance, Procedural Violations, Suppression of Members",
+      "Primary Documents": "Committee Emails & Transcripts, WVDP Appeals Board Ruling"
     },
     "order": 2
   },
   {
-    "id": "overproof-wv-democratic-party-dnc-violations",
-    "slug": "wv-democratic-party-dnc-violations",
-    "title": "WV Democratic Party & DNC Violations",
-    "reviewDate": "2024-12-01",
-    "short_title": "WV Democratic Party & DNC",
-    "umbrella_category": "WV Democratic Party & DNC Violations",
-    "summary": "How the West Virginia Democratic Party and the DNC's Rules and Bylaws Committee systematically dismantled the MOU-mandated diversity process, violating their contractual and fiduciary duties.",
-    "narrative": "This overproof documents the systemic breach of the 2020 diversity reform agreement. It proves how party insiders used secret scripts and procedural manipulation to seize control of the Affirmative Action Committee while actively sidelining the very caucuses the MOU was created to empower. The proofs establish a pattern of deliberate noncompliance, retaliatory campaigns against dissenters, and a complete failure of the DNC's supervisory duty, which allowed the breach to persist and the goals of the MOU to be defeated.",
+    "id": "overproof-financial-campaign-misconduct",
+    "slug": "financial-campaign-misconduct",
+    "title": "Case 3: Financial & Campaign Misconduct",
+    "reviewDate": "2025-09-22",
+    "short_title": "Financial Misconduct",
+    "umbrella_category": "Financial & Campaign Misconduct",
+    "summary": "A private PAC connected to a party officer violated state campaign finance law by using party resources without disclosure and concealing an entire program from its sworn financial reports.",
+    "narrative": "This case documents a pattern of unlawful campaign finance activity by the 'A New Day PAC.' The evidence proves two distinct violations of state law that deny public transparency. First, the PAC gained an improper subsidy by using official, restricted party email lists for its own fundraising and failed to report this legally required in-kind contribution. Second, the PAC publicly solicited applications for a scholarship program but then erased all financial activity related to that program from its sworn disclosure forms. These actions are not clerical errors; they are significant violations that obscure the true nature of the PAC's funding and activities.",
     "key_points": [
-      "The 2020 DNC MOU was a binding agreement that required a caucus-first formation of the AAC and direct supervision by the DNC's Rules & Bylaws Committee.",
-      "Party insiders violated this agreement by pre-selecting leadership with a hidden script while actively blocking the mandated Latino, AAPI, and Native caucuses from organizing.",
-      "The DNC's designated supervisor not only failed to stop the breach but actively advised insiders on tactics to neutralize the few minority leaders who gained representation."
+      "A private PAC used the official party email list for fundraising but illegally failed to report it as a required in-kind contribution, concealing an improper subsidy.",
+      "The PAC operated a public scholarship program but reported none of its financial activity—either expenditures or in-kind donations—on its sworn disclosure forms.",
+      "These omissions rendered the PAC's sworn financial statements materially incomplete and concealed its activities from required public scrutiny."
     ],
     "metadata": {
-      "Timeframe": "2020–2022 reform process",
-      "Focus": "Affirmative Action Committee implementation and RBC oversight",
-      "Primary Documents": "2020 DNC MOU, internal scripts, witness statements, disciplinary records"
+      "Timeframe": "August–October 2023",
+      "Focus": "Campaign Finance Violations, A New Day PAC",
+      "Primary Documents": "WV Secretary of State Filings, PAC Promotional Emails"
     },
     "order": 3
   }
