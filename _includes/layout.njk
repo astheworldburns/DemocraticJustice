@@ -118,7 +118,7 @@
   </nav>
 
   <main id="main">
-    {{ content }}
+    {{ content | safe }}
   </main>
 
   {% if site.mobileNavBreakpoint %}
