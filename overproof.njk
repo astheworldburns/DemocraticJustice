@@ -65,45 +65,50 @@ eleventyComputed:
     {% set overproof = overproofGroup.overproof %}
     {% set brief = overproof.brief %}
 
-    <p class="section-label">Proof Record</p>
-    <h1>{{ (brief and brief.headline) or overproof.title }}</h1>
+    <header class="overproof-hero">
+      <div class="overproof-hero__content">
+        <p class="section-label">Proof Record</p>
+        <h1>{{ (brief and brief.headline) or overproof.title }}</h1>
 
-    {% set heroSummary = (brief and brief.lede) or overproof.summary %}
-    {% if heroSummary %}
-    <p class="lead">{{ heroSummary }}</p>
-    {% endif %}
+        {% set heroSummary = (brief and brief.lede) or overproof.summary %}
+        {% if heroSummary %}
+        <p class="lead overproof-hero__lede">{{ heroSummary }}</p>
+        {% endif %}
 
-    {% if overproof.narrative %}
-    <div class="overproof-narrative rich-text">
-      <p>{{ overproof.narrative | safe }}</p>
-    </div>
-    {% endif %}
-
-    <div class="overproof-details">
-      {% if overproof.metadata %}
-      <div>
-        <h2 class="h4">Record Metadata</h2>
-        <dl class="overproof-metadata">
-          {% for key, value in overproof.metadata %}
-          <div class="overproof-metadata__item">
-            <dt class="overproof-metadata__term">{{ key }}</dt>
-            <dd class="overproof-metadata__definition">{{ value }}</dd>
-          </div>
-          {% endfor %}
-        </dl>
+        {% if overproof.narrative %}
+        <div class="overproof-narrative rich-text">
+          {{ overproof.narrative | safe }}
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
 
-      <div>
-        <h2 class="h4">Proof Count</h2>
-        <p class="overproof-proof-count">{{ overproof.proofCount or (overproofGroup.proofs | length) }} proofs documented</p>
+      <div class="overproof-hero__aside">
+        <div class="overproof-stat-card">
+          <span class="overproof-stat-card__label">Proofs documented</span>
+          <span class="overproof-stat-card__value">{{ overproof.proofCount or (overproofGroup.proofs | length) }}</span>
+          <span class="overproof-stat-card__footnote">Across this record</span>
+        </div>
+
+        {% if overproof.metadata %}
+        <div class="overproof-meta-card">
+          <h2 class="overproof-meta-card__title">Record Metadata</h2>
+          <dl class="overproof-metadata">
+            {% for key, value in overproof.metadata %}
+            <div class="overproof-metadata__item">
+              <dt class="overproof-metadata__term">{{ key }}</dt>
+              <dd class="overproof-metadata__definition">{{ value }}</dd>
+            </div>
+            {% endfor %}
+          </dl>
+        </div>
+        {% endif %}
       </div>
-    </div>
+    </header>
 
     {% if overproof.key_points and overproof.key_points | length %}
-    <section class="overproof-key-points" aria-labelledby="overproof-key-points-heading">
-      <h2 id="overproof-key-points-heading" class="h4">Key Findings</h2>
-      <ul>
+    <section class="overproof-section overproof-key-points" aria-labelledby="overproof-key-points-heading">
+      <h2 id="overproof-key-points-heading">Key Findings</h2>
+      <ul class="overproof-key-points__list">
         {% for point in overproof.key_points %}
         <li>{{ point }}</li>
         {% endfor %}
@@ -112,56 +117,64 @@ eleventyComputed:
     {% endif %}
 
     {% if brief and brief.violations and brief.violations | length %}
-    <section class="brief-violations" aria-labelledby="brief-violations-heading">
-      <h2 id="brief-violations-heading">Documented Violations</h2>
-      {% for violation in brief.violations %}
-      <article class="brief-violation" style="border-top: 1px solid var(--muted-border, rgba(0,0,0,0.1)); padding-top: 1.5rem; margin-top: 1.5rem;">
-        <h3>{{ violation.title }}</h3>
-        {% if violation.keyEvidence %}
-        <blockquote>
-          <p>{{ violation.keyEvidence }}</p>
-        </blockquote>
-        {% endif %}
-        {% if violation.summary %}
-        <p>{{ violation.summary }}</p>
-        {% endif %}
-        {% if violation.consequence %}
-        <p class="violation-consequence"><strong>Consequence:</strong> {{ violation.consequence }}</p>
-        {% endif %}
-        {% if violation.evidencePoints and violation.evidencePoints | length %}
-        <ul>
-          {% for point in violation.evidencePoints %}
-          <li>{{ point }}</li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-        {% if violation.proofs and violation.proofs | length %}
-        <div class="brief-proof-links">
-          <h4 class="sr-only">Related proofs</h4>
-          <ul>
-            {% for proof in violation.proofs %}
-            <li>
-              <a href="{{ '/proofs/' | url }}{{ overproof.slug }}/{{ proof.slug }}/" rel="noopener">{{ proof.title }}</a>
-            </li>
+    <section class="overproof-section brief-violations" aria-labelledby="brief-violations-heading">
+      <div class="overproof-section__header">
+        <h2 id="brief-violations-heading">Documented Violations</h2>
+        <p class="overproof-section__meta">{{ brief.violations | length }} incidents traced in this record</p>
+      </div>
+      <div class="violation-grid">
+        {% for violation in brief.violations %}
+        <article class="violation-card">
+          <h3>{{ violation.title }}</h3>
+          {% if violation.keyEvidence %}
+          <blockquote class="violation-card__quote">
+            <p>{{ violation.keyEvidence }}</p>
+          </blockquote>
+          {% endif %}
+          {% if violation.summary %}
+          <p class="violation-card__summary">{{ violation.summary }}</p>
+          {% endif %}
+          {% if violation.consequence %}
+          <p class="violation-card__consequence"><span>Consequence</span>{{ violation.consequence }}</p>
+          {% endif %}
+          {% if violation.evidencePoints and violation.evidencePoints | length %}
+          <ul class="violation-card__list">
+            {% for point in violation.evidencePoints %}
+            <li>{{ point }}</li>
             {% endfor %}
           </ul>
-        </div>
-        {% endif %}
-      </article>
-      {% endfor %}
+          {% endif %}
+          {% if violation.proofs and violation.proofs | length %}
+          <div class="brief-proof-links">
+            <h4>Related proofs</h4>
+            <ul class="brief-proof-links__list">
+              {% for proof in violation.proofs %}
+              <li>
+                <a href="{{ '/proofs/' | url }}{{ overproof.slug }}/{{ proof.slug }}/" rel="noopener">{{ proof.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
     </section>
     {% endif %}
 
     {% if brief and brief.conclusion %}
-    <section class="brief-conclusion">
+    <section class="overproof-section brief-conclusion">
       <h2>{{ brief.conclusion.headline }}</h2>
       <p>{{ brief.conclusion.summary }}</p>
     </section>
     {% endif %}
 
-    <section aria-labelledby="overproof-proofs-heading">
-      <h2 id="overproof-proofs-heading">Proofs in this Record</h2>
-      <div class="case-grid" style="margin-top: 1.5rem;">
+    <section class="overproof-section overproof-proofs" aria-labelledby="overproof-proofs-heading">
+      <div class="overproof-section__header">
+        <h2 id="overproof-proofs-heading">Proofs in this Record</h2>
+        <p class="overproof-section__meta">{{ overproofGroup.proofs | length }} curated proofs</p>
+      </div>
+      <div class="case-grid">
         {% for proof in overproofGroup.proofs %}
         <article class="case-card" data-proof-id="{{ proof.case_id }}">
           <h3><a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/">{{ proof.title }}</a></h3>
@@ -176,13 +189,11 @@ eleventyComputed:
       </div>
     </section>
 
-    {% if brief and brief.nextBrief %}
-    <div class="brief-next" style="margin-top: 2.5rem;">
+    <div class="overproof-actions">
+      {% if brief and brief.nextBrief %}
       <a href="{{ '/proofs/' | url }}{{ brief.nextBrief.slug }}/" class="btn btn-outline-blue">{{ brief.nextBrief.text }}</a>
-    </div>
-    {% endif %}
+      {% endif %}
 
-    <div style="margin-top: 2.5rem;">
       <a href="{{ '/archive' | url }}" class="btn btn-outline-blue">Return to Proof Archive</a>
     </div>
   </div>
