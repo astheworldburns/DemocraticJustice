@@ -520,60 +520,7 @@
     "violation": "Using a conflicted, external presiding officer with an undisclosed agenda to push through disputed rules violates the DNC Charter’s guarantees of equal participation and fair process."
   },
   {
-  "case_id": "3.1",
-  "slug": "undisclosed-conflict-in-pac-trainings",
-  "title": "PROOF: PAC Leadership Concealed Financial Ties and Conflicts of Interest with a Paid Political Trainer",
-  "date": "2025-09-22",
-  "category": "Ethical & Bylaw Violation",
-  "umbrella_category": "The Covert Influence Campaign",
-  "overproof_slug": "the-covert-influence-campaign",
-  "stakes": "A private PAC misled its donors and the public by presenting a training program as a neutral educational opportunity, while concealing the fact that it was run by a paid political associate with a history of controversial involvement with the PAC's leadership.",
-  "thesis": "The 'A New Day' PAC promoted a training program run by Lawrence Taylor without disclosing that: 1) The PAC had a prior financial relationship with Taylor, and 2) Taylor was a close political associate of PAC Chair Selina Vickers, who had previously installed him to preside over a disputed AAC meeting.",
-  "axioms": [
-    {
-      "text": "The DNC Charter requires party officials to 'at all times conduct themselves in a manner that reflects creditably upon the office they serve,' which includes a duty of transparency regarding potential conflicts of interest.",
-      "citation": "DNC Charter, Article One, Sec. 4"
-    }
-  ],
-  "rule_summary": "Ethical conduct and the principle of transparency require political committees to disclose significant financial and political relationships with the vendors or individuals they promote, to prevent misleading donors and the public.",
-  "case_facts": [
-    {
-      "text": "Selina Vickers is the Chairperson and Treasurer of the 'A New Day' PAC[cite: 124, 125, 132, 133].",
-      "citation": "A NEW DAY Registration.pdf",
-      "url": "/files/A-NEW-DAY-Registration.pdf"
-    },
-    {
-      "text": "On December 9, 2022, the PAC paid Lawrence Taylor $257.55 for 'Consultant Fees,' establishing a prior financial relationship.",
-      "citation": "2022 Q4.pdf, p. 7",
-      "url": "/files/2022-Q4.pdf"
-    },
-    {
-      "text": "In August 2023, the PAC sent an email under Vickers' name promoting a training series and scholarship program run by Lawrence Taylor.",
-      "citation": "Gmail - Training - A New Day 2023.pdf, p. 1",
-      "url": "/files/Gmail-Training-A-New-Day-2023.pdf"
-    },
-    {
-      "text": "The promotional email failed to disclose the PAC's prior payment to Taylor or their shared leadership roles in the political organization PDPR[cite: 66, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115].",
-      "citation": "Gmail - Training - A New Day 2023.pdf; Gmail - Re: Updated agenda and information about presiding officer.pdf",
-      "url": "/files/Gmail-Training-A-New-Day-2023.pdf"
-    },
-    {
-      "text": "This is the same Lawrence Taylor who Vickers had previously installed to preside over a controversial AAC meeting, where their undisclosed relationship was a central point of protest[cite: 51, 59].",
-      "citation": "Gmail - Re: Updated agenda and information about presiding officer.pdf, p. 3",
-      "url": "/files/Gmail-Re-Updated-agenda-and-information-about-presiding-officer.pdf"
-    }
-  ],
-  "logic_chain": [
-    "The A New Day PAC, run by Selina Vickers, had a prior financial relationship with Larry Taylor.",
-    "Vickers and Taylor had a documented political relationship through PDPR and a controversial shared history from the AAC.",
-    "The PAC then used its resources to promote a new program run by Taylor.",
-    "The PAC concealed these prior financial and political connections from the public and the members it was soliciting for the program.",
-    "[DJ-MARK] This was not a neutral training opportunity; it was a PAC using its platform to promote a conflicted political associate while concealing the conflict."
-  ],
-  "violation": "The PAC leadership breached its duty of transparency to donors and the public by concealing significant conflicts of interest. They promoted a program run by a paid associate without disclosing their shared financial and controversial political history, misleading members about the true nature of the operation."
-},
-  {
-    "case_id": "3.2",
+    "case_id": "3.1",
     "slug": "unreported-pac-scholarship-program",
     "title": "PROOF: Unreported Financial Activity - The Scholarship Program",
     "date": "2025-09-11",
@@ -625,5 +572,33 @@
       "[DJ-MARK] The PAC's sworn financial disclosure reports omit all activity related to its scholarship program."
     ],
     "violation": "A New Day PAC violated state campaign finance law by failing to report the financial activity of its scholarship program in its Q3 2023 filing. This violation denies the public its statutory right to transparency and renders the PAC's sworn statement materially incomplete."
+  },
+  {
+    "case_id": "3.2",
+    "slug": "pac-uses-party-resources-no-disclosure",
+    "title": "PROOF: PAC Used Party Resources Without Reporting an In-Kind Contribution",
+    "date": "2025-09-12",
+    "category": "Campaign Finance Violation",
+    "umbrella_category": "PAC Activities and Financial Disclosures",
+    "overproof_slug": "pac-activities-and-disclosures",
+    "stakes": "A private PAC received an undisclosed subsidy from the state party.",
+    "thesis": "The 'A New Day' PAC used an official party email list for fundraising and failed to report the required in-kind contribution.",
+    "axioms": [
+      {
+        "text": "Any 'thing of value' provided to a political committee must be reported as an in-kind contribution.",
+        "citation": "WV SOS Campaign-Finance Guide"
+      }
+    ],
+    "case_facts": [
+      {
+        "text": "A promotional email for the 'A New Day' PAC was sent using the official WVDP County Chairs email list on August 22, 2023[cite: 74, 80].",
+        "citation": "A New Day Training Email, Aug 22, 2023"
+      },
+      {
+        "text": "The PAC's sworn Q3 2023 financial report for this period reported $0.00 in in-kind contributions.",
+        "citation": "A New Day PAC Q3 2023 Filing, p. 1"
+      }
+    ],
+    "violation": "The 'A New Day' PAC violated state campaign finance law by failing to report the WVDP email list usage as an in-kind contribution."
   }
 ]

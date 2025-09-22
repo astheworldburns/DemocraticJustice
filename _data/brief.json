@@ -1,7 +1,7 @@
 [
   {
     "slug": "the-illegitimate-formation",
-    "headline": "An Illegitimate Committee Forged in Secret",
+    "headline": "Violation: A Committee Forged in Secret",
     "lede": "The 2020 DNC Memorandum of Understanding (MOU) mandated an open, caucus-driven process to form West Virginia’s Affirmative Action Committee. The evidence proves this mandate was violated in two fundamental ways: first, organizers deliberately excluded 75% of the required minority caucuses, violating the MOU's 'caucus-first' principle. Second, they used a secret script, marked 'do not share,' to install a pre-selected slate of leaders, turning the election into a sham.",
     "violations": [
       {
@@ -69,7 +69,7 @@
   },
   {
     "slug": "the-campaign-to-silence-dissent",
-    "headline": "A Coordinated Campaign to Suppress Dissent",
+    "headline": "Violation: A Coordinated Campaign to Suppress Dissent",
     "lede": "Once installed via a flawed process, the Affirmative Action Committee leadership waged a systematic campaign to silence opposition, a strategy advised by a DNC official. The evidence shows this campaign involved three tactics: first, executing a coordinated smear campaign to discredit dissenting minority leaders; second, unilaterally nullifying a democratic vote to exclude those same leaders from subcommittees; and third, using procedural manipulation to circumvent party rules and consolidate control.",
     "violations": [
       {
@@ -126,55 +126,59 @@
       "summary": "The evidence documents a methodical campaign to entrench power and silence dissent. The combination of high-level strategic advice, personal attacks, and repeated procedural manipulation demonstrates that these actions were not legitimate governance but a coordinated effort to undermine the committee's democratic function."
     },
     "nextBrief": {
-      "text": "Next: Financial & Campaign Misconduct",
-      "slug": "financial-campaign-misconduct"
+      "text": "Next: Undisclosed Conflicts & Financial Misconduct",
+      "slug": "undisclosed-conflicts-and-financial-misconduct"
     }
   },
   {
-    "slug": "financial-campaign-misconduct",
-    "headline": "Unlawful Political Financing and Misuse of Resources",
-    "lede": "A private PAC linked to a party officer engaged in unlawful campaign finance practices. The evidence proves two distinct violations of state law: first, the PAC used official, restricted party email lists for fundraising without reporting the required in-kind contribution; and second, the PAC operated a public scholarship program while reporting none of its financial activity on its sworn disclosure forms.",
+    "slug": "undisclosed-conflicts-and-financial-misconduct",
+    "headline": "Violation: Undisclosed Conflicts & Financial Misconduct",
+    "lede": "The 'A New Day PAC,' run by a party officer, engaged in unethical and unlawful conduct. The evidence proves the PAC concealed a significant conflict of interest with a paid trainer it promoted. Furthermore, the PAC violated state campaign finance law by using official party resources without disclosure and by omitting an entire scholarship program from its sworn financial reports.",
     "violations": [
       {
-        "title": "Violation: Unreported In-Kind Contribution for Use of Party Resources",
-        "keyEvidence": "On August 22, 2023, the 'A New Day PAC' used the official WVDP County Chairs email list for promotion. The PAC’s corresponding sworn financial report for Q3 2023 lists $0.00 in in-kind contributions received.",
-        "summary": "State campaign finance law requires any 'thing of value' provided to a political committee, such as a restricted email list, to be reported as an in-kind contribution. A New Day PAC used a valuable party asset for its own promotion but failed to disclose this subsidy on its sworn financial reports, a violation of state law.",
+        "title": "Violation: Undisclosed Conflict of Interest with a Promoted Trainer",
+        "keyEvidence": "On December 9, 2022, the PAC paid Lawrence Taylor for 'Consultant Fees.' In August 2023, the PAC promoted a training by Taylor without disclosing this prior financial relationship.",
+        "summary": "The PAC had a prior financial relationship with political trainer Lawrence Taylor and a shared political history through PDPR. The PAC then used its platform to promote a scholarship program for Taylor's trainings without disclosing these material affiliations to its donors or the public, a clear conflict of interest.",
         "evidencePoints": [
-          "The PAC used a restricted, official party email list to solicit participation and funds.",
-          "Use of this list constitutes a 'thing of value' under campaign finance law.",
-          "The PAC was legally required to report the source and fair market value of this contribution.",
-          "The PAC's sworn financial statement for the period shows it received no in-kind contributions."
+          "The PAC paid Lawrence Taylor $257.55 for 'Consultant Fees' in Q4 2022.",
+          "The PAC's treasurer, Selina Vickers, and Taylor have a documented political affiliation through the organization PDPR.",
+          "In August 2023, the PAC promoted a scholarship for Taylor's training.",
+          "The promotional materials did not disclose the prior payment or their shared political affiliations."
         ],
         "proofs": [
           {
-            "title": "PROOF: Private PAC Used Official Party Resources Without Disclosure",
-            "slug": "pac-uses-party-resources-no-disclosure"
+            "title": "PROOF: PAC Leadership Did Not Disclose Financial Ties with a Promoted Trainer",
+            "slug": "undisclosed-conflict-in-pac-trainings"
           }
         ],
-        "consequence": "The PAC received an illegal, undisclosed subsidy from the state party and filed a materially incomplete financial report that concealed this fact from the public."
+        "consequence": "The PAC failed to disclose a material conflict of interest, misleading donors and the public about the nature of the program it was promoting."
       },
       {
-        "title": "Violation: Concealment of a Scholarship Program from Financial Disclosures",
-        "keyEvidence": "The PAC publicly solicited applications for a scholarship program on August 22, 2023, yet its financial report for that period shows no expenditures for scholarships nor any in-kind contributions of training.",
-        "summary": "A scholarship program must have financial activity; either the PAC paid for the training (an expenditure) or the training was donated (an in-kind contribution). State law requires all such transactions to be reported. By reporting neither, A New Day PAC effectively erased its entire scholarship program from its legally required financial disclosures.",
+        "title": "Violation: Unlawful Campaign Finance Reporting",
+        "keyEvidence": "The PAC used the official WVDP County Chairs email list to promote its scholarship program, but its financial report for that period shows $0.00 in in-kind contributions received.",
+        "summary": "A PAC's sworn financial reports must account for all contributions and expenditures. The 'A New Day PAC' used a valuable party asset (an email list) for fundraising but did not report it as a contribution. Furthermore, after soliciting applications for a scholarship program, the PAC reported no financial activity related to it—either as a direct payment for the scholarships or as a donated service.",
         "evidencePoints": [
-          "The PAC publicly solicited applications for a scholarship program.",
-          "A scholarship transaction must be either an expenditure or an in-kind contribution.",
-          "The PAC's sworn financial report for the period shows zero expenditures for training scholarships.",
-          "The same report shows zero in-kind contributions from the training provider."
+          "The PAC used a restricted party email list for promotion but did not report it as a required in-kind contribution.",
+          "The PAC solicited applications for a scholarship program.",
+          "Its financial reports show no expenditures for scholarships and no in-kind contributions for donated training.",
+          "The omission of these items resulted in a materially incomplete public filing, a violation of state law."
         ],
         "proofs": [
           {
-            "title": "PROOF: Unreported Financial Activity - The Scholarship Program",
+            "title": "PROOF: PAC Used Party Resources Without Reporting an In-Kind Contribution",
+            "slug": "pac-uses-party-resources-no-disclosure"
+          },
+          {
+            "title": "PROOF: PAC Financial Reports Omit Scholarship Program Activity",
             "slug": "unreported-pac-scholarship-program"
           }
         ],
-        "consequence": "The PAC's sworn financial statements are materially incomplete, hiding an entire program's financial activity from public scrutiny and denying transparency into who funded it and who benefited."
+        "consequence": "The PAC's sworn financial statements are materially incomplete, failing to report the use of party resources and omitting a program's financial activity from public view, in violation of state campaign finance law."
       }
     ],
     "conclusion": {
-      "headline": "A Pattern of Financial Obfuscation",
-      "summary": "The PAC's reporting failures are not clerical errors but significant violations of state campaign finance law. By concealing the use of party resources and omitting an entire program from its sworn disclosures, the PAC has obscured the true nature of its funding and activities, undermining the public's right to transparent political financing."
+      "headline": "A Pattern of Deception and Unlawful Conduct",
+      "summary": "The PAC's reporting failures are not clerical errors but significant violations of state campaign finance law. By concealing a conflict of interest and omitting financial activities from its sworn disclosures, the PAC has obscured the true nature of its funding and activities, undermining the public's right to transparent political financing."
     }
   }
 ]

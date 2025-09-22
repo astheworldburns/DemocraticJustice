@@ -42,22 +42,22 @@
     "order": 2
   },
   {
-    "id": "overproof-financial-campaign-misconduct",
-    "slug": "financial-campaign-misconduct",
-    "title": "Case 3: Financial & Campaign Misconduct",
+    "id": "overproof-undisclosed-conflicts-and-financial-misconduct",
+    "slug": "undisclosed-conflicts-and-financial-misconduct",
+    "title": "Case 3: Undisclosed Conflicts & Financial Misconduct",
     "reviewDate": "2025-09-22",
     "short_title": "Financial Misconduct",
-    "umbrella_category": "Financial & Campaign Misconduct",
-    "summary": "A private PAC connected to a party officer violated state campaign finance law by using party resources without disclosure and concealing an entire program from its sworn financial reports.",
-    "narrative": "This case documents a pattern of unlawful campaign finance activity by the 'A New Day PAC.' The evidence proves two distinct violations of state law that deny public transparency. First, the PAC gained an improper subsidy by using official, restricted party email lists for its own fundraising and failed to report this legally required in-kind contribution. Second, the PAC publicly solicited applications for a scholarship program but then erased all financial activity related to that program from its sworn disclosure forms. These actions are not clerical errors; they are significant violations that obscure the true nature of the PAC's funding and activities.",
+    "umbrella_category": "Undisclosed Conflicts & Financial Misconduct",
+    "summary": "A private PAC connected to a party officer concealed significant conflicts of interest and violated state campaign finance law by using party resources without disclosure and omitting a program from its sworn financial reports.",
+    "narrative": "This case documents a pattern of unethical and unlawful activity by the 'A New Day PAC.' The evidence proves the PAC's leadership concealed a prior financial relationship with a political trainer they were promoting, a significant conflict of interest. Furthermore, the PAC violated state campaign finance law in two distinct ways: first, by gaining an improper subsidy through the use of official party email lists without disclosure, and second, by erasing all financial activity related to a public scholarship program from its sworn disclosure forms. These are not clerical errors; they are significant violations that obscure the true nature of the PAC's funding and activities.",
     "key_points": [
-      "A private PAC used the official party email list for fundraising but illegally failed to report it as a required in-kind contribution, concealing an improper subsidy.",
-      "The PAC operated a public scholarship program but reported none of its financial activity—either expenditures or in-kind donations—on its sworn disclosure forms.",
-      "These omissions rendered the PAC's sworn financial statements materially incomplete and concealed its activities from required public scrutiny."
+      "The PAC's leadership failed to disclose a prior financial relationship with a political trainer whose services they were promoting, a clear conflict of interest.",
+      "The PAC used an official party email list for fundraising but illegally failed to report it as a required in-kind contribution, concealing an improper subsidy.",
+      "The PAC operated a public scholarship program but reported none of its financial activity—either expenditures or in-kind donations—on its sworn disclosure forms, rendering them materially incomplete."
     ],
     "metadata": {
-      "Timeframe": "August–October 2023",
-      "Focus": "Campaign Finance Violations, A New Day PAC",
+      "Timeframe": "2022–2023",
+      "Focus": "Campaign Finance Violations, A New Day PAC, Conflicts of Interest",
       "Primary Documents": "WV Secretary of State Filings, PAC Promotional Emails"
     },
     "order": 3
