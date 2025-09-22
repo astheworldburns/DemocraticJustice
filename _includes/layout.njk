@@ -134,13 +134,31 @@
           sizes: "200px"
         } %}
       </div>
-      <p><strong>Proof. Not Spin.</strong></p>
-      <p>A 100% volunteer-run project. We do not solicit or accept financial contributions. We do not endorse candidates.</p>
-      <p><a href="mailto:setho@democraticjustice.org">Submit Proof Confidentially</a></p>
-      <p><a href="{{ '/integrity' | url }}">Proof of Integrity</a></p>
-      <p><a href="{{ '/privacy' | url }}">Privacy Policy</a></p>
-      <p>&copy; {{ now | date('%Y') }} Democratic Justice. All rights reserved.</p>
-
+      <div class="footer-grid">
+        <div class="footer-mission">
+          <p><strong>Proof. Not Spin.</strong></p>
+          <p>A 100% volunteer-run project. We do not solicit or accept financial contributions. We do not endorse candidates.</p>
+          <p><a href="mailto:setho@democraticjustice.org">Submit Proof Confidentially</a></p>
+          <p><a href="{{ '/integrity' | url }}">Proof of Integrity</a></p>
+          <p><a href="{{ '/privacy' | url }}">Privacy Policy</a></p>
+          <p>&copy; {{ now | date('%Y') }} Democratic Justice. All rights reserved.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul class="footer-nav__list">
+            <li><a href="{{ '/' | url }}">Home</a></li>
+            <li><a href="{{ '/archive/' | url }}">Proof Archive</a></li>
+            <li><a href="{{ '/archive/#search-input' | url }}" data-search-link>Search Proofs</a></li>
+            <li><a href="{{ '/case-studies/' | url }}">Overproofs</a></li>
+            <li><a href="{{ '/guides/' | url }}">Guides</a></li>
+            <li><a href="{{ '/troubleshooting/' | url }}">Troubleshooting</a></li>
+            <li><a href="{{ '/method/' | url }}">Method</a></li>
+            <li><a href="{{ '/action/' | url }}">Action</a></li>
+            <li><a href="{{ '/about/' | url }}">About Us</a></li>
+            <li><a href="{{ '/contact/' | url }}">Contact</a></li>
+            <li><a href="{{ '/submit/' | url }}">Submit Proof</a></li>
+          </ul>
+        </nav>
+      </div>
       <a href="{{ '/' | url }}" aria-label="Democratic Justice home">
         {% image "/images/three-dots-white.svg", "", {
           class: "mark xl",
