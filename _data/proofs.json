@@ -8,7 +8,7 @@
     "category": "DNC MOU Violation",
     "umbrella_category": "The AAC Formation Conspiracy",
     "stakes": "West Virginia's minority communities were disenfranchised at the moment the committee meant to empower them was created.",
-    "thesis": "The WVDP violated the 2020 MOU by installing pre-selected leadership before forming required caucuses, creating an illegitimate committee.",
+    "thesis": "By installing pre-selected leadership before forming the caucuses required by the 2020 MOU, the WVDP created an illegitimate committee in a foundational breach of the agreement.",
     "axioms": [
       {
         "text": "Selina Vickers was the lead Challenger whose complaint triggered the 2020 MOU.",
@@ -36,38 +36,38 @@
         "url": "/files/Felix, K. - Witness Statement.pdf"
       }
     ],
-    "rule_summary": "Caucuses must exist before they can select representatives. The RBC must supervise this process.",
+    "rule_summary": "The DNC MOU establishes a 'caucus-first' mandate: legally constituted caucuses must first exist, and only then do they gain the exclusive power to 'select' their representatives. The DNC Rules & Bylaws Committee (RBC) is required to supervise this entire process to ensure compliance.",
     "case_facts": [
       {
-        "text": "The formation used a script marked 'do not share.'",
+        "text": "On June 2, 2021, Selina Vickers circulated a script for the AAC formation meeting marked 'do not share.'",
         "citation": "selina-script-email.pdf, p. 1",
         "url": "/files/selina-script-email.pdf"
       },
       {
-        "text": "The script admitted the committee was 'missing... Latino's, Asian Americans and Pacific Islanders, and Native Americans.'",
+        "text": "The script explicitly acknowledged the committee was 'missing... Latino's, Asian Americans and Pacific Islanders, and Native Americans.'",
         "citation": "selina-script.pdf, p. 2",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "The script pre-selected the leadership slate before caucuses could participate.",
+        "text": "The script pre-selected a slate of leaders before three of the four mandated caucuses could be formed or participate.",
         "citation": "selina-script.pdf, p. 1",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "Vickers scripted her own appointment as Parliamentarian.",
+        "text": "The script orchestrated Vickers' own appointment as the committee's Parliamentarian.",
         "citation": "selina-script.pdf, p. 3",
         "url": "/files/selina-script.pdf"
       }
     ],
     "logic_chain": [
-      "The MOU required a caucus-driven process supervised by the RBC.",
-      "The State Party used a secret script instead.",
-      "The script proves they knew 75% of racial caucuses were missing.",
-      "They installed leadership anyway, excluding these groups.",
-      "The RBC failed to intervene despite its supervisory duty.",
-      "[DJ-MARK] An illegitimate committee was born from a rigged process."
+      "The governing rule (the DNC MOU) required an open, caucus-driven selection process supervised by the RBC.",
+      "Instead, the factual record shows the WVDP executed a secret script to install a pre-determined leadership slate.",
+      "The script itself proves organizers knew that 75% of the legally required racial caucuses did not yet exist.",
+      "By proceeding, leadership intentionally excluded these minority groups from selecting their own representatives, violating the 'caucus-first' mandate.",
+      "The DNC RBC failed its supervisory duty by allowing this illegitimate process to occur.",
+      "Conclusion: The AAC was born from a rigged process that violated the clear terms of the MOU, rendering it illegitimate from its inception."
     ],
-    "violation": "The WVDP and RBC violated the MOU's 'caucus-first mandate' by creating a committee through a secret process that excluded required groups. This foundational breach rendered the AAC illegitimate from inception.",
+    "violation": "The WVDP and DNC RBC violated the MOU's 'caucus-first mandate' by creating a committee through a secret, pre-scripted process that knowingly excluded required minority groups. This foundational breach rendered the AAC illegitimate from inception.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -81,11 +81,11 @@
     "reviewDate": "2024-12-01",
     "category": "DNC MOU Violation",
     "umbrella_category": "The AAC Formation Conspiracy",
-    "stakes": "Minority caucuses were denied their right to select committee leadership.",
-    "thesis": "The WVDP violated the 2020 MOU by installing AAC leadership before establishing required diversity caucuses.",
+    "stakes": "The failure to form caucuses denied three minority communities their fundamental right under the MOU to select their own leadership.",
+    "thesis": "The WVDP's failure to establish three of the four required minority caucuses before installing AAC leadership constituted a material breach of the DNC-mandated diversity plan.",
     "axioms": [
       {
-        "text": "The 2020 MOU's purpose was to 'establish new... diversity caucuses.'",
+        "text": "The 2020 MOU's primary purpose was to 'establish new... diversity caucuses.'",
         "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
         "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
       },
@@ -105,32 +105,32 @@
         "url": "/files/Felix, K. - Witness Statement.pdf"
       }
     ],
-    "rule_summary": "Caucuses must exist and select their representatives before the AAC can be formed.",
+    "rule_summary": "The MOU explicitly conditions the formation of the AAC on the prior existence of four racial diversity caucuses. The plain language of the agreement makes the creation of these caucuses a prerequisite for any legitimate leadership selection.",
     "case_facts": [
       {
-        "text": "The WVDP installed AAC leadership on June 5, 2021.",
+        "text": "The WVDP installed the AAC's leadership slate during a meeting on June 5, 2021.",
         "citation": "Felix, K. - Witness Statement, p. 2",
         "url": "/files/Felix, K. - Witness Statement.pdf"
       },
       {
-        "text": "Three of four required racial caucuses did not exist at installation.",
+        "text": "At the time of the leadership installation, three of the four required racial caucuses (Latino, AAPI, Native American) had not been formed and did not exist.",
         "citation": "Felix, K. - Witness Statement, p. 2",
         "url": "/files/Felix, K. - Witness Statement.pdf"
       },
       {
-        "text": "Vickers circulated a pre-written script on June 2 dictating the formation.",
+        "text": "The compliance officer, Selina Vickers, circulated a pre-written script on June 2 that dictated the formation process in the absence of these caucuses.",
         "citation": "Draft Script Email June 2; Selina Script",
         "url": "/files/selina-script-email.pdf"
       }
     ],
     "logic_chain": [
-      "The MOU required diversity caucuses to form the AAC.",
-      "Leadership was installed on June 5, 2021.",
-      "75% of racial caucuses didn't exist yet.",
-      "Non-existent caucuses couldn't select representatives.",
-      "[DJ-MARK] The WVDP violated the MOU's core requirement."
+      "The governing rule (MOU) required that four distinct racial diversity caucuses form the AAC by selecting representatives.",
+      "Fact: Leadership was installed via a scripted meeting on June 5, 2021.",
+      "Fact: At that time, 75% of the required racial caucuses did not exist.",
+      "Application: Non-existent caucuses cannot select representatives.",
+      "Conclusion: By installing leadership without the required prerequisite caucuses in place, the WVDP violated the MOU's core requirement."
     ],
-    "violation": "The WVDP violated the 2020 MOU by forming the AAC before required caucuses existed, disenfranchising minority groups from selecting their own leadership.",
+    "violation": "The WVDP violated the 2020 MOU by forming the AAC before the required diversity caucuses existed, thereby disenfranchising three minority communities from the right to select their own leadership.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -145,7 +145,7 @@
     "category": "DNC MOU Violation",
     "umbrella_category": "The AAC Formation Conspiracy",
     "stakes": "The committee's foundational decisions lacked mandated representation from 75% of racial diversity groups.",
-    "thesis": "The script's exhaustive detail proves organizers deliberately excluded Latino, AAPI, and Native American caucuses.",
+    "thesis": "The exhaustive detail of the formation script, combined with its admission of missing groups, proves the organizers deliberately and knowingly excluded the required Latino, AAPI, and Native American caucuses.",
     "axioms": [
       {
         "text": "The MOU required an AAC with members from each diversity group 'selected by their particular caucus.'",
@@ -168,32 +168,32 @@
         "url": "/files/Felix, K. - Witness Statement.pdf"
       }
     ],
-    "rule_summary": "All diversity caucuses must exist and select representatives before the AAC can be legitimately formed.",
+    "rule_summary": "An action is deliberate when the actor possesses knowledge of the rules, is aware of their non-compliance, and proceeds anyway. The combination of detailed planning and documented knowledge establishes intent.",
     "case_facts": [
       {
-        "text": "The script dictated specific nominators and verbatim speeches.",
+        "text": "The script dictated the meeting's flow, including specific nominators and verbatim speeches.",
         "citation": "selina-script.pdf, p. 1-5",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "The script acknowledged missing 'Latinos, Asian Americans/Pacific Islanders and Native Americans.'",
+        "text": "The script contained a section explicitly acknowledging that the process was 'missing... Latinos, Asian Americans/Pacific Islanders and Native Americans.'",
         "citation": "selina-script.pdf, p. 5",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "The script designated Kim Felix for a Latino seat despite no Latino caucus existing.",
+        "text": "Despite this knowledge, the script designated a specific person for a Latino seat even though no Latino caucus existed to make that selection.",
         "citation": "selina-script.pdf, p. 3",
         "url": "/files/selina-script.pdf"
       }
     ],
     "logic_chain": [
-      "The script shows meticulous planning capacity.",
-      "It documents knowledge that 75% of racial caucuses were missing.",
-      "Detailed planning plus documented knowledge equals intent.",
-      "They proceeded anyway, choosing exclusion.",
-      "[DJ-MARK] The organizers deliberately violated the MOU."
+      "The script's meticulous detail demonstrates a high capacity for planning and awareness of the rules.",
+      "The script's text documents the organizers' contemporaneous knowledge that 75% of the required racial caucuses were missing.",
+      "The combination of detailed planning and documented knowledge of the violation establishes intent.",
+      "They proceeded with the formation, consciously choosing to exclude the missing groups.",
+      "Conclusion: The organizers deliberately and knowingly violated the core tenets of the DNC MOU."
     ],
-    "violation": "The organizers deliberately violated the MOU by forming the AAC while knowingly excluding 75% of required racial caucuses—a calculated act of disenfranchisement.",
+    "violation": "The organizers deliberately violated the MOU by forming the AAC while knowingly excluding 75% of required racial caucuses—a calculated act of disenfranchisement proven by their own documents.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -207,8 +207,8 @@
     "reviewDate": "2024-12-01",
     "category": "DNC Charter & Bylaw Violation",
     "umbrella_category": "The AAC Formation Conspiracy",
-    "stakes": "The committee's leadership was selected through a secret process, not openly as required.",
-    "thesis": "The AAC leadership election violated DNC Charter requirements by using a secret, pre-arranged script.",
+    "stakes": "The committee's leadership was installed through a secret, pre-arranged process, rendering the election a sham.",
+    "thesis": "The use of a secret, pre-scripted slate of candidates for the AAC leadership election violated the DNC Charter's requirements for open and equal participation.",
     "axioms": [
       {
         "text": "The DNC Charter requires 'full, timely and equal opportunities to participate' in selecting officers.",
@@ -231,32 +231,32 @@
         "url": "/files/Felix, K. - Witness Statement.pdf"
       }
     ],
-    "rule_summary": "Officer selection must be public with equal opportunity for all to participate.",
+    "rule_summary": "The DNC Charter's 'open party' and 'equal opportunity' clauses forbid the use of secret or predetermined processes for selecting party officers, as such methods preclude genuine participation.",
     "case_facts": [
       {
-        "text": "The script was marked 'DRAFT SCRIPT - do not share.'",
+        "text": "The formation meeting was executed using a script explicitly marked 'DRAFT SCRIPT - do not share.'",
         "citation": "selina-script-email.pdf, p. 1",
         "url": "/files/selina-script-email.pdf"
       },
       {
-        "text": "The script dictated nominations: 'Mary Ann nominates Hollis Lewis.'",
+        "text": "The script dictated specific nominations for leadership positions, including 'Mary Ann nominates Hollis Lewis.'",
         "citation": "selina-script.pdf, p. 1",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "The 'do not share' instruction proves awareness of wrongdoing.",
+        "text": "The 'do not share' instruction demonstrates the organizers' awareness that the process was improper and needed to be concealed from other participants.",
         "citation": "selina-script-email.pdf, p. 1",
         "url": "/files/selina-script-email.pdf"
       }
     ],
     "logic_chain": [
-      "The election used a secret script.",
-      "It was explicitly marked 'do not share.'",
-      "It pre-determined the candidate slate.",
-      "Secret processes violate open meeting requirements.",
-      "[DJ-MARK] The secrecy proves consciousness of guilt."
+      "The DNC Charter rule requires an open process with equal opportunity to participate.",
+      "The facts show the election was conducted using a secret script that predetermined the candidates.",
+      "A secret, pre-determined process is, by definition, not open and does not provide equal opportunity.",
+      "The instruction to keep the script secret proves a consciousness of guilt regarding this violation.",
+      "Conclusion: The leadership selection procedure was procedurally invalid under the DNC Charter."
     ],
-    "violation": "Using a secret script to dictate pre-arranged leadership violated the DNC Charter's requirements for open processes. The secrecy instruction proves they knew it was wrong.",
+    "violation": "By using a secret script to dictate a pre-arranged slate of leaders, the organizers violated the DNC Charter's core requirements for open and fair processes. The instruction to conceal the script proves they knew the process was improper.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -270,16 +270,16 @@
     "reviewDate": "2024-12-01",
     "category": "DNC Charter & Bylaw Violation",
     "umbrella_category": "The AAC Formation Conspiracy",
-    "stakes": "The MOU's lead Challenger used her script to install herself with procedural control over the committee.",
-    "thesis": "Selina Vickers wrote herself into the Parliamentarian role through her own script.",
+    "stakes": "The person responsible for ensuring fair compliance used her position to install herself in a role with procedural control over the committee.",
+    "thesis": "Selina Vickers, the MOU compliance officer, violated basic ethical standards by authoring a script that orchestrated her own appointment to the powerful role of Parliamentarian.",
     "axioms": [
       {
-        "text": "The Democratic Party requires officials conduct themselves creditably.",
+        "text": "The Democratic Party requires officials to conduct themselves in a manner that is 'creditably to the Party.'",
         "citation": "DNC-Charter-Bylaws-09.10.1022, p. 1",
         "url": "/files/DNC-Charter-Bylaws-09.10.1022.pdf"
       },
       {
-        "text": "Selina Vickers was the lead Challenger who triggered the 2020 MOU.",
+        "text": "Selina Vickers was the lead Challenger who triggered the 2020 MOU and was tasked with compliance.",
         "citation": "2020 MOU between WVDP and DNC RBC",
         "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
       },
@@ -289,32 +289,32 @@
         "url": "/files/selina-script-email.pdf"
       }
     ],
-    "rule_summary": "Officials cannot use their position to gain power through self-appointment.",
+    "rule_summary": "A party official's duty of fair dealing and ethical conduct prohibits them from using their authority to orchestrate their own appointment to a position of power, as this constitutes a profound conflict of interest.",
     "case_facts": [
       {
-        "text": "The script directs: 'I nominate Selina Vickers for Parliamentarian/Secretary.'",
+        "text": "The script authored by Vickers contains the line: 'I nominate Selina Vickers for Parliamentarian/Secretary.'",
         "citation": "selina-script.pdf, p. 3",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "The script includes praise: 'no one else remotely qualified.'",
+        "text": "The script immediately follows the nomination with a pre-written endorsement stating there is 'no one else remotely qualified.'",
         "citation": "selina-script.pdf, p. 3",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "Parliamentarian controls procedures, interpretations, and records.",
+        "text": "The role of Parliamentarian grants the holder control over meeting procedures, rule interpretations, and the creation of official records.",
         "citation": "Standard parliamentary authority",
         "url": ""
       }
     ],
     "logic_chain": [
-      "Vickers authored the meeting script.",
-      "Her script nominated herself.",
-      "It included her own endorsement.",
-      "The role gave her procedural control.",
-      "[DJ-MARK] She wrote herself into power."
+      "The governing rule requires officials to act creditably and avoid self-dealing.",
+      "The facts show Vickers, the compliance officer, authored the meeting script.",
+      "Her script directed her own nomination and included a self-serving endorsement.",
+      "The role she secured gave her significant procedural control over the very committee she was supposed to help form fairly.",
+      "Conclusion: Vickers used her position to write herself into power, a clear violation of ethical standards."
     ],
-    "violation": "The lead Challenger used her authority to orchestrate her own installation into a key role with procedural control, violating ethical standards.",
+    "violation": "The lead Challenger and MOU compliance officer used her authority over the formation process to orchestrate her own installation into a key role with procedural control, violating fundamental ethical standards of fair dealing and credited conduct.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -328,8 +328,8 @@
     "reviewDate": "2024-12-01",
     "category": "DNC Charter & Bylaw Violation",
     "umbrella_category": "The AAC Formation Conspiracy",
-    "stakes": "The meeting was designed to execute a predetermined outcome, not foster open participation.",
-    "thesis": "The script contained tactics to challenge attendees and manage criticism, proving controlled execution over open deliberation.",
+    "stakes": "The meeting was designed to execute a predetermined outcome and suppress opposition, not foster open participation.",
+    "thesis": "The formation script contained pre-planned tactics to challenge attendees and manage criticism, proving the event was designed for controlled execution rather than open deliberation as required by the DNC Charter.",
     "axioms": [
       {
         "text": "DNC Charter mandates 'all meetings... shall be open to the public.'",
@@ -337,7 +337,7 @@
         "url": "/files/DNC-Charter-Bylaws-09.10.1022.pdf"
       },
       {
-        "text": "The AAC was formed under the 2020 MOU.",
+        "text": "The AAC was formed under the 2020 MOU to ensure an 'open and transparent process.'",
         "citation": "2020 MOU between WVDP and DNC RBC",
         "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
       },
@@ -347,32 +347,32 @@
         "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
       }
     ],
-    "rule_summary": "Open meetings require spontaneous participation, not pre-planned control mechanisms.",
+    "rule_summary": "The principle of an 'open meeting' requires genuine, spontaneous deliberation and prohibits the use of pre-planned control mechanisms designed to suppress dissent and ensure a predetermined outcome.",
     "case_facts": [
       {
-        "text": "Script includes challenge: 'I thought this meeting was solely for co-chairs.'",
+        "text": "The script includes a prepared challenge to question the presence of observers: 'I thought this meeting was solely for co-chairs.'",
         "citation": "selina-script.pdf, p. 1",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "Script anticipates Party Chair criticism as 'scolding.'",
+        "text": "The script anticipates and preemptively characterizes potential criticism from the Party Chair as a 'scolding.'",
         "citation": "selina-script.pdf, p. 1",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "Script provides response strategies for opposition.",
+        "text": "The script provides specific response strategies to manage and counter expected opposition during the meeting.",
         "citation": "selina-script.pdf, p. 1",
         "url": "/files/selina-script.pdf"
       }
     ],
     "logic_chain": [
-      "The script planned to challenge observers.",
-      "It anticipated and trivialized opposition.",
-      "It provided management strategies.",
-      "This proves predetermined outcomes.",
-      "[DJ-MARK] Opposition management violates open deliberation."
+      "The DNC Charter requires open meetings that allow for authentic deliberation.",
+      "The script's text demonstrates a pre-planned strategy to challenge observers and manage dissent.",
+      "Anticipating and planning to neutralize opposition is fundamentally at odds with the principle of an open, deliberative process.",
+      "These tactics prove the meeting was designed to execute a predetermined outcome, not to foster open participation.",
+      "Conclusion: The use of pre-planned strategies to manage dissent violated the DNC Charter's 'open meetings' principle."
     ],
-    "violation": "Prepared tactics for managing participation and pre-characterizing criticism violate the DNC Charter's 'open meetings' principle.",
+    "violation": "The use of prepared tactics to manage participation and pre-characterize criticism demonstrates the meeting was a controlled performance, not an open deliberation, thereby violating the DNC Charter's 'open meetings' principle.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -386,66 +386,61 @@
     "reviewDate": "2024-12-01",
     "category": "DNC Charter & Bylaw Violation",
     "umbrella_category": "The AAC Formation Conspiracy",
-    "stakes": "A biased external actor with undisclosed agenda oversaw critical vote.",
-    "thesis": "AAC leadership brought in Larry Taylor without disclosing his conflict of interest as Vickers' political associate.",
+    "stakes": "A biased external actor with an undisclosed agenda was brought in to overrule a prior democratic vote.",
+    "thesis": "AAC leadership subverted a democratic outcome by bringing in an external presider, Larry Taylor, without disclosing his profound conflict of interest as Selina Vickers' political associate and business partner.",
     "axioms": [
       {
-        "text": "DNC Charter requires 'full, timely and equal opportunities to participate.'",
+        "text": "The DNC Charter requires 'full, timely and equal opportunities to participate' and requires officials to act creditably.",
         "citation": "DNC-Charter-Bylaws-09.10.1022, p. 1",
         "url": "/files/DNC-Charter-Bylaws-09.10.1022.pdf"
       },
       {
-        "text": "The Democratic Party requires officials conduct themselves creditably.",
-        "citation": "DNC-Charter-Bylaws-09.10.1022, p. 1",
-        "url": "/files/DNC-Charter-Bylaws-09.10.1022.pdf"
-      },
-      {
-        "text": "Larry Taylor founded PDPR.",
+        "text": "Larry Taylor is the founder of People for Democratic Party Reform (PDPR).",
         "citation": "PDPR image with Selina vickers.jpg",
         "url": "/files/PDPR image with Selina vickers.jpg"
       },
       {
-        "text": "Selina Vickers serves as PDPR's WV Chair.",
+        "text": "Selina Vickers serves as PDPR's West Virginia Chair.",
         "citation": "PDPR image with Selina vickers.jpg",
         "url": "/files/PDPR image with Selina vickers.jpg"
       },
       {
-        "text": "Taylor and Vickers train together on 'beating the establishment' with rules.",
+        "text": "Taylor and Vickers co-lead trainings on using procedural rules to 'beat the establishment.'",
         "citation": "PDPR image with Selina vickers.jpg",
         "url": "/files/PDPR image with Selina vickers.jpg"
       },
       {
-        "text": "Committee democratically rejected restrictive rules in August.",
+        "text": "In August, the AAC democratically voted to reject a set of restrictive rules.",
         "citation": "Gmail - Fwd: General Inquiry, RE: AAC information.pdf, p. 2",
         "url": "/files/Gmail - Fwd: General Inquiry, RE: AAC information.pdf"
       }
     ],
-    "rule_summary": "Presiding officers must be impartial—undisclosed conflicts violate fairness principles.",
+    "rule_summary": "Fair and open proceedings require impartial presiding officers. Intentionally concealing a presiding officer's conflict of interest—especially a close political and business association with a key actor—is a material deception that invalidates the proceedings.",
     "case_facts": [
       {
-        "text": "Leadership brought Taylor to preside over revisiting rejected issues.",
+        "text": "After the democratic rejection of their rules, leadership brought in Larry Taylor to preside over a subsequent meeting to force the issue.",
         "citation": "Gmail - Re: Updated agenda and information about presiding officer.pdf, p. 1",
         "url": "/files/Gmail - Re: Updated agenda and information about presiding officer.pdf"
       },
       {
-        "text": "Member praised Taylor's 'impartiality'—conflict wasn't disclosed.",
-        "citation": "Gmail - Re: Updated agenda and information about presiding officer.pdf, p. 1",
-        "url": "/files/Gmail - Re: Updated agenda and information about presiding officer.pdf"
+        "text": "Taylor's extensive political and business ties to Selina Vickers (the PDPR connection) were not disclosed to the committee members.",
+        "citation": "AAC-Transcript-Analysis.pdf",
+        "url": "/files/AAC-Transcript-Analysis.pdf"
       },
       {
-        "text": "Dissenter left in protest citing 'clear ties between Ms. Vickers and Mr. Taylor.'",
+        "text": "A dissenting member left the meeting in protest, explicitly citing the 'clear ties between Ms. Vickers and Mr. Taylor' as evidence of a rigged process.",
         "citation": "Gmail - Re: Updated agenda and information about presiding officer.pdf, p. 3",
         "url": "/files/Gmail - Re: Updated agenda and information about presiding officer.pdf"
       }
     ],
     "logic_chain": [
-      "Committee blocked restrictive rules democratically.",
-      "Leadership brought external actor Taylor.",
-      "Taylor was Vickers' PDPR founder and co-trainer.",
-      "Conflict concealed but recognized by dissenters.",
-      "[DJ-MARK] They brought a ringer to force rejected agenda."
+      "The committee first blocked restrictive rules through a valid democratic vote.",
+      "To overcome this, leadership brought in an external actor, Larry Taylor, under the guise of impartiality.",
+      "Fact: Taylor was Vickers' close political associate and the founder of her activist organization, PDPR.",
+      "Application: This constitutes a severe, undisclosed conflict of interest.",
+      "Conclusion: They brought in a biased 'ringer' to force through their previously rejected agenda, subverting the democratic will of the committee."
     ],
-    "violation": "Using an external actor with severe undisclosed conflict to officiate violated ethical standards, subverted democracy, and invalidated proceedings.",
+    "violation": "Using an external actor with a severe, undisclosed conflict of interest to officiate a meeting and overturn a prior democratic vote is a gross violation of ethical standards and fair process, invalidating the proceedings.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -459,21 +454,21 @@
     "reviewDate": "2024-12-01",
     "category": "Party Bylaw & Charter Violation",
     "umbrella_category": "Systematic Suppression of Dissent",
-    "stakes": "A DNC official corrupted the democratic process he was tasked to oversee.",
-    "thesis": "DNC Rules Committee member Harold Ickes advised a non-voting appointee to 'outvote' elected minority members.",
+    "stakes": "The DNC official tasked with supervising a fair process instead corrupted it by advising one faction on how to defeat another.",
+    "thesis": "DNC Rules Committee member Harold Ickes violated his duty of impartial supervision under the MOU by advising a non-voting appointee on specific tactics to 'outvote' and neutralize elected minority members.",
     "axioms": [
       {
-        "text": "The MOU's purpose was an 'open and transparent process' with 'full, timely, and equal opportunity.'",
+        "text": "The MOU guaranteed an 'open and transparent process' with 'full, timely, and equal opportunity.'",
         "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
         "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
       },
       {
-        "text": "The RBC's role was 'supervision and technical assistance.'",
+        "text": "The RBC's role was strictly limited to 'supervision and technical assistance.'",
         "citation": "2020 MOU between WVDP and DNC RBC, p. 1-2",
         "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
       },
       {
-        "text": "Harold Ickes was a DNC RBC member during the MOU period.",
+        "text": "Harold Ickes was a DNC Rules & Bylaws Committee member during the MOU period.",
         "citation": "Sludge Article, Feb 28, 2020",
         "url": "/files/Corporate-Lobbyists-Control-the-Rules-at-the-DNC.pdf"
       },
@@ -483,27 +478,27 @@
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "Seth Sturm and Mari were elected caucus co-chairs.",
+        "text": "Seth Sturm and Mari were elected caucus co-chairs with full voting rights.",
         "citation": "AAC meeting records",
         "url": "/files/AAC-meeting-minutes.pdf"
       }
     ],
-    "rule_summary": "Advising to neutralize elected members violates the MOU's 'open process' mandate.",
+    "rule_summary": "An official tasked with 'supervision and technical assistance' for an open process has an affirmative duty of neutrality. Advising one faction on political strategy to defeat another exceeds this authority and constitutes a breach of that duty.",
     "case_facts": [
       {
-        "text": "Mary Ann Claytor wrote: 'disturbing to hear Harold admit he advised Selina to 'outvote' Seth, Mari, and others.'",
+        "text": "AAC Co-Chair Mary Ann Claytor provided a written account stating it was 'disturbing to hear Harold admit he advised Selina to 'outvote' Seth, Mari, and others.'",
         "citation": "Email from Mary Ann Claytor, Sept. 23, 2021",
         "url": "/files/Email_Mary_Ann_Claytor_2021-09-23.pdf"
       }
     ],
     "logic_chain": [
-      "Ickes served on the oversight committee.",
-      "The MOU required 'open process' and 'full participation.'",
-      "He advised 'outvoting' elected members.",
-      "This undermines participation and exceeds 'supervision.'",
-      "[DJ-MARK] A DNC official corrupted the process he supervised."
+      "The governing rule (MOU) mandated Ickes' role as a neutral supervisor providing only 'technical assistance.'",
+      "The facts show Ickes provided strategic political advice to one faction on how to defeat another.",
+      "This action directly contradicts the duty of neutrality and exceeds the scope of 'technical assistance.'",
+      "This intervention actively undermined the 'open process' and 'full participation' the MOU was designed to protect.",
+      "Conclusion: The DNC's designated supervisor corrupted the very process he was assigned to oversee."
     ],
-    "violation": "DNC official Ickes violated the MOU and Charter by advising strategy to neutralize elected members, exceeding his supervisory role and corrupting the process.",
+    "violation": "DNC official Harold Ickes violated the MOU and DNC Charter by providing strategic advice to neutralize elected members, thereby exceeding his supervisory role, breaching his duty of neutrality, and corrupting the democratic process.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -517,51 +512,51 @@
     "reviewDate": "2024-12-01",
     "category": "Party Bylaw & Charter Violation",
     "umbrella_category": "Systematic Suppression of Dissent",
-    "stakes": "Elected minority leaders were neutralized through public attacks and procedural manipulation.",
-    "thesis": "A coordinated campaign discredited minority caucus leaders through scripted attacks and invalid procedures.",
+    "stakes": "Elected minority leaders were neutralized through a campaign of character assassination and public harassment.",
+    "thesis": "AAC leadership and their allies executed a coordinated smear campaign to discredit and silence minority caucus leaders through covertly scripted attacks, public smears, and vicious rumors.",
     "axioms": [
       {
-        "text": "The Democratic Party requires officials conduct themselves creditably.",
+        "text": "The Democratic Party requires officials to conduct themselves in a manner that is 'creditably to the Party.'",
         "citation": "DNC-Charter-Bylaws-09.10.1022, p. 1",
         "url": "/files/DNC-Charter-Bylaws-09.10.1022.pdf"
       },
       {
-        "text": "Harold Ickes advised Selina Vickers to 'outvote' dissenters.",
+        "text": "Harold Ickes, a DNC official, advised Selina Vickers to 'outvote' the dissenters.",
         "citation": "Email from Mary Ann Claytor, Sept. 23, 2021",
         "url": "/files/Email_Mary_Ann_Claytor_2021-09-23.pdf"
       },
       {
-        "text": "Seth Sturm was an elected caucus co-chair.",
+        "text": "Seth Sturm was the elected co-chair of the Indigenous Caucus.",
         "citation": "AAC meeting records",
         "url": "/files/AAC-meeting-minutes.pdf"
       }
     ],
-    "rule_summary": "Coordinated campaigns to discredit members violate ethical conduct requirements.",
+    "rule_summary": "A coordinated campaign of personal attacks, smears, and harassment against fellow party members for the purpose of silencing dissent is a violation of the DNC Charter's requirement for creditable and ethical conduct.",
     "case_facts": [
       {
-        "text": "Vickers scripted attacks with instruction: 'DO NOT FORWARD THIS EMAIL.'",
+        "text": "Selina Vickers authored and distributed attack scripts with the explicit instruction: 'DO NOT FORWARD THIS EMAIL,' thereby concealing her authorship.",
         "citation": "Selina asking a Senior Caucus member to attack Seth Sturm.pdf, p. 5",
         "url": "/files/Selina asking a Senior Caucus member to attack Seth Sturm.pdf"
       },
       {
-        "text": "A co-chair accused Vickers of spreading 'a vicious rumor that I am dangerous.'",
+        "text": "A dissenting co-chair accused Vickers of spreading 'a vicious rumor that I am dangerous' to undermine his credibility.",
         "citation": "Gmail - Re: Updated agenda and information about presiding officer.pdf, p. 3",
         "url": "/files/Gmail - Re: Updated agenda and information about presiding officer.pdf"
       },
       {
-        "text": "Shane initiated multi-day campaign calling dissenter 'toxic bully and saboteur.'",
+        "text": "An ally of leadership initiated a multi-day social media campaign publicly branding the dissenter a 'toxic bully and saboteur.'",
         "citation": "Shane Day 2 Post.jpg",
         "url": "/files/Shane Day 2 Post.jpg"
       }
     ],
     "logic_chain": [
-      "Multiple attack vectors were deployed.",
-      "Covert: scripted attacks with hidden authorship.",
-      "Overt: public smears and personal rumors.",
-      "Procedural: invalid meetings to overturn votes.",
-      "[DJ-MARK] Coordinated campaign silenced elected members."
+      "The DNC Charter requires ethical conduct from party officials.",
+      "The facts show a multi-pronged attack on dissenting members: covert scripts, vicious personal rumors, and overt public smears.",
+      "These actions were not political debate; they were a coordinated campaign of character assassination.",
+      "The secrecy involved (e.g., 'DO NOT FORWARD') demonstrates a consciousness of guilt and unethical intent.",
+      "Conclusion: This coordinated smear campaign constituted discreditable conduct designed to silence elected minority members, violating the Charter."
     ],
-    "violation": "A coordinated campaign of covert scripts, public smears, and procedural manipulation violated the Charter's ethical conduct requirements and fair participation mandate.",
+    "violation": "The coordinated campaign of covert scripts, public smears, and procedural manipulation against dissenting members was a violation of the DNC Charter's ethical conduct requirements and fair participation mandate.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -570,66 +565,61 @@
   {
     "case_id": "2.3",
     "slug": "leadership-nullifies-vote-to-exclude-caucuses",
-    "title": "PROOF: AAC Nullified Valid Vote to Exclude Minority Caucus Chairs",
+    "title": "PROOF: AAC Leadership Nullified a Valid Vote to Exclude Minority Caucus Chairs",
     "date": "2025-09-12",
     "reviewDate": "2024-12-01",
     "category": "DNC MOU Violation",
     "umbrella_category": "Systematic Suppression of Dissent",
-    "stakes": "Indigenous and Black caucus chairs were denied subcommittee seats.",
-    "thesis": "AAC leadership violated the MOU by nullifying a vote and excluding minority chairs through invalid proceedings.",
+    "stakes": "The democratic will of the committee was overturned by fiat, disenfranchising the Indigenous and Black caucus chairs from key subcommittees.",
+    "thesis": "AAC leadership violated democratic principles and the MOU by unilaterally nullifying a valid committee vote and using the invalid proceedings to exclude minority caucus chairs from subcommittee seats.",
     "axioms": [
       {
-        "text": "The MOU's purpose was 'full participation... with particular concern for minority groups.'",
+        "text": "The MOU's purpose was to ensure 'full participation... with particular concern for minority groups.'",
         "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
         "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
       },
       {
-        "text": "Seth Sturm was Indigenous Caucus co-chair.",
+        "text": "Seth Sturm was the elected Indigenous Caucus co-chair.",
         "citation": "AAC meeting records",
         "url": "/files/AAC-meeting-minutes.pdf"
       },
       {
-        "text": "Mary Ann Claytor was Black Caucus co-chair.",
+        "text": "Mary Ann Claytor was the elected Black Caucus co-chair.",
         "citation": "AAC meeting records",
         "url": "/files/AAC-meeting-minutes.pdf"
       },
       {
-        "text": "The AAC had formed Planning and Bylaws subcommittees.",
+        "text": "The AAC had formed Planning and Bylaws subcommittees to conduct its work.",
         "citation": "AAC meeting records",
         "url": "/files/AAC-meeting-minutes.pdf"
       }
     ],
-    "rule_summary": "Excluding minority representatives through invalid proceedings violates the diversity mandate.",
+    "rule_summary": "Unilaterally nullifying the outcome of a valid democratic vote and using that nullification to exclude mandated minority representatives from participation is a direct violation of any 'full participation' mandate.",
     "case_facts": [
       {
-        "text": "Committee voted for volunteer-based subcommittees; leadership declared 'by appointment.'",
+        "text": "The committee first voted for inclusive, volunteer-based subcommittees, but leadership unilaterally declared the system would be 'by appointment only.'",
         "citation": "Gmail - Re: General Inquiry, RE: AAC information.pdf, p. 2, 3",
         "url": "/files/Gmail - Re: General Inquiry, RE: AAC information.pdf"
       },
       {
-        "text": "Leadership denied Indigenous and Black chairs subcommittee seats.",
+        "text": "Following this nullification, leadership denied both the Indigenous and Black caucus chairs seats on the key subcommittees.",
         "citation": "Gmail - Fwd: Planning & Bylaws Committees.pdf, p. 1",
         "url": "/files/Gmail - Fwd: Planning & Bylaws Committees.pdf"
       },
       {
-        "text": "Leadership passed 'Resolution Affirming Support' for themselves.",
-        "citation": "08.17.2021 Resolution Affirming Support.pdf, p. 1",
-        "url": "/files/08.17.2021 Resolution Affirming Support.pdf"
-      },
-      {
-        "text": "Appeals Board ruled the meeting violated bylaws.",
-        "citation": "Resolution of the Board of Appeals, Nov. 29, 2021",
+        "text": "Leadership then passed a 'Resolution Affirming Support' for themselves in a meeting that the WVDP Appeals Board later ruled was invalid for violating bylaw notice requirements.",
+        "citation": "Resolution of the Board of Appeals, Nov. 29, 2021; 08.17.2021 Resolution Affirming Support.pdf, p. 1",
         "url": "/files/Resolution-Board-of-Appeals-2021-11-29.pdf"
       }
     ],
     "logic_chain": [
-      "Committee voted for inclusive system.",
-      "Leadership declared appointment-only.",
-      "They excluded Indigenous and Black chairs.",
-      "Used invalid meeting to formalize exclusion.",
-      "[DJ-MARK] Pattern systematically violated inclusion mandate."
+      "The committee established an inclusive, volunteer-based system via a democratic vote.",
+      "Leadership nullified this vote by fiat, imposing an exclusive appointment-only system.",
+      "They used this illegitimate system to exclude the chairs of the Indigenous and Black caucuses from key work.",
+      "This pattern of exclusion systematically violated the MOU's mandate for full participation of minority groups.",
+      "Conclusion: This nullification of a valid vote was a pretext to consolidate power and exclude dissenting minority voices."
     ],
-    "violation": "AAC leadership violated the MOU by nullifying democratic decisions and using invalid proceedings to exclude minority caucus chairs, defeating the MOU's core purpose.",
+    "violation": "AAC leadership violated the MOU by nullifying a democratic decision and then using procedurally invalid meetings to exclude minority caucus chairs, thereby defeating the MOU's core purpose of ensuring minority participation.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -638,77 +628,66 @@
   {
     "case_id": "2.4",
     "slug": "pdpr-playbook-bylaws-mislabeling-scheme",
-    "title": "PROOF: DNC Official Deliberately Mislabeled Bylaws to Circumvent Notice Requirements",
+    "title": "PROOF: Leadership Deliberately Mislabeled Bylaws to Circumvent Notice Requirements",
     "date": "2025-09-17",
     "reviewDate": "2024-12-01",
     "category": "DNC Charter & Bylaw Violation",
     "umbrella_category": "Systematic Suppression of Dissent",
-    "stakes": "Members were denied their statutory 30-day notice for bylaw amendments.",
-    "thesis": "Selina Vickers mislabeled bylaws as 'procedural rules' to circumvent mandatory notice requirements.",
+    "stakes": "Members were denied their statutory right to a 30-day notice period for bylaw amendments, preventing meaningful review and debate.",
+    "thesis": "Selina Vickers, an expert in procedural rules, deliberately mislabeled substantive bylaw amendments as 'procedural rules' to circumvent the mandatory 30-day notice requirement and ram through changes.",
     "axioms": [
       {
-        "text": "Vickers taught 'How to use rules, procedures and bylaws to beat the establishment.'",
+        "text": "Vickers publicly teaches activists 'How to use rules, procedures and bylaws to beat the establishment.'",
         "citation": "PDPR YouTube video screenshot",
         "url": "/files/PDPR-Training-Screenshot.jpg"
       },
       {
-        "text": "WVDP Bylaws require 30 days written notice for amendments.",
+        "text": "WVDP Bylaws require 30 days written notice for any and all amendments.",
         "citation": "WVDP Bylaws, Article XI, Section A",
         "url": "/files/WVSDEC-Bylaws-06.15.2024.pdf"
       },
       {
-        "text": "Rules governing organizational authority are bylaws, not procedural rules.",
+        "text": "Rules that grant or strip organizational authority are bylaws by definition, not procedural rules.",
         "citation": "Robert's Rules of Order, 12th ed.",
         "url": ""
       },
       {
-        "text": "Larry Taylor founded PDPR where Vickers was WV Chair.",
+        "text": "Larry Taylor founded PDPR, where Vickers serves as the West Virginia Chair.",
         "citation": "PDPR image with Selina vickers.jpg",
         "url": "/files/PDPR image with Selina vickers.jpg"
       }
     ],
-    "rule_summary": "Vickers' documented expertise in procedural manipulation reveals deliberate circumvention.",
+    "rule_summary": "Deliberately mislabeling a substantive bylaw as a 'procedural rule' to evade mandatory notice periods is a fraudulent act. The actor's documented expertise in procedural manipulation serves as powerful evidence of intent.",
     "case_facts": [
       {
-        "text": "Rule 13: 'Co-Chairs... shall have all authority... between meetings.'",
-        "citation": "Draft Procedural Rules, Rule 13",
+        "text": "Proposed 'Rule 13' and 'Rule 14' granted Co-Chairs sweeping authority to act between meetings and to appoint/remove subcommittee members—powers characteristic of bylaws.",
+        "citation": "Draft Procedural Rules, Rule 13, 14",
         "url": "/files/Draft-Procedural-Rules-Original.pdf"
       },
       {
-        "text": "Rule 14 granted power to appoint/remove subcommittee members.",
-        "citation": "Draft Procedural Rules, Rule 14",
-        "url": "/files/Draft-Procedural-Rules-Original.pdf"
-      },
-      {
-        "text": "Document titled 'temporary procedural rules' sent <24 hours before meeting.",
+        "text": "The document containing these substantive rules was titled 'temporary procedural rules' and circulated less than 24 hours before the meeting.",
         "citation": "Draft Procedural Rules",
         "url": "/files/Draft-Procedural-Rules-Original.pdf"
       },
       {
-        "text": "Member identified: 'it's not a procedural rule for handling this meeting.'",
+        "text": "A committee member recognized the deception during the meeting, stating on the record: 'it's not a procedural rule for handling this meeting.'",
         "citation": "AAC-Transcript-Analysis.pdf",
         "url": "/files/AAC-Transcript-Analysis.pdf"
       },
       {
-        "text": "After rejection, subcommittee 'unanimously adopted' the content.",
-        "citation": "Bylaws Subcommittee Report, Sept 9, 2021",
-        "url": "/files/Update-from-Bylaw-Subcommittee.pdf"
-      },
-      {
-        "text": "PDPR colleague Taylor presided over September 16 meeting adopting mislabeled bylaws.",
+        "text": "After the initial attempt failed, the rules were passed at a subsequent meeting presided over by Vickers' PDPR colleague, Larry Taylor.",
         "citation": "Email chain Sept 17, 2021",
         "url": "/files/Email-Seth-Sturm-2021-09-17.pdf"
       }
     ],
     "logic_chain": [
-      "Vickers knew from PDPR training how to manipulate rules.",
-      "Rules 13-14 were bylaws requiring 30-day notice.",
-      "She labeled them 'temporary procedural rules' with <24 hours notice.",
-      "Members recognized and called out the deception.",
-      "Her PDPR colleague ensured adoption anyway.",
-      "[DJ-MARK] Deliberate mislabeling circumvented notice requirements."
+      "The governing rule (WVDP Bylaws) requires a 30-day notice for bylaw amendments.",
+      "The facts show that substantive bylaws (granting sweeping authority) were presented as 'procedural rules' with less than 24 hours' notice.",
+      "Vickers' own expertise, documented in her PDPR training, proves she understood the distinction and the notice requirements.",
+      "This mislabeling was therefore a deliberate act to circumvent the 30-day notice period.",
+      "Conclusion: This was a calculated scheme to pass substantive changes without proper notice, rendering the adopted rules void."
     ],
-    "violation": "Vickers violated WVDP Bylaws by deliberately mislabeling bylaws as 'procedural rules' to circumvent 30-day notice. Her PDPR training proves intent. Rules adopted through this deception are void.",
+    "violation": "Leadership violated WVDP Bylaws by deliberately mislabeling substantive bylaw amendments as 'procedural rules' to circumvent the 30-day notice requirement. The responsible party's expertise in such tactics proves this was an intentional act of deception. Rules adopted through this deception are void.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -722,51 +701,52 @@
     "reviewDate": "2024-12-01",
     "category": "Campaign Finance Violation",
     "umbrella_category": "A New Day PAC Campaign Finance Violations",
-    "stakes": "Multiple sworn financial reports were filed with forged signatures.",
-    "thesis": "A New Day PAC filed reports with the treasurer's forged signature after she resigned.",
+    "stakes": "Multiple sworn financial disclosure reports, intended to provide public transparency, were filed with the state under a forged signature.",
+    "thesis": "After its treasurer resigned citing 'ethical concerns,' A New Day PAC knowingly filed subsequent financial reports bearing her forged signature, a criminal act under state law.",
     "axioms": [
       {
-        "text": "Campaign finance reports must be signed by the treasurer.",
+        "text": "West Virginia law requires campaign finance reports to be signed under oath by the committee's treasurer.",
         "citation": "WV Code §3-8-5",
         "url": "/files/wv-code-3-8-5.pdf"
       },
       {
-        "text": "Filing false reports is a criminal offense.",
+        "text": "Knowingly filing a false report is a criminal offense, constituting false swearing.",
         "citation": "WV Code §3-8-5",
         "url": "/files/wv-code-3-8-5.pdf"
       },
       {
-        "text": "Kim Felix served as PAC treasurer until her resignation.",
+        "text": "Kim Felix served as the registered treasurer for A New Day PAC until her formal resignation.",
         "citation": "A New Day PAC registration records",
         "url": "/files/A-New-Day-PAC-Registration.pdf"
       }
     ],
-    "rule_summary": "Only the actual treasurer can sign financial reports—forgery voids the filing.",
+    "rule_summary": "Only the active, duly-appointed treasurer of a political action committee has the legal authority to sign and swear to the accuracy of its financial disclosure reports. The use of any other person's signature, particularly a former treasurer's, constitutes forgery and false swearing.",
     "case_facts": [
       {
-        "text": "Felix resigned as treasurer citing ethical concerns.",
+        "text": "On July 5, 2023, Treasurer Kim Felix formally resigned from the PAC, citing 'ethical concerns' as her reason for departure.",
         "citation": "Felix, K. - Resignation Letter",
         "url": "/files/Felix-Resignation-Letter.pdf"
       },
       {
-        "text": "Reports filed after resignation contain her signature.",
+        "text": "On July 15, 2023, *after* her resignation, the PAC filed its Q2 2023 report, which contained the signature of Kim Felix.",
         "citation": "A New Day PAC Q2 2023 Filing",
         "url": "/files/A_New_Day_PAC_Filing_2023_Q2.pdf"
       },
       {
-        "text": "Felix confirmed she did not sign these reports.",
+        "text": "In a sworn witness statement, Ms. Felix confirmed she did not sign any reports after her resignation date.",
         "citation": "Felix, K. - Witness Statement, p. 3",
         "url": "/files/Felix, K. - Witness Statement.pdf"
       }
     ],
     "logic_chain": [
-      "Felix resigned as treasurer.",
-      "Reports filed after resignation bear her signature.",
-      "She confirms she didn't sign them.",
-      "Someone else signed her name.",
-      "[DJ-MARK] The PAC filed reports with forged signatures."
+      "The law requires the treasurer's authentic signature on sworn financial reports.",
+      "Fact: The PAC's treasurer, Kim Felix, resigned on July 5, 2023.",
+      "Fact: A report filed on July 15, 2023, bears her signature.",
+      "Fact: Felix attests under oath that the signature is not hers.",
+      "Application: Someone other than the treasurer signed her name to a sworn legal document.",
+      "Conclusion: A New Day PAC filed a state financial report containing a forged signature, a criminal violation of WV Code §3-8-5."
     ],
-    "violation": "A New Day PAC violated campaign finance law by filing reports with forged treasurer signatures, constituting false swearing and undermining the integrity of public disclosure.",
+    "violation": "A New Day PAC violated West Virginia campaign finance law by filing official reports with a forged treasurer's signature, an act of false swearing that invalidates the filings and undermines the integrity of public disclosure.",
     "author": {
       "name": "Democratic Justice",
       "type": "Organization"
@@ -780,60 +760,60 @@
     "reviewDate": "2024-12-01",
     "category": "Campaign Finance Violation",
     "umbrella_category": "A New Day PAC Campaign Finance Violations",
-    "stakes": "A PAC concealed its scholarship program from required disclosures.",
-    "thesis": "A New Day PAC failed to report any financial activity for its formal scholarship program.",
+    "stakes": "A PAC operated an entire scholarship program in the shadows, completely concealing its financial activity from required public disclosures.",
+    "thesis": "A New Day PAC operated a formal scholarship program but failed to report any of the associated expenditures or in-kind contributions, violating state disclosure laws.",
     "axioms": [
       {
-        "text": "All political committee expenditures must be publicly reported.",
+        "text": "State law requires all political committee expenditures to be publicly reported.",
         "citation": "WV SOS Campaign-Finance Guide",
         "url": "/files/sos-campaign-finance-guide.pdf"
       },
       {
-        "text": "Any 'thing of value' received must be reported as in-kind contribution.",
+        "text": "Any 'thing of value' received for which payment is not made must be reported as an in-kind contribution.",
         "citation": "WV SOS Campaign-Finance Guide",
         "url": "/files/sos-campaign-finance-guide.pdf"
       },
       {
-        "text": "A New Day PAC was registered as a West Virginia political committee.",
+        "text": "A New Day PAC was a registered West Virginia political committee subject to these laws.",
         "citation": "WV SOS records",
         "url": "/files/A-New-Day-PAC-Registration.pdf"
       },
       {
-        "text": "The PAC previously paid Progressive Democrats for Party Reform for consulting.",
+        "text": "The PAC had a prior financial relationship with Progressive Democrats for Party Reform (PDPR), having paid them for consulting services.",
         "citation": "A New Day PAC Q4 2022 Filing",
         "url": "/files/A_New_Day_PAC_Filing_2022_Q4.pdf"
       }
     ],
-    "rule_summary": "All financial transactions must be reported—scholarships involve reportable transactions.",
+    "rule_summary": "Campaign finance law requires absolute transparency. All financial transactions, whether direct expenditures or in-kind contributions, must be reported. The existence of a program necessitates reportable financial activity.",
     "case_facts": [
       {
-        "text": "PAC solicited scholarship applications on August 22, 2023.",
+        "text": "On August 22, 2023, the PAC sent an email publicly soliciting applications for a scholarship to attend a PDPR training.",
         "citation": "Email Record, Aug 22, 2023",
         "url": "/files/A_New_Day_PAC_Training_Email_2023-08-22.pdf"
       },
       {
-        "text": "Q3 2023 report shows zero expenditures to trainer.",
+        "text": "The PAC's Q3 2023 financial report, covering the period of the scholarship, shows $0 in expenditures to PDPR or any other training entity.",
         "citation": "A New Day PAC Q3 2023 Filing",
         "url": "/files/A_New_Day_PAC_Filing_2023_Q3.pdf"
       },
       {
-        "text": "Q3 2023 report shows zero in-kind contributions.",
+        "text": "The same Q3 2023 report shows $0 in in-kind contributions from any source.",
         "citation": "A New Day PAC Q3 2023 Filing",
         "url": "/files/A_New_Day_PAC_Filing_2023_Q3.pdf"
       }
     ],
     "logic_chain": [
-      "PAC offered scholarships August 22, 2023.",
-      "Scholarships require reportable transactions.",
-      "Q3 2023 report contains neither expenditures nor in-kind contributions.",
-      "Absence means concealment from disclosure.",
-      "[DJ-MARK] PAC's sworn disclosure omits scholarship program."
+      "The law requires all expenditures and in-kind contributions to be reported.",
+      "Fact: The PAC publicly operated a scholarship program in Q3 2023.",
+      "Application: A scholarship program, by definition, involves either an expenditure (paying for training) or an in-kind contribution (receiving donated training).",
+      "Fact: The PAC's sworn Q3 2023 report lists $0 for both expenditures and in-kind contributions.",
+      "Conclusion: The PAC's sworn disclosure is materially false, as it completely omits the financial activity of its scholarship program."
     ],
-    "violation": "A New Day PAC violated campaign finance law by failing to report scholarship program financial activity, denying public transparency and rendering sworn statements incomplete.",
+    "violation": "A New Day PAC violated campaign finance law by failing to report any financial activity associated with its scholarship program, thereby filing an incomplete and misleading disclosure and denying the public its right to transparency.",
     "potential_remedies": [
-      "File corrected report disclosing all scholarship activity.",
-      "Provide public accounting of funding and recipients.",
-      "Cease activities until compliant."
+      "File a corrected report disclosing all scholarship financial activity.",
+      "Provide a full public accounting of the program's funding sources and recipients.",
+      "Cease all political activities until the committee is in full compliance with state law."
     ],
     "author": {
       "name": "Democratic Justice",
