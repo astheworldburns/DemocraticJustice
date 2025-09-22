@@ -703,15 +703,6 @@ p{
   z-index: -1;
 }
 
-@media (max-width:768px){
-  .hero{
-    background-color: var(--paper-light);
-    color: var(--text);
-  }
-  .hero-headline::after{
-    content: none;
-  }
-}
 
 /* Hero grid */
 .hero-grid{
