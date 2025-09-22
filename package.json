@@ -27,7 +27,7 @@
     "autoprefixer": "^10.4.21",
     "critical": "^7.2.1",
     "cssnano": "^7.1.1",
-    "esbuild": "^0.21.0",
+    "esbuild": "^0.25.10",
     "html-minifier-terser": "^7.2.0",
     "luxon": "^3.7.2",
     "pagefind": "^1.4.0",
