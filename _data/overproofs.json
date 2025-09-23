@@ -3,15 +3,15 @@
     "id": "overproof-the-illegitimate-formation",
     "slug": "the-illegitimate-formation",
     "title": "Case 1: An Illegitimate Committee Forged in Secret",
-    "reviewDate": "2025-09-22",
+    "reviewDate": "2025-09-23",
     "short_title": "Illegitimate Formation",
     "umbrella_category": "The Illegitimate Formation",
-    "summary": "This case proves that organizers used a secret script to deliberately exclude mandated minority caucuses and install a pre-selected leadership, violating the 2020 DNC MOU from the outset.",
-    "narrative": "The 2020 DNC Memorandum of Understanding (MOU) legally required an open, transparent, and caucus-driven process to form the West Virginia Affirmative Action Committee. These proofs reconstruct how organizers executed a premeditated plan to circumvent that mandate. Using a secret 'do not share' script, they inverted the required process, installed leaders before 75% of the required caucuses existed, and orchestrated the appointment of the script's own author to a position of procedural power. The documentary evidence reveals a clear pattern of intentional non-compliance. This was not a procedural error; it was a foundational breach of the agreement.",
+    "summary": "This case proves organizers used a secret script to selectively exclude mandated minority caucuses and install a pre-selected leadership, a process in which the designated compliance officer breached her duty under the 2020 DNC MOU.",
+    "narrative": "The 2020 DNC MOU legally required an open, caucus-driven process. These proofs show how organizers executed a premeditated plan to circumvent that mandate. The failure to form 75% of the required racial caucuses was not an oversight, but a strategic choice, evidenced by the organizers' simultaneous success in forming caucuses for their allies. Using a secret 'do not share' script, they inverted the required process, and the MOU's own compliance officer breached her fiduciary duty by orchestrating her own appointment to a position of procedural power. The documentary evidence reveals a pattern of intentional non-compliance.",
     "key_points": [
-      "The DNC MOU created a legal duty to ensure fully-formed diversity caucuses selected the committee's leadership; organizers deliberately proceeded with the formation despite knowing this condition was not met.",
-      "A secret script, authored and distributed by the MOU compliance officer, proves premeditated control by choreographing nominations and orchestrating her own installation as Parliamentarian.",
-      "The process was designed to exclude, not include, disenfranchising the Latino, AAPI, and Native American communities at the moment of the committee's creation."
+      "The failure to form three of the four mandated racial caucuses was a strategic choice, proven by the organizers' ability to form other caucuses for their allies in the same period.",
+      "A secret script, authored and distributed by the MOU compliance officer, proves premeditated control by choreographing nominations, granting one individual preferential treatment, and orchestrating the author's own installation as Parliamentarian.",
+      "The official tasked under the MOU with ensuring a fair process instead breached her duty, using her authority to corrupt the committee's formation for her own benefit."
     ],
     "metadata": {
       "Timeframe": "June 2021",
@@ -21,26 +21,26 @@
     "order": 1
   },
   {
-    "id": "overproof-the-campaign-to-silence-dissent",
-    "slug": "the-campaign-to-silence-dissent",
-    "title": "Case 2: The Campaign to Silence Dissent",
-    "reviewDate": "2025-09-22",
-    "short_title": "Silencing Dissent",
-    "umbrella_category": "The Campaign to Silence Dissent",
-    "summary": "After seizing control, the illegitimate leadership executed a coordinated campaign of smear tactics and procedural manipulation to neutralize and disenfranchise elected minority representatives.",
-    "narrative": "Lacking the legitimacy of a fair and open formation, the newly installed Affirmative Action Committee leadership resorted to a systematic campaign to entrench its power and silence opposition. With strategic advice from a DNC official to 'outvote' dissenters, the leadership executed a multi-pronged attack. This involved coordinated smear campaigns to discredit minority caucus leaders, the unilateral nullification of democratic votes, and the repeated use of deceptive procedural tactics—such as mislabeling bylaws and installing a biased presider—to overturn outcomes they disagreed with. This was not governance; it was a coordinated effort to undermine the committee's democratic function.",
-    "key_points": [
-      "A DNC official advised a non-voting appointee on a strategy to 'outvote' and neutralize elected, dissenting members from minority caucuses.",
-      "Leadership executed a coordinated smear campaign, scripting personal attacks for others to deliver and spreading damaging rumors to isolate dissenters.",
-      "Democratic outcomes were systematically subverted through procedural manipulation, including nullifying votes and using an external actor with an undisclosed conflict of interest."
-    ],
-    "metadata": {
-      "Timeframe": "August–September 2021",
-      "Focus": "AAC Governance, Procedural Violations, Suppression of Members",
-      "Primary Documents": "Committee Emails & Transcripts, WVDP Appeals Board Ruling"
-    },
-    "order": 2
+  "id": "overproof-the-campaign-to-silence-dissent",
+  "slug": "the-campaign-to-silence-dissent",
+  "title": "Case 2: A Coordinated Campaign to Silence Dissent",
+  "reviewDate": "2025-09-23",
+  "short_title": "Campaign to Silence Dissent",
+  "umbrella_category": "The Campaign to Silence Dissent",
+  "summary": "DNC and WVDP officials engaged in a coordinated campaign to silence dissent using external collusion, scripted personal attacks, and the systematic abuse of parliamentary procedure to nullify democratic outcomes.",
+  "narrative": "What began as an illegitimate formation evolved into active suppression directed from the highest levels. A DNC Rules Committee member—tasked with ensuring fair oversight—instead provided repeated strategic advice to neutralize elected minority representatives. His admission that he told the Parliamentarian 'god knows how many times' to 'out vote' specific members reveals this wasn't passive supervision but active conspiracy. This external direction was executed internally through scripted attacks marked 'DO NOT FORWARD,' organized social media campaigns, and systematic exclusion of minority caucus chairs from governance. When challenged via proper procedure, leadership simply subverted the rules: they unilaterally reversed a valid vote, mislabeled substantive bylaws to ram them through without proper notice, and imported a biased presiding officer to ensure their passage. These actions were so procedurally corrupt that the party's own Board of Appeals later declared the entire meeting invalid.",
+  "key_points": [
+    "A DNC Rules Committee member admitted repeatedly advising a non-voting official to 'out vote' elected minority representatives, corrupting the supervisory role into active conspiracy.",
+    "Leadership orchestrated a campaign of organized retaliation, using concealed scripts marked 'DO NOT FORWARD THIS EMAIL' and coordinated social media attacks to destroy opposition.",
+    "Democratic processes were systematically subverted through procedural abuse, culminating in a meeting so flawed it was officially invalidated by the WVDP's Board of Appeals."
+  ],
+  "metadata": {
+    "Timeframe": "August - September 2021",
+    "Focus": "Suppression of Dissent & Procedural Abuse in the AAC",
+    "Primary Documents": "Harold Ickes Transcript, Board of Appeals Resolution, Mary Ann Claytor Email, Scripted Attack Emails"
   },
+  "order": 2
+},
   {
     "id": "overproof-undisclosed-conflicts-and-financial-misconduct",
     "slug": "undisclosed-conflicts-and-financial-misconduct",
