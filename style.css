@@ -567,7 +567,7 @@ p{
     right:auto;
     background:transparent;
     padding: 0;
-    gap: var(--space-5);
+    gap: clamp(var(--space-3), 2.5vw, var(--space-4));
     row-gap: var(--space-3);
     box-shadow:none;
     align-items:center;

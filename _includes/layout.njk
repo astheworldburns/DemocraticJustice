@@ -71,11 +71,9 @@
 
   {% set currentUrl = page.url or '/' %}
   {% set proofActive = currentUrl == '/archive/' or currentUrl == '/archive/index.html' or currentUrl.startsWith('/proofs/') %}
-  {% set methodActive = currentUrl == '/method/' or currentUrl == '/method/index.html' %}
   {% set actionActive = currentUrl == '/action/' or currentUrl == '/action/index.html' or currentUrl.startsWith('/action/') %}
   {% set caseStudiesActive = currentUrl == '/case-studies/' or currentUrl == '/case-studies/index.html' %}
   {% set aboutActive = currentUrl == '/about/' or currentUrl == '/about/index.html' %}
-  {% set contactActive = currentUrl == '/contact/' or currentUrl == '/contact/index.html' %}
   {% set submitActive = currentUrl == '/submit/' or currentUrl == '/submit/index.html' %}
   {% set homeActive = currentUrl == '/' or currentUrl == '/index.html' %}
 
@@ -103,11 +101,9 @@
           <li><a href="{{ '/archive/' | url }}"{% if proofActive %} class="is-active" aria-current="page"{% endif %}>Proof</a></li>
           <li class="nav-item-search"><a href="{{ '/archive/#search-input' | url }}" data-search-link aria-label="Search proofs">Search</a></li>
           <li><a href="{{ '/case-studies/' | url }}"{% if caseStudiesActive %} class="is-active" aria-current="page"{% endif %}>Case Studies</a></li>
-          <li><a href="{{ '/method/' | url }}"{% if methodActive %} class="is-active" aria-current="page"{% endif %}>Method</a></li>
-          <li><a href="{{ '/action/' | url }}"{% if actionActive %} class="is-active" aria-current="page"{% endif %}>Action</a></li>
+          <li><a href="{{ '/action/' | url }}"{% if actionActive %} class="is-active" aria-current="page"{% endif %}>Filing Guide</a></li>
           <li><a href="{{ '/about/' | url }}"{% if aboutActive %} class="is-active" aria-current="page"{% endif %}>About</a></li>
-          <li><a href="{{ '/contact/' | url }}"{% if contactActive %} class="is-active" aria-current="page"{% endif %}>Contact</a></li>
-          <li><a href="{{ '/submit/' | url }}" class="btn-nav-submit{% if submitActive %} is-active{% endif %}"{% if submitActive %} aria-current="page"{% endif %}>Submit</a></li>
+          <li><a href="{{ '/submit/' | url }}" class="btn-nav-submit{% if submitActive %} is-active{% endif %}"{% if submitActive %} aria-current="page"{% endif %}>Submit Proof</a></li>
         </ul>
       </div>
     </div>
