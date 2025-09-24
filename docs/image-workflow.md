@@ -1,16 +1,6 @@
----
-layout: layout.njk
-title: "Image Workflow"
-description: "Use the Eleventy image shortcode to generate responsive assets and optimized formats."
-intent: guide
-tasks:
-  - tooling
-  - assets
-permalink: /docs/image-workflow/
-intentOrder: 3
----
-
 # Image Workflow
+
+> **Maintainer note:** Internal reference for working with the Eleventy image shortcode.
 
 This project uses the Eleventy Image utility (`@11ty/eleventy-img`) through a global `image` Nunjucks shortcode to generate responsive `<picture>` markup with AVIF, WebP, and raster fallbacks.
 
