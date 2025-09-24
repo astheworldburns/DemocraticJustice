@@ -698,8 +698,24 @@ module.exports = function(eleventyConfig) {
       });
   });
 
-  eleventyConfig.addCollection("caseStudies", function(collectionApi) {
-    return createIntentCollection(collectionApi, "case-study");
+  eleventyConfig.addCollection("caseStudies", function() {
+    const { overproofGroups } = getProofCollections();
+
+    return overproofGroups.map((group) => {
+      const overproof = group?.overproof ?? {};
+      const slug = overproof.slug ? slugifyValue(overproof.slug) : slugifyValue(overproof.title ?? overproof.id ?? "");
+      const url = slug ? `/proofs/${slug}/` : null;
+
+      return {
+        url,
+        data: {
+          overproofGroup: group,
+          tasks: ["proof-record", "precedent"],
+          intentOrder: Number.isFinite(overproof.order) ? overproof.order : Number.POSITIVE_INFINITY,
+          title: overproof.title ?? overproof.short_title ?? slug
+        }
+      };
+    });
   });
 
   eleventyConfig.addFilter("date", (dateObj, format = "LLLL d, yyyy") => {
