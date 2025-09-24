@@ -37,7 +37,7 @@ eleventyComputed:
     <nav aria-label="Breadcrumb" class="breadcrumb">
       <ol>
         <li><a href="{{ '/' | url }}">Home</a></li>
-        <li><a href="{{ '/archive' | url }}">Proof</a></li>
+        <li><a href="{{ '/case-studies/' | url }}">Proof Record</a></li>
         {% if overproof %}
         <li><a href="{{ overproofUrl }}">{{ overproofLabel }}</a></li>
         {% endif %}
@@ -58,8 +58,8 @@ eleventyComputed:
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Proof",
-            "item": "{{ site.url }}{{ '/archive/' | url }}"
+            "name": "Proof Record",
+            "item": "{{ site.url }}{{ '/case-studies/' | url }}"
           }
           {% if overproof %}
           ,
