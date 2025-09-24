@@ -698,14 +698,6 @@ module.exports = function(eleventyConfig) {
       });
   });
 
-  eleventyConfig.addCollection("guides", function(collectionApi) {
-    return createIntentCollection(collectionApi, "guide");
-  });
-
-  eleventyConfig.addCollection("troubleshooting", function(collectionApi) {
-    return createIntentCollection(collectionApi, "troubleshooting");
-  });
-
   eleventyConfig.addCollection("caseStudies", function(collectionApi) {
     return createIntentCollection(collectionApi, "case-study");
   });

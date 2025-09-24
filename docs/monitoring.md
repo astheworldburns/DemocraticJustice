@@ -1,16 +1,6 @@
----
-layout: layout.njk
-title: "Monitoring and Backups"
-description: "Configure analytics, alerts, and scheduled backups so site operations stay resilient."
-intent: troubleshooting
-tasks:
-  - operations
-  - observability
-permalink: /docs/monitoring/
-intentOrder: 1
----
-
 # Monitoring and Backups
+
+> **Maintainer note:** Internal checklist for analytics, alerting, and backups.
 
 ## GoatCounter
 - Page views are tracked with [GoatCounter](https://www.goatcounter.com/). The script is configured to send hits to `https://democraticjustice.goatcounter.com/count`.
