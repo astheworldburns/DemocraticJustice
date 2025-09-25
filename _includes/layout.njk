@@ -70,7 +70,7 @@
 <body>
 
   {% set currentUrl = page.url or '/' %}
-  {% set proofActive = currentUrl == '/case-studies/' or currentUrl == '/case-studies/index.html' or currentUrl.startsWith('/proofs/') %}
+  {% set proofActive = currentUrl == '/archive/' or currentUrl == '/archive/index.html' or currentUrl.startsWith('/proofs/') %}
   {% set actionActive = currentUrl == '/action/' or currentUrl == '/action/index.html' or currentUrl.startsWith('/action/') %}
   {% set caseStudiesActive = currentUrl == '/case-studies/' or currentUrl == '/case-studies/index.html' %}
   {% set aboutActive = currentUrl == '/about/' or currentUrl == '/about/index.html' %}
@@ -99,7 +99,7 @@
           </svg>
         </button>
         <ul class="nav-links" id="primary-nav">
-          <li><a href="{{ '/case-studies/' | url }}"{% if proofActive %} class="is-active" aria-current="page"{% endif %}>Proof</a></li>
+          <li><a href="{{ '/archive/' | url }}"{% if proofActive %} class="is-active" aria-current="page"{% endif %}>Proof</a></li>
           <li class="nav-item-search"><a href="{{ '/archive/#search-input' | url }}" data-search-link aria-label="Search proofs">Search</a></li>
           <li><a href="{{ '/case-studies/' | url }}"{% if caseStudiesActive %} class="is-active" aria-current="page"{% endif %}>Case Studies</a></li>
           <li><a href="{{ '/action/' | url }}"{% if actionActive %} class="is-active" aria-current="page"{% endif %}>Filing Guide</a></li>
