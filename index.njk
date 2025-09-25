@@ -5,14 +5,15 @@ description: Proof. Not spin. Democratic Justice equips West Virginia Democrats 
 reviewDate: 2024-12-01
 ---
 
-{# This line gets the newest proof from our sorted collection and saves it in a variable #}
-{% set latestProof = collections.sortedProofs | last %}
+{% set featuredCases = collections.caseStudies | slice(0, 3) %}
+{% set totalProofs = collections.sortedProofs | length %}
 
 <header class="hero" role="banner">
   <div class="align-container">
-    <div class="hero-grid">
+    <div class="hero-grid hero-grid--single">
       <div>
         <h1 class="hero-headline">Proof.<strong>Not Spin.</strong></h1>
+        <p class="hero-lede">We assemble sworn records into proof the stronger party can’t ignore—and put it in your hands so you can demand accountability.</p>
         <div class="btn-group">
           <a href="{{ '/overproofs/' | url }}" class="btn btn-accent">
             Explore Overproofs
@@ -22,68 +23,52 @@ reviewDate: 2024-12-01
           </a>
         </div>
       </div>
-
-      <aside class="proof-box" aria-label="Featured Proof">
-        <div class="proof-box__header">
-          <div class="proof-box__title">
-            {% image "/images/three-dots-white.svg", "Therefore symbol", {
-              class: "mark md",
-              widths: [24, 48],
-              sizes: "24px",
-              ariaHidden: true
-            } %}
-            LATEST PROOF
-          </div>
-        </div>
-        <div class="proof-box__content">
-          {# These lines now use the data from 'latestProof' to build the HTML directly #}
-         <p class="proof-box__finding">{{ latestProof.thesis }}</p>
-          <p class="proof-box__meta">CASE FILE: {{ latestProof.case_id }}</p>
-          <a href="{{ '/proofs/' | url }}{{ latestProof.overproof.slug }}/{{ latestProof.slug }}/" class="proof-box__cta">
-            {% image "/images/three-dots-blue.svg", "Therefore symbol", {
-              class: "mark md",
-              widths: [24, 48],
-              sizes: "24px",
-              ariaHidden: true
-            } %}
-            Examine Full Proof →
-          </a>
-        </div>
-      </aside>
     </div>
   </div>
 </header>
 
-<section class="cases" id="archive" aria-labelledby="cases-heading">
+{% if featuredCases and featuredCases | length %}
+<section class="key-cases" id="key-cases" aria-labelledby="key-cases-heading">
   <div class="align-container">
-    <p class="section-label">The Proof Record</p>
-    <h2 id="cases-heading">Proof Archive</h2>
+    <p class="section-label">Investigative Briefs</p>
+    <h2 id="key-cases-heading">Key Cases</h2>
+    <p class="lead">Start with the major violations our research has proven. Each case brief connects the documents, testimony, and rulings into a clear narrative.</p>
 
-   <div class="search-filter-controls">
-  <input type="search" id="search-input" placeholder="Search proofs by keyword, case ID, or topic...">
-  <div class="filter-group">
-    <select id="category-filter">
-    </select>
-    <button id="reset-filters" class="btn-reset">Reset</button>
-  </div>
-</div>
-    <p id="results-count" style="margin-top:12px;font-size:14px;color:var(--muted);"></p>
-
-    <div class="case-grid" id="case-grid" aria-live="polite">
-        <!-- JavaScript will fill this area -->
+    <div class="key-case-grid">
+      {% for study in featuredCases %}
+        {% set overproofGroup = study.data.overproofGroup %}
+        {% set overproof = overproofGroup.overproof %}
+        {% set brief = overproof.brief %}
+        {% set caseTitle = (brief and brief.headline) or overproof.short_title or overproof.title %}
+        {% set caseSummary = study.data.description or (brief and brief.lede) or overproof.summary %}
+        {% set proofCount = overproof.proofCount or (overproofGroup.proofs | length) %}
+        <article class="key-case-card">
+          {% if overproof.umbrella_category %}
+          <p class="key-case-card__kicker">VIOLATION: {{ overproof.umbrella_category }}</p>
+          {% endif %}
+          <h3><a href="{{ study.url | url }}">{{ caseTitle }}</a></h3>
+          {% if caseSummary %}
+          <p class="key-case-card__summary">{{ caseSummary | truncate(210) }}</p>
+          {% endif %}
+          <div class="key-case-card__meta">
+            {% if proofCount %}
+            <span>{{ proofCount }} documented proofs</span>
+            {% endif %}
+            {% if overproof.metadata and overproof.metadata.Timeframe %}
+            <span>{{ overproof.metadata.Timeframe }}</span>
+            {% endif %}
+          </div>
+          <a class="key-case-card__cta" href="{{ study.url | url }}">Read case brief →</a>
+        </article>
+      {% endfor %}
     </div>
 
-    <script type="application/json" id="proof-data">
-      {{ collections.sortedProofs | dump | replace('</', '<\\/') | safe }}
-    </script>
-
-    <div style="margin-top:40px">
-      <a href="{{ '/overproofs/' | url }}" class="btn btn-outline-blue">View Overproofs</a>
+    <div class="key-case-actions">
+      <a href="{{ '/overproofs/' | url }}" class="btn btn-outline-blue">View all case briefs</a>
     </div>
-
-    <noscript><p>Enable JavaScript to load proof items.</p></noscript>
   </div>
 </section>
+{% endif %}
 
 <section class="method" id="method" aria-labelledby="method-heading">
   <div class="align-container">
@@ -103,12 +88,22 @@ reviewDate: 2024-12-01
       </div>
       <div class="method-single-box__item">
         <p class="method-step-number">3. REASONING &mdash; THE PROOF</p>
-        <p class="method-step-description">Derive the claim from 1 & 2.</p>
+        <p class="method-step-description">Derive the claim from 1 &amp; 2.</p>
       </div>
       <div class="method-single-box__item">
         <p class="method-step-number">4. CONCLUSION (Q.E.D.)</p>
         <p class="method-step-description">State the claim proven and the remedy.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="archive-cta" aria-labelledby="archive-cta-heading">
+  <div class="align-container">
+    <div class="archive-cta__card">
+      <h2 id="archive-cta-heading">Dig into the full evidence locker</h2>
+      <p>Ready to examine every document for yourself? Explore the complete archive of {{ totalProofs }} vetted proofs, including source citations and filings.</p>
+      <a href="{{ '/archive' | url }}" class="btn btn-outline-blue">Explore the full proof archive</a>
     </div>
   </div>
 </section>
