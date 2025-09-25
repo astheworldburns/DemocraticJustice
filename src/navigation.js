@@ -791,8 +791,8 @@ export function initNavigation() {
             observer = lazyLoadProofs();
 
             const proofDataElement = document.getElementById('proof-data');
-            if (!proofDataElement) {
-                throw new Error('Proof data element not found.');
+            if (!grid || !proofDataElement) {
+                return;
             }
 
             const rawJson = (proofDataElement.textContent || '').trim();
