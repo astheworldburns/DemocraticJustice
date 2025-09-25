@@ -2174,6 +2174,11 @@ p{
   flex-wrap:wrap;
   gap:var(--space-2);
   margin:0;
+  padding:var(--space-3);
+  border:1px solid var(--color-border-soft);
+  border-radius:12px;
+  background:var(--color-surface-muted);
+  color:var(--color-text-base);
 }
 
 .violation-card__consequence span{
