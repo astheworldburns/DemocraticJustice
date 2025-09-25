@@ -72,7 +72,7 @@
   {% set currentUrl = page.url or '/' %}
   {% set proofActive = currentUrl == '/archive/' or currentUrl == '/archive/index.html' or currentUrl.startsWith('/proofs/') %}
   {% set actionActive = currentUrl == '/action/' or currentUrl == '/action/index.html' or currentUrl.startsWith('/action/') %}
-  {% set caseStudiesActive = currentUrl == '/case-studies/' or currentUrl == '/case-studies/index.html' %}
+  {% set overproofsActive = currentUrl == '/overproofs/' or currentUrl == '/overproofs/index.html' or currentUrl.startsWith('/briefs/') %}
   {% set aboutActive = currentUrl == '/about/' or currentUrl == '/about/index.html' %}
   {% set submitActive = currentUrl == '/submit/' or currentUrl == '/submit/index.html' %}
   {% set homeActive = currentUrl == '/' or currentUrl == '/index.html' %}
@@ -101,7 +101,7 @@
         <ul class="nav-links" id="primary-nav">
           <li><a href="{{ '/archive/' | url }}"{% if proofActive %} class="is-active" aria-current="page"{% endif %}>Proof</a></li>
           <li class="nav-item-search"><a href="{{ '/archive/#search-input' | url }}" data-search-link aria-label="Search proofs">Search</a></li>
-          <li><a href="{{ '/case-studies/' | url }}"{% if caseStudiesActive %} class="is-active" aria-current="page"{% endif %}>Case Studies</a></li>
+          <li><a href="{{ '/overproofs/' | url }}"{% if overproofsActive %} class="is-active" aria-current="page"{% endif %}>Overproofs</a></li>
           <li><a href="{{ '/action/' | url }}"{% if actionActive %} class="is-active" aria-current="page"{% endif %}>Filing Guide</a></li>
           <li><a href="{{ '/about/' | url }}"{% if aboutActive %} class="is-active" aria-current="page"{% endif %}>About</a></li>
           <li><a href="{{ '/submit/' | url }}" class="btn-nav-submit{% if submitActive %} is-active{% endif %}"{% if submitActive %} aria-current="page"{% endif %}>Submit Proof</a></li>
@@ -141,7 +141,7 @@
             <li><a href="{{ '/' | url }}">Home</a></li>
             <li><a href="{{ '/archive/' | url }}">Proof Archive</a></li>
             <li><a href="{{ '/archive/#search-input' | url }}" data-search-link>Search Proofs</a></li>
-            <li><a href="{{ '/case-studies/' | url }}">Overproofs</a></li>
+            <li><a href="{{ '/overproofs/' | url }}">Overproofs</a></li>
             <li><a href="{{ '/method/' | url }}">Method</a></li>
             <li><a href="{{ '/action/' | url }}">Action</a></li>
             <li><a href="{{ '/about/' | url }}">About Us</a></li>
