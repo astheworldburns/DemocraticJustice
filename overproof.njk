@@ -4,14 +4,14 @@ pagination:
   data: collections.overproofs
   size: 1
   alias: overproofGroup
-permalink: "proofs/{{ overproofGroup.overproof.slug }}/index.html"
+permalink: "briefs/{{ overproofGroup.overproof.slug }}/index.html"
 intent: case-study
 tasks:
   - proof-record
   - precedent
 reviewDate: 2024-12-01
 eleventyComputed:
-  title: "{{ (overproofGroup.overproof.brief and overproofGroup.overproof.brief.headline) or overproofGroup.overproof.title }} — Proof Record"
+  title: "{{ (overproofGroup.overproof.brief and overproofGroup.overproof.brief.headline) or overproofGroup.overproof.title }} — Case Brief"
   description: "{{ (overproofGroup.overproof.brief and overproofGroup.overproof.brief.lede) or overproofGroup.overproof.summary }}"
 ---
 <div class="content-page" style="background: var(--paper);">
@@ -19,7 +19,7 @@ eleventyComputed:
     <nav aria-label="Breadcrumb" class="breadcrumb">
       <ol>
         <li><a href="{{ '/' | url }}">Home</a></li>
-        <li><a href="{{ '/case-studies/' | url }}">Proof Record</a></li>
+        <li><a href="{{ '/overproofs/' | url }}">Overproofs</a></li>
         <li aria-current="page">{{ overproofGroup.overproof.title }}</li>
       </ol>
     </nav>
@@ -38,8 +38,8 @@ eleventyComputed:
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Proof Record",
-            "item": "{{ site.url }}{{ '/case-studies/' | url }}"
+            "name": "Overproofs",
+            "item": "{{ site.url }}{{ '/overproofs/' | url }}"
           },
           {
             "@type": "ListItem",
@@ -67,7 +67,7 @@ eleventyComputed:
 
     <header class="overproof-hero">
       <div class="overproof-hero__content">
-        <p class="section-label">Proof Record</p>
+        <p class="section-label">Case Brief</p>
         <h1>{{ (brief and brief.headline) or overproof.title }}</h1>
 
         {% set heroSummary = (brief and brief.lede) or overproof.summary %}
@@ -191,10 +191,11 @@ eleventyComputed:
 
     <div class="overproof-actions">
       {% if brief and brief.nextBrief %}
-      <a href="{{ '/proofs/' | url }}{{ brief.nextBrief.slug }}/" class="btn btn-outline-blue">{{ brief.nextBrief.text }}</a>
+      <a href="{{ (brief.nextBrief.url or ('/briefs/' + brief.nextBrief.slug + '/')) | url }}" class="btn btn-outline-blue">{{ brief.nextBrief.text }}</a>
       {% endif %}
 
-      <a href="{{ '/archive' | url }}" class="btn btn-outline-blue">Return to Proof Archive</a>
+      <a href="{{ '/overproofs/' | url }}" class="btn btn-outline-blue">Return to Overproofs</a>
+      <a href="{{ '/archive' | url }}" class="btn btn-outline-blue">Proof Archive</a>
     </div>
   </div>
 </div>

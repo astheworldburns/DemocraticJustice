@@ -1,16 +1,16 @@
 ---
 layout: layout.njk
-title: "Case Studies - Democratic Justice"
-description: "Explore Democratic Justice case studies that group proofs by umbrella findings and show where action is needed."
-permalink: /case-studies/
+title: "Overproofs - Democratic Justice"
+description: "Explore Democratic Justice overproofs to see how groups of proofs establish each case."
+permalink: /overproofs/
 reviewDate: 2024-12-01
 ---
 
-<section class="content-page" id="case-studies-page">
+<section class="content-page" id="overproofs-page">
   <div class="align-container">
-    <p class="section-label">Case Studies</p>
-    <h1>Case Studies from the Proof Archive</h1>
-    <p class="lead">Dive into umbrella findings that assemble individual proofs, highlight violations, and document the supporting evidence.</p>
+    <p class="section-label">Overproofs</p>
+    <h1>Case Overproofs</h1>
+    <p class="lead">Each overproof links to a case brief explaining the violations and the proofs that establish the claim.</p>
 
     {% set studies = collections.caseStudies %}
     {% if studies and studies | length %}
@@ -32,7 +32,7 @@ reviewDate: 2024-12-01
           {% endif %}
         </header>
 
-        <div class="case-study-card__content">
+      <div class="case-study-card__content">
           {% if overproof.key_points and overproof.key_points | length %}
           <div class="case-study-card__facts">
             <h3>Key Findings</h3>
@@ -74,13 +74,13 @@ reviewDate: 2024-12-01
         </div>
 
         <footer class="case-study-card__footer">
-          <a class="case-study-card__cta" href="{{ study.url | url }}">View full case study</a>
+          <a class="case-study-card__cta" href="{{ study.url | url }}">Read case brief</a>
         </footer>
       </article>
       {% endfor %}
     </div>
     {% else %}
-    <p>No case studies are published yet. Check back soon.</p>
+    <p>No overproofs are published yet. Check back soon.</p>
     {% endif %}
   </div>
 </section>
