@@ -3,8 +3,8 @@ import { test, expect } from '@playwright/test';
 const DARK_BODY_BG = 'rgb(15, 23, 42)';
 const DARK_TEXT = 'rgb(241, 245, 249)';
 const DARK_SURFACE = 'rgb(30, 41, 59)';
-const DARK_NAV_TEXT = 'rgb(37, 99, 235)';
-const DARK_LINK = 'rgb(147, 197, 253)';
+const DARK_NAV_TEXT = 'rgb(241, 245, 249)';
+const DARK_LINK = 'rgb(241, 245, 249)';
 
 test.describe('dark theme styling', () => {
   test.beforeEach(async ({ page }) => {

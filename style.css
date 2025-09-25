@@ -330,10 +330,29 @@
 
 [data-theme="dark"] .nav{
   background:var(--color-surface-muted);
-  color:var(--color-interactive-primary);
-  --nav-active-bg: rgba(37,99,235,0.32);
-  --nav-active-text: var(--color-primary-200);
-  --nav-active-border: var(--color-primary-200);
+  color:var(--color-text-base);
+  --nav-active-bg: rgba(255,255,255,0.08);
+  --nav-active-text: var(--color-text-base);
+  --nav-active-border: rgba(255,255,255,0.4);
+  --nav-toggle-color: var(--color-text-base);
+}
+
+[data-theme="dark"] .nav-links a{
+  color:var(--color-text-base);
+}
+
+[data-theme="dark"] .nav-links a:hover,
+[data-theme="dark"] .nav-links a:focus-visible,
+[data-theme="dark"] .nav-links a:active{
+  color:var(--color-text-base);
+  border-bottom-color:rgba(255,255,255,0.6);
+}
+
+[data-theme="dark"] .nav-links a[data-search-link]:hover,
+[data-theme="dark"] .nav-links a[data-search-link]:focus-visible,
+[data-theme="dark"] .nav-links a[data-search-link]:active{
+  background:rgba(255,255,255,0.08);
+  color:var(--color-text-base);
 }
 
 [data-theme="dark"] .wordmark{content:url('/images/wordmark-white-on-blue.svg')}
@@ -567,7 +586,7 @@ p{
     right:auto;
     background:transparent;
     padding: 0;
-    gap: var(--space-5);
+    gap: clamp(var(--space-3), 2.5vw, var(--space-4));
     row-gap: var(--space-3);
     box-shadow:none;
     align-items:center;
@@ -1474,59 +1493,187 @@ p{
 /* Section wrapper padding (all breakpoints) */
 .content-page { padding: calc(var(--space-8) + var(--space-6)) 0; }
 
-.resource-list {
-  display: grid;
-  gap: var(--space-5);
+.case-study-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
   margin-top: var(--space-6);
 }
 
-@media (min-width:768px) {
-  .resource-list {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
+.case-study-card {
+  background: var(--paper-light);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: clamp(var(--space-5), 2vw, var(--space-6));
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
 }
 
-.resource-card {
-  background: var(--paper-light);
-  border-radius: 12px;
-  padding: var(--space-5);
-  box-shadow: var(--shadow-sm);
+.case-study-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.case-study-card__kicker {
+  font-size: var(--font-size-xs);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.case-study-card__summary {
+  font-size: clamp(var(--font-size-base), 1.12rem, var(--font-size-lg));
+  color: var(--text);
+}
+
+.case-study-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.case-study-card__facts,
+.case-study-card__details {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
 }
 
-.resource-card h2 {
-  margin: 0;
-}
-
-.resource-card p {
-  margin: 0;
-}
-
-.resource-card__meta {
+.case-study-card__facts h3,
+.case-study-card__details h3 {
   font-size: var(--font-size-sm);
-  color: var(--muted);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
-.resource-card__tasks {
-  list-style: none;
+.case-study-card__facts ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.case-study-card__facts li {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+.case-study-card__details dl {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.case-study-card__details dl > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.case-study-card__details dt {
+  font-size: var(--font-size-xs);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.case-study-card__details dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.case-study-card__tags {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.resource-card__tasks li {
-  background: var(--color-interactive-neutral);
-  color: var(--color-text-base);
+.case-study-card__tags li {
+  background: var(--color-surface-muted);
+  color: var(--text);
   border-radius: 999px;
-  padding: 0.35rem 0.85rem;
+  padding: var(--space-1) var(--space-3);
   font-size: var(--font-size-xs);
-  letter-spacing: 0.08em;
+  letter-spacing: .5px;
   text-transform: uppercase;
+}
+
+.case-study-card__footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.case-study-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   font-weight: 700;
+  color: var(--color-link-default);
+}
+
+.case-study-card__cta::after {
+  content: "→";
+  font-size: 1rem;
+}
+
+.case-study-card__cta:hover,
+.case-study-card__cta:focus-visible {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+@media (min-width: 960px) {
+  .case-study-card__content {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .case-study-card__facts {
+    flex: 2 1 0;
+    padding-right: var(--space-5);
+    border-right: 1px solid var(--border-soft);
+  }
+
+  .case-study-card__details {
+    flex: 1 1 0;
+    padding-left: var(--space-5);
+  }
+
+  .case-study-card__details dl {
+    gap: var(--space-4);
+  }
+}
+
+[data-theme="dark"] .case-study-card {
+  background: var(--paper-light);
+  border-color: var(--color-border-subtle);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .case-study-card__facts {
+  border-color: var(--color-border-subtle);
+}
+
+[data-theme="dark"] .case-study-card__tags li {
+  background: rgba(255,255,255,0.1);
+  color: var(--color-text-base);
+}
+
+[data-theme="dark"] .case-study-card__cta {
+  color: var(--color-text-base);
+}
+
+[data-theme="dark"] .case-study-card__cta:hover,
+[data-theme="dark"] .case-study-card__cta:focus-visible {
+  color: var(--color-white);
 }
 
 /* Overproof record */

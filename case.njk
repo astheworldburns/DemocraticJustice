@@ -31,13 +31,13 @@ eleventyComputed:
   <article class="doc">
     {% set overproof = proof.overproof %}
     {% if overproof %}
-      {% set overproofUrl = ('/proofs/' + overproof.slug + '/') | url %}
+      {% set overproofUrl = (overproof.url or ('/briefs/' + overproof.slug + '/')) | url %}
       {% set overproofLabel = overproof.short_title or overproof.title %}
     {% endif %}
     <nav aria-label="Breadcrumb" class="breadcrumb">
       <ol>
         <li><a href="{{ '/' | url }}">Home</a></li>
-        <li><a href="{{ '/archive' | url }}">Proof</a></li>
+        <li><a href="{{ '/overproofs/' | url }}">Overproofs</a></li>
         {% if overproof %}
         <li><a href="{{ overproofUrl }}">{{ overproofLabel }}</a></li>
         {% endif %}
@@ -58,8 +58,8 @@ eleventyComputed:
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Proof",
-            "item": "{{ site.url }}{{ '/archive/' | url }}"
+            "name": "Overproofs",
+            "item": "{{ site.url }}{{ '/overproofs/' | url }}"
           }
           {% if overproof %}
           ,

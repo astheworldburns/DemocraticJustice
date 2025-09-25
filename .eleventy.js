@@ -261,6 +261,8 @@ function normalizeOverproofEntry(entry = {}, index = 0) {
   const metadata = entry.metadata && typeof entry.metadata === "object" ? entry.metadata : {};
   const order = Number.isFinite(entry.order) ? entry.order : index + 1;
 
+  const url = `/briefs/${slug}/`;
+
   return {
     ...entry,
     id,
@@ -273,7 +275,7 @@ function normalizeOverproofEntry(entry = {}, index = 0) {
     key_points: keyPoints,
     metadata,
     order,
-    url: `/proofs/${slug}/`
+    url
   };
 }
 
@@ -297,6 +299,7 @@ function normalizeBriefEntry(entry = {}, index = 0) {
 
   const id = entry.id ?? `brief-${slug}`;
   const lede = entry.lede ?? entry.summary ?? entry.description ?? "";
+  const url = `/briefs/${slug}/`;
   const violations = Array.isArray(entry.violations)
     ? entry.violations.map((violation) => {
         if (!violation || typeof violation !== "object") {
@@ -317,7 +320,8 @@ function normalizeBriefEntry(entry = {}, index = 0) {
   const nextBrief = entry.nextBrief && typeof entry.nextBrief === "object"
     ? {
         ...entry.nextBrief,
-        slug: entry.nextBrief.slug ? slugifyValue(entry.nextBrief.slug) : entry.nextBrief.slug ?? ""
+        slug: entry.nextBrief.slug ? slugifyValue(entry.nextBrief.slug) : entry.nextBrief.slug ?? "",
+        url: entry.nextBrief.slug ? `/briefs/${slugifyValue(entry.nextBrief.slug)}/` : entry.nextBrief.url ?? null
       }
     : null;
 
@@ -325,6 +329,7 @@ function normalizeBriefEntry(entry = {}, index = 0) {
     ...entry,
     id,
     slug,
+    url,
     headline,
     lede,
     violations,
@@ -698,16 +703,24 @@ module.exports = function(eleventyConfig) {
       });
   });
 
-  eleventyConfig.addCollection("guides", function(collectionApi) {
-    return createIntentCollection(collectionApi, "guide");
-  });
+  eleventyConfig.addCollection("caseStudies", function() {
+    const { overproofGroups } = getProofCollections();
 
-  eleventyConfig.addCollection("troubleshooting", function(collectionApi) {
-    return createIntentCollection(collectionApi, "troubleshooting");
-  });
+    return overproofGroups.map((group) => {
+      const overproof = group?.overproof ?? {};
+      const slug = overproof.slug ? slugifyValue(overproof.slug) : slugifyValue(overproof.title ?? overproof.id ?? "");
+      const url = overproof.url ?? (slug ? `/briefs/${slug}/` : null);
 
-  eleventyConfig.addCollection("caseStudies", function(collectionApi) {
-    return createIntentCollection(collectionApi, "case-study");
+      return {
+        url,
+        data: {
+          overproofGroup: group,
+          tasks: ["proof-record", "precedent"],
+          intentOrder: Number.isFinite(overproof.order) ? overproof.order : Number.POSITIVE_INFINITY,
+          title: overproof.title ?? overproof.short_title ?? slug
+        }
+      };
+    });
   });
 
   eleventyConfig.addFilter("date", (dateObj, format = "LLLL d, yyyy") => {
