@@ -68,7 +68,7 @@ eleventyComputed:
     <header class="overproof-hero">
       <div class="overproof-hero__content">
         <p class="section-label">Case Brief</p>
-        <h1>{{ (brief and brief.headline) or overproof.title }}</h1>
+        <h1 class="overproof-hero__title">{{ (brief and brief.headline) or overproof.title }}</h1>
 
         {% set heroSummary = (brief and brief.lede) or overproof.summary %}
         {% if heroSummary %}
@@ -135,7 +135,7 @@ eleventyComputed:
           <p class="violation-card__summary">{{ violation.summary }}</p>
           {% endif %}
           {% if violation.consequence %}
-          <p class="violation-card__consequence"><span>Consequence</span>{{ violation.consequence }}</p>
+          <p class="violation-card__consequence pill pill--warning"><span>Consequence</span>{{ violation.consequence }}</p>
           {% endif %}
           {% if violation.evidencePoints and violation.evidencePoints | length %}
           <ul class="violation-card__list">
@@ -150,7 +150,7 @@ eleventyComputed:
             <ul class="brief-proof-links__list">
               {% for proof in violation.proofs %}
               <li>
-                <a href="{{ '/proofs/' | url }}{{ overproof.slug }}/{{ proof.slug }}/" rel="noopener">{{ proof.title }}</a>
+                <a href="{{ '/proofs/' | url }}{{ overproof.slug }}/{{ proof.slug }}/" class="pill pill--muted" rel="noopener">{{ proof.title }}</a>
               </li>
               {% endfor %}
             </ul>
@@ -177,12 +177,14 @@ eleventyComputed:
       <div class="case-grid">
         {% for proof in overproofGroup.proofs %}
         <article class="case-card" data-proof-id="{{ proof.case_id }}">
-          <h3><a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/">{{ proof.title }}</a></h3>
-          <p class="case-meta">
+          <div class="case-card__header">
+            <h3 class="case-card__title"><a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/">{{ proof.title }}</a></h3>
+            <p class="case-meta case-card__meta">
             {{ proof.case_id }} • {{ proof.date | date }}
             {% if proof.category %} • <span style="font-weight: 700;">{{ proof.category }}</span>{% endif %}
-          </p>
-          <p>{{ proof.thesis }}</p>
+            </p>
+          </div>
+          <p class="case-card__summary">{{ proof.thesis }}</p>
           <a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/" class="case-link">Examine Proof →</a>
         </article>
         {% endfor %}
