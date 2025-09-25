@@ -2072,9 +2072,66 @@ html { scroll-behavior: smooth; }
 /* Subtle highlight when jumping to a section */
 .action-item:target { outline: 2px solid rgba(16,89,168,.25); outline-offset: 6px; }
 
+/* === About page: layout & typography refinements === */
+#about-page .align-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#about-page .about-content {
+  display: grid;
+  gap: var(--space-4);
+  max-width: min(62ch, 100%);
+}
+
+#about-page .about-content > * {
+  margin: 0;
+}
+
+#about-page .about-title {
+  text-transform: none;
+  letter-spacing: -0.015em;
+  margin-bottom: var(--space-2);
+}
+
+#about-page h2 {
+  text-transform: none;
+  letter-spacing: -0.005em;
+  margin: var(--space-7) 0 var(--space-3);
+}
+
+#about-page h2:first-of-type {
+  margin-top: var(--space-6);
+}
+
+#about-page .about-content p {
+  max-width: none;
+}
+
+#about-page .about-intro {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-lg);
+}
+
+#about-page .cta-copy {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+#about-page .about-content .btn-group {
+  justify-content: flex-start;
+  margin-top: var(--space-1);
+}
+
+#about-page .about-content .context-note,
+#about-page .about-content .founder-afterword,
+#about-page .about-content .about-cta {
+  width: 100%;
+}
+
 /* === About page: subtle founder afterword === */
 #about-page .founder-afterword {
-  margin: 18px 0 var(--space-2);
+  margin: var(--space-6) 0 var(--space-2);
   border-top: 1px solid var(--silver);
   padding-top: var(--space-3);
 }
@@ -2093,12 +2150,13 @@ html { scroll-behavior: smooth; }
 #about-page .founder-quote { margin: 0 0 6px; font-style: italic; color: var(--text-soft); }
 #about-page .sig-wrap {
   display: inline-flex; align-items: center; gap: 10px;
-  opacity: .9;
+  opacity: .95;
 }
 #about-page .signature { height: 36px; width: auto; display: block; }
-#about-page .sig-meta { display: inline-flex; gap: 8px; color: var(--text-muted); }
+#about-page .signature--dark { display: none; }
+#about-page .sig-meta { display: inline-flex; gap: 8px; color: var(--text); font-size: 0.95rem; }
 #about-page .sig-name { font-weight: 700; color: var(--text); }
-#about-page .sig-role { font-style: italic; }
+#about-page .sig-role { font-style: italic; color: var(--text-subtle); }
 
 /* Print: keep it compact and neutral */
 @media print {
@@ -2109,11 +2167,12 @@ html { scroll-behavior: smooth; }
 #about-page .context-note {
   display: block !important; /* Force visibility */
   background: var(--paper-light);
-  border-left: 4px solid var(--navy);
   border-radius: 10px;
   box-shadow: var(--shadow-sm);
-  padding: 14px var(--space-4);
-  margin: var(--space-4) 0;
+  padding: 18px var(--space-4);
+  margin: var(--space-6) 0;
+  position: relative;
+  isolation: isolate;
 }
 
 #about-page .context-note h2 {
@@ -2131,20 +2190,36 @@ html { scroll-behavior: smooth; }
   color: var(--text);
 }
 
+#about-page .context-note::before {
+  content: "";
+  position: absolute;
+  inset: 18px auto 18px 0;
+  width: 4px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   #about-page .context-note {
     background: var(--paper-light);
-    border-color: var(--border-strong);
-    border-left-color: var(--brand);
   }
   #about-page .context-note h2 { color: var(--text); }
   #about-page .context-note p { color: var(--text-soft); }
+  #about-page .context-note::before { background: var(--brand); }
 }
 
 @media print {
   #about-page .context-note { break-inside: avoid; }
 }
+
+@media (prefers-color-scheme: dark) {
+  #about-page .signature--light { display: none; }
+  #about-page .signature--dark { display: block; }
+}
+
+[data-theme="dark"] #about-page .signature--light { display: none; }
+[data-theme="dark"] #about-page .signature--dark { display: block; }
 /* =========================================
     ACTION PAGE: Guided Path & Cards (Final)
     ========================================= */
