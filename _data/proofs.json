@@ -13,17 +13,17 @@
       {
         "text": "The Caucus-First Mandate: The MOU required that the Affirmative Action Committee be formed with members 'selected by their particular caucus.'",
         "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
-        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       },
       {
         "text": "The State Party's Duty to Implement: The MOU mandated that the State Party 'fully implement... the creation of any new... caucuses.'",
         "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
-        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       },
       {
         "text": "The RBC's Duty to Supervise: The MOU explicitly required that the entire implementation process be conducted 'under the supervision... of representatives of the RBC.'",
         "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 2",
-        "url": "/files/2020-MOU-WVDP-DNC-RBC.pdf"
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       }
     ],
     "rule_summary": "These rules established a mandatory, non-negotiable sequence—a blueprint for legitimacy. The MOU required that caucuses be formed first to select their own representatives, who would then constitute the committee. Any other process was a direct breach of the agreement's core terms, and the RBC was the designated supervisor responsible for enforcing that blueprint.",
@@ -72,30 +72,35 @@
     "axioms": [
         {
             "text": "The 2020 MOU's stated purpose was 'to create a process to establish new, and assist currently existing, diversity caucuses'.",
-            "citation": "2020 MOU between WVDP and DNC RBC, p. 1"
+            "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
+            "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
         },
         {
             "text": "The MOU mandated that the State Party 'fully implement... the creation of any new... caucuses.'",
-            "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3"
+            "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
+            "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
         }
     ],
     "rule_summary": "The MOU placed a direct and non-negotiable responsibility on the state party and its organizers to 'fully implement' the creation of new diversity caucuses. A failure to form these caucuses constitutes a direct breach of this core mandate.",
     "case_facts": [
         {
             "text": "Prior to the AAC leadership installation, 75% of the DNC-mandated racial diversity caucuses (AAPI, Latino, Native American) had not been formed.",
-            "citation": "selina-script.pdf, p. 2, 5"
+            "citation": "selina-script.pdf, p. 2, 5",
+            "url": "/files/selina-script.pdf"
         },
         {
             "text": "During this same period, organizers successfully formed other non-racial diversity caucuses",
             "citation": "User provided fact"
         },
         {
-            "text": "The Co-chair of the Black Caucus, Mary Claytor, stated that organizer Selina Vickers 'contacted every member of the Indigenous Caucus not named Sturm prior to their nomination meeting' and 'refused' a request to contact the Sturms. [cite: 57, 58, 59]",
-            "citation": "Not Named Sturm.pdf"
+            "text": "The Co-chair of the Black Caucus, Mary Claytor, stated that organizer Selina Vickers 'contacted every member of the Indigenous Caucus not named Sturm prior to their nomination meeting' and 'refused' a request to contact the Sturms.",
+            "citation": "Not Named Sturm.pdf",
+            "url": "/files/not-named-sturm.pdf"
         },
         {
-            "text": "The Indigenous Caucus was subsequently denied seats on the planning and bylaws subcommittees. [cite: 48]",
-            "citation": "Not Named Sturm.pdf"
+            "text": "The Indigenous Caucus was subsequently denied seats on the planning and bylaws subcommittees.",
+            "citation": "Not Named Sturm.pdf",
+            "url": "/files/not-named-sturm.pdf"
         }
     ],
     "logic_chain": [
@@ -121,26 +126,31 @@
     "axioms": [
       {
         "text": "The 2020 DNC MOU required the creation of an Affirmative Action Committee ('AA Committee') to include members from each diversity group... selected by their particular caucus.",
-        "citation": "2020 MOU between WVDP and DNC RBC, p. 2-3"
+        "citation": "2020 MOU between WVDP and DNC RBC, p. 2-3",
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       },
       {
         "text": "The mandated diversity groups included African Americans, Native Americans, Asian/Pacific Islanders, and Latinos.",
-        "citation": "2020 MOU between WVDP and DNC RBC, p. 2"
+        "citation": "2020 MOU between WVDP and DNC RBC, p. 2",
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       }
     ],
     "rule_summary": "The MOU, as the governing agreement, established a mandatory sequence: 1) The party must facilitate the formation of specific diversity caucuses. 2) Those caucuses must select their own representatives. 3) Those representatives must then constitute the AA Committee. The committee's legitimacy was wholly dependent on the prior existence and participation of these groups.",
     "case_facts": [
       {
         "text": "The script for the June 2, 2021 meeting demonstrates micro-level control, dictating specific nominators, providing verbatim speeches, and planning for procedural disruptions.",
-        "citation": "selina-script.pdf, p. 1-5"
+        "citation": "selina-script.pdf, p. 1-5",
+        "url": "/files/selina-script.pdf"
       },
       {
         "text": "The script proves the organizers knew 75% of the racial caucuses did not exist, as it includes a future resolution to 'do outreach to Latinos, Asian Americans/Pacific Islanders and Native Americans to facilitate those groups in forming their own diversity caucuses'.",
-        "citation": "selina-script.pdf, p. 5"
+        "citation": "selina-script.pdf, p. 5",
+        "url": "/files/selina-script.pdf"
       },
       {
         "text": "The script designates a specific individual, Kim Felix, to be nominated for an at-large diversity seat 'representing Latino Americans', proving the organizers had identified potential leadership for a caucus they had not yet formed.",
-        "citation": "selina-script.pdf, p. 3"
+        "citation": "selina-script.pdf, p. 3",
+        "url": "/files/selina-script.pdf"
       }
     ],
     "logic_chain": [
@@ -165,26 +175,31 @@
   "axioms": [
     {
       "text": "The 2020 DNC MOU required that members of the Affirmative Action Committee be 'selected by their particular caucus.'",
-      "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3"
+      "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
+      "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
     }
   ],
   "rule_summary": "The MOU's requirement that representatives be 'selected by their particular caucus' implies a fair, equal, and democratic process for all caucuses. A system that uses a secret script to impose a pre-arranged slate, including a privileged nomination for one individual, fundamentally violates this principle of fairness.",
   "case_facts": [
     {
       "text": "Selina Vickers circulated a script for the formation meeting with the subject line 'DRAFT SCRIPT - do not share.'",
-      "citation": "selina-script-email.pdf, p. 1"
+      "citation": "selina-script-email.pdf, p. 1",
+      "url": "/files/selina-script-email.pdf"
     },
     {
       "text": "The script contained a verbatim sequence for leadership nominations, including 'Mary Ann nominates Hollis Lewis.'",
-      "citation": "selina-script.pdf, p. 1"
+      "citation": "selina-script.pdf, p. 1",
+      "url": "/files/selina-script.pdf"
     },
     {
       "text": "The script also directed a nomination for Kim Felix for the 'at-large diversity seat representing Latino Americans.'",
-      "citation": "selina-script.pdf, p. 3"
+      "citation": "selina-script.pdf, p. 3",
+      "url": "/files/selina-script.pdf"
     },
     {
       "text": "The script did not contain similar at-large nominations for the AAPI or Native American communities, groups the document itself noted were 'missing representation.'",
-      "citation": "selina-script.pdf, p. 2, 5"
+      "citation": "selina-script.pdf, p. 2, 5",
+      "url": "/files/selina-script.pdf"
     }
   ],
   "logic_chain": [
@@ -209,18 +224,21 @@
     "axioms": [
       {
         "text": "The MOU appointed a non-elected official, Selina Vickers, to 'oversee and direct compliance' with the agreement.",
-        "citation": "2020 MOU between WVDP and DNC RBC, p. 2"
+        "citation": "2020 MOU between WVDP and DNC RBC, p. 2",
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       }
     ],
     "rule_summary": "As the designated compliance officer, this individual had a fiduciary duty to act as a neutral arbiter and ensure the process was open and fair. Using this position of trust to secure a role with procedural control for oneself is a fundamental breach of that duty.",
     "case_facts": [
       {
         "text": "The script, authored by Selina Vickers, directs a committee member to state: 'I nominate Selina Vickers for Parliamentarian/Secretary.'",
-        "citation": "selina-script.pdf, p. 3"
+        "citation": "selina-script.pdf, p. 3",
+        "url": "/files/selina-script.pdf"
       },
       {
         "text": "The script provides a verbatim endorsement for the member to read, which concludes, 'I can think of no one else remotely qualified to do this particular work.'",
-        "citation": "selina-script.pdf, p. 3"
+        "citation": "selina-script.pdf, p. 3",
+        "url": "/files/selina-script.pdf"
       }
     ],
     "logic_chain": [
@@ -245,22 +263,26 @@
     "axioms": [
       {
         "text": "The DNC Charter mandates that 'All meetings of... all other official Party committees, commissions and bodies shall be open to the public'.",
-        "citation": "DNC Charter, Article Nine, Sec. 12"
+        "citation": "DNC Charter, Article Nine, Sec. 12",
+        "url": "/files/dnc-charter.pdf"
       }
     ],
     "rule_summary": "The DNC Charter's rule for open meetings requires a process that allows for spontaneous, good-faith participation, not a pre-planned system to control who can attend and to manage anticipated opposition.",
     "case_facts": [
       {
         "text": "The script anticipates that the meeting may be closed to the public and provides a challenge to be used against observers: 'Ask: 'I notice there are people other than caucus co-chairs present. I thought this meeting was solely for co-chairs.''",
-        "citation": "selina-script.pdf, p. 1"
+        "citation": "selina-script.pdf, p. 1",
+        "url": "/files/selina-script.pdf"
       },
       {
         "text": "The script anticipates criticism from Party Chair Belinda Biafore, pre-characterizing it as 'scolding': 'She may scold you for the caucus meetings last night'.",
-        "citation": "selina-script.pdf, p. 1"
+        "citation": "selina-script.pdf, p. 1",
+        "url": "/files/selina-script.pdf"
       },
       {
         "text": "The script provides response strategies for managing this anticipated opposition rather than addressing its substance.",
-        "citation": "selina-script.pdf, p. 1"
+        "citation": "selina-script.pdf, p. 1",
+        "url": "/files/selina-script.pdf"
       }
     ],
     "logic_chain": [
@@ -285,34 +307,41 @@
   "axioms": [
     {
       "text": "The MOU required an 'open and transparent process' with 'full, timely, and equal opportunity' for participation.",
-      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1"
+      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1",
+      "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
     },
     {
       "text": "The RBC was tasked with impartial 'supervision and technical assistance.'",
-      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 2"
+      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 2",
+      "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
     },
     {
       "text": "Harold Ickes served on the DNC Rules & Bylaws Committee.",
-      "citation": "Corporate Lobbyists Control the Rules at the DNC, Sludge, Feb. 28, 2020"
+      "citation": "Corporate Lobbyists Control the Rules at the DNC, Sludge, Feb. 28, 2020",
+      "url": "/files/sludge-corporate-lobbyists-dnc-rules-2020-02-28.pdf"
     },
     {
       "text": "Selina Vickers served as the 'non-voting representative of the Challengers.'",
-      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1-2"
+      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1-2",
+      "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
     }
   ],
   "rule_summary": "A supervisor's duty of impartiality prohibits providing partisan strategic advice to one party against another.",
   "case_facts": [
     {
       "text": "Harold Ickes and Selina Vickers co-hosted a political training event during the MOU implementation period.",
-      "citation": "Snapshot of SelinaVickers.com, June 24, 2021"
+      "citation": "Snapshot of SelinaVickers.com, June 24, 2021",
+      "url": "/files/selinavickers-com-snapshot-2021-06-24.pdf"
     },
     {
       "text": "In a recorded meeting, Harold Ickes stated: 'I've said to Selina god knows how many times you know what at bottom you gotta out vote' Seth and Mari.",
-      "citation": "Planning Committee Meeting transcript, timestamp 47:52-48:06"
+      "citation": "Planning Committee Meeting transcript, timestamp 47:52-48:06",
+      "url": "/files/planning-committee-meeting-transcript.txt"
     },
     {
       "text": "Mary Ann Claytor documented that Ickes 'advised Selina to 'outvote' Seth, Mari, and others.'",
-      "citation": "Email from Mary Ann Claytor, Sept. 23, 2021"
+      "citation": "Email from Mary Ann Claytor, Sept. 23, 2021",
+      "url": "/files/email-mary-ann-claytor-2021-09-23.pdf"
     }
   ],
   "logic_chain": [
@@ -341,7 +370,8 @@
     },
     {
       "text": "The DNC Charter requires ethical conduct that 'reflects creditably upon the office.'",
-      "citation": "DNC Charter, p. 1"
+      "citation": "DNC Charter, p. 1",
+      "url": "/files/dnc-charter.pdf"
     },
     {
       "text": "Defamation includes false statements of fact that damage reputation.",
@@ -356,23 +386,28 @@
   "case_facts": [
     {
       "text": "Scripts attacking Indigenous representatives were distributed with concealment instructions: '[if you use this... DO NOT FORWARD THIS EMAIL].'",
-      "citation": "Email from Selina Vickers to Kristin Loken, Aug 17, 2021"
+      "citation": "Email from Selina Vickers to Kristin Loken, Aug 17, 2021",
+      "url": "/files/email-selina-vickers-kristin-loken-2021-08-17.pdf"
     },
     {
       "text": "False claims were spread that an Indigenous Caucus chair was 'dangerous' and 'capable of violence.'",
-      "citation": "Email from Seth Sturm documenting rumors, Sept 17, 2021"
+      "citation": "Email from Seth Sturm documenting rumors, Sept 17, 2021",
+      "url": "/files/email-seth-sturm-documenting-rumors-2021-09-17.pdf"
     },
     {
       "text": "A sustained public campaign labeled the Indigenous chair a 'toxic bully' with a 'calendar of posts ready to go.'",
-      "citation": "Shane Assadzandi Facebook Post, Aug 21, 2021"
+      "citation": "Shane Assadzandi Facebook Post, Aug 21, 2021",
+      "url": "/files/shane-assadzandi-facebook-post-2021-08-21.pdf"
     },
     {
       "text": "Members reported being 'reluctant to speak publicly for fear of retaliation and future harassment.'",
-      "citation": "Emily Clifford Email, Aug 22, 2021"
+      "citation": "Emily Clifford Email, Aug 22, 2021",
+      "url": "/files/email-emily-clifford-2021-08-22.pdf"
     },
     {
       "text": "The Indigenous chair reported the attacks had 'done real damage' requiring him to defend against accusations of violence.",
-      "citation": "Email from Seth Sturm, Sept 17, 2021"
+      "citation": "Email from Seth Sturm, Sept 17, 2021",
+      "url": "/files/email-seth-sturm-2021-09-17.pdf"
     }
   ],
   "logic_chain": [
@@ -398,30 +433,36 @@
   "axioms": [
     {
       "text": "The MOU mandated 'full participation by all Democrats, with particular concern for minority groups.'",
-      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1"
+      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1",
+      "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
     },
     {
       "text": "Once adopted, a motion stands until properly reconsidered.",
-      "citation": "RONR 12th ed., § 10:26"
+      "citation": "RONR 12th ed., § 10:26",
+      "url": "/files/roberts-rules-of-order-12th-edition.pdf"
     }
   ],
   "rule_summary": "Excluding minority representatives from governance violates the MOU's participation mandate.",
   "case_facts": [
     {
       "text": "The committee voted for a volunteer-based subcommittee system.",
-      "citation": "Committee meeting minutes"
+      "citation": "Committee meeting minutes",
+      "url": "/files/aac-committee-meeting-minutes-volunteer-system-vote.pdf"
     },
     {
       "text": "Leadership subsequently declared 'subcommittee membership will be by appointment.'",
-      "citation": "Email from Mary Thorp, Aug 29, 2021"
+      "citation": "Email from Mary Thorp, Aug 29, 2021",
+      "url": "/files/email-mary-thorp-subcommittee-appointments-2021-08-29.pdf"
     },
     {
       "text": "Indigenous and Black caucus chairs were denied subcommittee seats.",
-      "citation": "Email from Seth Sturm, Aug 5, 2021"
+      "citation": "Email from Seth Sturm, Aug 5, 2021",
+      "url": "/files/email-seth-sturm-subcommittee-exclusion-2021-08-05.pdf"
     },
     {
       "text": "The Board of Appeals found members were improperly denied subcommittee seats.",
-      "citation": "WVDP Board of Appeals Resolution, Nov. 29, 2021"
+      "citation": "WVDP Board of Appeals Resolution, Nov. 29, 2021",
+      "url": "/files/wvdp-board-of-appeals-resolution-subcommittee-exclusion-2021-11-29.pdf"
     }
   ],
   "logic_chain": [
@@ -446,42 +487,51 @@
     "axioms": [
       {
         "text": "WVDP Bylaws require 30 days written notice for amendments.",
-        "citation": "WVDP Bylaws, Article XI, Section A"
+        "citation": "WVDP Bylaws, Article XI, Section A",
+        "url": "/files/wvdp-bylaws.pdf"
       },
       {
         "text": "Bylaws define organizational structure and continuing governance.",
-        "citation": "RONR 12th ed., § 2:8"
+        "citation": "RONR 12th ed., § 2:8",
+        "url": "/files/roberts-rules-of-order-12th-edition.pdf"
       },
       {
         "text": "Rules of order govern single meetings; bylaws establish ongoing authority.",
-        "citation": "RONR 12th ed., § 2:14"
+        "citation": "RONR 12th ed., § 2:14",
+        "url": "/files/roberts-rules-of-order-12th-edition.pdf"
       },
       {
         "text": "Notice requirements protect members' right to deliberate.",
-        "citation": "RONR 12th ed., § 10:14"
+        "citation": "RONR 12th ed., § 10:14",
+        "url": "/files/roberts-rules-of-order-12th-edition.pdf"
       }
     ],
     "rule_summary": "Rules granting authority between meetings or establishing committee structures are bylaws requiring 30-day notice, regardless of their label.",
     "case_facts": [
       {
         "text": "Documents titled 'DRAFT Procedural Rules' were circulated less than 24 hours before the August 17, 2021 meeting.",
-        "citation": "August 17 Meeting Transcript.txt"
+        "citation": "August 17 Meeting Transcript.txt",
+        "url": "/files/aac-meeting-transcript-2021-08-17.txt"
       },
       {
         "text": "Rule 13 granted Co-Chairs 'all the authority of the Affirmative Action Committee... between meetings.'",
-        "citation": "DRAFT Procedural Rules for august meeting.pdf"
+        "citation": "DRAFT Procedural Rules for august meeting.pdf",
+        "url": "/files/draft-procedural-rules-2021-08-17.pdf"
       },
       {
         "text": "Rule 14 established subcommittee appointment and removal procedures.",
-        "citation": "DRAFT Procedural Rules for august meeting.pdf"
+        "citation": "DRAFT Procedural Rules for august meeting.pdf",
+        "url": "/files/draft-procedural-rules-2021-08-17.pdf"
       },
       {
         "text": "A member asked during the meeting: 'Why weren't they sent earlier so that we had an opportunity to read them?'",
-        "citation": "August 17 Meeting Transcript.txt"
+        "citation": "August 17 Meeting Transcript.txt",
+        "url": "/files/aac-meeting-transcript-2021-08-17.txt"
       },
       {
         "text": "Another member stated: 'it's not a procedural rule for handling this meeting.'",
-        "citation": "August 17 Meeting Transcript.txt"
+        "citation": "August 17 Meeting Transcript.txt",
+        "url": "/files/aac-meeting-transcript-2021-08-17.txt"
       }
     ],
     "logic_chain": [
@@ -514,20 +564,22 @@
     {
       "text": "Taylor and Selina Vickers were professional colleagues.",
       "citation": "Email Correspondence between S. Vickers and L. Taylor",
-      "url": "/files/2021-09-17-vickers-taylor-email-correspondence.pdf"
+      "url": "/files/email-correspondence-vickers-taylor-2021-09-17.pdf"
     },
     {
       "text": "Presiding officers must maintain strict impartiality.",
-      "citation": "Robert's Rules of Order, 12th ed., § 47:7"
+      "citation": "Robert's Rules of Order, 12th ed., § 47:7",
+      "url": "/files/roberts-rules-of-order-12th-edition.pdf"
     },
     {
       "text": "Persons in positions of trust must disclose potential conflicts.",
-      "citation": "Robert's Rules of Order, 12th ed., § 45:3"
+      "citation": "Robert's Rules of Order, 12th ed., § 45:3",
+      "url": "/files/roberts-rules-of-order-12th-edition.pdf"
     },
     {
       "text": "The Board of Appeals ruled the August meeting invalid.",
       "citation": "WVDP Board of Appeals Resolution",
-      "url": "/files/2021-11-29-wvdp-board-of-appeals-resolution-invalidating-meeting.pdf"
+      "url": "/files/wvdp-board-of-appeals-resolution-invalidating-meeting-2021-11-29.pdf"
     }
   ],
   "rule_summary": "A presiding officer must be neutral and disclose any relationships that could affect impartiality. A failure to disclose such conflicts compromises the integrity of the proceedings.",
@@ -535,12 +587,12 @@
     {
       "text": "Larry Taylor was invited to preside over the meeting where restrictive rules were adopted.",
       "citation": "AAC Meeting Minutes",
-      "url": "/files/wvdc-aac-meeting-minutes-redacted.pdf"
+      "url": "/files/wvdp-aac-meeting-minutes-redacted.pdf"
     },
     {
       "text": "Taylor's professional relationship with Parliamentarian Vickers was not disclosed to the committee.",
       "citation": "AAC Meeting Minutes",
-      "url": "/files/wvdc-aac-meeting-minutes-redacted.pdf"
+      "url": "/files/wvdp-aac-meeting-minutes-redacted.pdf"
     },
     {
       "text": "Taylor specialized in training on procedural tactics.",
@@ -549,12 +601,13 @@
     },
     {
       "text": "The committee had previously rejected similar restrictive measures in prior proceedings.",
-      "citation": "AAC Meeting Minutes re: Prior Rejected Measures"
+      "citation": "AAC Meeting Minutes re: Prior Rejected Measures",
+      "url": "/files/aac-meeting-minutes-prior-rejected-measures.pdf"
     },
     {
       "text": "The Board of Appeals subsequently ruled the meeting invalid, citing improper procedures.",
       "citation": "WVDP Board of Appeals Resolution",
-      "url": "/files/2021-11-29-wvdp-board-of-appeals-resolution-invalidating-meeting.pdf"
+      "url": "/files/wvdp-board-of-appeals-resolution-invalidating-meeting-2021-11-29.pdf"
     }
   ],
   "logic_chain": [
@@ -595,22 +648,22 @@
       {
         "text": "A New Day PAC solicited applications for a formal scholarship program for third-party training on August 22, 2023.",
         "citation": "Email Record, Aug 22, 2023",
-        "url": "/files/A_New_Day_PAC_Training_Email_2023-08-22.pdf"
+        "url": "/files/a-new-day-pac-training-email-2023-08-22.pdf"
       },
       {
         "text": "The PAC's Q3 2023 sworn financial report shows zero expenditures to the trainer for scholarship payments.",
         "citation": "A New Day PAC Q3 2023 Filing",
-        "url": "/files/A_New_Day_PAC_Filing_2023_Q3.pdf"
+        "url": "/files/a-new-day-pac-filing-2023-q3.pdf"
       },
       {
         "text": "The same sworn report shows zero in-kind contributions from the trainer for donated training slots.",
         "citation": "A New Day PAC Q3 2023 Filing",
-        "url": "/files/A_New_Day_PAC_Filing_2023_Q3.pdf"
+        "url": "/files/a-new-day-pac-filing-2023-q3.pdf"
       },
       {
         "text": "The PAC had previously paid this same trainer for 'Consultant Fees,' establishing a documented financial relationship.",
         "citation": "A New Day PAC Q4 2022 Filing",
-        "url": "/files/A_New_Day_PAC_Filing_2022_Q4.pdf"
+        "url": "/files/a-new-day-pac-filing-2022-q4.pdf"
       }
     ],
     "logic_chain": [
@@ -635,17 +688,20 @@
     "axioms": [
       {
         "text": "Any 'thing of value' provided to a political committee must be reported as an in-kind contribution.",
-        "citation": "WV SOS Campaign-Finance Guide"
+        "citation": "WV SOS Campaign-Finance Guide",
+        "url": "/files/sos-campaign-finance-guide.pdf"
       }
     ],
     "case_facts": [
       {
-        "text": "A promotional email for the 'A New Day' PAC was sent using the official WVDP County Chairs email list on August 22, 2023[cite: 74, 80].",
-        "citation": "A New Day Training Email, Aug 22, 2023"
+        "text": "A promotional email for the 'A New Day' PAC was sent using the official WVDP County Chairs email list on August 22, 2023.",
+        "citation": "A New Day Training Email, Aug 22, 2023",
+        "url": "/files/a-new-day-pac-training-email-2023-08-22.pdf"
       },
       {
         "text": "The PAC's sworn Q3 2023 financial report for this period reported $0.00 in in-kind contributions.",
-        "citation": "A New Day PAC Q3 2023 Filing, p. 1"
+        "citation": "A New Day PAC Q3 2023 Filing, p. 1",
+        "url": "/files/a-new-day-pac-filing-2023-q3.pdf"
       }
     ],
     "violation": "The 'A New Day' PAC violated state campaign finance law by failing to report the WVDP email list usage as an in-kind contribution."
