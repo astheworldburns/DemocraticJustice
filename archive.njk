@@ -27,14 +27,33 @@ reviewDate: 2024-12-01
     
     <div class="case-grid" id="case-grid" aria-live="polite">
       {%- for proof in collections.sortedProofs -%}
+      {% set overproof = proof.overproof or {} %}
+      {% set proofSlug = (proof.slug or proof.case_id) | slug %}
+      {% set overproofSlug = overproof.slug %}
+      {% set proofUrlPath = '/proofs/' ~ overproofSlug ~ '/' ~ proofSlug ~ '/' if overproofSlug else null %}
+      {% set caseBriefTitle = overproof.short_title or overproof.title %}
+      {% set caseBriefPath = overproof.url or ('/briefs/' ~ overproofSlug ~ '/' if overproofSlug else null) %}
       <article class="case-card" data-proof-id="{{ proof.case_id }}">
-        <h3><a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/">{{ proof.title }}</a></h3>
-        <p class="case-meta">
-          {{ proof.case_id }} • {{ proof.date | date }}
-          {%- if proof.category %} • <span style="font-weight: 700;">{{ proof.category }}</span>{% endif -%}
-        </p>
-        <p>{{ proof.thesis }}</p>
-        <a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/" class="case-link">Examine Proof →</a>
+        <div class="case-card__header">
+          {% if proofUrlPath %}
+          <h3 class="case-card__title"><a href="{{ proofUrlPath | url }}">{{ proof.title }}</a></h3>
+          {% else %}
+          <h3 class="case-card__title">{{ proof.title }}</h3>
+          {% endif %}
+          <p class="case-meta case-card__meta">
+            {{ proof.case_id }} • {{ proof.date | date }}
+            {%- if proof.category %} • <span style="font-weight: 700;">{{ proof.category }}</span>{% endif -%}
+          </p>
+        </div>
+        <p class="case-card__summary">{{ proof.thesis }}</p>
+        <div class="case-card__footer">
+          {% if proofUrlPath %}
+          <a href="{{ proofUrlPath | url }}" class="case-link">Examine Proof →</a>
+          {% endif %}
+          {% if caseBriefPath %}
+          <a href="{{ caseBriefPath | url }}" class="case-link case-link--subtle">View Case Brief: {{ caseBriefTitle }}</a>
+          {% endif %}
+        </div>
       </article>
       {%- endfor -%}
     </div>

@@ -833,6 +833,102 @@ p{
   margin-top: var(--space-2);
 }
 
+/* Latest Proof */
+.latest-proof{
+  padding: calc(var(--space-8) + var(--space-4)) 0;
+  background:var(--color-surface-subtle);
+}
+.latest-proof__card{
+  background:var(--color-surface-raised);
+  border-radius:20px;
+  padding: clamp(var(--space-5), 4vw, var(--space-7));
+  box-shadow: var(--shadow-sm);
+  display:flex;
+  flex-direction:column;
+  gap: var(--space-6);
+  border:1px solid color-mix(in srgb, var(--color-border-subtle) 65%, transparent);
+}
+.latest-proof__summary{
+  font-size: clamp(var(--font-size-base), 1.15rem, var(--font-size-lg));
+  color:var(--color-text-muted);
+  margin:0;
+}
+.latest-proof__grid{
+  display:grid;
+  gap: var(--space-6);
+}
+.latest-proof__meta{
+  display:grid;
+  gap: var(--space-3);
+  margin:0;
+}
+.latest-proof__meta div{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.latest-proof__meta dt{
+  font-size: var(--font-size-xs);
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  color:var(--color-text-muted);
+  margin:0;
+}
+.latest-proof__meta dd{
+  margin:0;
+  font-weight:600;
+  font-size: var(--font-size-base);
+}
+.latest-proof__meta a{
+  color:var(--color-link-default);
+}
+.latest-proof__detail{
+  display:flex;
+  flex-direction:column;
+  gap: var(--space-4);
+}
+.latest-proof__detail h3{
+  margin:0;
+  font-size: var(--font-size-sm);
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  color:var(--color-text-muted);
+}
+.latest-proof__detail p{
+  margin:0;
+  font-size: var(--font-size-base);
+  color:var(--color-text-base);
+}
+.latest-proof__actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px){
+  .latest-proof__grid{
+    grid-template-columns: minmax(220px, 1fr) minmax(260px, 1.2fr);
+    align-items:flex-start;
+  }
+  .latest-proof__detail{
+    padding-left: var(--space-2);
+  }
+}
+
+[data-theme="dark"] .latest-proof{
+  background:color-mix(in srgb, var(--color-surface-subtle) 60%, transparent);
+}
+[data-theme="dark"] .latest-proof__card{
+  background:var(--color-surface-raised);
+  border-color:color-mix(in srgb, var(--color-border-subtle) 70%, transparent);
+}
+[data-theme="dark"] .latest-proof__summary{
+  color:var(--color-text-muted);
+}
+[data-theme="dark"] .latest-proof__meta dt{
+  color:var(--color-text-muted);
+}
+
 /* Proof Box */
 .proof-box{
   background:var(--color-surface-raised);
@@ -998,11 +1094,43 @@ p{
 .case-card:hover .case-link::before{
   background-image:url('images/three-dots-gold.svg');
 }
+.case-card__footer{
+  margin-top:auto;
+  display:flex;
+  flex-direction:column;
+  gap: var(--space-3);
+  width:100%;
+}
+.case-link--subtle{
+  color:var(--color-text-muted);
+}
+.case-link--subtle::before{
+  width:16px;
+  height:16px;
+  opacity:.6;
+}
+.case-card:hover .case-link--subtle::before{
+  opacity:1;
+}
+[data-theme="dark"] .case-link--subtle{
+  color:color-mix(in srgb, var(--color-text-base) 80%, transparent);
+}
+[data-theme="dark"] .case-card:hover .case-link--subtle::before{
+  background-image:url('images/three-dots-gold.svg');
+}
 
 /* Featured cases */
 .key-cases{
   padding: calc(var(--space-8) + var(--space-4)) 0;
   background: var(--color-surface-subtle);
+}
+
+.case-files{
+  padding: calc(var(--space-8) + var(--space-4)) 0;
+  background: var(--paper);
+}
+[data-theme="dark"] .case-files{
+  background:color-mix(in srgb, var(--color-surface-subtle) 55%, transparent);
 }
 
 .key-case-grid{
@@ -3831,6 +3959,47 @@ html { scroll-behavior: smooth; }
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--text);
+}
+
+.proof-related-case{
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  border-radius:16px;
+  background:var(--color-surface-subtle);
+  border:1px solid color-mix(in srgb, var(--color-border-subtle) 70%, transparent);
+  display:flex;
+  flex-direction:column;
+  gap: var(--space-4);
+}
+.proof-related-case__text{
+  display:flex;
+  flex-direction:column;
+  gap: var(--space-3);
+}
+.proof-related-case h2{
+  margin:0;
+  font-size: clamp(var(--font-size-lg), 2.2vw, var(--font-size-xl));
+}
+.proof-related-case p{
+  margin:0;
+  color:var(--color-text-muted);
+}
+@media (min-width: 768px){
+  .proof-related-case{
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .proof-related-case__text{
+    max-width:60%;
+  }
+}
+[data-theme="dark"] .proof-related-case{
+  background:color-mix(in srgb, var(--color-surface-raised) 75%, transparent);
+  border-color:color-mix(in srgb, var(--color-border-subtle) 60%, transparent);
+}
+[data-theme="dark"] .proof-related-case p{
+  color:color-mix(in srgb, var(--color-text-base) 85%, transparent);
 }
 .proof-strength-bars {
   display: flex;
