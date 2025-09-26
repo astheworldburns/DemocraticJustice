@@ -34,18 +34,19 @@ reviewDate: 2024-12-01
       {% if latestProof and latestProof.overproof %}
       <aside class="hero-latest-proof" aria-labelledby="latest-proof-heading">
         <p class="hero-latest-proof__label">Latest Proof</p>
-        <article class="case-card hero-latest-proof__card" data-proof-id="{{ latestProof.case_id }}">
+        <article class="case-card case-card--compact hero-latest-proof__card" data-proof-id="{{ latestProof.case_id }}">
+          <p class="case-card__kicker">Proof {{ latestProof.case_id }}</p>
           <div class="case-card__header">
             <h2 class="case-card__title" id="latest-proof-heading"><a href="{{ '/proofs/' | url }}{{ latestProof.overproof.slug }}/{{ latestProof.slug }}/">{{ latestProof.title }}</a></h2>
-            <p class="case-meta case-card__meta">
-              PROOF {{ latestProof.case_id }} • {{ latestProof.date | date }}
-              {% if latestProof.category %} • <span style="font-weight: 700;">{{ latestProof.category }}</span>{% endif %}
+            <p class="case-meta case-card__meta case-card__meta--inline">
+              {{ latestProof.date | date }}
+              {% if latestProof.category %} • <span>{{ latestProof.category }}</span>{% endif %}
             </p>
           </div>
           {% if latestProof.thesis %}
-          <p class="case-card__summary">{{ latestProof.thesis }}</p>
+          <p class="case-card__summary case-card__summary--compact">{{ latestProof.thesis }}</p>
           {% endif %}
-          <div class="case-link-group">
+          <div class="case-card__footer">
             <a class="case-link" href="{{ '/proofs/' | url }}{{ latestProof.overproof.slug }}/{{ latestProof.slug }}/">Read Full Proof →</a>
             {% if latestCaseUrl %}
             <a class="case-link case-link--secondary" href="{{ latestCaseUrl }}"{% if latestCaseLabel %} aria-label="View case file for {{ latestCaseLabel }}"{% endif %}>View Case File →</a>
