@@ -5,13 +5,21 @@ description: Proof. Not spin. Democratic Justice equips West Virginia Democrats 
 reviewDate: 2024-12-01
 ---
 
-{% set featuredCases = collections.caseStudies | slice(0, 3) %}
+{% set latestProof = collections.sortedProofs | first %}
+{% set caseStudies = collections.caseStudies %}
 {% set totalProofs = collections.sortedProofs | length %}
+{% set latestCaseUrl = null %}
+{% set latestCaseLabel = null %}
+{% if latestProof and latestProof.overproof %}
+  {% set overproof = latestProof.overproof %}
+  {% set latestCaseUrl = (overproof.url or ('/briefs/' + overproof.slug + '/')) | url %}
+  {% set latestCaseLabel = overproof.short_title or overproof.title %}
+{% endif %}
 
 <header class="hero" role="banner">
   <div class="align-container">
-    <div class="hero-grid hero-grid--single">
-      <div>
+    <div class="hero-grid">
+      <div class="hero-copy">
         <h1 class="hero-headline">Proof.<strong>Not Spin.</strong></h1>
         <p class="hero-lede">We assemble sworn records into proof the stronger party can’t ignore—and put it in your hands so you can demand accountability.</p>
         <div class="btn-group">
@@ -23,48 +31,80 @@ reviewDate: 2024-12-01
           </a>
         </div>
       </div>
+      {% if latestProof and latestProof.overproof %}
+      <aside class="hero-latest-proof" aria-labelledby="latest-proof-heading">
+        <p class="hero-latest-proof__label">Latest Proof</p>
+        <article class="case-card hero-latest-proof__card" data-proof-id="{{ latestProof.case_id }}">
+          <div class="case-card__header">
+            <h2 class="case-card__title" id="latest-proof-heading"><a href="{{ '/proofs/' | url }}{{ latestProof.overproof.slug }}/{{ latestProof.slug }}/">{{ latestProof.title }}</a></h2>
+            <p class="case-meta case-card__meta">
+              PROOF {{ latestProof.case_id }} • {{ latestProof.date | date }}
+              {% if latestProof.category %} • <span style="font-weight: 700;">{{ latestProof.category }}</span>{% endif %}
+            </p>
+          </div>
+          {% if latestProof.thesis %}
+          <p class="case-card__summary">{{ latestProof.thesis }}</p>
+          {% endif %}
+          <div class="case-link-group">
+            <a class="case-link" href="{{ '/proofs/' | url }}{{ latestProof.overproof.slug }}/{{ latestProof.slug }}/">Read Full Proof →</a>
+            {% if latestCaseUrl %}
+            <a class="case-link case-link--secondary" href="{{ latestCaseUrl }}"{% if latestCaseLabel %} aria-label="View case file for {{ latestCaseLabel }}"{% endif %}>View Case File →</a>
+            {% endif %}
+          </div>
+        </article>
+      </aside>
+      {% endif %}
     </div>
   </div>
 </header>
 
-{% if featuredCases and featuredCases | length %}
-<section class="key-cases" id="key-cases" aria-labelledby="key-cases-heading">
+{% if caseStudies and caseStudies | length %}
+<section class="cases" id="case-files" aria-labelledby="case-files-heading">
   <div class="align-container">
-    <p class="section-label">Investigative Briefs</p>
-    <h2 id="key-cases-heading">Key Cases</h2>
-    <p class="lead">Start with the major violations our research has proven. Each case brief connects the documents, testimony, and rulings into a clear narrative.</p>
+    <p class="section-label">Case Files</p>
+    <h2 id="case-files-heading">Explore the Case Files</h2>
+    <p class="lead">Every case file gathers the sworn documents, testimony, and rulings that establish a major violation. Start with a case to see every proof in context.</p>
 
-    <div class="key-case-grid">
-      {% for study in featuredCases %}
+    <div class="case-file-list">
+      {% for study in caseStudies %}
         {% set overproofGroup = study.data.overproofGroup %}
-        {% set overproof = overproofGroup.overproof %}
-        {% set brief = overproof.brief %}
-        {% set caseTitle = (brief and brief.headline) or overproof.short_title or overproof.title %}
-        {% set caseSummary = study.data.description or (brief and brief.lede) or overproof.summary %}
-        {% set proofCount = overproof.proofCount or (overproofGroup.proofs | length) %}
-        <article class="key-case-card">
-          {% if overproof.umbrella_category %}
-          <p class="key-case-card__kicker">VIOLATION: {{ overproof.umbrella_category }}</p>
-          {% endif %}
-          <h3><a href="{{ study.url | url }}">{{ caseTitle }}</a></h3>
-          {% if caseSummary %}
-          <p class="key-case-card__summary">{{ caseSummary | truncate(210) }}</p>
-          {% endif %}
-          <div class="key-case-card__meta">
-            {% if proofCount %}
-            <span>{{ proofCount }} documented proofs</span>
+        {% set caseOverproof = overproofGroup.overproof %}
+        {% set brief = caseOverproof.brief %}
+        {% set caseTitle = (brief and brief.headline) or caseOverproof.short_title or caseOverproof.title or study.data.title %}
+        {% set caseSummary = study.data.description or (brief and brief.lede) or caseOverproof.summary %}
+        {% set proofCount = caseOverproof.proofCount or (overproofGroup.proofs | length) %}
+        {% set timeframe = caseOverproof.metadata and caseOverproof.metadata.Timeframe %}
+        {% set hasStats = proofCount or timeframe %}
+        {% set caseUrl = study.url | url %}
+        <article class="case-file-row">
+          <div class="case-file-row__details">
+            {% if caseOverproof.umbrella_category %}
+            <p class="case-file-row__kicker">Violation: {{ caseOverproof.umbrella_category }}</p>
             {% endif %}
-            {% if overproof.metadata and overproof.metadata.Timeframe %}
-            <span>{{ overproof.metadata.Timeframe }}</span>
+            <h3 class="case-file-row__title"><a href="{{ caseUrl }}">{{ caseTitle }}</a></h3>
+            {% if caseSummary %}
+            <p class="case-file-row__summary">{{ caseSummary | truncate(220) }}</p>
             {% endif %}
           </div>
-          <a class="key-case-card__cta" href="{{ study.url | url }}">Read case brief →</a>
+          <div class="case-file-row__meta">
+            {% if hasStats %}
+            <ul class="case-file-row__stats">
+              {% if proofCount %}
+              <li><strong>{{ proofCount }}</strong> documented proofs</li>
+              {% endif %}
+              {% if timeframe %}
+              <li>{{ timeframe }}</li>
+              {% endif %}
+            </ul>
+            {% endif %}
+            <a class="case-link case-file-row__cta" href="{{ caseUrl }}">Open Case File →</a>
+          </div>
         </article>
       {% endfor %}
     </div>
 
-    <div class="key-case-actions">
-      <a href="{{ '/overproofs/' | url }}" class="btn btn-outline-blue">View all case briefs</a>
+    <div class="case-actions">
+      <a href="{{ '/overproofs/' | url }}" class="btn btn-outline-blue">Browse all case files</a>
     </div>
   </div>
 </section>

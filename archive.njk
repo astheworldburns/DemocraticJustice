@@ -27,6 +27,13 @@ reviewDate: 2024-12-01
     
     <div class="case-grid" id="case-grid" aria-live="polite">
       {%- for proof in collections.sortedProofs -%}
+      {% set caseUrl = null %}
+      {% set caseLabel = null %}
+      {% set proofOverproof = proof.overproof %}
+      {% if proofOverproof %}
+        {% set caseUrl = (proofOverproof.url or ('/briefs/' + proofOverproof.slug + '/')) | url %}
+        {% set caseLabel = proofOverproof.short_title or proofOverproof.title %}
+      {% endif %}
       <article class="case-card" data-proof-id="{{ proof.case_id }}">
         <h3><a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/">{{ proof.title }}</a></h3>
         <p class="case-meta">
@@ -34,7 +41,12 @@ reviewDate: 2024-12-01
           {%- if proof.category %} • <span style="font-weight: 700;">{{ proof.category }}</span>{% endif -%}
         </p>
         <p>{{ proof.thesis }}</p>
-        <a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/" class="case-link">Examine Proof →</a>
+        <div class="case-link-group">
+          <a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/" class="case-link">Examine Proof →</a>
+          {% if caseUrl %}
+          <a href="{{ caseUrl }}" class="case-link case-link--secondary"{% if caseLabel %} aria-label="View case file for {{ caseLabel }}"{% endif %}>View Case File →</a>
+          {% endif %}
+        </div>
       </article>
       {%- endfor -%}
     </div>
