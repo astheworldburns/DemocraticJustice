@@ -1,0 +1,70 @@
+{% set caseStudies = studies or [] %}
+{% if caseStudies and caseStudies | length %}
+<div class="case-study-list" role="list">
+  {% for study in caseStudies %}
+    {% set overproofGroup = study.data.overproofGroup %}
+    {% set overproof = overproofGroup.overproof %}
+    {% set studyTitle = (overproof.brief and overproof.brief.headline) or overproof.short_title or overproof.title %}
+    {% set studySummary = study.data.description or (overproof.brief and overproof.brief.lede) or overproof.summary %}
+    {% set proofCount = overproof.proofCount or (overproofGroup.proofs | length) %}
+    <article class="case-study-card" role="listitem">
+      <header class="case-study-card__header">
+        {% if overproof.umbrella_category %}
+        <p class="case-study-card__kicker">{{ overproof.umbrella_category }}</p>
+        {% endif %}
+        <h2><a href="{{ study.url | url }}">{{ studyTitle }}</a></h2>
+        {% if studySummary %}
+        <p class="case-study-card__summary">{{ studySummary }}</p>
+        {% endif %}
+      </header>
+
+      <div class="case-study-card__content">
+        {% if overproof.key_points and overproof.key_points | length %}
+        <div class="case-study-card__facts">
+          <h3>Key Findings</h3>
+          <ul>
+            {% for point in overproof.key_points %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        <div class="case-study-card__details">
+          <h3>At a Glance</h3>
+          <dl>
+            {% if proofCount %}
+            <div>
+              <dt>Proofs documented</dt>
+              <dd>{{ proofCount }}</dd>
+            </div>
+            {% endif %}
+            {% if overproof.metadata %}
+              {% for label, value in overproof.metadata %}
+              <div>
+                <dt>{{ label }}</dt>
+                <dd>{{ value }}</dd>
+              </div>
+              {% endfor %}
+            {% endif %}
+          </dl>
+
+          {% if study.data.tasks and study.data.tasks | length %}
+          <ul class="case-study-card__tags" aria-label="Available resources">
+            {% for task in study.data.tasks %}
+            <li>{{ task | replace('-', ' ') | capitalize }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+
+      <footer class="case-study-card__footer">
+        <a class="case-study-card__cta" href="{{ study.url | url }}">Read case brief</a>
+      </footer>
+    </article>
+  {% endfor %}
+</div>
+{% else %}
+<p>No case files are available yet. Check back soon.</p>
+{% endif %}

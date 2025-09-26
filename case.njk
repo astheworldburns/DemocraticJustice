@@ -31,7 +31,7 @@ eleventyComputed:
   <article class="doc">
     {% set overproof = proof.overproof %}
     {% if overproof %}
-      {% set overproofUrl = (overproof.url or ('/briefs/' + overproof.slug + '/')) | url %}
+      {% set overproofUrl = (overproof.url or ('/briefs/' ~ overproof.slug ~ '/')) | url %}
       {% set overproofLabel = overproof.short_title or overproof.title %}
     {% endif %}
     <nav aria-label="Breadcrumb" class="breadcrumb">
@@ -132,6 +132,17 @@ eleventyComputed:
           </span>
         </div>
       </div>
+
+      {% if overproof %}
+      {% set relatedProofCount = overproof.proofCount %}
+      <aside class="proof-related-case" aria-labelledby="proof-related-case-heading">
+        <div class="proof-related-case__text">
+          <h2 id="proof-related-case-heading">See the full case file</h2>
+          <p>Explore the {{ overproofLabel }} brief{% if relatedProofCount %} with {{ relatedProofCount }} documented proofs{% endif %} to understand how this record comes together.</p>
+        </div>
+        <a href="{{ overproofUrl }}" class="btn btn-outline-blue">View Case Brief</a>
+      </aside>
+      {% endif %}
 
     </header>
 

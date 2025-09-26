@@ -27,6 +27,63 @@ reviewDate: 2024-12-01
   </div>
 </header>
 
+{% set latestProof = collections.sortedProofs | last %}
+{% if latestProof and latestProof.overproof %}
+  {% set latestOverproof = latestProof.overproof %}
+  {% set latestProofSlug = (latestProof.slug or latestProof.case_id) | slug %}
+  {% set latestProofUrl = ('/proofs/' ~ latestOverproof.slug ~ '/' ~ latestProofSlug ~ '/') | url %}
+  {% set latestCaseUrl = (latestOverproof.url or ('/briefs/' ~ latestOverproof.slug ~ '/')) | url %}
+  {% set latestCaseTitle = latestOverproof.short_title or latestOverproof.title %}
+<section class="latest-proof" aria-labelledby="latest-proof-heading">
+  <div class="align-container">
+    <article class="latest-proof__card">
+      <header class="latest-proof__header">
+        <p class="section-label">Latest Proof</p>
+        <h2 id="latest-proof-heading">Proof {{ latestProof.case_id }} — {{ latestProof.title }}</h2>
+        <p class="latest-proof__summary">{{ latestProof.thesis }}</p>
+      </header>
+
+      <div class="latest-proof__grid">
+        <dl class="latest-proof__meta">
+          <div>
+            <dt>Case Brief</dt>
+            <dd><a href="{{ latestCaseUrl }}">{{ latestCaseTitle }}</a></dd>
+          </div>
+          {% if latestProof.date %}
+          <div>
+            <dt>Filed</dt>
+            <dd>{{ latestProof.date | date }}</dd>
+          </div>
+          {% endif %}
+          {% if latestProof.category %}
+          <div>
+            <dt>Category</dt>
+            <dd>{{ latestProof.category }}</dd>
+          </div>
+          {% endif %}
+        </dl>
+
+        <div class="latest-proof__detail">
+          {% if latestProof.violation %}
+          <h3>Violation</h3>
+          <p>{{ latestProof.violation | safe }}</p>
+          {% endif %}
+          {% if latestProof.stakes %}
+          <h3>Stakes</h3>
+          <p>{{ latestProof.stakes | safe }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="latest-proof__actions">
+        <a href="{{ latestProofUrl }}" class="btn btn-accent">Examine Proof</a>
+        <a href="{{ latestCaseUrl }}" class="btn btn-outline-blue">View Case Brief</a>
+      </div>
+    </article>
+  </div>
+</section>
+{% endif %}
+
 {% if featuredCases and featuredCases | length %}
 <section class="key-cases" id="key-cases" aria-labelledby="key-cases-heading">
   <div class="align-container">
@@ -66,6 +123,19 @@ reviewDate: 2024-12-01
     <div class="key-case-actions">
       <a href="{{ '/overproofs/' | url }}" class="btn btn-outline-blue">View all case briefs</a>
     </div>
+  </div>
+</section>
+{% endif %}
+
+{% set caseStudies = collections.caseStudies %}
+{% if caseStudies and caseStudies | length %}
+<section class="case-files" id="case-files" aria-labelledby="case-files-heading">
+  <div class="align-container">
+    <p class="section-label">Case Files</p>
+    <h2 id="case-files-heading">Case Brief Archive</h2>
+    <p class="lead">Browse every active case file to understand how the documented proofs come together.</p>
+
+    {% include "case-study-list.njk" with { studies: caseStudies } %}
   </div>
 </section>
 {% endif %}
