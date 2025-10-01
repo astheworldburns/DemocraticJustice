@@ -1,132 +1,18 @@
 [
   {
     "case_id": "1.1",
-    "slug": "foundational-breach-dnc-diversity-plan",
-    "title": "PROOF: The Affirmative Action Committee's Formation Was a Foundational Breach of the 2020 DNC MOU, Rendering It Illegitimate at Inception",
+    "slug": "secret-script-shows-missing-caucuses",
+    "title": "PROOF: Secret Script Shows Organizers Proceeded Without Required Caucuses",
     "date": "2025-09-15",
     "category": "DNC MOU Violation",
-    "umbrella_category": "The Illegitimate Formation",
-    "overproof_slug": "the-illegitimate-formation",
-    "stakes": "The promise of representation for West Virginia's minority communities was broken at its inception, disenfranchising the very groups the MOU was meant to empower and guaranteeing the failure of the entire diversity initiative.",
-    "thesis": "The WVDP and DNC's RBC violated the 2020 MOU by using a secret script to install a pre-selected leadership slate, creating an illegitimate committee that was structurally designed to fail.",
+    "umbrella_category": "DNC MOU Compliance Violations",
+    "overproof_slug": "dnc-mou-compliance-violations",
+    "stakes": "The committee was formed without the required racial caucuses. The script proves organizers knew this and proceeded anyway.",
+    "thesis": "A secret script proves organizers knew 75% of required racial caucuses did not exist and proceeded with the formation anyway.",
     "axioms": [
       {
-        "text": "The Caucus-First Mandate: The MOU required that the Affirmative Action Committee be formed with members 'selected by their particular caucus.'",
+        "text": "The MOU required that the Affirmative Action Committee be formed with members 'selected by their particular caucus.'",
         "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
-        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
-      },
-      {
-        "text": "The State Party's Duty to Implement: The MOU mandated that the State Party 'fully implement... the creation of any new... caucuses.'",
-        "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
-        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
-      },
-      {
-        "text": "The RBC's Duty to Supervise: The MOU explicitly required that the entire implementation process be conducted 'under the supervision... of representatives of the RBC.'",
-        "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 2",
-        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
-      }
-    ],
-    "rule_summary": "These rules established a mandatory, non-negotiable sequence—a blueprint for legitimacy. The MOU required that caucuses be formed first to select their own representatives, who would then constitute the committee. Any other process was a direct breach of the agreement's core terms, and the RBC was the designated supervisor responsible for enforcing that blueprint.",
-    "case_facts": [
-      {
-        "text": "The committee's formation was orchestrated in secret using a non-public script, circulated with the explicit instruction 'do not share,' proving the process was designed to be non-transparent.",
-        "citation": "selina-script-email.pdf, p. 1",
-        "url": "/files/selina-script-email.pdf"
-      },
-      {
-        "text": "The script's author(s) proceeded with full knowledge that their plan excluded the majority of required diversity groups, as the document itself admits the committee was 'missing representation from... Latino's, Asian Americans and Pacific Islanders, and Native Americans.'",
-        "citation": "selina-script.pdf, p. 2",
-        "url": "/files/selina-script.pdf"
-      },
-      {
-        "text": "To ensure control, the script pre-emptively installed a hand-picked leadership slate, nullifying the right of the yet-to-be-formed caucuses to participate in selecting their own leadership.",
-        "citation": "selina-script.pdf, p. 1",
-        "url": "/files/selina-script.pdf"
-      },
-      {
-        "text": "The script's author, Selina Vickers, cemented procedural control by orchestrating her own self-appointment to the role of Parliamentarian, complete with a pre-written endorsement calling her uniquely qualified.",
-        "citation": "selina-script.pdf, p. 3",
-        "url": "/files/selina-script.pdf"
-      }
-    ],
-    "logic_chain": [
-      "The MOU promised a legitimate, caucus-driven process for forming the AAC under the watchful eye of the DNC's RBC.",
-      "Instead, the State Party, guided by a secret script, deliberately subverted this promise.",
-      "This subversion was intentional, as the script's own text proves the organizers knew they were excluding 75% of the required racial diversity caucuses.",
-      "By pre-emptively installing leadership, they disenfranchised these minority groups at the committee's inception.",
-      "This foundational breach occurred under the mandated supervision of the DNC's RBC, which failed its duty to enforce the MOU's terms.",
-      "[DJ-MARK] The result was not an authentic committee, but an illegitimate body born from a rigged process, directly violating the 2020 MOU."
-    ],
-    "violation": "The WVDP's implementation and the RBC's supervisory failure constituted a foundational breach of contract and trust. They violated the MOU's core 'caucus-first mandate' by knowingly creating an unaccountable committee through a secretive, pre-arranged process. This initial, deliberate act of disenfranchisement rendered the Affirmative Action Committee illegitimate at the moment of its creation and doomed the entire diversity initiative to fail."
-  },
-  {
-    "case_id": "1.2",
-    "slug": "selective-failure-to-form-caucuses",
-    "title": "PROOF: Organizers Excluded Racial Caucuses Through Selective Non-Formation",
-    "date": "2025-09-22",
-    "category": "DNC MOU Violation",
-    "umbrella_category": "The Illegitimate Formation",
-    "overproof_slug": "the-illegitimate-formation",
-    "stakes": "Three of the four mandated racial minority communities were disenfranchised from the committee's formation, proving that the process was not merely flawed, but strategically engineered to exclude specific groups from participation.",
-    "thesis": "The failure to form 75% of the required racial diversity caucuses was a strategic exclusion, not an administrative oversight, evidenced by the organizers' simultaneous success in forming allied caucuses and their targeted interference in the formation of disfavored caucuses.",
-    "axioms": [
-        {
-            "text": "The 2020 MOU's stated purpose was 'to create a process to establish new, and assist currently existing, diversity caucuses'.",
-            "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
-            "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
-        },
-        {
-            "text": "The MOU mandated that the State Party 'fully implement... the creation of any new... caucuses.'",
-            "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
-            "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
-        }
-    ],
-    "rule_summary": "The MOU placed a direct and non-negotiable responsibility on the state party and its organizers to 'fully implement' the creation of new diversity caucuses. A failure to form these caucuses constitutes a direct breach of this core mandate.",
-    "case_facts": [
-        {
-            "text": "Prior to the AAC leadership installation, 75% of the DNC-mandated racial diversity caucuses (AAPI, Latino, Native American) had not been formed.",
-            "citation": "selina-script.pdf, p. 2, 5",
-            "url": "/files/selina-script.pdf"
-        },
-        {
-            "text": "During this same period, organizers successfully formed other non-racial diversity caucuses",
-            "citation": "User provided fact"
-        },
-        {
-            "text": "The Co-chair of the Black Caucus, Mary Claytor, stated that organizer Selina Vickers 'contacted every member of the Indigenous Caucus not named Sturm prior to their nomination meeting' and 'refused' a request to contact the Sturms.",
-            "citation": "Not Named Sturm.pdf",
-            "url": "/files/not-named-sturm.pdf"
-        },
-        {
-            "text": "The Indigenous Caucus was subsequently denied seats on the planning and bylaws subcommittees.",
-            "citation": "Not Named Sturm.pdf",
-            "url": "/files/not-named-sturm.pdf"
-        }
-    ],
-    "logic_chain": [
-        "The MOU required the formation of four specific racial diversity caucuses.",
-        "Organizers failed to form three of these four caucuses before installing the committee's leadership.",
-        "This failure cannot be attributed to a lack of time or ability, as they successfully formed other caucuses for their allies in the same timeframe.",
-        "Evidence shows organizers also actively interfered in the formation of at least one of these caucuses (Indigenous) by selectively contacting members.",
-        "The subsequent exclusion of that caucus from subcommittees reveals a pattern of disenfranchisement originating at the formation stage.",
-        "[DJ-MARK] The selective non-formation, combined with active interference, proves the disenfranchisement of three racial minority caucuses was a deliberate and strategic act."
-    ],
-    "violation": "By failing to form 75% of the mandated racial diversity caucuses while simultaneously forming others and interfering in the process, organizers violated the MOU's requirement to 'fully implement' the caucus creation process. This selective failure was a strategic act of disenfranchisement that rendered the committee's formation illegitimate."
-},
-  {
-    "case_id": "1.3",
-    "slug": "secret-script-proves-caucus-exclusion",
-    "title": "PROOF: Script's Detail Proves Deliberate Exclusion of Mandated Caucuses",
-    "date": "2025-09-15",
-    "category": "DNC MOU Violation",
-    "umbrella_category": "The Illegitimate Formation",
-    "overproof_slug": "the-illegitimate-formation",
-    "stakes": "By proceeding without 75% of its required racial diversity caucuses, the committee's foundational decisions, including the election of its leadership, were rendered illegitimate.",
-    "thesis": "The formation script's detail proves the organizers strategically excluded 75% of the required racial diversity caucuses, a deliberate violation of the DNC MOU.",
-    "axioms": [
-      {
-        "text": "The 2020 DNC MOU required the creation of an Affirmative Action Committee ('AA Committee') to include members from each diversity group... selected by their particular caucus.",
-        "citation": "2020 MOU between WVDP and DNC RBC, p. 2-3",
         "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       },
       {
@@ -135,103 +21,137 @@
         "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       }
     ],
-    "rule_summary": "The MOU, as the governing agreement, established a mandatory sequence: 1) The party must facilitate the formation of specific diversity caucuses. 2) Those caucuses must select their own representatives. 3) Those representatives must then constitute the AA Committee. The committee's legitimacy was wholly dependent on the prior existence and participation of these groups.",
+    "rule_summary": "The MOU established a mandatory sequence: first, form caucuses. Second, those caucuses select their representatives. Third, those representatives constitute the committee. Proceeding without forming the caucuses violates this sequence.",
     "case_facts": [
       {
-        "text": "The script for the June 2, 2021 meeting demonstrates micro-level control, dictating specific nominators, providing verbatim speeches, and planning for procedural disruptions.",
+        "text": "A script for the formation meeting was circulated with the subject line 'DRAFT SCRIPT - do not share.'",
+        "citation": "selina-script-email.pdf, p. 1",
+        "url": "/files/selina-script-email.pdf"
+      },
+      {
+        "text": "The script demonstrates detailed planning, dictating specific nominators, providing verbatim speeches, and planning for procedural disruptions.",
         "citation": "selina-script.pdf, p. 1-5",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "The script proves the organizers knew 75% of the racial caucuses did not exist, as it includes a future resolution to 'do outreach to Latinos, Asian Americans/Pacific Islanders and Native Americans to facilitate those groups in forming their own diversity caucuses'.",
+        "text": "The script states the committee was 'missing representation from... Latino's, Asian Americans and Pacific Islanders, and Native Americans.'",
+        "citation": "selina-script.pdf, p. 2",
+        "url": "/files/selina-script.pdf"
+      },
+      {
+        "text": "The script includes a future resolution to 'do outreach to Latinos, Asian Americans/Pacific Islanders and Native Americans to facilitate those groups in forming their own diversity caucuses'.",
         "citation": "selina-script.pdf, p. 5",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "The script designates a specific individual, Kim Felix, to be nominated for an at-large diversity seat 'representing Latino Americans', proving the organizers had identified potential leadership for a caucus they had not yet formed.",
-        "citation": "selina-script.pdf, p. 3",
+        "text": "The script contained a pre-arranged leadership slate with specific nominators identified.",
+        "citation": "selina-script.pdf, p. 1",
         "url": "/files/selina-script.pdf"
       }
     ],
     "logic_chain": [
-      "The organizers demonstrated a high capacity for detailed organizational planning, as evidenced by the script.",
-      "The organizers possessed documented knowledge that the Latino, AAPI, and Native American caucuses had not been formed as required by the MOU.",
-      "When contrasted with their failure to form the required caucuses, the organizers' meticulous planning proves the exclusion was intentional.",
-      "Therefore, the decision to proceed with the AAC's formation was a deliberate choice to exclude 75% of the required racial diversity caucuses from selecting leadership.",
-      "[DJ-MARK] The organizers deliberately violated the MOU by choosing exclusion over inclusion."
+      "The MOU required caucuses to select their own representatives before the committee was formed.",
+      "A script was created for the formation meeting.",
+      "The script demonstrates detailed planning ability.",
+      "The script explicitly states that Latino, AAPI, and Native American representation is 'missing.'",
+      "The script includes a future plan to form these caucuses after the committee formation.",
+      "The script's level of detail proves the organizers knew these caucuses did not exist.",
+      "The organizers proceeded with installing leadership despite this knowledge.",
+      "[DJ-MARK] Organizers violated the MOU by proceeding with formation while knowing required caucuses did not exist."
     ],
-    "violation": "The organizers deliberately violated the 2020 DNC MOU by forming the AAC while knowingly excluding 75% of the required racial diversity caucuses. The script's detail proves this was a calculated act of disenfranchisement—not an administrative failure—that breached the agreement's core terms."
+    "violation": "Organizers violated the 2020 DNC MOU by forming the committee while knowing that 75% of the required racial diversity caucuses did not exist. The script proves this knowledge. The MOU required these caucuses to exist and select their representatives before the committee was formed."
   },
   {
-  "case_id": "1.4",
-  "slug": "preferential-nomination-subverted-selection",
-  "title": "PROOF: Secret Script Subverted MOU with Preferential Nomination",
-  "date": "2025-09-22",
-  "category": "DNC MOU Violation",
-  "umbrella_category": "The Illegitimate Formation",
-  "overproof_slug": "the-illegitimate-formation",
-  "stakes": "By providing a preferential, pre-arranged nomination for one hand-picked individual while sidelining other minority groups, organizers created a two-tiered system that violated the democratic principles of the MOU, ensuring their preferred slate would be installed.",
-  "thesis": "Organizers violated the MOU's principle of a fair and equal selection process by using a secret script to install a pre-arranged slate, which included a preferential nomination for a hand-picked individual to 'represent' the Latino community.",
-  "axioms": [
-    {
-      "text": "The 2020 DNC MOU required that members of the Affirmative Action Committee be 'selected by their particular caucus.'",
-      "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
-      "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
-    }
-  ],
-  "rule_summary": "The MOU's requirement that representatives be 'selected by their particular caucus' implies a fair, equal, and democratic process for all caucuses. A system that uses a secret script to impose a pre-arranged slate, including a privileged nomination for one individual, fundamentally violates this principle of fairness.",
-  "case_facts": [
-    {
-      "text": "Selina Vickers circulated a script for the formation meeting with the subject line 'DRAFT SCRIPT - do not share.'",
-      "citation": "selina-script-email.pdf, p. 1",
-      "url": "/files/selina-script-email.pdf"
-    },
-    {
-      "text": "The script contained a verbatim sequence for leadership nominations, including 'Mary Ann nominates Hollis Lewis.'",
-      "citation": "selina-script.pdf, p. 1",
-      "url": "/files/selina-script.pdf"
-    },
-    {
-      "text": "The script also directed a nomination for Kim Felix for the 'at-large diversity seat representing Latino Americans.'",
-      "citation": "selina-script.pdf, p. 3",
-      "url": "/files/selina-script.pdf"
-    },
-    {
-      "text": "The script did not contain similar at-large nominations for the AAPI or Native American communities, groups the document itself noted were 'missing representation.'",
-      "citation": "selina-script.pdf, p. 2, 5",
-      "url": "/files/selina-script.pdf"
-    }
-  ],
-  "logic_chain": [
-    "The MOU requires a fair and democratic selection process for all caucuses.",
-    "A secret script with a 'do not share' instruction proves the organizers' intent to control the process undemocratically.",
-    "The script dictated the entire leadership slate, making a genuine 'selection' by any caucus impossible.",
-    "The preferential nomination for one individual is the clearest example of this rigged, two-tiered system.",
-    "[DJ-MARK] The rigged nomination process was fundamentally undemocratic and violated the spirit and letter of the MOU."
-  ],
-  "violation": "By using a secret script to impose a pre-arranged slate and provide a preferential nomination to a pre-selected individual, organizers violated the democratic principles of the MOU. This act of favoritism created an unequal and unfair process, subverting the right of all caucuses to genuinely select their representatives and rendering the outcome of the formation meeting illegitimate."
-},
+    "case_id": "1.2",
+    "slug": "selective-failure-to-form-caucuses",
+    "title": "PROOF: Organizers Excluded Racial Caucuses Through Selective Non-Formation",
+    "date": "2025-09-22",
+    "category": "DNC MOU Violation",
+    "umbrella_category": "DNC MOU Compliance Violations",
+    "overproof_slug": "dnc-mou-compliance-violations",
+    "stakes": "Three of the four mandated racial minority communities were excluded from the committee's formation.",
+    "thesis": "The failure to form 75% of the required racial diversity caucuses was selective exclusion, not administrative oversight.",
+    "axioms": [
+      {
+        "text": "The 2020 MOU's stated purpose was 'to create a process to establish new, and assist currently existing, diversity caucuses'.",
+        "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+      },
+      {
+        "text": "The MOU mandated that the State Party 'fully implement... the creation of any new... caucuses.'",
+        "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+      }
+    ],
+    "rule_summary": "The MOU required the state party to form new diversity caucuses. A failure to form these caucuses violates this requirement.",
+    "case_facts": [
+      {
+        "text": "Prior to the AAC leadership installation, 75% of the DNC-mandated racial diversity caucuses (AAPI, Latino, Native American) had not been formed.",
+        "citation": "selina-script.pdf, p. 2, 5",
+        "url": "/files/selina-script.pdf"
+      },
+      {
+        "text": "During this same period, organizers successfully formed other non-racial diversity caucuses.",
+        "citation": "User provided fact"
+      },
+      {
+        "text": "The Co-chair of the Black Caucus, Mary Claytor, stated that organizer Selina Vickers 'contacted every member of the Indigenous Caucus not named Sturm prior to their nomination meeting' and 'refused' a request to contact the Sturms.",
+        "citation": "Not Named Sturm.pdf",
+        "url": "/files/not-named-sturm.pdf"
+      },
+      {
+        "text": "The Indigenous Caucus was subsequently denied seats on the planning and bylaws subcommittees.",
+        "citation": "Not Named Sturm.pdf",
+        "url": "/files/not-named-sturm.pdf"
+      }
+    ],
+    "logic_chain": [
+      "The MOU required the formation of four specific racial diversity caucuses.",
+      "Organizers failed to form three of these four caucuses before installing the committee's leadership.",
+      "During the same timeframe, organizers successfully formed other caucuses for their allies.",
+      "The ability to form some caucuses but not others demonstrates selective choice.",
+      "Evidence shows organizers interfered in the Indigenous Caucus formation by selectively contacting members.",
+      "The Indigenous Caucus was then excluded from key subcommittees.",
+      "[DJ-MARK] The exclusion of three racial minority caucuses was selective, not administrative failure."
+    ],
+    "violation": "By failing to form 75% of the mandated racial diversity caucuses while forming other caucuses, organizers violated the MOU's requirement to 'fully implement' the caucus creation process. Three racial communities were excluded from selecting their representatives."
+  },
   {
-    "case_id": "1.5",
-    "slug": "mou-compliance-officer-self-appointment",
-    "title": "PROOF: MOU Compliance Officer Breached Duty by Orchestrating Her Own Appointment",
+    "case_id": "1.3",
+    "slug": "mou-compliance-officer-violated-duty",
+    "title": "PROOF: Official Appointed to Ensure Compliance Violated Her Duty",
     "date": "2025-09-15",
     "category": "DNC MOU Violation",
-    "umbrella_category": "The Illegitimate Formation",
-    "overproof_slug": "the-illegitimate-formation",
-    "stakes": "The official tasked by the MOU with guaranteeing a fair and open process instead corrupted it for personal gain, fundamentally invalidating the legitimacy of the committee's procedural foundation.",
-    "thesis": "As the appointed MOU compliance officer, Selina Vickers breached her duty to ensure a fair process by authoring a secret script that orchestrated her own installation into the powerful role of Parliamentarian.",
+    "umbrella_category": "DNC MOU Compliance Violations",
+    "overproof_slug": "dnc-mou-compliance-violations",
+    "stakes": "The official appointed under the MOU to ensure a fair process instead authored a secret script that violated the rules she was appointed to enforce. This corrupted the oversight mechanism itself.",
+    "thesis": "Selina Vickers was appointed under the MOU to oversee compliance. She violated this duty by authoring a secret script that directed her own appointment, granted preferential treatment to allies, and included tactics to control the meeting.",
     "axioms": [
       {
         "text": "The MOU appointed a non-elected official, Selina Vickers, to 'oversee and direct compliance' with the agreement.",
         "citation": "2020 MOU between WVDP and DNC RBC, p. 2",
         "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+      },
+      {
+        "text": "The 2020 DNC MOU required that members of the Affirmative Action Committee be 'selected by their particular caucus.'",
+        "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+      },
+      {
+        "text": "The DNC Charter mandates that 'All meetings of... all other official Party committees, commissions and bodies shall be open to the public'.",
+        "citation": "DNC Charter, Article Nine, Sec. 12",
+        "url": "/files/dnc-charter.pdf"
       }
     ],
-    "rule_summary": "As the designated compliance officer, this individual had a fiduciary duty to act as a neutral arbiter and ensure the process was open and fair. Using this position of trust to secure a role with procedural control for oneself is a fundamental breach of that duty.",
+    "rule_summary": "Officials appointed to ensure compliance have a duty to enforce the rules they oversee. Using this position of trust to violate those same rules is a fundamental breach that corrupts the oversight mechanism. The MOU specifically appointed Vickers to prevent the violations she then committed.",
     "case_facts": [
       {
-        "text": "The script, authored by Selina Vickers, directs a committee member to state: 'I nominate Selina Vickers for Parliamentarian/Secretary.'",
+        "text": "Selina Vickers circulated a script for the formation meeting with the subject line 'DRAFT SCRIPT - do not share.'",
+        "citation": "selina-script-email.pdf, p. 1",
+        "url": "/files/selina-script-email.pdf"
+      },
+      {
+        "text": "The script directs a committee member to state: 'I nominate Selina Vickers for Parliamentarian/Secretary.'",
         "citation": "selina-script.pdf, p. 3",
         "url": "/files/selina-script.pdf"
       },
@@ -239,251 +159,222 @@
         "text": "The script provides a verbatim endorsement for the member to read, which concludes, 'I can think of no one else remotely qualified to do this particular work.'",
         "citation": "selina-script.pdf, p. 3",
         "url": "/files/selina-script.pdf"
+      },
+      {
+        "text": "The script directed a nomination for Kim Felix for the 'at-large diversity seat representing Latino Americans' while providing no similar nominations for AAPI or Native American communities.",
+        "citation": "selina-script.pdf, p. 3",
+        "url": "/files/selina-script.pdf"
+      },
+      {
+        "text": "The script contains a pre-planned challenge to observers: 'Ask: 'I notice there are people other than caucus co-chairs present. I thought this meeting was solely for co-chairs.''",
+        "citation": "selina-script.pdf, p. 1",
+        "url": "/files/selina-script.pdf"
+      },
+      {
+        "text": "The script anticipates criticism from Party Chair Belinda Biafore and provides response strategies.",
+        "citation": "selina-script.pdf, p. 1",
+        "url": "/files/selina-script.pdf"
       }
     ],
     "logic_chain": [
-      "Selina Vickers was the officer officially appointed under the MOU to 'oversee and direct compliance.'",
-      "Her primary duty in this role was to ensure a fair and open process.",
-      "She used her position as the architect of the meeting to write a script that directed her own nomination to a key procedural role.",
-      "This action constitutes a direct breach of her duty as a neutral compliance officer, as she used her authority to install herself in a position of power.",
-      "[DJ-MARK] The designated referee of the process rigged the game for herself."
+      "The MOU appointed Selina Vickers to 'oversee and direct compliance' with the agreement.",
+      "This appointment created a duty to ensure the process followed MOU requirements.",
+      "Vickers authored a script marked 'do not share' that controlled the formation meeting.",
+      "The script directed her own nomination to the role of Parliamentarian.",
+      "The script included a pre-written endorsement supporting her nomination.",
+      "The script granted preferential nomination to one ally while excluding other communities.",
+      "The script included tactics to challenge observers and manage anticipated criticism.",
+      "Each of these actions violated the fair and open process she was appointed to ensure.",
+      "[DJ-MARK] The official appointed to ensure compliance used her position to violate the rules she was supposed to enforce."
     ],
-    "violation": "As the designated compliance officer, Selina Vickers fundamentally betrayed her role by orchestrating her own appointment. This action was not merely a conflict of interest; it was a direct breach of her fiduciary duty under the MOU to guarantee a fair process, thereby corrupting the committee's procedural legitimacy at its inception."
+    "violation": "Selina Vickers was appointed under the MOU to oversee and direct compliance. She violated this duty by authoring a secret script that directed her own appointment to Parliamentarian, granted preferential treatment to allies, and included tactics to control meeting participation. Using a compliance position to violate the rules being overseen corrupts the oversight mechanism itself."
   },
-  {
-    "case_id": "1.6",
-    "slug": "script-reveals-plan-to-control-dissent",
-    "title": "PROOF: Script Reveals Pre-Planned Strategy to Control Meeting and Dissent",
-    "date": "2025-09-15",
-    "category": "DNC Charter & Bylaw Violation",
-    "umbrella_category": "The Illegitimate Formation",
-    "overproof_slug": "the-illegitimate-formation",
-    "stakes": "The committee was structured to execute a pre-determined agenda and manage any opposition, not to foster the inclusive participation required by party rules.",
-    "thesis": "The formation script included pre-planned tactics to control dissent and challenge attendees, proving the meeting was designed to execute a private agenda, not facilitate open participation.",
+   {
+    "case_id": "2.1",
+    "slug": "dnc-supervisor-advised-suppress-members",
+    "title": "PROOF: DNC Supervisor Appointed to Oversee Process Advised Suppressing Elected Members",
+    "date": "2025-09-23",
+    "category": "DNC MOU Violation",
+    "umbrella_category": "The Campaign to Silence Dissent",
+    "overproof_slug": "the-campaign-to-silence-dissent",
+    "stakes": "An official appointed by the DNC to ensure fair implementation instead provided strategic advice to suppress elected representatives. This violated the supervisory structure established by the MOU.",
+    "thesis": "Harold Ickes was appointed to the DNC RBC to supervise the MOU implementation. He violated this supervisory duty by providing strategic advice to neutralize elected representatives.",
     "axioms": [
       {
-        "text": "The DNC Charter mandates that 'All meetings of... all other official Party committees, commissions and bodies shall be open to the public'.",
-        "citation": "DNC Charter, Article Nine, Sec. 12",
+        "text": "The MOU required an 'open and transparent process' with 'full, timely, and equal opportunity' for participation.",
+        "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1",
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+      },
+      {
+        "text": "The RBC was tasked with impartial 'supervision and technical assistance.'",
+        "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 2",
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+      },
+      {
+        "text": "Harold Ickes served on the DNC Rules & Bylaws Committee.",
+        "citation": "Corporate Lobbyists Control the Rules at the DNC, Sludge, Feb. 28, 2020",
+        "url": "/files/sludge-corporate-lobbyists-dnc-rules-2020-02-28.pdf"
+      },
+      {
+        "text": "Selina Vickers served as the 'non-voting representative of the Challengers.'",
+        "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1-2",
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+      }
+    ],
+    "rule_summary": "The MOU established a formal supervisory structure. The RBC was tasked with impartial supervision to ensure fair implementation. Officials serving in supervisory roles have a duty to remain neutral. Providing strategic advice to one party against elected representatives violates this supervisory duty and corrupts the oversight structure.",
+    "case_facts": [
+      {
+        "text": "Harold Ickes and Selina Vickers co-hosted a political training event during the MOU implementation period.",
+        "citation": "Snapshot of SelinaVickers.com, June 24, 2021",
+        "url": "/files/selinavickers-com-snapshot-2021-06-24.pdf"
+      },
+      {
+        "text": "In a recorded meeting, Harold Ickes stated: 'I've said to Selina god knows how many times you know what at bottom you gotta out vote' Seth and Mari.",
+        "citation": "Planning Committee Meeting transcript, timestamp 47:52-48:06",
+        "url": "/files/planning-committee-meeting-transcript.txt"
+      },
+      {
+        "text": "Mary Ann Claytor documented that Ickes 'advised Selina to 'outvote' Seth, Mari, and others.'",
+        "citation": "Email from Mary Ann Claytor, Sept. 23, 2021",
+        "url": "/files/email-mary-ann-claytor-2021-09-23.pdf"
+      }
+    ],
+    "logic_chain": [
+      "The MOU established the RBC as the supervisory body for implementation.",
+      "Harold Ickes served on the DNC RBC in this supervisory capacity.",
+      "Selina Vickers served as the non-voting compliance officer under the MOU.",
+      "The RBC's duty was to provide impartial supervision and technical assistance.",
+      "Ickes and Vickers established professional collaboration through a co-hosted training event.",
+      "Ickes stated in a recorded meeting that he repeatedly told Vickers to 'out vote' Seth and Mari Sturm.",
+      "The Sturms were elected Indigenous Caucus chairs.",
+      "This advice directed action against elected members rather than providing neutral supervision.",
+      "Multiple witnesses documented this statement.",
+      "[DJ-MARK] An official appointed to supervise fair implementation violated his duty by providing strategic advice to suppress elected representatives."
+    ],
+    "violation": "Harold Ickes was appointed to the DNC RBC to supervise MOU implementation. His duty was to ensure impartial oversight. He violated this supervisory duty by repeatedly advising the compliance officer to 'out vote' elected representatives. This corrupted the supervisory structure the MOU established to ensure fairness."
+  },
+  {
+    "case_id": "2.2",
+    "slug": "organized-campaign-against-representatives",
+    "title": "PROOF: Organized Campaign Used Scripts and False Accusations Against Representatives",
+    "date": "2025-09-23",
+    "category": "Ethics Violation & Targeted Harassment",
+    "umbrella_category": "The Campaign to Silence Dissent",
+    "overproof_slug": "the-campaign-to-silence-dissent",
+    "stakes": "Indigenous and Black representatives faced organized attacks using concealed scripts, false accusations of violence, and scheduled social media posts.",
+    "thesis": "Leadership organized a campaign against minority representatives using concealed scripts, false accusations of violence, and scheduled social media attacks.",
+    "axioms": [
+      {
+        "text": "The DNC Charter requires ethical conduct that 'reflects creditably upon the office.'",
+        "citation": "DNC Charter, p. 1",
         "url": "/files/dnc-charter.pdf"
       }
     ],
-    "rule_summary": "The DNC Charter's rule for open meetings requires a process that allows for spontaneous, good-faith participation, not a pre-planned system to control who can attend and to manage anticipated opposition.",
+    "rule_summary": "Spreading false accusations and organizing harassment campaigns violates ethical standards.",
     "case_facts": [
       {
-        "text": "The script anticipates that the meeting may be closed to the public and provides a challenge to be used against observers: 'Ask: 'I notice there are people other than caucus co-chairs present. I thought this meeting was solely for co-chairs.''",
-        "citation": "selina-script.pdf, p. 1",
-        "url": "/files/selina-script.pdf"
+        "text": "Scripts attacking Indigenous representatives were distributed with concealment instructions: '[if you use this... DO NOT FORWARD THIS EMAIL].'",
+        "citation": "Email from Selina Vickers to Kristin Loken, Aug 17, 2021",
+        "url": "/files/email-selina-vickers-kristin-loken-2021-08-17.pdf"
       },
       {
-        "text": "The script anticipates criticism from Party Chair Belinda Biafore, pre-characterizing it as 'scolding': 'She may scold you for the caucus meetings last night'.",
-        "citation": "selina-script.pdf, p. 1",
-        "url": "/files/selina-script.pdf"
+        "text": "False claims were spread that an Indigenous Caucus chair was 'dangerous' and 'capable of violence.'",
+        "citation": "Email from Seth Sturm documenting rumors, Sept 17, 2021",
+        "url": "/files/email-seth-sturm-documenting-rumors-2021-09-17.pdf"
       },
       {
-        "text": "The script provides response strategies for managing this anticipated opposition rather than addressing its substance.",
-        "citation": "selina-script.pdf, p. 1",
-        "url": "/files/selina-script.pdf"
+        "text": "A social media campaign labeled the Indigenous chair a 'toxic bully' with a 'calendar of posts ready to go.'",
+        "citation": "Shane Assadzandi Facebook Post, Aug 21, 2021",
+        "url": "/files/shane-assadzandi-facebook-post-2021-08-21.pdf"
+      },
+      {
+        "text": "Members reported being 'reluctant to speak publicly for fear of retaliation and future harassment.'",
+        "citation": "Emily Clifford Email, Aug 22, 2021",
+        "url": "/files/email-emily-clifford-2021-08-22.pdf"
+      },
+      {
+        "text": "The Indigenous chair reported the attacks had 'done real damage' requiring him to defend against accusations of violence.",
+        "citation": "Email from Seth Sturm, Sept 17, 2021",
+        "url": "/files/email-seth-sturm-2021-09-17.pdf"
       }
     ],
     "logic_chain": [
-      "The script contains a pre-planned tactic to challenge the presence of observers at what should be an open meeting.",
-      "The script anticipates opposition from the Party Chair and pre-characterizes it as 'scolding' to trivialize legitimate concerns.",
-      "It provides response strategies for managing this opposition.",
-      "This proves the meeting was designed to execute a pre-determined outcome despite anticipated objections.",
-      "[DJ-MARK] The organizers built opposition management into their plan, violating principles of open deliberation."
+      "Scripts containing attacks on Indigenous representatives were marked with concealment instructions.",
+      "The instructions stated 'DO NOT FORWARD THIS EMAIL.'",
+      "False accusations of violence were spread about these same representatives.",
+      "A social media campaign with scheduled posts targeted these same individuals.",
+      "Both Indigenous and Black leaders reported being targeted.",
+      "Members stated they feared retaliation for speaking publicly.",
+      "The targeted representatives reported the attacks caused real damage.",
+      "[DJ-MARK] Leadership organized a campaign using concealed scripts and false accusations to target minority representatives."
     ],
-    "violation": "The script's prepared tactics for managing participation and its pre-emptive characterization of criticism violate the 'open meetings' principle of the DNC Charter. This proves the meeting was designed to control outcomes, not facilitate democratic participation."
+    "violation": "Leadership violated ethical standards by organizing a campaign against minority representatives. The campaign used concealed scripts marked 'DO NOT FORWARD THIS EMAIL,' false accusations of violence, and scheduled social media attacks. This created a climate of fear that silenced other members."
   },
- {
-  "case_id": "2.1",
-  "slug": "dnc-supervisor-and-challenger-rep-pattern-of-control",
-  "title": "PROOF: DNC Supervisor and Challenger Rep Maintained a Pattern of Coordinated Control",
-  "date": "2025-09-23",
-  "category": "DNC MOU Violation",
-  "umbrella_category": "The Campaign to Silence Dissent",
-  "overproof_slug": "the-campaign-to-silence-dissent",
-  "stakes": "The entire WVDP reform process was compromised from its inception by a coordinated effort between the DNC's designated supervisor and the complainant's representative.",
-  "thesis": "DNC RBC member Harold Ickes and Selina Vickers engaged in sustained coordination that evolved into strategic advice to neutralize elected representatives.",
-  "axioms": [
-    {
-      "text": "The MOU required an 'open and transparent process' with 'full, timely, and equal opportunity' for participation.",
-      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1",
-      "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
-    },
-    {
-      "text": "The RBC was tasked with impartial 'supervision and technical assistance.'",
-      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 2",
-      "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
-    },
-    {
-      "text": "Harold Ickes served on the DNC Rules & Bylaws Committee.",
-      "citation": "Corporate Lobbyists Control the Rules at the DNC, Sludge, Feb. 28, 2020",
-      "url": "/files/sludge-corporate-lobbyists-dnc-rules-2020-02-28.pdf"
-    },
-    {
-      "text": "Selina Vickers served as the 'non-voting representative of the Challengers.'",
-      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1-2",
-      "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
-    }
-  ],
-  "rule_summary": "A supervisor's duty of impartiality prohibits providing partisan strategic advice to one party against another.",
-  "case_facts": [
-    {
-      "text": "Harold Ickes and Selina Vickers co-hosted a political training event during the MOU implementation period.",
-      "citation": "Snapshot of SelinaVickers.com, June 24, 2021",
-      "url": "/files/selinavickers-com-snapshot-2021-06-24.pdf"
-    },
-    {
-      "text": "In a recorded meeting, Harold Ickes stated: 'I've said to Selina god knows how many times you know what at bottom you gotta out vote' Seth and Mari.",
-      "citation": "Planning Committee Meeting transcript, timestamp 47:52-48:06",
-      "url": "/files/planning-committee-meeting-transcript.txt"
-    },
-    {
-      "text": "Mary Ann Claytor documented that Ickes 'advised Selina to 'outvote' Seth, Mari, and others.'",
-      "citation": "Email from Mary Ann Claytor, Sept. 23, 2021",
-      "url": "/files/email-mary-ann-claytor-2021-09-23.pdf"
-    }
-  ],
-  "logic_chain": [
-    "The DNC supervisor and Challengers' representative established professional collaboration.",
-    "This evolved into Ickes providing repeated strategic advice to 'out vote' specific members.",
-    "The targeted members were elected minority caucus representatives.",
-    "This converted supervision into partisan strategy.",
-    "[DJ-MARK] The supervisor became an active participant rather than neutral overseer."
-  ],
-  "violation": "Harold Ickes' repeated advice to 'out vote' elected representatives violated his duty of impartial supervision under the MOU."
-},
   {
-  "case_id": "2.2",
-  "slug": "defamation-campaign-against-minority-representatives",
-  "title": "PROOF: Defamation Campaign Targeted Minority Representatives",
-  "date": "2025-09-23",
-  "category": "Ethics Violation & Targeted Harassment",
-  "umbrella_category": "The Campaign to Silence Dissent",
-  "overproof_slug": "the-campaign-to-silence-dissent",
-  "stakes": "Indigenous and Black representatives faced a coordinated defamation campaign designed to destroy their reputations and force their resignations, using tactics that specifically harm marginalized communities.",
-  "thesis": "Leadership orchestrated a defamation campaign against minority representatives, spreading false claims about violence and using concealed coordination to amplify attacks.",
-  "axioms": [
-    {
-      "text": "False accusations of violence against marginalized people carry particular harm given historical stereotypes and systemic bias.",
-      "citation": "Documented patterns of discrimination"
-    },
-    {
-      "text": "The DNC Charter requires ethical conduct that 'reflects creditably upon the office.'",
-      "citation": "DNC Charter, p. 1",
-      "url": "/files/dnc-charter.pdf"
-    },
-    {
-      "text": "Defamation includes false statements of fact that damage reputation.",
-      "citation": "Common law principles"
-    },
-    {
-      "text": "Marginalized communities face disproportionate harm from coordinated harassment.",
-      "citation": "Civil rights documentation"
-    }
-  ],
-  "rule_summary": "Spreading false accusations and orchestrating harassment campaigns violates ethical standards and causes particular harm when targeted at marginalized representatives.",
-  "case_facts": [
-    {
-      "text": "Scripts attacking Indigenous representatives were distributed with concealment instructions: '[if you use this... DO NOT FORWARD THIS EMAIL].'",
-      "citation": "Email from Selina Vickers to Kristin Loken, Aug 17, 2021",
-      "url": "/files/email-selina-vickers-kristin-loken-2021-08-17.pdf"
-    },
-    {
-      "text": "False claims were spread that an Indigenous Caucus chair was 'dangerous' and 'capable of violence.'",
-      "citation": "Email from Seth Sturm documenting rumors, Sept 17, 2021",
-      "url": "/files/email-seth-sturm-documenting-rumors-2021-09-17.pdf"
-    },
-    {
-      "text": "A sustained public campaign labeled the Indigenous chair a 'toxic bully' with a 'calendar of posts ready to go.'",
-      "citation": "Shane Assadzandi Facebook Post, Aug 21, 2021",
-      "url": "/files/shane-assadzandi-facebook-post-2021-08-21.pdf"
-    },
-    {
-      "text": "Members reported being 'reluctant to speak publicly for fear of retaliation and future harassment.'",
-      "citation": "Emily Clifford Email, Aug 22, 2021",
-      "url": "/files/email-emily-clifford-2021-08-22.pdf"
-    },
-    {
-      "text": "The Indigenous chair reported the attacks had 'done real damage' requiring him to defend against accusations of violence.",
-      "citation": "Email from Seth Sturm, Sept 17, 2021",
-      "url": "/files/email-seth-sturm-2021-09-17.pdf"
-    }
-  ],
-  "logic_chain": [
-    "False accusations of violence were spread about Indigenous representatives.",
-    "These accusations weaponize harmful stereotypes against marginalized people.",
-    "The attacks were coordinated through concealed scripts and sustained campaigns.",
-    "Both Indigenous and Black leaders were targeted and harmed.",
-    "A climate of fear silenced other marginalized members.",
-    "[DJ-MARK] This constitutes targeted harassment designed to eliminate minority representation."
-  ],
-  "violation": "The coordinated defamation campaign, including false violence accusations against Indigenous representatives and attacks that forced the Black Caucus co-chair's resignation, constitutes targeted harassment of marginalized leaders. This violated ethical standards and weaponized harmful stereotypes to destroy minority representation in the committee."
-},
-{
-  "case_id": "2.3",
-  "slug": "coordinated-exclusion-from-subcommittees",
-  "title": "PROOF: Minority Caucuses Were Excluded from Key Subcommittees",
-  "date": "2025-09-23",
-  "category": "DNC MOU Violation",
-  "umbrella_category": "The Campaign to Silence Dissent",
-  "overproof_slug": "the-campaign-to-silence-dissent",
-  "stakes": "Minority caucus chairs were denied participation in governance structures.",
-  "thesis": "Leadership systematically excluded specific caucus chairs from subcommittees after reversing a democratic vote.",
-  "axioms": [
-    {
-      "text": "The MOU mandated 'full participation by all Democrats, with particular concern for minority groups.'",
-      "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1",
-      "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
-    },
-    {
-      "text": "Once adopted, a motion stands until properly reconsidered.",
-      "citation": "RONR 12th ed., § 10:26",
-      "url": "/files/roberts-rules-of-order-12th-edition.pdf"
-    }
-  ],
-  "rule_summary": "Excluding minority representatives from governance violates the MOU's participation mandate.",
-  "case_facts": [
-    {
-      "text": "The committee voted for a volunteer-based subcommittee system.",
-      "citation": "Committee meeting minutes",
-      "url": "/files/aac-committee-meeting-minutes-volunteer-system-vote.pdf"
-    },
-    {
-      "text": "Leadership subsequently declared 'subcommittee membership will be by appointment.'",
-      "citation": "Email from Mary Thorp, Aug 29, 2021",
-      "url": "/files/email-mary-thorp-subcommittee-appointments-2021-08-29.pdf"
-    },
-    {
-      "text": "Indigenous and Black caucus chairs were denied subcommittee seats.",
-      "citation": "Email from Seth Sturm, Aug 5, 2021",
-      "url": "/files/email-seth-sturm-subcommittee-exclusion-2021-08-05.pdf"
-    },
-    {
-      "text": "The Board of Appeals found members were improperly denied subcommittee seats.",
-      "citation": "WVDP Board of Appeals Resolution, Nov. 29, 2021",
-      "url": "/files/wvdp-board-of-appeals-resolution-subcommittee-exclusion-2021-11-29.pdf"
-    }
-  ],
-  "logic_chain": [
-    "A democratic vote established a volunteer system.",
-    "Leadership unilaterally declared an appointment system.",
-    "They used this to exclude specific caucus chairs.",
-    "The Board of Appeals confirmed this was improper.",
-    "[DJ-MARK] Democratic decisions were overturned to exclude minority representatives."
-  ],
-  "violation": "The reversal of a democratic vote and exclusion of minority caucus chairs violated the MOU's participation mandate."
-},
+    "case_id": "2.3",
+    "slug": "minority-caucuses-excluded-from-subcommittees",
+    "title": "PROOF: Minority Caucuses Were Excluded from Key Subcommittees",
+    "date": "2025-09-23",
+    "category": "DNC MOU Violation",
+    "umbrella_category": "The Campaign to Silence Dissent",
+    "overproof_slug": "the-campaign-to-silence-dissent",
+    "stakes": "Minority caucus chairs were denied participation in governance structures.",
+    "thesis": "Leadership excluded specific caucus chairs from subcommittees after reversing a democratic vote without proper procedure.",
+    "axioms": [
+      {
+        "text": "The MOU mandated 'full participation by all Democrats, with particular concern for minority groups.'",
+        "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1",
+        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+      },
+      {
+        "text": "Once adopted, a motion stands until properly reconsidered.",
+        "citation": "RONR 12th ed., § 10:26",
+        "url": "/files/roberts-rules-of-order-12th-edition.pdf"
+      }
+    ],
+    "rule_summary": "Excluding minority representatives from governance violates the MOU's participation mandate. Reversing an adopted motion without proper reconsideration violates parliamentary procedure.",
+    "case_facts": [
+      {
+        "text": "The committee voted for a volunteer-based subcommittee system.",
+        "citation": "Committee meeting minutes",
+        "url": "/files/aac-committee-meeting-minutes-volunteer-system-vote.pdf"
+      },
+      {
+        "text": "Leadership subsequently declared 'subcommittee membership will be by appointment.'",
+        "citation": "Email from Mary Thorp, Aug 29, 2021",
+        "url": "/files/email-mary-thorp-subcommittee-appointments-2021-08-29.pdf"
+      },
+      {
+        "text": "Indigenous and Black caucus chairs were denied subcommittee seats.",
+        "citation": "Email from Seth Sturm, Aug 5, 2021",
+        "url": "/files/email-seth-sturm-subcommittee-exclusion-2021-08-05.pdf"
+      },
+      {
+        "text": "The Board of Appeals found members were improperly denied subcommittee seats.",
+        "citation": "WVDP Board of Appeals Resolution, Nov. 29, 2021",
+        "url": "/files/wvdp-board-of-appeals-resolution-subcommittee-exclusion-2021-11-29.pdf"
+      }
+    ],
+    "logic_chain": [
+      "A democratic vote established a volunteer system for subcommittees.",
+      "Leadership declared an appointment system without proper reconsideration of the motion.",
+      "Leadership used this appointment system to exclude specific caucus chairs.",
+      "The excluded chairs were Indigenous and Black caucus representatives.",
+      "The Board of Appeals confirmed this exclusion was improper.",
+      "[DJ-MARK] Leadership violated the MOU's participation mandate by excluding minority representatives from subcommittees."
+    ],
+    "violation": "Leadership violated the MOU's participation mandate and parliamentary procedure by reversing a democratic vote without proper process and using this to exclude Indigenous and Black caucus chairs from subcommittees. The Board of Appeals ruled this exclusion was improper."
+  },
   {
     "case_id": "2.4",
-    "slug": "bylaws-mislabeled-to-circumvent-notice",
-    "title": "PROOF: Bylaws Mislabeled to Circumvent Notice Requirements",
+    "slug": "august-meeting-multiple-violations",
+    "title": "PROOF: August Meeting Violated Notice Requirements and Used Biased Presiding Officer",
     "date": "2025-09-23",
     "category": "WVDP Bylaw Violation",
     "umbrella_category": "The Campaign to Silence Dissent",
     "overproof_slug": "the-campaign-to-silence-dissent",
-    "stakes": "Members were denied their right to review and consult on fundamental governance changes through deliberate mislabeling.",
-    "thesis": "Substantive bylaws were mislabeled as 'procedural rules' to circumvent the 30-day notice requirement.",
+    "stakes": "Members were denied their right to review fundamental governance changes. The meeting used a presiding officer with undisclosed conflicts. The Board of Appeals invalidated the proceedings.",
+    "thesis": "The August 17, 2021 meeting violated notice requirements by mislabeling bylaws as 'procedural rules' and used a presiding officer with undisclosed professional ties to the parliamentarian.",
     "axioms": [
       {
         "text": "WVDP Bylaws require 30 days written notice for amendments.",
@@ -501,12 +392,17 @@
         "url": "/files/roberts-rules-of-order-12th-edition.pdf"
       },
       {
-        "text": "Notice requirements protect members' right to deliberate.",
-        "citation": "RONR 12th ed., § 10:14",
+        "text": "Presiding officers must maintain strict impartiality.",
+        "citation": "Robert's Rules of Order, 12th ed., § 47:7",
+        "url": "/files/roberts-rules-of-order-12th-edition.pdf"
+      },
+      {
+        "text": "Persons in positions of trust must disclose potential conflicts.",
+        "citation": "Robert's Rules of Order, 12th ed., § 45:3",
         "url": "/files/roberts-rules-of-order-12th-edition.pdf"
       }
     ],
-    "rule_summary": "Rules granting authority between meetings or establishing committee structures are bylaws requiring 30-day notice, regardless of their label.",
+    "rule_summary": "Rules granting authority between meetings are bylaws requiring 30-day notice, regardless of their label. A presiding officer must be neutral and disclose any relationships that could affect impartiality.",
     "case_facts": [
       {
         "text": "Documents titled 'DRAFT Procedural Rules' were circulated less than 24 hours before the August 17, 2021 meeting.",
@@ -523,8 +419,7 @@
         "citation": "DRAFT Procedural Rules for august meeting.pdf",
         "url": "/files/draft-procedural-rules-2021-08-17.pdf"
       },
-      {
-        "text": "A member asked during the meeting: 'Why weren't they sent earlier so that we had an opportunity to read them?'",
+      {"text": "A member asked during the meeting: 'Why weren't they sent earlier so that we had an opportunity to read them?'",
         "citation": "August 17 Meeting Transcript.txt",
         "url": "/files/aac-meeting-transcript-2021-08-17.txt"
       },
@@ -532,105 +427,61 @@
         "text": "Another member stated: 'it's not a procedural rule for handling this meeting.'",
         "citation": "August 17 Meeting Transcript.txt",
         "url": "/files/aac-meeting-transcript-2021-08-17.txt"
+      },
+      {
+        "text": "Larry Taylor was invited to preside over the meeting where these rules were adopted.",
+        "citation": "AAC Meeting Minutes",
+        "url": "/files/wvdp-aac-meeting-minutes-redacted.pdf"
+      },
+      {
+        "text": "Larry Taylor served as a parliamentarian trainer with the Professional Development Program.",
+        "citation": "PDPR Training Materials",
+        "url": "/files/pdpr-parliamentary-training-materials.pdf"
+      },
+      {
+        "text": "Taylor and Selina Vickers were professional colleagues.",
+        "citation": "Email Correspondence between S. Vickers and L. Taylor",
+        "url": "/files/email-correspondence-vickers-taylor-2021-09-17.pdf"
+      },
+      {
+        "text": "Taylor's professional relationship with Parliamentarian Vickers was not disclosed to the committee.",
+        "citation": "AAC Meeting Minutes",
+        "url": "/files/wvdp-aac-meeting-minutes-redacted.pdf"
+      },
+      {
+        "text": "The Board of Appeals ruled the August meeting invalid, citing improper procedures.",
+        "citation": "WVDP Board of Appeals Resolution",
+        "url": "/files/wvdp-board-of-appeals-resolution-invalidating-meeting-2021-11-29.pdf"
       }
     ],
     "logic_chain": [
-      "Rules 13 and 14 granted continuing authority and established structures.",
-      "Such rules are bylaws by definition, not procedural rules.",
-      "Bylaws require 30 days notice under WVDP rules.",
-      "The documents were provided with less than 24 hours notice.",
-      "The mislabeling as 'procedural' bypassed notice requirements.",
-      "Members identified this violation during the meeting.",
-      "[DJ-MARK] AAC leadership attempted to pass bylaws through improper procedure and without proper notice."
+      "Documents titled 'DRAFT Procedural Rules' were circulated less than 24 hours before the meeting.",
+      "These documents contained Rules 13 and 14.",
+      "Rule 13 granted Co-Chairs continuing authority between meetings.",
+      "Rule 14 established subcommittee governance structures.",
+      "By definition, rules granting continuing authority are bylaws, not procedural rules.",
+      "WVDP bylaws require 30 days notice for amendments.",
+      "The mislabeling as 'procedural' avoided this notice requirement.",
+      "Members objected to the lack of notice during the meeting.",
+      "An external officer, Larry Taylor, presided over the meeting.",
+      "Taylor had undisclosed professional ties to Parliamentarian Vickers.",
+      "Robert's Rules require presiding officers to disclose potential conflicts.",
+      "Taylor's relationship was not disclosed to the committee.",
+      "The Board of Appeals ruled the meeting invalid due to improper procedures.",
+      "[DJ-MARK] The August meeting violated multiple procedural requirements through mislabeled bylaws and an undisclosed conflict of interest."
     ],
-    "violation": "Mislabeling bylaws as 'procedural rules' to avoid the 30-day notice requirement violated WVDP Bylaws Article XI and denied members their deliberative rights."
+    "violation": "The August 17, 2021 meeting violated WVDP Bylaws Article XI by mislabeling bylaws as 'procedural rules' to avoid the 30-day notice requirement. The meeting also violated Robert's Rules by using a presiding officer with undisclosed professional ties to the parliamentarian. The Board of Appeals invalidated the meeting due to these procedural violations."
   },
-  {
-  "case_id": "2.5",
-  "slug": "undisclosed-conflict-of-interest-invalidated-proceedings",
-  "title": "PROOF: Undisclosed Conflict of Interest Invalidated Proceedings",
-  "date": "2025-09-23",
-  "category": "DNC Charter & Bylaw Violation",
-  "umbrella_category": "The Campaign to Silence Dissent",
-  "overproof_slug": "the-campaign-to-silence-dissent",
-  "stakes": "A procedural vote requiring a neutral presider was overseen by an external actor with an undisclosed professional relationship to an internal faction, which ultimately led to the invalidation of the proceedings.",
-  "thesis": "Leadership invited an external actor, Larry Taylor, to preside over a critical meeting without disclosing his professional relationship with the committee's parliamentarian.",
-  "axioms": [
-    {
-      "text": "Larry Taylor served as a parliamentarian trainer with the Professional Development Program.",
-      "citation": "PDPR Training Materials",
-      "url": "/files/pdpr-parliamentary-training-materials.pdf"
-    },
-    {
-      "text": "Taylor and Selina Vickers were professional colleagues.",
-      "citation": "Email Correspondence between S. Vickers and L. Taylor",
-      "url": "/files/email-correspondence-vickers-taylor-2021-09-17.pdf"
-    },
-    {
-      "text": "Presiding officers must maintain strict impartiality.",
-      "citation": "Robert's Rules of Order, 12th ed., § 47:7",
-      "url": "/files/roberts-rules-of-order-12th-edition.pdf"
-    },
-    {
-      "text": "Persons in positions of trust must disclose potential conflicts.",
-      "citation": "Robert's Rules of Order, 12th ed., § 45:3",
-      "url": "/files/roberts-rules-of-order-12th-edition.pdf"
-    },
-    {
-      "text": "The Board of Appeals ruled the August meeting invalid.",
-      "citation": "WVDP Board of Appeals Resolution",
-      "url": "/files/wvdp-board-of-appeals-resolution-invalidating-meeting-2021-11-29.pdf"
-    }
-  ],
-  "rule_summary": "A presiding officer must be neutral and disclose any relationships that could affect impartiality. A failure to disclose such conflicts compromises the integrity of the proceedings.",
-  "case_facts": [
-    {
-      "text": "Larry Taylor was invited to preside over the meeting where restrictive rules were adopted.",
-      "citation": "AAC Meeting Minutes",
-      "url": "/files/wvdp-aac-meeting-minutes-redacted.pdf"
-    },
-    {
-      "text": "Taylor's professional relationship with Parliamentarian Vickers was not disclosed to the committee.",
-      "citation": "AAC Meeting Minutes",
-      "url": "/files/wvdp-aac-meeting-minutes-redacted.pdf"
-    },
-    {
-      "text": "Taylor specialized in training on procedural tactics.",
-      "citation": "PDPR Training Materials",
-      "url": "/files/pdpr-parliamentary-training-materials.pdf"
-    },
-    {
-      "text": "The committee had previously rejected similar restrictive measures in prior proceedings.",
-      "citation": "AAC Meeting Minutes re: Prior Rejected Measures",
-      "url": "/files/aac-meeting-minutes-prior-rejected-measures.pdf"
-    },
-    {
-      "text": "The Board of Appeals subsequently ruled the meeting invalid, citing improper procedures.",
-      "citation": "WVDP Board of Appeals Resolution",
-      "url": "/files/wvdp-board-of-appeals-resolution-invalidating-meeting-2021-11-29.pdf"
-    }
-  ],
-  "logic_chain": [
-    "An external officer presided over the meeting.",
-    "This officer had undisclosed professional ties to the Parliamentarian, an active participant in the matters being discussed.",
-    "The officer's specific expertise in procedural tactics was also not disclosed.",
-    "The committee had rejected similar measures in prior proceedings.",
-    "The undisclosed relationships created an appearance of bias.",
-    "The party's Board of Appeals confirmed the procedural invalidity of the meeting.",
-    "[DJ-MARK] The failure to disclose these conflicts of interest invalidated the entire process."
-  ],
-  "violation": "Installing a presiding officer with an undisclosed professional relationship to an internal faction violated the requirement for a neutral presider. This failure of disclosure compromised the democratic process and resulted in an invalid meeting, as confirmed by the Board of Appeals."
-},
   {
     "case_id": "3.1",
     "slug": "unreported-pac-scholarship-program",
-    "title": "PROOF: Unreported Financial Activity - The Scholarship Program",
+    "title": "PROOF: PAC Financial Reports Omit Scholarship Program Activity",
     "date": "2025-09-11",
     "category": "Campaign Finance Violation",
     "umbrella_category": "Undisclosed Conflicts & Financial Misconduct",
     "overproof_slug": "undisclosed-conflicts-and-financial-misconduct",
-    "stakes": "A PAC concealed its scholarship program from required disclosures, hiding who funded it and who benefited from its activities.",
-    "thesis": "A New Day PAC failed to report any financial activity for its publicly announced scholarship program, a violation of state disclosure laws.",
+    "stakes": "A PAC concealed its scholarship program from required disclosures. The public cannot see who funded it or who benefited from its activities.",
+    "thesis": "A New Day PAC failed to report any financial activity for its publicly announced scholarship program, violating state disclosure laws.",
     "axioms": [
       {
         "text": "All expenditures made by a political committee must be publicly reported.",
@@ -668,12 +519,12 @@
     ],
     "logic_chain": [
       "The PAC publicly offered scholarships for training on August 22, 2023.",
-      "Any scholarship transaction must be publicly reported as either an 'expenditure' or an in-kind 'thing of value.'",
+      "Any scholarship transaction must be reported as either an 'expenditure' or an in-kind 'thing of value.'",
       "The PAC's sworn Q3 2023 financial report contains neither expenditures for scholarships nor in-kind contributions for training.",
-      "The absence of any reported transaction means the PAC concealed this program from required public disclosure.",
+      "The absence of any reported transaction means the PAC omitted this program from required public disclosure.",
       "[DJ-MARK] The PAC's sworn financial disclosure reports omit all activity related to its scholarship program."
     ],
-    "violation": "A New Day PAC violated state campaign finance law by failing to report the financial activity of its scholarship program in its Q3 2023 filing. This violation denies the public its statutory right to transparency and renders the PAC's sworn statement materially incomplete."
+    "violation": "A New Day PAC violated state campaign finance law by failing to report the financial activity of its scholarship program in its Q3 2023 filing. State law requires reporting of all expenditures and in-kind contributions. The PAC's sworn statement is materially incomplete."
   },
   {
     "case_id": "3.2",
@@ -692,6 +543,7 @@
         "url": "/files/sos-campaign-finance-guide.pdf"
       }
     ],
+    "rule_summary": "State law requires political committees to report the use of party resources as in-kind contributions. This ensures transparency about who benefits from party assets.",
     "case_facts": [
       {
         "text": "A promotional email for the 'A New Day' PAC was sent using the official WVDP County Chairs email list on August 22, 2023.",
@@ -704,6 +556,13 @@
         "url": "/files/a-new-day-pac-filing-2023-q3.pdf"
       }
     ],
-    "violation": "The 'A New Day' PAC violated state campaign finance law by failing to report the WVDP email list usage as an in-kind contribution."
+    "logic_chain": [
+      "The PAC used the official WVDP County Chairs email list on August 22, 2023.",
+      "This email list is a party resource with value.",
+      "State law requires reporting the use of party resources as in-kind contributions.",
+      "The PAC's sworn financial report for this period shows $0.00 in in-kind contributions.",
+      "[DJ-MARK] The PAC violated state campaign finance law by failing to report the use of party resources."
+    ],
+    "violation": "The 'A New Day' PAC violated state campaign finance law by failing to report the WVDP email list usage as an in-kind contribution. State law requires transparency about the use of party resources."
   }
 ]
