@@ -1,65 +1,94 @@
 [
   {
-    "id": "overproof-dnc-mou-compliance-violations",
-    "slug": "dnc-mou-compliance-violations",
-    "title": "Case 1: Officials Appointed to Ensure Compliance Violated Their Duties",
-    "reviewDate": "2025-09-23",
-    "short_title": "DNC MOU Compliance Violations",
-    "umbrella_category": "DNC MOU Compliance Violations",
-    "summary": "The official appointed under the MOU to oversee compliance instead used her position to violate the rules she was supposed to enforce. She authored a secret script that excluded mandated minority caucuses and directed her own appointment to a position of procedural control.",
-    "narrative": "The 2020 DNC MOU appointed Selina Vickers to 'oversee and direct compliance.' Her duty was to ensure a fair, open process. She violated that duty. She authored a script marked 'do not share' that controlled the formation meeting. The script acknowledged that 75% of required racial caucuses did not exist. The organizers proceeded anyway. The script directed Vickers' own nomination to Parliamentarian. It granted preferential treatment to one ally. It included tactics to challenge observers and manage criticism. During the same period organizers failed to form required racial caucuses, they successfully formed other caucuses for their allies. They interfered in the Indigenous Caucus formation by selectively contacting members. The official appointed to prevent these violations instead engineered them. This corrupted the oversight mechanism the MOU established.",
+    "id": "overproof-wvdp-noncompliance-2021-2025",
+    "slug": "wvdp-noncompliance-2021-2025",
+    "title": "Case 1: Formation & Drafting Noncompliance",
+    "reviewDate": "2025-10-07",
+    "short_title": "AAC Formation & Drafting",
+    "umbrella_category": "DNC/Affirmative Action Compliance",
+    "summary": "Leadership was installed while required racial caucuses did not exist; national templates and chokepoints were imported; drafting access narrowed midstream; BIPOC members were denied seats while nonmembers were invited to weigh in; the body later failed to meet and left seats vacant.",
+    "narrative": "The record shows caucus-first formation was bypassed: a script acknowledged missing Latino, AAPI, and Native American caucuses and still prescribed nominations and votes. RBC guidance flagged the Executive Committee adoption as a chokepoint while Alabama rules were circulated as a template. During drafting, access rules flipped (chat allowed→banned; volunteer subcommittees→elections/appointments). Contemporaneous emails claim white-only authorship and denial of BIPOC seats; nonmembers were allowed to give input. Scheduling repeatedly excluded the Latine/Hispanic co-chair; short debate windows and harassment claims further narrowed participation. The body then lapsed in meetings and left seats vacant.",
     "key_points": [
-      "The official appointed under the MOU to oversee compliance authored a secret script that violated the rules she was supposed to enforce.",
-      "The script acknowledged that 75% of required racial caucuses did not exist and proceeded with formation anyway.",
-      "Organizers selectively failed to form mandated racial caucuses while successfully forming other caucuses for allies during the same period."
+      "Leadership installed before required racial caucuses existed.",
+      "National templates/chokepoints imported; adoption bottleneck constrained outputs.",
+      "Drafting access narrowed: chat banned; volunteer→election; corrective meeting denied.",
+      "Claims of white-only authorship; BIPOC denied seats while nonmembers weighed in.",
+      "Present-tense nonfunction: meeting lapse and vacant seats."
     ],
     "metadata": {
-      "Timeframe": "June 2021",
-      "Focus": "WVDP Affirmative Action Committee Formation",
-      "Primary Documents": "2020 DNC MOU, Formation Script & Emails"
+      "Timeframe": "June 2021–2025",
+      "Focus": "Formation sequencing, drafting access, and ongoing function",
+      "Primary Documents": "Formation scripts/emails; Harold briefing transcript; AAC draft rules; contemporaneous emails; vacancy/meeting records"
     },
     "order": 1
   },
   {
-    "id": "overproof-the-campaign-to-silence-dissent",
-    "slug": "the-campaign-to-silence-dissent",
-    "title": "Case 2: DNC Supervisor Appointed to Ensure Fairness Advised Suppressing Members",
-    "reviewDate": "2025-09-23",
-    "short_title": "Supervisor Violations",
-    "umbrella_category": "The Campaign to Silence Dissent",
-    "summary": "An official appointed by the DNC to supervise fair implementation instead provided strategic advice to suppress elected representatives. This violated the supervisory structure the MOU established to ensure fairness.",
-    "narrative": "The MOU established the DNC Rules and Bylaws Committee as the supervisory body. Harold Ickes served on this committee. His duty was to provide impartial oversight. He violated that duty. He stated in a recorded meeting that he told Selina Vickers 'god knows how many times' to 'out vote' Seth and Mari Sturm. Vickers was the non-voting compliance officer. The Sturms were elected Indigenous Caucus chairs. Multiple witnesses documented this statement. This was not supervision—this was strategic advice to suppress elected members. Internally, leadership took additional actions to silence opposition. Scripts containing attacks on representatives were marked 'DO NOT FORWARD THIS EMAIL.' False accusations of violence were spread. A social media campaign with scheduled posts targeted the same individuals. Leadership reversed a democratic vote without proper procedure. They excluded Indigenous and Black caucus chairs from subcommittees. They mislabeled bylaws as 'procedural rules' to avoid notice requirements. They used a presiding officer with undisclosed ties to the parliamentarian. The Board of Appeals invalidated the proceedings. The official appointed to supervise fairness instead advised suppression. The official appointed to ensure compliance instead organized attacks. This corrupted the oversight structure.",
+    "id": "overproof-procedural-weaponization-2022-2024",
+    "slug": "procedural-weaponization-2022-2024",
+    "title": "Case 2: Procedural Weaponization",
+    "reviewDate": "2025-10-07",
+    "short_title": "Due Process & Redress",
+    "umbrella_category": "Due Process & Access to Redress",
+    "summary": "After dissolution under discriminatory conditions, reconsideration and member overrule were denied; an unwritten 'second appeal' replaced bylaw process; hearings focused on character; national review echoed the state narrative.",
+    "narrative": "Indigenous Caucus leaders reported harassment/exclusion before dissolution. Members then sought reconsideration or restoration at the SEC; the presiding officer ruled out of order without reaching the merits. The bylaw right to overrule the Appeals Board was denied and replaced with an invented 'second appeal.' Transcripts show proceedings centered on character and social-media behavior instead of bylaws and the dissolution record. The RBC later adopted the state’s framing, declining jurisdiction and blaming outcomes on the complainant. The cumulative effect is constructive exclusion by procedure.",
     "key_points": [
-      "An official on the DNC Rules and Bylaws Committee admitted repeatedly advising the compliance officer to 'out vote' elected minority representatives.",
-      "Leadership distributed scripts marked 'DO NOT FORWARD THIS EMAIL' and organized false accusations of violence against the same individuals.",
-      "The Board of Appeals invalidated proceedings due to multiple violations including mislabeled bylaws and undisclosed conflicts."
+      "Dissolution amid unresolved participation barriers.",
+      "Reconsideration/restoration motions blocked.",
+      "Hearings emphasized character over procedure.",
+      "Member overrule denied; 'second appeal' invented.",
+      "National review echoed state narrative; merits foreclosed."
     ],
     "metadata": {
-      "Timeframe": "August - September 2021",
-      "Focus": "Suppression of Dissent & Procedural Abuse in the AAC",
-      "Primary Documents": "Harold Ickes Transcript, Board of Appeals Resolution, Mary Ann Claytor Email, Scripted Attack Emails"
+      "Timeframe": "2022–2024",
+      "Focus": "Remedy channels and adjudicatory posture",
+      "Primary Documents": "Grievance and appeal transcripts; SEC meeting record; RBC letter"
     },
     "order": 2
   },
   {
-    "id": "overproof-undisclosed-conflicts-and-financial-misconduct",
-    "slug": "undisclosed-conflicts-and-financial-misconduct",
-    "title": "Case 3: Undisclosed Conflicts & Financial Violations",
-    "reviewDate": "2025-09-22",
-    "short_title": "Financial Violations",
-    "umbrella_category": "Undisclosed Conflicts & Financial Misconduct",
-    "summary": "A private PAC connected to a party officer concealed significant conflicts of interest. The PAC violated state campaign finance law by using party resources without disclosure and omitting a program from its sworn financial reports.",
-    "narrative": "The 'A New Day PAC' concealed a material conflict of interest. The PAC's treasurer was Selina Vickers. In December 2022, the PAC paid Lawrence Taylor $257.55 for consulting fees. Vickers and Taylor have documented professional ties through the Professional Development Program for Reapportionment. In August 2023, the PAC promoted scholarships for Taylor's training program. The promotional materials disclosed neither the prior payment nor the professional relationship. The PAC also violated state campaign finance law. It used the official WVDP County Chairs email list for fundraising. It reported zero in-kind contributions for this period. State law requires reporting party resource use as in-kind contributions. The PAC solicited applications for scholarships and selected recipients. Its sworn financial reports show no expenditures for scholarships. They show no in-kind contributions for donated training. The program was omitted from public disclosure.",
+    "id": "overproof-the-campaign-to-silence-dissent",
+    "slug": "the-campaign-to-silence-dissent",
+    "title": "Case 3: PDPR Playbook & Narrative Control",
+    "reviewDate": "2025-10-07",
+    "short_title": "PDPR & Manipulation",
+    "umbrella_category": "The Campaign to Silence Dissent",
+    "summary": "Supervisors and allies used training, narrative operations, and procedural tactics to suppress elected minority representatives, reverse member votes, and pass invalid measures later struck by the Appeals Board.",
+    "narrative": "An RBC member told the challengers’ representative to 'out vote' named elected members and co-hosted training during implementation. Internal scripts marked 'DO NOT FORWARD' and public posts framed minority leaders as toxic or violent; the RBC’s dismissal later echoed similar framing. Rules of order were used to reverse a member-approved volunteer system, relabel bylaws as 'procedural' to evade notice, and bring in an external presider with undisclosed ties—proceedings the Appeals Board later invalidated.",
     "key_points": [
-      "The PAC failed to disclose a prior financial relationship with a political trainer whose services they were promoting.",
-      "The PAC used an official party email list for fundraising but failed to report it as a required in-kind contribution.",
-      "The PAC operated a public scholarship program but reported none of its financial activity on sworn disclosure forms."
+      "Supervisor advice targeted elected members ('out vote' quote).",
+      "Coordinated scripts/posts created a 'toxicity' narrative.",
+      "Volunteer-to-appointment reversal excluded minority chairs.",
+      "Bylaws mislabeled as procedural rules to avoid notice.",
+      "Undisclosed ties of presider; meeting later invalidated."
     ],
     "metadata": {
-      "Timeframe": "2022–2023",
-      "Focus": "Campaign Finance Violations, A New Day PAC, Conflicts of Interest",
-      "Primary Documents": "WV Secretary of State Filings, PAC Promotional Emails"
+      "Timeframe": "2021–2023",
+      "Focus": "Training + narrative + procedure to entrench control",
+      "Primary Documents": "Planning transcript; internal scripts; social-media blasts; Appeals Board resolution"
     },
     "order": 3
+  },
+  {
+    "id": "overproof-indigenous-caucus-suppression",
+    "slug": "indigenous-caucus-suppression",
+    "title": "Case 4: Suppression as System",
+    "reviewDate": "2025-01-15",
+    "short_title": "Indigenous Caucus Suppression",
+    "umbrella_category": "Indigenous Caucus Suppression",
+    "summary": "When the Indigenous Caucus resisted exclusion, officials escalated from access restrictions to harassment, then to procedural barriers, and finally to national closure—after which leaders claimed 'full participation.'",
+    "narrative": "Indigenous chairs were denied planning and drafting seats while nonmembers and outside actors participated. When exclusion met resistance, narrative attacks escalated and preceded formal dissolution. Members’ efforts to restore the caucus were blocked; hearings emphasized character; an invented 'second appeal' replaced bylaw routes; national review adopted state framing. After eliminating Indigenous participation, leaders claimed compliance. This is suppression as system.",
+    "key_points": [
+      "Access restrictions and drafting exclusion targeted Indigenous representation.",
+      "Harassment/narrative attacks preceded dissolution.",
+      "Reconsideration, overrule, and appeal paths were blocked or redirected.",
+      "National closure adopted state narrative.",
+      "Absence was then cited as compliance."
+    ],
+    "metadata": {
+      "Timeframe": "2020–2025",
+      "Focus": "Systemic suppression of Indigenous participation",
+      "Primary Documents": "Dissolution materials; grievance/appeal transcripts; RBC letter"
+    },
+    "order": 4
   }
 ]

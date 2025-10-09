@@ -1,272 +1,959 @@
 [
   {
-    "case_id": "1.1",
-    "slug": "secret-script-shows-missing-caucuses",
-    "title": "PROOF: Secret Script Shows Organizers Proceeded Without Required Caucuses",
-    "date": "2025-09-15",
-    "category": "DNC MOU Violation",
-    "umbrella_category": "DNC MOU Compliance Violations",
-    "overproof_slug": "dnc-mou-compliance-violations",
-    "stakes": "The committee was formed without the required racial caucuses. The script proves organizers knew this and proceeded anyway.",
-    "thesis": "A secret script proves organizers knew 75% of required racial caucuses did not exist and proceeded with the formation anyway.",
+    "case_id": "1.01",
+    "slug": "scripted-installation-missing-caucuses",
+    "title": "PROOF: Leadership Was Installed While Required Racial Caucuses Did Not Yet Exist",
+    "date": "2025-10-07",
+    "category": "Formation & Legitimacy",
+    "umbrella_category": "Affirmative Action Compliance",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "If leadership is installed before racial caucuses exist, those caucuses cannot select their representatives; representation is defective at inception.",
+    "thesis": "The AAC used a pre-written script to install leadership while acknowledging Latino, AAPI, and Native American caucuses were not formed.",
     "axioms": [
       {
-        "text": "The MOU required that the Affirmative Action Committee be formed with members 'selected by their particular caucus.'",
-        "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
-        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+        "text": "Diversity structures exist to ensure 'full participation' of underrepresented groups; curtailment of participation triggers DNC concern/intervention.",
+        "citation": "DNC members express alarm over Alabama Democratic Party changes.pdf",
+        "url": "/files/dnc-members-express-alarm-over-alabama-democratic-party-changes.pdf"
       },
       {
-        "text": "The mandated diversity groups included African Americans, Native Americans, Asian/Pacific Islanders, and Latinos.",
-        "citation": "2020 MOU between WVDP and DNC RBC, p. 2",
-        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+        "text": "The AAC drafts the AA plan and the Executive Committee adopts it; representative drafting presumes caucus-based membership inside the AAC.",
+        "citation": "Harold Transcript September 2021 Planning Committee.docx",
+        "url": "/files/harold-transcript-september-2021-planning-committee.docx"
+      },
+      {
+        "text": "Documentary records (scripts, emails) establish the sequence and substance of actions.",
+        "citation": "General evidentiary principle",
+        "url": ""
       }
     ],
-    "rule_summary": "The MOU established a mandatory sequence: first, form caucuses. Second, those caucuses select their representatives. Third, those representatives constitute the committee. Proceeding without forming the caucuses violates this sequence.",
+    "rule_summary": "Caucus-first sequence: (1) form racial caucuses; (2) caucuses select reps; (3) those reps constitute/elect AAC leadership. Installing leadership while those caucuses do not exist defeats representative formation.",
     "case_facts": [
       {
-        "text": "A script for the formation meeting was circulated with the subject line 'DRAFT SCRIPT - do not share.'",
-        "citation": "selina-script-email.pdf, p. 1",
+        "text": "A meeting script labeled 'DRAFT SCRIPT — do not share' prescribes the run-of-show and nominations.",
+        "citation": "selina-script-email.pdf",
         "url": "/files/selina-script-email.pdf"
       },
       {
-        "text": "The script demonstrates detailed planning, dictating specific nominators, providing verbatim speeches, and planning for procedural disruptions.",
-        "citation": "selina-script.pdf, p. 1-5",
+        "text": "The script states the AAC is 'missing representation' from Latino, AAPI, and Native American groups at the time.",
+        "citation": "selina-script.pdf",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "The script states the committee was 'missing representation from... Latino's, Asian Americans and Pacific Islanders, and Native Americans.'",
-        "citation": "selina-script.pdf, p. 2",
+        "text": "The script pre-writes a nomination and endorsement to install Selina Vickers as Parliamentarian/Secretary and instructs the vote.",
+        "citation": "selina-script.pdf",
         "url": "/files/selina-script.pdf"
       },
       {
-        "text": "The script includes a future resolution to 'do outreach to Latinos, Asian Americans/Pacific Islanders and Native Americans to facilitate those groups in forming their own diversity caucuses'.",
-        "citation": "selina-script.pdf, p. 5",
-        "url": "/files/selina-script.pdf"
-      },
-      {
-        "text": "The script contained a pre-arranged leadership slate with specific nominators identified.",
-        "citation": "selina-script.pdf, p. 1",
+        "text": "Scripted nominators, speeches, and voice-vote instructions predetermine outcomes for at-large seats and officer roles.",
+        "citation": "selina-script.pdf",
         "url": "/files/selina-script.pdf"
       }
     ],
     "logic_chain": [
-      "The MOU required caucuses to select their own representatives before the committee was formed.",
-      "A script was created for the formation meeting.",
-      "The script demonstrates detailed planning ability.",
-      "The script explicitly states that Latino, AAPI, and Native American representation is 'missing.'",
-      "The script includes a future plan to form these caucuses after the committee formation.",
-      "The script's level of detail proves the organizers knew these caucuses did not exist.",
-      "The organizers proceeded with installing leadership despite this knowledge.",
-      "[DJ-MARK] Organizers violated the MOU by proceeding with formation while knowing required caucuses did not exist."
+      "AX-1 sets 'full participation' as the governing standard for diversity structures.",
+      "AX-2 requires representative AAC composition for drafting.",
+      "FAC-1/FAC-3/FAC-4 show leadership selection was pre-scripted, not emergent from caucus delegates.",
+      "FAC-2 shows required racial caucuses did not yet exist at installation time.",
+      "If caucuses did not exist (FAC-2), they could not have supplied representatives to select leadership (AX-2).",
+      "Installing leadership while acknowledging missing caucuses contradicts 'full participation' (AX-1).",
+      "[DJ-MARK] Leadership was installed while required racial caucuses did not exist; representation was defective at inception."
     ],
-    "violation": "Organizers violated the 2020 DNC MOU by forming the committee while knowing that 75% of the required racial diversity caucuses did not exist. The script proves this knowledge. The MOU required these caucuses to exist and select their representatives before the committee was formed."
+    "violation": "Formation violated representation-first principles by installing leadership before racial caucuses could supply/select representatives."
   },
   {
-    "case_id": "1.2",
-    "slug": "selective-failure-to-form-caucuses",
-    "title": "PROOF: Organizers Excluded Racial Caucuses Through Selective Non-Formation",
-    "date": "2025-09-22",
-    "category": "DNC MOU Violation",
-    "umbrella_category": "DNC MOU Compliance Violations",
-    "overproof_slug": "dnc-mou-compliance-violations",
-    "stakes": "Three of the four mandated racial minority communities were excluded from the committee's formation.",
-    "thesis": "The failure to form 75% of the required racial diversity caucuses was selective exclusion, not administrative oversight.",
+    "case_id": "1.02",
+    "slug": "oversight-imported-alabama-model",
+    "title": "PROOF: National Oversight Knew, Advised, and Imported the Alabama Model into WV",
+    "date": "2025-10-07",
+    "category": "Oversight & Knowledge",
+    "umbrella_category": "Affirmative Action Compliance",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "When national oversight identifies structural chokepoints that later produce exclusionary outcomes, it raises questions of foreseeable impact.",
+    "thesis": "RBC member Harold Ickes briefed WV’s planning committee on Alabama mechanics, timelines, and Executive Committee choke points; Alabama rules were circulated as a WV template.",
     "axioms": [
       {
-        "text": "The 2020 MOU's stated purpose was 'to create a process to establish new, and assist currently existing, diversity caucuses'.",
-        "citation": "2020 MOU between WVDP and DNC RBC, p. 1",
-        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+        "text": "The AAC drafts, the Executive Committee adopts; the adoption timeline is a known chokepoint and 'politically fraught'.",
+        "citation": "Harold Transcript September 2021 Planning Committee.docx",
+        "url": "/files/harold-transcript-september-2021-planning-committee.docx"
       },
       {
-        "text": "The MOU mandated that the State Party 'fully implement... the creation of any new... caucuses.'",
-        "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
-        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+        "text": "The DNC already intervened in Alabama after participation was curtailed, establishing a participation-based national standard.",
+        "citation": "Alabama Democrats restore most diversity caucuses after DNC order | Alabama Reflector.pdf",
+        "url": "/files/alabama-democrats-restore-most-diversity-caucuses-after-dnc-order.pdf"
       }
     ],
-    "rule_summary": "The MOU required the state party to form new diversity caucuses. A failure to form these caucuses violates this requirement.",
+    "rule_summary": "National awareness + Alabama template + explicit warnings about control points = the national body documented risks relevant to WV’s process.",
     "case_facts": [
       {
-        "text": "Prior to the AAC leadership installation, 75% of the DNC-mandated racial diversity caucuses (AAPI, Latino, Native American) had not been formed.",
-        "citation": "selina-script.pdf, p. 2, 5",
-        "url": "/files/selina-script.pdf"
+        "text": "WV planning introduces Harold Ickes as key to Alabama’s plan and invites him to relate it to WV’s plan.",
+        "citation": "Harold Transcript September 2021 Planning Committee.docx",
+        "url": "/files/harold-transcript-september-2021-planning-committee.docx"
       },
       {
-        "text": "During this same period, organizers successfully formed other non-racial diversity caucuses.",
-        "citation": "User provided fact"
+        "text": "Ickes warns timelines are 'politically fraught' and foregrounds Executive Committee adoption as a control point.",
+        "citation": "Harold Transcript September 2021 Planning Committee.docx",
+        "url": "/files/harold-transcript-september-2021-planning-committee.docx"
       },
       {
-        "text": "The Co-chair of the Black Caucus, Mary Claytor, stated that organizer Selina Vickers 'contacted every member of the Indigenous Caucus not named Sturm prior to their nomination meeting' and 'refused' a request to contact the Sturms.",
-        "citation": "Not Named Sturm.pdf",
-        "url": "/files/not-named-sturm.pdf"
-      },
-      {
-        "text": "The Indigenous Caucus was subsequently denied seats on the planning and bylaws subcommittees.",
-        "citation": "Not Named Sturm.pdf",
-        "url": "/files/not-named-sturm.pdf"
+        "text": "‘Alabama rules’ were emailed into WV planning as a template with 'West Virginia' added.",
+        "citation": "bob-from-the-senior-caucus-sends-alabama-rules-to-aac.pdf",
+        "url": "/files/bob-from-the-senior-caucus-sends-alabama-rules-to-aac.pdf"
       }
     ],
     "logic_chain": [
-      "The MOU required the formation of four specific racial diversity caucuses.",
-      "Organizers failed to form three of these four caucuses before installing the committee's leadership.",
-      "During the same timeframe, organizers successfully formed other caucuses for their allies.",
-      "The ability to form some caucuses but not others demonstrates selective choice.",
-      "Evidence shows organizers interfered in the Indigenous Caucus formation by selectively contacting members.",
-      "The Indigenous Caucus was then excluded from key subcommittees.",
-      "[DJ-MARK] The exclusion of three racial minority caucuses was selective, not administrative failure."
+      "AX-1 identifies where control can centralize (timeline/adoption).",
+      "AX-2 shows DNC had already intervened for participation failures (Alabama).",
+      "FAC-1 and FAC-2 show national advice delivered those control insights to WV planners.",
+      "FAC-3 shows Alabama mechanics/templates were imported.",
+      "[DJ-MARK] National oversight documented risks and provided Alabama-derived guidance that related to WV’s subsequent participation outcomes."
     ],
-    "violation": "By failing to form 75% of the mandated racial diversity caucuses while forming other caucuses, organizers violated the MOU's requirement to 'fully implement' the caucus creation process. Three racial communities were excluded from selecting their representatives."
+    "violation": "National oversight documented structural risks that materialized in WV's implementation."
   },
   {
-    "case_id": "1.3",
-    "slug": "mou-compliance-officer-violated-duty",
-    "title": "PROOF: Official Appointed to Ensure Compliance Violated Her Duty",
-    "date": "2025-09-15",
-    "category": "DNC MOU Violation",
-    "umbrella_category": "DNC MOU Compliance Violations",
-    "overproof_slug": "dnc-mou-compliance-violations",
-    "stakes": "The official appointed under the MOU to ensure a fair process instead authored a secret script that violated the rules she was appointed to enforce. This corrupted the oversight mechanism itself.",
-    "thesis": "Selina Vickers was appointed under the MOU to oversee compliance. She violated this duty by authoring a secret script that directed her own appointment, granted preferential treatment to allies, and included tactics to control the meeting.",
+    "case_id": "1.03",
+    "slug": "drafting-access-denied-corrective-meeting",
+    "title": "PROOF: BIPOC Participation in Drafting Was Obstructed and a Corrective Meeting Was Denied",
+    "date": "2025-10-07",
+    "category": "Access & Participation",
+    "umbrella_category": "Affirmative Action Compliance",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "If affected groups can’t access drafting bodies and can’t convene to correct process, the outputs are not representative.",
+    "thesis": "Workshops normalized a non-member’s role while BIPOC participation was constrained; leadership later switched access rules (chat ban; volunteer→election) and refused a requested special meeting to correct governance.",
     "axioms": [
       {
-        "text": "The MOU appointed a non-elected official, Selina Vickers, to 'oversee and direct compliance' with the agreement.",
-        "citation": "2020 MOU between WVDP and DNC RBC, p. 2",
-        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
+        "text": "AA/Outreach plan and rules must be drafted with inclusive caucus participation to meet 'full participation' and representativeness.",
+        "citation": "Harold Transcript September 2021 Planning Committee.docx",
+        "url": "/files/harold-transcript-september-2021-planning-committee.docx"
       },
       {
-        "text": "The 2020 DNC MOU required that members of the Affirmative Action Committee be 'selected by their particular caucus.'",
-        "citation": "2020-MOU-WVDP-DNC-RBC.pdf, p. 3",
-        "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
-      },
-      {
-        "text": "The DNC Charter mandates that 'All meetings of... all other official Party committees, commissions and bodies shall be open to the public'.",
-        "citation": "DNC Charter, Article Nine, Sec. 12",
-        "url": "/files/dnc-charter.pdf"
+        "text": "Members must have a meaningful avenue (e.g., special meeting) to correct process defects.",
+        "citation": "Gmail - Fwd: Requested meeting prior to the August 17th meeting.pdf",
+        "url": "/files/gmail-fwd-requested-meeting-prior-to-the-august-17th-meeting.pdf"
       }
     ],
-    "rule_summary": "Officials appointed to ensure compliance have a duty to enforce the rules they oversee. Using this position of trust to violate those same rules is a fundamental breach that corrupts the oversight mechanism. The MOU specifically appointed Vickers to prevent the violations she then committed.",
+    "rule_summary": "Drafting must include affected caucuses; displacement by non-neutral actors, midstream access changes, and refusal of corrective meetings undermine representativeness.",
     "case_facts": [
       {
-        "text": "Selina Vickers circulated a script for the formation meeting with the subject line 'DRAFT SCRIPT - do not share.'",
-        "citation": "selina-script-email.pdf, p. 1",
+        "text": "Members questioned why a non-member (Vickers) was present/active in 'workshops' without a defined neutral role.",
+        "citation": "Gmail - Re: Workshop notes.pdf",
+        "url": "/files/gmail-re-workshop-notes.pdf"
+      },
+      {
+        "text": "Contemporaneous objection: 'as co-chairs you are not the decision-makers for the committee.'",
+        "citation": "Gmail - Re: Biafore Response and Internal Issues..pdf",
+        "url": "/files/gmail-re-biafore-response-and-internal-issues.pdf"
+      },
+      {
+        "text": "A requested special meeting to address governance/process concerns was denied on procedural grounds.",
+        "citation": "Gmail - Fwd: Requested meeting prior to the August 17th meeting.pdf",
+        "url": "/files/gmail-fwd-requested-meeting-prior-to-the-august-17th-meeting.pdf"
+      },
+      {
+        "text": "Leadership reversed participation channels (formation anticipated chat; later draft rules banned chat for the AAC).",
+        "citation": "AAC-draft-rules-chat-ban.pdf",
+        "url": "/files/aac-draft-rules-chat-ban.pdf"
+      },
+      {
+        "text": "Access to subcommittee work switched from 'volunteer' to elections; members who raised objections were not selected.",
+        "citation": "Gmail - Re: Biafore Response and Internal Issues..pdf",
+        "url": "/files/gmail-re-biafore-response-and-internal-issues.pdf"
+      }
+    ],
+    "logic_chain": [
+      "AX-1 requires inclusive drafting by affected caucuses.",
+      "FAC-1 and FAC-2 show non-neutral dominance and contemporaneous objections.",
+      "FAC-3 shows a denied corrective path, entrenching exclusion.",
+      "FAC-4/FAC-5 show midstream access changes narrowing participation.",
+      "[DJ-MARK] BIPOC participation in drafting was obstructed; outputs lack representative legitimacy."
+    ],
+    "violation": "Drafting processes sidelined affected BIPOC caucuses; rules/plans were not representative."
+  },
+  {
+    "case_id": "1.04",
+    "slug": "second-appeal-nonrecusal-rbc-dismissal",
+    "title": "PROOF: An Unwritten 'Second Appeal' and Non-Recusal Denied Due Process and Enabled RBC Dismissal",
+    "date": "2025-10-07",
+    "category": "Procedure & Appeals",
+    "umbrella_category": "Due Process & Remedies",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "Invented procedures and conflict failures block neutral review, preventing correction of diversity violations.",
+    "thesis": "After a 2023 grievance was heard, a bylaw-absent 'second appeal' was imposed in 2024; a conflicted member declined to recuse; the posture enabled RBC dismissal.",
+    "axioms": [
+      {
+        "text": "Procedures must track written bylaws; ad-hoc steps lack legitimacy.",
+        "citation": "Harold Transcript September 2021 Planning Committee.docx",
+        "url": "/files/harold-transcript-september-2021-planning-committee.docx"
+      },
+      {
+        "text": "Impartiality is required of adjudicators; conflicts warrant recusal.",
+        "citation": "appeal grievance 2024 Sturm transcript youtube.docx",
+        "url": "/files/appeal-grievance-2024-sturm-transcript-youtube.docx"
+      }
+    ],
+    "rule_summary": "Appeals must follow bylaws; recusal is required for bias; RBC review should not be blocked by fabricated intermediate steps.",
+    "case_facts": [
+      {
+        "text": "2023 grievance hearing proceeded on the merits (accepted posture and hearing held).",
+        "citation": "grievance 2023 Sturm transcript youtube.docx",
+        "url": "/files/grievance-2023-sturm-transcript-youtube.docx"
+      },
+      {
+        "text": "In 2024, the Board required an unwritten 'second appeal' and permitted a conflicted participant despite a recusal request.",
+        "citation": "appeal grievance 2024 Sturm transcript youtube.docx",
+        "url": "/files/appeal-grievance-2024-sturm-transcript-youtube.docx"
+      },
+      {
+        "text": "RBC’s 2024-06-28 letter dismissed the WV challenge as outside jurisdiction and blamed outcomes on the complainant.",
+        "citation": "24.06.28 WV Sturm Challenge Response Letter .pdf",
+        "url": "/files/24-06-28-wv-sturm-challenge-response-letter.pdf"
+      }
+    ],
+    "logic_chain": [
+      "AX-1: Bylaws-governed process; ad-hoc steps are illegitimate.",
+      "AX-2: Decision-makers with conflicts must recuse.",
+      "FAC-1 shows a valid grievance posture in 2023; FAC-2 shows a new, unwritten step and non-recusal in 2024.",
+      "FAC-3 shows the tainted posture was then used to dismiss at the RBC level.",
+      "[DJ-MARK] Due process was denied via a fabricated 'second appeal' and non-recusal, blocking neutral merits review."
+    ],
+    "violation": "Non-textual procedures and unresolved conflicts prevented neutral adjudication of diversity violations."
+  },
+  {
+    "case_id": "1.05",
+    "slug": "alabama-vs-wv-inconsistent-application",
+    "title": "PROOF: RBC Applied Opposite Standards in Alabama and West Virginia",
+    "date": "2025-10-07",
+    "category": "Oversight & Knowledge",
+    "umbrella_category": "Affirmative Action Compliance",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "Identical participation failures should yield consistent remedies; opposite outcomes raise questions of consistent application.",
+    "thesis": "The RBC intervened in Alabama to restore diversity caucuses when participation was curtailed, but dismissed similar WV claims and blamed the complainant.",
+    "axioms": [
+      {
+        "text": "When changes prevent 'full participation,' DNC intervenes—Alabama established this standard publicly.",
+        "citation": "DNC members express alarm over Alabama Democratic Party changes.pdf",
+        "url": "/files/dnc-members-express-alarm-over-alabama-democratic-party-changes.pdf"
+      },
+      {
+        "text": "In Alabama, diversity caucuses were restored following a DNC order—confirming remedy and precedent.",
+        "citation": "Alabama Democrats restore most diversity caucuses after DNC order | Alabama Reflector.pdf",
+        "url": "/files/alabama-democrats-restore-most-diversity-caucuses-after-dnc-order.pdf"
+      },
+      {
+        "text": "RBC dismissed WV’s challenge on 2024-06-28, citing jurisdiction and attributing outcomes to the complainant.",
+        "citation": "24.06.28 WV Sturm Challenge Response Letter .pdf",
+        "url": "/files/24-06-28-wv-sturm-challenge-response-letter.pdf"
+      }
+    ],
+    "rule_summary": "Same participation failure should trigger the same intervention; opposite outcomes under the same body = inconsistent application.",
+    "case_facts": [
+      {
+        "text": "AL eliminated diversity caucuses → national alarm and DNC/RBC action.",
+        "citation": "Alabama Democratic Party eliminates several diversity caucuses.pdf",
+        "url": "/files/alabama-democratic-party-eliminates-several-diversity-caucuses.pdf"
+      },
+      {
+        "text": "AL remedied via DNC order → caucuses restored.",
+        "citation": "Alabama Democrats restore most diversity caucuses after DNC order | Alabama Reflector.pdf",
+        "url": "/files/alabama-democrats-restore-most-diversity-caucuses-after-dnc-order.pdf"
+      },
+      {
+        "text": "WV presented parallel participation curtailments (gatekeeping, scripted formation, drafting exclusion) → RBC dismissal, not remedy.",
+        "citation": "selina-script.pdf",
+        "url": "/files/selina-script.pdf"
+      }
+    ],
+    "logic_chain": [
+      "AX-1 defines the participation-based trigger for DNC intervention (established in AL).",
+      "AX-2 shows the remedy applied in AL (restoration).",
+      "FAC-3 shows WV facts that mirror the participation failure, yet RBC dismissed.",
+      "Identical problem + opposite outcome under the same body (RBC) = inconsistent application.",
+      "[DJ-MARK] RBC applied opposite standards: intervention/restoration in AL; dismissal/blame in WV."
+    ],
+    "violation": "Inconsistent application of DNC standards across states with comparable participation failures."
+  },
+  {
+    "case_id": "1.06",
+    "slug": "toxicity-narrative-coordination-adoption",
+    "title": "PROOF: Coordinated Public Attacks Created a 'Toxicity' Narrative Later Adopted in Official Posture",
+    "date": "2025-10-07",
+    "category": "Culture & Climate",
+    "umbrella_category": "Silencing Dissent Campaign",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "When public characterizations of a grievant are echoed in official dismissals, the process appears retaliatory rather than adjudicative.",
+    "thesis": "Internal documents marked 'do not forward' and coordinated public posts framed procedural objections as personal toxicity; the RBC dismissal adopted similar framing.",
+    "axioms": [
+      {
+        "text": "Processes addressing participation disputes should evaluate procedural claims rather than adopt external characterizations.",
+        "citation": "DNC members express alarm over Alabama Democratic Party changes.pdf",
+        "url": "/files/dnc-members-express-alarm-over-alabama-democratic-party-changes.pdf"
+      }
+    ],
+    "rule_summary": "When adjudicators adopt external characterizations of parties, the focus can shift away from the procedural record.",
+    "case_facts": [
+      {
+        "text": "Vickers circulated a 'DO NOT FORWARD' email scripting lines for an ally concerning a dissenter.",
+        "citation": "selina-script-email.pdf",
         "url": "/files/selina-script-email.pdf"
       },
       {
-        "text": "The script directs a committee member to state: 'I nominate Selina Vickers for Parliamentarian/Secretary.'",
-        "citation": "selina-script.pdf, p. 3",
-        "url": "/files/selina-script.pdf"
+        "text": "An ally publicly labeled the dissenter 'toxic' and 'saboteur' in communications to party bodies.",
+        "citation": "assadzandi-blast.pdf",
+        "url": "/files/assadzandi-blast.pdf"
       },
       {
-        "text": "The script provides a verbatim endorsement for the member to read, which concludes, 'I can think of no one else remotely qualified to do this particular work.'",
-        "citation": "selina-script.pdf, p. 3",
-        "url": "/files/selina-script.pdf"
-      },
-      {
-        "text": "The script directed a nomination for Kim Felix for the 'at-large diversity seat representing Latino Americans' while providing no similar nominations for AAPI or Native American communities.",
-        "citation": "selina-script.pdf, p. 3",
-        "url": "/files/selina-script.pdf"
-      },
-      {
-        "text": "The script contains a pre-planned challenge to observers: 'Ask: 'I notice there are people other than caucus co-chairs present. I thought this meeting was solely for co-chairs.''",
-        "citation": "selina-script.pdf, p. 1",
-        "url": "/files/selina-script.pdf"
-      },
-      {
-        "text": "The script anticipates criticism from Party Chair Belinda Biafore and provides response strategies.",
-        "citation": "selina-script.pdf, p. 1",
-        "url": "/files/selina-script.pdf"
+        "text": "RBC dismissal framed outcomes as 'consequences of Mr. Sturm’s own actions'.",
+        "citation": "24.06.28 WV Sturm Challenge Response Letter .pdf",
+        "url": "/files/24-06-28-wv-sturm-challenge-response-letter.pdf"
       }
     ],
     "logic_chain": [
-      "The MOU appointed Selina Vickers to 'oversee and direct compliance' with the agreement.",
-      "This appointment created a duty to ensure the process followed MOU requirements.",
-      "Vickers authored a script marked 'do not share' that controlled the formation meeting.",
-      "The script directed her own nomination to the role of Parliamentarian.",
-      "The script included a pre-written endorsement supporting her nomination.",
-      "The script granted preferential nomination to one ally while excluding other communities.",
-      "The script included tactics to challenge observers and manage anticipated criticism.",
-      "Each of these actions violated the fair and open process she was appointed to ensure.",
-      "[DJ-MARK] The official appointed to ensure compliance used her position to violate the rules she was supposed to enforce."
+      "AX-1: Adjudication should center on procedural claims.",
+      "FAC-1 and FAC-2 show coordinated public characterizations.",
+      "FAC-3 shows official language echoing similar framing.",
+      "Echoing public characterizations in adjudication can displace merits review.",
+      "[DJ-MARK] The 'toxicity' narrative appears in both public attacks and the official posture."
     ],
-    "violation": "Selina Vickers was appointed under the MOU to oversee and direct compliance. She violated this duty by authoring a secret script that directed her own appointment to Parliamentarian, granted preferential treatment to allies, and included tactics to control meeting participation. Using a compliance position to violate the rules being overseen corrupts the oversight mechanism itself."
+    "violation": "Official decisions adopted characterizations from public attacks rather than addressing procedural claims."
   },
-   {
-    "case_id": "2.1",
-    "slug": "dnc-supervisor-advised-suppress-members",
-    "title": "PROOF: DNC Supervisor Appointed to Oversee Process Advised Suppressing Elected Members",
+  {
+    "case_id": "1.07",
+    "slug": "public-claim-vs-internal-exclusion",
+    "title": "PROOF: Public 'All-White Plan' Condemnation Contradicted Internal Practice",
+    "date": "2025-10-07",
+    "category": "Messaging vs Practice",
+    "umbrella_category": "Affirmative Action Compliance",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "When public diversity commitments are contradicted by internal practices that exclude BIPOC participation in drafting, the stated commitments lack operative effect.",
+    "thesis": "Leadership condemned an 'all-white' plan publicly while advancing drafts without Black/Indigenous representatives and denying corrective meetings.",
+    "axioms": [
+      {
+        "text": "Diversity messaging should align with internal practice to maintain legitimacy.",
+        "citation": "Gmail - Re: Biafore Response and Internal Issues..pdf",
+        "url": "/files/gmail-re-biafore-response-and-internal-issues.pdf"
+      }
+    ],
+    "rule_summary": "If internal practice excludes BIPOC drafts/voices while publicly condemning others for the same, the stated standard is not operative.",
+    "case_facts": [
+      {
+        "text": "Contemporaneous email objects that co-chairs are acting as 'decision-makers' and raises concerns about representativeness in drafting.",
+        "citation": "Gmail - Re: Biafore Response and Internal Issues..pdf",
+        "url": "/files/gmail-re-biafore-response-and-internal-issues.pdf"
+      },
+      {
+        "text": "A governance-correction request (special meeting) was denied.",
+        "citation": "Gmail - Fwd: Requested meeting prior to the August 17th meeting.pdf",
+        "url": "/files/gmail-fwd-requested-meeting-prior-to-the-august-17th-meeting.pdf"
+      }
+    ],
+    "logic_chain": [
+      "AX-1 requires internal practice to align with public diversity claims.",
+      "FAC-1 and FAC-2 show internal exclusion and refusal to correct process.",
+      "Public 'all-white plan' condemnation alongside limited internal inclusion reflects a disconnect.",
+      "[DJ-MARK] Public diversity rhetoric contradicted internal practice."
+    ],
+    "violation": "Public diversity messaging contradicted internal practices that limited BIPOC participation in drafting."
+  },
+  {
+    "case_id": "1.08",
+    "slug": "nonfunction-no-meetings-vacant-seats",
+    "title": "PROOF: Present-Tense Nonfunction—Extended Lapse in Meetings and Vacant Seats",
+    "date": "2025-10-07",
+    "category": "Structure & Function",
+    "umbrella_category": "AAC Function",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "A diversity body that doesn’t meet and leaves seats vacant cannot fulfill Article 8 obligations; the harm is ongoing.",
+    "thesis": "The AAC/CDUC failed to meet for an extended period and left at-large diversity seats unfilled; the chair remained without challenge during inactivity.",
+    "axioms": [
+      {
+        "text": "When a committee fails to meet or fill mandated seats, it ceases to function as a representative body.",
+        "citation": "Alabama precedent: intervention when participation is curtailed",
+        "url": "/files/alabama-democrats-restore-most-diversity-caucuses-after-dnc-order.pdf"
+      },
+      {
+        "text": "Bylaws require regular meetings and defined composition/seat-filling for the AAC/CDUC.",
+        "citation": "WVDP Bylaws excerpt",
+        "url": "/files/wvdp-bylaws-excerpt.pdf"
+      }
+    ],
+    "rule_summary": "Non-meeting + vacant seats = nonfunction; that status violates bylaws and fails DNC participation standards.",
+    "case_facts": [
+      {
+        "text": "AAC/CDUC meetings lapsed for an extended period; internal emails described caucuses as 'defunct'.",
+        "citation": "Defunct status emails",
+        "url": "/files/defunct-status-emails.pdf"
+      },
+      {
+        "text": "At-large diversity seats remained unfilled during this period.",
+        "citation": "Seat roster / vacancy log",
+        "url": "/files/aac-seat-vacancy-log.pdf"
+      },
+      {
+        "text": "The chair remained in place without new election during inactivity.",
+        "citation": "Correspondence on elections",
+        "url": "/files/aac-chair-tenure-proof.pdf"
+      }
+    ],
+    "logic_chain": [
+      "AX-1 defines non-meeting/vacancies as nonfunction.",
+      "AX-2 requires meetings and seat-filling; non-compliance violates bylaws.",
+      "FAC-1 establishes prolonged lapse; FAC-2 documents vacant seats; FAC-3 shows chair entrenchment.",
+      "[DJ-MARK] The diversity body is presently nonfunctional and out of compliance with bylaws and Article 8 expectations."
+    ],
+    "violation": "Active non-compliance: failure to meet, fill seats, and maintain representative governance."
+  },
+  {
+    "case_id": "1.09",
+    "slug": "exec-committee-adoption-chokepoint",
+    "title": "PROOF: Executive Committee Adoption Chokepoint Limited AAC Output",
+    "date": "2025-10-07",
+    "category": "Structure & Function",
+    "umbrella_category": "AAC Function",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "When Executive Committee adoption is required, AAC recommendations depend on Executive Committee approval regardless of AAC member input.",
+    "thesis": "The Executive Committee adoption requirement, identified by national oversight as a structural chokepoint, resulted in limited AAC output.",
+    "axioms": [
+      {
+        "text": "AAC drafts; Executive Committee adopts; this adoption step is 'politically fraught' and subject to control.",
+        "citation": "Harold Transcript September 2021 Planning Committee.docx",
+        "url": "/files/harold-transcript-september-2021-planning-committee.docx"
+      }
+    ],
+    "rule_summary": "If the adoption chokepoint limits representative AAC outputs, AAC’s representational purpose is constrained.",
+    "case_facts": [
+      {
+        "text": "Ickes warned WV planners about the Executive Committee adoption chokepoint.",
+        "citation": "Harold Transcript September 2021 Planning Committee.docx",
+        "url": "/files/harold-transcript-september-2021-planning-committee.docx"
+      },
+      {
+        "text": "Subsequent practice shifted power to leadership and away from caucus-driven AAC processes (denied special meeting; top-down control emails).",
+        "citation": "Gmail - Fwd: Requested meeting prior to the August 17th meeting.pdf",
+        "url": "/files/gmail-fwd-requested-meeting-prior-to-the-august-17th-meeting.pdf"
+      }
+    ],
+    "logic_chain": [
+      "AX-1 identifies the Exec Committee adoption as a structural chokepoint.",
+      "FAC-1 shows national warning about that point; FAC-2 shows practice consistent with limited AAC output.",
+      "Reliance on the chokepoint constrained AAC implementation.",
+      "[DJ-MARK] The adoption chokepoint limited AAC outputs in practice."
+    ],
+    "violation": "Executive Committee adoption authority resulted in limited implementation of AAC recommendations."
+  },
+  {
+    "case_id": "1.10",
+    "slug": "all-white-authorship-bipoc-denied-seats",
+    "title": "PROOF: Contemporaneous Claim—AA Plan Drafted by All White Authors; BIPOC Denied Committee Seats",
+    "date": "2025-10-07",
+    "category": "Access & Participation",
+    "umbrella_category": "Affirmative Action Compliance",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "If BIPOC members are denied seats on drafting subcommittees, the AA plan’s authorship and outputs cannot reflect minority participation.",
+    "thesis": "A Nov. 12, 2021 email asserts the AAC advanced an AA plan drafted by all white people, and states that BIPOC members who asked to serve on the drafting subcommittees were denied.",
+    "axioms": [
+      {
+        "text": "Representational plans require meaningful participation by the protected groups they affect.",
+        "citation": "DNC-Charter-Bylaws-09.10.1022-2.pdf",
+        "url": "/files/dnc-charter-bylaws-09-10-1022-2.pdf"
+      }
+    ],
+    "rule_summary": "Authorship and drafting access must include BIPOC members to satisfy 'full participation.'",
+    "case_facts": [
+      {
+        "text": "“The AAC passed an Affirmative Action Plan that, I believe, was drafted by all white people.”",
+        "citation": "Gmail - Re: Apologies and Attachment.pdf",
+        "url": "/files/gmail-re-apologies-and-attachment-2021-11-12.pdf"
+      },
+      {
+        "text": "“BIPOC members were denied seats. Both Mary Ann Claytor and I asked to be on those committees… and were denied by white leaders.”",
+        "citation": "Gmail - Re: Apologies and Attachment.pdf",
+        "url": "/files/gmail-re-apologies-and-attachment-2021-11-12.pdf"
+      }
+    ],
+    "logic_chain": [
+      "AX-1 requires BIPOC participation in drafting.",
+      "FAC-1 asserts white-only authorship.",
+      "FAC-2 documents BIPOC requests to serve and denials.",
+      "If BIPOC were denied seats, the plan’s authorship could not include their participation."
+    ],
+    "violation": "BIPOC drafting access was denied; the plan advanced without BIPOC authorship/participation."
+  },
+  {
+    "case_id": "1.11",
+    "slug": "nonmembers-input-bipoc-members-denied",
+    "title": "PROOF: White Nonmembers Allowed Input While BIPOC Members Were Denied",
+    "date": "2025-10-07",
+    "category": "Access & Participation",
+    "umbrella_category": "Affirmative Action Compliance",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "Granting nonmembers influence while denying BIPOC members seats skews the drafting process away from protected groups.",
+    "thesis": "The Nov. 12, 2021 email states white nonmembers—including out-of-state—were allowed to give input, while BIPOC members were denied a meaningful role.",
+    "axioms": [
+      {
+        "text": "Participation channels should prioritize affected members over nonmembers in representational drafting.",
+        "citation": "DNC-Charter-Bylaws-09.10.1022-2.pdf",
+        "url": "/files/dnc-charter-bylaws-09-10-1022-2.pdf"
+      }
+    ],
+    "rule_summary": "Allowing nonmember input while denying member access inverts representational priorities.",
+    "case_facts": [
+      {
+        "text": "“BIPOC members were denied the right to participate in a meaningful way while white nonmembers were allowed to provide input… including out-of-state white nonmembers.”",
+        "citation": "Gmail - Re: Apologies and Attachment.pdf",
+        "url": "/files/gmail-re-apologies-and-attachment-2021-11-12.pdf"
+      }
+    ],
+    "logic_chain": [
+      "AX-1 prioritizes affected member participation.",
+      "FAC-1 documents nonmember input allowed vs. BIPOC members denied.",
+      "This inversion reduces BIPOC influence over the plan."
+    ],
+    "violation": "Nonmember input was prioritized over BIPOC member participation in drafting."
+  },
+  {
+    "case_id": "1.12",
+    "slug": "scheduling-excluded-latine-co-chair",
+    "title": "PROOF: Predictable Scheduling Excluded a Latine/Hispanic Co-Chair from Drafting Meetings",
+    "date": "2025-10-07",
+    "category": "Access & Participation",
+    "umbrella_category": "Affirmative Action Compliance",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "If meetings are repeatedly scheduled over a known conflict, affected caucus leaders cannot participate in drafting.",
+    "thesis": "The Nov. 12, 2021 email states the Latine/Hispanic Caucus co-chair (Kim Felix) was effectively excluded by setting meetings on a standing conflict time.",
+    "axioms": [
+      {
+        "text": "Scheduling that predictably prevents a protected representative’s attendance narrows participation.",
+        "citation": "Governance norm; participation principle",
+        "url": ""
+      }
+    ],
+    "rule_summary": "Procedural choices that foreseeably block minority representatives from meetings curtail participation.",
+    "case_facts": [
+      {
+        "text": "“Excluding Kim Felix from every meeting by always scheduling them on Mondays when she had class…”",
+        "citation": "Gmail - Re: Apologies and Attachment.pdf",
+        "url": "/files/gmail-re-apologies-and-attachment-2021-11-12.pdf"
+      }
+    ],
+    "logic_chain": [
+      "AX-1 identifies foreseeable scheduling exclusion as a participation barrier.",
+      "FAC-1 documents repeated scheduling over a known conflict.",
+      "Therefore, a protected representative was predictably excluded during drafting."
+    ],
+    "violation": "Procedural scheduling narrowed Latine/Hispanic representation in drafting."
+  },
+  {
+    "case_id": "1.13",
+    "slug": "debate-caps-harassment-curtailed-participation",
+    "title": "PROOF: Debate Caps and Harassment Allegations Curtailed BIPOC Participation",
+    "date": "2025-10-07",
+    "category": "Culture & Climate",
+    "umbrella_category": "Affirmative Action Compliance",
+    "overproof_slug": "wvdp-noncompliance-2021-2025",
+    "stakes": "A process environment with tight debate limits and harassment allegations discourages full participation by minority members.",
+    "thesis": "The Nov. 12, 2021 email ties 2.5-minute debate caps and harassment claims to disenfranchisement of BIPOC participants.",
+    "axioms": [
+      {
+        "text": "Adequate time and respectful climate are prerequisites for meaningful participation.",
+        "citation": "DNC-Charter-Bylaws-09.10.1022-2.pdf",
+        "url": "/files/dnc-charter-bylaws-09-10-1022-2.pdf"
+      }
+    ],
+    "rule_summary": "When time is tightly capped and harassment is alleged, participation quality and willingness decline.",
+    "case_facts": [
+      {
+        "text": "“They limit our time to discuss and debate to 2 1/2 minutes…”",
+        "citation": "Gmail - Re: Apologies and Attachment.pdf",
+        "url": "/files/gmail-re-apologies-and-attachment-2021-11-12.pdf"
+      },
+      {
+        "text": "“Do you believe BIPOC members claim that we are being targeted for harassment and disenfranchisement?”",
+        "citation": "Gmail - Re: Apologies and Attachment.pdf",
+        "url": "/files/gmail-re-apologies-and-attachment-2021-11-12.pdf"
+      }
+    ],
+    "logic_chain": [
+      "AX-1 requires adequate time and climate for participation.",
+      "FAC-1 shows very short debate windows; FAC-2 raises harassment/disenfranchisement claims.",
+      "Together, these conditions curtail BIPOC participation."
+    ],
+    "violation": "Process environment curtailed BIPOC participation through debate caps and alleged harassment."
+  },
+  {
+    "case_id": "2.01",
+    "slug": "caucus-dissolved-under-discriminatory-conditions",
+    "title": "PROOF: The Indigenous Caucus Was Dissolved Under Discriminatory Conditions",
+    "date": "2025-10-07",
+    "category": "Procedure & Appeals",
+    "umbrella_category": "Due Process & Remedies",
+    "overproof_slug": "procedural-weaponization-2022-2024",
+    "stakes": "Establishes the triggering harm that required remedy under party rules and the DNC Charter.",
+    "thesis": "The Indigenous Caucus dissolved following reported incidents of harassment and exclusion; the dissolution process and party response failed to address the underlying participation barriers.",
+    "axioms": [
+      {
+        "text": "State parties must maintain fair procedures and protect participation by underrepresented groups.",
+        "citation": "DNC-Charter-Bylaws-09.10.1022-2.pdf",
+        "url": "/files/dnc-charter-bylaws-09-10-1022-2.pdf"
+      },
+      {
+        "text": "Caucus actions affecting representation must follow adopted notice, quorum, and voting rules.",
+        "citation": "WVDP-bylaws-March-2021.pdf",
+        "url": "/files/wvdp-bylaws-march-2021.pdf"
+      },
+      {
+        "text": "Where a protected caucus is dissolved, members retain the right to seek reconsideration or restoration consistent with bylaws.",
+        "citation": "WVDP-bylaws-March-2021.pdf",
+        "url": "/files/wvdp-bylaws-march-2021.pdf"
+      }
+    ],
+    "rule_summary": "Party rules and the DNC Charter require maintaining inclusive, rule-compliant procedures for protected caucuses; dissolution must meet notice/quorum standards and remain reviewable.",
+    "case_facts": [
+      {
+        "text": "The grievance record asserts the disbandment was driven by exclusionary dynamics rather than a properly noticed merits decision.",
+        "citation": "grievance 2023 Sturm transcript youtube.docx",
+        "url": "/files/grievance-2023-sturm-transcript-youtube.docx"
+      },
+      {
+        "text": "Contemporaneous messages document leadership conflicts and requests to address procedural defects before dissolution.",
+        "citation": "Gmail - Re: Workshop notes.pdf",
+        "url": "/files/gmail-re-workshop-notes.pdf"
+      },
+      {
+        "text": "The 2022-07-06 caucus call shows the caucus functioning and attempting to fill vacant roles shortly before later dissolution.",
+        "citation": "Gmail - July 6, 2022 6:30-7:30 PM, Indigenous Caucus Zoom Call.pdf",
+        "url": "/files/gmail-2022-07-06-indigenous-caucus-zoom-call.pdf"
+      }
+    ],
+    "logic_chain": [
+      "The Charter and bylaws require rule-compliant, inclusive procedures for protected caucuses.",
+      "The caucus was dissolved amid unresolved process objections and without a clear, documented merits finding.",
+      "The record shows ongoing caucus function and vacancy-filling efforts shortly before dissolution.",
+      "[DJ-2.01] Therefore, the dissolution occurred under conditions that failed to meet the protective aims of the Charter and bylaws."
+    ],
+    "violation": "Dissolution of a protected caucus under procedurally deficient and exclusionary conditions."
+  },
+  {
+    "case_id": "2.02",
+    "slug": "reconsideration-restoration-denied",
+    "title": "PROOF: The Caucus Was Denied Reconsideration/Restoration After Dissolution",
+    "date": "2025-10-07",
+    "category": "Procedure & Appeals",
+    "umbrella_category": "Due Process & Remedies",
+    "overproof_slug": "procedural-weaponization-2022-2024",
+    "stakes": "Shows internal self-correction was blocked at the earliest opportunity.",
+    "thesis": "After dissolution, attempts by members to reconsider or restore the Indigenous Caucus were blocked despite bylaw mechanisms allowing such action.",
+    "axioms": [
+      {
+        "text": "Members may move business within the scope of the State Executive Committee at any regular or special meeting, consistent with notice and rules.",
+        "citation": "WVDP-bylaws-March-2021.pdf",
+        "url": "/files/wvdp-bylaws-march-2021.pdf"
+      },
+      {
+        "text": "Where a board action affects protected participation, the full committee retains authority to revisit outcomes within bylaw bounds.",
+        "citation": "WVDP-bylaws-March-2021.pdf",
+        "url": "/files/wvdp-bylaws-march-2021.pdf"
+      }
+    ],
+    "rule_summary": "Members possess a pathway to restore or reconsider caucus status via properly brought motions before the SEC.",
+    "case_facts": [
+      {
+        "text": "At the December 2023 SEC meeting, a member moved to address restoration of the Indigenous Caucus.",
+        "citation": "December Meeting transcript.txt",
+        "url": "/files/december-sec-meeting-transcript.txt"
+      },
+      {
+        "text": "Presiding officers ruled the effort out of order rather than reaching the merits of restoration.",
+        "citation": "December Meeting transcript.txt",
+        "url": "/files/december-sec-meeting-transcript.txt"
+      }
+    ],
+    "logic_chain": [
+      "The bylaws allow member-initiated review at SEC meetings.",
+      "A motion to restore was brought at a regular meeting.",
+      "The chair ruled the motion out of order without a merits vote.",
+      "[DJ-2.02] Therefore, reconsideration/restoration was denied despite a bylaw path."
+    ],
+    "violation": "Denial of member-initiated reconsideration/restoration of a protected caucus."
+  },
+  {
+    "case_id": "2.04",
+    "slug": "hearings-centered-on-character",
+    "title": "PROOF: Hearings Focused on Personal Character Rather Than Procedural Evidence",
+    "date": "2025-10-07",
+    "category": "Procedure & Appeals",
+    "umbrella_category": "Due Process & Remedies",
+    "overproof_slug": "procedural-weaponization-2022-2024",
+    "stakes": "Shows adjudication shifted away from rule analysis.",
+    "thesis": "Across the 2023 grievance posture and the invented 2024 'second appeal', proceedings emphasized personal demeanor and online conduct rather than analyzing bylaws or the caucus dissolution record.",
+    "axioms": [
+      {
+        "text": "The DNC Charter guarantees adequate, fair, and timely hearings focused on the issues presented.",
+        "citation": "DNC-Charter-Bylaws-09.10.1022-2.pdf",
+        "url": "/files/dnc-charter-bylaws-09-10-1022-2.pdf"
+      },
+      {
+        "text": "Appeals concerning party procedure are heard by the Board of Appeals under the bylaws; complainants with caucus-based claims meet standing.",
+        "citation": "WVDP-bylaws-March-2021.pdf",
+        "url": "/files/wvdp-bylaws-march-2021.pdf"
+      }
+    ],
+    "rule_summary": "Hearings should test the procedural claims and supporting record, not personal character.",
+    "case_facts": [
+      {
+        "text": "The 2023 transcript records the grievance being docketed and argued before the Board of Appeals (standing established), but discussion frequently centered on tone and behavior.",
+        "citation": "grievance 2023 Sturm transcript youtube.docx",
+        "url": "/files/grievance-2023-sturm-transcript-youtube.docx"
+      },
+      {
+        "text": "The 2024 transcript opens with social-media/behavior remarks and does not analyze MOU/bylaw questions; contradictory testimony was accepted without reconciling caucus records.",
+        "citation": "appeal grievance 2024 Sturm transcript youtube.docx",
+        "url": "/files/appeal-grievance-2024-sturm-transcript-youtube.docx"
+      }
+    ],
+    "logic_chain": [
+      "Charter and procedural norms require issue-focused review.",
+      "The transcripts show focus on personal conduct, not rule compliance.",
+      "[DJ-2.04] Therefore, evidentiary review of the procedural claims did not occur."
+    ],
+    "violation": "Failure to conduct issue-focused hearings on procedural claims."
+  },
+  {
+    "case_id": "2.05",
+    "slug": "dnc-recognition-then-withdrawal",
+    "title": "PROOF: DNC Officials Initially Recognized the Problem, Then Withdrew Facilitation",
+    "date": "2025-10-07",
+    "category": "Procedure & Appeals",
+    "umbrella_category": "Due Process & Remedies",
+    "overproof_slug": "procedural-weaponization-2022-2024",
+    "stakes": "Shows national awareness and a remedial pathway that was later closed.",
+    "thesis": "DNC officials acknowledged the dispute, included the complainant in an Indigenous leadership call, and discussed mediation; after state-level engagement, communications shifted to non-responsiveness and mediation never occurred.",
+    "axioms": [
+      {
+        "text": "National party officers may facilitate resolution and ensure fair access to remedies.",
+        "citation": "DNC-Charter-Bylaws-09.10.1022-2.pdf",
+        "url": "/files/dnc-charter-bylaws-09-10-1022-2.pdf"
+      }
+    ],
+    "rule_summary": "DNC officers can assist in remediation where protected participation is at risk; withdrawal should be documented and procedurally explained.",
+    "case_facts": [
+      {
+        "text": "Chair Pratte connected complainants to DNC Indigenous Caucus activities and discussed next steps; Ken Martin raised mediation as a possibility.",
+        "citation": "Gmail - DNC National Call PRATTE.pdf",
+        "url": "/files/gmail-dnc-national-call-pratte.pdf"
+      },
+      {
+        "text": "After meetings with WVDP officials, emails reflect a shift from problem-solving to process deflection; no mediation meeting was scheduled.",
+        "citation": "Gmail - WVA Bylaws PRATTE.pdf",
+        "url": "/files/gmail-wva-bylaws-pratte.pdf"
+      }
+    ],
+    "logic_chain": [
+      "National officers initially opened remedial channels.",
+      "Following state engagement, facilitation was withdrawn without procedural resolution.",
+      "[DJ-2.05] Therefore, a potential remedy was opened and then closed without explanation."
+    ],
+    "violation": "Withdrawal of remedial facilitation without documented procedural basis."
+  },
+  {
+    "case_id": "2.07",
+    "slug": "member-overrule-right-denied",
+    "title": "PROOF: Members’ Right to Overrule the Appeals Board Was Denied",
+    "date": "2025-10-07",
+    "category": "Procedure & Appeals",
+    "umbrella_category": "Due Process & Remedies",
+    "overproof_slug": "procedural-weaponization-2022-2024",
+    "stakes": "Shows the only bylaw check on the Board of Appeals was blocked.",
+    "thesis": "At the December 2023 SEC meeting, a member’s motion to overrule the Board of Appeals was ruled out of order despite bylaws allowing such action at any regular or special meeting.",
+    "axioms": [
+      {
+        "text": "The Board of Appeals decision is final unless overruled by a two-thirds vote of the SEC at any regular or special meeting.",
+        "citation": "WVDP-bylaws-March-2021.pdf",
+        "url": "/files/wvdp-bylaws-march-2021.pdf"
+      },
+      {
+        "text": "A presiding officer may not add prerequisites that negate a motion right granted by the bylaws.",
+        "citation": "Robert’s Rules of Order, Supremacy of Governing Documents",
+        "url": ""
+      }
+    ],
+    "rule_summary": "Members hold a direct motion right to overrule the Board at duly convened SEC meetings.",
+    "case_facts": [
+      {
+        "text": "A member moved to bring the Board decision before the SEC; the chair ruled the motion out of order.",
+        "citation": "December Meeting transcript.txt",
+        "url": "/files/december-sec-meeting-transcript.txt"
+      },
+      {
+        "text": "Leadership referenced a Board decision but could not provide a written ruling.",
+        "citation": "December Meeting transcript.txt",
+        "url": "/files/december-sec-meeting-transcript.txt"
+      }
+    ],
+    "logic_chain": [
+      "Bylaws establish a member motion right to overrule.",
+      "A member attempted to exercise that right at a regular meeting.",
+      "The motion was denied and no written decision was produced.",
+      "[DJ-2.07] Therefore, the SEC denied a bylaw-granted overrule right."
+    ],
+    "violation": "Denial of explicit bylaw motion right to overrule the Board of Appeals."
+  },
+  {
+    "case_id": "2.08",
+    "slug": "invented-second-appeal",
+    "title": "PROOF: A New 'Second Appeal' Procedure Was Invented Without Bylaw Authority",
+    "date": "2025-10-07",
+    "category": "Procedure & Appeals",
+    "umbrella_category": "Due Process & Remedies",
+    "overproof_slug": "procedural-weaponization-2022-2024",
+    "stakes": "Shows leadership substituted a controlled process for the denied member process.",
+    "thesis": "After denying the member overrule motion, leadership required a 'second appeal' not found in the bylaws and routed the matter into that process.",
+    "axioms": [
+      {
+        "text": "Procedures must appear in the governing bylaws to be valid.",
+        "citation": "Robert’s Rules of Order, Supremacy of Governing Documents",
+        "url": ""
+      },
+      {
+        "text": "Neither the 2021 nor the 2024 bylaws contain a second-appeal requirement before SEC action or national review.",
+        "citation": "WVDP-bylaws-March-2021.pdf",
+        "url": "/files/wvdp-bylaws-march-2021.pdf"
+      }
+    ],
+    "rule_summary": "No bylaw text authorizes an additional appeal tier beyond the Board and optional SEC overrule.",
+    "case_facts": [
+      {
+        "text": "Emails directed complainants to file a 'second appeal' to the SEC as the 'last appeal process.'",
+        "citation": "Gmail - Urgent Request for Comment: Escalating Concerns Within State Party Operations PRATTE SECOND APPEAL.pdf",
+        "url": "/files/gmail-urgent-request-second-appeal-pratte.pdf"
+      },
+      {
+        "text": "A subsequent appeal meeting was scheduled and conducted under this new framing.",
+        "citation": "appeal grievance 2024 Sturm transcript youtube.docx",
+        "url": "/files/appeal-grievance-2024-sturm-transcript-youtube.docx"
+      }
+    ],
+    "logic_chain": [
+      "No second-appeal tier appears in the bylaws.",
+      "Leadership required a second-appeal filing and conducted a meeting on that basis.",
+      "[DJ-2.08] Therefore, an unauthorized procedure replaced the denied member process."
+    ],
+    "violation": "Creation and enforcement of a non-textual appeal requirement."
+  },
+  {
+    "case_id": "2.11",
+    "slug": "constructive-exclusion-procedural-barriers",
+    "title": "PROOF: Constructive Exclusion — Procedure Became the Barrier",
+    "date": "2025-10-07",
+    "category": "Procedure & Appeals",
+    "umbrella_category": "Due Process & Remedies",
+    "overproof_slug": "procedural-weaponization-2022-2024",
+    "stakes": "Shows the total effect of the chain from dissolution to national ratification.",
+    "thesis": "Across dissolution, denied reconsideration, grievance posture, withdrawal of mediation, denial of member overrule, invented second appeal, character-focused forums, and national dismissal adopting state framing, every internal and external remedy was blocked or co-opted.",
+    "axioms": [
+      {
+        "text": "Systemic exclusion can be demonstrated by cumulative denial of procedural access regardless of intent.",
+        "citation": "Disparate impact principle (organizational process)",
+        "url": ""
+      },
+      {
+        "text": "The Charter requires equal access to participation and remedy.",
+        "citation": "DNC-Charter-Bylaws-09.10.1022-2.pdf",
+        "url": "/files/dnc-charter-bylaws-09-10-1022-2.pdf"
+      }
+    ],
+    "rule_summary": "When each channel of redress is denied or redirected, the system functions to exclude.",
+    "case_facts": [
+      {
+        "text": "The RBC’s 2024-06-28 letter declined jurisdiction and adopted the 'consequences of Mr. Sturm’s own actions' framing rather than addressing the procedural barriers (no written Board ruling; invented second appeal).",
+        "citation": "24.06.28 WV Sturm Challenge Response Letter .pdf",
+        "url": "/files/24-06-28-wv-sturm-challenge-response-letter.pdf"
+      },
+      {
+        "text": "Proofs 2.01–2.08 and 2.04–2.05 document the sequence from dissolution to national closure, with no merits remedy reached.",
+        "citation": "Cross-referenced exhibits within this proof set",
+        "url": ""
+      }
+    ],
+    "logic_chain": [
+      "The Charter requires meaningful access to remedy.",
+      "Each procedural avenue (reconsideration, grievance, mediation, member overrule, appeal, national review) was denied or redirected.",
+      "[DJ-2.11] Therefore, the cumulative effect was constructive exclusion by procedure."
+    ],
+    "violation": "Constructive exclusion of Indigenous leadership through cumulative procedural barriers."
+  },
+  {
+    "case_id": "3.01",
+    "slug": "supervisor-advice-outvote-members",
+    "title": "PROOF: DNC Supervisor Provided Strategic Advice to Suppress Elected Members",
     "date": "2025-09-23",
-    "category": "DNC MOU Violation",
-    "umbrella_category": "The Campaign to Silence Dissent",
+    "category": "Oversight & Knowledge",
+    "umbrella_category": "Silencing Dissent Campaign",
     "overproof_slug": "the-campaign-to-silence-dissent",
-    "stakes": "An official appointed by the DNC to ensure fair implementation instead provided strategic advice to suppress elected representatives. This violated the supervisory structure established by the MOU.",
-    "thesis": "Harold Ickes was appointed to the DNC RBC to supervise the MOU implementation. He violated this supervisory duty by providing strategic advice to neutralize elected representatives.",
+    "stakes": "The MOU reform process was compromised when the DNC's designated supervisor provided strategic advice to suppress elected representatives.",
+    "thesis": "DNC RBC member Harold Ickes violated his supervisory duty by providing strategic advice to neutralize elected representatives.",
     "axioms": [
       {
         "text": "The MOU required an 'open and transparent process' with 'full, timely, and equal opportunity' for participation.",
-        "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1",
+        "citation": "2020 DNC-WVDP Memorandum of Understanding",
         "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       },
       {
         "text": "The RBC was tasked with impartial 'supervision and technical assistance.'",
-        "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 2",
+        "citation": "2020 DNC-WVDP Memorandum of Understanding",
         "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       },
       {
         "text": "Harold Ickes served on the DNC Rules & Bylaws Committee.",
-        "citation": "Corporate Lobbyists Control the Rules at the DNC, Sludge, Feb. 28, 2020",
+        "citation": "Sludge, 2020-02-28",
         "url": "/files/sludge-corporate-lobbyists-dnc-rules-2020-02-28.pdf"
       },
       {
         "text": "Selina Vickers served as the 'non-voting representative of the Challengers.'",
-        "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1-2",
+        "citation": "2020 DNC-WVDP Memorandum of Understanding",
         "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       }
     ],
-    "rule_summary": "The MOU established a formal supervisory structure. The RBC was tasked with impartial supervision to ensure fair implementation. Officials serving in supervisory roles have a duty to remain neutral. Providing strategic advice to one party against elected representatives violates this supervisory duty and corrupts the oversight structure.",
+    "rule_summary": "A supervisor's duty requires impartiality. Providing strategic advice to one party against another violates that duty.",
     "case_facts": [
       {
         "text": "Harold Ickes and Selina Vickers co-hosted a political training event during the MOU implementation period.",
-        "citation": "Snapshot of SelinaVickers.com, June 24, 2021",
+        "citation": "Snapshot of SelinaVickers.com, 2021-06-24",
         "url": "/files/selinavickers-com-snapshot-2021-06-24.pdf"
       },
       {
         "text": "In a recorded meeting, Harold Ickes stated: 'I've said to Selina god knows how many times you know what at bottom you gotta out vote' Seth and Mari.",
-        "citation": "Planning Committee Meeting transcript, timestamp 47:52-48:06",
+        "citation": "Planning Committee Meeting transcript",
         "url": "/files/planning-committee-meeting-transcript.txt"
       },
       {
-        "text": "Mary Ann Claytor documented that Ickes 'advised Selina to 'outvote' Seth, Mari, and others.'",
-        "citation": "Email from Mary Ann Claytor, Sept. 23, 2021",
+        "text": "Mary Ann Claytor documented that Ickes 'advised Selina to outvote Seth, Mari, and others.'",
+        "citation": "Email from Mary Ann Claytor, 2021-09-23",
         "url": "/files/email-mary-ann-claytor-2021-09-23.pdf"
       }
     ],
     "logic_chain": [
-      "The MOU established the RBC as the supervisory body for implementation.",
-      "Harold Ickes served on the DNC RBC in this supervisory capacity.",
-      "Selina Vickers served as the non-voting compliance officer under the MOU.",
-      "The RBC's duty was to provide impartial supervision and technical assistance.",
-      "Ickes and Vickers established professional collaboration through a co-hosted training event.",
-      "Ickes stated in a recorded meeting that he repeatedly told Vickers to 'out vote' Seth and Mari Sturm.",
-      "The Sturms were elected Indigenous Caucus chairs.",
+      "The DNC supervisor and Challengers' representative established professional collaboration.",
+      "Ickes stated he repeatedly told Vickers to 'out vote' specific members.",
+      "The targeted members were elected Indigenous Caucus representatives.",
       "This advice directed action against elected members rather than providing neutral supervision.",
       "Multiple witnesses documented this statement.",
-      "[DJ-MARK] An official appointed to supervise fair implementation violated his duty by providing strategic advice to suppress elected representatives."
+      "[DJ-MARK] The supervisor violated his duty by providing strategic advice to suppress elected representatives."
     ],
-    "violation": "Harold Ickes was appointed to the DNC RBC to supervise MOU implementation. His duty was to ensure impartial oversight. He violated this supervisory duty by repeatedly advising the compliance officer to 'out vote' elected representatives. This corrupted the supervisory structure the MOU established to ensure fairness."
+    "violation": "Harold Ickes violated his duty as DNC supervisor by providing strategic advice to 'out vote' elected representatives. His duty under the MOU was to provide impartial supervision. Instead, he advised on strategies to neutralize specific elected members."
   },
   {
-    "case_id": "2.2",
-    "slug": "organized-campaign-against-representatives",
-    "title": "PROOF: Organized Campaign Used Scripts and False Accusations Against Representatives",
+    "case_id": "3.02",
+    "slug": "scripts-and-social-media-attacks",
+    "title": "PROOF: Scripts and Social Media Campaign Targeted Minority Representatives",
     "date": "2025-09-23",
-    "category": "Ethics Violation & Targeted Harassment",
-    "umbrella_category": "The Campaign to Silence Dissent",
+    "category": "Culture & Climate",
+    "umbrella_category": "Silencing Dissent Campaign",
     "overproof_slug": "the-campaign-to-silence-dissent",
-    "stakes": "Indigenous and Black representatives faced organized attacks using concealed scripts, false accusations of violence, and scheduled social media posts.",
-    "thesis": "Leadership organized a campaign against minority representatives using concealed scripts, false accusations of violence, and scheduled social media attacks.",
+    "stakes": "Indigenous and Black representatives faced a campaign of false accusations and organized attacks designed to force their resignations.",
+    "thesis": "Leadership organized a campaign against minority representatives using concealed scripts, false accusations of violence, and organized social media attacks.",
     "axioms": [
       {
         "text": "The DNC Charter requires ethical conduct that 'reflects creditably upon the office.'",
-        "citation": "DNC Charter, p. 1",
+        "citation": "DNC Charter",
         "url": "/files/dnc-charter.pdf"
       }
     ],
@@ -274,61 +961,58 @@
     "case_facts": [
       {
         "text": "Scripts attacking Indigenous representatives were distributed with concealment instructions: '[if you use this... DO NOT FORWARD THIS EMAIL].'",
-        "citation": "Email from Selina Vickers to Kristin Loken, Aug 17, 2021",
+        "citation": "Email from Selina Vickers to Kristin Loken, 2021-08-17",
         "url": "/files/email-selina-vickers-kristin-loken-2021-08-17.pdf"
       },
       {
         "text": "False claims were spread that an Indigenous Caucus chair was 'dangerous' and 'capable of violence.'",
-        "citation": "Email from Seth Sturm documenting rumors, Sept 17, 2021",
+        "citation": "Email from Seth Sturm documenting rumors, 2021-09-17",
         "url": "/files/email-seth-sturm-documenting-rumors-2021-09-17.pdf"
       },
       {
         "text": "A social media campaign labeled the Indigenous chair a 'toxic bully' with a 'calendar of posts ready to go.'",
-        "citation": "Shane Assadzandi Facebook Post, Aug 21, 2021",
+        "citation": "Shane Assadzandi Facebook Post, 2021-08-21",
         "url": "/files/shane-assadzandi-facebook-post-2021-08-21.pdf"
       },
       {
         "text": "Members reported being 'reluctant to speak publicly for fear of retaliation and future harassment.'",
-        "citation": "Emily Clifford Email, Aug 22, 2021",
+        "citation": "Emily Clifford Email, 2021-08-22",
         "url": "/files/email-emily-clifford-2021-08-22.pdf"
       },
       {
         "text": "The Indigenous chair reported the attacks had 'done real damage' requiring him to defend against accusations of violence.",
-        "citation": "Email from Seth Sturm, Sept 17, 2021",
+        "citation": "Email from Seth Sturm, 2021-09-17",
         "url": "/files/email-seth-sturm-2021-09-17.pdf"
       }
     ],
     "logic_chain": [
       "Scripts containing attacks on Indigenous representatives were marked with concealment instructions.",
-      "The instructions stated 'DO NOT FORWARD THIS EMAIL.'",
-      "False accusations of violence were spread about these same representatives.",
+      "Accusations of violence were spread about these same representatives.",
       "A social media campaign with scheduled posts targeted these same individuals.",
       "Both Indigenous and Black leaders reported being targeted.",
-      "Members stated they feared retaliation for speaking publicly.",
-      "The targeted representatives reported the attacks caused real damage.",
       "[DJ-MARK] Leadership organized a campaign using concealed scripts and false accusations to target minority representatives."
     ],
-    "violation": "Leadership violated ethical standards by organizing a campaign against minority representatives. The campaign used concealed scripts marked 'DO NOT FORWARD THIS EMAIL,' false accusations of violence, and scheduled social media attacks. This created a climate of fear that silenced other members."
+    "violation": "Leadership violated ethical standards by organizing a campaign against minority representatives. The campaign used concealed scripts marked 'DO NOT FORWARD THIS EMAIL,' false accusations of violence, and organized social media attacks. This created a climate of fear that silenced other members."
   },
   {
-    "case_id": "2.3",
-    "slug": "minority-caucuses-excluded-from-subcommittees",
+    "case_id": "3.03",
+    "slug": "minority-caucuses-excluded-subcommittees",
     "title": "PROOF: Minority Caucuses Were Excluded from Key Subcommittees",
     "date": "2025-09-23",
-    "category": "DNC MOU Violation",
-    "umbrella_category": "The Campaign to Silence Dissent",
+    "category": "Access & Participation",
+    "umbrella_category": "Silencing Dissent Campaign",
     "overproof_slug": "the-campaign-to-silence-dissent",
     "stakes": "Minority caucus chairs were denied participation in governance structures.",
     "thesis": "Leadership excluded specific caucus chairs from subcommittees after reversing a democratic vote without proper procedure.",
     "axioms": [
       {
         "text": "The MOU mandated 'full participation by all Democrats, with particular concern for minority groups.'",
-        "citation": "2020 DNC-WVDP Memorandum of Understanding, p. 1",
+        "citation": "2020 DNC-WVDP Memorandum of Understanding",
         "url": "/files/2020-mou-wvdp-dnc-rbc.pdf"
       },
       {
         "text": "Once adopted, a motion stands until properly reconsidered.",
-        "citation": "RONR 12th ed., § 10:26",
+        "citation": "ROBERTS RULES OF ORDER, 12th ed.",
         "url": "/files/roberts-rules-of-order-12th-edition.pdf"
       }
     ],
@@ -341,17 +1025,17 @@
       },
       {
         "text": "Leadership subsequently declared 'subcommittee membership will be by appointment.'",
-        "citation": "Email from Mary Thorp, Aug 29, 2021",
+        "citation": "Email from Mary Thorp, 2021-08-29",
         "url": "/files/email-mary-thorp-subcommittee-appointments-2021-08-29.pdf"
       },
       {
         "text": "Indigenous and Black caucus chairs were denied subcommittee seats.",
-        "citation": "Email from Seth Sturm, Aug 5, 2021",
+        "citation": "Email from Seth Sturm, 2021-08-05",
         "url": "/files/email-seth-sturm-subcommittee-exclusion-2021-08-05.pdf"
       },
       {
         "text": "The Board of Appeals found members were improperly denied subcommittee seats.",
-        "citation": "WVDP Board of Appeals Resolution, Nov. 29, 2021",
+        "citation": "WVDP Board of Appeals Resolution, 2021-11-29",
         "url": "/files/wvdp-board-of-appeals-resolution-subcommittee-exclusion-2021-11-29.pdf"
       }
     ],
@@ -366,46 +1050,41 @@
     "violation": "Leadership violated the MOU's participation mandate and parliamentary procedure by reversing a democratic vote without proper process and using this to exclude Indigenous and Black caucus chairs from subcommittees. The Board of Appeals ruled this exclusion was improper."
   },
   {
-    "case_id": "2.4",
-    "slug": "august-meeting-multiple-violations",
-    "title": "PROOF: August Meeting Violated Notice Requirements and Used Biased Presiding Officer",
+    "case_id": "3.04",
+    "slug": "bylaws-mislabeled-circumvent-notice",
+    "title": "PROOF: Bylaws Mislabeled to Circumvent Notice Requirements",
     "date": "2025-09-23",
-    "category": "WVDP Bylaw Violation",
-    "umbrella_category": "The Campaign to Silence Dissent",
+    "category": "Procedure & Appeals",
+    "umbrella_category": "Silencing Dissent Campaign",
     "overproof_slug": "the-campaign-to-silence-dissent",
-    "stakes": "Members were denied their right to review fundamental governance changes. The meeting used a presiding officer with undisclosed conflicts. The Board of Appeals invalidated the proceedings.",
-    "thesis": "The August 17, 2021 meeting violated notice requirements by mislabeling bylaws as 'procedural rules' and used a presiding officer with undisclosed professional ties to the parliamentarian.",
+    "stakes": "Members were denied their right to review and consult on fundamental governance changes.",
+    "thesis": "Substantive bylaws were mislabeled as 'procedural rules' to avoid the 30-day notice requirement.",
     "axioms": [
       {
         "text": "WVDP Bylaws require 30 days written notice for amendments.",
-        "citation": "WVDP Bylaws, Article XI, Section A",
+        "citation": "WVDP Bylaws",
         "url": "/files/wvdp-bylaws.pdf"
       },
       {
         "text": "Bylaws define organizational structure and continuing governance.",
-        "citation": "RONR 12th ed., § 2:8",
+        "citation": "ROBERTS RULES OF ORDER, 12th ed.",
         "url": "/files/roberts-rules-of-order-12th-edition.pdf"
       },
       {
         "text": "Rules of order govern single meetings; bylaws establish ongoing authority.",
-        "citation": "RONR 12th ed., § 2:14",
+        "citation": "ROBERTS RULES OF ORDER, 12th ed.",
         "url": "/files/roberts-rules-of-order-12th-edition.pdf"
       },
       {
-        "text": "Presiding officers must maintain strict impartiality.",
-        "citation": "Robert's Rules of Order, 12th ed., § 47:7",
-        "url": "/files/roberts-rules-of-order-12th-edition.pdf"
-      },
-      {
-        "text": "Persons in positions of trust must disclose potential conflicts.",
-        "citation": "Robert's Rules of Order, 12th ed., § 45:3",
+        "text": "Notice requirements protect members' right to deliberate.",
+        "citation": "ROBERTS RULES OF ORDER, 12th ed.",
         "url": "/files/roberts-rules-of-order-12th-edition.pdf"
       }
     ],
-    "rule_summary": "Rules granting authority between meetings are bylaws requiring 30-day notice, regardless of their label. A presiding officer must be neutral and disclose any relationships that could affect impartiality.",
+    "rule_summary": "Rules granting authority between meetings or establishing committee structures are bylaws requiring 30-day notice, regardless of their label.",
     "case_facts": [
       {
-        "text": "Documents titled 'DRAFT Procedural Rules' were circulated less than 24 hours before the August 17, 2021 meeting.",
+        "text": "Documents titled 'DRAFT Procedural Rules' were circulated less than 24 hours before the 2021-08-17 meeting.",
         "citation": "August 17 Meeting Transcript.txt",
         "url": "/files/aac-meeting-transcript-2021-08-17.txt"
       },
@@ -419,7 +1098,8 @@
         "citation": "DRAFT Procedural Rules for august meeting.pdf",
         "url": "/files/draft-procedural-rules-2021-08-17.pdf"
       },
-      {"text": "A member asked during the meeting: 'Why weren't they sent earlier so that we had an opportunity to read them?'",
+      {
+        "text": "A member asked during the meeting: 'Why weren't they sent earlier so that we had an opportunity to read them?'",
         "citation": "August 17 Meeting Transcript.txt",
         "url": "/files/aac-meeting-transcript-2021-08-17.txt"
       },
@@ -427,12 +1107,30 @@
         "text": "Another member stated: 'it's not a procedural rule for handling this meeting.'",
         "citation": "August 17 Meeting Transcript.txt",
         "url": "/files/aac-meeting-transcript-2021-08-17.txt"
-      },
-      {
-        "text": "Larry Taylor was invited to preside over the meeting where these rules were adopted.",
-        "citation": "AAC Meeting Minutes",
-        "url": "/files/wvdp-aac-meeting-minutes-redacted.pdf"
-      },
+      }
+    ],
+    "logic_chain": [
+      "Rules 13 and 14 granted continuing authority and established governance structures.",
+      "By definition, such rules are bylaws, not procedural rules.",
+      "WVDP bylaws require 30 days notice for amendments.",
+      "The documents were provided with less than 24 hours notice.",
+      "The mislabeling as 'procedural' avoided the notice requirement.",
+      "Members identified this violation during the meeting.",
+      "[DJ-MARK] Leadership mislabeled bylaws as 'procedural rules' to circumvent the 30-day notice requirement."
+    ],
+    "violation": "Mislabeling bylaws as 'procedural rules' to avoid the 30-day notice requirement violated WVDP Bylaws Article XI. Members were denied their right to review and deliberate on fundamental governance changes."
+  },
+  {
+    "case_id": "3.05",
+    "slug": "undisclosed-conflict-invalidated-proceedings",
+    "title": "PROOF: Undisclosed Conflict of Interest Invalidated Proceedings",
+    "date": "2025-09-23",
+    "category": "Procedure & Appeals",
+    "umbrella_category": "Silencing Dissent Campaign",
+    "overproof_slug": "the-campaign-to-silence-dissent",
+    "stakes": "A procedural vote requiring a neutral presider was overseen by someone with an undisclosed professional relationship to an internal faction. The Board of Appeals invalidated the proceedings.",
+    "thesis": "Leadership used an external presiding officer with undisclosed professional ties to the committee's parliamentarian, violating the requirement for impartial proceedings.",
+    "axioms": [
       {
         "text": "Larry Taylor served as a parliamentarian trainer with the Professional Development Program.",
         "citation": "PDPR Training Materials",
@@ -444,40 +1142,67 @@
         "url": "/files/email-correspondence-vickers-taylor-2021-09-17.pdf"
       },
       {
+        "text": "Presiding officers must maintain strict impartiality.",
+        "citation": "ROBERTS RULES OF ORDER, 12th ed.",
+        "url": "/files/roberts-rules-of-order-12th-edition.pdf"
+      },
+      {
+        "text": "Persons in positions of trust must disclose potential conflicts.",
+        "citation": "ROBERTS RULES OF ORDER, 12th ed.",
+        "url": "/files/roberts-rules-of-order-12th-edition.pdf"
+      },
+      {
+        "text": "The Board of Appeals ruled the August meeting invalid.",
+        "citation": "WVDP Board of Appeals Resolution",
+        "url": "/files/wvdp-board-of-appeals-resolution-invalidating-meeting-2021-11-29.pdf"
+      }
+    ],
+    "rule_summary": "A presiding officer must be neutral and disclose any relationships that could affect impartiality. A failure to disclose such conflicts compromises the integrity of the proceedings.",
+    "case_facts": [
+      {
+        "text": "Larry Taylor was invited to preside over the meeting where restrictive rules were adopted.",
+        "citation": "AAC Meeting Minutes",
+        "url": "/files/wvdp-aac-meeting-minutes-redacted.pdf"
+      },
+      {
         "text": "Taylor's professional relationship with Parliamentarian Vickers was not disclosed to the committee.",
         "citation": "AAC Meeting Minutes",
         "url": "/files/wvdp-aac-meeting-minutes-redacted.pdf"
       },
       {
-        "text": "The Board of Appeals ruled the August meeting invalid, citing improper procedures.",
+        "text": "Taylor specialized in training on procedural tactics.",
+        "citation": "PDPR Training Materials",
+        "url": "/files/pdpr-parliamentary-training-materials.pdf"
+      },
+      {
+        "text": "The committee had previously rejected similar restrictive measures in prior proceedings.",
+        "citation": "AAC Meeting Minutes re: Prior Rejected Measures",
+        "url": "/files/aac-meeting-minutes-prior-rejected-measures.pdf"
+      },
+      {
+        "text": "The Board of Appeals subsequently ruled the meeting invalid, citing improper procedures.",
         "citation": "WVDP Board of Appeals Resolution",
         "url": "/files/wvdp-board-of-appeals-resolution-invalidating-meeting-2021-11-29.pdf"
       }
     ],
     "logic_chain": [
-      "Documents titled 'DRAFT Procedural Rules' were circulated less than 24 hours before the meeting.",
-      "These documents contained Rules 13 and 14.",
-      "Rule 13 granted Co-Chairs continuing authority between meetings.",
-      "Rule 14 established subcommittee governance structures.",
-      "By definition, rules granting continuing authority are bylaws, not procedural rules.",
-      "WVDP bylaws require 30 days notice for amendments.",
-      "The mislabeling as 'procedural' avoided this notice requirement.",
-      "Members objected to the lack of notice during the meeting.",
-      "An external officer, Larry Taylor, presided over the meeting.",
-      "Taylor had undisclosed professional ties to Parliamentarian Vickers.",
-      "Robert's Rules require presiding officers to disclose potential conflicts.",
-      "Taylor's relationship was not disclosed to the committee.",
-      "The Board of Appeals ruled the meeting invalid due to improper procedures.",
-      "[DJ-MARK] The August meeting violated multiple procedural requirements through mislabeled bylaws and an undisclosed conflict of interest."
+      "An external officer presided over the meeting.",
+      "This officer had undisclosed professional ties to the Parliamentarian.",
+      "The Parliamentarian was an active participant in the matters being decided.",
+      "The officer's training expertise was in procedural tactics.",
+      "The committee had rejected similar measures in prior proceedings.",
+      "The undisclosed relationships created an appearance of bias.",
+      "The party's Board of Appeals confirmed the procedural invalidity of the meeting.",
+      "[DJ-MARK] The failure to disclose these conflicts invalidated the proceedings."
     ],
-    "violation": "The August 17, 2021 meeting violated WVDP Bylaws Article XI by mislabeling bylaws as 'procedural rules' to avoid the 30-day notice requirement. The meeting also violated Robert's Rules by using a presiding officer with undisclosed professional ties to the parliamentarian. The Board of Appeals invalidated the meeting due to these procedural violations."
+    "violation": "Using a presiding officer with an undisclosed professional relationship to an internal faction violated the requirement for neutral proceedings. Robert's Rules require disclosure of potential conflicts. This failure compromised the process and resulted in an invalid meeting, as confirmed by the Board of Appeals."
   },
   {
-    "case_id": "3.1",
-    "slug": "unreported-pac-scholarship-program",
+    "case_id": "4.01",
+    "slug": "pac-scholarship-nonreporting",
     "title": "PROOF: PAC Financial Reports Omit Scholarship Program Activity",
     "date": "2025-09-11",
-    "category": "Campaign Finance Violation",
+    "category": "Finance & Compliance",
     "umbrella_category": "Undisclosed Conflicts & Financial Misconduct",
     "overproof_slug": "undisclosed-conflicts-and-financial-misconduct",
     "stakes": "A PAC concealed its scholarship program from required disclosures. The public cannot see who funded it or who benefited from its activities.",
@@ -497,8 +1222,8 @@
     "rule_summary": "State law requires political committees to report all financial transactions. A scholarship program necessarily involves either direct expenditures or in-kind contributions of services. Failure to report either transaction type violates campaign finance law.",
     "case_facts": [
       {
-        "text": "A New Day PAC solicited applications for a formal scholarship program for third-party training on August 22, 2023.",
-        "citation": "Email Record, Aug 22, 2023",
+        "text": "A New Day PAC solicited applications for a formal scholarship program for third-party training on 2023-08-22.",
+        "citation": "Email Record",
         "url": "/files/a-new-day-pac-training-email-2023-08-22.pdf"
       },
       {
@@ -518,7 +1243,7 @@
       }
     ],
     "logic_chain": [
-      "The PAC publicly offered scholarships for training on August 22, 2023.",
+      "The PAC publicly offered scholarships for training on 2023-08-22.",
       "Any scholarship transaction must be reported as either an 'expenditure' or an in-kind 'thing of value.'",
       "The PAC's sworn Q3 2023 financial report contains neither expenditures for scholarships nor in-kind contributions for training.",
       "The absence of any reported transaction means the PAC omitted this program from required public disclosure.",
@@ -527,11 +1252,11 @@
     "violation": "A New Day PAC violated state campaign finance law by failing to report the financial activity of its scholarship program in its Q3 2023 filing. State law requires reporting of all expenditures and in-kind contributions. The PAC's sworn statement is materially incomplete."
   },
   {
-    "case_id": "3.2",
-    "slug": "pac-uses-party-resources-no-disclosure",
+    "case_id": "4.02",
+    "slug": "pac-used-party-resources",
     "title": "PROOF: PAC Used Party Resources Without Reporting an In-Kind Contribution",
     "date": "2025-09-12",
-    "category": "Campaign Finance Violation",
+    "category": "Finance & Compliance",
     "umbrella_category": "Undisclosed Conflicts & Financial Misconduct",
     "overproof_slug": "undisclosed-conflicts-and-financial-misconduct",
     "stakes": "A private PAC received an undisclosed subsidy from the state party.",
@@ -546,23 +1271,343 @@
     "rule_summary": "State law requires political committees to report the use of party resources as in-kind contributions. This ensures transparency about who benefits from party assets.",
     "case_facts": [
       {
-        "text": "A promotional email for the 'A New Day' PAC was sent using the official WVDP County Chairs email list on August 22, 2023.",
-        "citation": "A New Day Training Email, Aug 22, 2023",
+        "text": "A promotional email for the 'A New Day' PAC was sent using the official WVDP County Chairs email list on 2023-08-22.",
+        "citation": "A New Day Training Email",
         "url": "/files/a-new-day-pac-training-email-2023-08-22.pdf"
       },
       {
         "text": "The PAC's sworn Q3 2023 financial report for this period reported $0.00 in in-kind contributions.",
-        "citation": "A New Day PAC Q3 2023 Filing, p. 1",
+        "citation": "A New Day PAC Q3 2023 Filing",
         "url": "/files/a-new-day-pac-filing-2023-q3.pdf"
       }
     ],
     "logic_chain": [
-      "The PAC used the official WVDP County Chairs email list on August 22, 2023.",
+      "The PAC used the official WVDP County Chairs email list on 2023-08-22.",
       "This email list is a party resource with value.",
       "State law requires reporting the use of party resources as in-kind contributions.",
       "The PAC's sworn financial report for this period shows $0.00 in in-kind contributions.",
       "[DJ-MARK] The PAC violated state campaign finance law by failing to report the use of party resources."
     ],
     "violation": "The 'A New Day' PAC violated state campaign finance law by failing to report the WVDP email list usage as an in-kind contribution. State law requires transparency about the use of party resources."
+  },
+  {
+  "case_id": "5.01",
+  "slug": "alabama-bylaw-change-eliminated-diversity-caucuses",
+  "title": "PROOF: Alabama Democratic Party Eliminated Several Diversity Caucuses in May 2023",
+  "date": "2025-10-08",
+  "category": "Fact of Action",
+  "umbrella_category": "Alabama Model & RBC Consistency",
+  "overproof_slug": "alabama-model-selective-enforcement",
+  "thesis": "The Alabama Democratic Party adopted bylaw changes in May 2023 that eliminated several diversity caucuses.",
+  "axioms": [
+    { "text": "Proofs establish discrete facts before drawing comparisons or remedies." }
+  ],
+  "case_facts": [
+    {
+      "text": "Local reporting documents the ADP vote eliminating several diversity caucuses (May 2023).",
+      "evidence_id": "Alabama Democratic Party eliminates several diversity caucuses.pdf"
+    }
+  ],
+  "logic_chain": [
+    "ADP held a vote in May 2023 to change bylaws.",
+    "Those changes eliminated several diversity caucuses.",
+    "[DJ-5.01] Therefore, the ADP eliminated several diversity caucuses in May 2023."
+  ],
+  "determination": "[DJ-5.01] ADP’s bylaw change eliminated several diversity caucuses (May 2023).",
+  "falsification": [
+    "Authoritative records show no bylaw change occurred in May 2023.",
+    "Authoritative records show the bylaw change did not eliminate any diversity caucus."
+  ]
+},{
+    "case_id": "5.02",
+    "slug": "alabama-rbc-statement-full-participation",
+    "title": "PROOF: RBC Leadership Publicly Stated Alabama’s Bylaw Changes Prevent Full Participation",
+    "date": "2025-10-08",
+    "category": "Participation Standard",
+    "umbrella_category": "Alabama Model & RBC Consistency",
+    "overproof_slug": "alabama-model-selective-enforcement",
+    "thesis": "RBC leadership stated on the record that Alabama’s bylaw changes prevent the full participation of members.",
+    "axioms": [
+      { "text": "Public statements by RBC leadership reflect the committee’s participation standard." }
+    ],
+    "case_facts": [
+      {
+        "text": "RBC Co-Chair Minyon Moore said the Alabama changes 'prevent the full participation of members' (on-record quote).",
+        "evidence_id": "DNC members express alarm over Alabama Democratic Party changes.pdf"
+      }
+    ],
+    "logic_chain": [
+      "RBC leadership issued a public characterization of Alabama’s changes.",
+      "The characterization is that the changes prevent full participation.",
+      "[DJ-5.02] Therefore, RBC leadership’s stated standard is that Alabama’s changes prevent full participation."
+    ],
+    "determination": "[DJ-5.02] Alabama’s bylaw changes were publicly deemed participation-impairing by RBC leadership.",
+    "falsification": [
+      "Authoritative correction showing RBC leadership did not make the quoted statement.",
+      "Official RBC record retracting or contradicting the quoted characterization."
+    ]
+  },
+  {
+    "case_id": "5.03",
+    "slug": "alabama-dnc-order-to-amend-bylaws",
+    "title": "PROOF: DNC Ordered the Alabama Democratic Party to Amend or Pass Bylaws to Resolve the Issue",
+    "date": "2025-10-08",
+    "category": "Remedy Order",
+    "umbrella_category": "Alabama Model & RBC Consistency",
+    "overproof_slug": "alabama-model-selective-enforcement",
+    "thesis": "The DNC issued an order directing the Alabama Democratic Party to amend or pass bylaws to address the participation issue.",
+    "axioms": [
+      { "text": "DNC orders are authoritative remedies in party-affairs disputes." }
+    ],
+    "case_facts": [
+      {
+        "text": "Report noting 'The Democratic National Committee gave the state party an order to amend or pass a new set of bylaws…'",
+        "evidence_id": "Alabama Democrats restore most diversity caucuses after DNC order | Alabama Reflector.pdf"
+      }
+    ],
+    "logic_chain": [
+      "The record reports a DNC order to ADP to amend/pass bylaws.",
+      "[DJ-5.03] Therefore, the DNC issued an order to ADP to amend or pass bylaws."
+    ],
+    "determination": "[DJ-5.03] A DNC remedial order to ADP is documented.",
+    "falsification": [
+      "Authoritative DNC record establishing that no such order was issued."
+    ]
+  },
+  {
+    "case_id": "5.04",
+    "slug": "alabama-restoration-vote",
+    "title": "PROOF: Alabama State Democratic Executive Committee Restored Most Diversity Caucuses on February 3, 2024",
+    "date": "2025-10-08",
+    "category": "Remedy Outcome",
+    "umbrella_category": "Alabama Model & RBC Consistency",
+    "overproof_slug": "alabama-model-selective-enforcement",
+    "thesis": "Following the DNC’s order, the Alabama SDEC voted to restore most diversity caucuses on February 3, 2024.",
+    "axioms": [
+      { "text": "Documented vote outcomes establish institutional actions." }
+    ],
+    "case_facts": [
+      {
+        "text": "Report documenting a February 3, 2024 SDEC vote restoring most diversity caucuses (vote total reported in article).",
+        "evidence_id": "Alabama Democrats restore most diversity caucuses after DNC order | Alabama Reflector.pdf"
+      }
+    ],
+    "logic_chain": [
+      "A dated vote restoring most caucuses is documented.",
+      "[DJ-5.04] Therefore, most diversity caucuses were restored by SDEC vote on Feb. 3, 2024."
+    ],
+    "determination": "[DJ-5.04] ADP restoration occurred by recorded vote on the stated date.",
+    "falsification": [
+      "Authoritative SDEC record showing no such vote occurred on the stated date.",
+      "Authoritative record showing no restoration of most caucuses."
+    ]
+  },
+  {
+    "case_id": "5.05",
+    "slug": "wv-template-replace-alabama-with-west-virginia",
+    "title": "PROOF: WV Draft Used Alabama Affirmative Action Plan Language with Instruction to Replace 'Alabama' with 'West Virginia'",
+    "date": "2025-10-08",
+    "category": "Provenance",
+    "umbrella_category": "Alabama Model & RBC Consistency",
+    "overproof_slug": "alabama-model-selective-enforcement",
+    "thesis": "WV planning correspondence circulated Alabama’s Affirmative Action plan with explicit instruction to replace 'Alabama' with 'West Virginia.'",
+    "axioms": [
+      { "text": "Textual reuse with explicit replacement instruction establishes direct template derivation." }
+    ],
+    "case_facts": [
+      {
+        "text": "Email: 'took the Alabama Affirmative Action plan and [changed it] to replace Alabama with West Virginia…'",
+        "evidence_id": "Gmail - Fwd: Drafting an AA plan Alabama.pdf"
+      }
+    ],
+    "logic_chain": [
+      "The email specifies direct textual replacement from Alabama to West Virginia.",
+      "[DJ-5.05] Therefore, WV’s draft derived directly from Alabama’s AA plan."
+    ],
+    "determination": "[DJ-5.05] Direct textual derivation from Alabama to WV is documented.",
+    "falsification": [
+      "Authoritative drafts showing WV language independently authored without Alabama text.",
+      "Demonstration that the cited email is inauthentic."
+    ]
+  },
+  {
+    "case_id": "5.06",
+    "slug": "alabama-bylaws-circulated-before-wv-aac-formation",
+    "title": "PROOF: Alabama Bylaws Were Circulated to WV Actors Before WV AAC Formation",
+    "date": "2025-10-08",
+    "category": "Provenance",
+    "umbrella_category": "Alabama Model & RBC Consistency",
+    "overproof_slug": "alabama-model-selective-enforcement",
+    "thesis": "Alabama bylaws were attached and circulated in WV planning communications prior to the formation of WV’s AAC.",
+    "axioms": [
+      { "text": "Pre-formation circulation of source bylaws confirms intended reliance." }
+    ],
+    "case_facts": [
+      {
+        "text": "Email noting 'attaching… the Alabama Democratic Party Bylaws' and discussing procedures built into those bylaws, dated before WV AAC formation.",
+        "evidence_id": "Gmail - Fwd: Agendas mentions alabama in june before AAC formation.pdf"
+      }
+    ],
+    "logic_chain": [
+      "Alabama bylaws were shared in WV planning prior to AAC formation.",
+      "[DJ-5.06] Therefore, Alabama bylaws were used as reference inputs before WV AAC existed."
+    ],
+    "determination": "[DJ-5.06] Alabama bylaws functioned as pre-formation reference material in WV.",
+    "falsification": [
+      "Authoritative timeline disproving pre-formation circulation.",
+      "Proof that the attachment was not Alabama bylaws."
+    ]
+  },
+  {
+    "case_id": "5.07",
+    "slug": "wv-multiple-references-to-alabama-model",
+    "title": "PROOF: WV Planning Communications Repeatedly Referenced Alabama as the Model",
+    "date": "2025-10-08",
+    "category": "Provenance",
+    "umbrella_category": "Alabama Model & RBC Consistency",
+    "overproof_slug": "alabama-model-selective-enforcement",
+    "thesis": "Multiple WV planning emails and documents explicitly reference Alabama as the operative model.",
+    "axioms": [
+      { "text": "Repeated model references establish intended comparability." }
+    ],
+    "case_facts": [
+      {
+        "text": "Thread discussing 'talk to Bob about Alabama'.",
+        "evidence_id": "Gmail - Let’s talk to bob about alabama.pdf"
+      },
+      {
+        "text": "Senior Caucus document distribution: 'sends Alabama rules to AAC'.",
+        "evidence_id": "bob from the senior caucus sends alabama rules to aac.pdf"
+      },
+      {
+        "text": "Sept. 27 AAC meeting info email referencing Alabama.",
+        "evidence_id": "Gmail - Re: Information for the Sept 27 AAC meeting selina mentions alabama.pdf"
+      }
+    ],
+    "logic_chain": [
+      "Multiple documents reference Alabama explicitly as the model.",
+      "[DJ-5.07] Therefore, WV planners repeatedly treated Alabama as the governing model."
+    ],
+    "determination": "[DJ-5.07] Alabama was explicitly and repeatedly referenced as WV’s model.",
+    "falsification": [
+      "Authoritative records showing these references do not exist or were misattributed."
+    ]
+  },
+  {
+    "case_id": "5.08",
+    "slug": "rbc-wv-dismissal-reasoning",
+    "title": "PROOF: RBC Dismissed the WV Challenge for Lack of Jurisdiction and Attributed Outcomes to 'Consequences of Mr. Sturm’s Own Actions'",
+    "date": "2025-10-08",
+    "category": "RBC Disposition",
+    "umbrella_category": "Alabama Model & RBC Consistency",
+    "overproof_slug": "alabama-model-selective-enforcement",
+    "thesis": "The RBC’s June 28, 2024 letter dismisses the WV challenge for lack of jurisdiction and states the outcomes were 'the consequences of Mr. Sturm’s own actions.'",
+    "axioms": [
+      { "text": "Official disposition letters define the committee’s stated rationale." }
+    ],
+    "case_facts": [
+      {
+        "text": "Letter cites lack of jurisdiction and uses the phrase 'consequences of Mr. Sturm’s own actions.'",
+        "evidence_id": "24.06.28 WV Sturm Challenge Response Letter .pdf"
+      }
+    ],
+    "logic_chain": [
+      "The quoted language appears in the official RBC letter.",
+      "[DJ-5.08] Therefore, RBC’s WV dismissal states lack of jurisdiction and attributes outcomes to the complainant’s actions."
+    ],
+    "determination": "[DJ-5.08] RBC’s WV disposition and rationale are established by the letter text.",
+    "falsification": [
+      "Authoritative RBC record showing the letter contains neither the jurisdictional dismissal nor the quoted phrase."
+    ]
+  },
+  {
+    "case_id": "5.09",
+    "slug": "charter-participation-duty",
+    "title": "PROOF: The DNC Charter Imposes an Institutional Duty of Full, Timely, and Equal Participation and Affirmative Action Programs",
+    "date": "2025-10-08",
+    "category": "Governing Standard",
+    "umbrella_category": "Alabama Model & RBC Consistency",
+    "overproof_slug": "alabama-model-selective-enforcement",
+    "thesis": "The DNC Charter requires full, timely, and equal participation and mandates affirmative action programs, including representation goals for specified groups.",
+    "axioms": [
+      { "text": "Charter text defines non-optional institutional duties." }
+    ],
+    "case_facts": [
+      {
+        "text": "Article Three §4: full, timely, equal participation and fair adjudication of disputes.",
+        "evidence_id": "DNC-Charter-Bylaws-2022.pdf"
+      },
+      {
+        "text": "Article Eight §§1–3: adoption and implementation of an affirmative action program with goals/timetables (including Native Americans).",
+        "evidence_id": "DNC-Charter-Bylaws-2022.pdf"
+      },
+      {
+        "text": "2019 Charter contains the same participation mandate language (confirming continuity).",
+        "evidence_id": "2019 Charter DNC.pdf"
+      }
+    ],
+    "logic_chain": [
+      "The Charter text imposes an institutional participation duty and AAP requirement.",
+      "[DJ-5.09] Therefore, participation and AAP are standing, institutional obligations under the Charter."
+    ],
+    "determination": "[DJ-5.09] The governing participation/AAP duties are Charter-mandated.",
+    "falsification": [
+      "Authoritative Charter text showing these provisions do not exist or are optional."
+    ]
+  },
+  {
+    "case_id": "5.10",
+    "slug": "rbc-jurisdiction-includes-aap-oip-failures",
+    "title": "PROOF: RBC Jurisdiction Includes Failures to Submit or Implement an Approved AAP/OIP",
+    "date": "2025-10-08",
+    "category": "Jurisdiction Scope",
+    "umbrella_category": "Alabama Model & RBC Consistency",
+    "overproof_slug": "alabama-model-selective-enforcement",
+    "thesis": "The RBC’s jurisdiction list includes challenges alleging failure to submit or implement an approved Affirmative Action Plan or Outreach & Inclusion Program.",
+    "axioms": [
+      { "text": "A committee’s stated jurisdictional categories govern what it may hear." }
+    ],
+    "case_facts": [
+      {
+        "text": "RBC’s June 28, 2024 letter quotes Reg. 3.1 categories, which include AAP/OIP submission/implementation failures.",
+        "evidence_id": "24.06.28 WV Sturm Challenge Response Letter .pdf"
+      }
+    ],
+    "logic_chain": [
+      "The letter quotes AAP/OIP failure as a jurisdictional category.",
+      "[DJ-5.10] Therefore, RBC jurisdiction includes alleged AAP/OIP failures."
+    ],
+    "determination": "[DJ-5.10] RBC’s own statement recognizes AAP/OIP failures as within jurisdiction.",
+    "falsification": [
+      "Official RBC regulations removing AAP/OIP failures from jurisdiction.",
+      "Authoritative correction that the quoted category was misapplied or rescinded."
+    ]
+  },
+  {
+    "case_id": "5.11",
+    "slug": "wv-challenge-multiple-signatories",
+    "title": "PROOF: The 2024 WV Challenge Was Filed with Multiple Signatories",
+    "date": "2025-10-08",
+    "category": "Filing Posture",
+    "umbrella_category": "Alabama Model & RBC Consistency",
+    "overproof_slug": "alabama-model-selective-enforcement",
+    "thesis": "The 2024 WV challenge was not a single-person grievance; it included multiple signers consistent with RBC filing eligibility.",
+    "axioms": [
+      { "text": "Number and status of signatories define filing posture and standing under RBC rules." }
+    ],
+    "case_facts": [
+      {
+        "text": "Exhibit D: the challenge packet lists multiple signers in the filing.",
+        "evidence_id": "Exhibit D_ 2024 DNC Challenge.pdf"
+      }
+    ],
+    "logic_chain": [
+      "The filing lists more than one signer.",
+      "[DJ-5.11] Therefore, the 2024 WV challenge was filed with multiple signatories."
+    ],
+    "determination": "[DJ-5.11] The WV challenge posture was multi-signatory.",
+    "falsification": [
+      "Authoritative record showing only a single signer on the final filed challenge."
+    ]
   }
 ]
