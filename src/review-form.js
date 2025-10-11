@@ -31,6 +31,153 @@ export function initReviewForm() {
   });
 
   let currentStep = 0;
+  const STORAGE_KEY = 'reviewFormState';
+  const sessionStorageRef = (() => {
+    if (typeof window === 'undefined' || !window.sessionStorage) {
+      return null;
+    }
+    try {
+      const { sessionStorage } = window;
+      const testKey = `${STORAGE_KEY}__test`;
+      sessionStorage.setItem(testKey, '1');
+      sessionStorage.removeItem(testKey);
+      return sessionStorage;
+    } catch (error) {
+      console.warn('Session storage is unavailable; form progress will not persist.', error);
+      return null;
+    }
+  })();
+  let saveTimeoutId = null;
+
+  const isRadioGroup = (value) => typeof RadioNodeList !== 'undefined' && value instanceof RadioNodeList;
+
+  const saveFormState = () => {
+    if (!sessionStorageRef) return;
+    try {
+      const formData = new FormData(form);
+      const stored = {};
+      formData.forEach((value, key) => {
+        if (!key) return;
+        if (Object.prototype.hasOwnProperty.call(stored, key)) {
+          const existing = stored[key];
+          stored[key] = Array.isArray(existing) ? [...existing, value] : [existing, value];
+        } else {
+          stored[key] = value;
+        }
+      });
+
+      const payload = {
+        currentStep,
+        data: stored
+      };
+      sessionStorageRef.setItem(STORAGE_KEY, JSON.stringify(payload));
+    } catch (error) {
+      console.warn('Failed to save form state:', error);
+    }
+  };
+
+  const scheduleSaveFormState = () => {
+    if (!sessionStorageRef) return;
+    if (typeof window !== 'undefined') {
+      window.clearTimeout(saveTimeoutId);
+      saveTimeoutId = window.setTimeout(() => {
+        saveFormState();
+        saveTimeoutId = null;
+      }, 200);
+    } else {
+      saveFormState();
+    }
+  };
+
+  const clearFormState = () => {
+    if (!sessionStorageRef) return;
+    try {
+      sessionStorageRef.removeItem(STORAGE_KEY);
+    } catch (error) {
+      console.warn('Failed to clear saved form state:', error);
+    }
+    if (typeof window !== 'undefined' && saveTimeoutId !== null) {
+      window.clearTimeout(saveTimeoutId);
+      saveTimeoutId = null;
+    }
+  };
+
+  const restoreFormState = () => {
+    if (!sessionStorageRef) return false;
+    let savedRaw = '';
+    try {
+      savedRaw = sessionStorageRef.getItem(STORAGE_KEY) || '';
+    } catch (error) {
+      console.warn('Failed to read saved form state:', error);
+      return false;
+    }
+
+    if (!savedRaw) {
+      return false;
+    }
+
+    let parsed;
+    try {
+      parsed = JSON.parse(savedRaw);
+    } catch (error) {
+      console.warn('Corrupt saved form state detected; clearing.', error);
+      clearFormState();
+      return false;
+    }
+
+    if (!parsed || typeof parsed !== 'object') {
+      return false;
+    }
+
+    const { currentStep: savedStep = 0, data = {} } = parsed;
+    Object.entries(data).forEach(([name, value]) => {
+      if (!name) return;
+      const controls = form.elements[name];
+      if (!controls) return;
+
+      const values = Array.isArray(value) ? value : [value];
+
+      if (isRadioGroup(controls)) {
+        Array.from(controls).forEach((control) => {
+          control.checked = values.includes(control.value);
+        });
+        return;
+      }
+
+      const applyValue = (control) => {
+        if (!control) return;
+        if (control.type === 'checkbox') {
+          control.checked = values.includes(control.value) || (!control.value && values.includes('on'));
+          return;
+        }
+        if (control.type === 'radio') {
+          control.checked = values.includes(control.value);
+          return;
+        }
+        if (control.type === 'select-multiple') {
+          Array.from(control.options).forEach((option) => {
+            option.selected = values.includes(option.value);
+          });
+          return;
+        }
+        if (typeof control.value === 'string') {
+          control.value = values[values.length - 1] ?? '';
+        }
+      };
+
+      if (typeof controls.length === 'number' && !controls.tagName) {
+        Array.from(controls).forEach(applyValue);
+      } else {
+        applyValue(controls);
+      }
+    });
+
+    const boundedStep = Number.isInteger(savedStep)
+      ? Math.min(Math.max(savedStep, 0), steps.length - 1)
+      : 0;
+    goToStep(boundedStep, { focusField: false });
+    return true;
+  };
 
   const updateStepState = () => {
     steps.forEach((step, index) => {
@@ -190,36 +337,60 @@ export function initReviewForm() {
     });
   };
 
+  const getLiveRegion = () => {
+    let region = form.querySelector('#form-error-live');
+    if (!region) {
+      region = document.createElement('div');
+      region.id = 'form-error-live';
+      region.setAttribute('role', 'alert');
+      region.setAttribute('aria-live', 'assertive');
+      region.className = 'visually-hidden';
+      form.appendChild(region);
+    }
+    return region;
+  };
+
   nextBtn?.addEventListener('click', () => {
     updateRegistrationState();
     updatePriorRemedyState();
     updateDeadlineState();
     if (!form.reportValidity()) return;
     goToStep(currentStep + 1);
+    saveFormState();
   });
 
   prevBtn?.addEventListener('click', () => {
     goToStep(currentStep - 1);
+    saveFormState();
   });
 
   registrationRadios.forEach((radio) => {
     radio.addEventListener('change', () => {
       updateRegistrationState();
+      scheduleSaveFormState();
     });
   });
 
   priorRadios.forEach((radio) => {
     radio.addEventListener('change', () => {
       updatePriorRemedyState();
+      scheduleSaveFormState();
     });
   });
 
-  dateInput?.addEventListener('input', updateDeadlineState);
-  dateInput?.addEventListener('change', updateDeadlineState);
+  dateInput?.addEventListener('input', () => {
+    updateDeadlineState();
+    scheduleSaveFormState();
+  });
+  dateInput?.addEventListener('change', () => {
+    updateDeadlineState();
+    scheduleSaveFormState();
+  });
 
   form.addEventListener(
     'submit',
     (event) => {
+      scheduleSaveFormState();
       updateRegistrationState();
       updatePriorRemedyState();
       updateDeadlineState();
@@ -229,6 +400,9 @@ export function initReviewForm() {
         event.preventDefault();
         const firstInvalid = form.querySelector(':invalid');
         if (firstInvalid) {
+          const errorMessage = firstInvalid.validationMessage;
+          const liveRegion = getLiveRegion();
+          liveRegion.textContent = errorMessage ? `Error: ${errorMessage}` : 'There is an error in the form.';
           const stepIndex = steps.findIndex((step) => step.contains(firstInvalid));
           if (stepIndex !== -1) {
             goToStep(stepIndex, { focusField: false });
@@ -244,6 +418,7 @@ export function initReviewForm() {
   );
 
   form.addEventListener('reset', () => {
+    clearFormState();
     window.requestAnimationFrame(() => {
       goToStep(0, { focusField: false });
       updateRegistrationState();
@@ -253,6 +428,7 @@ export function initReviewForm() {
   });
 
   form.addEventListener('enhanced:success', () => {
+    clearFormState();
     form.reset();
     goToStep(0, { focusField: false });
     updateRegistrationState();
@@ -260,8 +436,20 @@ export function initReviewForm() {
     updateDeadlineState();
   });
 
-  updateRegistrationState();
-  updatePriorRemedyState();
-  updateDeadlineState();
-  goToStep(0, { focusField: false });
+  form.addEventListener('input', scheduleSaveFormState);
+  form.addEventListener('change', scheduleSaveFormState);
+
+  const refreshDynamicState = () => {
+    updateRegistrationState();
+    updatePriorRemedyState();
+    updateDeadlineState();
+  };
+
+  refreshDynamicState();
+  const restored = restoreFormState();
+  if (restored) {
+    refreshDynamicState();
+  } else {
+    goToStep(0, { focusField: false });
+  }
 }

@@ -34,6 +34,11 @@ export function initNavigation() {
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.getElementById('primary-nav');
 
+    if (countEl) {
+        countEl.setAttribute('role', 'status');
+        countEl.setAttribute('aria-live', 'polite');
+    }
+
     // Setup Load More button
     loadMoreBtn.className = 'btn btn-outline-blue';
     loadMoreBtn.textContent = 'Load More';
@@ -124,6 +129,12 @@ export function initNavigation() {
     const slugify = (str) => slugifyLib(String(str ?? ''), {
         decamelize: false,
     });
+
+    const escapeAttr = (value = '') => String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
 
     const buildProofSlug = (proof = {}) => {
         if (proof.slug) {
@@ -313,11 +324,29 @@ export function initNavigation() {
                 this.element.removeEventListener('keydown', this.boundKeyHandler);
             }
             const opener = this.previouslyFocusedElement;
-            if (opener && typeof opener.focus === 'function') {
-                const isConnected = typeof opener.isConnected === 'boolean' ? opener.isConnected : document.body.contains(opener);
-                if (isConnected) {
-                    opener.focus();
+            const focusFallback = () => {
+                const fallback = document.querySelector('a[href], button:not([disabled])');
+                if (fallback && typeof fallback.focus === 'function') {
+                    fallback.focus();
                 }
+            };
+            if (opener && typeof opener.focus === 'function') {
+                const isConnected = typeof opener.isConnected === 'boolean'
+                    ? opener.isConnected
+                    : document.body.contains(opener);
+                if (isConnected) {
+                    const isVisible = opener.offsetParent !== null;
+                    const isEnabled = !opener.disabled && !opener.hasAttribute('aria-hidden');
+                    if (isVisible && isEnabled) {
+                        opener.focus();
+                    } else {
+                        focusFallback();
+                    }
+                } else {
+                    focusFallback();
+                }
+            } else {
+                focusFallback();
             }
             this.previouslyFocusedElement = null;
             this.active = false;
@@ -423,12 +452,16 @@ export function initNavigation() {
         const metaText = metaParts.join(' • ');
 
         if (lazy) {
+            const loadingLabelRaw = proof.case_id || proof.title || 'proof';
+            const loadingLabel = escapeAttr(loadingLabelRaw);
             return `
                 <a class="proof-row proof-row--loading"
                    href="${url}"
                    data-category="${categoryKey}"
                    data-proof-id="${proof.case_id || proof.slug}"
-                   ${hasCaseFile ? `data-case-url="${caseUrl}"` : ''}>
+                   ${hasCaseFile ? `data-case-url="${caseUrl}"` : ''}
+                   aria-busy="true"
+                   aria-label="Loading proof ${loadingLabel}">
                     <div class="proof-row__id skeleton-pill"></div>
                     <div class="proof-row__content">
                         <div class="skeleton-line skeleton-title"></div>
@@ -495,6 +528,8 @@ export function initNavigation() {
             <svg class="proof-row__action" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
                 <path d="M7 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>`;
+        cardElement.removeAttribute('aria-busy');
+        cardElement.removeAttribute('aria-label');
     };
 
     // Timeline view renderer
@@ -571,6 +606,9 @@ export function initNavigation() {
             const cardElement = el(cardHTML);
 
             if (isLazy && cardElement) {
+                cardElement.setAttribute('aria-busy', 'true');
+                const loadingLabel = proof.case_id || proof.title || 'proof';
+                cardElement.setAttribute('aria-label', `Loading proof ${loadingLabel}`);
                 try {
                     cardElement.dataset.proofData = JSON.stringify(proof);
                 } catch (error) {
@@ -674,6 +712,11 @@ export function initNavigation() {
         activeFilters.type = typeFilter ? typeFilter.value : 'All Types';
 
         const searchTerm = activeFilters.search ? activeFilters.search.trim() : '';
+
+        if (countEl && fromSearchInput && searchTerm) {
+            countEl.innerHTML = '<span class="loading-indicator"><span class="loading-indicator__label">Searching</span><span class="loading-dots" aria-hidden="true"><span></span><span></span><span></span></span></span>';
+        }
+
         let pagefindResult = null;
 
         if (searchTerm) {
