@@ -41,7 +41,8 @@
   <!-- Root-relative assets (safe from any page depth and pathPrefix-aware) -->
   <link rel="icon" href="{{ '/images/three-dots-blue.svg' | url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/style.css' | url }}">
-  {% if pagefind %}
+  {% set hasPagefind = (pagefind is defined) and pagefind %}
+  {% if hasPagefind %}
   <link rel="stylesheet" href="{{ '/pagefind/pagefind-ui.css' | url }}">
   {% endif %}
 
@@ -185,7 +186,7 @@
   </footer>
 
   <script defer src="/ga-consent.js"></script>
-  {% if pagefind %}
+  {% if hasPagefind %}
   <script defer src="{{ '/pagefind/pagefind.js' | url }}"></script>
   <script defer src="{{ '/pagefind/pagefind-ui.js' | url }}"></script>
   {% endif %}
