@@ -83,9 +83,9 @@
   /* Semantic color tokens */
   --color-text-strong:var(--color-gray-900);
   --color-text-base:var(--color-gray-800);
-  --color-text-muted:var(--color-gray-600);
-  --color-text-subtle:var(--color-gray-500);
-  --color-text-soft:var(--color-gray-400);
+  --color-text-muted:var(--color-gray-700);
+  --color-text-subtle:var(--color-gray-600);
+  --color-text-soft:color-mix(in srgb, var(--color-gray-600) 34%, var(--color-gray-500));
   --color-text-disabled:var(--color-gray-400);
   --color-text-inverse:var(--color-gray-100);
   --color-text-on-primary:var(--color-white);
@@ -122,7 +122,7 @@
   --color-interactive-neutral-hover:var(--color-gray-200);
   --color-interactive-neutral-active:var(--color-gray-300);
 
-  --color-focus-ring:var(--color-primary-300);
+  --color-focus-ring:var(--color-primary-600);
   --color-overlay:rgba(15,23,42,.65);
 
   --shadow-sm:0 2px 8px color-mix(in srgb, var(--color-gray-900) 12%, transparent);
@@ -226,9 +226,9 @@
 [data-theme="dark"]{
   --color-text-strong:var(--color-gray-100);
   --color-text-base:var(--color-gray-100);
-  --color-text-muted:var(--color-gray-400);
-  --color-text-subtle:var(--color-gray-500);
-  --color-text-soft:var(--color-gray-500);
+  --color-text-muted:color-mix(in srgb, var(--color-gray-200) 65%, var(--color-gray-300));
+  --color-text-subtle:color-mix(in srgb, var(--color-gray-300) 55%, var(--color-gray-400));
+  --color-text-soft:color-mix(in srgb, var(--color-gray-300) 35%, var(--color-gray-400));
   --color-text-disabled:var(--color-gray-600);
   --color-text-inverse:var(--color-gray-900);
   --color-text-on-primary:var(--color-gray-100);
