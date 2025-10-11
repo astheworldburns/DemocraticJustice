@@ -13,10 +13,12 @@ reviewDate: 2024-12-01
     <p>A complete, chronological record of all documented proofs, sorted from newest to oldest.</p>
     
     <div class="search-filter-controls">
-      <label for="search-input" class="visually-hidden">Search proofs by keyword, case ID, or topic</label>
+      <label id="search-input-label"
+             for="search-input"
+             class="visually-hidden">Search proofs by keyword, case ID, or topic</label>
       <input type="search"
              id="search-input"
-             aria-label="Search proofs by keyword, case ID, or topic"
+             aria-labelledby="search-input-label"
              aria-describedby="results-count"
              placeholder="Search proofs by keyword, case ID, or topic...">
       <div class="filter-group">
