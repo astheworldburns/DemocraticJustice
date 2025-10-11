@@ -15,6 +15,7 @@ export function initNavigation() {
     let proofsPerLoad = 12; // For lazy loading
     let currentlyLoaded = 0;
     let observer; // For Intersection Observer
+    let modalTriggerIdCounter = 0;
     let pagefindReadyPromise = null;
     let lastLoggedSearch = { query: '', results: null };
     let lastLoggedSearchAt = 0;
@@ -323,30 +324,60 @@ export function initNavigation() {
             if (this.boundKeyHandler) {
                 this.element.removeEventListener('keydown', this.boundKeyHandler);
             }
-            const opener = this.previouslyFocusedElement;
+            const modalElement = this.element;
             const focusFallback = () => {
+                const primaryNavLink = document.querySelector('.nav-links a');
+                if (primaryNavLink && typeof primaryNavLink.focus === 'function') {
+                    primaryNavLink.focus();
+                    return;
+                }
+
                 const fallback = document.querySelector('a[href], button:not([disabled])');
                 if (fallback && typeof fallback.focus === 'function') {
                     fallback.focus();
                 }
             };
-            if (opener && typeof opener.focus === 'function') {
-                const isConnected = typeof opener.isConnected === 'boolean'
-                    ? opener.isConnected
-                    : document.body.contains(opener);
-                if (isConnected) {
-                    const isVisible = opener.offsetParent !== null;
-                    const isEnabled = !opener.disabled && !opener.hasAttribute('aria-hidden');
-                    if (isVisible && isEnabled) {
-                        opener.focus();
-                    } else {
-                        focusFallback();
-                    }
+
+            const canFocusElement = (element) => {
+                if (!element || typeof element.focus !== 'function') {
+                    return false;
+                }
+
+                const isConnected = typeof element.isConnected === 'boolean'
+                    ? element.isConnected
+                    : document.body.contains(element);
+
+                if (!isConnected) {
+                    return false;
+                }
+
+                const isHidden = element.hasAttribute('aria-hidden') || element.getAttribute('hidden') !== null;
+                const isDisabled = 'disabled' in element && element.disabled;
+                const isVisible = typeof element.getClientRects === 'function'
+                    ? element.getClientRects().length > 0
+                    : element.offsetParent !== null;
+
+                return !isHidden && !isDisabled && isVisible;
+            };
+
+            const openerId = modalElement?.dataset?.openerId;
+            if (openerId) {
+                const storedTrigger = document.getElementById(openerId);
+                if (canFocusElement(storedTrigger)) {
+                    storedTrigger.focus();
+                } else if (canFocusElement(this.previouslyFocusedElement)) {
+                    this.previouslyFocusedElement.focus();
                 } else {
                     focusFallback();
                 }
+            } else if (canFocusElement(this.previouslyFocusedElement)) {
+                this.previouslyFocusedElement.focus();
             } else {
                 focusFallback();
+            }
+
+            if (modalElement?.dataset) {
+                delete modalElement.dataset.openerId;
             }
             this.previouslyFocusedElement = null;
             this.active = false;
@@ -817,12 +848,18 @@ export function initNavigation() {
     const initModals = () => {
         const modals = document.querySelectorAll('.modal');
         const modalTriggers = document.querySelectorAll('[data-modal-target]');
-        
+
         modalTriggers.forEach(trigger => {
+            if (!trigger.id) {
+                modalTriggerIdCounter += 1;
+                trigger.id = `modal-trigger-${modalTriggerIdCounter}`;
+            }
+
             trigger.addEventListener('click', () => {
                 const modalId = trigger.dataset.modalTarget;
                 const modal = document.getElementById(modalId);
                 if (modal) {
+                    modal.dataset.openerId = trigger.id;
                     openModal(modal);
                 }
             });
