@@ -25,30 +25,51 @@ reviewDate: 2024-12-01
     <button id="view-toggle" class="view-toggle-btn">Timeline View</button>
     <p id="results-count" style="margin-top:12px;font-size:14px;color:var(--muted);"></p>
     
-    <div class="case-grid" id="case-grid" aria-live="polite">
-      {%- for proof in collections.sortedProofs -%}
-      {% set caseUrl = null %}
-      {% set caseLabel = null %}
-      {% set proofOverproof = proof.overproof %}
-      {% if proofOverproof %}
-        {% set caseUrl = (proofOverproof.url or ('/briefs/' + proofOverproof.slug + '/')) | url %}
-        {% set caseLabel = proofOverproof.short_title or proofOverproof.title %}
-      {% endif %}
-      <article class="case-card" data-proof-id="{{ proof.case_id }}">
-        <h3><a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/">{{ proof.title }}</a></h3>
-        <p class="case-meta">
-          {{ proof.case_id }} • {{ proof.date | date }}
-          {%- if proof.category %} • <span style="font-weight: 700;">{{ proof.category }}</span>{% endif -%}
-        </p>
-        <p>{{ proof.thesis }}</p>
-        <div class="case-link-group">
-          <a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/" class="case-link">Examine Proof →</a>
-          {% if caseUrl %}
-          <a href="{{ caseUrl }}" class="case-link case-link--secondary"{% if caseLabel %} aria-label="View case file for {{ caseLabel }}"{% endif %}>View Case File →</a>
+    <div class="proof-list">
+      <div class="proof-list__header" role="row">
+        <span>ID</span>
+        <span>Violation</span>
+        <span>Category</span>
+        <span>Date</span>
+        <span class="visually-hidden">Open proof</span>
+      </div>
+      <div class="proof-list__body" id="case-grid" aria-live="polite">
+        {%- for proof in collections.sortedProofs -%}
+        {% set proofOverproof = proof.overproof %}
+        {% set proofUrl = '#' %}
+        {% set caseUrl = null %}
+        {% if proofOverproof %}
+          {% set proofUrl = ('/proofs/' | url) ~ proofOverproof.slug ~ '/' ~ proof.slug ~ '/' %}
+          {% set caseUrl = (proofOverproof.url or ('/briefs/' + proofOverproof.slug + '/')) | url %}
+        {% endif %}
+        {% set categoryKey = 'other' %}
+        {% if proof.category %}
+          {% if 'Finance' in proof.category or 'Campaign' in proof.category %}
+            {% set categoryKey = 'financial' %}
+          {% elseif 'MOU' in proof.category or 'DNC' in proof.category or 'Procedure' in proof.category %}
+            {% set categoryKey = 'procedural' %}
+          {% elseif 'Bylaw' in proof.category or 'Charter' in proof.category or 'Governance' in proof.category %}
+            {% set categoryKey = 'governance' %}
           {% endif %}
-        </div>
-      </article>
-      {%- endfor -%}
+        {% endif %}
+        <a href="{{ proofUrl }}" class="proof-row" data-category="{{ categoryKey }}" data-proof-id="{{ proof.case_id }}"{% if caseUrl %} data-case-url="{{ caseUrl }}"{% endif %}>
+          <div class="proof-row__id">{{ proof.case_id }}</div>
+          <div class="proof-row__content">
+            <h3 class="proof-row__title">{{ proof.title }}</h3>
+            {% set metaJoin = joiner(' • ') %}
+            <p class="proof-row__meta">
+              {% if proof.category %}{{ metaJoin() }}{{ proof.category }}{% endif %}
+              {% if proof.date %}{{ metaJoin() }}{{ proof.date | date }}{% endif %}
+              {% if caseUrl %}{{ metaJoin() }}Case file available{% endif %}
+            </p>
+          </div>
+          <span class="proof-row__badge">{{ proof.category or 'Other' }}</span>
+          <svg class="proof-row__action" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M7 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        {%- endfor -%}
+      </div>
     </div>
 
     <script type="application/json" id="proof-data">

@@ -113,6 +113,14 @@ export function initNavigation() {
         return 'Other';
     };
 
+    const getProofCategoryKey = (proof) => {
+        const type = getProofType(proof).toLowerCase();
+        if (type.includes('financial')) return 'financial';
+        if (type.includes('procedural')) return 'procedural';
+        if (type.includes('governance')) return 'governance';
+        return 'other';
+    };
+
     const slugify = (str) => slugifyLib(String(str ?? ''), {
         decamelize: false,
     });
@@ -402,61 +410,97 @@ export function initNavigation() {
     const renderProofCard = (proof, lazy = false) => {
         const url = buildProofUrl(proof);
         const proofType = getProofType(proof);
-        
+        const categoryKey = getProofCategoryKey(proof);
+        const categoryLabel = proof.category || proofType;
+        const caseUrlRaw = proof?.overproof?.url || (proof?.overproof?.slug ? `/briefs/${proof.overproof.slug}/` : '');
+        const caseUrl = normalizeUrl(caseUrlRaw);
+        const hasCaseFile = Boolean(caseUrl);
+
+        const metaParts = [];
+        if (categoryLabel) metaParts.push(categoryLabel);
+        if (proof.date) metaParts.push(fmtDate(proof.date));
+        if (hasCaseFile) metaParts.push('Case file available');
+        const metaText = metaParts.join(' • ');
+
         if (lazy) {
             return `
-                <article class="case-card case-card-lazy"
-                         data-proof-id="${proof.case_id || proof.slug}">
-                    <div class="card-skeleton">
+                <a class="proof-row proof-row--loading"
+                   href="${url}"
+                   data-category="${categoryKey}"
+                   data-proof-id="${proof.case_id || proof.slug}"
+                   ${hasCaseFile ? `data-case-url="${caseUrl}"` : ''}>
+                    <div class="proof-row__id skeleton-pill"></div>
+                    <div class="proof-row__content">
                         <div class="skeleton-line skeleton-title"></div>
                         <div class="skeleton-line skeleton-meta"></div>
-                        <div class="skeleton-line skeleton-text"></div>
-                        <div class="skeleton-line skeleton-text"></div>
                     </div>
-                </article>`;
+                    <span class="proof-row__badge skeleton-pill"></span>
+                    <div class="proof-row__action skeleton-icon"></div>
+                </a>`;
         }
-        
+
         return `
-            <article class="case-card" data-type="${proofType}"
-                     data-proof-id="${proof.case_id || proof.slug}">
-                <div class="case-card-header">
-                    <span class="proof-type-badge ${proofType.toLowerCase().replace(/\s+/g, '-')}">${proofType}</span>
+            <a class="proof-row"
+               href="${url}"
+               data-category="${categoryKey}"
+               data-proof-id="${proof.case_id || proof.slug}"
+               ${hasCaseFile ? `data-case-url="${caseUrl}"` : ''}>
+                <div class="proof-row__id">${proof.case_id ?? ''}</div>
+                <div class="proof-row__content">
+                    <h3 class="proof-row__title">${proof.title}</h3>
+                    <p class="proof-row__meta">${metaText}</p>
                 </div>
-                <h3><a href="${url}">${proof.title}</a></h3>
-                <p class="case-meta">
-                    ${proof.case_id} • ${fmtDate(proof.date)}
-                    ${proof.category ? ` • <span style="font-weight: 700;">${proof.category}</span>` : ''}
-                </p>
-                <p>${proof.thesis}</p>
-                <a href="${url}" class="case-link">Examine Proof →</a>
-            </article>`;
+                <span class="proof-row__badge ${categoryKey ? `${categoryKey}-violation` : ''}">${categoryLabel || 'Other'}</span>
+                <svg class="proof-row__action" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                    <path d="M7 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>`;
     };
 
     // Render full card content (called by lazy loader)
     const renderFullCard = (cardElement, proofData) => {
         const url = buildProofUrl(proofData);
         const proofType = getProofType(proofData);
+        const categoryKey = getProofCategoryKey(proofData);
+        const categoryLabel = proofData.category || proofType;
+        const caseUrlRaw = proofData?.overproof?.url || (proofData?.overproof?.slug ? `/briefs/${proofData.overproof.slug}/` : '');
+        const caseUrl = normalizeUrl(caseUrlRaw);
+        const hasCaseFile = Boolean(caseUrl);
 
         cardElement.dataset.proofId = proofData.case_id || proofData.slug;
-        
+        cardElement.dataset.category = categoryKey;
+        cardElement.href = url;
+        if (hasCaseFile) {
+            cardElement.dataset.caseUrl = caseUrl;
+        } else {
+            cardElement.removeAttribute('data-case-url');
+        }
+        cardElement.classList.remove('proof-row--loading');
+
+        const metaPartsFull = [];
+        if (categoryLabel) metaPartsFull.push(categoryLabel);
+        if (proofData.date) metaPartsFull.push(fmtDate(proofData.date));
+        if (hasCaseFile) metaPartsFull.push('Case file available');
+        const fullMeta = metaPartsFull.join(' • ');
+
         cardElement.innerHTML = `
-            <div class="case-card-header">
-                <span class="proof-type-badge ${proofType.toLowerCase().replace(/\s+/g, '-')}">${proofType}</span>
+            <div class="proof-row__id">${proofData.case_id ?? ''}</div>
+            <div class="proof-row__content">
+                <h3 class="proof-row__title">${proofData.title}</h3>
+                <p class="proof-row__meta">
+                    ${fullMeta}
+                </p>
             </div>
-            <h3><a href="${url}">${proofData.title}</a></h3>
-            <p class="case-meta">
-                ${proofData.case_id} • ${fmtDate(proofData.date)}
-                ${proofData.category ? ` • <span style="font-weight: 700;">${proofData.category}</span>` : ''}
-            </p>
-            <p>${proofData.thesis}</p>
-            <a href="${url}" class="case-link">Examine Proof →</a>`;
-        cardElement.classList.remove('case-card-lazy');
+            <span class="proof-row__badge ${categoryKey ? `${categoryKey}-violation` : ''}">${categoryLabel || 'Other'}</span>
+            <svg class="proof-row__action" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M7 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>`;
     };
 
     // Timeline view renderer
     const renderTimeline = (proofs) => {
         if (!grid) return;
-        grid.className = 'timeline-view';
+        grid.className = 'proof-list__body timeline-view';
         grid.innerHTML = '';
 
         if (!proofs || proofs.length === 0) {
@@ -506,7 +550,7 @@ export function initNavigation() {
         if (!grid) return;
         
         if (!append) {
-            grid.className = 'case-grid';
+            grid.className = 'proof-list__body';
             grid.innerHTML = '';
             currentlyLoaded = 0;
         }
