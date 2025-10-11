@@ -11,11 +11,15 @@ tasks:
   - precedent
 reviewDate: 2024-12-01
 eleventyComputed:
-  title: "{{ (overproofGroup.overproof.brief and overproofGroup.overproof.brief.headline) or overproofGroup.overproof.title }} — Case Brief"
-  description: "{{ (overproofGroup.overproof.brief and overproofGroup.overproof.brief.lede) or overproofGroup.overproof.summary }}"
+  title: "{{ (overproofGroup.overproof and overproofGroup.overproof.brief and overproofGroup.overproof.brief.headline) or (overproofGroup.overproof and overproofGroup.overproof.title) or 'Case Brief' }} — Case Brief"
+  description: "{{ (overproofGroup.overproof and overproofGroup.overproof.brief and overproofGroup.overproof.brief.lede) or (overproofGroup.overproof and overproofGroup.overproof.summary) or '' }}"
 ---
 <div class="content-page" style="background: var(--paper);">
   <div class="align-container">
+    {% set overproofGroup = overproofGroup or {} %}
+    {% set overproof = overproofGroup.overproof or {} %}
+    {% set brief = overproof.brief or null %}
+    {% set proofsInGroup = (overproofGroup.proofs | isArray) and overproofGroup.proofs or [] %}
     <nav aria-label="Breadcrumb" class="breadcrumb">
       <ol>
         <li><a href="{{ '/' | url }}">Home</a></li>
@@ -44,16 +48,21 @@ eleventyComputed:
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "{{ overproofGroup.overproof.title }}",
+            "name": "{{ overproof.title }}",
             "item": "{{ site.url }}{{ page.url | url }}"
           }
         ]
       }
     </script>
 
-    {% for proofEntry in overproofGroup.proofs %}
+    {% set overproofGroup = overproofGroup or {} %}
+    {% set overproof = overproofGroup.overproof or {} %}
+    {% set brief = overproof.brief or null %}
+    {% set proofsInGroup = (overproofGroup.proofs | isArray) and overproofGroup.proofs or [] %}
+
+    {% for proofEntry in proofsInGroup %}
       {% set proofSlug = (proofEntry.slug or proofEntry.case_id) | slug %}
-      {% set proofCanonicalPath = '/proofs/' + overproofGroup.overproof.slug + '/' + proofSlug + '/' %}
+      {% set proofCanonicalPath = '/proofs/' + (overproof.slug or '') + '/' + proofSlug + '/' %}
       {% set proofCanonicalUrl = site.url ~ (proofCanonicalPath | url) %}
       {% set shareImage = site.url ~ '/share/' ~ proofSlug ~ '-facebook.png' %}
       {% set proof = proofEntry %}
@@ -62,15 +71,12 @@ eleventyComputed:
       {% include "structured-data-proof.njk" %}
     {% endfor %}
 
-    {% set overproof = overproofGroup.overproof %}
-    {% set brief = overproof.brief %}
-
     <header class="overproof-hero">
       <div class="overproof-hero__content">
         <p class="section-label">Case Brief</p>
-        <h1 class="overproof-hero__title">{{ (brief and brief.headline) or overproof.title }}</h1>
+        <h1 class="overproof-hero__title">{{ (brief and brief.headline) or overproof.title or overproof.short_title or 'Case Brief' }}</h1>
 
-        {% set heroSummary = (brief and brief.lede) or overproof.summary %}
+        {% set heroSummary = (brief and brief.lede) or (overproof and overproof.summary) or '' %}
         {% if heroSummary %}
         <p class="lead overproof-hero__lede">{{ heroSummary }}</p>
         {% endif %}
@@ -85,7 +91,7 @@ eleventyComputed:
       <div class="overproof-hero__aside">
         <div class="overproof-stat-card">
           <span class="overproof-stat-card__label">Proofs documented</span>
-          <span class="overproof-stat-card__value">{{ overproof.proofCount or (overproofGroup.proofs | length) }}</span>
+          <span class="overproof-stat-card__value">{{ overproof.proofCount or (proofsInGroup | length) }}</span>
           <span class="overproof-stat-card__footnote">Across this record</span>
         </div>
 
@@ -105,7 +111,7 @@ eleventyComputed:
       </div>
     </header>
 
-    {% if overproof.key_points and overproof.key_points | length %}
+    {% if overproof.key_points and (overproof.key_points | length) %}
     <section class="overproof-section overproof-key-points" aria-labelledby="overproof-key-points-heading">
       <h2 id="overproof-key-points-heading">Key Findings</h2>
       <ul class="overproof-key-points__list">
@@ -116,14 +122,15 @@ eleventyComputed:
     </section>
     {% endif %}
 
-    {% if brief and brief.violations and brief.violations | length %}
+    {% set briefViolations = (brief and brief.violations and (brief.violations | isArray)) and brief.violations or [] %}
+    {% if briefViolations | length %}
     <section class="overproof-section brief-violations" aria-labelledby="brief-violations-heading">
       <div class="overproof-section__header">
         <h2 id="brief-violations-heading">Documented Violations</h2>
-        <p class="overproof-section__meta">{{ brief.violations | length }} incidents traced in this record</p>
+        <p class="overproof-section__meta">{{ briefViolations | length }} incidents traced in this record</p>
       </div>
       <div class="violation-grid">
-        {% for violation in brief.violations %}
+        {% for violation in briefViolations %}
         <article class="violation-card">
           <h3>{{ violation.title }}</h3>
           {% if violation.keyEvidence %}
@@ -172,20 +179,23 @@ eleventyComputed:
     <section class="overproof-section overproof-proofs" aria-labelledby="overproof-proofs-heading">
       <div class="overproof-section__header">
         <h2 id="overproof-proofs-heading">Proofs in this Record</h2>
-        <p class="overproof-section__meta">{{ overproofGroup.proofs | length }} curated proofs</p>
+        <p class="overproof-section__meta">{{ proofsInGroup | length }} curated proofs</p>
       </div>
       <div class="case-grid">
-        {% for proof in overproofGroup.proofs %}
+        {% for proof in proofsInGroup %}
+        {% set proofSlug = proof.slug or proof.case_id or '' %}
+        {% set proofOverproofSlug = (proof.overproof and proof.overproof.slug) or overproof.slug or '' %}
+        {% set proofUrl = proofOverproofSlug and proofSlug and ('/proofs/' + proofOverproofSlug + '/' + proofSlug + '/') or '/archive/' %}
         <article class="case-card" data-proof-id="{{ proof.case_id }}">
           <div class="case-card__header">
-            <h3 class="case-card__title"><a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/">{{ proof.title }}</a></h3>
+            <h3 class="case-card__title"><a href="{{ proofUrl | url }}">{{ proof.title }}</a></h3>
             <p class="case-meta case-card__meta">
             {{ proof.case_id }} • {{ proof.date | date }}
             {% if proof.category %} • <span style="font-weight: 700;">{{ proof.category }}</span>{% endif %}
             </p>
           </div>
           <p class="case-card__summary">{{ proof.thesis }}</p>
-          <a href="{{ '/proofs/' | url }}{{ proof.overproof.slug }}/{{ proof.slug }}/" class="case-link">Examine Proof →</a>
+          <a href="{{ proofUrl | url }}" class="case-link">Examine Proof →</a>
         </article>
         {% endfor %}
       </div>

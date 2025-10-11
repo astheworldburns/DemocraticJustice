@@ -4,7 +4,15 @@ const Image = require("@11ty/eleventy-img");
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const htmlMinifier = require("html-minifier-terser");
+const nunjucks = require("nunjucks");
+const Ajv = require("ajv");
+const addFormats = require("ajv-formats");
 const slugifyImport = require("@sindresorhus/slugify");
+const proofSchema = require("./schemas/proof.schema.json");
+
+const ajv = new Ajv({ allErrors: true, strict: false });
+addFormats(ajv);
+const validateProofSchema = ajv.compile(proofSchema);
 const slugifyFn = typeof slugifyImport === "function" ? slugifyImport : slugifyImport?.default;
 
 function normalizeProofsData(raw) {
@@ -54,6 +62,40 @@ function normalizeProofsData(raw) {
   }
 
   return [];
+}
+
+function validateProof(proof, index) {
+  if (!proof || typeof proof !== "object" || Array.isArray(proof)) {
+    console.error(`Proof at index ${index} is not a valid object.`);
+    console.error("Proof data:", JSON.stringify(proof, null, 2));
+    throw new Error(`Invalid proof data at index ${index}`);
+  }
+
+  const required = ["title", "case_id", "thesis", "date"];
+  const missing = required.filter((field) => {
+    const value = proof[field];
+    return value === undefined || value === null || String(value).trim() === "";
+  });
+
+  if (missing.length > 0) {
+    console.error(`Proof ${index} missing required fields: ${missing.join(", ")}`);
+    console.error("Proof data:", JSON.stringify(proof, null, 2));
+    throw new Error(`Invalid proof data at index ${index}`);
+  }
+
+  const isValid = validateProofSchema(proof);
+
+  if (!isValid) {
+    const errors = validateProofSchema.errors ?? [];
+    console.error(`Proof ${index} failed schema validation.`);
+    for (const error of errors) {
+      console.error(` • ${error.instancePath || "."} ${error.message}`);
+    }
+    console.error("Proof data:", JSON.stringify(proof, null, 2));
+    throw new Error(`Invalid proof data at index ${index}`);
+  }
+
+  return proof;
 }
 
 function parseCaseIdSegments(caseId) {
@@ -360,6 +402,17 @@ function assembleProofCollections() {
     };
   }
 
+  const validatedProofs = normalizedProofs.map((entry, index) => validateProof(entry, index));
+
+  if (!validatedProofs.length) {
+    console.warn("Warning: No proofs passed validation.");
+    return {
+      proofs: [],
+      overproofGroups: [],
+      overproofList: []
+    };
+  }
+
   let overproofsData;
   try {
     const overproofsPath = require.resolve("./_data/overproofs.json");
@@ -424,7 +477,7 @@ function assembleProofCollections() {
     }
   }
 
-  const sortedProofs = [...normalizedProofs].sort(compareProofsByCaseId);
+  const sortedProofs = [...validatedProofs].sort(compareProofsByCaseId);
 
   const enrichedProofs = sortedProofs.map((proof, index) => {
     const umbrella = proof.umbrella_category ?? "";
@@ -585,6 +638,10 @@ function getProofCollections() {
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("sortedProofs", function() {
     const { proofs } = getProofCollections();
+    if (!proofs || proofs.length === 0) {
+      console.warn("Warning: sortedProofs collection is empty");
+      return [];
+    }
     return proofs;
   });
 
@@ -729,11 +786,54 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter("truncate", (str, length = 150) => {
-    if (!str) return "";
-    if (str.length <= length) return str;
-    const idx = str.lastIndexOf(" ", length);
-    return str.slice(0, idx > 0 ? idx : length) + "…";
+    if (str === undefined || str === null) {
+      return "";
+    }
+
+    if (typeof str !== "string") {
+      str = String(str);
+    }
+
+    const trimmed = str.trim();
+    if (trimmed.length <= length) {
+      return trimmed;
+    }
+
+    const idx = trimmed.lastIndexOf(" ", length);
+    const sliceEnd = idx > 0 ? idx : length;
+    return `${trimmed.slice(0, sliceEnd).trimEnd()}…`;
   });
+
+  eleventyConfig.addFilter("safe", function(value, path, fallback = "") {
+    if (typeof path === "string") {
+      if (!value) {
+        return fallback;
+      }
+
+      const result = path.split(".").reduce((acc, key) => {
+        if (acc === undefined || acc === null) {
+          return undefined;
+        }
+        return acc[key];
+      }, value);
+
+      return result ?? fallback;
+    }
+
+    if (value === undefined || value === null) {
+      return "";
+    }
+
+    if (value instanceof nunjucks.runtime.SafeString) {
+      return value;
+    }
+
+    return new nunjucks.runtime.SafeString(value);
+  });
+
+  eleventyConfig.addFilter("isArray", (value) => Array.isArray(value));
+
+  eleventyConfig.addFilter("isObject", (value) => value && typeof value === "object" && !Array.isArray(value));
 
   const imageOutputDir = path.join("_site", "img");
   const imageCacheDir = path.join(".cache", "eleventy-img");

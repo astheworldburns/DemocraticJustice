@@ -30,6 +30,9 @@ eleventyComputed:
 <div class="align-container" id="proof-page">
   <article class="doc">
     {% set overproof = proof.overproof %}
+    {% set proofAxioms = (proof.axioms | isArray) and proof.axioms or [] %}
+    {% set proofFacts = (proof.case_facts | isArray) and proof.case_facts or [] %}
+    {% set proofLogic = (proof.logic_chain | isArray) and proof.logic_chain or [] %}
     {% if overproof %}
       {% set overproofUrl = (overproof.url or ('/briefs/' + overproof.slug + '/')) | url %}
       {% set overproofLabel = overproof.short_title or overproof.title %}
@@ -120,8 +123,8 @@ eleventyComputed:
         <div class="proof-strength">
           <span class="proof-strength-label">Evidence Strength:</span>
           <div class="proof-strength-bars">
-            {% set evidenceCount = proof.case_facts | length %}
-            {% set axiomCount = proof.axioms | length %}
+            {% set evidenceCount = proofFacts | length %}
+            {% set axiomCount = proofAxioms | length %}
             {% set strength = ((evidenceCount + axiomCount) / 2) | round %}
             {% for i in range(1, 6) %}
               <div class="proof-strength-bar {% if i <= strength %}active{% endif %}"></div>
@@ -140,7 +143,7 @@ eleventyComputed:
       <section class="axioms axioms-section">
         <h2 class="section-title" data-number="1">The Axioms (The Rules)</h2>
         <div class="axiom-list">
-          {% for a in proof.axioms %}
+          {% for a in proofAxioms %}
           <div class="axiom-item">
             <div class="axiom-number">{{ loop.index }}</div>
             <div class="axiom-content">
@@ -166,16 +169,16 @@ eleventyComputed:
 
       <section class="offenses offenses-section">
         <h2 class="section-title" data-number="3">The Offenses (What Happened)</h2>
-        {% for fact in proof.case_facts %}
+        {% for fact in proofFacts %}
         <div class="offense-card">
           <p class="offense-text">{{ fact.text | safe }}</p>
           <p class="citation">
-            {% set citation_text = fact.citation or '' %}
-            {% set citation_lower = citation_text | lower %}
+            {% set citation_text = fact.citation if fact and fact.citation else '' %}
+            {% set citation_lower = citation_text and (citation_text | lower) or '' %}
             Evidence: {{ citation_text }}
-            {% if 'email' in citation_lower %}
+            {% if citation_text and ('email' in citation_lower) %}
               <span class="evidence-quality secondary">Documentary</span>
-            {% elif 'witness' in citation_lower %}
+            {% elif citation_text and ('witness' in citation_lower) %}
               <span class="evidence-quality">Testimonial</span>
             {% elif citation_text %}
               <span class="evidence-quality primary">Official Record</span>
@@ -188,8 +191,8 @@ eleventyComputed:
       <section class="logic-chain conclusion-section">
         <h2 class="section-title" data-number="4">The Logical Reasoning</h2>
         <ol>
-          {% for step in proof.logic_chain %}
-            {% if '[DJ-MARK]' in step %}
+          {% for step in proofLogic %}
+            {% if step and '[DJ-MARK]' in step %}
             <li class="logic-step conclusion-step">
               {{ step | replace('[DJ-MARK]', '') | safe }}
             </li>
