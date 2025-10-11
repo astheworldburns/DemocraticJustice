@@ -28,6 +28,14 @@ export function initReviewForm() {
     if (field.hasAttribute('required')) {
       field.dataset.originalRequired = 'true';
     }
+    if (!('originalTabIndex' in field.dataset)) {
+      const tabIndex = field.getAttribute('tabindex');
+      if (tabIndex !== null) {
+        field.dataset.originalTabIndex = tabIndex;
+      } else {
+        field.dataset.originalTabIndex = '';
+      }
+    }
   });
 
   let currentStep = 0;
@@ -188,8 +196,23 @@ export function initReviewForm() {
 
       const stepFields = step.querySelectorAll('input, select, textarea');
       stepFields.forEach((field) => {
+        if (field.type === 'hidden') {
+          return;
+        }
+
         if (field.dataset.originalRequired === 'true') {
           field.required = isActive;
+        }
+
+        if (isActive) {
+          const originalTabIndex = field.dataset.originalTabIndex ?? '';
+          if (originalTabIndex) {
+            field.setAttribute('tabindex', originalTabIndex);
+          } else {
+            field.removeAttribute('tabindex');
+          }
+        } else {
+          field.setAttribute('tabindex', '-1');
         }
       });
     });
@@ -333,6 +356,12 @@ export function initReviewForm() {
     allFields.forEach((field) => {
       if (field.dataset.originalRequired === 'true') {
         field.required = true;
+      }
+      const originalTabIndex = field.dataset.originalTabIndex ?? '';
+      if (originalTabIndex) {
+        field.setAttribute('tabindex', originalTabIndex);
+      } else {
+        field.removeAttribute('tabindex');
       }
     });
   };
