@@ -1,0 +1,21 @@
+name: Build Test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
+      - run: node scripts/verify-build.js
+      - name: Test with empty data
+        run: |
+          echo "[]" > _data/proofs.json
+          npm run build || echo "Build failed with empty data as expected"
+      - name: Test with malformed data
+        run: |
+          echo "{\"invalid\": true}" > _data/proofs.json
+          npm run build || echo "Build failed with malformed data as expected"

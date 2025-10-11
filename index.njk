@@ -67,12 +67,14 @@ reviewDate: 2024-12-01
 
     <div class="case-file-list">
       {% for study in caseStudies %}
-        {% set overproofGroup = study.data.overproofGroup %}
-        {% set caseOverproof = overproofGroup.overproof %}
-        {% set brief = caseOverproof.brief %}
-        {% set caseTitle = (brief and brief.headline) or caseOverproof.short_title or caseOverproof.title or study.data.title %}
-        {% set caseSummary = study.data.description or (brief and brief.lede) or caseOverproof.summary %}
-        {% set proofCount = caseOverproof.proofCount or (overproofGroup.proofs | length) %}
+        {% set studyData = study.data or {} %}
+        {% set overproofGroup = studyData.overproofGroup or {} %}
+        {% set caseOverproof = overproofGroup.overproof or {} %}
+        {% set brief = caseOverproof.brief or null %}
+        {% set proofsInGroup = (overproofGroup.proofs | isArray) and overproofGroup.proofs or [] %}
+        {% set caseTitle = (brief and brief.headline) or caseOverproof.short_title or caseOverproof.title or studyData.title or 'Untitled' %}
+        {% set caseSummary = studyData.description or (brief and brief.lede) or caseOverproof.summary or '' %}
+        {% set proofCount = caseOverproof.proofCount or (proofsInGroup | length) %}
         {% set timeframe = caseOverproof.metadata and caseOverproof.metadata.Timeframe %}
         {% set hasStats = proofCount or timeframe %}
         {% set caseUrl = study.url | url %}
