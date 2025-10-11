@@ -170,12 +170,14 @@ eleventyComputed:
         <div class="offense-card">
           <p class="offense-text">{{ fact.text | safe }}</p>
           <p class="citation">
-            Evidence: {{ fact.citation }}
-            {% if 'Email' in fact.citation or 'email' in fact.citation %}
+            {% set citation_text = fact.citation or '' %}
+            {% set citation_lower = citation_text | lower %}
+            Evidence: {{ citation_text }}
+            {% if 'email' in citation_lower %}
               <span class="evidence-quality secondary">Documentary</span>
-            {% elif 'Witness' in fact.citation %}
+            {% elif 'witness' in citation_lower %}
               <span class="evidence-quality">Testimonial</span>
-            {% else %}
+            {% elif citation_text %}
               <span class="evidence-quality primary">Official Record</span>
             {% endif %}
           </p>
