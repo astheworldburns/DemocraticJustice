@@ -131,12 +131,6 @@ export function initNavigation() {
         decamelize: false,
     });
 
-    const escapeAttr = (value = '') => String(value ?? '')
-        .replace(/&/g, '&amp;')
-        .replace(/"/g, '&quot;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
-
     const buildProofSlug = (proof = {}) => {
         if (proof.slug) {
             return proof.slug;
@@ -251,34 +245,31 @@ export function initNavigation() {
 
     /* ---------- Lazy Loading Setup ---------- */
     const lazyLoadProofs = () => {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
+        if (typeof IntersectionObserver !== 'function') {
+            return null;
+        }
+
+        return new IntersectionObserver((entries, observerInstance) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
 
-                const card = entry.target;
-                if (card.dataset.proofData) {
-                    let proofData = null;
+                const target = entry.target;
+                const dataSrcset = target.getAttribute('data-srcset');
+                const dataSrc = target.getAttribute('data-src');
 
-                    try {
-                        proofData = JSON.parse(card.dataset.proofData);
-                    } catch (error) {
-                        console.error('Failed to parse proof data for lazy-loaded card:', error, {
-                            proofId: card.dataset.proofId
-                        });
-                    }
-
-                    card.dataset.proofData = ''; // Clear after loading or failure
-
-                    if (proofData) {
-                        renderFullCard(card, proofData);
-                    }
+                if (dataSrcset) {
+                    target.setAttribute('srcset', dataSrcset);
+                    target.removeAttribute('data-srcset');
                 }
 
-                observer.unobserve(card);
+                if (dataSrc) {
+                    target.setAttribute('src', dataSrc);
+                    target.removeAttribute('data-src');
+                }
+
+                observerInstance.unobserve(target);
             });
         }, { rootMargin: '50px' });
-
-        return imageObserver;
     };
 
     /* ---------- Focus Trap for Modals ---------- */
@@ -466,8 +457,8 @@ export function initNavigation() {
         });
     };
 
-    // Render a single proof card with optional lazy loading
-    const renderProofCard = (proof, lazy = false) => {
+    // Render a single proof card
+    const renderProofCard = (proof) => {
         const url = buildProofUrl(proof);
         const proofType = getProofType(proof);
         const categoryKey = getProofCategoryKey(proof);
@@ -481,28 +472,6 @@ export function initNavigation() {
         if (proof.date) metaParts.push(fmtDate(proof.date));
         if (hasCaseFile) metaParts.push('Case file available');
         const metaText = metaParts.join(' • ');
-
-        if (lazy) {
-            const loadingLabelRaw = proof.case_id || proof.title || 'proof';
-            const loadingLabel = escapeAttr(loadingLabelRaw);
-            return `
-                <a class="proof-row proof-row--loading"
-                   href="${url}"
-                   data-category="${categoryKey}"
-                   data-proof-id="${proof.case_id || proof.slug}"
-                   ${hasCaseFile ? `data-case-url="${caseUrl}"` : ''}
-                   aria-busy="true"
-                   aria-label="Loading proof ${loadingLabel}">
-                    <div class="proof-row__id skeleton-pill"></div>
-                    <div class="proof-row__content">
-                        <div class="skeleton-line skeleton-title"></div>
-                        <div class="skeleton-line skeleton-meta"></div>
-                    </div>
-                    <span class="proof-row__badge skeleton-pill"></span>
-                    <div class="proof-row__action skeleton-icon"></div>
-                </a>`;
-        }
-
         return `
             <a class="proof-row"
                href="${url}"
@@ -519,48 +488,6 @@ export function initNavigation() {
                     <path d="M7 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </a>`;
-    };
-
-    // Render full card content (called by lazy loader)
-    const renderFullCard = (cardElement, proofData) => {
-        const url = buildProofUrl(proofData);
-        const proofType = getProofType(proofData);
-        const categoryKey = getProofCategoryKey(proofData);
-        const categoryLabel = proofData.category || proofType;
-        const caseUrlRaw = proofData?.overproof?.url || (proofData?.overproof?.slug ? `/briefs/${proofData.overproof.slug}/` : '');
-        const caseUrl = normalizeUrl(caseUrlRaw);
-        const hasCaseFile = Boolean(caseUrl);
-
-        cardElement.dataset.proofId = proofData.case_id || proofData.slug;
-        cardElement.dataset.category = categoryKey;
-        cardElement.href = url;
-        if (hasCaseFile) {
-            cardElement.dataset.caseUrl = caseUrl;
-        } else {
-            cardElement.removeAttribute('data-case-url');
-        }
-        cardElement.classList.remove('proof-row--loading');
-
-        const metaPartsFull = [];
-        if (categoryLabel) metaPartsFull.push(categoryLabel);
-        if (proofData.date) metaPartsFull.push(fmtDate(proofData.date));
-        if (hasCaseFile) metaPartsFull.push('Case file available');
-        const fullMeta = metaPartsFull.join(' • ');
-
-        cardElement.innerHTML = `
-            <div class="proof-row__id">${proofData.case_id ?? ''}</div>
-            <div class="proof-row__content">
-                <h3 class="proof-row__title">${proofData.title}</h3>
-                <p class="proof-row__meta">
-                    ${fullMeta}
-                </p>
-            </div>
-            <span class="proof-row__badge ${categoryKey ? `${categoryKey}-violation` : ''}">${categoryLabel || 'Other'}</span>
-            <svg class="proof-row__action" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-                <path d="M7 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>`;
-        cardElement.removeAttribute('aria-busy');
-        cardElement.removeAttribute('aria-label');
     };
 
     // Timeline view renderer
@@ -611,7 +538,7 @@ export function initNavigation() {
         });
     };
 
-    // Grid view renderer with lazy loading support
+    // Grid view renderer with image lazy loading support
     const renderGrid = (proofs, append = false) => {
         if (!grid) return;
         
@@ -631,28 +558,38 @@ export function initNavigation() {
         const end = Math.min(start + proofsPerLoad, proofs.length);
         const proofsToRender = proofs.slice(start, end);
         
-        proofsToRender.forEach((proof, index) => {
-            const isLazy = index > 6; // Lazy load after first 6
-            const cardHTML = renderProofCard(proof, isLazy);
+        proofsToRender.forEach((proof) => {
+            const cardHTML = renderProofCard(proof);
             const cardElement = el(cardHTML);
 
-            if (isLazy && cardElement) {
-                cardElement.setAttribute('aria-busy', 'true');
-                const loadingLabel = proof.case_id || proof.title || 'proof';
-                cardElement.setAttribute('aria-label', `Loading proof ${loadingLabel}`);
-                try {
-                    cardElement.dataset.proofData = JSON.stringify(proof);
-                } catch (error) {
-                    console.error('Failed to serialize proof for lazy loading:', error, {
-                        proofId: proof.case_id || proof.slug
-                    });
-                }
+            if (!cardElement) {
+                return;
             }
 
             grid.appendChild(cardElement);
-            
-            if (isLazy && observer) {
-                observer.observe(cardElement);
+
+            const lazyImages = cardElement.querySelectorAll('img[data-src], source[data-srcset]');
+            if (lazyImages.length === 0) {
+                return;
+            }
+
+            if (observer) {
+                lazyImages.forEach(image => observer.observe(image));
+            } else {
+                lazyImages.forEach(image => {
+                    const dataSrcset = image.getAttribute('data-srcset');
+                    const dataSrc = image.getAttribute('data-src');
+
+                    if (dataSrcset) {
+                        image.setAttribute('srcset', dataSrcset);
+                        image.removeAttribute('data-srcset');
+                    }
+
+                    if (dataSrc) {
+                        image.setAttribute('src', dataSrc);
+                        image.removeAttribute('data-src');
+                    }
+                });
             }
         });
         
