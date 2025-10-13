@@ -40,27 +40,131 @@ export function initReviewForm() {
 
   let currentStep = 0;
   const STORAGE_KEY = 'reviewFormState';
-  const sessionStorageRef = (() => {
-    if (typeof window === 'undefined' || !window.sessionStorage) {
-      return null;
+
+  const createStorage = () => {
+    if (typeof window === 'undefined') {
+      return { type: 'none', getItem: () => null, setItem: () => {}, removeItem: () => {} };
     }
+
     try {
       const { sessionStorage } = window;
-      const testKey = `${STORAGE_KEY}__test`;
-      sessionStorage.setItem(testKey, '1');
-      sessionStorage.removeItem(testKey);
-      return sessionStorage;
+      if (sessionStorage) {
+        const testKey = `${STORAGE_KEY}__test`;
+        sessionStorage.setItem(testKey, '1');
+        sessionStorage.removeItem(testKey);
+        return {
+          type: 'session',
+          getItem: (key) => sessionStorage.getItem(key),
+          setItem: (key, value) => sessionStorage.setItem(key, value),
+          removeItem: (key) => sessionStorage.removeItem(key)
+        };
+      }
     } catch (error) {
-      console.warn('Session storage is unavailable; form progress will not persist.', error);
-      return null;
+      console.warn('Session storage is unavailable; attempting alternative persistence.', error);
     }
-  })();
+
+    const canUseHistoryState =
+      typeof window.history !== 'undefined' && typeof window.history.replaceState === 'function';
+
+    if (canUseHistoryState) {
+      return {
+        type: 'history',
+        getItem: (key) => {
+          const state = window.history.state;
+          if (!state || typeof state !== 'object') {
+            return null;
+          }
+          const value = state[key];
+          return typeof value === 'string' ? value : null;
+        },
+        setItem: (key, value) => {
+          try {
+            const state =
+              window.history.state && typeof window.history.state === 'object'
+                ? { ...window.history.state }
+                : {};
+            state[key] = value;
+            window.history.replaceState(state, document.title);
+          } catch (historyError) {
+            console.warn('Failed to persist form state with the History API.', historyError);
+          }
+        },
+        removeItem: (key) => {
+          try {
+            const state =
+              window.history.state && typeof window.history.state === 'object'
+                ? { ...window.history.state }
+                : {};
+            if (key in state) {
+              delete state[key];
+              window.history.replaceState(state, document.title);
+            }
+          } catch (historyError) {
+            console.warn('Failed to clear form state from the History API.', historyError);
+          }
+        }
+      };
+    }
+
+    let memoryStore = {};
+    console.warn('Falling back to in-memory form persistence; progress will be lost if the page reloads.');
+    return {
+      type: 'memory',
+      getItem: (key) =>
+        Object.prototype.hasOwnProperty.call(memoryStore, key) ? memoryStore[key] : null,
+      setItem: (key, value) => {
+        memoryStore[key] = value;
+      },
+      removeItem: (key) => {
+        delete memoryStore[key];
+      }
+    };
+  };
+
+  const storage = createStorage();
+  const hasStorage = storage.type !== 'none';
+  const shouldWarnOnUnload = storage.type === 'memory';
+  const unloadMessage = 'You have unsaved changes. Leave anyway?';
+  let hasPendingData = false;
+  let beforeUnloadBound = false;
+
+  const handleBeforeUnload = (event) => {
+    if (!hasPendingData) return;
+    event.preventDefault();
+    event.returnValue = unloadMessage;
+    return unloadMessage;
+  };
+
+  const updateBeforeUnloadBinding = () => {
+    if (!shouldWarnOnUnload || typeof window === 'undefined') return;
+    if (hasPendingData && !beforeUnloadBound) {
+      window.addEventListener('beforeunload', handleBeforeUnload);
+      beforeUnloadBound = true;
+    } else if (!hasPendingData && beforeUnloadBound) {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      beforeUnloadBound = false;
+    }
+  };
+
   let saveTimeoutId = null;
 
   const isRadioGroup = (value) => typeof RadioNodeList !== 'undefined' && value instanceof RadioNodeList;
 
+  const hasStoredValues = (stored) => {
+    const entries = Object.values(stored || {});
+    return (
+      currentStep > 0 ||
+      entries.some((entry) => {
+        if (Array.isArray(entry)) {
+          return entry.some((value) => String(value ?? '').trim() !== '');
+        }
+        return String(entry ?? '').trim() !== '';
+      })
+    );
+  };
+
   const saveFormState = () => {
-    if (!sessionStorageRef) return;
+    if (!hasStorage) return;
     try {
       const formData = new FormData(form);
       const stored = {};
@@ -78,14 +182,19 @@ export function initReviewForm() {
         currentStep,
         data: stored
       };
-      sessionStorageRef.setItem(STORAGE_KEY, JSON.stringify(payload));
+      const serialized = JSON.stringify(payload);
+      storage.setItem(STORAGE_KEY, serialized);
+      hasPendingData = hasStoredValues(stored);
+      updateBeforeUnloadBinding();
     } catch (error) {
       console.warn('Failed to save form state:', error);
+      hasPendingData = false;
+      updateBeforeUnloadBinding();
     }
   };
 
   const scheduleSaveFormState = () => {
-    if (!sessionStorageRef) return;
+    if (!hasStorage) return;
     if (typeof window !== 'undefined') {
       window.clearTimeout(saveTimeoutId);
       saveTimeoutId = window.setTimeout(() => {
@@ -98,9 +207,9 @@ export function initReviewForm() {
   };
 
   const clearFormState = () => {
-    if (!sessionStorageRef) return;
+    if (!hasStorage) return;
     try {
-      sessionStorageRef.removeItem(STORAGE_KEY);
+      storage.removeItem(STORAGE_KEY);
     } catch (error) {
       console.warn('Failed to clear saved form state:', error);
     }
@@ -108,13 +217,15 @@ export function initReviewForm() {
       window.clearTimeout(saveTimeoutId);
       saveTimeoutId = null;
     }
+    hasPendingData = false;
+    updateBeforeUnloadBinding();
   };
 
   const restoreFormState = () => {
-    if (!sessionStorageRef) return false;
+    if (!hasStorage) return false;
     let savedRaw = '';
     try {
-      savedRaw = sessionStorageRef.getItem(STORAGE_KEY) || '';
+      savedRaw = storage.getItem(STORAGE_KEY) || '';
     } catch (error) {
       console.warn('Failed to read saved form state:', error);
       return false;
@@ -184,6 +295,8 @@ export function initReviewForm() {
       ? Math.min(Math.max(savedStep, 0), steps.length - 1)
       : 0;
     goToStep(boundedStep, { focusField: false });
+    hasPendingData = hasStoredValues(data);
+    updateBeforeUnloadBinding();
     return true;
   };
 
