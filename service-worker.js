@@ -23,7 +23,46 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
+  const maybeCacheHTML = (request, response) => {
+    if (!response || !response.ok) {
+      return;
+    }
+
+    const url = new URL(request.url);
+    const contentType = response.headers.get('Content-Type') || '';
+
+    if (url.origin === self.location.origin && contentType.includes('text/html')) {
+      caches.open(CACHE_NAME).then(cache => cache.put(request, response.clone()));
+    }
+  };
+
   event.respondWith(
-    caches.match(event.request).then(resp => resp || fetch(event.request))
+    caches.match(event.request).then(cachedResponse => {
+      if (cachedResponse) {
+        event.waitUntil(
+          fetch(event.request)
+            .then(networkResponse => {
+              maybeCacheHTML(event.request, networkResponse);
+              return networkResponse;
+            })
+            .catch(() => {})
+        );
+
+        return cachedResponse;
+      }
+
+      return fetch(event.request)
+        .then(networkResponse => {
+          maybeCacheHTML(event.request, networkResponse);
+          return networkResponse;
+        })
+        .catch(error => {
+          throw error;
+        });
+    })
   );
 });
