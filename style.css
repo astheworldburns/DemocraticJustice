@@ -241,7 +241,7 @@
 [data-theme="dark"]{
   --color-text-strong:var(--color-gray-100);
   --color-text-base:var(--color-gray-100);
-  --color-text-muted:color-mix(in srgb, var(--color-gray-200) 65%, var(--color-gray-300));
+  --color-text-muted:rgb(226,232,240);
   --color-text-subtle:color-mix(in srgb, var(--color-gray-300) 55%, var(--color-gray-400));
   --color-text-soft:color-mix(in srgb, var(--color-gray-300) 35%, var(--color-gray-400));
   --color-text-disabled:var(--color-gray-600);
@@ -387,7 +387,7 @@
 [data-theme="dark"] .proof-row__meta,
 [data-theme="dark"] .timeline-category,
 [data-theme="dark"] .case-meta{
-  color:rgb(203,213,225);
+  color:var(--color-text-muted);
 }
 
 [data-theme="dark"] .proof-row:hover{
