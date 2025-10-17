@@ -4184,16 +4184,26 @@ html { scroll-behavior: smooth; }
 @media (max-width:768px){
     .proof-list__header{display:none;}
     .proof-row{
-        grid-template-columns:minmax(60px,auto) minmax(0,1fr) 20px;
+        grid-template-columns:60px 1fr 20px;
+        grid-template-rows:auto auto;
+        grid-template-areas:
+            "id content action"
+            "id content action";
         gap:var(--space-2);
         padding:var(--space-3) var(--space-4);
+        align-items:start;
+    }
+    .proof-row__id{
+        grid-area:id;
+        font-size:1rem;
+        min-width:0;
+    }
+    .proof-row__content{
+        grid-area:content;
     }
     .proof-row__badge{display:none;}
-    .proof-row__id{
-        font-size:1rem;
-        min-width:60px;
-    }
     .proof-row__action{
+        grid-area:action;
         width:16px;
         height:16px;
     }
@@ -4201,13 +4211,17 @@ html { scroll-behavior: smooth; }
 
 @media (max-width:360px){
     .proof-row{
-        grid-template-columns:48px minmax(0,1fr) 16px;
+        grid-template-columns:48px 1fr 16px;
+        grid-template-rows:auto auto;
+        grid-template-areas:
+            "id content action"
+            "id content action";
         gap:var(--space-1);
         padding:var(--space-2) var(--space-3);
     }
     .proof-row__id{
         font-size:0.9rem;
-        min-width:48px;
+        min-width:0;
     }
     .proof-row__action{
         width:14px;
