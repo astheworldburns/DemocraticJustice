@@ -1,74 +1,239 @@
 #!/usr/bin/env node
 const path = require('path');
 const fs = require('fs');
-const os = require('os');
+const postcss = require('postcss');
 
-async function main() {
-  const { generate } = await import('critical');
-  const projectRoot = path.resolve(__dirname, '..');
-  const siteDir = path.join(projectRoot, '_site');
-  const htmlPath = path.join(siteDir, 'index.html');
-  const cssPath = path.join(siteDir, 'style.css');
-  const outputPath = path.join(projectRoot, '_includes', 'critical.css');
+const allowedVariableNames = new Set([
+  '--color-gray-100',
+  '--color-gray-200',
+  '--color-gray-300',
+  '--color-gray-400',
+  '--color-gray-500',
+  '--color-gray-600',
+  '--color-gray-700',
+  '--color-gray-800',
+  '--color-gray-900',
+  '--color-primary-400',
+  '--color-primary-500',
+  '--color-primary-600',
+  '--color-primary-700',
+  '--color-primary-800',
+  '--color-primary-900',
+  '--color-white',
+  '--color-black',
+  '--color-text-base',
+  '--color-text-muted',
+  '--color-text-subtle',
+  '--color-text-strong',
+  '--color-text-on-primary',
+  '--color-surface-page',
+  '--color-surface-muted',
+  '--color-surface-raised',
+  '--color-surface-subtle',
+  '--color-surface-divider',
+  '--color-interactive-primary',
+  '--color-interactive-primary-hover',
+  '--color-interactive-primary-active',
+  '--color-interactive-primary-border',
+  '--color-link-active',
+  '--brand',
+  '--navy',
+  '--white',
+  '--text-muted',
+  '--ink-strong',
+  '--color-interactive-neutral',
+  '--color-border-soft',
+  '--color-border-subtle',
+  '--color-border-strong',
+  '--color-border-contrast',
+  '--color-border-accent',
+  '--shadow-sm',
+  '--shadow-md',
+  '--space-1',
+  '--space-2',
+  '--space-3',
+  '--space-4',
+  '--space-5',
+  '--space-6',
+  '--space-7',
+  '--space-8',
+  '--space-9',
+  '--paragraph-gap',
+  '--font-size-sm',
+  '--line-height-sm',
+  '--font-size-base',
+  '--line-height-base',
+  '--font-size-lg',
+  '--line-height-lg',
+  '--font-size-xl',
+  '--line-height-xl',
+  '--font-size-2xl',
+  '--line-height-2xl',
+  '--font-size-3xl',
+  '--line-height-3xl',
+  '--line-height-heading',
+]);
 
-  if (!process.env.PUPPETEER_EXECUTABLE_PATH) {
-    const playwrightCache = path.join(os.homedir(), '.cache', 'ms-playwright');
-    try {
-      const entries = fs.readdirSync(playwrightCache, {withFileTypes: true});
-      for (const entry of entries) {
-        if (!entry.isDirectory() || !entry.name.startsWith('chromium')) {
-          continue;
-        }
+const variableContainerSelectors = new Set([':root', '[data-theme="dark"]']);
 
-        const candidate = path.join(playwrightCache, entry.name, 'chrome-linux', 'chrome');
-        if (fs.existsSync(candidate)) {
-          process.env.PUPPETEER_EXECUTABLE_PATH = candidate;
-          break;
-        }
+const allowedExactSelectors = new Set([
+  '.btn',
+  '.btn-outline-white',
+  '.btn-outline-white:hover',
+  '.btn-outline-white:active',
+  '.btn-accent',
+  '.btn-accent:hover',
+  '.btn-accent:active',
+  '.btn-outline-blue',
+  '.btn-outline-blue:hover',
+  '.btn-outline-blue:active',
+  '.btn-primary',
+  '.btn-secondary',
+  '.btn-secondary:hover',
+  '.btn-secondary:focus-visible',
+  '.btn-tertiary',
+  '.btn-group',
+]);
+
+const allowedSelectorPatterns = [
+  /^:root$/,
+  /^\[data-theme="dark"\]$/,
+  /^\[data-theme="dark"\]\s+body$/,
+  /^\[data-theme="dark"\]\s+\.nav/,
+  /^\[data-theme="dark"\]\s+\.nav-links/,
+  /^\[data-theme="dark"\]\s+\.nav-toggle/,
+  /^\[data-theme="dark"\]\s+\.wordmark/,
+  /^body$/,
+  /^\*$/,
+  /^img$/,
+  /^a(?::|$)/,
+  /^:focus-visible$/,
+  /^\.align-container\b/,
+  /^\.skip/,
+  /^\.nav/,
+  /^\.nav--/,
+  /^\.nav-inner\b/,
+  /^\.logo-wrap\b/,
+  /^\.nav-links/,
+  /^\.nav-toggle/,
+  /^\.nav-toggle-icon\b/,
+  /^\.wordmark\b/,
+  /^\.hero/,
+];
+
+const allowedKeyframes = new Set(['nav-cta-pulse']);
+
+function selectorAllowed(selector) {
+  const trimmed = selector.trim();
+  return (
+    allowedExactSelectors.has(trimmed) ||
+    allowedSelectorPatterns.some((pattern) => pattern.test(trimmed))
+  );
+}
+
+function filterCss(inputCss) {
+  const ast = postcss.parse(inputCss);
+  const seenSelectors = new Set();
+
+  ast.walkComments((comment) => comment.remove());
+
+  ast.walkAtRules((atRule) => {
+    if (atRule.name === 'keyframes') {
+      const name = atRule.params.trim();
+      if (!allowedKeyframes.has(name)) {
+        atRule.remove();
       }
-    } catch {}
-  }
+    } else if (atRule.name !== 'media') {
+      atRule.remove();
+    }
+  });
 
-  if (!fs.existsSync(htmlPath)) {
-    console.error(`Missing generated HTML at ${htmlPath}. Run Eleventy before extracting critical CSS.`);
-    process.exitCode = 1;
-    return;
-  }
-
-  if (!fs.existsSync(cssPath)) {
-    console.error(`Missing compiled stylesheet at ${cssPath}.`);
-    process.exitCode = 1;
-    return;
-  }
-
-  try {
-    const result = await generate({
-      base: siteDir,
-      src: 'index.html',
-      css: [cssPath],
-      inline: false,
-      dimensions: [
-        { width: 375, height: 720 },
-        { width: 1280, height: 960 },
-      ],
-      extract: false,
-      rebase: false,
-    });
-
-    const criticalCss = (typeof result === 'string' ? result : result.css || '').trim();
-
-    if (!criticalCss) {
-      console.warn('critical: Generated CSS was empty. Existing inline styles were left untouched.');
+  ast.walkRules((rule) => {
+    if (rule.parent && rule.parent.type === 'atrule' && rule.parent.name === 'keyframes') {
       return;
     }
 
-    fs.writeFileSync(outputPath, `${criticalCss}\n`, 'utf8');
-    console.log(`critical: Wrote hero CSS to ${path.relative(projectRoot, outputPath)} (${criticalCss.length} bytes).`);
-  } catch (error) {
-    console.error('critical: Failed to extract CSS');
-    console.error(error);
-    process.exitCode = 1;
-  }
+    if (!rule.selectors) {
+      return;
+    }
+
+    const allowedSelectors = rule.selectors.filter(selectorAllowed);
+    const parentType = rule.parent ? rule.parent.type : 'root';
+    const uniqueSelectors = parentType === 'root'
+      ? allowedSelectors.filter((selector) => {
+          if (seenSelectors.has(selector)) {
+            return false;
+          }
+          seenSelectors.add(selector);
+          return true;
+        })
+      : allowedSelectors;
+
+    if (!uniqueSelectors.length) {
+      rule.remove();
+      return;
+    }
+
+    rule.selectors = uniqueSelectors;
+
+    const allVariables = uniqueSelectors.every((selector) =>
+      variableContainerSelectors.has(selector.trim())
+    );
+
+    if (allVariables) {
+      rule.walkDecls((decl) => {
+        if (!allowedVariableNames.has(decl.prop)) {
+          decl.remove();
+        }
+      });
+    }
+
+    if (!rule.nodes.length) {
+      rule.remove();
+    }
+  });
+
+  ast.walkAtRules((atRule) => {
+    if ((atRule.name === 'media' || atRule.name === 'keyframes') && !atRule.nodes.length) {
+      atRule.remove();
+    }
+  });
+
+  return ast.toString().trim();
 }
 
-main();
+async function main() {
+  const projectRoot = path.resolve(__dirname, '..');
+  const outputPath = path.join(projectRoot, '_includes', 'critical.css');
+  const candidates = [
+    path.join(projectRoot, '_site', 'style.css'),
+    path.join(projectRoot, 'style.css'),
+  ];
+
+  const sourcePath = candidates.find((candidate) => fs.existsSync(candidate));
+
+  if (!sourcePath) {
+    console.error('critical: Unable to locate a stylesheet. Run the build to generate style.css.');
+    process.exitCode = 1;
+    return;
+  }
+
+  const css = fs.readFileSync(sourcePath, 'utf8');
+  const filtered = filterCss(css);
+
+  if (!filtered) {
+    console.warn('critical: Filtered CSS was empty. Existing inline styles were left untouched.');
+    return;
+  }
+
+  fs.writeFileSync(outputPath, `${filtered}\n`, 'utf8');
+  console.log(
+    `critical: Wrote trimmed CSS to ${path.relative(projectRoot, outputPath)} (${Buffer.byteLength(filtered, 'utf8')} bytes) from ${path.relative(projectRoot, sourcePath)}.`
+  );
+}
+
+main().catch((error) => {
+  console.error('critical: Failed to generate CSS');
+  console.error(error);
+  process.exitCode = 1;
+});
