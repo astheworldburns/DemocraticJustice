@@ -24,8 +24,7 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "@11ty/eleventy-img": "^6.0.4",
-    "@sindresorhus/slugify": "^3.0.0"
+    "@11ty/eleventy-img": "^6.0.4"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.1",

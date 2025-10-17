@@ -1,5 +1,12 @@
 import { el, fmtDate, debounce } from './domUtils.js';
-import slugifyLib from '@sindresorhus/slugify';
+
+const simpleSlugify = (input) =>
+    String(input ?? '')
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-zA-Z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .toLowerCase();
 
 // Complete navigation module with all features
 export function initNavigation() {
@@ -15,7 +22,6 @@ export function initNavigation() {
     let proofsPerLoad = 12; // For lazy loading
     let currentlyLoaded = 0;
     let observer; // For Intersection Observer
-    let modalTriggerIdCounter = 0;
     let pagefindReadyPromise = null;
     let lastLoggedSearch = { query: '', results: null };
     let lastLoggedSearchAt = 0;
@@ -127,9 +133,7 @@ export function initNavigation() {
         return 'other';
     };
 
-    const slugify = (str) => slugifyLib(String(str ?? ''), {
-        decamelize: false,
-    });
+    const slugify = (str) => simpleSlugify(str);
 
     const buildProofSlug = (proof = {}) => {
         if (proof.slug) {
@@ -271,135 +275,6 @@ export function initNavigation() {
             });
         }, { rootMargin: '50px' });
     };
-
-    /* ---------- Focus Trap for Modals ---------- */
-    class FocusTrap {
-        constructor(element) {
-            this.element = element;
-            this.focusableElements = null;
-            this.firstFocusable = null;
-            this.lastFocusable = null;
-            this.active = false;
-            this.boundKeyHandler = null;
-            this.previouslyFocusedElement = null;
-        }
-
-        activate() {
-            if (this.active) return;
-
-            const activeElement = document.activeElement;
-            if (activeElement && typeof activeElement.focus === 'function') {
-                this.previouslyFocusedElement = activeElement;
-            } else {
-                this.previouslyFocusedElement = null;
-            }
-
-            this.focusableElements = this.element.querySelectorAll(
-                'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select, [tabindex]:not([tabindex="-1"])'
-            );
-
-            this.firstFocusable = this.focusableElements[0];
-            this.lastFocusable = this.focusableElements[this.focusableElements.length - 1];
-
-            if (!this.boundKeyHandler) {
-                this.boundKeyHandler = this.handleKeyDown.bind(this);
-            }
-
-            this.element.addEventListener('keydown', this.boundKeyHandler);
-            this.firstFocusable?.focus();
-            this.active = true;
-        }
-
-        deactivate() {
-            if (!this.active) return;
-            if (this.boundKeyHandler) {
-                this.element.removeEventListener('keydown', this.boundKeyHandler);
-            }
-            const modalElement = this.element;
-            const focusFallback = () => {
-                const primaryNavLink = document.querySelector('.nav-links a');
-                if (primaryNavLink && typeof primaryNavLink.focus === 'function') {
-                    primaryNavLink.focus();
-                    return;
-                }
-
-                const fallback = document.querySelector('a[href], button:not([disabled])');
-                if (fallback && typeof fallback.focus === 'function') {
-                    fallback.focus();
-                }
-            };
-
-            const canFocusElement = (element) => {
-                if (!element || typeof element.focus !== 'function') {
-                    return false;
-                }
-
-                const isConnected = typeof element.isConnected === 'boolean'
-                    ? element.isConnected
-                    : document.body.contains(element);
-
-                if (!isConnected) {
-                    return false;
-                }
-
-                const isHidden = element.hasAttribute('aria-hidden') || element.getAttribute('hidden') !== null;
-                const isDisabled = 'disabled' in element && element.disabled;
-                const isVisible = typeof element.getClientRects === 'function'
-                    ? element.getClientRects().length > 0
-                    : element.offsetParent !== null;
-
-                return !isHidden && !isDisabled && isVisible;
-            };
-
-            const openerId = modalElement?.dataset?.openerId;
-            if (openerId) {
-                const storedTrigger = document.getElementById(openerId);
-                if (canFocusElement(storedTrigger)) {
-                    storedTrigger.focus();
-                } else if (canFocusElement(this.previouslyFocusedElement)) {
-                    this.previouslyFocusedElement.focus();
-                } else {
-                    focusFallback();
-                }
-            } else if (canFocusElement(this.previouslyFocusedElement)) {
-                this.previouslyFocusedElement.focus();
-            } else {
-                focusFallback();
-            }
-
-            if (modalElement?.dataset) {
-                delete modalElement.dataset.openerId;
-            }
-            this.previouslyFocusedElement = null;
-            this.active = false;
-        }
-        
-        handleKeyDown(e) {
-            if (e.key === 'Tab') {
-                if (e.shiftKey) {
-                    if (document.activeElement === this.firstFocusable) {
-                        e.preventDefault();
-                        this.lastFocusable?.focus();
-                    }
-                } else {
-                    if (document.activeElement === this.lastFocusable) {
-                        e.preventDefault();
-                        this.firstFocusable?.focus();
-                    }
-                }
-            }
-            
-            if (e.key === 'Escape') {
-                this.deactivate();
-                const modal = this.element.closest('.modal');
-                if (modal) {
-                    modal.classList.remove('active');
-                    modal.setAttribute('hidden', '');
-                    document.body.classList.remove('body--modal-open');
-                }
-            }
-        }
-    }
 
     /* ---------- Rendering Functions ---------- */
     
@@ -784,71 +659,6 @@ export function initNavigation() {
         }
     };
 
-    /* ---------- Modal Management ---------- */
-    const initModals = () => {
-        const modals = document.querySelectorAll('.modal');
-        const modalTriggers = document.querySelectorAll('[data-modal-target]');
-
-        modalTriggers.forEach(trigger => {
-            if (!trigger.id) {
-                modalTriggerIdCounter += 1;
-                trigger.id = `modal-trigger-${modalTriggerIdCounter}`;
-            }
-
-            trigger.addEventListener('click', () => {
-                const modalId = trigger.dataset.modalTarget;
-                const modal = document.getElementById(modalId);
-                if (modal) {
-                    modal.dataset.openerId = trigger.id;
-                    openModal(modal);
-                }
-            });
-        });
-        
-        modals.forEach(modal => {
-            const closeBtn = modal.querySelector('.modal-close');
-            const focusTrap = new FocusTrap(modal);
-            
-            closeBtn?.addEventListener('click', () => {
-                closeModal(modal, focusTrap);
-            });
-            
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal(modal, focusTrap);
-                }
-            });
-            
-            // Store focus trap on modal element
-            modal._focusTrap = focusTrap;
-        });
-    };
-    
-    const openModal = (modal) => {
-        modal.removeAttribute('hidden');
-        modal.classList.add('active');
-        document.body.classList.add('body--modal-open');
-        
-        // Activate focus trap
-        if (modal._focusTrap) {
-            modal._focusTrap.activate();
-        }
-        
-        // Announce to screen readers
-        modal.setAttribute('aria-modal', 'true');
-        modal.setAttribute('role', 'dialog');
-    };
-    
-    const closeModal = (modal, focusTrap) => {
-        modal.classList.remove('active');
-        modal.setAttribute('hidden', '');
-        document.body.classList.remove('body--modal-open');
-        
-        if (focusTrap) {
-            focusTrap.deactivate();
-        }
-    };
-
     /* ---------- Initialize ---------- */
     const initialize = () => {
         try {
@@ -918,7 +728,6 @@ export function initNavigation() {
                 });
             }
 
-            initModals();
         } catch (error) {
             console.error('Error initializing archive:', error);
             if (grid) {
