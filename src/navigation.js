@@ -681,10 +681,6 @@ export function initNavigation() {
 
         const searchTerm = activeFilters.search ? activeFilters.search.trim() : '';
 
-        if (countEl && fromSearchInput && searchTerm) {
-            countEl.innerHTML = '<span class="loading-indicator"><span class="loading-indicator__label">Searching</span><span class="loading-dots" aria-hidden="true"><span></span><span></span><span></span></span></span>';
-        }
-
         let pagefindResult = null;
 
         if (searchTerm) {
@@ -752,8 +748,15 @@ export function initNavigation() {
     };
 
     // Debounced search handler
-    const handleSearch = debounce(() => {
-        filterAndRender(true);
+    const handleSearch = debounce(async () => {
+        if (countEl && searchInput) {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                countEl.innerHTML = '<span class="loading-indicator"><span class="loading-indicator__label">Searching</span><span class="loading-dots" aria-hidden="true"><span></span><span></span><span></span></span></span>';
+            }
+        }
+
+        await filterAndRender(true);
     }, 300);
 
     // Populate filters
