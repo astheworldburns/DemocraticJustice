@@ -11,8 +11,7 @@ export function initReviewForm() {
   const prevBtn = form.querySelector('[data-form-prev]');
   const submitBtn = form.querySelector('[data-form-submit]');
 
-  const registrationExplain = form.querySelector('[data-registration-explanation]');
-  const registrationExplainField = registrationExplain?.querySelector('textarea');
+  const registrationExplainField = form.querySelector('#registration-explanation textarea');
   const registrationRadios = form.querySelectorAll('input[name="wv-registered"]');
 
   const priorRadios = form.querySelectorAll('input[name="prior-remedy"]');
@@ -382,14 +381,11 @@ export function initReviewForm() {
     }
   };
 
-  const updateRegistrationState = () => {
-    if (!registrationExplain) return;
+  const updateRegistrationRequirement = () => {
+    if (!registrationExplainField) return;
     const selected = form.querySelector('input[name="wv-registered"]:checked');
-    const shouldShow = selected?.value === 'no';
-    registrationExplain.hidden = !shouldShow;
-    if (registrationExplainField) {
-      registrationExplainField.required = !!shouldShow;
-    }
+    const shouldRequire = selected?.value === 'no';
+    registrationExplainField.required = !!shouldRequire;
   };
 
   const updatePriorRemedyState = () => {
@@ -493,7 +489,7 @@ export function initReviewForm() {
   };
 
   nextBtn?.addEventListener('click', () => {
-    updateRegistrationState();
+    updateRegistrationRequirement();
     updatePriorRemedyState();
     updateDeadlineState();
     if (!form.reportValidity()) return;
@@ -508,7 +504,7 @@ export function initReviewForm() {
 
   registrationRadios.forEach((radio) => {
     radio.addEventListener('change', () => {
-      updateRegistrationState();
+      updateRegistrationRequirement();
       scheduleSaveFormState();
     });
   });
@@ -533,9 +529,9 @@ export function initReviewForm() {
     'submit',
     (event) => {
       scheduleSaveFormState();
-      updateRegistrationState();
       updatePriorRemedyState();
       updateDeadlineState();
+      updateRegistrationRequirement();
       restoreAllRequired();
 
       if (!form.checkValidity()) {
@@ -563,7 +559,7 @@ export function initReviewForm() {
     clearFormState();
     window.requestAnimationFrame(() => {
       goToStep(0, { focusField: false });
-      updateRegistrationState();
+      updateRegistrationRequirement();
       updatePriorRemedyState();
       updateDeadlineState();
     });
@@ -573,7 +569,7 @@ export function initReviewForm() {
     clearFormState();
     form.reset();
     goToStep(0, { focusField: false });
-    updateRegistrationState();
+    updateRegistrationRequirement();
     updatePriorRemedyState();
     updateDeadlineState();
   });
@@ -582,7 +578,7 @@ export function initReviewForm() {
   form.addEventListener('change', scheduleSaveFormState);
 
   const refreshDynamicState = () => {
-    updateRegistrationState();
+    updateRegistrationRequirement();
     updatePriorRemedyState();
     updateDeadlineState();
   };

@@ -1717,6 +1717,13 @@ section + section{
   margin-top: var(--space-1);
   accent-color:var(--color-interactive-primary);
 }
+#registration-explanation {
+  display: none;
+}
+
+form[data-form-id="challenge-review"]:has(input[name="wv-registered"][value="no"]:checked) #registration-explanation {
+  display: block;
+}
 .form-alert{
   background:var(--color-surface-danger);
   border-left:4px solid var(--color-danger-600);
