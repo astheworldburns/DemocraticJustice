@@ -622,8 +622,12 @@ export function initNavigation() {
         }
     };
 
-    // Debounced search handler
-    const handleSearch = debounce(async () => {
+    // Search handler coordinated with animation frames
+    let pendingSearchFrame = null;
+
+    const runSearch = async () => {
+        pendingSearchFrame = null;
+
         if (countEl && searchInput) {
             const searchTerm = searchInput.value.trim();
             if (searchTerm) {
@@ -632,7 +636,22 @@ export function initNavigation() {
         }
 
         await filterAndRender(true);
-    }, 300);
+    };
+
+    const handleSearch = () => {
+        if (pendingSearchFrame !== null && typeof cancelAnimationFrame === 'function') {
+            cancelAnimationFrame(pendingSearchFrame);
+            pendingSearchFrame = null;
+        }
+
+        if (typeof requestAnimationFrame === 'function') {
+            pendingSearchFrame = requestAnimationFrame(() => {
+                runSearch();
+            });
+        } else {
+            runSearch();
+        }
+    };
 
     // Populate filters
     const populateFilters = () => {
