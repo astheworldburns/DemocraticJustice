@@ -4844,3 +4844,15 @@ html { scroll-behavior: smooth; }
   color: var(--text-muted);
   margin-right: 0.5rem;
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms;
+  }
+}

@@ -74,6 +74,78 @@ export function initNavigation() {
         });
     }
 
+    let viewTransitionEnhancementApplied = false;
+
+    const supportsViewTransitions = () =>
+        typeof document !== 'undefined' && typeof document.startViewTransition === 'function';
+
+    const navigateWithViewTransition = (url) => {
+        if (!url) {
+            return;
+        }
+
+        const performNavigation = () => {
+            window.location.href = url;
+        };
+
+        if (!supportsViewTransitions()) {
+            performNavigation();
+            return;
+        }
+
+        try {
+            document.startViewTransition(performNavigation);
+        } catch (error) {
+            console.warn('View transition navigation failed, falling back to hard navigation.', error);
+            performNavigation();
+        }
+    };
+
+    const enhanceGridNavigation = () => {
+        if (!grid || viewTransitionEnhancementApplied) {
+            return;
+        }
+
+        viewTransitionEnhancementApplied = true;
+
+        grid.addEventListener('click', (event) => {
+            if (event.defaultPrevented || event.button !== 0) {
+                return;
+            }
+
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+                return;
+            }
+
+            const link = event.target.closest('a');
+            if (!link || !grid.contains(link)) {
+                return;
+            }
+
+            if (link.hasAttribute('download')) {
+                return;
+            }
+
+            if (link.target && link.target !== '_self') {
+                return;
+            }
+
+            let url;
+            try {
+                url = new URL(link.getAttribute('href') || '', window.location.href);
+            } catch (error) {
+                return;
+            }
+
+            if (url.origin !== window.location.origin) {
+                return;
+            }
+
+            event.preventDefault();
+            navigateWithViewTransition(url.toString());
+        });
+    };
+
     if (searchInput) {
         const focusSearchInput = () => {
             requestAnimationFrame(() => {
@@ -687,6 +759,8 @@ export function initNavigation() {
             if (!grid || !proofDataElement) {
                 return;
             }
+
+            enhanceGridNavigation();
 
             const rawJson = (proofDataElement.textContent || '').trim();
             if (!rawJson) {
