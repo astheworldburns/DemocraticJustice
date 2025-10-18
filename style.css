@@ -1067,6 +1067,8 @@ section + section{
   flex-direction:column;
   gap: var(--space-5);
   margin-top: var(--space-7);
+  container-type:inline-size;
+  container-name:case-list;
 }
 
 .case-file-row{
@@ -4450,12 +4452,15 @@ html { scroll-behavior: smooth; }
 
 @media (min-width:601px){
   .case-grid{ grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); }
-  .case-card{ padding:24px; }
   .proof-summary-grid{ gap:16px; }
   .proof-summary-item{ flex-direction:row; gap:12px; }
   .proof-summary-label{ font-size:12px; min-width:80px; }
   .proof-summary-text{ font-size:inherit; }
   .rule-summary-text{ font-size:inherit; }
+}
+
+@container case-list (min-width: 640px){
+  .case-card{ padding:24px; }
 }
 
 /* ===== Proof Strength Indicator ===== */
