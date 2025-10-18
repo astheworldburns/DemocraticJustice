@@ -4391,17 +4391,22 @@ html { scroll-behavior: smooth; }
 }
 .proof-summary-text {
   flex: 1;
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
   color: var(--text);
   font-size: var(--font-size-base);
 }
-.proof-summary-text.clamp {
+.proof-summary-text__content {
+  line-height: 1.5;
+}
+.proof-summary-text.clamp .proof-summary-text__content {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.proof-summary-text.expanded {
+.proof-summary-text.expanded .proof-summary-text__content {
   -webkit-line-clamp: unset;
 }
 .read-more {
@@ -4412,6 +4417,7 @@ html { scroll-behavior: smooth; }
   cursor: pointer;
   font-size: var(--font-size-base);
   padding: 0;
+  align-self: flex-start;
 }
 
 @media (min-width:601px){

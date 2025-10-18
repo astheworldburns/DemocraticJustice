@@ -106,16 +106,34 @@ eleventyComputed:
         <div class="proof-summary-grid">
           <div class="proof-summary-item">
             <span class="proof-summary-label">Violation:</span>
-            <span class="proof-summary-text">{{ proof.violation | safe }}</span>
+            <div class="proof-summary-text">
+              <div class="proof-summary-text__content">{{ proof.violation | safe }}</div>
+              <button type="button" class="read-more" aria-expanded="false" hidden data-read-less="Read less">
+                <span class="sr-only">Toggle full violation text</span>
+                <span class="read-more__label">Read more</span>
+              </button>
+            </div>
           </div>
           <div class="proof-summary-item">
             <span class="proof-summary-label">Stakes:</span>
-            <span class="proof-summary-text">{{ proof.stakes | safe }}</span>
+            <div class="proof-summary-text">
+              <div class="proof-summary-text__content">{{ proof.stakes | safe }}</div>
+              <button type="button" class="read-more" aria-expanded="false" hidden data-read-less="Read less">
+                <span class="sr-only">Toggle full stakes text</span>
+                <span class="read-more__label">Read more</span>
+              </button>
+            </div>
           </div>
           {% if proof.potential_remedies %}
           <div class="proof-summary-item">
             <span class="proof-summary-label">Remedy:</span>
-            <span class="proof-summary-text">{{ proof.potential_remedies[0] | safe }}</span>
+            <div class="proof-summary-text">
+              <div class="proof-summary-text__content">{{ proof.potential_remedies[0] | safe }}</div>
+              <button type="button" class="read-more" aria-expanded="false" hidden data-read-less="Read less">
+                <span class="sr-only">Toggle full remedy text</span>
+                <span class="read-more__label">Read more</span>
+              </button>
+            </div>
           </div>
           {% endif %}
         </div>
@@ -265,26 +283,43 @@ eleventyComputed:
 {% include "feedback.njk" %}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.proof-summary-text').forEach(function (text) {
-    var lineHeight = parseFloat(getComputedStyle(text).lineHeight);
+  document.querySelectorAll('.proof-summary-text').forEach(function (wrapper) {
+    var content = wrapper.querySelector('.proof-summary-text__content');
+    var button = wrapper.querySelector('.read-more');
+    if (!content || !button) {
+      return;
+    }
+
+    var computedStyles = getComputedStyle(content);
+    var lineHeight = parseFloat(computedStyles.lineHeight);
+    if (Number.isNaN(lineHeight)) {
+      var fontSize = parseFloat(computedStyles.fontSize) || 16;
+      lineHeight = fontSize * 1.5;
+    }
+
     var maxLines = 3;
-    if (text.scrollHeight > lineHeight * maxLines) {
-      text.classList.add('clamp');
-      var btn = document.createElement('button');
-      btn.className = 'read-more';
-      btn.textContent = 'Read more';
-      btn.setAttribute('aria-expanded', 'false');
-      btn.addEventListener('click', function () {
-        var expanded = text.classList.toggle('expanded');
-        btn.textContent = expanded ? 'Read less' : 'Read more';
-        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        if (expanded) {
-          text.classList.remove('clamp');
-        } else {
-          text.classList.add('clamp');
+    if (content.scrollHeight > lineHeight * maxLines) {
+      wrapper.classList.add('clamp');
+      button.hidden = false;
+
+      var label = button.querySelector('.read-more__label');
+      var moreText = (button.getAttribute('data-read-more') || (label && label.textContent.trim()) || 'Read more');
+      var lessText = button.getAttribute('data-read-less') || 'Read less';
+
+      if (label) {
+        label.textContent = moreText;
+      }
+
+      button.addEventListener('click', function () {
+        var expanded = wrapper.classList.toggle('expanded');
+        wrapper.classList.toggle('clamp', !expanded);
+        button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        if (label) {
+          label.textContent = expanded ? lessText : moreText;
         }
       });
-      text.after(btn);
+    } else {
+      button.remove();
     }
   });
 });
