@@ -4280,10 +4280,14 @@ html { scroll-behavior: smooth; }
     display:block;
     max-width: 800px;
     margin: 0 auto;
+    overflow-y: auto;
+    scroll-snap-type: y proximity;
 }
 
 .timeline-month {
     margin-bottom: var(--space-7);
+    scroll-snap-align: start;
+    scroll-margin-top: var(--space-8);
 }
 
 .timeline-month-header {
