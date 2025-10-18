@@ -173,7 +173,7 @@
   --surface-danger:var(--color-surface-danger);
   --surface-warning:var(--color-surface-warning);
   --surface-success:var(--color-surface-success);
-  --surface-success-strong:var(--color-success-200);
+  --surface-success-strong:color-mix(in srgb, var(--color-success-500) 40%, var(--color-white));
   --surface-violet:var(--color-info-100);
 
   --border-subtle:var(--color-border-subtle);
@@ -353,7 +353,7 @@
 [data-theme="dark"] .nav{
   background:var(--color-surface-muted);
   color:var(--color-text-base);
-  --nav-active-bg: rgba(255,255,255,0.08);
+  --nav-active-bg: color-mix(in srgb, var(--color-white) 8%, transparent);
   --nav-active-text: var(--color-text-base);
   --nav-active-border: rgba(255,255,255,0.4);
   --nav-toggle-color: var(--color-text-base);
@@ -510,7 +510,7 @@ section + section{
   position:sticky;
   top:0;
   --nav-toggle-color: var(--color-primary-900);
-  --nav-active-bg: rgba(37,99,235,0.12);
+  --nav-active-bg: color-mix(in srgb, var(--brand) 12%, transparent);
   --nav-active-text: var(--color-link-active);
   --nav-active-border: var(--color-link-active);
   background:var(--color-surface-raised);
@@ -668,7 +668,7 @@ section + section{
   z-index:100;
   box-shadow:var(--shadow-sm);
   padding: var(--space-2) var(--space-3) calc(var(--space-2) + env(safe-area-inset-bottom));
-  --bottom-nav-active-bg: rgba(255,255,255,0.18);
+  --bottom-nav-active-bg: color-mix(in srgb, var(--color-white) 18%, transparent);
 }
 .bottom-nav-links{
   display:flex;
@@ -715,7 +715,7 @@ section + section{
   outline-offset:2px;
 }
 [data-theme="dark"] .bottom-nav{
-  --bottom-nav-active-bg: rgba(255,255,255,0.28);
+  --bottom-nav-active-bg: color-mix(in srgb, var(--color-white) 28%, transparent);
 }
 @media (max-width:768px){
   .bottom-nav{display:flex;}
