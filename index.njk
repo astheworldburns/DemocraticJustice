@@ -58,6 +58,56 @@ reviewDate: 2024-12-01
   </div>
 </header>
 
+{% if thesis.thesis_elements %}
+<section class="homepage-thesis" aria-labelledby="thesis-heading">
+  <div class="align-container">
+    <p class="section-label">The Thesis</p>
+    <h2 id="thesis-heading">Six elements we must prove to expose capture</h2>
+    <div class="elements-grid">
+      {% for element in thesis.thesis_elements %}
+      <article class="element-card">
+        <h3>{{ element.id }}: {{ element.element }}</h3>
+        <p>{{ element.explanation }}</p>
+        {% if element.proven_by_cases %}
+        <p class="element-card__cases">
+          Proven by
+          {% for caseSlug in element.proven_by_cases %}
+            <a href="/cases/{{ caseSlug }}/">{{ caseSlug | titlecase }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </p>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    <div class="section-actions">
+      <a class="btn btn-outline-blue" href="{{ '/thesis/' | url }}">Read the full thesis</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if casesData %}
+<section class="homepage-cases" aria-labelledby="homepage-cases-heading">
+  <div class="align-container">
+    <p class="section-label">The Cases</p>
+    <h2 id="homepage-cases-heading">Four captures that prove the pattern</h2>
+    <div class="cases-grid">
+      {% for case in casesData %}
+      <article class="case-card">
+        <h3>{{ case.title }}</h3>
+        {% if case.subtitle %}<p class="subtitle">{{ case.subtitle }}</p>{% endif %}
+        <p>{{ case.summary }}</p>
+        <a class="btn-case" href="/cases/{{ case.slug }}/">Explore Case →</a>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="section-actions">
+      <a class="btn btn-outline-blue" href="{{ '/cases/' | url }}">View all cases</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 {% if caseStudies and caseStudies | length %}
 <section class="cases" id="case-files" aria-labelledby="case-files-heading">
   <div class="align-container">

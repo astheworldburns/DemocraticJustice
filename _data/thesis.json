@@ -1,0 +1,84 @@
+{
+  "the_hook": "Coordinated reforms can either entrench democracy or erase it. We track the difference.",
+  "core_thesis": "Third Way-aligned operatives captured diversity reforms to neutralize grassroots power while preserving a veneer of inclusion.",
+  "thesis_elements": [
+    {
+      "id": "TE-1",
+      "element": "Capture of diversity apparatus",
+      "explanation": "Key compliance posts are filled with operatives who answer to national strategists, not local coalitions.",
+      "evidence_types": [
+        "Hiring directives",
+        "Contracting memos",
+        "Compliance scripts"
+      ],
+      "proven_by_cases": ["diversity-apparatus-capture"],
+      "stakes": "If reform administrators are captured, communities lose the only tools they have to hold parties accountable."
+    },
+    {
+      "id": "TE-2",
+      "element": "Full party capture",
+      "explanation": "State party structures mirror national directives even when those directives conflict with adopted rules.",
+      "evidence_types": [
+        "Executive session notes",
+        "Emergency rule changes",
+        "Messaging guidance"
+      ],
+      "proven_by_cases": ["full-party-capture"],
+      "stakes": "When party governance is captured, reform delegates are outmaneuvered before they can vote."
+    },
+    {
+      "id": "TE-3",
+      "element": "Playbook to silence dissent",
+      "explanation": "The same procedural traps appear in multiple states within months of each other.",
+      "evidence_types": [
+        "Coaching recordings",
+        "Workshop agendas",
+        "Whip counts"
+      ],
+      "proven_by_cases": ["pdpr-playbook-silencing-dissent"],
+      "stakes": "Coordinated silencing ensures Indigenous and reform voices cannot set the agenda."
+    },
+    {
+      "id": "TE-4",
+      "element": "Indigenous caucus suppression",
+      "explanation": "Caucuses are reorganized to dissolve pre-existing leadership in favor of appointed delegates.",
+      "evidence_types": [
+        "Charter edits",
+        "Caucus rosters",
+        "Voting tallies"
+      ],
+      "proven_by_cases": ["indigenous-caucus-suppression"],
+      "stakes": "Suppressing Indigenous caucuses erases lived experience from party decision making."
+    },
+    {
+      "id": "TE-5",
+      "element": "National replication",
+      "explanation": "Once a tactic succeeds in one state, it is deployed elsewhere with minimal localization.",
+      "evidence_types": [
+        "Email briefings",
+        "Consultant contracts",
+        "Calendar invites"
+      ],
+      "proven_by_cases": ["diversity-apparatus-capture", "full-party-capture"],
+      "stakes": "Patterns reveal intent: replication shows this is a strategy, not isolated mismanagement."
+    },
+    {
+      "id": "TE-6",
+      "element": "Operative incentives",
+      "explanation": "Funding streams reward compliance with the playbook and punish organizers who resist.",
+      "evidence_types": [
+        "Grant agreements",
+        "Consultant invoices",
+        "Meeting notes"
+      ],
+      "proven_by_cases": ["pdpr-playbook-silencing-dissent"],
+      "stakes": "Resource choke points keep movements dependent on actors aligned with centralized control."
+    }
+  ],
+  "why_it_matters": {
+    "democracy": "Grassroots reform loses when compliance offices answer to national consultants.",
+    "organizing": "Organizers need a map of the capture to anticipate countermoves.",
+    "media": "Reporters gain verifiable proof chains instead of conflicting narratives.",
+    "legal": "Documented capture provides the record needed for selective enforcement claims."
+  }
+}

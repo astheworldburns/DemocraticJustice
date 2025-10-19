@@ -1,0 +1,57 @@
+{
+  "case_id": "case-1-diversity-apparatus-capture",
+  "slug": "diversity-apparatus-capture",
+  "title": "Diversity Apparatus Capture",
+  "subtitle": "Compliance seats captured before reforms launch",
+  "summary": "National operatives secured key compliance posts and rewrote onboarding scripts before Indigenous organizers entered the room.",
+  "thesis_elements_proven": [
+    {
+      "thesis_id": "TE-1",
+      "element": "Capture of diversity apparatus",
+      "how_proven": "Emails, onboarding scripts, and consultant scopes show who directed the hires."
+    }
+  ],
+  "narrative_arc": {
+    "act_i": {
+      "title": "Set the stage",
+      "summary": "State party promised Indigenous coalition leadership in compliance.",
+      "key_events": [
+        "Coalition negotiates shared hiring authority",
+        "National strategist provides preferred candidate list"
+      ]
+    },
+    "act_ii": {
+      "title": "Execute the inversion",
+      "summary": "Compliance officer bypasses coalition shortlist in favor of consultant slate.",
+      "key_events": [
+        "Hiring freeze announced hours before interviews",
+        "Consultant slate approved in emergency vote"
+      ],
+      "smoking_gun": "Consultant memo describing how to 'keep caucus leads in review limbo.'"
+    },
+    "act_iii": {
+      "title": "Lock in control",
+      "summary": "Captured apparatus rewrites onboarding to require consultant sign-off.",
+      "key_events": [
+        "Onboarding documents updated without caucus approval",
+        "Consultants briefed national allies on win"
+      ],
+      "supporting_proofs": ["1-01", "1-02"]
+    }
+  },
+  "evidence_library": {
+    "documents": [
+      {
+        "title": "Emergency hiring memo",
+        "description": "Outlines the freeze and replacement slate",
+        "url": "/files/case-1/emergency-hiring-memo.pdf"
+      }
+    ]
+  },
+  "for_organizers": "<p>Map out every compliance approval. If signatures route through consultants, your apparatus is already captured.</p>",
+  "next_steps": {
+    "read_next_case": {
+      "slug": "full-party-capture"
+    }
+  }
+}

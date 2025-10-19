@@ -1,0 +1,62 @@
+{
+  "case_id": "case-3-pdpr-playbook-silencing-dissent",
+  "slug": "pdpr-playbook-silencing-dissent",
+  "title": "PDPR Playbook: Silencing Dissent",
+  "subtitle": "Coaching packets teach organizers how to outvote Indigenous leaders",
+  "summary": "Consultant-authored playbooks circulated through PDPR networks show a consistent method for neutralizing caucus pushback.",
+  "thesis_elements_proven": [
+    {
+      "thesis_id": "TE-3",
+      "element": "Playbook to silence dissent",
+      "how_proven": "Audio transcripts and playbooks share identical directives to sideline Indigenous voices."
+    },
+    {
+      "thesis_id": "TE-6",
+      "element": "Operative incentives",
+      "how_proven": "Consulting invoices tie funding tranches to proof of caucus compliance."
+    }
+  ],
+  "narrative_arc": {
+    "act_i": {
+      "title": "Coach the insiders",
+      "summary": "PDPR network convenes webinars promising 'inclusive implementation.'",
+      "key_events": [
+        "Webinar slides distributed to compliance staff",
+        "Operatives assigned to mentor state chairs"
+      ],
+      "supporting_proofs": ["3-01"]
+    },
+    "act_ii": {
+      "title": "Suppress the resistance",
+      "summary": "Coaching tells state leads to outvote Indigenous caucus members and flood meetings with appointees.",
+      "key_events": [
+        "Coaching call transcript references Alabama strategy",
+        "Appointee slate delivered hours before meeting"
+      ],
+      "smoking_gun": "Quote: 'If they object, table until your numbers are set.'"
+    },
+    "act_iii": {
+      "title": "Reward the capture",
+      "summary": "Consultants invoice national partners after caucus leadership replaced.",
+      "key_events": [
+        "Invoice references 'playbook deployment success'",
+        "Donor memo celebrates compliance turnaround"
+      ]
+    }
+  },
+  "evidence_library": {
+    "documents": [
+      {
+        "title": "PDPR coaching packet",
+        "description": "Slides outlining the meeting control strategy",
+        "url": "/files/case-3/pdpr-coaching-packet.pdf"
+      }
+    ]
+  },
+  "for_organizers": "<p>Record every coaching session. Operatives recycle talking points across states.</p>",
+  "next_steps": {
+    "read_next_case": {
+      "slug": "indigenous-caucus-suppression"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{% extends "../layout.njk" %}
+
+{% block content %}
+<article class="case-page">
+  <header class="case-header">
+    <span class="case-id">{{ case.case_id }}</span>
+    <h1>{{ case.title }}</h1>
+    {% if case.subtitle %}
+    <p class="subtitle">{{ case.subtitle }}</p>
+    {% endif %}
+  </header>
+
+  {% if case.summary %}
+  <section class="case-summary">
+    {{ case.summary }}
+  </section>
+  {% endif %}
+
+  {% if case.thesis_elements_proven %}
+  <section class="thesis-elements-proven">
+    <h2>What This Proves</h2>
+    {% for element in case.thesis_elements_proven %}
+    <div class="proven-element">
+      <h3>{{ element.thesis_id }}{% if element.element %}: {{ element.element }}{% endif %}</h3>
+      <p>{{ element.how_proven }}</p>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if case.narrative_arc %}
+  <section class="narrative-arc">
+    <h2>The Story</h2>
+    {% for key, act in case.narrative_arc %}
+    <article class="act">
+      <h3>{{ act.title }}</h3>
+      {% if act.summary %}<p class="act-summary">{{ act.summary }}</p>{% endif %}
+      {% if act.key_events %}
+      <ul class="key-events">
+        {% for event in act.key_events %}
+        <li>{{ event }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% if act.smoking_gun %}
+      <div class="smoking-gun">
+        <strong>Smoking Gun:</strong> {{ act.smoking_gun }}
+      </div>
+      {% endif %}
+      {% if act.supporting_proofs %}
+      <div class="supporting-proofs">
+        <strong>Supporting Proofs:</strong>
+        {% for proof_id in act.supporting_proofs %}
+        <a href="/proofs/{{ proof_id | slug }}/" class="proof-link">{{ proof_id }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if case.evidence_library %}
+  <section class="evidence-library">
+    <h2>Evidence</h2>
+    {% if case.evidence_library.audio %}
+    <h3>Audio Recordings</h3>
+    {% for audio in case.evidence_library.audio %}
+    <div class="audio-item">
+      <h4>{{ audio.title }}</h4>
+      {% if audio.url %}<audio controls src="{{ audio.url }}"></audio>{% endif %}
+      {% if audio.transcript %}<a href="{{ audio.transcript }}">View Transcript</a>{% endif %}
+      {% if audio.key_timestamps %}
+      <ul class="timestamps">
+        {% for timestamp in audio.key_timestamps %}
+        <li><strong>{{ timestamp.time }}</strong>: "{{ timestamp.quote }}"</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if case.evidence_library.documents %}
+    <h3>Documents</h3>
+    {% for doc in case.evidence_library.documents %}
+    <div class="document-item">
+      <h4>{{ doc.title }}</h4>
+      <p>{{ doc.description }}</p>
+      {% if doc.url %}<a href="{{ doc.url }}" class="btn-download">Download</a>{% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+  </section>
+  {% endif %}
+
+  {% if case.for_organizers %}
+  <section class="for-organizers">
+    <h2>For Organizers</h2>
+    {{ case.for_organizers | safe }}
+  </section>
+  {% endif %}
+
+  {% if case.next_steps and case.next_steps.read_next_case %}
+  <nav class="case-navigation">
+    <a href="/cases/{{ case.next_steps.read_next_case.slug }}/" class="btn-next-case">Next Case</a>
+  </nav>
+  {% endif %}
+</article>
+{% endblock %}
