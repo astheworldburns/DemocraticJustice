@@ -1,0 +1,109 @@
+{
+  "navigation": {
+    "primary": [
+      {
+        "label": "Thesis",
+        "url": "/thesis/",
+        "matchPrefix": ["/thesis/"]
+      },
+      {
+        "label": "Cases",
+        "url": "/cases/",
+        "matchPrefix": ["/cases/"],
+        "submenu": [
+          { "label": "Diversity Apparatus Capture", "url": "/cases/diversity-apparatus-capture/" },
+          { "label": "Full Party Capture", "url": "/cases/full-party-capture/" },
+          { "label": "PDPR Playbook", "url": "/cases/pdpr-playbook-silencing-dissent/" },
+          { "label": "Indigenous Caucus Suppression", "url": "/cases/indigenous-caucus-suppression/" }
+        ]
+      },
+      {
+        "label": "Proof",
+        "url": "/archive/",
+        "match": ["/archive/", "/archive/index.html"],
+        "matchPrefix": ["/proofs/"]
+      },
+      {
+        "label": "Search",
+        "url": "/archive/#search-input",
+        "list_class": "nav-item-search",
+        "attributes": {
+          "data-search-link": "",
+          "aria-label": "Search proofs"
+        }
+      },
+      {
+        "label": "Context",
+        "url": "/context/third-way/",
+        "matchPrefix": ["/context/"]
+      },
+      {
+        "label": "Overproofs",
+        "url": "/overproofs/",
+        "match": ["/overproofs/", "/overproofs/index.html"],
+        "matchPrefix": ["/briefs/"]
+      },
+      {
+        "label": "Action",
+        "url": "/action/",
+        "matchPrefix": ["/action/"]
+      },
+      {
+        "label": "About",
+        "url": "/about/",
+        "match": ["/about/", "/about/index.html"],
+        "matchPrefix": ["/method/", "/integrity", "/contact/"]
+      },
+      {
+        "label": "Submit Proof",
+        "url": "/submit/",
+        "link_class": "btn-nav-submit",
+        "match": ["/submit/", "/submit/index.html"]
+      }
+    ],
+    "quick": [
+      { "label": "Full Archive", "url": "/archive/", "match": ["/archive/", "/archive/index.html"] },
+      { "label": "Thesis", "url": "/thesis/", "matchPrefix": ["/thesis/"] },
+      { "label": "Cases", "url": "/cases/", "matchPrefix": ["/cases/"] },
+      { "label": "Overproofs", "url": "/overproofs/", "match": ["/overproofs/", "/overproofs/index.html"] },
+      { "label": "Action Guide", "url": "/action/", "matchPrefix": ["/action/"] },
+      { "label": "Submit Proof", "url": "/submit/", "match": ["/submit/", "/submit/index.html"] }
+    ],
+    "footer": {
+      "groups": [
+        {
+          "heading": "About",
+          "links": [
+            { "label": "About Us", "url": "/about/" },
+            { "label": "Method", "url": "/method/" },
+            { "label": "Proof of Integrity", "url": "/integrity" },
+            { "label": "Contact", "url": "/contact/" }
+          ]
+        },
+        {
+          "heading": "Evidence",
+          "links": [
+            { "label": "Thesis", "url": "/thesis/" },
+            { "label": "Cases", "url": "/cases/" },
+            { "label": "Proof Archive", "url": "/archive/" },
+            { "label": "Overproofs", "url": "/overproofs/" }
+          ]
+        },
+        {
+          "heading": "Organize",
+          "links": [
+            { "label": "Action Guide", "url": "/action/" },
+            { "label": "Context", "url": "/context/third-way/" },
+            { "label": "Submit Proof", "url": "/submit/" }
+          ]
+        },
+        {
+          "heading": "Legal",
+          "links": [
+            { "label": "Privacy Policy", "url": "/privacy" }
+          ]
+        }
+      ]
+    }
+  }
+}

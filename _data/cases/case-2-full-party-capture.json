@@ -1,0 +1,63 @@
+{
+  "case_id": "case-2-full-party-capture",
+  "slug": "full-party-capture",
+  "title": "Full Party Capture",
+  "subtitle": "Executive committee retools bylaws to neutralize reform slate",
+  "summary": "After capturing compliance posts, national strategists helped state leaders consolidate power through emergency bylaw rewrites.",
+  "thesis_elements_proven": [
+    {
+      "thesis_id": "TE-2",
+      "element": "Full party capture",
+      "how_proven": "Meeting recordings and motion logs show national guidance driving state votes."
+    }
+  ],
+  "narrative_arc": {
+    "act_i": {
+      "title": "Warning signs",
+      "summary": "Executive committee schedules closed-door review of reform bylaws.",
+      "key_events": [
+        "Consultant agenda circulated to leadership",
+        "Grassroots delegates denied speaking slots"
+      ]
+    },
+    "act_ii": {
+      "title": "Rewrite the rules",
+      "summary": "Emergency session passes bylaws that centralize appointments.",
+      "key_events": [
+        "Rules committee chair cites national memo",
+        "Motion to delay vote ruled out of order"
+      ],
+      "supporting_proofs": ["2-03", "2-05"]
+    },
+    "act_iii": {
+      "title": "Lock out opposition",
+      "summary": "Credential challenges remove delegates who question capture.",
+      "key_events": [
+        "Whip count spreadsheet shared with consultants",
+        "Delegates removed minutes before vote"
+      ],
+      "smoking_gun": "Audio of national strategist coaching state chair on floor procedure."
+    }
+  },
+  "evidence_library": {
+    "audio": [
+      {
+        "title": "Emergency session recording",
+        "url": "/files/case-2/emergency-session.mp3",
+        "transcript": "/files/case-2/emergency-session-transcript.pdf",
+        "key_timestamps": [
+          {
+            "time": "00:14:32",
+            "quote": "We got the language from Alabama."
+          }
+        ]
+      }
+    ]
+  },
+  "for_organizers": "<p>Track every emergency procedure justification. Capture hides inside 'efficiency' arguments.</p>",
+  "next_steps": {
+    "read_next_case": {
+      "slug": "pdpr-playbook-silencing-dissent"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{% extends "../layout.njk" %}
+
+{% block content %}
+<article class="thesis-page">
+  <header>
+    <h1>The Core Thesis</h1>
+    <p class="subtitle">Six Elements That Must Be Proven</p>
+  </header>
+
+  {% if thesis.core_thesis %}
+  <section class="thesis-overview">
+    <div class="core-statement">
+      {{ thesis.core_thesis }}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if thesis.thesis_elements %}
+  <section class="thesis-elements">
+    {% for element in thesis.thesis_elements %}
+    <article class="thesis-element" id="{{ element.id }}">
+      <h2>
+        <span class="element-id">{{ element.id }}</span>
+        {{ element.element }}
+      </h2>
+      {% if element.explanation %}
+      <div class="explanation">{{ element.explanation }}</div>
+      {% endif %}
+      {% if element.evidence_types %}
+      <div class="evidence">
+        <h3>Evidence Types</h3>
+        <ul>
+          {% for type in element.evidence_types %}
+          <li>{{ type }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% if element.proven_by_cases %}
+      <div class="proven-by">
+        <h3>Proven By Cases</h3>
+        <ul>
+          {% for case_id in element.proven_by_cases %}
+          <li><a href="/cases/{{ case_id }}/">{{ case_id }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% if element.stakes %}
+      <div class="stakes">
+        <strong>Why This Matters:</strong> {{ element.stakes }}
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if thesis.why_it_matters %}
+  <section class="why-it-matters">
+    <h2>Why This Matters</h2>
+    {% for key, value in thesis.why_it_matters %}
+    <div class="matter-section">
+      <h3>{{ key | replace("-", " ") | titlecase }}</h3>
+      <p>{{ value }}</p>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+</article>
+{% endblock %}

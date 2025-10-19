@@ -1,0 +1,57 @@
+{
+  "case_id": "case-4-indigenous-caucus-suppression",
+  "slug": "indigenous-caucus-suppression",
+  "title": "Indigenous Caucus Suppression",
+  "subtitle": "Captured apparatus dissolves elected leadership",
+  "summary": "Compliance officers dissolved the Indigenous caucus and replaced elected delegates with appointed surrogates aligned with national consultants.",
+  "thesis_elements_proven": [
+    {
+      "thesis_id": "TE-4",
+      "element": "Indigenous caucus suppression",
+      "how_proven": "Credential challenges, revised bylaws, and recorded directives demonstrate intentional dissolution."
+    }
+  ],
+  "narrative_arc": {
+    "act_i": {
+      "title": "Signal the crackdown",
+      "summary": "Compliance staff announce audits of Indigenous caucus procedures.",
+      "key_events": [
+        "Audit notice sent hours after caucus requests vote",
+        "Consultants advise freezing caucus bank access"
+      ]
+    },
+    "act_ii": {
+      "title": "Dissolve the leadership",
+      "summary": "Caucus is declared in violation and leadership removed.",
+      "key_events": [
+        "Credentials committee invalidates election results",
+        "Appointees sworn in without caucus vote"
+      ],
+      "smoking_gun": "Audio clip: 'If they want back in, they need to accept the new structure.'"
+    },
+    "act_iii": {
+      "title": "Rewrite the future",
+      "summary": "New bylaws strip caucus of independent meeting authority.",
+      "key_events": [
+        "Bylaws require compliance sign-off for agendas",
+        "Caucus communications routed through consultants"
+      ],
+      "supporting_proofs": ["4-02"]
+    }
+  },
+  "evidence_library": {
+    "documents": [
+      {
+        "title": "Credentials ruling",
+        "description": "Decision removing elected caucus leadership",
+        "url": "/files/case-4/credentials-ruling.pdf"
+      }
+    ]
+  },
+  "for_organizers": "<p>Secure independent communication channels before compliance moves. Once dissolved, the caucus loses negotiating leverage.</p>",
+  "next_steps": {
+    "read_next_case": {
+      "slug": "diversity-apparatus-capture"
+    }
+  }
+}

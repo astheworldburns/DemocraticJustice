@@ -10,6 +10,224 @@ const addFormats = require("ajv-formats");
 const slugifyImport = require("@sindresorhus/slugify");
 const proofSchema = require("./schemas/proof.schema.json");
 
+function cloneData(value) {
+  if (value === undefined) {
+    return undefined;
+  }
+
+  return JSON.parse(JSON.stringify(value));
+}
+
+async function loadJsonFile(filePath, fallback = undefined) {
+  try {
+    const raw = await fs.readFile(filePath, "utf8");
+    return JSON.parse(raw);
+  } catch (error) {
+    if (error.code !== "ENOENT") {
+      console.warn(`Warning: unable to read ${filePath}`, error);
+    }
+  }
+
+  return cloneData(fallback);
+}
+
+async function loadOptionalJson(relativePath, fallback = undefined) {
+  const filePath = path.join(process.cwd(), relativePath);
+  return loadJsonFile(filePath, fallback);
+}
+
+function asArray(value) {
+  if (value === undefined || value === null) {
+    return [];
+  }
+
+  return Array.isArray(value) ? value : [value];
+}
+
+function normalizeNavUrl(value) {
+  if (!value || typeof value !== "string") {
+    return "";
+  }
+
+  if (value.includes("#")) {
+    return value.trim();
+  }
+
+  let normalized = value.trim();
+
+  if (!normalized.startsWith("/")) {
+    normalized = `/${normalized}`;
+  }
+
+  if (normalized.endsWith("index.html")) {
+    normalized = normalized.slice(0, -"index.html".length);
+  }
+
+  if (!normalized.endsWith("/")) {
+    normalized = `${normalized}/`;
+  }
+
+  return normalized;
+}
+
+function isNavItemActiveForUrl(currentUrl = "/", item = {}) {
+  if (!item) {
+    return false;
+  }
+
+  const normalizedCurrent = normalizeNavUrl(currentUrl || "/");
+
+  const exactMatches = [
+    ...asArray(item.match),
+    ...asArray(item.matchExact),
+    ...asArray(item.active),
+    ...asArray(item.activeMatch)
+  ];
+
+  for (const candidate of exactMatches) {
+    const normalizedCandidate = normalizeNavUrl(candidate);
+    if (normalizedCandidate && normalizedCandidate === normalizedCurrent) {
+      return true;
+    }
+  }
+
+  const prefixMatches = [
+    ...asArray(item.matchPrefix),
+    ...asArray(item.activePrefix),
+    ...asArray(item.startsWith)
+  ];
+
+  if (item.url && !item.url.includes("#")) {
+    prefixMatches.push(item.url);
+  }
+
+  for (const prefix of prefixMatches) {
+    const normalizedPrefix = normalizeNavUrl(prefix);
+    if (!normalizedPrefix) {
+      continue;
+    }
+
+    if (
+      normalizedCurrent === normalizedPrefix ||
+      normalizedCurrent.startsWith(normalizedPrefix)
+    ) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+const defaultNavigation = {
+  primary: [
+    { label: "Thesis", url: "/thesis/", matchPrefix: ["/thesis/"] },
+    {
+      label: "Cases",
+      url: "/cases/",
+      matchPrefix: ["/cases/"],
+      submenu: []
+    },
+    { label: "Proof", url: "/archive/", match: ["/archive/", "/archive/index.html"], matchPrefix: ["/proofs/"] },
+    {
+      label: "Search",
+      url: "/archive/#search-input",
+      list_class: "nav-item-search",
+      attributes: {
+        "data-search-link": "",
+        "aria-label": "Search proofs"
+      }
+    },
+    { label: "Context", url: "/context/third-way/", matchPrefix: ["/context/"] },
+    { label: "Overproofs", url: "/overproofs/", match: ["/overproofs/", "/overproofs/index.html"], matchPrefix: ["/briefs/"] },
+    { label: "Action", url: "/action/", matchPrefix: ["/action/"] },
+    { label: "About", url: "/about/", match: ["/about/", "/about/index.html"], matchPrefix: ["/method/", "/integrity", "/contact/"] },
+    { label: "Submit Proof", url: "/submit/", link_class: "btn-nav-submit", match: ["/submit/", "/submit/index.html"] }
+  ],
+  quick: [
+    { label: "Full Archive", url: "/archive/", match: ["/archive/", "/archive/index.html"] },
+    { label: "Thesis", url: "/thesis/", matchPrefix: ["/thesis/"] },
+    { label: "Cases", url: "/cases/", matchPrefix: ["/cases/"] },
+    { label: "Overproofs", url: "/overproofs/", match: ["/overproofs/", "/overproofs/index.html"] },
+    { label: "Action Guide", url: "/action/", matchPrefix: ["/action/"] },
+    { label: "Submit Proof", url: "/submit/", match: ["/submit/", "/submit/index.html"] }
+  ],
+  footer: {
+    groups: [
+      {
+        heading: "About",
+        links: [
+          { label: "About Us", url: "/about/" },
+          { label: "Method", url: "/method/" },
+          { label: "Proof of Integrity", url: "/integrity" },
+          { label: "Contact", url: "/contact/" }
+        ]
+      },
+      {
+        heading: "Evidence",
+        links: [
+          { label: "Thesis", url: "/thesis/" },
+          { label: "Cases", url: "/cases/" },
+          { label: "Proof Archive", url: "/archive/" },
+          { label: "Overproofs", url: "/overproofs/" }
+        ]
+      },
+      {
+        heading: "Organize",
+        links: [
+          { label: "Action Guide", url: "/action/" },
+          { label: "Context", url: "/context/third-way/" },
+          { label: "Submit Proof", url: "/submit/" }
+        ]
+      },
+      {
+        heading: "Legal",
+        links: [{ label: "Privacy Policy", url: "/privacy" }]
+      }
+    ]
+  }
+};
+
+async function loadCasesData() {
+  const casesDir = path.join(process.cwd(), "_data", "cases");
+
+  try {
+    const entries = await fs.readdir(casesDir, { withFileTypes: true });
+    const cases = [];
+
+    for (const entry of entries) {
+      if (!entry.isFile() || !entry.name.endsWith(".json")) {
+        continue;
+      }
+
+      const filePath = path.join(casesDir, entry.name);
+      const caseData = await loadJsonFile(filePath, {});
+      if (!caseData || typeof caseData !== "object") {
+        continue;
+      }
+
+      const slug = caseData.slug || slugifyValue(caseData.case_id || entry.name.replace(/\.json$/u, ""));
+      cases.push({
+        ...caseData,
+        slug,
+        fileName: entry.name
+      });
+    }
+
+    return cases.sort((a, b) => {
+      const caseDiff = compareCaseIds(a.case_id, b.case_id);
+      if (caseDiff !== 0) {
+        return caseDiff;
+      }
+      return String(a.title ?? "").localeCompare(String(b.title ?? ""));
+    });
+  } catch (error) {
+    if (error.code !== "ENOENT") {
+      console.warn("Warning: unable to load cases directory", error);
+    }
+    return [];
+  }
+}
+
 const ajv = new Ajv({ allErrors: true, strict: false });
 addFormats(ajv);
 const validateProofSchema = ajv.compile(proofSchema);
@@ -780,6 +998,43 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  eleventyConfig.addCollection("cases", function() {
+    return loadCasesData().then((cases) =>
+      cases.map((caseData) => ({
+        data: {
+          ...caseData,
+          url: `/cases/${caseData.slug}/`
+        },
+        url: `/cases/${caseData.slug}/`
+      }))
+    );
+  });
+
+  eleventyConfig.addFilter("navIsActive", (pageUrl, item = {}) => isNavItemActiveForUrl(pageUrl, item));
+
+  eleventyConfig.addFilter("navLinkClasses", (pageUrl, item = {}) => {
+    const classes = [];
+    if (item.link_class) {
+      classes.push(item.link_class);
+    }
+    if (isNavItemActiveForUrl(pageUrl, item)) {
+      classes.push("is-active");
+    }
+    return classes.join(" ").trim();
+  });
+
+  eleventyConfig.addFilter("titlecase", (value) => {
+    if (value === undefined || value === null) {
+      return "";
+    }
+
+    return String(value)
+      .split(/[^A-Za-z0-9]+/u)
+      .filter(Boolean)
+      .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+      .join(" ");
+  });
+
   eleventyConfig.addFilter("date", (dateObj, format = "LLLL d, yyyy") => {
     if (!dateObj) return "";
     return DateTime.fromJSDate(new Date(dateObj), { zone: 'utc' }).toFormat(format);
@@ -941,9 +1196,30 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("files");
   eleventyConfig.addPassthroughCopy("_redirects");
 
+  eleventyConfig.addGlobalData("nav", async () => {
+    const structure = await loadOptionalJson("_data/site_structure.json", {});
+    const navigation = structure?.navigation ?? {};
+    return {
+      primary: cloneData(navigation.primary ?? defaultNavigation.primary),
+      quick: cloneData(navigation.quick ?? defaultNavigation.quick),
+      footer: cloneData(navigation.footer ?? defaultNavigation.footer)
+    };
+  });
+
+  eleventyConfig.addGlobalData("siteStructure", () => loadOptionalJson("_data/site_structure.json", {}));
+  eleventyConfig.addGlobalData("thesis", () => loadOptionalJson("_data/thesis.json", {}));
+  eleventyConfig.addGlobalData("thirdWayContext", () => loadOptionalJson("_data/third_way_context.json", {}));
+  eleventyConfig.addGlobalData("alabamaMirror", () => loadOptionalJson("_data/alabama_mirror.json", {}));
+  eleventyConfig.addGlobalData("casesData", () => loadCasesData());
+
   eleventyConfig.addWatchTarget("./style.css");
   eleventyConfig.addWatchTarget("./bundle.js");
   eleventyConfig.addWatchTarget("./ga-consent.js");
+  eleventyConfig.addWatchTarget("./_data/site_structure.json");
+  eleventyConfig.addWatchTarget("./_data/thesis.json");
+  eleventyConfig.addWatchTarget("./_data/third_way_context.json");
+  eleventyConfig.addWatchTarget("./_data/alabama_mirror.json");
+  eleventyConfig.addWatchTarget("./_data/cases");
 
   eleventyConfig.addNunjucksGlobal("env", process.env);
 

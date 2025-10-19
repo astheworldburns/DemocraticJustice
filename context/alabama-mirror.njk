@@ -1,0 +1,44 @@
+---
+layout: layout.njk
+permalink: /context/alabama-mirror/
+title: Alabama Mirror
+---
+
+<div class="align-container">
+  <article class="doc">
+    <header class="doc-header">
+      <h1>Alabama Mirror</h1>
+      <p class="doc-subtitle">Selective enforcement patterns exported to West Virginia</p>
+    </header>
+
+    <section class="doc-body">
+      <p>{{ alabamaMirror.summary }}</p>
+
+      {% if alabamaMirror.parallels %}
+      <div class="doc-section">
+        <h2>Pattern Parallels</h2>
+        <ul class="parallels-list">
+          {% for parallel in alabamaMirror.parallels %}
+          <li>
+            <h3>{{ parallel.pattern }}</h3>
+            <p><strong>Alabama:</strong> {{ parallel.alabama }}</p>
+            <p><strong>West Virginia:</strong> {{ parallel.west_virginia }}</p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if alabamaMirror.questions_for_press %}
+      <div class="doc-section">
+        <h2>Questions for Press</h2>
+        <ul>
+          {% for question in alabamaMirror.questions_for_press %}
+          <li>{{ question }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </section>
+  </article>
+</div>

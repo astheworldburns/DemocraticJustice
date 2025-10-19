@@ -1,8 +1,14 @@
 <nav class="bottom-nav" aria-label="Quick links">
   <ul class="bottom-nav-links">
-    <li><a href="{{ '/archive/' | url }}"{% if archiveActive %} aria-current="page" class="is-active"{% endif %}>Full Archive</a></li>
-    <li><a href="{{ '/about/' | url }}"{% if aboutActive %} aria-current="page" class="is-active"{% endif %}>About Us</a></li>
-    <li><a href="{{ '/overproofs/' | url }}"{% if overproofsActive %} aria-current="page" class="is-active"{% endif %}>Overproofs</a></li>
-    <li><a href="{{ '/submit/' | url }}"{% if submitActive %} aria-current="page" class="is-active"{% endif %}>Submit Proof</a></li>
+    {% for item in quickNav %}
+    {% set linkClasses = page.url | navLinkClasses(item) %}
+    {% set linkActive = page.url | navIsActive(item) %}
+    {% set href = item.url or '#' %}
+    {% set attributes = item.attributes or {} %}
+    <li>
+      <a href="{{ href | url }}"{% if linkClasses %} class="{{ linkClasses }}"{% endif %}{% if linkActive %} aria-current="page"{% endif %}
+        {% for attr, value in attributes %} {{ attr }}="{{ value }}"{% endfor %}>{{ item.label }}</a>
+    </li>
+    {% endfor %}
   </ul>
 </nav>

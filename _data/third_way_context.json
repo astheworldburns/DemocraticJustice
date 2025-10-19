@@ -1,0 +1,38 @@
+{
+  "overview": {
+    "what": "The Third Way network coordinates national consulting talent and donor capital to steer state party reforms.",
+    "strategy": "Deploy template reforms that look inclusive while consolidating decision-making inside consultant-run committees.",
+    "why_now": "The 2026 cycle forces organizers to choose between compliance with captured reforms or building alternative power."
+  },
+  "tactics": [
+    {
+      "name": "Compliance capture",
+      "description": "Install trusted operatives inside compliance offices so they can approve or deny grassroots plans at will.",
+      "examples": [
+        "Hiring freezes until approved candidates surface",
+        "Parallel review tracks that reroute organizer paperwork"
+      ]
+    },
+    {
+      "name": "Narrative laundering",
+      "description": "Frame the capture as modernization or inclusion work to blunt organizer criticism.",
+      "examples": [
+        "Press releases announcing diversity task forces led by consultants",
+        "Earned media featuring national spokespeople over local leaders"
+      ]
+    },
+    {
+      "name": "Selective enforcement",
+      "description": "Use compliance power to penalize Indigenous or reform caucuses for procedural missteps that party insiders routinely ignore.",
+      "examples": [
+        "Rejecting delegate slates for minor formatting issues",
+        "Reopening credential challenges after votes are cast"
+      ]
+    }
+  ],
+  "organizer_questions": [
+    "Who approved the consultants staffing your compliance offices?",
+    "Which national partners review your reform documents before they reach the state committee?",
+    "Where do donor reporting requirements conflict with grassroots accountability?"
+  ]
+}

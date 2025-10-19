@@ -1,0 +1,23 @@
+---
+layout: layout.njk
+permalink: /cases/
+title: Cases
+---
+
+<div class="align-container cases-landing">
+  <header class="cases-landing__header">
+    <h1>Case Library</h1>
+    <p>Each case documents how the Third Way apparatus captured reform infrastructure.</p>
+  </header>
+
+  <div class="cases-grid">
+    {% for case in casesData %}
+    <article class="case-card">
+      <h2><a href="/cases/{{ case.slug }}/">{{ case.title }}</a></h2>
+      {% if case.subtitle %}<p class="subtitle">{{ case.subtitle }}</p>{% endif %}
+      <p>{{ case.summary }}</p>
+      <a class="btn-case" href="/cases/{{ case.slug }}/">Explore Case →</a>
+    </article>
+    {% endfor %}
+  </div>
+</div>

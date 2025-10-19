@@ -1,0 +1,56 @@
+---
+layout: layout.njk
+permalink: /context/third-way/
+title: Third Way Context
+---
+
+<div class="align-container">
+  <article class="doc">
+    <header class="doc-header">
+      <h1>The Third Way Playbook</h1>
+    </header>
+
+    <section class="doc-body">
+      {% if thirdWayContext.overview %}
+      <div class="doc-section">
+        <h2>Overview</h2>
+        <p><strong>What:</strong> {{ thirdWayContext.overview.what }}</p>
+        <p><strong>Strategy:</strong> {{ thirdWayContext.overview.strategy }}</p>
+        <p><strong>Why Now:</strong> {{ thirdWayContext.overview.why_now }}</p>
+      </div>
+      {% endif %}
+
+      {% if thirdWayContext.tactics %}
+      <div class="doc-section">
+        <h2>Tactics</h2>
+        <ul class="tactics-list">
+          {% for tactic in thirdWayContext.tactics %}
+          <li>
+            <h3>{{ tactic.name }}</h3>
+            <p>{{ tactic.description }}</p>
+            {% if tactic.examples %}
+            <ul>
+              {% for example in tactic.examples %}
+              <li>{{ example }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if thirdWayContext.organizer_questions %}
+      <div class="doc-section">
+        <h2>Questions Organizers Should Ask</h2>
+        <ul>
+          {% for question in thirdWayContext.organizer_questions %}
+          <li>{{ question }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </section>
+  </article>
+</div>
