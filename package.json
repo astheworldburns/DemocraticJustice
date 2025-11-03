@@ -31,7 +31,7 @@
     "@playwright/test": "^1.44.1",
     "autoprefixer": "^10.4.21",
     "critical": "^7.2.1",
-    "cssnano": "^7.1.1",
+    "cssnano": "^7.1.2",
     "esbuild": "^0.21.0",
     "html-minifier-terser": "^7.2.0",
     "ajv": "^8.17.1",
