@@ -28,7 +28,7 @@
     "@sindresorhus/slugify": "^2.2.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.44.1",
+    "@playwright/test": "^1.57.0",
     "autoprefixer": "^10.4.21",
     "critical": "^7.2.1",
     "cssnano": "^7.1.1",
